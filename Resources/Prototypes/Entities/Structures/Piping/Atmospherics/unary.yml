@@ -6,9 +6,9 @@
     mode: SnapgridCenter
   components:
     - type: AtmosDevice
-    - type: Tag
-      tags:
-        - Unstackable
+    # - type: Tag # Exodus-SimplifyAtmos
+    #   tags:
+    #     - Unstackable
     - type: SubFloorHide
       blockInteractions: false
       blockAmbience: false
@@ -35,7 +35,7 @@
     - type: Tag
       tags:
         - GasVent
-        - Unstackable
+        # - Unstackable # Exodus-SimplifyAtmos
     - type: Sprite
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/vent.rsi
@@ -112,7 +112,7 @@
     - type: Tag
       tags:
         - GasScrubber
-        - Unstackable
+        # - Unstackable # Exodus-SimplifyAtmos
     - type: Sprite
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/scrubber.rsi
@@ -215,7 +215,7 @@
       key: enum.ThermomachineUiKey.Key
     - type: WiresPanel
     - type: WiresVisuals
-    - type: PipeRestrictOverlap
+    # - type: PipeRestrictOverlap # Exodus-SimplifyAtmos
     - type: NodeContainer
       nodes:
         pipe:
@@ -394,7 +394,7 @@
   - type: GasCondenser
   - type: AtmosPipeColor
   - type: AtmosDevice
-  - type: PipeRestrictOverlap
+  # - type: PipeRestrictOverlap # Exodus-SimplifyAtmos
   - type: ApcPowerReceiver
     powerLoad: 10000
   - type: Machine
