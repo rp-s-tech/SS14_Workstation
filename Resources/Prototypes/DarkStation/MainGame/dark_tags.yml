@@ -1,0 +1,39 @@
+﻿- type: Tag
+  id: Currency
+
+- type: Tag
+  id: CentComms
+
+- type: Tag
+  id: NanoTrasen
+
+#BorgModules
+- type: Tag
+  id: BorgModuleSecurity
+
+- type: Tag
+  id: SamSword
+
+#Blob
+- type: Tag
+  id: BlobMob
+
+#Pets
+- type: Tag
+  id: PetsHardsuit
+
+- type: Tag
+  id: PetsBackpack
+
+#N7 (наконец-то)
+- type: Tag
+  id: ThermalChargeTag
+
+- type: Tag
+  id: SmallThermalChargeTag
+
+- type: Tag
+  id: PlushieKillawhale
+
+- type: Tag
+  id: Dog

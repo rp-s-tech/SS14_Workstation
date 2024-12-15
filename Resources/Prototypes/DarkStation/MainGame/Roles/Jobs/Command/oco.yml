@@ -1,0 +1,17 @@
+- type: startingGear
+  id: OCODarkGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficerBlack
+    back: ClothingBackpackSatchelHolding
+    head: ClothingHeadCapCentcomBlack
+    gloves: ClothingHandsGlovesCombat
+    neck: ClothingNeckCloakCentcomBlack
+    mask: ClothingMaskGasSwat
+    eyes: ClothingEyesGlassesSecurity
+    ears: ClothingHeadsetAltCentCom
+    shoes: ClothingShoesCentcomBlack
+    suitstorage: WeaponSubMachineGunVector
+    id: DeathsquadPDA
+    belt: ClothingBeltSheathPOCCFilled
+    outerClothing: ClothingOuterCoatSecurityOvercoat
+    pocket1: CigPackSyndicate

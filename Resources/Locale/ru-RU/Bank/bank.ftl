@@ -1,0 +1,11 @@
+﻿bank-atm-menu-title = NT Galactic Bank
+bank-atm-menu-balance-label = Баланс:{" "}
+bank-atm-menu-no-bank = Нет банковского счета!
+bank-atm-menu-withdraw-button = Снять
+bank-atm-menu-deposit-label = Сумма депозита:{" "}
+bank-atm-menu-no-deposit = Пусто
+bank-atm-menu-deposit-button = Депозит
+bank-insufficient-funds = Недостаточно средств
+bank-atm-menu-transaction-denied = Транзакция отклонена
+bank-atm-menu-deposit-successful = Депозит принят
+bank-atm-menu-withdraw-successful = Снятие одобрено

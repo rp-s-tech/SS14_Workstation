@@ -1,0 +1,19 @@
+- type: vendingMachineInventory
+  id: SYPTechInventory
+  startingInventory:
+    PassengerPDA: 5
+    SyndiPDA: 5
+    ClearPDA: 5
+    SyndiAgentPDA: 3
+    SyndicateIDCard: 5
+    ClothingHeadsetGrey: 5
+    RubberStampApproved: 1
+    RubberStampDenied: 1
+    Paper: 15
+    EncryptionKeyCargo: 1
+    EncryptionKeyEngineering: 1
+    EncryptionKeyMedical: 1
+    EncryptionKeyScience: 1
+    EncryptionKeySecurity: 1
+    EncryptionKeyService: 2
+    EncryptionKeySyndie: 5

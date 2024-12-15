@@ -33,4 +33,6 @@
             StationEngineer: [ 1, 2 ]
             Scientist: [ 1, 1 ]
             Passenger: [ -1, -1 ]
+            #specials
+            IAA: [ 1, 1]
 

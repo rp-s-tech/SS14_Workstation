@@ -1,0 +1,27 @@
+{
+    "version": 1,
+    "license": "CC0-1.0",
+    "copyright": "Made by @archont8176 for DarkStation",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "snowman_body-1",
+            "directions": 4
+        },
+        {
+            "name": "snowman_body-2",
+            "directions": 4
+        },
+        {
+            "name": "snowman_body-3",
+            "directions": 4
+        },
+        {
+            "name": "snowman_body-4",
+            "directions": 4
+        }
+    ]
+}

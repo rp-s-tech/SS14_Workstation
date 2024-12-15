@@ -1,0 +1,14 @@
+- type: entity
+  noSpawn: true
+  parent: BaseBullet
+  id: BulletAntiMaterielImproved
+  name: Пуля (.70 улучшенная антиматериальная)
+  components:
+  - type: Projectile
+    damageBodyParts: true
+    damage:
+      types:
+        Piercing: 40
+        Structural: 40
+  - type: StaminaDamageOnCollide
+    damage: 80

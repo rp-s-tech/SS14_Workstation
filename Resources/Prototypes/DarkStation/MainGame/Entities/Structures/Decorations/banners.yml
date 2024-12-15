@@ -1,0 +1,19 @@
+- type: entity
+  id: SYBannerMedical
+  parent: BannerBase
+  name: знамя медицины Синдиката
+  description: Знамя, прославляющее высокотехнологичную медицину Синдиката, обладающую вагоном и маленькой тележкой способов издевательств над псами NanoTrasen.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Decorations/banner.rsi
+    state: banner_medical
+
+- type: entity
+  id: BannerDSChaosRebellion
+  parent: BannerBase
+  name: "знамя Повстанцев Хаоса"
+  description: "Освободить, Подорвать, Свергнуть"
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Decorations/banner_chaosrebellion.rsi
+    state: banner-CI

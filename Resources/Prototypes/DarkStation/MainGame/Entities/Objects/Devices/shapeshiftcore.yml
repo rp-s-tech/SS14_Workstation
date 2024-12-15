@@ -1,0 +1,22 @@
+- type: entity
+  parent: BaseItem
+  id: ShapeShiftCore
+  name: Ядро Доппельгангера
+  description: Позволяет менять свой облик. Идеально для охоты..
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Devices/shapeshiftcore.rsi
+    state: icon
+  - type: ChameleonProjector
+    whitelist:
+      components:
+      - Anchorable
+      - Item
+    blacklist:
+      components:
+      - ChameleonDisguise
+      - InsideEntityStorage
+      - MindContainer
+      - Pda
+    polymorph:
+      entity: ChameleonDisguise

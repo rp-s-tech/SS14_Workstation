@@ -1,0 +1,30 @@
+- type: entity
+  parent: AirlockCommand
+  id: AirlockSpCrimsonLilyLocked
+  name: шлюз
+  suffix: CrimsonLily, CentCom, Locked
+  components:
+  - type: AccessReader
+    access: [["CentralCommand"], ["SpCrimsonLily"]]
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Doors/Airlocks/Standard/crimsonlily.rsi
+
+- type: entity
+  parent: AirlockCommandGlass
+  id: AirlockSpCrimsonLilyGlassLocked
+  name: стеклянный шлюз
+  suffix: CrimsonLily, CentCom, Locked
+  components:
+  - type: AccessReader
+    access: [["CentralCommand"], ["SpCrimsonLily"]]
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Doors/Airlocks/Glass/crimsonlily.rsi
+
+- type: entity
+  parent: HighSecDoor
+  id: HighSecSpCrimsonLilyLocked
+  name: бронированная дверь
+  suffix: CrimsonLily, CentCom, Locked
+  components:
+  - type: AccessReader
+    access: [["CentralCommand"], ["SpCrimsonLily"]]

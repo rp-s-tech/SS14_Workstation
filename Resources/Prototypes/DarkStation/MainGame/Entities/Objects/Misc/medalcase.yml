@@ -1,0 +1,23 @@
+- type: entity
+  id: ChocolateMedalCase
+  name: Коробочка с медалями для кадетов!
+  description: Кейс с медалями.
+  parent: BaseStorageItem
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Misc/medalcase.rsi
+    state: icon
+  - type: Item
+    sprite: DarkStation/MainGame/Objects/Misc/medalcase.rsi
+    size: Normal
+  - type: Storage
+    grid:
+    - 0,0,4,1
+  - type: StorageFill
+    contents:
+    - id: ChocolateMedal
+    - id: ChocolateMedal
+    - id: ChocolateMedal
+    - id: ChocolateMedal
+    - id: ChocolateMedal
+

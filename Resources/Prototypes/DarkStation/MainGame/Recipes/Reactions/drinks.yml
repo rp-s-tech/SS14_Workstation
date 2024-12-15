@@ -1,0 +1,55 @@
+- type: reaction
+  id: Tarhun
+  reactants:
+    Desoxyephedrine:
+      amount: 1
+    SodaWater:
+      amount: 5
+    JuiceLime:
+      amount: 3
+    Sugar:
+      amount: 2
+  products:
+    Tarhun: 10
+
+- type: reaction
+  id: ShalnayaPulya
+  reactants:
+    Tequila:
+      amount: 1
+    Silver:
+      amount: 0.3
+    Product:
+       ShalnayaPulya: 1.3
+
+- type: reaction
+  id: RadostEnta
+  reactants:
+    RobustHarvest:
+      amount: 0.5
+    Moonshine:
+      amount: 1
+    Product:
+       RadostEnta: 1.5
+
+- type: reaction
+  id: MimanaMama
+  reactants:
+    Cream:
+      amount: 1
+    JuiceBanana:
+      amount: 1
+    MuteToxin:
+      amount: 0.5
+    Product:
+       MimanaMama: 2.5
+
+- type: reaction
+  id: GinSonic
+  reactants:
+    Ephedrine:
+      amount: 0.5
+    GinTonic:
+      amount: 1
+    Product:
+       GinSonic: 1.5

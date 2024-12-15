@@ -126,6 +126,9 @@
     },
     {
       "name": "syndicate"
-    }
+    },
+      {
+          "name": "icon-bullet"
+      }
   ]
 }

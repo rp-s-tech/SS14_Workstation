@@ -1,0 +1,85 @@
+- type: entity
+  name: Светогриб
+  description: Он излучает немного света и чуть чуть радиоактивен.
+  id: Glowshroom
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Specific/Hydroponics/Mushrooms/glowshroom.rsa
+    layers:
+    - state: produce
+  - type: Food
+    requiredStomachs: 1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Radium
+          Quantity: 8
+        - ReagentId: Phosphorus
+          Quantity: 8
+        - ReagentId: Nutriment
+          Quantity: 4
+  - type: Produce
+    seedId: myceliumglowshroom
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Radium
+        Quantity: 8
+      - ReagentId: Phosphorus
+        Quantity: 8
+  - type: PointLight
+    color: "#FFE4B5"
+    radius: 1.25
+    softness: 1
+    energy: 0.5
+  - type: RadiationSource
+    slope: 0.2
+    intensity: 0.5
+  - type: SpawnAfterInteract
+    prototype: Glowshroomf
+    removeOnInteract: True
+
+- type: entity
+  name: Светокеп
+  description: Он излучает немного света и немного наэлектризован.
+  id: Glowcap
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Specific/Hydroponics/Mushrooms/glowcap.rsa
+    layers:
+    - state: produce
+  - type: Food
+    requiredStomachs: 1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Radium
+          Quantity: 2
+        - ReagentId: Teslium
+          Quantity: 8
+        - ReagentId: Nutriment
+          Quantity: 4
+  - type: Produce
+    seedId: myceliumglowcap
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Radium
+        Quantity: 2
+      - ReagentId: Teslium
+        Quantity: 8
+  - type: PointLight
+    color: "#FFA07A"
+    radius: 1.5
+    softness: 100
+    energy: 0.75
+  - type: RadiationSource
+    slope: 0.08
+    intensity: 0.2
+  - type: SpawnAfterInteract
+    prototype: Glowcapf
+    removeOnInteract: True

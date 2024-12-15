@@ -1,0 +1,23 @@
+- type: entity
+  name: Перцовый баллончик
+  id: PepperSpray
+  parent: SprayBottle
+  description: Берегите свой покой с перцовым ангелом-хранителем в кармане.
+  suffix: "Filled"
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Tools/groundpepper.rsi
+    state: groundpepper
+  - type: SolutionContainerManager
+    solutions:
+      spray:
+        maxVol: 30
+        reagents:
+        - ReagentId: GroundPepper
+          Quantity: 30
+  - type: Tag
+    tags:
+    - Spray
+    - SecBeltEquip
+  - type: Item
+    sprite: DarkStation/MainGame/Objects/Tools/groundpepper.rsi

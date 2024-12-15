@@ -1,0 +1,20 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by @kotik12 for DarkStation",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "ikra_black"
+        },
+        {
+            "name": "ikra_red"
+        },
+        {
+            "name": "ikra_orange"
+        }
+    ]
+}

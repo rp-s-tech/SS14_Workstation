@@ -1,0 +1,204 @@
+- type: entity
+  name: АКСУ
+  parent: BaseWeaponRifle
+  id: WeaponRifleAkShort
+  description: An iconic weapon of war. Uses .30 rifle ammo.
+  components:
+    - type: Sprite
+      sprite: DarkStation/MainGame/Objects/Weapons/Guns/Rifles/akms.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-0
+          map: ["enum.GunVisualLayers.Mag"]
+    - type: Gun
+      fireRate: 5
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+    - type: ChamberMagazineAmmoProvider
+      soundRack:
+        path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: MagazineLightRifle
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - MagazineLightRifle
+        gun_chamber:
+          name: Chamber
+          startingItem: CartridgeLightRifle
+          priority: 1
+          whitelist:
+            tags:
+              - CartridgeLightRifle
+    - type: ContainerContainer
+      containers:
+        gun_magazine: !type:ContainerSlot
+        gun_chamber: !type:ContainerSlot
+    - type: MagazineVisuals
+      magState: mag
+      steps: 1
+      zeroVisible: true
+    - type: Appearance
+
+- type: entity
+  name: N7 "Мститель"
+  parent: BaseWeaponSubMachineGun
+  id: WeaponN7Avenger
+  description: Универсальная штурмовая винтовка отряда N7, подходящая для эффективного ведения боя на малых и средних дистанциях. Использует термозаряды.
+  components:
+  - type: ChamberMagazineAmmoProvider
+    boltClosed: null
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Guns/Rifles/n7avenger.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: DarkStation/MainGame/Objects/Weapons/Guns/Rifles/n7avenger.rsi
+  - type: Gun
+    fireRate: 8
+    selectedMode: FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+    availableModes:
+      - FullAuto
+      - SemiAuto
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: ThermalCharge
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - ThermalChargeTag
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnumAP
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
+  name: M4B1
+  parent: BaseWeaponRifle
+  id: WeaponRifleM4B4
+  description: Высококлассный штурмовой карабин, сделаный на базе проверенным временем карабина M4A1. Карабин был переделан под калибр .20, что позволяет использовать его практически на всех станциях вместо или вместе со стандартным Лектором
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Guns/Rifles/m4a1.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: DarkStation/MainGame/Objects/Weapons/Guns/Rifles/m4a1.rsi
+  - type: Gun
+    fireRate: 7
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+    - FullAuto
+    soundGunshot:
+      collection: M41AShoot
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
+  name: Карабин Delta 1
+  parent: BaseWeaponRifle
+  id: WeaponRifleXani
+  description: Новейшая экспериментальная разработка, которая только проходит испытания. На текущий момент настроена под калибр .20, но в любой момен это может быть изменено конструкторами
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Guns/Rifles/xani.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: DarkStation/MainGame/Objects/Weapons/Guns/Rifles/xani.rsi
+  - type: Gun
+    fireRate: 8
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+    - FullAuto
+    soundGunshot:
+      collection: M41AShoot
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance

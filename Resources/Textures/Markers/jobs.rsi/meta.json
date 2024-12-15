@@ -98,6 +98,9 @@
       "name": "ertmedicaleva"
     },
     {
+      "name": "ertreconeva"
+    },
+    {
       "name": "ertsecurity"
     },
     {
@@ -143,6 +146,9 @@
       "name": "paramedic"
     },
     {
+      "name": "pilot"
+    },
+    {
       "name": "passenger"
     },
     {
@@ -170,7 +176,7 @@
       "name": "scientist"
     },
     {
-      "name": "security_cadet" 
+      "name": "security_cadet"
     },
     {
       "name": "security_officer"

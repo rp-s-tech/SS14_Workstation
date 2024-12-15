@@ -1,0 +1,82 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: WW2GermanyHelmet
+  name: каска с ремнями
+  description: Каска образца "Stahlhelm". Оборудована ремешками для наиболее удобного использования частями Вермахта.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Helmets/ww2helmetger.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Helmets/ww2helmetger.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.85
+        Heat: 0.9
+      securePartTypes:
+        Head: 0.5
+
+- type: entity
+  parent: ClothingHeadBase
+  id: WW2GermanyHelmetGoggles
+  name: каска с ремнями и очками
+  description: Каска "Stahlhelm", оснащённая защитными очками для использования подразделениями панцергренадёров Вермахта.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Helmets/ww2helmet2ger.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Helmets/ww2helmet2ger.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.84
+        Heat: 0.9
+      securePartTypes:
+        Head: 0.5
+
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingMedievalHelmetBasic
+  name: Пехотный шлем
+  description: Защищает вашу голову от опасных ударов
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Helmets/shlem.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Helmets/shlem.rsi
+  - type: IngestionBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.7
+        Piercing: 0.8
+        Heat: 1.3
+      securePartTypes:
+        Head: 0.5
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHelmetMaxtac
+  name: Шлем Макс-так
+  description: Прочный и надежный шлем для тактических операций, обеспечивающий высокую степень защиты от различных видов повреждений.
+  components:
+    - type: Sprite
+      sprite: DarkStation/MainGame/Clothing/Head/Helmets/maxtac_helmet.rsi
+    - type: Clothing
+      sprite: DarkStation/MainGame/Clothing/Head/Helmets/maxtac_helmet.rsi
+    - type: IngestionBlocker
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.9
+          Slash: 0.8
+          Piercing: 0.9
+          Heat: 0.9
+        securePartTypes:
+          Head: 0.5

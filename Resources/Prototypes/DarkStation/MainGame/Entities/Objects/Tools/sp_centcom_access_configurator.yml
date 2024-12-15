@@ -1,0 +1,43 @@
+- type: entity
+  parent: AccessConfigurator
+  id: SpCentComAccessConfigurator
+  name: Конфигуратор доступов ЦентКом
+  description: Используется для изменения требований к уровню доступа к воздушным шлюзам и другим запираемым устройствам.
+  components:
+  - type: Clothing
+    sprite: DarkStation/MainGame/Objects/Tools/centcom_access_configurator.rsi
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Tools/centcom_access_configurator.rsi
+    state: icon
+  - type: AccessOverrider
+    accessLevels:
+    - Captain
+    - HeadOfPersonnel
+    - ChiefEngineer
+    - ChiefMedicalOfficer
+    - HeadOfSecurity
+    - ResearchDirector
+    - Command
+    - Security
+    - Detective
+    - Armory
+    - Brig
+    - Engineering
+    - Medical
+    - Quartermaster
+    - Salvage
+    - Cargo
+    - Research
+    - Service
+    - Maintenance
+    - External
+    - Janitor
+    - Theatre
+    - Bar
+    - Chemistry
+    - Kitchen
+    - Chapel
+    - Hydroponics
+    - Atmospherics
+    - CentralCommand
+    - SpCrimsonLily

@@ -1,0 +1,23 @@
+﻿- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadUSSRCommanderBeret
+  name: Берет главы командира СССП
+  description: Берет
+  suffix: USSR
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/USSR/commander_hat.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/USSR/commander_hat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadUSSRSolderBeret
+  name: Берет солдата СССП
+  description: Берет
+  suffix: USSR
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/USSR/solder_hat.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/USSR/solder_hat.rsi

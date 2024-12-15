@@ -1,0 +1,65 @@
+- type: seed
+  id: myceliumglowshroom
+  name: Светогриб
+  noun: seeds-noun-seeds
+  displayName: Светогриб
+  plantRsi: DarkStation/MainGame/Objects/Specific/Hydroponics/Mushrooms/glowshroom.rsa
+  packetPrototype: MyceliumGlowshroomSeeds
+  productPrototypes:
+    - Glowshroom
+  mutationPrototypes:
+    - myceliumglowcap
+  lifespan: 100
+  maturation: 30
+  production: 3
+  yield: 4
+  potency: 5
+  growthStages: 3
+  waterConsumption: 0.75
+  nutrientConsumption: 0.80
+  idealHeat: 266
+  chemicals:
+    Radium:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 10
+    Phosphorus:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 10
+    Nutriment:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 25
+
+- type: seed
+  id: myceliumglowcap
+  name: Светокеп
+  noun: seeds-noun-seeds
+  displayName: Светокеп
+  plantRsi: DarkStation/MainGame/Objects/Specific/Hydroponics/Mushrooms/glowcap.rsa
+  packetPrototype: MyceliumGlowcapSeeds
+  productPrototypes:
+    - Glowcap
+  lifespan: 150
+  maturation: 30
+  production: 3
+  yield: 4
+  potency: 7
+  growthStages: 4
+  waterConsumption: 1.2
+  nutrientConsumption: 0.9
+  idealHeat: 276
+  chemicals:
+    Radium:
+      Min: 1
+      Max: 2
+      PotencyDivisor: 50
+    Teslium:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 10
+    Nutriment:
+      Min: 1
+      Max: 5
+      PotencyDivisor: 20
