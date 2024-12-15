@@ -16,7 +16,7 @@ Our [docs site](https://docs.spacestation14.io/) has documentation on SS14s cont
 
 ## Contributing
 
-We are happy to accept contributions from anybody. Get in Discord if you want to help. We've got a [list of issues](https://github.com/space-wizards/space-station-14-content/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either!  
+We are happy to accept contributions from anybody. Get in Discord if you want to help. We've got a [list of issues](https://github.com/space-wizards/space-station-14-content/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either!
 Just make sure your changes and pull requests are in accordance with the [contribution guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
 
 We are not currently accepting translations of the game on our main repository. If you would like to translate the game into another language consider creating a fork or contributing to a fork.
@@ -29,10 +29,22 @@ We are not currently accepting translations of the game on our main repository. 
 
 [More detailed instructions on building the project.](https://docs.spacestation14.com/en/general-development/setup.html)
 
-## License
+## **Лицензионное соглашение**
 
-All code for the content repository is licensed under [MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT).
+1. **Общие положения**
+   Все ресурсы и исходный код, не добавленные авторами проекта RPS-eXtended и Dark Station через платформу GitLab, развернутую на инфраструктуре RolePlay Systems Technology, находятся под лицензией [MIT](https://opensource.org/licenses/MIT) либо под лицензией, указанной непосредственно в соответствующем ресурсе.
 
-Most assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and the copyright in the metadata file. [Example](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
+2. **Закрытые ресурсы и код**
+   Любой остальной код и ресурсы проекта (включая приватные подмодули и библиотеки) являются полностью закрытыми и не попадают под действие какой-либо открытой лицензии, даже если подобная лицензия указана в сопроводительных файлах. Эти материалы защищены и могут использоваться исключительно в рамках проекта RPSX. Копирование, распространение или использование этих ресурсов вне проекта строго запрещено, если иное не подтверждено текущим владельцем проекта.
 
-Note that some assets are licensed under the non-commercial [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) or similar non-commercial licenses and will need to be removed if you wish to use this project commercially.
+3. **Использование на серверах RPSX**
+   Исключение составляют сервера под управлением команды "RPS-eXtended" или "Dark Station", которым предоставляется право на использование закрытых ресурсов и кода проекта. Это право ограничивается деятельностью серверов RPS-eXtended или Dark Station и предоставляется без ограничения по времени.
+
+4. **Использование заимствованных ресурсов**
+   Если проект RPS-eXtended использует заимствованный код или ресурсы из открытых источников, предоставляющих право на их использование, лицензия из оригинального источника сохраняет свою силу, за исключением изменений, внесенных проектом RPS-eXtended и Dark Station. В таких случаях авторство исходного кода или ресурса остается за его первоначальным автором.
+
+5. **Лицензирование активов**
+   Большинство используемых активов (графические, аудиофайлы, текстуры и другие медиа) лицензируются под лицензией [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) или иной лицензией, указанной в метаданных файла. Некоторые активы могут быть лицензированы под [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) или аналогичными некоммерческими лицензиями. При использовании этих активов в коммерческих проектах их удаление или замена обязательны.
+
+6. **Особые условия**
+   Все исключения и дополнительные права, предоставляемые третьим сторонам, требуют подтверждения от текущего владельца проекта RPS-eXtended или основателя проекта Dark Station.
