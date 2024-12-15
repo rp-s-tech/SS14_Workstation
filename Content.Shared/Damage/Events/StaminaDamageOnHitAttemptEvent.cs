@@ -1,3 +1,5 @@
+using Content.Shared.Inventory;
+
 namespace Content.Shared.Damage.Events;
 
 /// <summary>
@@ -5,3 +7,9 @@ namespace Content.Shared.Damage.Events;
 /// </summary>
 [ByRefEvent]
 public record struct StaminaDamageOnHitAttemptEvent(bool Cancelled);
+
+[ByRefEvent]
+public record struct StaminaDamageModifyEvent(float Damage) : IInventoryRelayEvent
+{
+    SlotFlags IInventoryRelayEvent.TargetSlots => SlotFlags.OUTERCLOTHING | SlotFlags.INNERCLOTHING;
+}

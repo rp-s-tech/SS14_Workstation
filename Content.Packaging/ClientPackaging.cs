@@ -10,6 +10,10 @@ namespace Content.Packaging;
 
 public static class ClientPackaging
 {
+    private static readonly string SecretClientPath = Path.Combine("RPSX", "Content.RPSXClient", "Content.RPSXClient.csproj");
+    // private static readonly string SecretSharedPath = Path.Combine("RPSX", "Content.RPSXShared", "Content.RPSXShared.csproj");
+
+    private static readonly bool UseSecretsClient = File.Exists(SecretClientPath);
     /// <summary>
     /// Be advised this can be called from server packaging during a HybridACZ build.
     /// </summary>
@@ -34,6 +38,25 @@ public static class ClientPackaging
                     "/m"
                 }
             });
+
+            if (UseSecretsClient)
+            {
+                await ProcessHelpers.RunCheck(new ProcessStartInfo
+                {
+                    FileName = "dotnet",
+                    ArgumentList =
+                    {
+                        "build",
+                        SecretClientPath,
+                        "-c", "Release",
+                        "--nologo",
+                        "/v:m",
+                        "/t:Rebuild",
+                        "/p:FullRelease=true",
+                        "/m"
+                    }
+                });
+            }
         }
 
         logger.Info("Packaging client...");
@@ -65,11 +88,18 @@ public static class ClientPackaging
 
         var inputPass = graph.Input;
 
+        var assemblies = new List<string>{ "Content.Client", "Content.Shared", "Content.Shared.Database" };
+        if (UseSecretsClient)
+        {
+            assemblies.Add("Content.RPSXClient");
+            // assemblies.Add("Content.RPSXShared");
+        }
+
         await RobustSharedPackaging.WriteContentAssemblies(
             inputPass,
             contentDir,
             "Content.Client",
-            new[] { "Content.Client", "Content.Shared", "Content.Shared.Database" },
+            assemblies,
             cancel: cancel);
 
         await RobustClientPackaging.WriteClientResources(contentDir, pass, cancel);
