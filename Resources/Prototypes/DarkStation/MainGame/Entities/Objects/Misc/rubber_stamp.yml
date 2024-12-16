@@ -1,0 +1,133 @@
+- type: entity
+  name: Печать финансового департамента
+  parent: RubberStampBase
+  id: RubberStampFinanceDepACL
+  components:
+  - type: Stamp
+    stampedName: "Агент Багровой Лилии"
+    stampedColor: "#990000"
+    stampState: "paper_stamp-centcom"
+  - type: Sprite
+    sprite: Objects/Misc/stamps.rsi
+    state: stamp-centcom
+
+- type: entity
+  name: Печать магистрата
+  parent: RubberStampBase
+  id: RubberStampSpMagistration
+  components:
+  - type: Stamp
+    stampedName: "Магистрат"
+    stampedColor: "#990000"
+    stampState: "paper_stamp-centcom"
+  - type: Sprite
+    sprite: Objects/Misc/stamps.rsi
+    state: stamp-centcom
+
+- type: entity
+  name: Печать инспектора ФД
+  parent: RubberStampBase
+  id: RubberStampSpIFD
+  components:
+  - type: Stamp
+    stampedName: "Инспектор ФД"
+    stampedColor: "#a23e3e"
+    stampState: "paper_stamp-centcom"
+  - type: Sprite
+    sprite: Objects/Misc/stamps.rsi
+    state: stamp-qm
+
+- type: entity
+  name: Печать представителя ЦК
+  parent: RubberStampBase
+  id: RubberStampSpICC
+  components:
+  - type: Stamp
+    stampedName: "Представителя ЦК"
+    stampedColor: "#006600"
+    stampState: "paper_stamp-centcom"
+  - type: Sprite
+    sprite: Objects/Misc/stamps.rsi
+    state: stamp-centcom
+
+- type: entity
+  name: Печать представителя НТ
+  parent: RubberStampBase
+  id: RubberStampSpNTR
+  components:
+  - type: Stamp
+    stampedName: "Представитель НТ"
+    stampedColor: "#3681bb"
+    stampState: "paper_stamp-centcom"
+  - type: Sprite
+    sprite: Objects/Misc/stamps.rsi
+    state: stamp-cap
+
+- type: entity
+  name: Печать НШЦК
+  parent: RubberStampMime
+  id: RubberStampPOCC
+  components:
+    - type: Stamp
+      stampedName: Начальник Штаба ЦК
+      stampState: "paper_stamp-pocc"
+      stampedColor: "#000000"
+    - type: Sprite
+      sprite: Objects/Misc/stamps.rsi
+      state: stamp-pocc
+
+- type: entity
+  name: Печать Админа
+  parent: RubberStampBase
+  id: RubberStampAdmin
+  suffix: Admeme
+  components:
+  - type: Stamp
+    stampedName: "Админ Сервера Darkstation"
+    stampedColor: "#990000"
+    stampState: "paper_stamp-hos"
+  - type: Sprite
+    sprite: Objects/Misc/stamps.rsi
+    state: stamp-hos
+
+- type: entity
+  name: Печать "Вагнер и Партнёры"
+  parent: RubberStampBase
+  id: RubberStampWaPDark
+  suffix: WaP
+  components:
+  - type: Stamp
+    stampedName: Вагнер и Партнёры
+    stampedColor: "#233D57"
+    stampState: "paper_stamp-lawyer"
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Misc/stamps.rsi
+    state: stamp-WaP-dark
+
+- type: entity
+  name: Печать "Вагнер и Партнёры"
+  parent: RubberStampBase
+  id: RubberStampWaPPink
+  suffix: WaP
+  components:
+  - type: Stamp
+    stampedName: Вагнер и Партнёры
+    stampedColor: "#233D57"
+    stampState: "paper_stamp-lawyer"
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Misc/stamps.rsi
+    state: stamp-WaP-pink
+
+- type: entity
+  name: Печать "Вагнер и Партнёры"
+  parent: RubberStampBase
+  id: RubberStampWaPBrown
+  suffix: WaP
+  components:
+  - type: Stamp
+    stampedName: Вагнер и Партнёры
+    stampedColor: "#233D57"
+    stampState: "paper_stamp-lawyer"
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Misc/stamps.rsi
+    state: stamp-WaP-brown

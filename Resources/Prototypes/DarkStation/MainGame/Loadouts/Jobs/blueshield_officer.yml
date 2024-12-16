@@ -1,0 +1,77 @@
+﻿# Jumpsuit
+- type: loadout
+  id: BlueShieldOfficerJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBlueShield
+
+- type: loadout
+  id: BlueShieldOfficerJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtBlueShield
+
+# Back
+- type: loadout
+  id: BlueShieldOfficerBackpack
+  equipment:
+    back: ClothingBackpackBlueShield
+
+- type: loadout
+  id: BlueShieldOfficerBackpackDuffel
+  equipment:
+    back: ClothingBackpackDuffelBlueShield
+
+- type: loadout
+  id: BlueShieldOfficerBackpackSatchel
+  equipment:
+    back: ClothingBackpackSatchelBlueShield
+
+# Head
+- type: loadout
+  id: BlueShieldOfficerHead
+  equipment:
+    head: ClothingHeadHatBeretBlueShield
+
+- type: loadout
+  id: BlueShieldOfficerHeadHatCap
+  equipment:
+    head: ClothingHeadHatCapBlueShield
+
+# Neck
+- type: loadout
+  id: BlueShieldOfficerMantle
+  equipment:
+    neck: ClothingNeckMantleBlueShield
+
+# Outer Clothing
+- type: loadout
+  id: BlueShieldOfficerOuterCoat
+  equipment:
+    outerClothing: ClothingOuterCoatBlueShield
+
+- type: loadout
+  id: BlueShieldOfficerOuterArmorVest
+  equipment:
+    outerClothing: ClothingOuterArmorBlueShield
+
+- type: loadout
+  id: BlueShieldOfficerOuterHardsuit
+  equipment:
+    outerClothing: ClothingOuterHardsuitBlueShield
+
+# Shoes
+- type: loadout
+  id: BlueShieldOfficerBootsJack
+  equipment:
+    shoes: ClothingShoesBootsJack
+
+# Belt
+- type: loadout
+  id: BlueShieldOfficerSecurityBelt
+  equipment:
+    belt: ClothingBeltSecurityFilled
+
+# Gloves
+- type: loadout
+  id: BlueShieldOfficerGloves
+  equipment:
+    gloves: ClothingHandsBlueShieldOfficerGlovesCombat

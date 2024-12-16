@@ -61,4 +61,6 @@
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
+            #specials
+            IAA: [ 1, 1]
 

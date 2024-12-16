@@ -1,0 +1,363 @@
+﻿# Senior Officer
+- type: loadoutGroup
+  id: SeniorOfficerJumpsuit
+  name: loadout-group-senior-officer-jumpsuit
+  loadouts:
+    - SeniorOfficerJumpsuit
+    - SeniorOfficerJumpskirt
+
+- type: loadoutGroup
+  id: SeniorOfficerHead
+  name: loadout-group-senior-officer-head
+  loadouts:
+    - SeniorOfficerHead
+    - SecurityHelmet
+    - SecurityBeret
+    - SecurityHat
+
+- type: loadoutGroup
+  id: SeniorOfficerNeck
+  name: loadout-group-senior-officer-neck
+  loadouts:
+    - SeniorOfficerNeck
+
+- type: loadoutGroup
+  id: SeniorOfficerOuterClothing
+  name: loadout-group-senior-officer-outerclothing
+  loadouts:
+    - SeniorOfficerCoat
+    - ArmorVest
+    - ArmorVestSlim
+    - SecurityOfficerWintercoat
+
+# BrigMedic
+- type: loadoutGroup
+  id: SecurityBrigMedicJumpsuit
+  name: loadout-group-brigmedic-jumpsuit
+  loadouts:
+    - SecurityBrigMedicJumpsuit
+    - SecurityBrigMedicJumpskirt
+
+- type: loadoutGroup
+  id: SecurityBrigMedicBackpack
+  name: loadout-group-brigmedic-backpack
+  loadouts:
+    - SecurityBrigMedicBackpack
+    - SecurityBrigMedicBackpackDuffel
+    - SecurityBrigMedicBackpackSatchel
+
+- type: loadoutGroup
+  id: SecurityBrigMedicOuterClothing
+  name: loadout-group-brigmedic-outerclothing
+  loadouts:
+    - SecurityBrigMedicCoatAMG
+    - SecurityBrigMedicCoat
+    - SecurityBrigMedicHardsuitApotecary
+
+# - type: loadoutGroup
+#   id: SecurityBrigMedicShoes
+#   name: loadout-group-brigmedic-shoes
+#   loadouts:
+#     - SecurityBrigMedicShoesRed
+
+# - type: loadoutGroup
+#   id: SecurityBrigMedicGloves
+#   name: loadout-group-brigmedic-gloves
+#   loadouts:
+#     - SecurityBrigMedicGloves
+
+# - type: loadoutGroup
+#   id: SecurityBrigMedicEyes
+#   name: loadout-group-brigmedic-eyes
+#   loadouts:
+#     - SecurityBrigMedicEyesHudMedical
+
+# - type: loadoutGroup
+#   id: SecurityBrigMedicHead
+#   name: loadout-group-brigmedic-head
+#   loadouts:
+#     - SecurityBrigMedicHeadHatBeret
+
+# - type: loadoutGroup
+#   id: SecurityBrigMedicMask
+#   name: loadout-group-brigmedic-mask
+#   loadouts:
+#     - SecurityBrigMedicMaskBreathMedicalSecurity
+
+# - type: loadoutGroup
+#   id: SecurityBrigMedicBelt
+#   name: loadout-group-brigmedic-belt
+#   loadouts:
+#     - SecurityBrigMedicBeltMedicalFilled
+
+# BlueShield Officer
+- type: loadoutGroup
+  id: BlueShieldOfficerJumpsuit
+  name: loadout-group-blueshield-jumpsuit
+  loadouts:
+    - BlueShieldOfficerJumpsuit
+    - BlueShieldOfficerJumpskirt
+
+- type: loadoutGroup
+  id: BlueShieldOfficerBackpack
+  name: loadout-group-blueshield-backpack
+  loadouts:
+    - BlueShieldOfficerBackpack
+    - BlueShieldOfficerBackpackDuffel
+    - BlueShieldOfficerBackpackSatchel
+
+- type: loadoutGroup
+  id: BlueShieldOfficerHead
+  name: loadout-group-blueshield-head
+  loadouts:
+    - BlueShieldOfficerHead
+    - BlueShieldOfficerHeadHatCap
+
+- type: loadoutGroup
+  id: BlueShieldOfficerNeck
+  name: loadout-group-blueshield-neck
+  loadouts:
+    - BlueShieldOfficerMantle
+
+- type: loadoutGroup
+  id: BlueShieldOfficerOuterclothing
+  name: loadout-group-blueshield-outerclothing
+  minLimit: 0
+  loadouts:
+    - BlueShieldOfficerOuterCoat
+    - BlueShieldOfficerOuterArmorVest
+    - BlueShieldOfficerOuterHardsuit
+
+- type: loadoutGroup
+  id: BlueShieldOfficerShoes
+  name: loadout-group-blueshield-shoes
+  loadouts:
+    - BlueShieldOfficerBootsJack
+
+- type: loadoutGroup
+  id: BlueShieldOfficerBelt
+  name: loadout-group-blueshield-belt
+  loadouts:
+    - BlueShieldOfficerSecurityBelt
+
+- type: loadoutGroup
+  id: BlueShieldOfficerGloves
+  name: loadout-group-blueshield-gloves
+  minLimit: 0
+  loadouts:
+    - BlueShieldOfficerGloves
+
+# Inspector FD
+- type: loadoutGroup
+  id: SpIFDJumpsuit
+  name: loadout-group-default-jumpsuit
+  loadouts:
+    - SpIFDJumpsuit
+    - SpIFDJumpskirt
+
+- type: loadoutGroup
+  id: SpIFDBackpack
+  name: loadout-group-default-backpack
+  loadouts:
+    - SpIFDBackpackSatchel
+
+- type: loadoutGroup
+  id: SpIFDHead
+  name: loadout-group-default-head
+  loadouts:
+    - SpIFDHeadCap
+    - SpIFDHeadCapOfficial
+
+- type: loadoutGroup
+  id: SpIFDNeck
+  name: loadout-group-default-neck
+  loadouts:
+    - SpIFDNeck
+
+- type: loadoutGroup
+  id: SpIFDOuterClothing
+  name: loadout-group-default-outerclothing
+  minLimit: 0
+  loadouts:
+    - SpIFDOuterCoat
+    - SpIFDOuterCoatOfficial
+    - SpIFDOuterHardSuit
+
+- type: loadoutGroup
+  id: SpIFDShoes
+  name: loadout-group-default-shoes
+  loadouts:
+    - SpIFDShoesCombat
+
+- type: loadoutGroup
+  id: SpIFDGloves
+  name: loadout-group-default-gloves
+  minLimit: 0
+  loadouts:
+    - SpIFDGloves
+
+# Logistic
+- type: loadoutGroup
+  id: CargoLogisticianJumpsuit
+  name: loadout-group-default-jumpsuit
+  loadouts:
+    - CargoLogisticianJumpsuit
+    - CargoLogisticianJumpskirt
+
+- type: loadoutGroup
+  id: CargoLogisticianHead
+  name: loadout-group-default-head
+  loadouts:
+    - CargoLogisticianHead
+
+- type: loadoutGroup
+  id: CargoLogisticianNeck
+  name: loadout-group-default-neck
+  minLimit: 0
+  loadouts:
+    - CargoLogisticianNeck
+
+# NTR
+- type: loadoutGroup
+  id: SpNTRJumpsuit
+  name: loadout-group-default-jumpsuit
+  loadouts:
+    - SpNTRJumpsuit
+
+- type: loadoutGroup
+  id: SpNTROuterClothing
+  name: loadout-group-default-outerclothing
+  minLimit: 0
+  loadouts:
+    - SpNTRCoat
+
+- type: loadoutGroup
+  id: SpNTRHead
+  name: loadout-group-default-head
+  loadouts:
+    - SpNTRHead
+
+- type: loadoutGroup
+  id: SpNTRNeck
+  name: loadout-group-default-neck
+  minLimit: 0
+  loadouts:
+    - SpNTRNeck
+
+- type: loadoutGroup
+  id: SpNTRBack
+  name: loadout-group-default-backpack
+  loadouts:
+    - SpNTRBackpack
+    - SpNTRBackpackDuffel
+    - SpNTRBackpackSatchel
+
+- type: loadoutGroup
+  id: SpNTRBoots
+  name: loadout-group-default-shoes
+  loadouts:
+    - SpNTRBootsCombat
+
+# SecurityPilot
+- type: loadoutGroup
+  id: SecurityPilotJumpsuit
+  name: loadout-group-default-jumpsuit
+  loadouts:
+    - SecurityPilotJumpsuit
+    - SecurityPilotJumpskirt
+
+- type: loadoutGroup
+  id: SecurityPilotHead
+  name: loadout-group-default-head
+  loadouts:
+    - SecurityPilotHead
+
+- type: loadoutGroup
+  id: SecurityPilotOuterClothing
+  name: loadout-group-default-outerclothing
+  loadouts:
+    - SecurityPilotOuterClothing
+    - ArmorVest
+    - ArmorVestSlim
+    - SecurityOfficerWintercoat
+
+# ACL
+- type: loadoutGroup
+  id: ACLJumpsuit
+  name: loadout-group-default-jumpsuit
+  loadouts:
+    - ACLJumpsuit
+
+- type: loadoutGroup
+  id: ACLHead
+  name: loadout-group-default-head
+  loadouts:
+    - ACLBeret
+
+- type: loadoutGroup
+  id: ACLOuterClothing
+  name: loadout-group-default-outerclothing
+  loadouts:
+    - ACLHardSuit
+    - ArmorVest
+    - ArmorVestSlim
+
+- type: loadoutGroup
+  id: ACLGlasses
+  name: loadout-group-default-glasses
+  loadouts:
+    - ACLGlasses
+
+- type: loadoutGroup
+  id: ACLNeck
+  name: loadout-group-default-neck
+  loadouts:
+    - ACLCloak
+
+- type: loadoutGroup
+  id: ACLGloves
+  name: loadout-group-default-gloves
+  loadouts:
+    - ACLGloves
+
+- type: loadoutGroup
+  id: ACLBack
+  name: loadout-group-default-backpack
+  loadouts:
+    - ACLBackpack
+
+- type: loadoutGroup
+  id: ACLShoes
+  name: loadout-group-default-shoes
+  loadouts:
+    - ACLShoes
+
+# CCO
+- type: loadoutGroup
+  id: CCOJumpsuit
+  name: loadout-group-default-jumpsuit
+  loadouts:
+    - CCOJumpsuit
+    - CCOJumpsuitOfficer
+    - CCOJumpsuitFormal
+
+- type: loadoutGroup
+  id: CCOHead
+  name: loadout-group-default-head
+  loadouts:
+    - CCOHeadHat
+    - CCOHeadCap
+
+- type: loadoutGroup
+  id: CCOOuterClothing
+  name: loadout-group-default-outerclothing
+  loadouts:
+    - CCOOuterSecurityArmor
+    - CCOOuterCoat
+    - CCOOuterCoatWinter
+
+- type: loadoutGroup
+  id: CCOShoes
+  name: loadout-group-default-shoes
+  loadouts:
+    - CCOShoesCombat

@@ -1,0 +1,17 @@
+- type: stationGoal
+  id: StationGoalRipple
+  graph:
+    - name: Goal
+      steps:
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-will-send-in-few-minutes
+          delay: 60
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-ripple
+          delay: 120
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-ripple

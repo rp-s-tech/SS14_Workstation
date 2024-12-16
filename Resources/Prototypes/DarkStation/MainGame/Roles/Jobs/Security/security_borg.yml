@@ -1,0 +1,81 @@
+﻿- type: job
+  id: SecurityBorg
+  name: СБ-Борг
+  description: Помогите отделу СБ в поимке преступников.
+  playTimeTracker: JobSecurityBorg
+  requirements:
+  - !type:RoleTimeRequirement
+    role: JobSecurityOfficer
+    time: 36000 #10 hrs
+  supervisors: Главе службы безопасности
+  icon: "JobIconSecurityBorg"
+  joinNotifyCrew: true
+  canBeAntag: false
+  chatHighlight: SecurityChatHighlight
+  jobEntity: MobSecurityBorg
+
+#СБ Борг
+- type: entity
+  name: СБ-Борг 001
+  id: MobSecurityBorg
+  parent: BaseBorgChassisNT
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Mobs/Synthetic/security_borg.rsi
+    drawdepth: Mobs
+    noRot: true
+    layers:
+    - state: security
+    - state: security_e_r
+      map: [ "enum.BorgVisualLayers.Light" ]
+      shader: unshaded
+      visible: false
+    - state: security_l
+      shader: unshaded
+      map: [ "light" ]
+      visible: false
+  - type: ContainerFill
+    containers:
+      borg_brain:
+      - MMIFilled
+      borg_module:
+      - BorgModuleTool
+      - BorgModuleGPS
+      - BorgModuleStun
+      - BorgModuleSecurityWeapon
+  - type: BorgChassis
+    maxModules: 5
+    moduleWhitelist:
+      tags:
+      - BorgModuleGeneric
+      - BorgModuleSecurity
+    hasMindState: security_e
+    noMindState: security_e_r
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellHyper
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Security
+    - Common
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Security
+    - Common
+    - Binary
+  - type: BorgTransponder
+    sprite:
+      sprite: DarkStation/MainGame/Mobs/Synthetic/security_borg.rsi
+      state: security
+    name: охранный борг
+  - type: SiliconLawProvider
+    laws: SecurityBorg
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: Construction
+    node: mining

@@ -1,0 +1,46 @@
+- type: loadout
+  id: CCOJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficial
+
+- type: loadout
+  id: CCOJumpsuitOfficer
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficer
+
+- type: loadout
+  id: CCOJumpsuitFormal
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomFormal
+
+#Head
+- type: loadout
+  id: CCOHeadHat
+  equipment:
+    head: ClothingHeadHatCentcom
+
+- type: loadout
+  id: CCOHeadCap
+  equipment:
+    head: ClothingHeadHatCentcomcap
+
+# Outer
+- type: loadout
+  id: CCOOuterSecurityArmor
+  equipment:
+    outerClothing: ClothingOuterArmorSecurity
+
+- type: loadout
+  id: CCOOuterCoat
+  equipment:
+    outerClothing: ClothingOuterCoatCentComme
+
+- type: loadout
+  id: CCOOuterCoatWinter
+  equipment:
+    outerClothing: ClothingOuterWinterCentcom
+
+- type: loadout
+  id: CCOShoesCombat
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled

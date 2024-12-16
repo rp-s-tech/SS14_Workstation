@@ -1,0 +1,62 @@
+﻿- type: entity
+  id: BaseBorgModuleSecurity
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - BorgModuleSecurity
+
+#Stun Module
+- type: entity
+  id: BorgModuleStun
+  parent: BaseBorgModuleSecurity
+  name: "Модуль нелетального снаряжения"
+  noSpawn: true
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - state: icon-grappling-gun
+  - type: ItemBorgModule
+    items:
+    - StunbatonBorg
+    - WeaponDisablerBorg
+
+- type: entity
+  id: StunbatonBorg
+  parent: Stunbaton
+  components:
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 20
+
+- type: entity
+  id: WeaponDisablerBorg
+  parent: WeaponDisabler
+  components:
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 20
+
+#Weapon module
+- type: entity
+  id: BorgModuleSecurityWeapon
+  parent: BaseBorgModuleSecurity
+  name: "Оружейный модуль"
+  components:
+  - type: Sprite
+    layers:
+    - state: security
+    - state: icon-bullet
+  - type: ItemBorgModule
+    items:
+    - WeaponAdvancedLaser
+  # - type: AlertLevelBorgModule
+  #   alertLevels:
+  #   - red
+  #   - gamma
+  #   - delta
+  #   - epsilon
+  #   - crimson
+  #   - brown

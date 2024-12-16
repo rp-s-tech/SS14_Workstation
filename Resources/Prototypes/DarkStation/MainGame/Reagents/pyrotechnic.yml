@@ -1,0 +1,17 @@
+- type: reagent
+  id: Teslium
+  name: Теслий
+  group: Pyrotechnic
+  desc: Нестабильная, электрически заряженная металлическая суспензия.
+  physicalDesc: reagent-physical-desc-metallic
+  flavor: metallic
+  color: "#696969"
+  metabolisms:
+    Poison:
+      metabolismRate: 0.2
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Shock: 0.25
+  pricePerUnit: 1

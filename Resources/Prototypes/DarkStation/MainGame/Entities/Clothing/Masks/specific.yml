@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingMaskBase
+  id: Hokkeymask
+  name: Хоккейная маска
+  description: Веет ужасом.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Mask/Specific/hokkeymask.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Mask/Specific/hokkeymask.rsi
+  - type: BreathMask
+  - type: IdentityBlocker
+  - type: VoiceMask
+    default: ClothingMaskGas

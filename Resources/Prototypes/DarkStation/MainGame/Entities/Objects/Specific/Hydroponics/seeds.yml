@@ -1,0 +1,29 @@
+﻿- type: entity
+  parent: SeedBase
+  name: пакет семян чайного дерева
+  id: TeahydroSeeds
+  components:
+  - type: Seed
+    seedId: teahydro
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/tea.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пакет семян блюспейс помидора
+  id: BlueSpaceTomatoSeeds
+  components:
+  - type: Seed
+    seedId: bstomato
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/bluespace_tomato.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пакет семян мыльного куста
+  id: SoapTreeSeeds
+  components:
+  - type: Seed
+    seedId: soaptree
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/soap_tree.rsi

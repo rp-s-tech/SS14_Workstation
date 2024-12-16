@@ -1,0 +1,105 @@
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetItemCargo
+  suffix: Cargo
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Tiles/tile.rsi
+    state: carpet-cargo
+  - type: Item
+    sprite: DarkStation/MainGame/Objects/Tiles/tile.rsi
+    heldPrefix: carpet-cargo
+  - type: Stack
+    stackType: FloorCarpetCargo
+  - type: Tag
+    tags:
+    - CarpetCargo
+  - type: SpawnAfterInteract
+    prototype: CarpetCargo
+    doAfter: 0.5
+    removeOnInteract: true
+
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetItemEngineering
+  suffix: Engineering
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Tiles/tile.rsi
+    state: carpet-eng
+  - type: Item
+    sprite: DarkStation/MainGame/Objects/Tiles/tile.rsi
+    heldPrefix: carpet-eng
+  - type: Stack
+    stackType: FloorCarpetEngineering
+  - type: Tag
+    tags:
+    - CarpetEngineering
+  - type: SpawnAfterInteract
+    prototype: CarpetEngineering
+    doAfter: 0.5
+    removeOnInteract: true
+
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetItemMedical
+  suffix: Medical
+  components:
+  - type: Sprite
+    state: carpet-med
+    sprite: DarkStation/MainGame/Objects/Tiles/tile.rsi
+  - type: Item
+    sprite: DarkStation/MainGame/Objects/Tiles/tile.rsi
+    heldPrefix: carpet-med
+  - type: Stack
+    stackType: FloorCarpetMedical
+  - type: Tag
+    tags:
+    - CarpetMedical
+  - type: SpawnAfterInteract
+    prototype: CarpetMedical
+    doAfter: 0.5
+    removeOnInteract: true
+
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetItemRND
+  suffix: RND
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Tiles/tile.rsi
+    state: carpet-rnd
+  - type: Item
+    sprite: DarkStation/MainGame/Objects/Tiles/tile.rsi
+    heldPrefix: carpet-rnd
+  - type: Stack
+    stackType: FloorCarpetRND
+  - type: Tag
+    tags:
+    - CarpetRND
+  - type: SpawnAfterInteract
+    prototype: CarpetRND
+    doAfter: 0.5
+    removeOnInteract: true
+
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetItemSecurity
+  suffix: Security
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Tiles/tile.rsi
+    state: carpet-sec
+  - type: Item
+    sprite: DarkStation/MainGame/Objects/Tiles/tile.rsi
+    heldPrefix: carpet-sec
+  - type: Stack
+    stackType: FloorCarpetSecurity
+  - type: Tag
+    tags:
+    - CarpetSecurity
+  - type: SpawnAfterInteract
+    prototype: CarpetSecurity
+    doAfter: 0.5
+    removeOnInteract: true
+

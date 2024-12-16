@@ -884,6 +884,23 @@
   itemDrop: FloorTileItemSteel #This should probably be made null when it becomes possible to make it such, in SS13 prying destroyed tiles wouldn't give you anything.
   heatCapacity: 10000
 
+- type: tile
+  id: FloorSteelBurnt
+  name: tiles-steel-floor
+  sprite: /Textures/Tiles/steel_burnt.png
+  variants: 2
+  placementVariants:
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: FloorTileItemSteel #Same case as FloorSteelDamaged, make it null when possible
+  heatCapacity: 10000
+
+
 # Concrete
 - type: tile
   id: FloorConcrete
@@ -1445,6 +1462,12 @@
   id: FloorGrass
   name: tiles-planet-grass-floor
   sprite: /Textures/Tiles/grass.png
+  variants: 4 #Corvax
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
   baseTurf: FloorDirt
   isSubfloor: true
   footstepSounds:
@@ -1457,6 +1480,12 @@
   id: FloorGrassJungle
   name: tiles-jungle-grass-floor
   sprite: /Textures/Tiles/grassjungle.png
+  variants: 4 #Corvax
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
   baseTurf: FloorDirt
   isSubfloor: true
   footstepSounds:
@@ -1877,10 +1906,18 @@
   id: FloorMowedAstroGrass
   name: tiles-mowed-astro-grass
   parent: FloorGrass
+  sprite: /Textures/Corvax/Tiles/mowed_grass.png #Corvax
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Cutting ]
   itemDrop: FloorTileItemMowedAstroGrass
+  weather: false # Corvax
 
 - type: tile
   id: FloorJungleAstroGrass
@@ -1890,6 +1927,7 @@
   isSubfloor: false
   deconstructTools: [ Cutting ]
   itemDrop: FloorTileItemJungleAstroGrass
+  weather: false # Corvax
 
 # Ice
 - type: tile
@@ -1914,6 +1952,7 @@
   isSubfloor: false
   deconstructTools: [ Prying ]
   itemDrop: FloorTileItemAstroSnow
+  weather: false # Corvax
 
 - type: tile
   id: FloorWoodLarge

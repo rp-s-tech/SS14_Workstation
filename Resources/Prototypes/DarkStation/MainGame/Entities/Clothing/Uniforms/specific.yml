@@ -1,0 +1,41 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: WW2GermanyGrenadierUniform
+  name: гренадёрское снаряжение
+  description: Плотная куртка и полевые брюки. Тёмно-зелёные нашивки говорят о том, что эта форма принадлежит отделению мотопехоты.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Specific/grenadier.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Specific/grenadier.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.90
+      securePartTypes:
+        Leg: 0.85
+        Arm: 0.85
+
+- type: entity
+  parent: ClothingUniformBase
+  id: WW2GermanySoldierUniform
+  name: пехотное снаряжение
+  description: Типовая пехотная экипировка пехотных подразделений Вермахта.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Specific/schutze.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Specific/schutze.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: WW2GermanyGeneralUniform
+  name: генеральская полевая форма
+  description: Судя по нашивкам, данный вариант формы принадлежит генерал-фельдмаршалу Вермахта.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Specific/general.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Specific/general.rsi

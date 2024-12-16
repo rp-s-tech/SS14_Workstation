@@ -1,0 +1,12 @@
+- type: polymorph
+  id: BeerDwarfPolymorph
+  configuration:
+    entity: MobDwarf
+    forced: true
+    transferName: true
+    transferHumanoidAppearance: true
+    inventory: Transfer
+    allowRepeatedMorphs: true
+    revertOnDeath: true
+    revertOnCrit: true
+    duration: 15

@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "license": "Собственная лицензия. Полный запрет на копирование и использование вне проекта Dark Station без одобрения текущего владельца проекта",
+  "copyright": "M1and1B",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "full"
+    },
+    {
+      "name": "state_0",
+      "directions": 4
+    },
+    {
+      "name": "state_1",
+      "directions": 4
+    },
+    {
+      "name": "state_2",
+      "directions": 4
+    },
+    {
+      "name": "state_3",
+      "directions": 4
+    },
+    {
+      "name": "state_4",
+      "directions": 4
+    },
+    {
+      "name": "state_5",
+      "directions": 4
+    },
+    {
+      "name": "state_6",
+      "directions": 4
+    },
+    {
+      "name": "state_7",
+      "directions": 4
+    }
+  ]
+}

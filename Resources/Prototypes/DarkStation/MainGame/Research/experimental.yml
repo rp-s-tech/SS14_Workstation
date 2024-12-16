@@ -1,0 +1,13 @@
+- type: technology
+  id: CloningTechnology
+  name: Технологии клонирования
+  icon:
+    sprite: Objects/Misc/module.rsi
+    state: cpu_medical
+  discipline: Experimental
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - CloningPodMachineCircuitboard
+  - CloningConsoleComputerCircuitboard
+  - MedicalScannerMachineCircuitboard

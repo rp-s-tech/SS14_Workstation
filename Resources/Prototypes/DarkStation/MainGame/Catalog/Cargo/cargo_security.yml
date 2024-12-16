@@ -1,0 +1,19 @@
+- type: cargoProduct
+  id: CrateSaltShells
+  icon:
+    sprite: DarkStation/MainGame/Objects/Weapons/Guns/Ammunition/Casings/salt_ammo.rsi
+    state: salt
+  product: CrateSaltShellsFilled
+  cost: 500
+  category: Security
+  group: market
+
+- type: cargoProduct
+  id: CratePepperSpray
+  icon:
+    sprite: DarkStation/MainGame/Objects/Tools/groundpepper.rsi
+    state: groundpepper
+  product: CratePepperSprayFilled
+  cost: 450
+  category: Security
+  group: market

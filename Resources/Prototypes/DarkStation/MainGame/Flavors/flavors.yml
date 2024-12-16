@@ -1,0 +1,19 @@
+- type: flavor
+  id: crunchychaos
+  flavorType: Complex
+  description: flavor-complex-crunchychaos
+
+- type: flavor
+  id: purplefuzzblast
+  flavorType: Complex
+  description: flavor-complex-purplefuzzblast
+
+- type: flavor
+  id: deepdrifter
+  flavorType: Complex
+  description: flavor-complex-deepdrifter
+
+- type: flavor
+  id: baltika9
+  flavorType: Complex
+  description: flavor-complex-baltika9

@@ -1,0 +1,89 @@
+- type: entity
+  id: AirlockTaipanAtmos
+  parent: AirlockGlass
+  suffix: Тайпан, Атмос
+  components:
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Doors/Airlocks/Glass/atmos.rsi
+
+- type: entity
+  id: AirlockTaipanCargo
+  parent: AirlockGlass
+  suffix: Тайпан, Карго
+  components:
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Doors/Airlocks/Glass/cargo.rsi
+
+- type: entity
+  id: AirlockTaipanComm
+  parent: AirlockGlass
+  suffix: Тайпан, Командование
+  components:
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Doors/Airlocks/Glass/comm.rsi
+
+- type: entity
+  id: AirlockTaipanEng
+  parent: AirlockGlass
+  suffix: Тайпан, Инженерный
+  components:
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Doors/Airlocks/Glass/eng.rsi
+
+- type: entity
+  id: AirlockTaipanMaint
+  parent: AirlockGlass
+  suffix: Тайпан, Техтоннели
+  components:
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Doors/Airlocks/Glass/maint.rsi
+
+- type: entity
+  id: AirlockTaipanMed
+  parent: AirlockGlass
+  suffix: Тайпан, Медицинский
+  components:
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Doors/Airlocks/Glass/med.rsi
+
+- type: entity
+  id: AirlockTaipanRND
+  parent: AirlockGlass
+  suffix: Тайпан, Научный
+  components:
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Doors/Airlocks/Glass/rnd.rsi
+
+- type: entity
+  id: AirlockTaipanService
+  parent: AirlockGlass
+  suffix: Тайпан, Сервис
+  components:
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Doors/Airlocks/Glass/service.rsi
+
+- type: entity
+  id: AirlockTaipanBase
+  parent: AirlockGlass
+  suffix: Тайпан, коридоры или СБ
+  components:
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Doors/Airlocks/Glass/base.rsi

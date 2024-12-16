@@ -1,0 +1,26 @@
+- type: entity
+  name: чёрствый багет
+  parent: BaseItem
+  id: Stunbaguette
+  description: Этот багет настолько твёрдый, что им можно ударить человека! Кто-то ещё хочет пошутить про лягушек и белый флаг?
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Melee/stunbaguette.rsi
+    state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 3
+    bluntStaminaDamageFactor: 2.0
+    angle: 60
+    animation: WeaponArcSlash
+  - type: StaminaDamageOnHit
+    damage: 35
+    sound: /Audio/Weapons/soup.ogg
+  - type: Item
+    size: Small
+  - type: DisarmMalus
+    malus: 0.225
+  - type: StaticPrice
+    price: 666
+  - type: Appearance
