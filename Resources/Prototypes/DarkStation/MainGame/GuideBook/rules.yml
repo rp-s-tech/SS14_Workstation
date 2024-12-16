@@ -1,140 +1,140 @@
 - type: guideEntry
-  id: DarkStationRuleSet
+  id: RPSXRuleSet
   name: "Правила сервера"
   priority: 0
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/DarkStationServerRules.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/RPSXServerRules.xml"
 
 - type: guideEntry
-  id: DarkStationRule0
+  id: RPSXRule0
   name: Правило 0
   priority: 1
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule0.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule0.xml"
 
 - type: guideEntry
-  id: DarkStationRule1
+  id: RPSXRule1
   name: Правило 1
   priority: 2
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule1.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule1.xml"
 
 - type: guideEntry
-  id: DarkStationRule2
+  id: RPSXRule2
   name: Правило 2
   priority: 3
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule2.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule2.xml"
 
 - type: guideEntry
-  id: DarkStationRule3
+  id: RPSXRule3
   name: Правило 3
   priority: 4
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule3.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3.xml"
 
 - type: guideEntry
-  id: DarkStationRule31
+  id: RPSXRule31
   name: Правило 3.1
   priority: 5
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule3_1.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_1.xml"
 
 - type: guideEntry
-  id: DarkStationRule32
+  id: RPSXRule32
   name: Правило 3.2
   priority: 6
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule3_2.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_2.xml"
 
 - type: guideEntry
-  id: DarkStationRule33
+  id: RPSXRule33
   name: Правило 3.3
   priority: 7
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule3_3.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_3.xml"
 
 - type: guideEntry
-  id: DarkStationRule34
+  id: RPSXRule34
   name: Правило 3.4
   priority: 8
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule3_4.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_4.xml"
 
 - type: guideEntry
-  id: DarkStationRule35
+  id: RPSXRule35
   name: Правило 3.5
   priority: 9
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule3_5.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_5.xml"
 
 - type: guideEntry
-  id: DarkStationRule36
+  id: RPSXRule36
   name: Правило 3.6
   priority: 10
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule3_6.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_6.xml"
 
 - type: guideEntry
-  id: DarkStationRule37
+  id: RPSXRule37
   name: Правило 3.7
   priority: 11
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule3_7.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_7.xml"
 
 - type: guideEntry
-  id: DarkStationRule38
+  id: RPSXRule38
   name: Правило 3.8
   priority: 12
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule3_8.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_8.xml"
 
 - type: guideEntry
-  id: DarkStationRule39
+  id: RPSXRule39
   name: Правило 3.9
   priority: 13
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule3_9.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_9.xml"
 
 - type: guideEntry
-  id: DarkStationRule4
+  id: RPSXRule4
   name: Правило 4
   priority: 14
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule4.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule4.xml"
 
 - type: guideEntry
-  id: DarkStationRule6
+  id: RPSXRule6
   name: Правило 6
   priority: 15
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule6.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule6.xml"
 
 - type: guideEntry
-  id: DarkStationRule7
+  id: RPSXRule7
   name: Правило 7
   priority: 16
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule7.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule7.xml"
 
 - type: guideEntry
-  id: DarkStationRule8
+  id: RPSXRule8
   name: Правило 8
   priority: 17
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule8.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule8.xml"
 
 - type: guideEntry
-  id: DarkStationRule9
+  id: RPSXRule9
   name: Правило 9
   priority: 18
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule9.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule9.xml"
 
 - type: guideEntry
-  id: DarkStationRule10
+  id: RPSXRule10
   name: Правило 10
   priority: 19
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DarkStation/Rule10.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule10.xml"
 
