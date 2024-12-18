@@ -1,0 +1,22 @@
+﻿# Jumpsuit
+- type: loadout
+  id: CargoLogisticianJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCargoLogistician
+
+- type: loadout
+  id: CargoLogisticianJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCargoLogistician
+
+# Head
+- type: loadout
+  id: CargoLogisticianHead
+  equipment:
+    head: ClothingHeadHatCargoLogistician
+
+# Neck
+- type: loadout
+  id: CargoLogisticianNeck
+  equipment:
+    neck: ClothingNeckCloakGoliathCloakCargoLogistician

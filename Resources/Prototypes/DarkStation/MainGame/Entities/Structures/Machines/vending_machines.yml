@@ -1,0 +1,126 @@
+- type: entity
+  parent: VendingMachine
+  id: SurgeonMat
+  name: ХирургМат
+  description: Автомат с хирургическими принадлежностями внутри. Рви, круши, кромсай... Возможно, даже зашивай!
+  components:
+  - type: VendingMachine
+    pack: SurgeonMatInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+    ejectDelay: 0.6
+  - type: Advertise
+    pack: SurgeonMatAds
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Machines/VendingMachines/surgeonmat.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Medical"]]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#f5f5f5"
+
+- type: entity
+  parent: VendingMachine
+  id: SYVendingMachineMedical
+  name: НаноМед Плюс Синдиката
+  description: Это медицинский раздатчик препаратов. Только натуральные химикаты!
+  components:
+  - type: VendingMachine
+    pack: NanoMedPlusInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+    ejectDelay: 0.6
+  - type: Advertise
+    pack: NanoMedAds
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Machines/VendingMachines/nanomed.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+  - type: GuideHelp
+    guides:
+    - Medical Doctor
+
+- type: entity
+  parent: VendingMachineWallmount
+  id: SYVendingMachineWallMedical
+  name: НаноМед Синдиката
+  description: Это настенный раздатчик медицинского оборудования. Только натуральные химикаты!
+  components:
+  - type: VendingMachine
+    pack: NanoMedInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Machines/VendingMachines/wallmed.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - texture: Structures/Machines/VendingMachines/maintenance_panel.png
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
+  - type: GuideHelp
+    guides:
+    - Medical
+
+- type: entity
+  parent: VendingMachine
+  id: SYVendingMachineCart
+  name: ПТех Синдиката
+  description: Автомат ПТех! Предоставляем ШИКАРНЫЙ выбор картриджей для КПК.
+  components:
+  - type: VendingMachine
+    pack: SYPTechInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Machines/VendingMachines/ptech.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1
+    energy: 1.3
+    color: "#ffb0b0"
+  - type: AccessReader
+    access: [["SyndicateAgent"]]

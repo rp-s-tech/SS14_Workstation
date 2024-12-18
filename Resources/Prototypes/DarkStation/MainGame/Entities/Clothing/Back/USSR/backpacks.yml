@@ -1,0 +1,12 @@
+﻿- type: entity
+  parent: ClothingMilitaryBackpack
+  id: ClothingMilitaryBackpackUSSPFilled
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxSurvival
+    - id: MagazineLightRifle
+    - id: MagazineLightRifle
+    - id: MagazineLightRifle
+    - id: ExGrenade
+    - id: WeaponRifleAk

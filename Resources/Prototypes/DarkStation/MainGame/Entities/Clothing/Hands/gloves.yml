@@ -1,0 +1,110 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesChaplain
+  name: Тактические перчатки капеллана
+  description: Огнеупорные изолированные стильные тактические перчатки.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/armchapgloves.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/armchapgloves.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+    fiberColor: fibers-black
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesPOCC
+  name: Перчатки НШЦК
+  description: Белые перчатки с тактическими свойствами
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/pocsglove.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/pocsglove.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+    fiberColor: fibers-white
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesGrayJedi
+  suffix: Джедая
+  name: Перчатки
+  description: Перчатки Серого Джедая.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/jedihands.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/jedihands.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-nanomachines
+  - type: FingerprintMask
+  - type: Thieving
+    stripTimeReduction: 1
+    stealthy: true
+
+- type: entity
+  id: ClothingHandsGlovesCombatSecurityKnight
+  parent: ClothingHandsGlovesCombat
+  name: "боевые перчатки РЗП"
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/security_knight.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/security_knight.rsi
+
+- type: entity
+  id: ClothingHandsBlueShieldOfficerGlovesCombat
+  parent: ClothingHandsGlovesCombat
+  name: "Перчатки офицера синего щита"
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/officer_blue_shield.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/officer_blue_shield.rsi
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesIFD
+  name: Перчатки ИФД
+  description: От этих перчаток пахнет деньгами
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/IFD_gloves.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/IFD_gloves.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+    fiberColor: fibers-black
+  - type: FingerprintMask
+
+- type: entity
+  id: ClothingHandsMaxTacGloves
+  parent: ClothingHandsGlovesCombat
+  name: Перчатки Макс-так
+  components:
+    - type: Sprite
+      sprite: DarkStation/MainGame/Clothing/Hands/Gloves/maxtac_gloves.rsi
+    - type: Clothing
+      sprite: DarkStation/MainGame/Clothing/Hands/Gloves/maxtac_gloves.rsi
+
+- type: entity
+  parent: ClothingHandsButcherable
+  id: ClothingHandsGlovesFingerlessVergil
+  name: перчатки Тёмного Ангела
+  description: Кожаные перчатки без пальцев, показывающие, что рука их обладателя не дрогнет.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/vergil_gloves.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/vergil_gloves.rsi
+  - type: Fiber
+    fiberMaterial: fibers-leather
+    fiberColor: fibers-black

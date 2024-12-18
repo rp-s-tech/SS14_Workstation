@@ -1,0 +1,42 @@
+#medal
+- type: entity
+  name: Медаль успешного кадета!
+  parent: ClothingNeckBase
+  id: ChocolateMedal
+  description: Шоколадная медаль для самого лучшего кадета в Службе Безопастности!
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Neck/Medals/chocolate.rsi
+    state: icon
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Neck/Medals/chocolate.rsi
+  - type: SpawnItemsOnUse
+    items:
+      - id: OpenChocolateMedal
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+#medalopen
+- type: entity
+  parent: FoodSnackBase
+  id: OpenChocolateMedal
+  name: Медаль "не успешного" кадета!
+  description: На вид как шоколадная медаль которую кто-то уже открыл. Если вы получили данную медаль, значит вы "не успешный" кадет!
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Neck/Medals/chocolateopen.rsi
+    state: icon
+  - type: FlavorProfile
+    flavors:
+      - chocolate
+  - type: Item
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Theobromine
+          Quantity: 3
+        - ReagentId: CocoaPowder
+          Quantity: 1

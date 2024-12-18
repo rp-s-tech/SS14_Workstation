@@ -1,0 +1,31 @@
+- type: entity
+  id: ClothingBeltSheathSamSaber
+  parent: ClothingBeltSheathSam
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - SamSword
+
+- type: entity
+  id: ClothingBeltERTReconWebbingFilling
+  parent: ClothingBeltERTReconWebbing
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineBoxAntiMaterielBigImproved
+      - id: WeaponPulsePistol
+      - id: WeaponTaser
+      - id: FlashlightSeclite
+      - id: Handcuffs
+        amount: 2
+
+- type: entity
+  id: ClothingBeltSheathPOCCFilled
+  parent: ClothingBeltSheathPOCC
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CaptainSabre

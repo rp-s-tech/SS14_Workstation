@@ -1,0 +1,81 @@
+- type: entity
+  parent: DrinkGlass
+  id: DrinkTarhunGlass
+  suffix: Tarhun
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Tarhun
+          Quantity: 30
+  - type: Icon
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/tarhunglass.rsi
+    state: icon
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/tarhunglass.rsi
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkShalnayaPulya
+  suffix:
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: ShalnayaPulya
+          Quantity: 30
+  - type: Icon
+    sprite: Darkstation/Objects/Consumable/Drinks/ShalnayaPulya.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkRadostEnta
+  suffix:
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: RadostEnta
+          Quantity: 30
+  - type: Icon
+    sprite: Darkstation/Objects/Consumable/Drinks/RadostEnt.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkMiamnaMama
+  suffix:
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: MimanaMama
+          Quantity: 30
+  - type: Icon
+    sprite: Darkstation/Objects/Consumable/Drinks/MiamnaMama.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkGinSonic
+  suffix:
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: GinSonic
+          Quantity: 30
+  - type: Icon
+    sprite: Darkstation/Objects/Consumable/Drinks/GinSonic.rsi
+    state: icon

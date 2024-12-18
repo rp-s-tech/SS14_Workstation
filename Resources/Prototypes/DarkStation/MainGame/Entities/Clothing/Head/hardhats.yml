@@ -1,0 +1,36 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: WW2GermanyGeneralHardhat
+  name: генеральская фуражка
+  description: Фуражска с козырьком, которую носили генерал-фельдмаршалы Вермахта вместе с полевой формой.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hardhats/ww2hardhatger.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hardhats/ww2hardhatger.rsi
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitApotecaryBrigmedic
+  parent: ClothingHeadHardsuitBase
+  name: Шлем скафандра бригмедика "Апотекарий"
+  description: Кто-то ещё боится стоматологов?..
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/apotecary-helmet.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/apotecary-helmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+        Radiation: 0.8
+        Caustic: 0.8
+      securePartTypes:
+        Head: 0.5
+  - type: PressureProtection
+    highPressureMultiplier: 0.6
+    lowPressureMultiplier: 1000

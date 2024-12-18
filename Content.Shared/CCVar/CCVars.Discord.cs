@@ -58,4 +58,12 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<string> DiscordRoundEndRoleWebhook =
         CVarDef.Create("discord.round_end_role", string.Empty, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Enable discord verify.
+    /// </summary>
+    ///
+    public static readonly CVarDef<bool> DiscordAuthEnabled =
+        CVarDef.Create("discord.auth.enabled", false, CVar.NOTIFY | CVar.REPLICATED);
+
 }

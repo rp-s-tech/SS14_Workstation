@@ -1,0 +1,38 @@
+- type: entity
+  name: Красивая ручка
+  parent: BaseItem
+  id: WaDPenDark
+  description: Ручка с обычными чернилами.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Misc/pens.rsi
+    state: pen-WaP-dark
+  - type: Item
+    sprite: DarkStation/MainGame/Objects/Misc/pens.rsi
+    heldPrefix: pen
+    size: Tiny
+  - type: Tag
+    tags:
+    - Write
+    - Pen
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 25
+
+- type: entity
+  name: Красивая ручка
+  parent: WaDPenDark
+  id: WadPenBej
+  description: Ручка с обычными чернилами.
+  components:
+  - type: Sprite
+    state: pen-WaP-beg
+
+- type: entity
+  name: Красивая ручка
+  parent: WaDPenDark
+  id: WaDPenPink
+  description: Ручка с обычными чернилами.
+  components:
+  - type: Sprite
+    state: pen-WaP-pink

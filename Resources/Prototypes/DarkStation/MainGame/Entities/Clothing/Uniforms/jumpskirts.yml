@@ -1,0 +1,43 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingJumpskirtSecPilot
+  name: Одежда пилота
+  description: Одежда настоящего покорителя космоса!
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/sbpilotskirt.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/sbpilotskirt.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtKnight
+  name: Юбка Звёздной-пыли
+  description: "Одежда рыцаря, чей только вид даёт понять кто стоит перед тобой."
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/security_knight.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/security_knight.rsi
+
+- type: entity
+  id: ClothingUniformJumpskirtBlueShield
+  parent: ClothingUniformSkirtBase
+  name: Юбка офицера Синего Щита
+  description: Мне платят не за то, чтобы я убивал и выживал..а за то, чтобы я погибал, но защищал.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/blueshield.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/blueshield.rsi
+
+- type: entity
+  id: ClothingUniformJumpskirtIFD
+  parent: ClothingUniformSkirtBase
+  name: Юбка-комбинезон ИФД
+  description: Я есть деньги. Я есть богатство.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/ifd.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/ifd.rsi

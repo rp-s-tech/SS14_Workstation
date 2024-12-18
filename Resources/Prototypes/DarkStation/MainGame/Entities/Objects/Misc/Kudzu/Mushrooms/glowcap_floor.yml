@@ -1,0 +1,44 @@
+- type: entity
+  id: Glowcapf
+  name: Светокепы
+  parent: BaseKudzu
+  suffix: DONTMAP, Пол
+  description: Грибы растущие на полу, которые освещающают окружение ещё сильнее
+  components:
+    - type: MeleeSound
+      soundGroups:
+        Brute:
+          path:
+            "/Audio/Weapons/slash.ogg"
+    - type: Sprite
+      sprite: DarkStation/MainGame/Objects/Misc/Kudzu/Mushrooms/glowcap_floor.rsa
+      state: glowcapf
+      drawdepth: FloorObjects
+    - type: Clickable
+    - type: Damageable
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 15
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - type: AtmosExposed
+    - type: Kudzu
+      growthTickChance: 0.1
+      spreadChance: 0.1
+    - type: SpeedModifierContacts
+      walkSpeedModifier: 1
+      sprintSpeedModifier: 0.8
+      ignoreWhitelist:
+        components:
+        - IgnoreKudzu
+    - type: PointLight
+      color: "#FFA07A"
+      radius: 1.75
+      energy: 0.4
+      softness: 100
+    - type: RadiationSource
+      slope: 0.12
+      intensity: 0.3

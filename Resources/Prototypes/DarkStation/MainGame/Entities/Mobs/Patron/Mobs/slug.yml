@@ -1,0 +1,123 @@
+- type: entity
+  name: slug
+  parent: SimpleMobBase
+  id: MobDarkSlug
+  description: Большой, толстый слизняк размером с таракамоль. Ленивый, любит спать и воровать еду.
+  components:
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-slug-name
+    description: ghost-role-information-slug-description
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 120
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: GhostTakeoverAvailable
+  - type: Speech
+    speechVerb: Slug
+    speechSounds: Blup
+    allowedEmotes: ['Blup', 'Slurp']
+  - type: FaxableObject
+    insertingState: inserting-slug
+  - type: MothAccent
+  - type: Sprite
+    sprite: DarkStation/MainGame/Mobs/Pets/slug.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: slug
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: slug-moving
+    noMovementLayers:
+      movement:
+        state: slug
+  - type: Item
+    size: Normal
+  - type: Clothing
+    quickEquip: false
+    sprite: DarkStation/MainGame/Mobs/Pets/slug.rsi
+    equippedPrefix: 0
+    slots:
+    - NECK
+  - type: Appearance
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: slug
+      Critical:
+        Base: slug-dead
+      Dead:
+        Base: slug-dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      40: Critical
+      60: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.2
+    baseSprintSpeed : 3.7
+    weightlessAcceleration: 1.5
+    weightlessFriction: 1
+    weightlessModifier: 1
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Slime
+  - type: Bloodstream
+    bloodReagent: InsectBlood
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 0.5
+    damageRecovery:
+      types:
+        Asphyxiation: -0.5
+  - type: CombatMode
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSlime
+      amount: 2
+  - type: Extractable
+    grindableSolutionName: food
+  - type: ReplacementAccent
+    accent: slug
+  - type: ZombieAccentOverride
+    accent: zombieSlug
+  - type: Vocal
+    sounds:
+      Male: UnisexSlug
+      Female: UnisexSlug
+      Unsexed: UnisexSlug
+    wilhelmProbability: 0.001
+  - type: MobPrice
+    price: 200
+  - type: Tag
+    tags:
+    - Trash
+    - CannotSuicide
+    - VimPilot
+  - type: CanEscapeInventory
+  - type: NpcFactionMember
+    factions:
+    - SimpleNeutral
+  - type: Body
+    prototype: Animal
+  - type: TypingIndicator
+    proto: slime
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 60
+      behaviors:
+      - !type:GibBehavior { }

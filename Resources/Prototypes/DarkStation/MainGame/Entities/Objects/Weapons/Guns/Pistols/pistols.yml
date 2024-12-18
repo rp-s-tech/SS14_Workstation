@@ -1,0 +1,47 @@
+- type: entity
+  name: N7 "Орёл"
+  parent: BaseWeaponPistol
+  id: WeaponN7Eagle
+  description: Высокомощный табельный крупнокалиберный пистолет для отряда N7. Использует термозаряды малой ёмкости ценой увеличения силы выстрела. Допускается использование обычных термозарядов, но ввиду малой скорострельности - эффективность будет небольшой.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Guns/Pistols/n7eagle.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: DarkStation/MainGame/Objects/Weapons/Guns/Pistols/n7eagle.rsi
+  - type: ChamberMagazineAmmoProvider
+    boltClosed: null
+  - type: Gun
+    fireRate: 2
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: ThermalChargeSmall
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - SmallThermalChargeTag
+            - ThermalChargeTag
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeAntiMateriel
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeAntiMateriel
+            - CartridgeMagnum
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot

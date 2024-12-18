@@ -1,0 +1,30 @@
+- type: entity
+  name: Позолоченная зажигалка Агента Внутренних Дел
+  parent: FlippoLighter
+  id: FlippoAVDLighter
+  description: Пахнет правосудием и дорогим виски.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/AVDzippo.rsi
+    layers:
+    - state: zippo_icon_base
+      map: ["base"]
+    - state: zippo_top
+      map: ["top"]
+      visible: false
+    - state: zippo_open
+      map: ["open"]
+      visible: false
+    - state: lighter_flame
+      map: ["flame"]
+      visible: false
+      shader: unshaded
+  - type: StealTarget
+    stealGroup: FlippoAVDLighter
+
+- type: stealTargetGroup
+  id: FlippoAVDLighter
+  name: Позолоченная зажигалка Агента Внутренних Дел
+  sprite:
+    sprite: Objects/Tools/AVDzippo.rsi
+    state: zippo_icon_base

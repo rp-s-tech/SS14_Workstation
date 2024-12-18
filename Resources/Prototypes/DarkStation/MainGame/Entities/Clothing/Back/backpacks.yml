@@ -1,0 +1,29 @@
+- type: entity
+  parent: ClothingBackpack
+  id: ChaplainBackpack
+  name: Рюкзак капеллана
+  description: Вместительный рюкзак с серебряными вставками, созданный для капеллана.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Back/Backpacks/armchapbackpack.rsi
+  - type: Storage
+    grid:
+    - 0,0,10,3
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackSecurity_Knight
+  name: security backpack
+  description: It's a very robust backpack.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Back/Backpacks/security_knight.rsi
+
+- type: entity
+  id: ClothingBackpackBlueShield
+  parent: ClothingBackpack
+  name: Рюкзак Синего Щита
+  description: Универсальный рюкзак с шевроном Синего Щита.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Back/Backpacks/blueshield.rsi

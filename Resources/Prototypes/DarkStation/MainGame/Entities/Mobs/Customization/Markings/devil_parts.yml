@@ -1,0 +1,20 @@
+﻿- type: marking
+  id: DevilEarsDark
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Human]
+  sponsorOnly: true
+  sprites:
+  - sprite: DarkStation/MainGame/Mobs/Customization/devil_parts.rsi
+    state: ears
+
+- type: marking
+  id: DevilTailDark
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Human]
+  sponsorOnly: true
+  sprites:
+  - sprite: DarkStation/MainGame/Mobs/Customization/devil_parts.rsi
+    state: tail
+

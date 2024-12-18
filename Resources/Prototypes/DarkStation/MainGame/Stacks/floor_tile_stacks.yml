@@ -1,0 +1,29 @@
+- type: stack
+  id: FloorCarpetCargo
+  name: cargo carpet tile
+  spawn: FloorCarpetItemCargo
+  maxCount: 30
+
+- type: stack
+  id: FloorCarpetEngineering
+  name: engineering carpet tile
+  spawn: FloorCarpetItemEngineering
+  maxCount: 30
+
+- type: stack
+  id: FloorCarpetMedical
+  name: medical carpet tile
+  spawn: FloorCarpetItemMedical
+  maxCount: 30
+
+- type: stack
+  id: FloorCarpetRND
+  name: rnd carpet tile
+  spawn: FloorCarpetItemRND
+  maxCount: 30
+
+- type: stack
+  id: FloorCarpetSecurity
+  name: security carpet tile
+  spawn: FloorCarpetItemSecurity
+  maxCount: 30

@@ -1,0 +1,140 @@
+- type: guideEntry
+  id: RPSXRuleSet
+  name: "Правила сервера"
+  priority: 0
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/RPSXServerRules.xml"
+
+- type: guideEntry
+  id: RPSXRule0
+  name: Правило 0
+  priority: 1
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule0.xml"
+
+- type: guideEntry
+  id: RPSXRule1
+  name: Правило 1
+  priority: 2
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule1.xml"
+
+- type: guideEntry
+  id: RPSXRule2
+  name: Правило 2
+  priority: 3
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule2.xml"
+
+- type: guideEntry
+  id: RPSXRule3
+  name: Правило 3
+  priority: 4
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3.xml"
+
+- type: guideEntry
+  id: RPSXRule31
+  name: Правило 3.1
+  priority: 5
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_1.xml"
+
+- type: guideEntry
+  id: RPSXRule32
+  name: Правило 3.2
+  priority: 6
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_2.xml"
+
+- type: guideEntry
+  id: RPSXRule33
+  name: Правило 3.3
+  priority: 7
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_3.xml"
+
+- type: guideEntry
+  id: RPSXRule34
+  name: Правило 3.4
+  priority: 8
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_4.xml"
+
+- type: guideEntry
+  id: RPSXRule35
+  name: Правило 3.5
+  priority: 9
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_5.xml"
+
+- type: guideEntry
+  id: RPSXRule36
+  name: Правило 3.6
+  priority: 10
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_6.xml"
+
+- type: guideEntry
+  id: RPSXRule37
+  name: Правило 3.7
+  priority: 11
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_7.xml"
+
+- type: guideEntry
+  id: RPSXRule38
+  name: Правило 3.8
+  priority: 12
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_8.xml"
+
+- type: guideEntry
+  id: RPSXRule39
+  name: Правило 3.9
+  priority: 13
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule3_9.xml"
+
+- type: guideEntry
+  id: RPSXRule4
+  name: Правило 4
+  priority: 14
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule4.xml"
+
+- type: guideEntry
+  id: RPSXRule6
+  name: Правило 6
+  priority: 15
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule6.xml"
+
+- type: guideEntry
+  id: RPSXRule7
+  name: Правило 7
+  priority: 16
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule7.xml"
+
+- type: guideEntry
+  id: RPSXRule8
+  name: Правило 8
+  priority: 17
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule8.xml"
+
+- type: guideEntry
+  id: RPSXRule9
+  name: Правило 9
+  priority: 18
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule9.xml"
+
+- type: guideEntry
+  id: RPSXRule10
+  name: Правило 10
+  priority: 19
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule10.xml"
+

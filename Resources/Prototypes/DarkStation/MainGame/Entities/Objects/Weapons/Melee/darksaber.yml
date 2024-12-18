@@ -1,0 +1,88 @@
+# - type: entity
+#   name: Тёмный меч
+#   parent: BaseItem
+#   id: DarkSaber
+#   description: Оружие для более цивилизованной эпохи.
+#   components:
+#   - type: DarkEnergySaber
+#     litDamageBonus:
+#       types:
+#           Slash: 13
+#           Heat: 13
+#           Structural: 30
+#           Blunt: -4.5
+#   - type: ComponentToggler
+#     components:
+#     - type: Sharp
+#     - type: DisarmMalus
+#       malus: 0.6
+#   - type: ItemToggle
+#     soundActivate:
+#       path: /Audio/DarkSaber/darksaber1.ogg
+#     soundDeactivate:
+#       path: /Audio/DarkSaber/darksaber2.ogg
+#   - type: ItemToggleActiveSound
+#     activeSound:
+#       path: /Audio/Weapons/ebladehum.ogg
+#   - type: ItemToggleHot
+#   - type: ItemToggleSize
+#     activatedSize: Huge
+#   - type: ItemToggleMeleeWeapon
+#     activatedSoundOnHit:
+#       path: /Audio/DarkSaber/darksaber3.ogg
+#       params:
+#         variation: 0.250
+#     activatedSoundOnHitNoDamage:
+#       path: /Audio/DarkSaber/darksaber3.ogg
+#       params:
+#         variation: 0.250
+#         volume: -10
+#     activatedSoundOnSwing:
+#       path: /Audio/Weapons/eblademiss.ogg
+#       params:
+#         variation: 0.125
+#   - type: Sprite
+#     sprite: DarkStation/MainGame/Objects/Weapons/Melee/DarkSaber/icon.rsi
+#     layers:
+#       - state: e_sword
+#       - state: e_sword_blade
+#         color: "#FFFFFF"
+#         visible: false
+#         shader: unshaded
+#         map: [ "blade" ]
+#   - type: MeleeWeapon
+#     wideAnimationRotation: -135
+#     attackRate: 1.25
+#     soundHit:
+#       path: /Audio/DarkSaber/darksaber3.ogg
+#     damage:
+#       types:
+#         Blunt: 4.5
+#   - type: Item
+#     size: Small
+#     sprite: DarkStation/MainGame/Objects/Weapons/Melee/DarkSaber/inhands.rsi
+#   - type: UseDelay
+#     delay: 1.0
+#   - type: PointLight
+#     enabled: false
+#     radius: 2
+#     energy: 2
+#     color: white
+#     netsync: false
+#   - type: Appearance
+#   - type: ToggleableLightVisuals
+#     spriteLayer: blade
+#     inhandVisuals:
+#       left:
+#       - state: inhand-left-blade
+#         shader: unshaded
+#       right:
+#       - state: inhand-right-blade
+#         shader: unshaded
+#   - type: Reflect
+#     reflectProb: .75
+#     spread: 30
+#   - type: SurgeryTool
+#     sound: /Audio/DarkSaber/darksaber3.ogg
+#   - type: SurgeryCauterizer
+#   - type: SurgerySaw
