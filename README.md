@@ -29,22 +29,9 @@ We are not currently accepting translations of the game on our main repository. 
 
 [More detailed instructions on building the project.](https://docs.spacestation14.com/en/general-development/setup.html)
 
-## **Лицензионное соглашение**
+## License
 
-1. **Общие положения**
-   Все ресурсы и исходный код, не добавленные авторами проекта RPS-eXtended и Dark Station через платформу GitLab, развернутую на инфраструктуре RolePlay Systems Technology, находятся под лицензией [MIT](https://opensource.org/licenses/MIT) либо под лицензией, указанной непосредственно в соответствующем ресурсе.
+This project is governed by the terms outlined in our [LICENSE.md](LICENSE.md) file.  
+Portions of the code or resources derived from the original upstream project remain under the MIT License, as described in the original [LICENSE.TXT](LICENSE.TXT).
 
-2. **Закрытые ресурсы и код**
-   Любой остальной код и ресурсы проекта (включая приватные подмодули и библиотеки) являются полностью закрытыми и не попадают под действие какой-либо открытой лицензии, даже если подобная лицензия указана в сопроводительных файлах. Эти материалы защищены и могут использоваться исключительно в рамках проекта RPSX. Копирование, распространение или использование этих ресурсов вне проекта строго запрещено, если иное не подтверждено текущим владельцем проекта.
-
-3. **Использование на серверах RPSX**
-   Исключение составляют сервера под управлением команды "RPS-eXtended" или "Dark Station", которым предоставляется право на использование закрытых ресурсов и кода проекта. Это право ограничивается деятельностью серверов RPS-eXtended или Dark Station и предоставляется без ограничения по времени.
-
-4. **Использование заимствованных ресурсов**
-   Если проект RPS-eXtended использует заимствованный код или ресурсы из открытых источников, предоставляющих право на их использование, лицензия из оригинального источника сохраняет свою силу, за исключением изменений, внесенных проектом RPS-eXtended и Dark Station. В таких случаях авторство исходного кода или ресурса остается за его первоначальным автором.
-
-5. **Лицензирование активов**
-   Большинство используемых активов (графические, аудиофайлы, текстуры и другие медиа) лицензируются под лицензией [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) или иной лицензией, указанной в метаданных файла. Некоторые активы могут быть лицензированы под [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) или аналогичными некоммерческими лицензиями. При использовании этих активов в коммерческих проектах их удаление или замена обязательны.
-
-6. **Особые условия**
-   Все исключения и дополнительные права, предоставляемые третьим сторонам, требуют подтверждения от текущего владельца проекта RPS-eXtended или основателя проекта Dark Station.
+By using, modifying, or distributing this project, you agree to comply with the terms specified in both the primary [LICENSE.md](LICENSE.md) and, where applicable, the original [LICENSE.TXT](LICENSE.TXT).
