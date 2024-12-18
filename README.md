@@ -31,7 +31,7 @@ We are not currently accepting translations of the game on our main repository. 
 
 ## License
 
-This project is governed by the terms outlined in our [LICENSE.md](LICENSE.md) file.  
+This project is governed by the terms outlined in our [LICENSE.MD](LICENSE.MD) file.  
 Portions of the code or resources derived from the original upstream project remain under the MIT License, as described in the original [LICENSE.TXT](LICENSE.TXT).
 
 By using, modifying, or distributing this project, you agree to comply with the terms specified in both the primary [LICENSE.md](LICENSE.md) and, where applicable, the original [LICENSE.TXT](LICENSE.TXT).
