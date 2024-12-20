@@ -1,0 +1,319 @@
+- type: job
+  id: AgentCrimsonLily
+  name: Агент Багровой Лилии
+  description: Защищает деньги НТ
+  playTimeTracker: JobAgentCrimsonLily
+  setPreference: true
+  startingGear: AgentCrimsonLilyStationGear
+  icon: "JobIconAgentCrimsonLily"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: Начальнику Финансового департамента, при критических ситуациях - Начальнику Военного Департамента или Секториальному управляющему для решения проблем от главенствующего лица
+  canBeAntag: false
+  whitelisted: true
+  chatHighlight: CommandChatHighlight
+  accessGroups:
+  - StationAccessAgentCrimsonLily
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+
+- type: startingGear
+  id: AgentCrimsonLilyStationGear
+  equipment:
+    id: AgentCrimsonLilyPDA
+    ears: ClothingHeadsetAgentCrimsonLily
+    belt: ClothingBeltSecurityFilled
+    pocket1: StationACLWeaponPulsePistol
+    pocket2: StationACLWeaponPulsePistol
+  storage:
+    back:
+    - BoxSurvivalSecurity
+    - BoxAgentCrimsonLily
+    - Flash
+    - TrackingImplanter
+    - LightImplanter
+    - HandheldSpCargoOrders
+    - ClothingOuterArmorSecurity
+    - SpCentComAccessConfigurator
+    - SecurityWhistle
+    - TelescopicBaton
+# Top set
+
+- type: entity
+  parent: ClothingHeadHatBeret
+  id: ClothingHeadHatBeretAgentCrimsonLily
+  name: Берет Агента Багровой Лилии
+  suffix: ACL
+  description: Стильно, модно и уважаемо.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Berets/crimson_lily.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Berets/crimson_lily.rsi
+
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAgentCrimsonLily
+  name: Гарнитура Багровой Лилии
+  suffix: ACL
+  description: Гарнитура багровой лилии позволяющая связываться по множеству доступным каналам для дальнейшего требования денег со станций.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCrimsonLily
+      - EncryptionKeyStationMaster
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Ears/Headsets/crimson_lily.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Ears/Headsets/crimson_lily.rsi
+
+- type: entity
+  parent: ClothingEyesGlassesSecurity
+  id: ClothingEyesGlassesAgentCrimsonLily
+  name: Очки Агента Багровой Лилии
+  suffix: ACL
+  description: Специальные очки Агента Багровой Лилии позволяющие мониторить статус личностей пред ним.
+  components:
+  - type: EyeProtection
+  - type: ShowHealthIcons
+
+# Accessories
+
+- type: entity
+  parent: ClothingHandsGlovesPowerglove
+  id: ClothingHandsGlovesPowergloveAgentCrimsonLily
+  name: Силовые перчатки Агента Багровой Лилии
+  description: Специальные силовые перчатки Агента Багровой Лилии для продуктивной деятельности.
+  components:
+  - type: Insulated
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/crimson_lily.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/crimson_lily.rsi
+
+- type: entity
+  parent: ClothingShoesBootsMagSyndie
+  id: ClothingShoesBootsMagAgentCrimsonLily
+  name: Магнитные ботинки Агента Багровой Лилии
+  suffix: ACL
+  description: С такими магнитными ботинками, мало что страшно.
+
+# Uniform
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAgentCrimsonLily
+  name: униформа Агента Багровой Лилии
+  suffix: ACL
+  description: Рядом с ним вы чувствуете себя в безопасности. Но не ощущаете безопасность ваших денег...
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/crimson_lily.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/crimson_lily.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+      securePartTypes:
+        Leg: 0.8
+        Arm: 0.8
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakGoliathCloakAgentCrimsonLily
+  name: Плащ Агента Барговой Лилии
+  suffix: ACL
+  description: Плащ голиафа, сделанный из шкуры выносливой фауны с далекой планеты. Однако с течением времени его защитные свойства ослабли.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Neck/Mantles/crimson_lily.rsi
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot { }
+
+# Hardsuit
+
+- type: entity
+  parent: ClothingOuterHardsuitSecurity
+  id: ClothingOuterHardsuitAgentCrimsonLily
+  name: Скафандр Агента Багровой Лилии
+  description: С таким скафандром можно и чужую станцию продать.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/CrimsonLily/scaf.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/CrimsonLily/scaf.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitAgentCrimsonLily
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitAgentCrimsonLily
+  noSpawn: true
+  name: Шлем скафандра Агента Багровой Лилии
+  description: С таким шлемом от скафандра можно и пулю смело в лоб ловить!
+  suffix: ACL
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/CrimsonLily/helmet.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/CrimsonLily/helmet.rsi
+  - type: PointLight
+    color: "#ffadc6"
+    radius: 7
+  - type: PressureProtection
+    highPressureMultiplier: 0.60
+    lowPressureMultiplier: 5500
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.90
+        Caustic: 0.95
+      securePartTypes:
+        Head: 0.5
+# Weapon
+
+- type: entity
+  name: ОИП-12
+  parent: WeaponPulsePistol
+  id: StationACLWeaponPulsePistol
+  description: Импульсный пистолет ограниченной 12 серии, сделанный специально для агентов финансового департамента, которых оставляют на станции для малой, но самообороны. Отличие от стандартной модели импульсного пистолета - более слабый урон. Но ничего! Это гарантирует долговечность!
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/pulse_pistol.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-unshaded-4
+      map: [ "enum.GunVisualLayers.MagUnshaded" ]
+      shader: unshaded
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Battery/pulse_pistol.rsi
+  - type: Gun
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: HitscanBatteryAmmoProvider
+    proto: StationACLPulse
+    fireCost: 150
+  - type: Battery
+    maxCharge: 2250
+    startingCharge: 2250
+
+- type: hitscan
+  id: StationACLPulse
+  damage:
+    types:
+      Heat: 10
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_omni
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: beam_omni
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_omni
+
+# Storage
+- type: entity
+  id: ClothingBackpackAgentCrimsonLily
+  parent: ClothingBackpackHolding
+  name: Рюкзак Агента Багровой Лилии
+  suffix: ACL
+  components:
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,9,6
+
+# PDA and Card
+
+- type: entity
+  parent: IDCardStandard
+  id: AgentCrimsonLilyIDCard
+  name: ID карта Багровой Лилии
+  suffix: ACL
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idcentcom
+  - type: PresetIdCard
+    job: AgentCrimsonLily
+
+- type: entity
+  parent: DeathsquadPDA
+  id: AgentCrimsonLilyPDA
+  name: КПК Багровой Лилии
+  description: Пахнет деньгами и бюрократией.
+  suffix: ACL
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
+  - type: Pda
+    id: AgentCrimsonLilyIDCard
+    state: pda-ABL
+  - type: Icon
+    sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
+    state: pda-ABL
+# Special
+
+- type: entity
+  parent: BoxCardboard
+  id: BoxAgentCrimsonLily
+  name: Бюрократический набор АБЛ
+  suffix: ACL
+  description: Бюрократический набор Агента Багровой Лилии
+  components:
+  - type: StorageFill
+    contents:
+    - id: RubberStampApproved
+    - id: RubberStampDenied
+    - id: RubberStampFinanceDepACL
+  - type: Sprite
+    layers:
+    - state: internals
+    - state: emergencytank
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyCrimsonLily
+  name: ключ шифрования багровой лилии
+  description: Ключ шифрования, используемый деловыми ребятами.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Supply
+    - CrimsonLily
+    defaultChannel: CrimsonLily
+  - type: Sprite
+    layers:
+    - state: crypt_blue
+    - state: nano_label
+
+# Spawner
+- type: entity
+  id: SpawnPointAgentCrimsonLily
+  parent: SpawnPointJobBase
+  name: Spawner AgentCrimsonLily
+  components:
+  - type: SpawnPoint
+    job_id: AgentCrimsonLily
+  - type: Sprite
+    layers:
+    - state: green
+    - state: captain

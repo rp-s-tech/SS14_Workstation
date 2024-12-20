@@ -1,0 +1,49 @@
+- type: entity
+  id: ThermalChargeSmall
+  name: термозаряд малой ёмкости
+  parent: BaseMagazinePistol
+  description: Малый вариант термозаряда, используемый в некоторых видах оружия N7.
+  components:
+  - type: Tag
+    tags:
+      - SmallThermalChargeTag
+  - type: BallisticAmmoProvider
+    proto: CartridgeAntiMateriel
+    capacity: 5
+  - type: Item
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Guns/Ammunition/Magazines/N7/thermalchargesmall.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+
+- type: entity
+  id: ThermalCharge
+  name: термозаряд
+  parent: BaseMagazineLightRifle
+  description: Экспериментальный сменный теплопоглотитель, своей ёмкостью определяющий количество возможных выстрелов с оружия N7 до перегрева.
+  components:
+  - type: Tag
+    tags:
+      - ThermalChargeTag
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnumAP
+    capacity: 50
+  - type: Item
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Guns/Ammunition/Magazines/N7/thermalcharge.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false

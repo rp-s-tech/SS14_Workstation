@@ -1,0 +1,45 @@
+- type: entity
+  name: телескопическая дубинка
+  parent: BaseItem
+  id: TelescopicBaton
+  description: Специальная раскладываемая дубинка для самообороны глав и наказания непослушных сотрудников.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Melee/telescopicbaton.rsi
+    layers:
+    - state: telescopicbaton_off
+      map: [ "enum.ToggleVisuals.Layer" ]
+  - type: Telescopicbaton
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 7
+    bluntStaminaDamageFactor: 2.0
+    angle: 60
+    animation: WeaponArcSlash
+  - type: StaminaDamageOnHit
+    damage: 37
+    sound: /Audio/Weapons/egloves.ogg
+  - type: StaminaDamageOnCollide
+    damage: 37
+    sound: /Audio/Weapons/egloves.ogg
+  - type: Item
+    heldPrefix: off
+    size: Normal
+  - type: Clothing
+    sprite: DarkStation/MainGame/Objects/Weapons/Melee/telescopicbaton.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: DisarmMalus
+    malus: 0.225
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+     enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: {state: telescopicbaton_on}
+          False: {state: telescopicbaton_off}
+  - type: StaticPrice
+    price: 100

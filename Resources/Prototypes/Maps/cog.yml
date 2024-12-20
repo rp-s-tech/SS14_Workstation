@@ -28,7 +28,7 @@
             Reporter: [ 2, 2 ]
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 3, 3 ]
-            Zookeeper: [ 1, 1 ] 
+            Zookeeper: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
@@ -65,3 +65,5 @@
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 3, 3 ]
+            #specials
+            IAA: [ 1, 1]

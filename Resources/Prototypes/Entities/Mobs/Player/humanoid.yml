@@ -35,6 +35,7 @@
   id: DeathSquad
   parent: EventHumanoidMindShielded
   randomizeName: false
+  speciesBlacklist: ['Diona'] # Corvax-MRP
   components:
     - type: GhostRole
       name: ghost-role-information-Death-Squad-name
@@ -352,6 +353,8 @@
 
 - type: randomHumanoidSettings
   id: ERTSecurity
+  speciesBlacklist: # Corvax-MRP
+    - Diona
   parent: ERTLeader
   components:
     - type: GhostRole
@@ -497,6 +500,8 @@
       settings: CBURNAgent
 
 - type: randomHumanoidSettings
+  speciesBlacklist: # Corvax-MRP
+    - Diona
   id: CBURNAgent
   parent: EventHumanoidMindShielded
   components:
@@ -550,7 +555,7 @@
       sprite: Mobs/Species/Human/parts.rsi
       state: full
     - type: RandomMetadata
-      nameSegments: [ names_death_commando ]
+      nameSegments: [ corvax_names_death_commando ] # Corvax-Localization
     - type: RandomHumanoidSpawner
       settings: SyndicateAgent
 

@@ -1,0 +1,54 @@
+- type: job
+  id: BlueShieldOfficer
+  name: Офицер синего щита
+  description: Защищает глав
+  playTimeTracker: JobBlueShieldOfficer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 14400
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 14400
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 14400
+  startingGear: BlueShieldStationGear
+  icon: "JobIconBlueShield"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  chatHighlight: SecurityChatHighlight
+  accessGroups:
+  - AllAccess
+  special:
+    - !type:AddImplantSpecial
+      implants: [ MindShieldImplant ]
+
+#Gear
+- type: startingGear
+  id: BlueShieldStationGear
+  equipment:
+    id: BlueShieldOfficerPDA
+    ears: ClothingHeadsetBlueShield
+  inhand:
+    - WeaponRifleXani
+  storage:
+    back:
+      - Flash
+      - TrackingImplanter
+      - LightImplanter
+
+# Spawner
+- type: entity
+  id: SpawnPointBlueShieldOfficer
+  parent: SpawnPointJobBase
+  name: Spawner BlueShieldOfficer
+  components:
+    - type: SpawnPoint
+      job_id: BlueShieldOfficer
+    - type: Sprite
+      layers:
+        - state: green
+        - state: captain

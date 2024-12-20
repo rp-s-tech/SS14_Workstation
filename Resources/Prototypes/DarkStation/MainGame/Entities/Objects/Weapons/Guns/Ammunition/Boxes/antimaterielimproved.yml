@@ -1,0 +1,61 @@
+#Обыная коробка
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseMagazineBoxAntiMaterielImproved
+  name: Бокс с патронами (.70 улучшенная антиматериальная)
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeAntiMateriel
+    proto: CartridgeAntiMaterielImproved
+    capacity: 10
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/anti_materiel.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  parent: BaseMagazineBoxAntiMateriel
+  id: MagazineBoxAntiMaterielImproved
+  name: Бокс с патронами (.70 улучшенная антиматериальная)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeAntiMaterielImproved
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+#Большая Коробка
+- type: entity
+  parent: BaseMagazineBoxAntiMateriel
+  id: MagazineBoxAntiMaterielBigImproved
+  name: Бокс с патронами (.70 улучшенная антиматериальная)
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 30
+    proto: CartridgeAntiMaterielImproved
+  - type: Sprite
+    layers:
+    - state: base-b
+      map: ["enum.GunVisualLayers.Base"]
+    - state: magb-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: magb
+    steps: 2
+    zeroVisible: false
+  - type: Appearance

@@ -1,0 +1,58 @@
+﻿- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakGoliathCloakSeniorEngineer
+  name: плащ ведущего инженера
+  description: Плащ ведущего инженера, сделанный из шкуры выносливой фауны с далекой планеты. Однако с течением времени его защитные свойства ослабли.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/enggoliath.rsi
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot { }
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakGoliathCloakSeniorPhysican
+  name: плащ ведущего врача
+  description: Плащ ведущего врача, сделанный из шкуры выносливой фауны с далекой планеты. Однако с течением времени его защитные свойства ослабли.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/medgoliath.rsi
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot { }
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakGoliathCloakSeniorResearcher
+  name: плащ ведущего учёного
+  description: Плащ ведущего учёного, сделанный из шкуры выносливой фауны с далекой планеты. Однако с течением времени его защитные свойства ослабли.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/rndgoliath.rsi
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot { }
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakSeniorResearcher
+  name: плащ ведущего учёного
+  description: Плащ ведущего учёного, сделанный из шкуры выносливой фауны с далекой планеты. Однако с течением времени его защитные свойства ослабли.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/rdsenior.rsi
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot { }
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckSecurityInstructor
+  name: Мантия инструктора Службы Безопастности
+  description: Модная мантия для модного инструктора.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Neck/Mantles/isbmantle.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Neck/Mantles/isbmantle.rsi

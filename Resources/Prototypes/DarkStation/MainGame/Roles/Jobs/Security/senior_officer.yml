@@ -1,0 +1,43 @@
+- type: job
+  id: SeniorOfficer
+  name: job-name-senior-officer
+  description: job-description-senior-officer
+  playTimeTracker: JobSeniorOfficer
+  requirements:
+  - !type:RoleTimeRequirement
+    role: JobWarden
+    time: 21600 # 6h
+  - !type:RoleTimeRequirement
+    role: JobDetective
+    time: 10800 # 3h
+  - !type:RoleTimeRequirement
+    role: JobSecurityOfficer
+    time: 21600 # 6h
+  startingGear: SeniorOfficerGear
+  icon: "JobIconSeniorOfficer"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  chatHighlight: SecurityChatHighlight
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+
+- type: startingGear
+  id: SeniorOfficerGear
+  equipment:
+    id: SeniorOfficerPDA
+    ears: ClothingHeadsetSecurity
+    pocket1: WeaponPistolMk58
+    pocket2: ChocolateMedalCase
+  storage:
+    back:
+    - Flash
+    - MagazinePistol
+    - BoxSurvivalSecurity

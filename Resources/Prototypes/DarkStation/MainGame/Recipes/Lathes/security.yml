@@ -1,0 +1,6 @@
+- type: latheRecipe
+  id: ShellShotgunSaltRecipe
+  result: ShellShotgunSalt
+  completetime: 2
+  materials:
+    Steel: 10

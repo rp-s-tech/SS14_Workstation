@@ -1,11 +1,11 @@
 {
-  "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Sprites made by Flareguy for Space Station 14. Griffinprize, skeletonprize, thiefcharacter and owlprize taken from /tg/station at commit https://github.com/tgstation/tgstation/commit/e1142f20f5e4661cb6845cfcf2dd69f864d67432. Figurine_spawner sprite made using parts found in spawner_icons.dmi from Paradise Station at commit https://github.com/ParadiseSS13/Paradise/commit/813f0a3ae556d86dddd7c4ef93a52880de8d2e37. Head sprites excluding Captain, Medical exluding doctor, non-human excluding queen and slime, and service jobs excluding librarian done by tacobeller and holoclown done by brainfood1183.",
-  "size": {
-    "x": 32,
-    "y": 32
-  },
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Sprites made by Flareguy for Space Station 14. Griffinprize, skeletonprize, thiefcharacter and owlprize taken from /tg/station at commit https://github.com/tgstation/tgstation/commit/e1142f20f5e4661cb6845cfcf2dd69f864d67432. Figurine_spawner sprite made using parts found in spawner_icons.dmi from Paradise Station at commit https://github.com/ParadiseSS13/Paradise/commit/813f0a3ae556d86dddd7c4ef93a52880de8d2e37. Head sprites excluding Captain, Medical exluding doctor, non-human excluding queen and slime, and service jobs excluding librarian done by tacobeller and holoclown done by brainfood1183.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
     "states": [
         {
             "name": "ce"
@@ -21,6 +21,30 @@
         },
         {
             "name": "holoclown"
+        },
+        {
+            "name": "pontific"
+        },
+        {
+            "name": "narsie"
+        },
+        {
+            "name": "ratvar"
+        },
+        {
+            "name": "narsie_cultist"
+        },
+        {
+            "name": "ratvar_righteous"
+        },
+        {
+            "name": "desecrated"
+        },
+        {
+            "name": "cursed_monk"
+        },
+        {
+            "name": "fallen_guardian_Trael"
         },
         {
             "name": "passenger_greytide"
@@ -162,6 +186,57 @@
         },
         {
             "name": "figurine_spawner"
+        },
+        {
+            "name": "abram_pchelinski"
+        },
+        {
+            "name": "aikyra_aina"
+        },
+        {
+            "name": "arleon_lekstorn"
+        },
+        {
+            "name": "asag"
+        },
+        {
+            "name": "davian_tit"
+        },
+        {
+            "name": "edgar_prohor"
+        },
+        {
+            "name": "evpleksia_akko"
+        },
+        {
+            "name": "harli_stern"
+        },
+        {
+            "name": "jo_ker"
+        },
+        {
+            "name": "met_anderson"
+        },
+        {
+            "name": "raian_doto"
+        },
+        {
+            "name": "ranel_rodim"
+        },
+        {
+            "name": "rei_noelov"
+        },
+        {
+            "name": "richard_vagner"
+        },
+        {
+            "name": "saveli_pchelinski"
+        },
+        {
+            "name": "shiper_kromers"
+        },
+        {
+            "name": "volfgang_springborn"
         }
     ]
 }

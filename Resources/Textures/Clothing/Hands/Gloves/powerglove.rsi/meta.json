@@ -18,6 +18,10 @@
       "directions": 4
     },
     {
+      "name": "equipped-HAND-vox",
+      "directions": 4
+    },
+    {
       "name": "on-equipped-HAND",
       "directions": 4
     },

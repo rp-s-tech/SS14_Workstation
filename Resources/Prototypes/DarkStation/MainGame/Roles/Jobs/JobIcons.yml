@@ -1,0 +1,97 @@
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSpCentCom
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Nanotrasen_green
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSpFinDep
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Nanotrasen_brown
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconIAA
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: IAA
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCargoLogistician
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: CargoLogistician
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconOperativeCrimsonLily
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: OperativeCrimsonLily
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconKnightofStardust
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: KnightofStardust
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSurger
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Surger
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconPathologist
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: JobIconPathologist
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBlueShield
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: BlueShield
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconAgentCrimsonLily
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: AgentCrimsonLily
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSecurityBorg
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: SecurityBorg
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconPOCC
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Pocc
+
+- type: jobIcon
+  parent: JobIcon
+  id: "JobIconArmoredChaplain"
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: ArmoredChaplain
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconPilot
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: SecurityPilot

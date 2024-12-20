@@ -1,0 +1,10 @@
+﻿- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadVampireHunter
+  name: Шляпа охотника на вампиров
+  suffix: VampireHunter
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/vampire_hunter.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/vampire_hunter.rsi

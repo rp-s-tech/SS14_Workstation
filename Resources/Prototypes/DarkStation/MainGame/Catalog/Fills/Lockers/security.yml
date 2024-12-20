@@ -1,0 +1,13 @@
+- type: entity
+  id: SuitStorageSecPilot
+  parent: SuitStorageBase
+  name: хранилище скафандра
+  description: Необычное высокотехнологичное хранилище, предназначенное для хранения космических скафандров.
+  suffix: Пилот СБ
+  components:
+    - type: StorageFill
+      contents:
+        - id: NitrogenTankFilled
+        - id: OxygenTankFilled
+        - id: ClothingOuterHardsuitSecurityPilot
+        - id: ClothingMaskBreath

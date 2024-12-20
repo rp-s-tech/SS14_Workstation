@@ -1,0 +1,76 @@
+- type: entity
+  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
+  id: DrinkTarhunBottleFull
+  name: A bottle of Tarhun drink
+  description: A drink that will make you forget about the rush, stop, and cool off.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Tarhun
+          Quantity: 100
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/tarhunbottle.rsi
+  - type: Sealable
+
+- type: entity
+  parent: DrinkBottlePlasticBaseFull
+  id: DrinkSaintWaterJug
+  name: кувшин святой воды
+  description: Отпугивает темные силы
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 300
+        reagents:
+        - ReagentId: Holywater
+          Quantity: 300
+  - type: Drink
+  - type: Label
+    currentLabel: "Святая вода"
+
+- type: entity
+  parent: [DrinkBottleVisualsAll, DrinkBottlePlasticBaseFull]
+  id: DrinkBaltika9BottleFull
+  name: бутылка балтики 9
+  description: То самое легендарное крепкое пиво, производящее по неизменному оригинальному рецепту.
+  components:
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Baltika9
+          Quantity: 100
+  - type: Label
+    currentLabel: балтика 9
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/baltika9.rsi
+  - type: Sealable
+  - type: Openable
+    closeable: true
+  - type: Tag
+    tags:
+    - Beer
+
+- type: entity
+  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
+  id: DrinkShalnayaPulyaBottleFull
+  name: "Шальная Пуля"
+  description: Элитный напиток созданный из текилы и качественного сусального серебра 999 пробы.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 100
+        reagents:
+        - ReagentId: ShalnayaPulya
+          Quantity: 100
+  - type: Label
+    currentLabel: "Шальная Пуля"
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/ShalnayaPulaBottle.rsi
+  - type: Sealable

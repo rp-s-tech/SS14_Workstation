@@ -1,0 +1,64 @@
+- type: entity
+  name: Солид
+  parent: SimpleMobBase
+  id: TYSnake
+  description: Змея рода тайпан, символ Синдиката. Очень ядовитая.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: solid
+      sprite: DarkStation/MainGame/Mobs/Pets/snake.rsi
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 10
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: snake
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 1
+  - type: InteractionPopup
+    successChance: 0.6
+    interactSuccessString: petting-success-reptile
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/snake_hiss.ogg
+  - type: Bloodstream
+    bloodMaxVolume: 50
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Scale
+  - type: Puller
+    needsHands: true
+  - type: NpcFactionMember
+    factions:
+      - Syndicate
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 2
+        Poison: 17

@@ -17,6 +17,10 @@
       "name": "icon-super"
     },
     {
+      "name": "equipped-EYES-vox",
+      "directions": 4
+    },
+    {
       "name": "equipped-EYES",
       "directions": 4
     },

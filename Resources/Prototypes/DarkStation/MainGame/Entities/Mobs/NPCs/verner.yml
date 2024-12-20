@@ -1,0 +1,117 @@
+- type: entity
+  name: Вернер
+  parent: SimpleMobBase
+  id: MobVerner
+  description: Верный друг парамедика. Или, его надёжная замена.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: DarkStation/MainGame/Mobs/Pets/verner.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: verner
+  - type: Physics
+  - type: Speech
+    speechVerb: Canine
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Inventory
+    speciesId: dog
+    templateId: pet
+  - type: InventorySlots
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: verner
+      Dead:
+        Base: verner_dead
+  - type: NpcFactionMember
+    factions:
+    - PetsNT
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 2
+  - type: ReplacementAccent
+    accent: dog
+  - type: InteractionPopup
+    interactSuccessString: petting-success-dog
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/small_dog_bark_happy.ogg
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: Storage
+    maxItemSize: Normal
+    clickInsert: false
+    defaultStorageOrientation: Vertical
+    grid:
+    - 0,0,7,1
+    whitelist:
+      tags:
+        - Wrench
+        - Bottle
+        - Spray
+        - Brutepack
+        - Bloodpack
+        - Gauze
+        - Ointment
+        - CigPack
+        - PillCanister
+        - Radio
+        - DiscreteHealthAnalyzer
+        - SurgeryTool
+      components:
+        - Hypospray
+        - Injector
+        - Pill
+        - HandLabeler
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: Puller
+    needsHands: false
+  - type: MobPrice
+    price: 700
+  - type: Tag
+    tags:
+    - VimPilot
+    - Dog
+
+- type: entity
+  parent: MobVerner
+  id: MobVernerFilled
+  suffix: "Filled"
+  components:
+  - type: StorageFill
+    contents:
+      - id: Brutepack
+        amount: 2
+      - id: Ointment
+        amount: 1
+      - id: Bloodpack
+        amount: 1
+      - id: Gauze
+      - id: EmergencyMedipen

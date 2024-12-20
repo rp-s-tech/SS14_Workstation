@@ -121,6 +121,10 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("alertLevels");
             _prototypeManager.RegisterIgnore("nukeopsRole");
             _prototypeManager.RegisterIgnore("ghostRoleRaffleDecider");
+            _prototypeManager.RegisterIgnore("stationGoal");
+            _prototypeManager.RegisterIgnore("CentralCommandFaxPrototype");
+            _prototypeManager.RegisterIgnore("ERTGroup");
+            _prototypeManager.RegisterIgnore("flavor");
 
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();

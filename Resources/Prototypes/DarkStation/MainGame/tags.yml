@@ -1,0 +1,17 @@
+- type: Tag
+  id: CarpetCargo
+
+- type: Tag
+  id: CarpetEngineering
+
+- type: Tag
+  id: CarpetMedical
+
+- type: Tag
+  id: CarpetRND
+
+- type: Tag
+  id: CarpetSecurity
+
+- type: Tag
+  id: VergilYamato

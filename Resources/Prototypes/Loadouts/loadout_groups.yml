@@ -7,7 +7,6 @@
   loadouts:
   - FlowerWreath
   - Hairflower
-  - Headphones
   - PlushieLizard
   - PlushieSpaceLizard
   - Lighter
@@ -43,6 +42,7 @@
   - TowelColorPurple
   - TowelColorRed
   - TowelColorSilver
+  - TowelColorLightBlue
   - TowelColorWhite
   - TowelColorYellow
 
@@ -1002,8 +1002,6 @@
   - SecurityJumpskirt
   - SecurityJumpsuitGrey
   - SecurityJumpskirtGrey
-  - SeniorOfficerJumpsuit
-  - SeniorOfficerJumpskirt
   - TrooperUniform
 
 - type: loadoutGroup
@@ -1070,6 +1068,7 @@
 - type: loadoutGroup
   id: DetectiveOuterClothing
   name: loadout-group-detective-outerclothing
+  minLimit: 0
   loadouts:
   - DetectiveArmorVest
   - DetectiveCoat

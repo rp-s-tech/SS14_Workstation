@@ -1,0 +1,39 @@
+<ui:FancyWindow xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2007/xaml"
+    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    MinWidth="300"
+    MinHeight="100"
+    MaxWidth="300"
+    MaxHeight="500"
+    Resizable="False"
+    VerticalExpand="True"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Top"
+    Title="Уведомление">
+
+    <PanelContainer>
+        <PanelContainer.PanelOverride>
+            <graphics:StyleBoxFlat BackgroundColor="#24242B" />
+        </PanelContainer.PanelOverride>
+
+        <BoxContainer
+            Name="MainContainer"
+            Orientation="Vertical">
+
+            <RichTextLabel
+                Name="MessageSnackbar"
+                Margin="8 2 0 8" />
+
+            <ProgressBar
+                Name="Duration"
+                MaxHeight="2"
+                MinValue="0"
+                MaxValue="1" />
+
+        </BoxContainer>
+
+    </PanelContainer>
+
+</ui:FancyWindow>

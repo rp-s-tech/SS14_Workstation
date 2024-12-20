@@ -1,0 +1,61 @@
+﻿#JumpSuit
+- type: loadout
+  id: SpIFDJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitIFD
+
+- type: loadout
+  id: SpIFDJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtIFD
+
+#Back
+- type: loadout
+  id: SpIFDBackpackSatchel
+  equipment:
+    back: ClothingBackpackSatchelIFD
+
+#Head
+- type: loadout
+  id: SpIFDHeadCap
+  equipment:
+    head: ClothingHeadHatCapIFD
+
+- type: loadout
+  id: SpIFDHeadCapOfficial
+  equipment:
+    head: ClothingHeadHatSpFinDepOfficial
+
+#Neck
+- type: loadout
+  id: SpIFDNeck
+  equipment:
+    neck: ClothingNeckIFD
+
+#Outer
+- type: loadout
+  id: SpIFDOuterCoat
+  equipment:
+    outerClothing: ClothingOuterCoatIFD
+
+- type: loadout
+  id: SpIFDOuterCoatOfficial
+  equipment:
+    outerClothing: ClothingOuterCoatSpFinDepFormal
+
+- type: loadout
+  id: SpIFDOuterHardSuit
+  equipment:
+    outerClothing: ClothingOuterHardsuitIFD
+
+#Gloves
+- type: loadout
+  id: SpIFDGloves
+  equipment:
+    gloves: ClothingHandsGlovesIFD
+
+#Shoes
+- type: loadout
+  id: SpIFDShoesCombat
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled

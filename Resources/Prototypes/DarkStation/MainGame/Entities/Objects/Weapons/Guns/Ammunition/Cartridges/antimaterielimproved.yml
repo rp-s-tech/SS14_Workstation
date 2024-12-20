@@ -1,0 +1,20 @@
+- type: entity
+  parent: BaseCartridge
+  id: CartridgeAntiMaterielImproved
+  name: Патрон (.70 улучшенная антиматериальная)
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CartridgeAntiMateriel
+  - type: CartridgeAmmo
+    proto: BulletAntiMaterielImproved
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 20

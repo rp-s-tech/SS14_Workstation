@@ -1,0 +1,68 @@
+# - type: entity
+#   parent: BaseMachinePowered
+#   id: Shredder
+#   name: шредер
+#   description: Измельчает бумагу, чтобы никто не узнал, что именно капитан читает тёплыми вечерами в одиночестве.
+#   components:
+#   - type: Sprite
+#     sprite: DarkStation/MainGame/Structures/Machines/shredder.rsi
+#     drawdepth: SmallObjects
+#     layers:
+#     - state: shreder
+#       map: ["base"]
+#   - type: Icon
+#     sprite: DarkStation/MainGame/Structures/Machines/shredder.rsi
+#     state: shreder
+#   - type: Appearance
+#   - type: Physics
+#     bodyType: Static
+#   - type: Fixtures
+#     fixtures:
+#       fix1:
+#         shape:
+#           !type:PhysShapeAabb
+#           bounds: "-0.25,-0.25,0.25,0.25"
+#         density: 25
+#         mask:
+#         - TabletopMachineMask
+#         layer:
+#         - TabletopMachineLayer
+#   - type: ApcPowerReceiver
+#     powerLoad: 250
+#   - type: GenericVisualizer
+#     visuals:
+#       enum.PowerDeviceVisuals.Powered:
+#         base:
+#           True: { state: shreder }
+#           False: { state: shreder }
+#       enum.ShredderVisuals.VisualState:
+#         base:
+#           Normal: { state: shreder }
+#           Destruction: { state: destruction }
+#   - type: ItemSlots
+#   - type: ContainerContainer
+#     containers:
+#       Paper: !type:ContainerSlot
+#   - type: MaterialStorage
+#     insertOnInteract: false
+#   - type: Shredder
+#     enabled: true
+#     minimumProcessDuration: 0
+#     whitelist:
+#       components:
+#       - Paper
+#       tags:
+#       - Document
+#     sound:
+#       path: /Audio/Effects/saw.ogg
+#       params:
+#         volume: -3
+#     cutOffSound: false
+#     proto: PaperTrash
+#   - type: Storage
+#     maxItemSize: Tiny
+#     maxSlots: 10
+#   - type: UserInterface
+#     interfaces:
+#       enum.StorageUiKey.Key:
+#         type: StorageBoundUserInterface
