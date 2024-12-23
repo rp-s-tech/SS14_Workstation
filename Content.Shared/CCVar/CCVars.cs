@@ -26,11 +26,4 @@ public sealed partial class CCVars : CVars
     public static readonly CVarDef<bool> DebugPow3rDisableParallel =
         CVarDef.Create("debug.pow3r_disable_parallel", true, CVar.SERVERONLY);
 
-    [CVarDefs]
-    public sealed class SponsorsCvars : CVars
-    {
-        public static readonly CVarDef<string> SponsorsApiUrl =
-            CVarDef.Create("sponsor.api_url", "" , CVar.SERVERONLY); //"127.0.0.1:5000"
-    }
-
 }

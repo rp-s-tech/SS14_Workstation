@@ -626,6 +626,65 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("job", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.PatronProfileItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("patron_profile_item_id");
+
+                    b.Property<string>("ItemProtoId")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("item_proto_id");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("profile_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_patron_profile_item");
+
+                    b.HasIndex("ProfileId", "ItemProtoId")
+                        .IsUnique();
+
+                    b.ToTable("patron_profile_item", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.PatronProfilePet", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("patron_profile_pets_id");
+
+                    b.Property<string>("PetId")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("pet_id");
+
+                    b.Property<string>("PetName")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("pet_name");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("profile_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_patron_profile_pets");
+
+                    b.HasIndex("ProfileId")
+                        .IsUnique()
+                        .HasDatabaseName("IX_patron_profile_pets_profile_id");
+
+                    b.HasIndex("ProfileId", "PetId")
+                        .IsUnique();
+
+                    b.ToTable("patron_profile_pets", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.PlayTime", b =>
                 {
                     b.Property<int>("Id")
@@ -1607,6 +1666,30 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Profile");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.PatronProfileItem", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithMany("Items")
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_patron_profile_item_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.PatronProfilePet", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithOne("PatronProfilePet")
+                        .HasForeignKey("Content.Server.Database.PatronProfilePet", "ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_patron_profile_pets_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Player", b =>
                 {
                     b.OwnsOne("Content.Server.Database.TypedHwid", "LastSeenHWId", b1 =>
@@ -1967,9 +2050,14 @@ namespace Content.Server.Database.Migrations.Sqlite
                 {
                     b.Navigation("Antags");
 
+                    b.Navigation("Items");
+
                     b.Navigation("Jobs");
 
                     b.Navigation("Loadouts");
+
+                    b.Navigation("PatronProfilePet")
+                        .IsRequired();
 
                     b.Navigation("Traits");
                 });

@@ -35,6 +35,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Server.RPSX.Bridges;
 using Content.Server.RPSX.Entry;
+using Content.Shared.RPSX.Patron;
 
 namespace Content.Server.Entry
 {
@@ -109,6 +110,7 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<ContentNetworkResourceManager>().Initialize();
                 IoCManager.Resolve<GhostKickManager>().Initialize();
                 IoCManager.Resolve<ServerInfoManager>().Initialize();
+                IoCManager.Resolve<ISponsorsManager>().Initialize(); // RPSX
                 IoCManager.Resolve<ServerApi>().Initialize();
 
                 _voteManager.Initialize();

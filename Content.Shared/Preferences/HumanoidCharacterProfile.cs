@@ -16,6 +16,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
+using Content.Shared.RPSX.Patron;
+using Content.Shared.RPSX.Sponsors;
 
 namespace Content.Shared.Preferences
 {
@@ -98,6 +100,9 @@ namespace Content.Shared.Preferences
         [DataField]
         public HumanoidCharacterAppearance Appearance { get; set; } = new();
 
+        [DataField]
+        public HumanoidSponsorData SponsorData { get; private set; } = new();
+
         /// <summary>
         /// When spawning into a round what's the preferred spot to spawn.
         /// </summary>
@@ -137,6 +142,7 @@ namespace Content.Shared.Preferences
             Sex sex,
             Gender gender,
             HumanoidCharacterAppearance appearance,
+            HumanoidSponsorData data,
             SpawnPriorityPreference spawnPriority,
             Dictionary<ProtoId<JobPrototype>, JobPriority> jobPriorities,
             PreferenceUnavailableMode preferenceUnavailable,
@@ -153,6 +159,7 @@ namespace Content.Shared.Preferences
             Age = age;
             Sex = sex;
             Gender = gender;
+            SponsorData = data;
             Appearance = appearance;
             SpawnPriority = spawnPriority;
             _jobPriorities = jobPriorities;
@@ -188,6 +195,7 @@ namespace Content.Shared.Preferences
                 other.Sex,
                 other.Gender,
                 other.Appearance.Clone(),
+                other.SponsorData,
                 other.SpawnPriority,
                 new Dictionary<ProtoId<JobPrototype>, JobPriority>(other.JobPriorities),
                 other.PreferenceUnavailable,
@@ -341,6 +349,34 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance)
         {
             return new(this) { Appearance = appearance };
+        }
+
+        public HumanoidCharacterProfile WithPatronItems(List<string> patronItems)
+        {
+            return new(this)
+            {
+                SponsorData = new HumanoidSponsorData
+                {
+                    Items = patronItems,
+                    PetData = SponsorData.PetData
+                }
+            };
+        }
+
+        public HumanoidCharacterProfile WithPatronPet(string petId, string petName)
+        {
+            return new HumanoidCharacterProfile(this)
+            {
+                SponsorData = new HumanoidSponsorData
+                {
+                    Items = SponsorData.Items,
+                    PetData = new ProfilePetData
+                    {
+                        PetId = petId,
+                        PetName = petName
+                    }
+                }
+            };
         }
 
         public HumanoidCharacterProfile WithSpawnPriorityPreference(SpawnPriorityPreference spawnPriority)
@@ -524,6 +560,7 @@ namespace Content.Shared.Preferences
         {
             var configManager = collection.Resolve<IConfigurationManager>();
             var prototypeManager = collection.Resolve<IPrototypeManager>();
+            var sponsorManager = collection.Resolve<ISponsorsManager>();
 
             if (!prototypeManager.TryIndex(Species, out var speciesPrototype) || speciesPrototype.RoundStart == false)
             {
@@ -532,7 +569,7 @@ namespace Content.Shared.Preferences
             }
 
             // Corvax-Sponsors-Start: Reset to human if player not sponsor
-            if (speciesPrototype.SponsorOnly && !sponsorPrototypes.Contains(Species.Id))
+            if (speciesPrototype.SponsorOnly && !sponsorManager.TryGetSponsorTier(out _))
             {
                 Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
                 speciesPrototype = prototypeManager.Index(Species);

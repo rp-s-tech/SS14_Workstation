@@ -24,6 +24,7 @@ using Content.Client.Voting;
 using Content.Shared.Ame.Components;
 using Content.Shared.Gravity;
 using Content.Shared.Localizations;
+using Content.Shared.RPSX.Patron;
 using Robust.Client;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
@@ -72,6 +73,7 @@ namespace Content.Client.Entry
         [Dependency] private readonly ILogManager _logManager = default!;
         [Dependency] private readonly DebugMonitorManager _debugMonitorManager = default!;
         [Dependency] private readonly TitleWindowManager _titleWindowManager = default!;
+        [Dependency] private readonly ISponsorsManager _sponsorsManager = default!;
 
         public override void Init()
         {
@@ -170,6 +172,7 @@ namespace Content.Client.Entry
             _voteManager.Initialize();
             _userInterfaceManager.SetDefaultTheme("SS14DefaultTheme");
             _userInterfaceManager.SetActiveTheme(_configManager.GetCVar(CVars.InterfaceTheme));
+            _sponsorsManager.Initialize();
             _documentParsingManager.Initialize();
             _titleWindowManager.Initialize();
 
