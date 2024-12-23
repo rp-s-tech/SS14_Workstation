@@ -1,0 +1,89 @@
+﻿- type: entity
+  id: MobObserverSponsorAngel
+  parent: MobObserver
+  noSpawn: true
+  save: false
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Mobs/Ghosts/angel.rsi
+
+- type: entity
+  id: MobObserverSponsorDark
+  parent: MobObserver
+  noSpawn: true
+  save: false
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Mobs/Ghosts/dark.rsi
+
+- type: entity
+  id: MobObserverSponsorDemon
+  parent: MobObserver
+  noSpawn: true
+  save: false
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Mobs/Ghosts/demon.rsi
+
+- type: entity
+  id: MobObserverSponsorGhostClown
+  parent: MobObserver
+  noSpawn: true
+  save: false
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Mobs/Ghosts/ghost_clown.rsi
+
+- type: entity
+  id: MobObserverSponsorMime
+  parent: MobObserver
+  noSpawn: true
+  save: false
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Mobs/Ghosts/ghost_mime.rsi
+
+- type: entity
+  id: MobObserverSponsorPlagueDoctor
+  parent: MobObserver
+  noSpawn: true
+  save: false
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Mobs/Ghosts/ghost_plague_doctor.rsi
+
+- type: entity
+  id: MobObserverSponsorShadow
+  parent: MobObserver
+  noSpawn: true
+  save: false
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Mobs/Ghosts/ghost_shadow.rsi
+
+- type: entity
+  id: MobObserverSponsorHawai
+  parent: MobObserver
+  noSpawn: true
+  save: false
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Mobs/Ghosts/hawai.rsi
+
+- type: entity
+  id: MobObserverSponsorSkeleton
+  parent: MobObserver
+  noSpawn: true
+  save: false
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Mobs/Ghosts/skeleton.rsi
+
+- type: entity
+  id: MobObserverSponsorTerminator
+  parent: MobObserver
+  noSpawn: true
+  save: false
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Mobs/Ghosts/terminator.rsi

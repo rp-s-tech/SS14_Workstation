@@ -35,6 +35,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
+using Content.Shared.RPSX.Patron;
 
 namespace Content.Client.Lobby.UI
 {
@@ -51,6 +52,7 @@ namespace Content.Client.Lobby.UI
         private readonly MarkingManager _markingManager;
         private readonly JobRequirementsManager _requirements;
         private readonly LobbyUIController _controller;
+        private readonly ISponsorsManager _sponsorsManager;
 
         private FlavorText.FlavorText? _flavorText;
         private TextEdit? _flavorTextEdit;
@@ -115,6 +117,7 @@ namespace Content.Client.Lobby.UI
             IPrototypeManager prototypeManager,
             IResourceManager resManager,
             JobRequirementsManager requirements,
+            ISponsorsManager sponsorsManager,
             MarkingManager markings)
         {
             RobustXamlLoader.Load(this);
@@ -127,6 +130,7 @@ namespace Content.Client.Lobby.UI
             _markingManager = markings;
             _preferencesManager = preferencesManager;
             _resManager = resManager;
+            _sponsorsManager = sponsorsManager;
             _requirements = requirements;
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
 
@@ -429,6 +433,15 @@ namespace Content.Client.Lobby.UI
 
             #endregion Markings
 
+            #region PatronItems
+
+            TabContainer.SetTabTitle(5, Loc.GetString("Донат"));
+
+            CPatronItems.ItemsChanged += OnPatronItemsChange;
+            CPatronItems.PetChanged += OnPatronPetChange;
+
+            #endregion PatronItems
+
             RefreshFlavorText();
 
             #region Dummy
@@ -613,7 +626,7 @@ namespace Content.Client.Lobby.UI
 
             _species.AddRange(_prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart));
             var speciesIds = _species.Select(o => o.ID).ToList();
-
+            _sponsorsManager.TryGetSponsorTier(out var tier);
             for (var i = 0; i < _species.Count; i++)
             {
                 var name = Loc.GetString(_species[i].Name);
@@ -623,6 +636,14 @@ namespace Content.Client.Lobby.UI
                 {
                     SpeciesButton.SelectId(i);
                 }
+
+                if(!_species[i].SponsorOnly)
+                    continue;
+
+                if (tier?.AllowedSpecies.Contains(_species[i].ID) == true)
+                    continue;
+
+                SpeciesButton.SetItemDisabled(i, true);
             }
 
             // If our species isn't available then reset it to default.
@@ -770,6 +791,7 @@ namespace Content.Client.Lobby.UI
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
+            UpdatePatronItems();
             UpdateBarkVoicesControls(); // ADT Barks
             UpdateHairPickers();
             UpdateCMarkingsHair();
@@ -1149,6 +1171,26 @@ namespace Content.Client.Lobby.UI
             ReloadProfilePreview();
         }
 
+        private void OnPatronItemsChange(List<string> items)
+        {
+            if (Profile == null)
+                return;
+
+            Profile = Profile.WithPatronItems(items);
+            SetDirty();
+            ReloadProfilePreview();
+        }
+
+        private void OnPatronPetChange(string petId, string petName)
+        {
+            if (Profile == null)
+                return;
+
+            Profile = Profile.WithPatronPet(petId, petName);
+            SetDirty();
+            ReloadProfilePreview();
+        }
+
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -1433,6 +1475,15 @@ namespace Content.Client.Lobby.UI
             Markings.SetData(Profile.Appearance.Markings, Profile.Species,
                 Profile.Sex, Profile.Appearance.SkinColor, Profile.Appearance.EyeColor
             );
+        }
+
+        private void UpdatePatronItems()
+        {
+            if (Profile == null)
+                return;
+
+            var data = Profile.SponsorData;
+            CPatronItems.SetPatronData(data.Items, data.PetData.PetId, data.PetData.PetName);
         }
 
         private void UpdateGenderControls()

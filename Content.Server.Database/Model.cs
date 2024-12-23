@@ -46,6 +46,10 @@ namespace Content.Server.Database
         public DbSet<RoleWhitelist> RoleWhitelists { get; set; } = null!;
         public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
 
+        public DbSet<PatronProfilePet> PatronProfilePets {get; set;} = null!;
+
+        public DbSet<PatronProfileItem> PatronProfileItem {get; set;} = null!;
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Preference>()
@@ -323,6 +327,14 @@ namespace Content.Server.Database
                 .HasPrincipalKey(author => author.UserId)
                 .OnDelete(DeleteBehavior.SetNull);
 
+            modelBuilder.Entity<PatronProfileItem>()
+                .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.ItemProtoId })
+                .IsUnique();
+
+            modelBuilder.Entity<PatronProfilePet>()
+                .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.PetId })
+                .IsUnique();
+
             modelBuilder.Entity<RoleWhitelist>()
                 .HasOne(w => w.Player)
                 .WithMany(p => p.JobWhitelists)
@@ -416,6 +428,9 @@ namespace Content.Server.Database
         public string EyeColor { get; set; } = null!;
         public string SkinColor { get; set; } = null!;
         public int SpawnPriority { get; set; } = 0;
+
+        public List<PatronProfileItem> Items { get; set; } = new();
+        public PatronProfilePet PatronProfilePet { get; set; } = null!;
         public List<Job> Jobs { get; } = new();
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
@@ -426,6 +441,24 @@ namespace Content.Server.Database
 
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;
+    }
+
+    public class PatronProfilePet
+    {
+        public int Id { get; set; }
+        public string PetId { get; set; } = null!;
+        public string PetName { get; set; } = null!;
+
+        public Profile Profile { get; set; } = null!;
+        public int ProfileId { get; set; }
+    }
+
+    public class PatronProfileItem
+    {
+        public int Id { get; set; }
+        public string ItemProtoId { get; set; } = null!;
+        public Profile Profile { get; set; } = null!;
+        public int ProfileId { get; set; }
     }
 
     public class Job
