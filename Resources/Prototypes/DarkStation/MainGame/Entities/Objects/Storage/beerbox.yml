@@ -1,0 +1,48 @@
+- type: entity
+  name: деревянный ящик для пива
+  parent: BaseItem
+  id: BeerBoxEmpty
+  suffix: Empty
+  description: Максимальное удобство для переноски пенного напитка.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Storage/beerbox.rsi
+    layers:
+    - state: empty_icon
+      map: [ "enum.ToggleVisuals.Layer" ]
+  - type: ContainerHeld
+    threshold: 1
+  - type: Item
+    heldPrefix: empty
+    size: Huge
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+     enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: {state: full_icon}
+          False: {state: empty_icon}
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,4,3
+    whitelist:
+      tags:
+        - DrinkBottle
+        - DrinkCan
+        - Beer
+        - Trash
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: Construction
+    graph: BeerBox
+    node: beerbox
+  - type: MultiHandedItem
+  - type: UseDelay
+    delay: 0.3

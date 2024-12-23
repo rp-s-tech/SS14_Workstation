@@ -1,0 +1,24 @@
+﻿- type: loadout
+  id: SeniorOfficerJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSeniorOfficer
+
+- type: loadout
+  id: SeniorOfficerJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSeniorOfficer
+
+- type: loadout
+  id: SeniorOfficerHead
+  equipment:
+    head: ClothingHeadSecurityInstructor
+
+- type: loadout
+  id: SeniorOfficerNeck
+  equipment:
+    neck: ClothingNeckSecurityInstructor
+
+- type: loadout
+  id: SeniorOfficerCoat
+  equipment:
+    outerClothing: ClothingOuterCoatSecurityInstructor

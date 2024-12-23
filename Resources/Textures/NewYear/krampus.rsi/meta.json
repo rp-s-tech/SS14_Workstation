@@ -1,0 +1,18 @@
+{
+    "version": 1,
+    "size": {
+      "x": 64,
+      "y": 64
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by @Miniko-chan.<3#6678 for DarkStation",
+    "states": [
+      {
+        "name": "dead"
+      },
+      {
+        "name": "krampus",
+        "directions": 4
+      }
+    ]
+  }

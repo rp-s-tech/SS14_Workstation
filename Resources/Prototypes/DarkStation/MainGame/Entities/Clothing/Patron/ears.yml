@@ -1,0 +1,109 @@
+# - type: entity
+#   id: PatronRewardCatEars
+#   parent: ClothingHeadHatCatEars
+#   name: Кошачьи уши
+#   description: Теперь со встроенной системой B.R.U.H.
+#   suffix: Patron
+#   components:
+#   - type: PatronEars
+#     sprite: Clothing/Head/Hats/catears.rsi
+#     components:
+#     - type: OwOAccent
+
+# #Чёрные ушки
+# - type: entity
+#   id: PatronRewardCatEarsBlack
+#   parent: ClothingHeadHatCatEars
+#   name: Чёрные ушки
+#   description: Теперь со встроенной системой N.I.G
+#   suffix: Patron
+#   components:
+#   - type: PatronEars
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/CatEarsBlack.rsi
+#     components:
+#     - type: OwOAccent
+#   - type: Sprite
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/CatEarsBlack.rsi
+#   - type: Clothing
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/CatEarsBlack.rsi
+
+# #RBG ушки
+# - type: entity
+#   id: PatronRewardCatEarsRBG
+#   parent: ClothingHeadHatCatEars
+#   name: RGB Ушки
+#   description: Теперь со встроенной системой B.R.U.H.
+#   suffix: Patron
+#   components:
+#   - type: PatronEars
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/CatRGB.rsi
+#     components:
+#     - type: OwOAccent
+#   - type: Sprite
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/CatRGB.rsi
+#   - type: Clothing
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/CatRGB.rsi
+
+# #Рога
+# - type: entity
+#   id: PatronRewardDevilEars
+#   parent: ClothingHeadBase
+#   name: Рожки
+#   description: Я сам дьявол
+#   suffix: Patron
+#   components:
+#   - type: PatronEars
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/Devil.rsi
+#   - type: Sprite
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/Devil.rsi
+#   - type: Clothing
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/Devil.rsi
+
+# #Лисьи ушки
+# - type: entity
+#   id: PatronRewardFoxEars
+#   parent: ClothingHeadBase
+#   name: Уши рыжей лисы
+#   description: Декоративные уши рыжей лисы
+#   suffix: Patron
+#   components:
+#   - type: PatronEars
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/Fox/fox_standard.rsi
+#     components:
+#     - type: BarkAccent
+#   - type: Sprite
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/Fox/fox_standard.rsi
+#   - type: Clothing
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/Fox/fox_standard.rsi
+
+# - type: entity
+#   id: PatronRewardFoxEarsBlack
+#   parent: ClothingHeadBase
+#   name: Уши черной лисы
+#   description: Декоративные уши черной лисы
+#   suffix: Patron
+#   components:
+#   - type: PatronEars
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/Fox/fox_black.rsi
+#     components:
+#     - type: BarkAccent
+#   - type: Sprite
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/Fox/fox_black.rsi
+#   - type: Clothing
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/Fox/fox_black.rsi
+
+# - type: entity
+#   id: PatronRewardFoxEarsWhite
+#   parent: ClothingHeadBase
+#   name: Уши снежной лисы
+#   description: Декоративные уши снежной лисы
+#   suffix: Patron
+#   components:
+#   - type: PatronEars
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/Fox/fox_white.rsi
+#     components:
+#     - type: BarkAccent
+#   - type: Sprite
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/Fox/fox_white.rsi
+#   - type: Clothing
+#     sprite: DarkStation/MainGame/Clothing/Ears/Patron/Fox/fox_white.rsi

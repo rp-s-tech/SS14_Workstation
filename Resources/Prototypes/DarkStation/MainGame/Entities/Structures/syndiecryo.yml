@@ -1,0 +1,41 @@
+- type: entity
+  parent: CryogenicSleepUnit
+  id: SYCryogenic
+  name: криопод Синдиката
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/syndiecryo.rsi
+  - type: AccessReader
+    breakOnEmag: false
+    access: [["SyndicateAgent"]]
+  - type: PointLight
+    color: Red
+    radius: 1.5
+    energy: 0.5
+    castShadows: false
+
+- type: entity
+  parent: CryogenicSleepUnit
+  id: SYCryogenicFilled
+  name: криопод Синдиката (с агентом)
+  description: Содержит в себе "замороженного" во всех смыслах агента Синдиката.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/syndiecryo.rsi
+  - type: AccessReader
+    breakOnEmag: false
+    access: [["SyndicateAgent"]]
+  - type: PointLight
+    color: Red
+    radius: 1.5
+    energy: 0.5
+    castShadows: false
+  - type: GhostRole
+    name: ghost-role-information-syndicate-reinforcement-name
+    description: ghost-role-information-syndicate-reinforcement-description
+    rules: ghost-role-information-syndicate-reinforcement-rules
+    requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 72000 # 20 h
+  - type: GhostRoleMobSpawner
+    prototype: MobHumanSyndicateAgent

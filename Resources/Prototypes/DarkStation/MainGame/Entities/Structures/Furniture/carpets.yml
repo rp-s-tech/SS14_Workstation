@@ -1,0 +1,144 @@
+- type: entity
+  id: CarpetCargo
+  parent: CarpetBase
+  suffix: Cargo
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Furniture/Carpets/cargo_carpet.rsi
+  - type: Icon
+    sprite: DarkStation/MainGame/Structures/Furniture/Carpets/cargo_carpet.rsi
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 10
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              FloorCarpetItemRed:
+                min: 1
+                max: 1
+
+- type: entity
+  id: CarpetEngineering
+  parent: CarpetBase
+  suffix: Engineering
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Furniture/Carpets/eng_carpet.rsi
+  - type: Icon
+    sprite: DarkStation/MainGame/Structures/Furniture/Carpets/eng_carpet.rsi
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 10
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              FloorCarpetItemRed:
+                min: 1
+                max: 1
+
+- type: entity
+  id: CarpetMedical
+  parent: CarpetBase
+  suffix: Medical
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Furniture/Carpets/med_carpet.rsi
+  - type: Icon
+    sprite: DarkStation/MainGame/Structures/Furniture/Carpets/med_carpet.rsi
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 10
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              FloorCarpetItemRed:
+                min: 1
+                max: 1
+
+- type: entity
+  id: CarpetRND
+  parent: CarpetBase
+  suffix: RND
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Furniture/Carpets/rnd_carpet.rsi
+  - type: Icon
+    sprite: DarkStation/MainGame/Structures/Furniture/Carpets/rnd_carpet.rsi
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 10
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              FloorCarpetItemRed:
+                min: 1
+                max: 1
+
+- type: entity
+  id: CarpetSecurity
+  parent: CarpetBase
+  suffix: Security
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Furniture/Carpets/sec_carpet.rsi
+  - type: Icon
+    sprite: DarkStation/MainGame/Structures/Furniture/Carpets/sec_carpet.rsi
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 10
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              FloorCarpetItemRed:
+                min: 1
+                max: 1

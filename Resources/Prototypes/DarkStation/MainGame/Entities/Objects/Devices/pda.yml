@@ -1,0 +1,65 @@
+- type: entity
+  parent: BasePDA
+  id: POCCPDA
+  name: КПК НШЦК
+  description: Засекречено
+  components:
+  - type: Pda
+    id: POCCIDCard
+    state: pda-pocc
+    penSlot:
+      startingItem: POCCPen
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: Icon
+    state: pda-pocc
+
+- type: entity
+  parent: BasePDA
+  id: SecurityPilotPDA
+  name: КПК Пилота
+  description: Как оно связано с пилотами?
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
+    state: pda-securitypilot
+  - type: Pda
+    id: SecurityPilotIDCard
+    state: pda-securitypilot
+  - type: PdaBorderColor
+    borderColor: "#717059"
+    accentVColor: "#A32D26"
+  - type: Icon
+    state: pda-securitypilot
+
+- type: entity
+  parent: BasePDA
+  id: BlueShieldOfficerPDA
+  name: КПК Офицера синего щита
+  description: Пахнет защитой
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
+  - type: Pda
+    id: BlueShieldOfficerIDCard
+    state: pda-blueshield
+  - type: Icon
+    sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
+    state: pda-blueshield
+
+- type: entity
+  parent: BasePDA
+  id: IFDPDA
+  name: КПК Инспектора ФД
+  description: Пахнет огромной пачкой денег
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Devices/ifd_pda.rsi
+  - type: Pda
+    id: IFDIDCard
+    state: pda-ifd
+  - type: Icon
+    sprite: DarkStation/MainGame/Objects/Devices/ifd_pda.rsi
+    state: pda-ifd

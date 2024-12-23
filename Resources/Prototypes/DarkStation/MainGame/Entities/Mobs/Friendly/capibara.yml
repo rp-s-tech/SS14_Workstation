@@ -1,0 +1,83 @@
+- type: entity
+  parent: SimpleMobBase
+  id: Capibara
+  name: Капибара Витя Текин
+  description: Дружелюбный питомец отдела SCP
+  components:
+    - type: Sprite
+      drawdepth: Mobs
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          sprite: DarkStation/MainGame/Mobs/Friendly/capibara.rsi
+          state: standing
+    - type: Physics
+      bodyType: Dynamic
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.3
+          density: 35
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: standing
+        Critical:
+          Base: dead
+        Dead:
+          Base: dead
+    - type: MovementSpeedModifier
+      baseWalkSpeed : 4
+      baseSprintSpeed : 4
+    - type: ReplacementAccent
+      accent: capibaraAccent
+    - type: Strippable
+    - type: MobState
+      allowedStates:
+        - Alive
+        - Dead
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        50: Critical
+        100: Dead
+    - type: Stamina
+      excess: 100
+    - type: Appearance
+    - type: Butcherable
+      spawned:
+        - id: FoodMeat
+          amount: 2
+    - type: Puller
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Капибара Витя Текин
+      description: Дружелюбный питомец отдела SCP
+    - type: GhostTakeoverAvailable
+
+- type: accent
+  id: capibaraAccent
+  fullReplacements:
+  - Я капибара
+  - Капибара
+
+- type: entity
+  name: Спавнер капибары
+  id: SpawnMobCapibara
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: DarkStation/MainGame/Mobs/Friendly/capibara.rsi
+        state: standing
+  - type: ConditionalSpawner
+    prototypes:
+      - Capibara

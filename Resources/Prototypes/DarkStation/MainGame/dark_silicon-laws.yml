@@ -1,0 +1,35 @@
+﻿#Ratvar Laws
+- type: siliconLaw
+  id: SecurityBorg1
+  order: 1
+  lawString: law-security-borg-1
+
+- type: siliconLaw
+  id: SecurityBorg2
+  order: 2
+  lawString: law-security-borg-2
+
+- type: siliconLaw
+  id: SecurityBorg3
+  order: 3
+  lawString: law-security-borg-3
+
+- type: siliconLaw
+  id: SecurityBorg4
+  order: 4
+  lawString: law-security-borg-4
+
+- type: siliconLaw
+  id: SecurityBorg5
+  order: 5
+  lawString: law-security-borg-5
+
+- type: siliconLawset
+  id: SecurityBorg
+  laws:
+  - SecurityBorg1
+  - SecurityBorg2
+  - SecurityBorg3
+  - SecurityBorg4
+  - SecurityBorg5
+  obeysTo: laws-owner-command-security

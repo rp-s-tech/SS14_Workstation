@@ -1,0 +1,15 @@
+- type: startingGear
+  id: GrayJediGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitGrayJedi
+    back: ClothingBackpackSatchelHolding
+    shoes: ClothingShoesGrayJedi
+    mask: ClothingMaskGasGrayJedi
+    gloves: ClothingHandsGlovesGrayJedi
+    eyes: ClothingEyesHudGrayJedi
+    ears: ClothingHeadsetAltGrayJedi
+    head: ClothingHeadHatGrayJediHead
+    belt: ClothingBeltGrayJedi
+    neck: ClothingNeckCloakGrayJedi
+    outerClothing: ClothingOuterGrayJediArmor
+    pocket1: EnergySword

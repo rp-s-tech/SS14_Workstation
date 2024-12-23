@@ -1,0 +1,20 @@
+- type: reagent
+  id: Cryter
+  name: reagent-name-cryter
+  group: Special
+  desc: reagent-desc-cryter
+  physicalDesc: Очень грустно...
+  flavor: punishment
+  color: "#FF4DD2"
+  slippery: true
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:Emote
+        emote: Cry
+        probability: 0.3
+      - !type:PopupMessage
+        type: Local
+        visualType: Large
+        messages: [ "Вы не можете сдержать плач" ]
+        probability: 0.2

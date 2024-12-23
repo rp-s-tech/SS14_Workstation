@@ -355,6 +355,30 @@ public sealed class PlayTimeTrackingManager : ISharedPlaytimeManager, IPostInjec
         AddTimeToTracker(id, PlayTimeTrackingShared.TrackerOverall, time);
     }
 
+
+
+    public void ClearAllTime(ICommonSession id)
+    {
+        if (!_playTimeData.TryGetValue(id, out var data) || !data.Initialized)
+            throw new InvalidOperationException("Play time info is not yet loaded for this player!");
+
+        using var enumerator = data.TrackerTimes.GetEnumerator();
+        while (enumerator.MoveNext())
+        {
+            var tracker = enumerator.Current;
+            if (tracker.Key is PlayTimeTrackingShared.TrackerAdmin or PlayTimeTrackingShared.TrackerOverall)
+                continue;
+
+            data.TrackerTimes[tracker.Key] = TimeSpan.Zero;
+            data.DbTrackersDirty.Add(tracker.Key);
+        }
+
+        data.LastUpdate = _timing.RealTime;
+
+        SaveSession(id);
+        SendPlayTimes(id);
+    }
+
     public TimeSpan GetOverallPlaytime(ICommonSession id)
     {
         return GetPlayTimeForTracker(id, PlayTimeTrackingShared.TrackerOverall);

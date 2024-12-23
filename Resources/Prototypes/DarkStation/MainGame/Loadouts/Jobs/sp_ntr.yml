@@ -1,0 +1,45 @@
+﻿#Jumpsuit
+- type: loadout
+  id: SpNTRJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSpNanoTrasenRepresentativeOfficial
+
+#Outerclothing
+- type: loadout
+  id: SpNTRCoat
+  equipment:
+    outerClothing: ClothingOuterCoatSpNanoTrasenRepresentativeFormal
+
+#Head
+- type: loadout
+  id: SpNTRHead
+  equipment:
+    head: ClothingHeadHatSpNanoTrasenRepresentativeOfficial
+
+#Neck
+- type: loadout
+  id: SpNTRNeck
+  equipment:
+    neck: ClothingNeckCloakSpNanoTrasenRepresentative
+
+#Back
+- type: loadout
+  id: SpNTRBackpack
+  equipment:
+    back: ClothingBackpackSNTR
+
+- type: loadout
+  id: SpNTRBackpackDuffel
+  equipment:
+    back: ClothingBackpackDuffelSNTR
+
+- type: loadout
+  id: SpNTRBackpackSatchel
+  equipment:
+    back: ClothingBackpackSatchelSNTR
+
+#Shoes
+- type: loadout
+  id: SpNTRBootsCombat
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled

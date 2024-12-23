@@ -1,0 +1,35 @@
+﻿- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesHudSyndiSP
+  name: солнцезащитные очки
+  description: Пара черных солнцезащитных очков.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/sunglasses.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/sunglasses.rsi
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - Inorganic
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+  - type: ShowSyndicateIcons
+  - type: SolutionScanner
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesHudGrayJedi
+  suffix: Джедая
+  name: Худ
+  description: Худ Серого Джедая.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Eyes/jedieyes.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Eyes/jedieyes.rsi
+  - type: FlashImmunity

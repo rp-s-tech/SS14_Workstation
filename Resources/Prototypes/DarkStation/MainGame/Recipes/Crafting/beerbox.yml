@@ -1,0 +1,10 @@
+- type: construction
+  name: деревянный ящик для пива
+  id: BeerBox
+  graph: BeerBox
+  startNode: start
+  targetNode: beerbox
+  category: construction-category-tools
+  description: Деревянный ящик для удобной переноски светлого нефильтрованного.
+  icon: { sprite: DarkStation/MainGame/Objects/Storage/beerbox.rsi, state: empty_icon }
+  objectType: Item

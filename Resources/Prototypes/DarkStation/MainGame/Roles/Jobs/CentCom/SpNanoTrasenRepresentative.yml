@@ -1,0 +1,133 @@
+- type: job
+  id: SpNanoTrasenRepresentative
+  name: Представитель НТ
+  description: Защищает интересы НТ
+  playTimeTracker: JobSpNanoTrasenRepresentative
+  setPreference: true
+  startingGear: SpNanoTrasenRepresentativeGear
+  icon: "JobIconNanotrasen"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  whitelisted: true
+  sponsorIgnoreWhitelist: false
+  accessGroups:
+  - AllAccessCentCom
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+
+- type: startingGear
+  id: SpNanoTrasenRepresentativeGear
+  equipment:
+    id: CentcomPDA
+    ears: ClothingHeadsetSpNanoTrasenRepresentative
+    pocket1: BoxFolderBlack
+    pocket2: RubberStampSpNTR
+  storage:
+    back:
+    - Flash
+    - TelescopicBaton
+    - SecurityWhistle
+
+- type: entity
+  id: ClothingBackpackSNTR
+  name: Рюкзак представителя НТ
+  parent: ClothingBackpack
+
+- type: entity
+  id: ClothingBackpackDuffelSNTR
+  name: Рюкзак представителя НТ
+  parent: ClothingBackpackDuffel
+
+- type: entity
+  id: ClothingBackpackSatchelSNTR
+  name: Рюкзак представителя НТ
+  parent: ClothingBackpackSatchel
+
+# Clothing
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatSpNanoTrasenRepresentativeFormal
+  name: Пальто представителя NanoTrasen.
+  description: Лучшее одеяние как для защиты, так и для отображения силы.
+  suffix: SNTR
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/nt_formal.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/nt_formal.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.6
+        Heat: 0.5
+      securePartTypes:
+        Leg: 0.75
+        Arm: 0.75
+
+- type: entity
+  parent: ClothingUniformJumpsuitCentcomOfficial
+  id: ClothingUniformJumpsuitSpNanoTrasenRepresentativeOfficial
+  name: Униформа представителя NanoTrasen
+  suffix: SNTR
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/nt_official.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/nt_official.rsi
+
+- type: entity
+  parent: ClothingHeadHatCentcom
+  id: ClothingHeadHatSpNanoTrasenRepresentativeOfficial
+  name: Фуражка представителя NanoTrasen
+  suffix: SNTR
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/nt_cap.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/nt_cap.rsi
+
+- type: entity
+  parent: ClothingHeadsetAltCentCom
+  id: ClothingHeadsetSpNanoTrasenRepresentative
+  name: Гарнитура представителя НТ
+  suffix: SNTR
+  description: Гарнитура, используемая верхушкой Nanotrasen.
+  components:
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/command.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/command.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakSpNanoTrasenRepresentative
+  name: Плащ представителя НТ
+  description: Плащ, исплользуемый верхушкой Nanotrasen!
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/PNT-mantle.rsi
+  - type: StealTarget
+    stealGroup: HeadCloak
+
+# Spawner
+
+- type: entity
+  id: SpawnPointSpNanoTrasenRepresentative
+  parent: SpawnPointJobBase
+  name: Spawner SpNanoTrasenRepresentative
+  components:
+  - type: SpawnPoint
+    job_id: SpNanoTrasenRepresentative
+  - type: Sprite
+    layers:
+    - state: green
+    - state: captain

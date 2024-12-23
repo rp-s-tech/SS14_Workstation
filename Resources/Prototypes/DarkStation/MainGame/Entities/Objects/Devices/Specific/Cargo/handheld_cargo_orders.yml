@@ -1,0 +1,53 @@
+- type: entity
+  name: Портативный монитор заказов
+  parent:
+  - BaseItem
+  - PowerCellSlotSmallItem
+  id: HandheldSpCargoOrders
+  description: Ручной монитор заказов, отображающий состояние счёта и предоставляющий возможность делать заказы.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Specific/Cargo/handheldcargoorders.rsi
+    state: icon
+    layers:
+      - state: icon
+      - state: scanner
+        shader: unshaded
+        visible: true
+        map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerCellSlotVisuals.Enabled:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  - type: PowerCellDraw
+    drawRate: 0
+    useRate: 20
+  - type: ActivatableUIRequiresPowerCell
+  - type: ActivatableUI
+    key: enum.CargoConsoleUiKey.Orders
+    closeOnHandDeselect: false
+  - type: UserInterface
+    interfaces:
+      enum.CargoConsoleUiKey.Orders:
+        type: CargoOrderConsoleBoundUserInterface
+  - type: CargoOrderConsole
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 1200
+  - type: StationLimitedNetwork
+  - type: StaticPrice
+    price: 5000
+  - type: AccessReader
+    access: [["Cargo"], ["CentCom"]]
+  - type: DeviceLinkSource
+    range: 200
+    ports:
+      - OrderSender
+  - type: GuideHelp
+    guides:
+    - Cargo
