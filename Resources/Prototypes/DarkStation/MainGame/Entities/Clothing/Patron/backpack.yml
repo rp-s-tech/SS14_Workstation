@@ -1,0 +1,29 @@
+﻿- type: entity
+  parent: ClothingBackpackHolding
+  id: ClothingBackpackPatron
+  name: Улучшенный рюкзак
+  description: Такой рюкзак выдается лучшим сотрудникам Nanotrasen
+  suffix: Patron
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxSurvival
+        - id: CrowbarRed
+    - type: Storage
+      grid:
+      - 0,0,8,4
+
+- type: entity
+  id: ClothingBackpackSatchelPatron
+  parent: ClothingBackpackSatchelHolding
+  name: Улучшенная сумка хранения
+  description: Такая сумка выдается лучшим сотрудникам Nanotrasen
+  suffix: Patron
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxSurvival
+    - id: CrowbarRed
+  - type: Storage
+    grid:
+    - 0,0,8,4

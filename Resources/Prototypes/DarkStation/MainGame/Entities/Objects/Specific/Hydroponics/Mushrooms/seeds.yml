@@ -1,0 +1,29 @@
+- type: entity
+  parent: SeedBase
+  name: споры светогриба
+  id: MyceliumGlowshroomSeeds
+  components:
+  - type: Seed
+    seedId: myceliumglowshroom
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Specific/Hydroponics/Mushrooms/glowshroom.rsa
+
+- type: entity
+  parent: SeedBase
+  name: споры светокепа
+  id: MyceliumGlowcapSeeds
+  components:
+  - type: Seed
+    seedId: myceliumglowcap
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Specific/Hydroponics/Mushrooms/glowcap.rsa
+
+# - type: entity  #временно отсутствуют
+#   parent: SeedBase
+#   name: споры тенегриба
+#   id: MyceliumShadowshroomSeeds
+#   components:
+#   - type: Seed
+#     seedId: myceliumshadowshroom
+#   - type: Sprite
+#     sprite: DarkStation/MainGame/Objects/Specific/Hydroponics/Mushrooms/shadowhroom.rsa

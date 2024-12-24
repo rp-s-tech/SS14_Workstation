@@ -1,0 +1,53 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: SpMagistratUniformSuit
+  name: Костюм магистрата
+  suffix: Magistrate, Hoderf
+  description: Костюм особого пошива, по специальному заказу Ричарда Вагнера. Он так полюбился магистратам, что ныне его используют многие уважающие себя магистраты.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/magistratebel.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/magistratebel.rsi
+
+- type: entity
+  name: Позолоченная зажигалка Магистрата
+  parent: FlippoAVDLighter
+  id: SPFlippoMagistrateLighter
+  suffix: Magistrate, Hoderf
+  description: Пахнет правосудием, дорогим виски и униженным экипажем.
+
+- type: entity
+  name: Кейс магистрата
+  parent: BriefcaseBrown
+  id: SpBriefcaseMagistrate
+  suffix: Magistrate, Hoderf
+  description: Для очень важных судебных разбирательств.
+  components:
+  - type: Sprite
+    sprite: Objects/Storage/Briefcases/briefcase_magistrate.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Storage/Briefcases/briefcase_magistrate.rsi
+  - type: Storage
+    grid:
+    - 0,0,6,4
+  - type: StorageFill
+    contents:
+      - id: Paper
+      - id: Paper
+      - id: Paper
+      - id: Paper
+      - id: Paper
+      - id: BoxFolderBase
+      - id: BoxFolderRed
+      - id: BoxFolderBlue
+      - id: BoxFolderYellow
+      - id: BoxFolderBlack
+      - id: CigPackMixed
+      - id: SPFlippoMagistrateLighter
+      - id: RubberStampSpMagistration
+      - id: ClothingEyesGlassesSunglasses
+      - id: SpMagistratUniformSuit
+      - id: ClothingHandsGlovesColorBlack
+      - id: ClothingShoesBootsLaceup

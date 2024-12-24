@@ -1,0 +1,32 @@
+﻿- type: entity
+  id: MobCrow
+  parent: SimpleSpaceMobBase
+  name: "Малый Темнокрыл"
+  description: "Обитатель планеты D.A.R.K - 208, интересно, он кусается?"
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Mobs/Enemies/crow.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive-anim
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      collection: AlienClaw
+    damage:
+      groups:
+        Brute: 10
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: DamageStateVisuals
+    rotate: true
+    states:
+      Alive:
+        Base: alive-anim
+      Dead:
+        Base: dead

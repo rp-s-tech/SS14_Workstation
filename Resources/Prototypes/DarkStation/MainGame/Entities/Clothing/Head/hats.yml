@@ -1,0 +1,196 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: SYChefHat
+  name: поварской колпак Синдиката
+  description: А ты думал, он будет белым?
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/taipanchefhat.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/taipanchefhat.rsi
+  - type: Storage
+    grid:
+    - 0,0,0,0
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBaseButcherable
+  id: ClothingHeadBeretPOCCBeret
+  name: Берет НШЦК
+  description: Один вид этого берета, даёт понять напротив стоящему человеку, с кем он имеет дело.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Berets/pocsberet.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Berets/pocsberet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.9
+        Heat: 0.8
+      securePartTypes:
+        Head: 0.8
+
+- type: entity
+  parent: ClothingHeadBaseButcherable
+  id: ClothingHeadCapPOCC
+  name: Фуражка НШЦК
+  description: Один вид этой фуражки, даёт понять напротив стоящему человеку, с кем он имеет дело.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Cap/pocscap.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Cap/pocscap.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.9
+        Heat: 0.8
+      securePartTypes:
+        Head: 0.8
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadSecPilot
+  name: Берет пилота
+  description: Берет настоящего покорителя космоса!
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/sbpilotberet.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/sbpilotberet.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadSecurityInstructor
+  name: Фуражка инструктора Службы Безопастности
+  description: Модная фуражка для модного инструктора.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/isbhat.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/isbhat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatGrayJediHead
+  suffix: Джедая
+  name: Шляпа
+  description: Шляпа Серого Джедая.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/jedihead.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/jedihead.rsi
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - HidesHair
+
+- type: entity
+  parent: ClothingHeadBaseButcherable
+  id: ClothingHeadHelmetHelmetKnight
+  name: Кепка Звёздной-пыли
+  description: Один вид этой бизарной кепки, даёт понять напротив стоящему человеку, с кем он имеет дело.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Cap/security_knight.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Cap/security_knight.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.9
+        Heat: 0.8
+      securePartTypes:
+        Head: 0.8
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadPBunnyEars
+  name: белые ушки кролика
+  description: Стильные белые ушки, возможно кто-то потерял их во время прятания яиц.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Pbunny-White.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Pbunny-White.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadPBunnyPinkEars
+  name: розовые ушки кролика
+  description: Не менее стильные ушки чем белые, но больше подходят на женскую аудиторию.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Pbunny-Pink.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Pbunny-Pink.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretBlueShield
+  name: Берет Синего Щита
+  description: То, чем больше всего дорожит ОСЩ.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Berets/blueshield.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Berets/blueshield.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCapBlueShield
+  name: Фуражка Синего Щита
+  description: Покажи им, кто здесь настоящий секьюрити!
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Cap/blueshield.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Cap/blueshield.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBaseButcherable
+  id: ClothingHeadHatCapIFD
+  name: Берет ИФД
+  description: Этот берет носит истинный повелитель денег. По крайней мере, пока его не украдут.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Berets/ifd_beret.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/Berets/ifd_beret.rsi
+
+- type: entity
+  parent: ClothingHeadHatCentcom
+  id: ClothingHeadHatSpFinDepOfficial
+  name: Фуражка финансового департамента
+  suffix: SFD
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/fin_cap.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hats/fin_cap.rsi

@@ -1,0 +1,133 @@
+﻿- type: entity
+  id: BaseMobShepherd
+  abstract: true
+  parent: [ SimpleMobBase, MobCombat ]
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      sprite: DarkStation/MainGame/Mobs/Friendly/muhtar.rsi
+      state: base
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 100
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: base
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 6.5
+    baseSprintSpeed: 6.5
+  - type: ReplacementAccent
+    accent: dog
+  - type: Strippable
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      180: Critical
+      250: Dead
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 15
+  - type: Stamina
+    excess: 100
+  - type: Appearance
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 2
+  - type: Puller
+  - type: Inventory
+    speciesId: dog
+    templateId: combatPet
+  - type: InventorySlots
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+  - type: Barotrauma
+    protectionSlots:
+    - outerClothing
+    damage:
+      types:
+        Blunt: 0.1
+  - type: Tag
+    tags:
+    - Dog
+
+- type: entity
+  id: ShepherdPatron
+  parent: BaseMobShepherd
+  name: Овчарка
+  description: Красивый и умный пес
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      80: Critical
+      120: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 5
+  - type: Puller
+  - type: NPCRetaliation
+    attackMemoryLength: 10
+  - type: NpcFactionMember
+    factions:
+    - Passive
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: Loadout
+    prototypes: [ MuhtarPatronGear ]
+
+#Gear
+- type: startingGear
+  id: MuhtarPatronGear
+  equipment:
+    back: ClothingBackpackDuffelPatronDogFilled
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelPatronDog
+  name: "Рюкзак для собаки"
+  description: "Обычный рюкзак, чтобы переносить вещи, но для собак"
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Mobs/Friendly/muhtar_back.rsi
+  - type: Tag
+    tags:
+    - PetsBackpack
+
+- type: entity
+  parent: ClothingBackpackDuffelPatronDog
+  id: ClothingBackpackDuffelPatronDogFilled
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxSurvival

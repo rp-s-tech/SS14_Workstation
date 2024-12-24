@@ -1,0 +1,63 @@
+﻿- type: sponsorPetCategory
+  id: SponsorSmallPets
+  pets:
+  - MobBat
+  - MobChicken
+  - MobBee
+  - MobChicken1
+  - MobChicken2
+  - MobCockroach
+  - MobMothroach
+  - MobDuckMallard
+  - MobDuckWhite
+  - MobButterfly
+  - MobGoose
+  - MobMouse
+  - MobMouse1
+  - MobMouse2
+  - MobLizard
+  - MobSlug
+  - MobFrog
+  - MobParrot
+  - MobPenguin
+  - MobSnake
+  - MobCatKitten
+
+- type: sponsorPetCategory
+  id: SponsorMediumPets
+  pets:
+  - MobPossum
+  - MobPossumOld
+  - MobRaccoon
+  - MobFox
+  - MobCorgi
+  - MobCorgiPuppy
+  - MobCat
+  - MobCatCalico
+  - MobCatSpace
+  - MobCatCaracal
+  - MobSloth
+  - MobFerret
+  - MobHamster
+  - MobPig
+
+# Spriters
+- type: sponsorPetCategory
+  id: Sk1nyhaPets
+  pets:
+  - SpaceLizardPatron
+
+- type: sponsorPetCategory
+  id: RoisiPets
+  pets:
+  - MobGoliath
+
+- type: sponsorPetCategory
+  id: JenkimnPets
+  pets:
+  - MobCrow
+
+- type: sponsorPetCategory
+  id: LukasPets
+  pets:
+  - MobDarkSlug

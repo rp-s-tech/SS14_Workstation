@@ -1,0 +1,23 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: SYBotanyApron
+  name: фартук
+  suffix: (Ботаник, Синдикат, Тайпан)
+  description: Кроваво-красный фартук ботаника, гениально тупая попытка обмана томатов-убийц...
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Misc/taipanbotanyapron.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Misc/taipanbotanyapron.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: SYChefApron
+  name: фартук
+  suffix: (Повар, Синдикат, Тайпан)
+  description: На чёрном кровь видна хуже.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Misc/taipanchefapron.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Misc/taipanchefapron.rsi

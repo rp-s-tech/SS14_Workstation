@@ -1,0 +1,24 @@
+- type: secretListingCategory
+  id: ERTGroupsListing
+  windowName: "Выберите тип ОБР"
+  windowDescription: "В зависимости от ситуации на станции, требуется разные типы ОБР. Выберите необходимый"
+  selectMode: true
+  listings:
+    - ERTShuttle
+    - CBURNShuttle
+
+- type: secretListing
+  id: ERTShuttle
+  title: "Стандартный ОБР"
+  description: "Стандартная группа ОБР. Для зачистки станции от угрозы, наведении порядка, сопровождении важных лиц"
+  buttonText: "Отправить"
+  buttonState: enum.ButtonState.Enabled
+  icon: Interface/Misc/job_icons.rsi/Nanotrasen.png
+
+- type: secretListing
+  id: CBURNShuttle
+  title: "РХБЗЗ"
+  description: "Если на станции зомби, вам сюда"
+  buttonText: "Отправить"
+  buttonState: enum.ButtonState.Enabled
+  icon: Interface/Misc/job_icons.rsi/Nanotrasen.png

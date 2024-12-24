@@ -1,0 +1,289 @@
+- type: reagent
+  id: Tarhun
+  parent: BaseDrink
+  name: reagent-name-tarhun
+  group: Drinks
+  desc: reagent-desc-tarhun
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: sweet
+  color: "#7CFC00"
+  metamorphicSprite:
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/tarhunglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 3
+      - !type:AdjustReagent
+        reagent: Desoxyephedrine
+        amount: 0.1
+
+- type: reagent
+  id: CrunchyChaos
+  name: хрустящий хаос
+  parent: BaseAlcohol
+  desc: Освежающий и бодрящий взрыв цитрусового заряда. Выбор настоящего разведчика.
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: crunchychaos
+  color: "#ffae0d"
+  metamorphicSprite:
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/dwarfbeer.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 2
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.3
+      - !type:Polymorph
+        prototype: BeerDwarfPolymorph
+        conditions:
+        - !type:ReagentThreshold
+          min: 15
+    Narcotic:
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.35
+        sprintSpeedModifier: 1.35
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: StutteringAccent
+      - !type:Jitter
+      - !type:GenericStatusEffect
+        key: Stun
+        time: 3
+        type: Remove
+      - !type:GenericStatusEffect
+        key: KnockedDown
+        time: 3
+        type: Remove
+
+- type: reagent
+  id: PurpleFuzzblast
+  name: фиолетовый фаззбласт
+  parent: BaseAlcohol
+  desc: Одурманивающая лаванда, приправленная сладкой карамелью. Выбор настоящего инженера.
+  physicalDesc: reagent-physical-desc-tangy
+  flavor: purplefuzzblast
+  color: "#7C5E99"
+  metamorphicSprite:
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/dwarfbeer.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 2
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.3
+      - !type:Polymorph
+        prototype: BeerDwarfPolymorph
+        conditions:
+        - !type:ReagentThreshold
+          min: 15
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Burn: -1
+            Brute: -1
+            Airloss: -1
+            Toxin: -1
+    Narcotic:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 8
+        refresh: false
+
+- type: reagent
+  id: DeepDrifter
+  name: глубокая зыбучка
+  parent: BaseAlcohol
+  desc: Шоколадная масса, расслабляющая и успокаивающая. Выбор настоящего стрелка.
+  physicalDesc: reagent-physical-desc-thick-and-grainy
+  flavor: deepdrifter
+  color: "#8B4513"
+  metamorphicSprite:
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/dwarfbeer.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 2
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.3
+      - !type:Polymorph
+        prototype: BeerDwarfPolymorph
+        conditions:
+        - !type:ReagentThreshold
+          min: 15
+    Narcotic:
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.65
+        sprintSpeedModifier: 0.65
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentThreshold
+          reagent: DeepDrifter
+          min: 10
+        key: ForcedSleep
+        component: ForcedSleeping
+        refresh: false
+        type: Add
+    Medicine:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        time: 15.0
+        type: Remove
+      - !type:GenericStatusEffect
+        key: Stutter
+        time: 3
+        type: Remove
+
+- type: reagent
+  id: Baltika9
+  name: балтика 9
+  parent: BaseAlcohol
+  desc: Легендарный крепкий лагер сквозь столетия.
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: baltika9
+  color: "#c76b02"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/beerglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.2
+
+- type: reagent
+  id: BerryMohito
+  name: reagent-name-berrymohito
+  parent: BaseAlcohol
+  desc: ""
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: sweet
+  color: "#ff4063"
+  metamorphicSprite:
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/berrymohito.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 1
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.05
+
+- type: reagent
+  id: RadostEnta
+  name: reagent-name-radostenta
+  parent: BaseAlcohol
+  desc: reagent-desc-radostenta
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: alcohol
+  color: "#3f704e"
+  metamorphicSprite:
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/RadostEnta.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 2
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 1
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 1
+      - !type:AdjustReagent
+        reagent: RobustHarvest
+        amount: 1
+
+- type: reagent
+  id: MimanaMama
+  name: reagent-name-mimanamama
+  parent: BaseDrink
+  desc: ""
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: sweet
+  color: "#ffffff"
+  metamorphicSprite:
+    sprite: Darkstation/Objects/Consumable/Drinks/Mimanamama.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Sugar
+        amount: 0.05
+      - !type:AdjustReagent
+        reagent: MuteToxin
+        amount: 0.2
+
+- type: reagent
+  id: GinSonic
+  name: reagent-name-gin-sonic
+  parent: BaseAlcohol
+  desc: reagent-desc-gin-sonic
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: alcohol
+  color: "#ffffff"
+  metamorphicSprite:
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/GinSonic.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.1
+      - !type:AdjustReagent
+        reagent: Ephedrine
+        amount: 0.3

@@ -1,0 +1,57 @@
+- type: entity
+  id: DwarfBeerTank
+  parent: StorageTank
+  name: бочка дворфийского пива
+  description: Бочка крафтого дворфийского пива. Кто знает, какой сорт плещется внутри?
+  suffix: Empty
+  components:
+    - type: Sprite
+      sprite: DarkStation/MainGame/Structures/Storage/Tanks/beercanister.rsi
+      state: icon
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.1,-0.4,0.1,0.4"
+          density: 155
+          mask:
+          - MachineMask
+          layer:
+          - WallLayer
+
+- type: entity
+  parent: DwarfBeerTank
+  id: DwarfBeerTankFullCrunchyChaos
+  suffix: Хрустящий Хаос
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        tank:
+          reagents:
+            - ReagentId: CrunchyChaos
+              Quantity: 1500
+
+- type: entity
+  parent: DwarfBeerTank
+  id: DwarfBeerTankFullPurpleFuzzblast
+  suffix: Фиолетовый Фаззбласт
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        tank:
+          reagents:
+            - ReagentId: PurpleFuzzblast
+              Quantity: 1500
+
+- type: entity
+  parent: DwarfBeerTank
+  id: DwarfBeerTankFullDeepDrifter
+  suffix: Глубокая Зыбучка
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        tank:
+          reagents:
+            - ReagentId: DeepDrifter
+              Quantity: 1500

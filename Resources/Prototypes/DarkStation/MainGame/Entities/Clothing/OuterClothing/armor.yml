@@ -1,0 +1,100 @@
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: ClothingOuterArmorSecurity
+  name: armor vest
+  description: A standard Type I armored vest that provides decent protection against most types of damage.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Armor/security.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Armor/security.rsi
+
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: ClothingOuterGrayJediArmor
+  suffix: Джедая
+  name: Бронекостюм
+  description: Бронекостюм Серого Джедая.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Armor/jediarmor.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Armor/jediarmor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
+        Radiation: 0.85
+        Caustic: 0.85
+      securePartTypes:
+        Leg: 0.6
+        Arm: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+  - type: PressureProtection
+    highPressureMultiplier: 0.80
+    lowPressureMultiplier: 150
+  - type: TemperatureProtection
+    coefficient: 0.80
+
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: ClothingMedievalArmorBasic
+  name: Пластинчатый доспех
+  description: Хорошо защищает от режущих ударов
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Armor/rim.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Armor/rim.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.50
+        Piercing: 0.70
+        Heat: 1.5
+      securePartTypes:
+        Leg: 0.6
+        Arm: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+  - type: ClothingSpeedModifier
+    walkModifier: 0.5
+    sprintModifier: 0.5
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorBlueShield
+  name: Бронежилет Синего Щита
+  description: Укреплённый кевларовый бронежилет, продлевающий жизнь ОСЩ на считанные мгновения, необходимые для обругивания бездарно погибшего командования.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Armor/blueshield.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Armor/blueshield.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.5
+        Heat: 0.8
+        Caustic: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: GroupExamine
+
+- type: entity
+  parent: ClothingOuterArmorCaptainCarapace
+  id: ClothingOuterArmorMacTac
+  name: Бронежилет Макс-так
+  description: Высокотехнологичный бронежилет, обеспечивающий максимальную защиту в условиях боевых действий.
+  components:
+    - type: Sprite
+      sprite: DarkStation/MainGame/Clothing/Armor/maxtac_armor.rsi
+    - type: Clothing
+      sprite: DarkStation/MainGame/Clothing/Armor/maxtac_armor.rsi

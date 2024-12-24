@@ -1,0 +1,50 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "by SS14 (idk what i need write there)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "claps"
+        },
+        {
+            "name": "coughs"
+        },
+        {
+            "name": "crying"
+        },
+        {
+            "name": "jump"
+        },
+        {
+            "name": "laugh"
+        },
+        {
+            "name": "salute"
+        },
+        {
+            "name": "scream"
+        },
+        {
+            "name": "sighn"
+        },
+        {
+            "name": "snaps-fingers"
+        },
+        {
+            "name": "somersaults"
+        },
+        {
+            "name": "spin"
+        },
+        {
+            "name": "whistle"
+        },
+        {
+            "name": "yawns"
+        }
+    ]
+}

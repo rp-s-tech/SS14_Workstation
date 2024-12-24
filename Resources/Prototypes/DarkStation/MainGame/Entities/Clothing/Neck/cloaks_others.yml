@@ -1,0 +1,132 @@
+﻿- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakGoliathCloakNTGreen
+  name: плащ голиафа
+  description: Плащ голиафа, сделанный из шкуры выносливой фауны с далекой планеты. Однако с течением времени его защитные свойства ослабли.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/green.rsi
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot { }
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakGoliathCloakNTBlue
+  name: плащ голиафа
+  description: Плащ голиафа, сделанный из шкуры выносливой фауны с далекой планеты. Однако с течением времени его защитные свойства ослабли.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/blue.rsi
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot { }
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakGoliathCloakBrigmedic
+  name: плащ бригмедика
+  description: Плащ бригмедика, сделанный из шкуры выносливой фауны с далекой планеты. Однако с течением времени его защитные свойства ослабли.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/goliathcloak.rsi
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot { }
+
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakGoliathCloakCargoLogistician
+  name: плащ логиста
+  description: Плащ логиста, сделанный из шкуры выносливой фауны с далекой планеты. Однако с течением времени его защитные свойства ослабли.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/cargogoliath.rsi
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot { }
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckPOCC
+  name: Плащ НШЦК
+  description: Так и чувствуется серьезность.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/pocscloak2.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/pocscloak2.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.6
+        Heat: 0.9
+      securePartTypes:
+        Leg: 0.7
+        Arm: 0.6
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNakidPOCC
+  name: Накидка НШЦК
+  description: Так и чувствуется серьезность.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/pocscloak.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/pocscloak.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.6
+        Heat: 0.9
+      securePartTypes:
+        Leg: 0.7
+        Arm: 0.6
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakEasterBasket
+  name: пасхальный плащ
+  description: Плащ профессионального сборщика яиц, он собрал их всех!
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/easter_basket.rsi
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot { }
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakHappyEaster
+  name: пасхальный плащ
+  description: Плащ профессионального сборщика яиц, он собрал их всех!
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/happy_easter.rsi
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot { }
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckIFD
+  name: Плащ ИФД
+  description: Этот плащ пахнет так, как будто его достали из денежной ванны.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/IFD_cloaks.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/IFD_cloaks.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.6
+        Heat: 0.9

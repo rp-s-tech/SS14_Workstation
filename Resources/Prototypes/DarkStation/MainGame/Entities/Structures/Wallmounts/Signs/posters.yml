@@ -1,0 +1,107 @@
+﻿- type: entity
+  parent: PosterBase
+  id: PosterLegitFindEgg
+  name: "Найдите яйца!"
+  description: "Найдите их всех!"
+  components:
+  - type: Sprite
+    state: poster52_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitEasterEgg
+  name: "Счастливой пасхи"
+  description: "Постер поздравляющий вас с пасхой. Счастиливой пасхи!"
+  components:
+  - type: Sprite
+    state: poster53_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitFindLoxJi
+  name: "Найдите его!"
+  description: "Постер с просьбой найти потерянного унатха."
+  components:
+  - type: Sprite
+    state: poster54_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitDSds
+  name: "Тёмная станция"
+  description: "Постер содержит приглашение в странное приложение."
+  components:
+  - type: Sprite
+    state: poster55_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitDSb
+  name: "Тёмный буквы!"
+  description: "Постер с буквами. Праздничный"
+  components:
+  - type: Sprite
+    state: poster56_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitDS1984
+  name: "Тёмные числа"
+  description: "Прямо как в 1984!"
+  components:
+  - type: Sprite
+    state: poster57_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitDScake
+  name: "Тёмный торт!"
+  description: "Постер с вкуснейшим праздничным тортом"
+  components:
+  - type: Sprite
+    state: poster58_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitDSSingularity
+  name: "Сингулярность"
+  description: "Сингулярность поглощает свет и форму, визуализируя мистическую мощь космоса."
+  components:
+  - type: Sprite
+    state: poster59_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitDSSCP173
+  name: "Неизбежность"
+  description: "Статуя, замершая в пугающем безмолвии, смотрит прямо вам в душу."
+  components:
+  - type: Sprite
+    state: poster60_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitDSTesla
+  name: "Энергия Теслы"
+  description: "Искры живут и танцуют вокруг, а ты беги мой друг!"
+  components:
+  - type: Sprite
+    state: poster61_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitDSAnalysisUnknown
+  name: "Диагностика Неизвестного"
+  description: "Глубокий анализ неизвестного тела найденного в пределах Редспейса"
+  components:
+  - type: Sprite
+    state: poster62_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitDSChaosRebellion
+  name: "постер с символикой Повстанцев Хаоса"
+  description: "Освободить, Подорвать, Свергнуть"
+  components:
+  - type: Sprite
+    state: poster63_legit

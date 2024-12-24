@@ -1,0 +1,29 @@
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase]
+  id: ClothingBeltSheathSam
+  name: Ножны для высокочастотного меча
+  description: Ножны великого для великого меча.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Belt/JetstreamSam/Sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Belt/JetstreamSam/Sheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: Sabre
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        whitelist:
+          tags:
+          - SamSword
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - SamSword
+  - type: Appearance

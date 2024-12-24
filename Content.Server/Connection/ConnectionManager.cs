@@ -17,6 +17,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Content.Shared.RPSX.Patron;
 
 /*
  * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.
@@ -50,10 +51,12 @@ namespace Content.Server.Connection
         [Dependency] private readonly IPlayerManager _plyMgr = default!;
         [Dependency] private readonly IServerNetManager _netMgr = default!;
         [Dependency] private readonly IServerDbManager _db = default!;
+        [Dependency] private readonly IEntityManager _entMan = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly ILocalizationManager _loc = default!;
         [Dependency] private readonly ServerDbEntryManager _serverDbEntry = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+        [Dependency] private readonly ISponsorsManager _sponsorsManager = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
@@ -205,6 +208,10 @@ namespace Content.Server.Connection
                 return (ConnectionDenyReason.Ban, message, bans);
             }
 
+            var hasPriorityJoin = await HavePriorityJoin(userId);
+            if (hasPriorityJoin)
+                return null;
+
             if (HasTemporaryBypass(userId))
             {
                 _sawmill.Verbose("User {UserId} has temporary bypass, skipping further connection checks", userId);
@@ -315,6 +322,20 @@ namespace Content.Server.Connection
             }
 
             return null;
+        }
+
+        private async Task<bool> HavePriorityJoin(NetUserId userId)
+        {
+            var hasPriorityJoin = _sponsorsManager.TryGetSponsorTier(userId, out var tier) && tier.HavePriorityJoin;
+            if (hasPriorityJoin)
+                return true;
+
+            var ticker = _entMan.System<GameTicker>();
+            if (ticker.PlayerGameStatuses.TryGetValue(userId, out var status))
+                return status == PlayerGameStatus.JoinedGame;
+
+            var isAdmin = await _db.GetAdminDataForAsync(userId) != null;
+            return isAdmin;
         }
 
         private async Task<(bool IsInvalid, string Reason)> IsInvalidConnectionDueToBabyJail(NetUserId userId, NetConnectingArgs e)

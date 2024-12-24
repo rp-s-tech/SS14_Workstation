@@ -1,0 +1,31 @@
+- type: entity
+  name: Гранатомёт "Гном"
+  parent: BaseWeaponLauncher
+  id: WeaponLauncherGnom
+  description: Используйте это оружие для разрушения. Только не забудьте надеть броню сапёра.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Guns/Launchers/Grenadelauncher.rsi
+    layers:
+      - state: icon
+        map: ["enum.GunVisualLayers.Base"]
+  - type: Clothing
+    sprite: Darkstation/Grenadelauncher.rsi
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - Grenade
+    capacity: 6
+    proto: GrenadeBlast
+    chambers: [ True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null ]
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg

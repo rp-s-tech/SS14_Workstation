@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared.RPSX.Patron;
 using Content.Shared.Preferences;
 using Robust.Client;
 using Robust.Client.Player;
@@ -12,11 +13,12 @@ namespace Content.Client.Lobby
     ///     connection.
     ///     Stores preferences on the server through <see cref="SelectCharacter" /> and <see cref="UpdateCharacter" />.
     /// </summary>
-    public sealed class ClientPreferencesManager : IClientPreferencesManager
+    public partial class ClientPreferencesManager : IClientPreferencesManager
     {
         [Dependency] private readonly IClientNetManager _netManager = default!;
         [Dependency] private readonly IBaseClient _baseClient = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly ISponsorsManager _sponsorsManager = default!;
 
         public event Action? OnServerDataLoaded;
 
@@ -60,7 +62,11 @@ namespace Content.Client.Lobby
         public void UpdateCharacter(ICharacterProfile profile, int slot)
         {
             var collection = IoCManager.Instance!;
-            profile.EnsureValid(_playerManager.LocalSession!, collection);
+            // RPSX Sponsor
+            var allowedMarkings = _sponsorsManager.TryGetSponsorTier(out var sponsor) ? sponsor.AllowedMarkings : [];
+            var session = _playerManager.LocalSession!;
+            profile.EnsureValid(session, collection, allowedMarkings.ToArray());
+            // RPSX Sponsor
             var characters = new Dictionary<int, ICharacterProfile>(Preferences.Characters) {[slot] = profile};
             Preferences = new PlayerPreferences(characters, Preferences.SelectedCharacterIndex, Preferences.AdminOOCColor);
             var msg = new MsgUpdateCharacter

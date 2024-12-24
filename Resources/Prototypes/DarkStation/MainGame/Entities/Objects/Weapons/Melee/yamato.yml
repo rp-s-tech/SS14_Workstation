@@ -1,0 +1,25 @@
+- type: entity
+  name: Ямато
+  parent: BaseItem
+  id: VergilYamato
+  description: Невероятно острый клинок, похожий на катану, по легендам способный разделять надвое сами души живых существ.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Melee/yamato.rsi
+    state: icon
+  - type: Sharp
+  - type: MeleeWeapon
+    attackRate: 1.2
+    wideAnimationRotation: -60
+    damage:
+      types:
+        Slash: 21
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Reflect #При должной сноровке катана действительно способна если не отражать во врага, то отклонять траекторию пули либо разрубать её, доказательства все есть в интернете.
+  - type: Item
+    sprite: DarkStation/MainGame/Objects/Weapons/Melee/yamato.rsi
+  - type: DisarmMalus
+  - type: Tag
+    tags:
+    - VergilYamato

@@ -13,6 +13,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.RPSX.Patron;
 
 namespace Content.Client.Players.PlayTimeTracking;
 
@@ -24,6 +25,8 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
+    [Dependency] private readonly ISponsorsManager _sponsorsManager = default!;
+
 
     private readonly Dictionary<string, TimeSpan> _roles = new();
     private readonly List<string> _roleBans = new();
@@ -99,6 +102,9 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
             reason = FormattedMessage.FromUnformatted(Loc.GetString("role-ban"));
             return false;
         }
+
+        if (_sponsorsManager.IsJobAvailable(job))
+            return true;
 
         if (!CheckWhitelist(job, out reason))
             return false;

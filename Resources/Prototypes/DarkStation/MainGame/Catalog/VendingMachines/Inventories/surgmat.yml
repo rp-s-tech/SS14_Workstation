@@ -1,0 +1,16 @@
+- type: vendingMachineInventory
+  id: SurgeonMatInventory
+  startingInventory:
+    Implanter: 5
+    Cautery: 2
+    Drill: 2
+    Scalpel: 2
+    Retractor: 2
+    Hemostat: 3
+    Saw: 2
+    ClothingMaskBreathMedical: 2
+    NitrousOxideTankFilled: 4
+    ClothingOuterHospitalGown: 4
+    Suture: 2
+    MetalSuture: 2
+    Tourniquet: 3

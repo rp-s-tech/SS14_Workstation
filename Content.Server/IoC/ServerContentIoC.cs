@@ -29,6 +29,8 @@ using Content.Shared.Chat;
 using Content.Shared.Kitchen;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
+using Content.Shared.RPSX.Patron; //RPSX
+using Content.Server.RPSX.Sponsors; //RPSX
 
 namespace Content.Server.IoC
 {
@@ -73,6 +75,9 @@ namespace Content.Server.IoC
             IoCManager.Register<PlayerRateLimitManager>();
             IoCManager.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
             IoCManager.Register<MappingManager>();
+
+            //RPSX
+            IoCManager.Register<ISponsorsManager, SponsorsManager>();
         }
     }
 }

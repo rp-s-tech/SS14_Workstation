@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Shared.Administration.Logs;
+using Content.Shared.ADT.SpeechBarks;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Preferences;
+using Content.Shared.RPSX.Sponsors;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
@@ -48,6 +50,8 @@ namespace Content.Server.Database
                 .Include(p => p.Profiles).ThenInclude(h => h.Jobs)
                 .Include(p => p.Profiles).ThenInclude(h => h.Antags)
                 .Include(p => p.Profiles).ThenInclude(h => h.Traits)
+                .Include(p => p.Profiles).ThenInclude(h => h.PatronProfilePet)
+                .Include(p => p.Profiles).ThenInclude(h => h.Items)
                 .Include(p => p.Profiles)
                     .ThenInclude(h => h.Loadouts)
                     .ThenInclude(l => l.Groups)
@@ -100,6 +104,8 @@ namespace Content.Server.Database
                 .Include(p => p.Jobs)
                 .Include(p => p.Antags)
                 .Include(p => p.Traits)
+                .Include(p => p.PatronProfilePet)
+                .Include(p => p.Items)
                 .Include(p => p.Loadouts)
                     .ThenInclude(l => l.Groups)
                     .ThenInclude(group => group.Loadouts)
@@ -216,6 +222,19 @@ namespace Content.Server.Database
                 }
             }
 
+            var petData = new ProfilePetData();
+            if (profile.PatronProfilePet != null)
+            {
+                petData.PetId = profile.PatronProfilePet.PetId;
+                petData.PetName = profile.PatronProfilePet.PetName;
+            }
+
+            var humanoidSponsorData = new HumanoidSponsorData
+            {
+                PetData = petData,
+                Items = profile.Items.Select(item => item.ItemProtoId).ToList()
+            };
+
             var loadouts = new Dictionary<string, RoleLoadout>();
 
             foreach (var role in profile.Loadouts)
@@ -256,12 +275,16 @@ namespace Content.Server.Database
                     Color.FromHex(profile.SkinColor),
                     markings
                 ),
+                humanoidSponsorData,
                 spawnPriority,
                 jobs,
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts
+                loadouts,
+                // ADT Barks start
+                new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar)
+                // ADT Barks end
             );
         }
 
@@ -292,6 +315,40 @@ namespace Content.Server.Database
             profile.Markings = markings;
             profile.Slot = slot;
             profile.PreferenceUnavailable = (DbPreferenceUnavailableMode) humanoid.PreferenceUnavailable;
+            if (humanoid.SponsorData.PetData?.PetId != null)
+            {
+                if (profile.PatronProfilePet == null)
+                {
+                    profile.PatronProfilePet = new PatronProfilePet
+                    {
+                        PetId = humanoid.SponsorData.PetData.PetId,
+                        PetName = humanoid.SponsorData.PetData.PetName
+                    };
+                }
+                else
+                {
+                    profile.PatronProfilePet.PetId = humanoid.SponsorData.PetData.PetId;
+                    profile.PatronProfilePet.PetName = humanoid.SponsorData.PetData.PetName;
+                }
+            }
+            else
+            {
+                profile.PatronProfilePet ??= new PatronProfilePet
+                {
+                    PetId = string.Empty,
+                    PetName = string.Empty
+                };
+            }
+
+
+            profile.Items.Clear();
+            profile.Items.AddRange(
+                humanoid.SponsorData.Items.Select(item => new PatronProfileItem
+                    {
+                        ItemProtoId = item
+                    }
+                )
+            );
 
             profile.Jobs.Clear();
             profile.Jobs.AddRange(
@@ -341,6 +398,12 @@ namespace Content.Server.Database
 
                 profile.Loadouts.Add(dz);
             }
+            // ADT Barks start
+            profile.BarkProto = humanoid.Bark.Proto;
+            profile.BarkPitch = humanoid.Bark.Pitch;
+            profile.LowBarkVar = humanoid.Bark.MinVar;
+            profile.HighBarkVar = humanoid.Bark.MaxVar;
+            // ADT Barks end
 
             return profile;
         }

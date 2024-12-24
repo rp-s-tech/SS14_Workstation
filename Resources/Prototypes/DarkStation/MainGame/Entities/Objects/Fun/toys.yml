@@ -1,0 +1,15 @@
+﻿- type: entity
+  id: Killawhale
+  parent: BasePlushie
+  name: плюшевая касатка
+  description: большая и мягкая плюшевая косатка, жаль что не съедобная...
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Fun/killawhale.rsi
+    state: icon
+  - type: Item
+    sprite: DarkStation/MainGame/Objects/Fun/killawhale.rsi
+  - type: Tag
+    tags:
+    - PlushieKillawhale
+    - Payload

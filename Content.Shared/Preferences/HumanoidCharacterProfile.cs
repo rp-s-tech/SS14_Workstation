@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Text.RegularExpressions;
+using Content.Shared.ADT.SpeechBarks;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
@@ -15,6 +16,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
+using Content.Shared.RPSX.Patron;
+using Content.Shared.RPSX.Sponsors;
 
 namespace Content.Shared.Preferences
 {
@@ -25,7 +28,7 @@ namespace Content.Shared.Preferences
     [Serializable, NetSerializable]
     public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     {
-        private static readonly Regex RestrictedNameRegex = new("[^A-Z,a-z,0-9, ,\\-,']");
+        private static readonly Regex RestrictedNameRegex = new("[^А-Яа-яёЁ0-9' -]"); // Corvax-Localization
         private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
 
         public const int MaxNameLength = 32;
@@ -97,11 +100,18 @@ namespace Content.Shared.Preferences
         [DataField]
         public HumanoidCharacterAppearance Appearance { get; set; } = new();
 
+        [DataField]
+        public HumanoidSponsorData SponsorData { get; private set; } = new();
+
         /// <summary>
         /// When spawning into a round what's the preferred spot to spawn.
         /// </summary>
         [DataField]
         public SpawnPriorityPreference SpawnPriority { get; private set; } = SpawnPriorityPreference.None;
+
+        // ADT Barks start
+        public BarkData Bark = new();
+        // ADT Barks end
 
         /// <summary>
         /// <see cref="_jobPriorities"/>
@@ -112,7 +122,6 @@ namespace Content.Shared.Preferences
         /// <see cref="_antagPreferences"/>
         /// </summary>
         public IReadOnlySet<ProtoId<AntagPrototype>> AntagPreferences => _antagPreferences;
-
         /// <summary>
         /// <see cref="_traitPreferences"/>
         /// </summary>
@@ -133,12 +142,16 @@ namespace Content.Shared.Preferences
             Sex sex,
             Gender gender,
             HumanoidCharacterAppearance appearance,
+            HumanoidSponsorData data,
             SpawnPriorityPreference spawnPriority,
             Dictionary<ProtoId<JobPrototype>, JobPriority> jobPriorities,
             PreferenceUnavailableMode preferenceUnavailable,
             HashSet<ProtoId<AntagPrototype>> antagPreferences,
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
-            Dictionary<string, RoleLoadout> loadouts)
+            Dictionary<string, RoleLoadout> loadouts,
+            // ADT Barks start
+            BarkData bark)
+            // ADT Barks end
         {
             Name = name;
             FlavorText = flavortext;
@@ -146,6 +159,7 @@ namespace Content.Shared.Preferences
             Age = age;
             Sex = sex;
             Gender = gender;
+            SponsorData = data;
             Appearance = appearance;
             SpawnPriority = spawnPriority;
             _jobPriorities = jobPriorities;
@@ -153,6 +167,9 @@ namespace Content.Shared.Preferences
             _antagPreferences = antagPreferences;
             _traitPreferences = traitPreferences;
             _loadouts = loadouts;
+            // ADT Barks start
+            Bark = bark;
+            // ADT Barks end
 
             var hasHighPrority = false;
             foreach (var (key, value) in _jobPriorities)
@@ -178,12 +195,16 @@ namespace Content.Shared.Preferences
                 other.Sex,
                 other.Gender,
                 other.Appearance.Clone(),
+                other.SponsorData,
                 other.SpawnPriority,
                 new Dictionary<ProtoId<JobPrototype>, JobPriority>(other.JobPriorities),
                 other.PreferenceUnavailable,
                 new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
                 new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
-                new Dictionary<string, RoleLoadout>(other.Loadouts))
+                new Dictionary<string, RoleLoadout>(other.Loadouts),
+                // ADT Barks start
+                other.Bark)
+                // ADT Barks end
         {
         }
 
@@ -237,7 +258,7 @@ namespace Content.Shared.Preferences
                 age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
             }
 
-            var gender = Gender.Epicene;
+            var gender = Gender.Male;
 
             switch (sex)
             {
@@ -292,10 +313,70 @@ namespace Content.Shared.Preferences
             return new(this) { Species = species };
         }
 
+        // ADT Barks start
+        public HumanoidCharacterProfile WithBarkProto(string bark)
+        {
+            return new(this)
+            {
+                Bark = Bark.WithProto(bark),
+            };
+        }
 
+        public HumanoidCharacterProfile WithBarkPitch(float pitch)
+        {
+            return new(this)
+            {
+                Bark = Bark.WithPitch(pitch),
+            };
+        }
+
+        public HumanoidCharacterProfile WithBarkMinVariation(float variation)
+        {
+            return new(this)
+            {
+                Bark = Bark.WithMinVar(variation),
+            };
+        }
+
+        public HumanoidCharacterProfile WithBarkMaxVariation(float variation)
+        {
+            return new(this)
+            {
+                Bark = Bark.WithMaxVar(variation),
+            };
+        }
+        // ADT Barks end
         public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance)
         {
             return new(this) { Appearance = appearance };
+        }
+
+        public HumanoidCharacterProfile WithPatronItems(List<string> patronItems)
+        {
+            return new(this)
+            {
+                SponsorData = new HumanoidSponsorData
+                {
+                    Items = patronItems,
+                    PetData = SponsorData.PetData
+                }
+            };
+        }
+
+        public HumanoidCharacterProfile WithPatronPet(string petId, string petName)
+        {
+            return new HumanoidCharacterProfile(this)
+            {
+                SponsorData = new HumanoidSponsorData
+                {
+                    Items = SponsorData.Items,
+                    PetData = new ProfilePetData
+                    {
+                        PetId = petId,
+                        PetName = petName
+                    }
+                }
+            };
         }
 
         public HumanoidCharacterProfile WithSpawnPriorityPreference(SpawnPriorityPreference spawnPriority)
@@ -469,19 +550,31 @@ namespace Content.Shared.Preferences
             if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
             if (!Loadouts.SequenceEqual(other.Loadouts)) return false;
             if (FlavorText != other.FlavorText) return false;
+            // ADT Barks start
+            if (!Bark.MemberwiseEquals(other.Bark)) return false;
+            // ADT Barks end
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
-        public void EnsureValid(ICommonSession session, IDependencyCollection collection)
+        public void EnsureValid(ICommonSession session, IDependencyCollection collection, string[] sponsorPrototypes)
         {
             var configManager = collection.Resolve<IConfigurationManager>();
             var prototypeManager = collection.Resolve<IPrototypeManager>();
+            var sponsorManager = collection.Resolve<ISponsorsManager>();
 
             if (!prototypeManager.TryIndex(Species, out var speciesPrototype) || speciesPrototype.RoundStart == false)
             {
                 Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
                 speciesPrototype = prototypeManager.Index(Species);
             }
+
+            // Corvax-Sponsors-Start: Reset to human if player not sponsor
+            if (speciesPrototype.SponsorOnly && !sponsorManager.TryGetSponsorTier(out _))
+            {
+                Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
+                speciesPrototype = prototypeManager.Index(Species);
+            }
+            // Corvax-Sponsors-End
 
             var sex = Sex switch
             {
@@ -499,11 +592,9 @@ namespace Content.Shared.Preferences
 
             var gender = Gender switch
             {
-                Gender.Epicene => Gender.Epicene,
                 Gender.Female => Gender.Female,
                 Gender.Male => Gender.Male,
-                Gender.Neuter => Gender.Neuter,
-                _ => Gender.Epicene // Invalid enum values.
+                _ => Gender.Male // Invalid enum values.
             };
 
             string name;
@@ -548,7 +639,7 @@ namespace Content.Shared.Preferences
                 flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText);
             }
 
-            var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
+            var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex, sponsorPrototypes);
 
             var prefsUnavailableMode = PreferenceUnavailable switch
             {
@@ -676,10 +767,10 @@ namespace Content.Shared.Preferences
             return result;
         }
 
-        public ICharacterProfile Validated(ICommonSession session, IDependencyCollection collection)
+        public ICharacterProfile Validated(ICommonSession session, IDependencyCollection collection, string[] sponsorPrototypes)
         {
             var profile = new HumanoidCharacterProfile(this);
-            profile.EnsureValid(session, collection);
+            profile.EnsureValid(session, collection, sponsorPrototypes);
             return profile;
         }
 

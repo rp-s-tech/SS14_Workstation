@@ -1,0 +1,19 @@
+{
+    "version": 1,
+    "license": "Собственная лицензия. Полный запрет на копирование и использование вне проекта Dark Station без одобрения текущего владельца проекта",
+    "copyright": "Ynotka DS",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "rat_tail",
+            "directions": 4
+        },
+        {
+            "name": "demon_tail",
+            "directions": 4
+        }
+    ]
+}
