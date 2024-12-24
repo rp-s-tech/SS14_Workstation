@@ -55,6 +55,12 @@
     skipChecks: true
   - type: Ghost
   - type: GhostHearing
+  - type: UserInterface
+    interfaces:
+      enum.SponsorGhostInterfaceKey.Key:
+        type: SponsorGhostBUI
+        requireInputValidation: false
+        interactionRange: -1
   - type: ShowElectrocutionHUD
   - type: IntrinsicRadioReceiver
   - type: ActiveRadio
@@ -63,6 +69,7 @@
   - type: Tag
     tags:
     - BypassInteractionRangeChecks
+  - type: IgnoreUIRange
 
 # proto for player ghosts specifically
 - type: entity

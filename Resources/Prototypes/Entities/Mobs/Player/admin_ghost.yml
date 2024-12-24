@@ -49,6 +49,8 @@
       enum.GeneralStationRecordConsoleKey.Key:
       # who the fuck named this bruh
         type: GeneralStationRecordConsoleBoundUserInterface
+      enum.SponsorGhostInterfaceKey.Key:
+        type: SponsorGhostBUI
   - type: IntrinsicUI
     uis:
       enum.SolarControlConsoleUiKey.Key:
