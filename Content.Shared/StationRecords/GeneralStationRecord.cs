@@ -47,7 +47,7 @@ public sealed record GeneralStationRecord
     /// </summary>
     /// <remarks>Sex should be placed in a medical record, not a general record.</remarks>
     [DataField]
-    public Gender Gender = Gender.Epicene;
+    public Gender Gender = Gender.Male;
 
     /// <summary>
     ///     The priority to display this record at.

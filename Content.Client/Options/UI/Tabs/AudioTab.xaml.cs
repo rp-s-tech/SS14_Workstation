@@ -38,7 +38,7 @@ public sealed partial class AudioTab : Control
             DropDownBarksOrTTS,
             [
                 new OptionDropDownCVar<bool>.ValueOption(true, Loc.GetString("ui-options-barks-speech")),
-                new OptionDropDownCVar<bool>.ValueOption(false, Loc.GetString("ui-options-tts-speech")),
+                // new OptionDropDownCVar<bool>.ValueOption(false, Loc.GetString("ui-options-tts-speech")),
             ]);
 
         // ADT Barks end

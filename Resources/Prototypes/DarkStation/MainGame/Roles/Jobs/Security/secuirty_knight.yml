@@ -1,0 +1,71 @@
+- type: job
+  id: SecurityKnight
+  name: Рыцарь Звёздной-пыли
+  description: Рыцарь
+  playTimeTracker: JobSecurityKnight
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 28800 # 8h
+  startingGear: SecurityKnightGear
+  icon: "JobIconKnightofStardust"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  chatHighlight: SecurityChatHighlight
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: SecurityKnightGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitKnight
+    back: ClothingBackpackSecurity_KnightFilled
+    shoes: ClothingShoesBootsCombatKnight
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHeadHelmetHelmetKnight
+    outerClothing: ClothingOuterCoatKnight
+    id: Security_KnightPDA
+    ears: ClothingHeadsetSecurityKnight
+    gloves: ClothingHandsGlovesCombatSecurityKnight
+    belt: ClothingBeltSecurityFilled
+    pocket1: WeaponPistolMk58
+    pocket2: MagazinePistol
+  InnerClothingSkirt: ClothingUniformJumpskirtSec
+  satchel: ClothingBackpackSecurity_KnightFilled
+  duffelbag: ClothingBackpackSecurity_KnightFilled
+  pocket1: HoloprojectorSecurity
+  pocket2: Flash
+
+- type: entity
+  parent: BasePDA
+  id: Security_KnightPDA
+  name: КПК Рыцаря Звёздной-пыли
+  description: КПК дающий понять что перед вами не обычный сотрудник СБ.
+  components:
+  - type: Pda
+    id: SecurityIDCard #Security_KnightIDCard
+    state: pda-knight
+  - type: Icon
+    state: pda-knight
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSecurity_Knight
+  id: ClothingBackpackSecurity_KnightFilled
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxSurvivalSecurity
+    - id: BoxHoloparasiteKnight
+    - id: Flash
+    - id: HoloprojectorSecurity
+    - id: SecurityWhistle

@@ -205,9 +205,6 @@ namespace Content.Client.Lobby.UI
 
             PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-male-text"), (int) Gender.Male);
             PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-female-text"), (int) Gender.Female);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-epicene-text"), (int) Gender.Epicene);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-neuter-text"), (int) Gender.Neuter);
-
             PronounsButton.OnItemSelected += args =>
             {
                 PronounsButton.SelectId(args.Id);
@@ -1233,7 +1230,7 @@ namespace Content.Client.Lobby.UI
                     Profile = Profile?.WithGender(Gender.Female);
                     break;
                 default:
-                    Profile = Profile?.WithGender(Gender.Epicene);
+                    Profile = Profile?.WithGender(Gender.Male);
                     break;
             }
 
