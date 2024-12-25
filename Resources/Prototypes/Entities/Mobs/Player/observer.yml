@@ -59,8 +59,8 @@
     interfaces:
       enum.SponsorGhostInterfaceKey.Key:
         type: SponsorGhostBUI
-        requireInputValidation: false
         interactionRange: -1
+        requireInputValidation: false
   - type: ShowElectrocutionHUD
   - type: IntrinsicRadioReceiver
   - type: ActiveRadio
@@ -70,6 +70,7 @@
     tags:
     - BypassInteractionRangeChecks
   - type: IgnoreUIRange
+  - type: BypassInteractionChecks
 
 # proto for player ghosts specifically
 - type: entity

@@ -8,5 +8,6 @@
     icon:
       sprite: DarkStation/MainGame/Mobs/Ghosts/ghost_plague_doctor.rsi
       state: animated
+    checkCanInteract: false
     event: !type:SponsorOpenGhostSkinsEvent
     priority: -10
