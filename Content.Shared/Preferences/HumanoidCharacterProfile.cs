@@ -258,7 +258,7 @@ namespace Content.Shared.Preferences
                 age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
             }
 
-            var gender = Gender.Epicene;
+            var gender = Gender.Male;
 
             switch (sex)
             {
@@ -592,11 +592,9 @@ namespace Content.Shared.Preferences
 
             var gender = Gender switch
             {
-                Gender.Epicene => Gender.Epicene,
                 Gender.Female => Gender.Female,
                 Gender.Male => Gender.Male,
-                Gender.Neuter => Gender.Neuter,
-                _ => Gender.Epicene // Invalid enum values.
+                _ => Gender.Male // Invalid enum values.
             };
 
             string name;

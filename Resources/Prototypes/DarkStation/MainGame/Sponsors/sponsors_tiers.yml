@@ -1,5 +1,5 @@
 ﻿- type: sponsorTier
-  id: Syndicate
+  id: Citizen
   availableItems: 0
   roleTimeByPass: false
   havePriorityJoin: true
@@ -36,7 +36,7 @@
   - MobObserverSponsorDemon
 
 - type: sponsorTier
-  id: Pontific
+  id: Specialist
   availableItems: 1
   roleTimeByPass: false
   havePriorityJoin: true
@@ -75,7 +75,7 @@
   - MobObserverSponsorGhostClown
 
 - type: sponsorTier
-  id: Cultist
+  id: Officer
   availableItems: 1
   roleTimeByPass: false
   havePriorityJoin: true
@@ -117,7 +117,7 @@
   - MobObserverSponsorMime
 
 - type: sponsorTier
-  id: Ratvar
+  id: Supervisor
   availableItems: 2
   roleTimeByPass: false
   havePriorityJoin: true
@@ -161,7 +161,7 @@
   - MobObserverSponsorShadow
 
 - type: sponsorTier
-  id: ABL
+  id: Corporate
   availableItems: 2
   roleTimeByPass: true
   havePriorityJoin: true
