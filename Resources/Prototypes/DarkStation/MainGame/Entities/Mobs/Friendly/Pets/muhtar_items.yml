@@ -1,0 +1,55 @@
+﻿- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelDog
+  name: Армейский рюкзак для собаки
+  description: Обычный рюкзак, чтобы переносить вещи, но для собак.
+  components:
+    - type: Sprite
+      sprite: DarkStation/MainGame/Mobs/Friendly/muhtar_back.rsi
+    - type: Tag
+      tags:
+        - PetsBackpack
+
+- type: entity
+  parent: ClothingBackpackDuffelDog
+  id: ClothingBackpackDuffelDogFilled
+  components:
+    - type: StorageFill
+      contents:
+        - id: ClothingOuterHardsuitSecurityDog
+        - id: BoxSurvival
+        - id: CombatMedipen
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterHardsuitSecurityDog
+  name: Скафандр служебной собаки
+  description: Защищает любимого питомца
+  components:
+    - type: Sprite
+      sprite: DarkStation/MainGame/Mobs/Friendly/muhtar_hardsuit.rsi
+    - type: Clothing
+      sprite: DarkStation/MainGame/Mobs/Friendly/muhtar_hardsuit.rsi
+    - type: PressureProtection
+      highPressureMultiplier: 525
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      coefficient: 0.005
+    - type: ClothingSpeedModifier
+      walkModifier: 0.75
+      sprintModifier: 0.75
+    - type: ExplosionResistance
+      damageCoefficient: 0.4
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.6
+          Slash: 0.6
+          Piercing: 0.6
+          Caustic: 0.7
+    - type: Item
+      size: Huge
+    - type: GroupExamine
+    - type: Tag
+      tags:
+        - PetsHardsuit

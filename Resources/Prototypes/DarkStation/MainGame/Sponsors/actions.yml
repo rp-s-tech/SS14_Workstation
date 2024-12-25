@@ -10,3 +10,4 @@
       state: animated
     checkCanInteract: false
     event: !type:SponsorOpenGhostSkinsEvent
+    priority: -10
