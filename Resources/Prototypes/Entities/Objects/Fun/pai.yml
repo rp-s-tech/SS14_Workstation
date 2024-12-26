@@ -3,8 +3,8 @@
 - type: entity
   parent: BaseItem
   id: PersonalAI
-  name: personal ai device
-  description: Your electronic pal who's fun to be with!
+  name: Персональный ИИ
+  description: Ваш электронный приятель, с которым весело проводить время! (Можно вставить в борга)
   components:
   - type: Instrument
     allowPercussion: false
@@ -28,6 +28,7 @@
       map: ["screen"]
   - type: Input
     context: "human"
+  - type: BorgBrain
   - type: PAI
   - type: BlockMovement
   - type: ToggleableGhostRole
@@ -77,8 +78,8 @@
 - type: entity
   parent: [ PersonalAI, BaseSyndicateContraband]
   id: SyndicatePersonalAI
-  name: syndicate personal ai device
-  description: Your Syndicate pal who's fun to be with!
+  name: Персональный ИИ синдиката
+  description: Твой приятель по синдикату, с которым весело проводить время! (Можно вставить в борга)
   components:
   - type: Sprite
     sprite: Objects/Fun/pai.rsi
@@ -109,8 +110,8 @@
 - type: entity
   parent: PersonalAI
   id: PotatoAI
-  name: potato artificial intelligence
-  description: It's a potato. You forced it to be sentient, you monster.
+  name: Искусственный интеллект в картошке
+  description: Это картошка. Ты заставил ее стать разумной, ты, чудовище. (Можно вставить в борга)
   components:
   - type: Sprite
     sprite: Objects/Fun/pai.rsi
