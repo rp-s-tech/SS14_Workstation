@@ -91,7 +91,7 @@
   showInVote: false #4boring4vote
   description: greenshift-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler 
+  - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
 
 - type: gamePreset
@@ -126,7 +126,7 @@
   showInVote: false #Admin Use
   description: secret-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler 
+  - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
 
 - type: gamePreset
@@ -156,18 +156,18 @@
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
 
-- type: gamePreset
-  id: Deathmatch
-  alias:
-    - deathmatch
-    - dm
-  name: death-match-title
-  description: death-match-description
-  maxPlayers: 15
-  showInVote: true
-  supportedMaps: DeathMatchMapPool
-  rules:
-    - DeathMatch31
+# - type: gamePreset
+#   id: Deathmatch
+#   alias:
+#     - deathmatch
+#     - dm
+#   name: death-match-title
+#   description: death-match-description
+#   maxPlayers: 15
+#   showInVote: true
+#   supportedMaps: DeathMatchMapPool
+#   rules:
+#     - DeathMatch31
 
 - type: gamePreset
   id: Nukeops
@@ -184,22 +184,22 @@
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
 
-- type: gamePreset
-  id: Revolutionary
-  alias:
-    - rev
-    - revs
-    - revolutionaries
-  name: rev-title
-  description: rev-description
-  showInVote: false
-  rules:
-    - Revolutionary
-    - SubGamemodesRule
-    - BasicStationEventScheduler
-    - MeteorSwarmScheduler
-    - SpaceTrafficControlEventScheduler
-    - BasicRoundstartVariation
+# - type: gamePreset
+#   id: Revolutionary
+#   alias:
+#     - rev
+#     - revs
+#     - revolutionaries
+#   name: rev-title
+#   description: rev-description
+#   showInVote: false
+#   rules:
+#     - Revolutionary
+#     - SubGamemodesRule
+#     - BasicStationEventScheduler
+#     - MeteorSwarmScheduler
+#     - SpaceTrafficControlEventScheduler
+#     - BasicRoundstartVariation
 
 - type: gamePreset
   id: Zombie

@@ -110,7 +110,8 @@ namespace Content.Shared.Preferences
         public SpawnPriorityPreference SpawnPriority { get; private set; } = SpawnPriorityPreference.None;
 
         // ADT Barks start
-        public BarkData Bark = new();
+        [DataField]
+        public BarkData Bark { get; set; } = new();
         // ADT Barks end
 
         /// <summary>
@@ -568,13 +569,36 @@ namespace Content.Shared.Preferences
                 speciesPrototype = prototypeManager.Index(Species);
             }
 
-            // Corvax-Sponsors-Start: Reset to human if player not sponsor
-            if (speciesPrototype.SponsorOnly && !sponsorManager.TryGetSponsorTier(out _))
+            // RPSX-Sponsors-Check-Start
+            var userId = session.UserId;
+            var isSponsor = sponsorManager.TryGetSponsorTier(userId, out var sponsorTier);
+            if (!isSponsor)
+            {
+                isSponsor = sponsorManager.TryGetSponsorTier(out sponsorTier);
+            }
+
+            // Логирование данных с обновленными значениями
+            Logger.Info($"[Session Data] UserId: {userId}, Session Type: {session.GetType().Name}");
+            Logger.Info($"[Session Data] SponsorOnly: {speciesPrototype.SponsorOnly}, Species: {Species}");
+            Logger.Info($"[Session Data] sponsorTier: {sponsorTier}");
+            Logger.Info($"[Session Data] isSponsor: {isSponsor}");
+
+            // Corvax-Sponsors-Start+RPSX-Rework
+            if (speciesPrototype.SponsorOnly && (!isSponsor || (sponsorTier != null && !IsSpeciesAllowed(sponsorTier, Species))))
             {
                 Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
                 speciesPrototype = prototypeManager.Index(Species);
             }
-            // Corvax-Sponsors-End
+            // Corvax-Sponsors-End+RPSX-Rework
+
+            // Вспомогательный метод для проверки, разрешен ли вид
+            bool IsSpeciesAllowed(SponsorTier sponsorTier, string species)
+            {
+                // Предполагается, что sponsorTier имеет свойство allowedSpecies типа List<string> или массив
+                return sponsorTier.AllowedSpecies?.Contains(species) ?? false;
+            }
+
+            // Corvax-Sponsors-End+RPSX-Rework
 
             var sex = Sex switch
             {
