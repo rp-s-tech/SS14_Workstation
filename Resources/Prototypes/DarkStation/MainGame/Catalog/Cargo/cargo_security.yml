@@ -5,7 +5,7 @@
     state: salt
   product: CrateSaltShellsFilled
   cost: 500
-  category: Security
+  category: cargoproduct-category-name-security
   group: market
 
 - type: cargoProduct
@@ -15,5 +15,5 @@
     state: groundpepper
   product: CratePepperSprayFilled
   cost: 450
-  category: Security
+  category: cargoproduct-category-name-security
   group: market
