@@ -47,7 +47,7 @@ namespace Content.Shared.Roles
         /// <summary>
         ///     Requirements for the job.
         /// </summary>
-        [DataField, Access(typeof(SharedRoleSystem), Other = AccessPermissions.None)]
+        [DataField, Access(typeof(SharedRoleSystem), Other = AccessPermissions.Read)]
         public HashSet<JobRequirement>? Requirements;
 
         /// <summary>
@@ -108,6 +108,7 @@ namespace Content.Shared.Roles
         [DataField("antagAdvantage")]
         public int AntagAdvantage = 0;
 
+
         [DataField]
         public ProtoId<StartingGearPrototype>? StartingGear { get; private set; }
 
@@ -118,13 +119,6 @@ namespace Content.Shared.Roles
         /// </summary>
         [DataField("jobEntity", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
         public string? JobEntity = null;
-
-        /// <summary>
-        /// Entity to use as a preview in the lobby/character editor.
-        /// Same restrictions as <see cref="JobEntity"/> apply.
-        /// </summary>
-        [DataField]
-        public EntProtoId? JobPreviewEntity = null;
 
         [DataField]
         public ProtoId<JobIconPrototype> Icon { get; private set; } = "JobIconUnknown";
@@ -153,6 +147,15 @@ namespace Content.Shared.Roles
         /// </summary>
         [DataField]
         public List<ProtoId<GuideEntryPrototype>>? Guides;
+
+        [DataField]
+        public bool SponsorIgnoreWhitelist = true;
+
+        [DataField]
+        public bool AlwaysUseSpawner;
+
+        [DataField]
+        public ProtoId<JobChatHighlightPrototype>? ChatHighlight;
     }
 
     /// <summary>

@@ -1,0 +1,20 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by @no_mad.",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "blueshit"
+      },
+      {
+        "name": "blueshit_door"
+      },
+      {
+        "name": "blueshit_open"
+      }
+    ]
+  }

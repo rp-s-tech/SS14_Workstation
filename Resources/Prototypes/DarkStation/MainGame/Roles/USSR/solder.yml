@@ -1,0 +1,15 @@
+#Gear
+- type: startingGear
+  id: USSRSolderGear
+  equipment:
+    head: ClothingHeadUSSRSolderBeret
+    jumpsuit: ClothingUniformJumpsuitSolderUSSR
+    gloves: ClothingHandsGlovesCombat
+    back: ClothingMilitaryBackpackUSSPFilled
+    shoes: ClothingShoesBootsCombat
+    id: PassengerPDA
+    ears: ClothingHeadsetSCPBasic
+    belt: ClothingBeltStorageWaistbag
+  InnerClothingSkirt: ClothingUniformJumpsuitHydroponicsSCP
+  satchel: ClothingBackpackMilitarySatchel
+  duffelbag: ClothingBackpackDuffelMilitary

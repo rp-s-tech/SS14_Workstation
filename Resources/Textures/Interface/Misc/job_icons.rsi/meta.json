@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from https://github.com/vgstation-coders/vgstation13/blob/e71d6c4fba5a51f99b81c295dcaec4fc2f58fb19/icons/mob/screen1.dmi | Brigmedic icon made by PuroSlavKing (Github) | Zombie icon made by RamZ | Zookeper by netwy (discort) | Rev and Head Rev icon taken from https://tgstation13.org/wiki/HUD and edited by coolmankid12345 (Discord) | Mindshield icon taken from https://github.com/tgstation/tgstation/blob/ce6beb8a4d61235d9a597a7126c407160ed674ea/icons/mob/huds/hud.dmi | Admin recolored from MedicalIntern by TsjipTsjip | StationAi resprite to 8x8 size by lunarcomets | Service Worker resprite by anno_midi (Discord) and spanky-spanky (Github)",
+    "copyright": "Taken from https://github.com/vgstation-coders/vgstation13/blob/e71d6c4fba5a51f99b81c295dcaec4fc2f58fb19/icons/mob/screen1.dmi | Brigmedic icon made by PuroSlavKing (Github) | Zombie icon made by RamZ | Zookeper by netwy (discort) | Rev and Head Rev icon taken from https://tgstation13.org/wiki/HUD and edited by coolmankid12345 (Discord) | Mindshield icon taken from https://github.com/tgstation/tgstation/blob/ce6beb8a4d61235d9a597a7126c407160ed674ea/icons/mob/huds/hud.dmi | Admin recolored from MedicalIntern by TsjipTsjip | StationAi resprite to 8x8 size by lunarcomets",
 
     "size": {
         "x": 8,
@@ -78,6 +78,9 @@
             "name": "Geneticist"
         },
         {
+            "name": "JobIconPathologist"
+        },
+        {
             "name": "Clown"
         },
         {
@@ -94,6 +97,9 @@
         },
         {
             "name": "Passenger"
+        },
+        {
+            "name": "Pocc"
         },
         {
             "name": "ChiefEngineer"
@@ -144,10 +150,19 @@
             "name": "ServiceWorker"
         },
         {
+            "name": "SecurityBorg"
+        },
+        {
             "name": "SecurityCadet"
         },
         {
+            "name": "SecurityPilot"
+        },
+        {
             "name": "Zombie"
+        },
+        {
+            "name": "IAA"
         },
         {
             "name": "Zookeeper"
@@ -165,10 +180,58 @@
             "name": "SeniorOfficer"
         },
         {
+            "name": "SCPScientist"
+        },
+        {
+            "name": "SCPSecurity"
+        },
+        {
+            "name": "SCPDClass"
+        },
+        {
+            "name": "KnightofStardust"
+        },
+        {
+            "name": "SCPParamedic"
+        },
+        {
+            "name": "BlueShield"
+        },
+        {
+            "name": "Nanotrasen_red"
+        },
+        {
+            "name": "Nanotrasen_green"
+        },
+        {
+            "name": "Nanotrasen_brown"
+        },
+        {
+            "name": "AgentCrimsonLily"
+        },
+        {
+            "name": "CargoLogistician"
+        },
+        {
+            "name": "SCPChef"
+        },
+        {
+            "name": "SCPBotanist"
+        },
+        {
+            "name": "SCPStationEngineer"
+        },
+		{
+            "name": "ArmoredChaplain"
+        },
+        {
             "name": "Revolutionary"
         },
         {
             "name": "HeadRevolutionary"
+        },
+		{
+            "name": "Surger"
         },
         {
             "name": "MindShield",

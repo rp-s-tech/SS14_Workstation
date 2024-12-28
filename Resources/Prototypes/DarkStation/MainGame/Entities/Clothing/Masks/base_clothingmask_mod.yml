@@ -1,0 +1,26 @@
+- type: entity
+  abstract: true
+  id: ClothingMaskHardsuitBaseSam
+  name: Базовая маска
+  noSpawn: true
+  components:
+  - type: Sprite
+    state: icon 
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Clothing
+    equipSound: /Audio/JetstreamSam/mask.ogg
+    unequipSound: /Audio/JetstreamSam/mask.ogg
+    quickEquip: false
+    slots: [ MASK ]
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.95
+        Heat: 0.90
+        Radiation: 0.25
+  - type: GroupExamine
+  - type: IngestionBlocker
+  - type: IdentityBlocker

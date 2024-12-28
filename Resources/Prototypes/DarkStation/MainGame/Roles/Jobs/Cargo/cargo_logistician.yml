@@ -1,0 +1,87 @@
+- type: job
+  id: CargoLogistician
+  name: Логист
+  description: Специализированный раб квартирмейстера для торговых непотребств
+  playTimeTracker: JobCargoLogistician
+  requirements:
+  - !type:RoleTimeRequirement
+    role: JobSalvageSpecialist
+    time: 18000 # salvage required 4h cargo + 4h for salvage
+  weight: 10
+  startingGear: CargoLogisticianGear
+  icon: "JobIconCargoLogistician"
+  supervisors: job-supervisors-qm
+  canBeAntag: false
+  chatHighlight: CargoChatHighlight
+  access:
+  - Cargo
+  - Salvage
+  - Maintenance
+  - External
+
+- type: startingGear
+  id: CargoLogisticianGear
+  equipment:
+    shoes: ClothingShoesColorBrown
+    id: CargoLogisticianPDA
+    ears: ClothingHeadsetCargoLogistician
+    pocket1: AppraisalTool
+
+# Cloths
+
+- type: entity
+  parent: ClothingUniformJumpsuitQM
+  id: ClothingUniformJumpsuitCargoLogistician
+  name: Униформа логиста
+  description: Стильная униформа (на самом деле, нет).
+
+- type: entity
+  parent: ClothingUniformJumpskirtQM
+  id: ClothingUniformJumpskirtCargoLogistician
+  name: Униформа логиста
+  description: Стильная униформа (на самом деле, нет).
+
+# Accesuares
+
+- type: entity
+  parent: QuartermasterPDA
+  id: CargoLogisticianPDA
+  name: КПК логиста
+  description: Гармоничный КПК для любителя денег.
+  components:
+  - type: Pda
+    id: CargoLogisticianIDCard
+    state: pda-miner
+
+- type: entity
+  parent: IDCardStandard
+  id: CargoLogisticianIDCard
+  name: ID карта логиста
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idshaftminer
+  - type: PresetIdCard
+    job: CargoLogistician
+
+# Head
+
+- type: entity
+  parent: ClothingHeadHatQMsoft
+  id: ClothingHeadHatCargoLogistician
+  name: Кепка логиста
+  description: Лучший головной убор во время жаркого потока заказов.
+
+- type: entity
+  parent: ClothingHeadsetQM
+  id: ClothingHeadsetCargoLogistician
+  name: Гарнитура Логиста
+  description: Гарнитура логиста для работы с отделом и принятия прямых заказов от командования.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCargo
+      - EncryptionKeyCommand
+      - EncryptionKeyCommon

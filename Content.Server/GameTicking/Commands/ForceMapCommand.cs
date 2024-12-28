@@ -27,6 +27,8 @@ namespace Content.Server.GameTicking.Commands
             }
 
             var gameMap = IoCManager.Resolve<IGameMapManager>();
+            var entityManager = IoCManager.Resolve<IEntityManager>();
+            var ticker = entityManager.System<GameTicker>();
             var name = args[0];
 
             // An empty string clears the forced map
@@ -36,12 +38,16 @@ namespace Content.Server.GameTicking.Commands
                 return;
             }
 
-            _configurationManager.SetCVar(CCVars.GameMap, name);
+            if (!ticker.CanUpdateMap())
+            {
+                shell.WriteLine("Сейчас нельзя установить карту");
+                return;
+            }
 
-            if (string.IsNullOrEmpty(name))
-                shell.WriteLine(Loc.GetString("forcemap-command-cleared"));
-            else
-                shell.WriteLine(Loc.GetString("forcemap-command-success", ("map", name)));
+            gameMap.SelectMap(name);
+            ticker.UpdateInfoText();
+
+            shell.WriteLine(Loc.GetString("forcemap-command-success", ("map", name)));
         }
 
         public CompletionResult GetCompletion(IConsoleShell shell, string[] args)

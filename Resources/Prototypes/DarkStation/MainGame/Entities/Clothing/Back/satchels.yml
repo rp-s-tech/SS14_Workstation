@@ -1,0 +1,35 @@
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelPOCC
+  name: Сумка НШЦК
+  description: Чёрная сумка, украшенная чистым золотом.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Back/Satchels/pocssatchel.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelOpiumBag
+  name: Universe bag
+  description: Такая сумка только у одного человека во всей вселенной! Ведь её подарила ему она...
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Back/Satchels/blackbagopium.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelIFD
+  name: сумка Инспектора ФД
+  description: Сумка для удобного хранения финансов.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Back/Satchels/IFD.rsi
+
+- type: entity
+  id: ClothingBackpackSatchelBlueShield
+  parent: ClothingBackpackSatchel
+  name: Сумка Синего Щита
+  description: Тактическая сумка, разработанная для лучших офицеров Синего Щита.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Back/Satchels/blueshield.rsi

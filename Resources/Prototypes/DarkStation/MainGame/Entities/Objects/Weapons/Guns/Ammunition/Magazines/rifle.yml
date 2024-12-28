@@ -1,0 +1,24 @@
+- type: entity
+  id: WW2MP40Magazine
+  name: магазин от MP-40
+  parent: BaseMagazineRifle
+  components:
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeRifle
+    proto: CartridgeRifle
+    capacity: 32
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Guns/Ammunition/Magazines/mp40mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+  - type: Tag
+    tags:
+      - MagazineRifle

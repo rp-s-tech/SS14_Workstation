@@ -1,0 +1,18 @@
+﻿- type: entity
+  id: BaseSyndicateHardsuitSecure
+  abstract: true
+  components:
+  - type: OnEquipFactionTrigger
+    faction: Syndicate
+    initialBeepDelay: 0
+    beepSound:
+      path: /Audio/Machines/Nuke/angry_beep.ogg
+      params:
+        volume: -6
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 50
+    intensitySlope: 100
+    maxIntensity: 10
+    canCreateVacuum: false
+  - type: ExplodeOnTrigger

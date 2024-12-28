@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Corvax.Interfaces.Shared;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -10,6 +11,7 @@ using Robust.Client.Utility;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using Content.Shared.RPSX.Patron;
 
 namespace Content.Client.Humanoid;
 
@@ -18,6 +20,7 @@ public sealed partial class MarkingPicker : Control
 {
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly ISponsorsManager _sponsorsManager = default!;
 
     public Action<MarkingSet>? OnMarkingAdded;
     public Action<MarkingSet>? OnMarkingRemoved;
@@ -224,6 +227,18 @@ public sealed partial class MarkingPicker : Control
 
             var item = CMarkingsUnused.AddItem($"{GetMarkingName(marking)}", marking.Sprites[0].Frame0());
             item.Metadata = marking;
+
+            // RPSX Sponsor
+            if (!marking.SponsorOnly)
+                continue;
+
+            item.Disabled = true;
+
+            if (_sponsorsManager.TryGetSponsorTier(out var sponsorInfo))
+            {
+                item.Disabled = !sponsorInfo.AllowedMarkings.Contains(marking.ID);
+            }
+            // RPSX Sponsor
         }
 
         CMarkingPoints.Visible = _currentMarkings.PointsLeft(_selectedMarkingCategory) != -1;

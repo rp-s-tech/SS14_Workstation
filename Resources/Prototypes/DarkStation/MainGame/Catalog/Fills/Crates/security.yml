@@ -1,0 +1,21 @@
+- type: entity
+  name: Ящик патронов с солью
+  description: Содержит 24 ружейных патрона, заряженных солью. Допускается гражданское применение.
+  id: CrateSaltShellsFilled
+  parent: CratePlastic
+  components:
+  - type: StorageFill
+    contents:
+      - id: ShellShotgunSalt
+        amount: 24
+
+- type: entity
+  id: CratePepperSprayFilled
+  parent: CratePlastic
+  name: Ящик перцовых баллончиков
+  description: Содержит 5 перцовых баллончиков. Допускается гражданское применение.
+  components:
+  - type: StorageFill
+    contents:
+      - id: PepperSpray
+        amount: 5

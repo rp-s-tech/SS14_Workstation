@@ -11,6 +11,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Serilog;
+using Content.Shared.RPSX.Patron;
 
 namespace Content.Server.Players.JobWhitelist;
 
@@ -22,6 +23,8 @@ public sealed class JobWhitelistManager : IPostInjectInit
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly UserDbDataManager _userDb = default!;
+    [Dependency] private readonly ISponsorsManager _sponsorsManager = default!;
+
 
     private readonly Dictionary<NetUserId, HashSet<string>> _whitelists = new();
 
@@ -63,13 +66,13 @@ public sealed class JobWhitelistManager : IPostInjectInit
         if (!_config.GetCVar(CCVars.GameRoleWhitelist))
             return true;
 
-        if (!_prototypes.TryIndex(job, out var jobPrototype) ||
-            !jobPrototype.Whitelisted)
-        {
+        if (!_prototypes.TryIndex(job, out var jobPrototype))
             return true;
-        }
 
-        return IsWhitelisted(session.UserId, job);
+        if (!jobPrototype.Whitelisted)
+            return true;
+
+        return _sponsorsManager.IsJobAvailable(session.UserId, jobPrototype) || IsWhitelisted(session.UserId, job);
     }
 
     public bool IsWhitelisted(NetUserId player, ProtoId<JobPrototype> job)

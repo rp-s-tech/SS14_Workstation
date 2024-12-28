@@ -1,0 +1,69 @@
+﻿- type: sponsorGhost
+  id: MobObserverSponsorAngel
+  name: Ангел
+  icon:
+    sprite: DarkStation/MainGame/Mobs/Ghosts/angel.rsi
+    state: animated
+
+- type: sponsorGhost
+  id: MobObserverSponsorDark
+  name: Тёмный
+  icon:
+    sprite: DarkStation/MainGame/Mobs/Ghosts/dark.rsi
+    state: animated
+
+- type: sponsorGhost
+  id: MobObserverSponsorDemon
+  name: Демонический
+  icon:
+    sprite: DarkStation/MainGame/Mobs/Ghosts/demon.rsi
+    state: animated
+
+- type: sponsorGhost
+  id: MobObserverSponsorGhostClown
+  name: Клоун
+  icon:
+    sprite: DarkStation/MainGame/Mobs/Ghosts/ghost_clown.rsi
+    state: animated
+
+- type: sponsorGhost
+  id: MobObserverSponsorMime
+  name: Мим
+  icon:
+    sprite: DarkStation/MainGame/Mobs/Ghosts/ghost_mime.rsi
+    state: animated
+
+- type: sponsorGhost
+  id: MobObserverSponsorPlagueDoctor
+  name: Чумной доктор
+  icon:
+    sprite: DarkStation/MainGame/Mobs/Ghosts/ghost_plague_doctor.rsi
+    state: animated
+
+- type: sponsorGhost
+  id: MobObserverSponsorShadow
+  name: Тень
+  icon:
+    sprite: DarkStation/MainGame/Mobs/Ghosts/ghost_shadow.rsi
+    state: animated
+
+- type: sponsorGhost
+  id: MobObserverSponsorHawai
+  name: На раслабоне
+  icon:
+    sprite: DarkStation/MainGame/Mobs/Ghosts/hawai.rsi
+    state: animated
+
+- type: sponsorGhost
+  id: MobObserverSponsorSkeleton
+  name: Скелетон
+  icon:
+    sprite: DarkStation/MainGame/Mobs/Ghosts/skeleton.rsi
+    state: animated
+
+- type: sponsorGhost
+  id: MobObserverSponsorTerminator
+  name: Экстерминатор
+  icon:
+    sprite: DarkStation/MainGame/Mobs/Ghosts/terminator.rsi
+    state: animated

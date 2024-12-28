@@ -1,0 +1,82 @@
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltSheathPOCC
+  name: сабельные ножны
+  description: Украшенные ножны, предназначенные для хранения офицерского клинка.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Belt/pocssheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Belt/pocssheath.rsi
+  - type: Storage
+    capacity: 15
+    whitelist:
+      tags:
+        - CaptainSabre
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - CaptainSabre
+  - type: Appearance
+
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltGrayJedi
+  suffix: Джедая
+  name: Броневой пояс
+  description: Бронепояс Серого Джедая.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Belt/jedibelt.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Belt/jedibelt.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.6
+
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase]
+  id: ClothingBeltSheathVergilYamato
+  name: ножны Ямато
+  description: Чёрные лакированные ножны легендарного клинка.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Belt/yamato_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Belt/yamato_sheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: VergilYamato
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - VergilYamato
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - VergilYamato
+  - type: Appearance
+  - type: MeleeWeapon ##В оригинале ножны также использовались Вергилием для ведения боя, это можно увидеть, просто загуглив банальные катсцены сражения Вергилия с Данте в конце игры либо глянув мувсеты комбо Ямато A, B, C (первые 2 удара).
+    attackRate: 1.4
+    wideAnimationRotation: 45
+    damage:
+      types:
+        Blunt: 2
+  - type: StaminaDamageOnHit
+    damage: 10

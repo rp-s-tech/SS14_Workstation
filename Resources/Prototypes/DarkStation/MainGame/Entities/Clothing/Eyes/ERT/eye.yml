@@ -1,0 +1,34 @@
+#Разведчик
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesERTRecon
+  name: Специальные очки разведчиков
+  description: Способны вести запись, защищать глаза от ослепления и показывать людей в темноте.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Eyes/ERTRecon/eyes.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Eyes/ERTRecon/eyes.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: NVG
+
+#Охотник на вампиров
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesVampireHunter
+  name: Очки охотника за вампиром
+  description: Защищают охотника от гипноза
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/secglasses.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/secglasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon

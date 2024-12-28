@@ -1,0 +1,15 @@
+- type: reagent
+  id: GroundPepper
+  name: reagent-name-groundpepper
+  desc: reagent-desc-spicy
+  physicalDesc: reagent-physical-desc-spicy
+  flavor: spicy
+  color: "#FF2400"
+  reactiveEffects:
+    Flammable:
+      methods: [ Touch ]
+      effects:
+      - !type:GenericStatusEffect
+        key: TemporaryBlindness
+        component: TemporaryBlindness
+        time: 5

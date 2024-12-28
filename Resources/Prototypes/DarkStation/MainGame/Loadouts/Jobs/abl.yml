@@ -1,0 +1,46 @@
+﻿- type: loadout
+  id: ACLJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAgentCrimsonLily
+
+#Shoes
+- type: loadout
+  id: ACLShoes
+  equipment:
+    shoes: ClothingShoesBootsMagAgentCrimsonLily
+
+#Glasses
+- type: loadout
+  id: ACLGlasses
+  equipment:
+    eyes: ClothingEyesGlassesAgentCrimsonLily
+
+#Outer
+- type: loadout
+  id: ACLHardSuit
+  equipment:
+    outerClothing: ClothingOuterHardsuitAgentCrimsonLily
+
+#Head
+- type: loadout
+  id: ACLBeret
+  equipment:
+    head: ClothingHeadHatBeretAgentCrimsonLily
+
+#Neck
+- type: loadout
+  id: ACLCloak
+  equipment:
+    neck: ClothingNeckCloakGoliathCloakAgentCrimsonLily
+
+#Gloves
+- type: loadout
+  id: ACLGloves
+  equipment:
+    gloves: ClothingHandsGlovesPowergloveAgentCrimsonLily
+
+#Back
+- type: loadout
+  id: ACLBackpack
+  equipment:
+    back: ClothingBackpackAgentCrimsonLily

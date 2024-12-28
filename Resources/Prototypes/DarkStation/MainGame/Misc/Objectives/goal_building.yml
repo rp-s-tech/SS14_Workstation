@@ -1,0 +1,35 @@
+- type: stationGoal
+  id: StationGoalZoo
+  graph:
+    - name: Goal
+      steps:
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-will-send-in-few-minutes
+          delay: 60
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-zoo
+          delay: 120
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-zoo
+
+- type: stationGoal
+  id: StationGoalRepairDoc
+  graph:
+    - name: Goal
+      steps:
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-will-send-in-few-minutes
+          delay: 60
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-repair-dock
+          delay: 120
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-repair-dock

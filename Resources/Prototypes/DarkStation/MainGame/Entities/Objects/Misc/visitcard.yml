@@ -1,0 +1,12 @@
+- type: entity
+  name: Визитная карточка
+  parent: BaseItem
+  id: WaPVisitcard
+  description: Надпись сзади:"Обращайтесь в Вагнер и Партнёры".
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Misc/visitcards.rsi
+    state: icon
+  - type: Item
+    sprite: DarkStation/MainGame/Objects/Misc/visitcards.rsi
+    state: icon

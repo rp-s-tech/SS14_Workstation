@@ -1,0 +1,17 @@
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelIFD
+  name: вещмешок Инспектора ФД
+  description: Вещмешок для хранения большого количества финансов.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Back/Duffels/IFD.rsi
+
+- type: entity
+  id: ClothingBackpackDuffelBlueShield
+  parent: ClothingBackpackDuffel
+  name: Вещмешок Синего Щита
+  description: Вместительный вещмешок со всем необходимым для защиты командования.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Back/Duffels/blueshield.rsi

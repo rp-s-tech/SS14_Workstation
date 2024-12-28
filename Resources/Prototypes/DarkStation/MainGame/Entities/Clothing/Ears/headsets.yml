@@ -1,0 +1,73 @@
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltPOCC
+  name: Гарнитура НШЦК
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCentCom
+      - EncryptionKeyStationMaster
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Ears/Headsets/pocsears.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Ears/Headsets/pocsears.rsi
+
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltGrayJedi
+  suffix: Джедая
+  name: Гарнитура
+  description: Гарнитура Серого Джедая.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyStationMaster
+      - EncryptionKeyCentCom
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Ears/Headsets/jediheadset.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Ears/Headsets/jediheadset.rsi
+
+
+- type: entity
+  id: ClothingHeadsetSecurityKnight
+  parent: ClothingHeadsetSecurity
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Ears/Headsets/security_knight.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Ears/Headsets/security_knight.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetBlueShield
+  name: Гарнитура Синего Щита
+  description: Предоставляет доступ к связи по станции, так и с представителями центрального командования.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyStationMaster
+      - EncryptionKeyCentCom
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/command.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/command.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetIFD
+  name: Гарнитура ИФД
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCentCom
+      - EncryptionKeyStationMaster
+      - EncryptionKeyCrimsonLily
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Ears/Headsets/IFD.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Ears/Headsets/IFD.rsi

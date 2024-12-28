@@ -1,0 +1,155 @@
+﻿- type: roleLoadout
+  id: JobSeniorOfficer
+  groups:
+  - SeniorOfficerJumpsuit
+  - SeniorOfficerHead
+  - SeniorOfficerNeck
+  - SeniorOfficerOuterClothing
+  - SecurityBackpack
+  - SecurityShoes
+  - SecurityBelt
+  - SurvivalSecurity
+  - GroupSpeciesBreathToolSecurity
+  - Trinkets
+  # - Inventory # Corvax-Loadouts
+
+- type: roleLoadout
+  id: JobBrigmedic
+  groups:
+  - SecurityBrigMedicJumpsuit
+  - SecurityBrigMedicBackpack
+  - SecurityBrigMedicOuterClothing
+  - SecurityBrigMedicShoes
+  - SecurityBrigMedicGloves
+  - SecurityBrigMedicEyes
+  - SecurityBrigMedicHead
+  - SecurityBrigMedicMask
+  - SecurityBrigMedicBelt
+  - SurvivalSecurity
+  - GroupSpeciesBreathToolSecurity
+
+- type: roleLoadout
+  id: JobBlueShieldOfficer
+  groups:
+  - BlueShieldOfficerJumpsuit
+  - BlueShieldOfficerBackpack
+  - BlueShieldOfficerHead
+  - BlueShieldOfficerNeck
+  - BlueShieldOfficerOuterclothing
+  - BlueShieldOfficerShoes
+  - BlueShieldOfficerBelt
+  - BlueShieldOfficerGloves
+  - SurvivalSecurity
+  - GroupSpeciesBreathToolSecurity
+
+- type: roleLoadout
+  id: JobSpIFD
+  groups:
+  - SpIFDJumpsuit
+  - SpIFDBackpack
+  - SpIFDOuterClothing
+  - SpIFDShoes
+  - SpIFDGloves
+  - SpIFDHead
+  - Glasses
+  - Survival
+  - GroupSpeciesBreathTool
+  - Trinkets
+
+- type: roleLoadout
+  id: JobCargoLogistician
+  groups:
+  - CargoLogisticianJumpsuit
+  - CargoLogisticianHead
+  - CargoLogisticianNeck
+  - CargoTechnicianBackpack
+  - Glasses
+  - Survival
+  - GroupSpeciesBreathTool
+  - Trinkets
+
+- type: roleLoadout
+  id: JobSpNanoTrasenRepresentative
+  groups:
+  - SpNTRJumpsuit
+  - SpNTROuterClothing
+  - SpNTRHead
+  - SpNTRNeck
+  - SpNTRBack
+  - SpNTRBoots
+  - Glasses
+  - Survival
+  - GroupSpeciesBreathTool
+  - Trinkets
+
+- type: roleLoadout
+  id: JobSecurityPilot
+  groups:
+  - SecurityPilotJumpsuit
+  - SecurityPilotHead
+  - SecurityPilotOuterClothing
+  - SecurityBackpack
+  - SecurityBelt
+  - SecurityShoes
+  - SurvivalSecurity
+  - GroupSpeciesBreathToolSecurity
+  - Trinkets
+  #  # - Inventory # Corvax-Loadouts
+
+#Surgery
+- type: roleLoadout
+  id: JobSurger
+  groups:
+  - MedicalDoctorHead
+  - MedicalMask
+  - MedicalDoctorJumpsuit
+  - MedicalGloves
+  - MedicalBackpack
+  - MedicalDoctorOuterClothing
+  - MedicalShoes
+  - MedicalDoctorPDA
+  - Glasses
+  - SurvivalMedical
+  - GroupSpeciesBreathToolMedical
+  - Trinkets
+#  # - Inventory # Corvax-Loadouts
+
+#Pathologist
+- type: roleLoadout
+  id: JobPathologist
+  groups:
+  - MedicalDoctorHead
+  - MedicalMask
+  - MedicalDoctorJumpsuit
+  - MedicalGloves
+  - MedicalBackpack
+  - MedicalDoctorOuterClothing
+  - MedicalShoes
+  - Glasses
+  - SurvivalMedical
+  - GroupSpeciesBreathToolMedical
+  - Trinkets
+
+#ABL
+- type: roleLoadout
+  id: JobAgentCrimsonLily
+  groups:
+  - ACLJumpsuit
+  - ACLHead
+  - ACLOuterClothing
+  - ACLGlasses
+  - ACLNeck
+  - ACLGloves
+  - ACLBack
+  - ACLShoes
+  - SurvivalSecurity
+  - GroupSpeciesBreathToolSecurity
+
+- type: roleLoadout
+  id: JobSpCCO
+  groups:
+  - CCOJumpsuit
+  - CCOHead
+  - CCOOuterClothing
+  - GroupSpeciesBreathTool
+  - CCOShoes

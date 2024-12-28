@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingMaskHardsuitBaseSam
+  id: ClothingMaskHardsuitJetsteamSam
+  name: Маска Реактивного Сэма.
+  description: Маска которая готова дать вам возможность дышать и защитить своё "прекрасное" лицо.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Mask/JetstreamSam/Mask.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Mask/JetstreamSam/Mask.rsi

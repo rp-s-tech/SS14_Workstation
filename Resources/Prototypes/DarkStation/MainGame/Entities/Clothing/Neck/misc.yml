@@ -1,0 +1,9 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakGrayJedi
+  suffix: Джедая
+  name: Пластина
+  description: Пластина Серого Джедая.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Neck/Misc/jedineck.rsi

@@ -1,0 +1,57 @@
+{
+    "version": 1,
+    "license": "CC0-1.0",
+    "copyright": "Made by @archont8176 for DarkStation",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "fakepresent",
+            "directions": 4
+        },
+        {
+            "name": "icezombie",
+            "directions": 4
+        },
+        {
+            "name": "polarzombie",
+            "directions": 4
+        },
+        {
+            "name": "snowspider",
+            "directions": 4,
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2
+                ],
+                [
+                    0.2,
+                    0.2,
+                    0.2
+                ],
+                [
+                    0.2,
+                    0.2,
+                    0.2
+                ],
+                [
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "snowspider_dead",
+            "delays": [
+                [
+                    1
+                ]
+            ]
+        }
+    ]
+}

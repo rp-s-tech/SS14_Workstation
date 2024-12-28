@@ -1,0 +1,11 @@
+- type: startingGear
+  id: POCCGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPOCC
+    shoes: ClothingShoesBootsCombatPOCC
+    head: ClothingHeadHelmetPOCCBeret
+    outerClothing: ClothingOuterCoatPOCC
+    id: POCCPDA
+    ears: ClothingHeadsetAltPOCC
+    gloves: ClothingHandsGlovesPOCC
+    belt: ClothingBeltSheathPOCCFilled

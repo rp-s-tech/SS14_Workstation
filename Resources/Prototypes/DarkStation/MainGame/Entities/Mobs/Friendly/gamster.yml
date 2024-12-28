@@ -1,0 +1,101 @@
+- type: entity
+  name: Гамстер
+  id: MobGamster
+  parent: SimpleMobBase
+  description: Ух е...
+  components:
+    - type: CombatMode
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3.00
+      baseSprintSpeed: 5.00
+    - type: InputMover
+    - type: MobMover
+    - type: Reactive
+      groups:
+        Flammable: [Touch]
+        Extinguish: [Touch]
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: DarkStation/MainGame/Mobs/gamster.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: regalrat
+    - type: Physics
+      bodyType: KinematicController
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeCircle
+            radius: 0.3
+          density: 230
+          mask:
+            - SmallMobMask
+          layer:
+            - SmallMobLayer
+    - type: MobState
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        200: Critical
+        250: Dead
+    - type: MeleeWeapon
+      hidden: true
+      soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh1.ogg
+      angle: 0
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 12
+          Piercing: 8
+    - type: Body
+      prototype: Rat
+      requiredLegs: 1 # TODO: More than 1 leg
+    - type: Hunger # probably should be prototyped
+      thresholds:
+        Overfed: 200
+        Okay: 150
+        Peckish: 100
+        Starving: 50
+        Dead: 0
+      baseDecayRate: 0.01666666666
+    - type: Thirst
+      thresholds:
+        OverHydrated: 600
+        Okay: 450
+        Thirsty: 300
+        Parched: 150
+        Dead: 0
+      baseDecayRate: 0.1
+    - type: DamageStateVisuals
+      rotate: true
+      states:
+        Alive:
+          Base: regalrat
+        Critical:
+          Base: dead
+        Dead:
+          Base: dead
+    - type: GhostRole
+      makeSentient: true
+      name: Гамстер
+      description: Накажи свое обидчика!
+      rules: Убейте того, кто запихнул Гамлета в микроволновку!
+    - type: GhostTakeoverAvailable
+    - type: Tag
+      tags:
+        - CannotSuicide
+        - DoorBumpOpener
+        - FootstepSound
+    - type: NoSlip
+    - type: MobPrice
+      price: 2500
+
+- type: polymorph
+  id: GamsterPolymorph
+  configuration:
+    entity: MobGamster
+    forced: true
+    transferName: false
+    revertOnCrit: true
+    revertOnDeath: true

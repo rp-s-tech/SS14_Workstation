@@ -1,0 +1,105 @@
+- type: stationGoal
+  id: StationGoalEnergy
+  graph:
+    - name: Goal
+      steps:
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-will-send-in-few-minutes
+          delay: 60
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-energy-solar
+          delay: 120
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-energy-solar
+
+- type: stationGoal
+  id: StationGoalEnergyAutonomousOne
+  graph:
+    - name: Goal
+      steps:
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-will-send-in-few-minutes
+          delay: 60
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-energy-autonomous
+          delay: 120
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-energy-autonomous
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-energy-autonomous-one
+          delay: 30
+
+- type: stationGoal
+  id: StationGoalEnergyAutonomousTwo
+  graph:
+    - name: Goal
+      steps:
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-will-send-in-few-minutes
+          delay: 60
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-energy-autonomous
+          delay: 120
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-energy-autonomous
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-energy-autonomous-two
+          delay: 30
+
+- type: stationGoal
+  id: StationGoalEnergyAutonomousThree
+  graph:
+    - name: Goal
+      steps:
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-will-send-in-few-minutes
+          delay: 60
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-energy-autonomous
+          delay: 120
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-energy-autonomous
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-energy-autonomous-three
+          delay: 30
+
+- type: stationGoal
+  id: StationGoalEnergyAutonomousFour
+  graph:
+    - name: Goal
+      steps:
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-will-send-in-few-minutes
+          delay: 60
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-energy-autonomous
+          delay: 120
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-energy-autonomous
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-energy-autonomous-four
+          delay: 30

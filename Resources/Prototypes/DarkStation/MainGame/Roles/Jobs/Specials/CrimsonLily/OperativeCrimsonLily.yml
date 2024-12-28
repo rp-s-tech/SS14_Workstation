@@ -1,0 +1,227 @@
+- type: job
+  id: OperativeCrimsonLily
+  name: Оперативник Багровой Лилии
+  description: Защищает деньги НТ
+  playTimeTracker: JobOperativeCrimsonLily
+  setPreference: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 14400
+    - !type:DepartmentTimeRequirement
+      department: Cargo
+      time: 14400
+  startingGear: OperativeCrimsonLilyStationGear
+  icon: "JobIconOperativeCrimsonLily"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: Агенту Багровой Лилии, при его отсутствии - представителю Центкома
+  canBeAntag: false
+  accessGroups:
+    - AllAccessAgentCrimsonLily
+  special:
+    - !type:AddImplantSpecial
+      implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: OperativeCrimsonLilyStationGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOperativeCrimsonLily
+    back: ClothingBackpackOperativeCrimsonLilyFilled
+    shoes: ClothingShoesBootsMagOperativeCrimsonLily
+    eyes: ClothingEyesGlassesOperativeCrimsonLily
+    outerClothing: ClothingOuterHardsuitOperativeCrimsonLily
+    id: AgentCrimsonLilyPDA
+    ears: ClothingHeadsetAgentCrimsonLily
+    belt: ClothingBeltSecurityFilled
+    head: ClothingHeadHatBeretOperativeCrimsonLily
+    gloves: ClothingHandsGlovesPowergloveOperativeCrimsonLily
+    pocket1: WeaponPulsePistol
+  InnerClothingSkirt: ClothingUniformJumpsuitOperativeCrimsonLily
+
+# Top set
+
+- type: entity
+  parent: ClothingHeadHatBeret
+  id: ClothingHeadHatBeretOperativeCrimsonLily
+  name: Берет Оперативника Багровой Лилии
+  suffix: OCL
+  description: Стильно, модно и уважаемо.
+
+- type: entity
+  parent: ClothingEyesGlassesSecurity
+  id: ClothingEyesGlassesOperativeCrimsonLily
+  name: Очки Оперативника Багровой Лилии
+  suffix: OCL
+  description: Специальные очки Оперативника Багровой Лилии позволяющие мониторить статус личностей пред ним.
+  components:
+    - type: EyeProtection
+
+# Accessories
+
+- type: entity
+  parent: ClothingHandsGlovesPowerglove
+  id: ClothingHandsGlovesPowergloveOperativeCrimsonLily
+  name: Силовые перчатки Оперативника Багровой Лилии
+  description: Специальные силовые перчатки Оперативника Багровой Лилии для продуктивной деятельности.
+  components:
+    - type: Insulated
+
+- type: entity
+  parent: ClothingShoesBootsMagSyndie
+  id: ClothingShoesBootsMagOperativeCrimsonLily
+  name: Магнитные ботинки Оперативника Багровой Лилии
+  suffix: OCL
+  description: С такими магнитными ботинками, мало что страшно.
+
+# Chest
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitOperativeCrimsonLily
+  name: униформа Оперативника Багровой Лилии
+  suffix: OCL
+  description: Рядом с ним вы чувствуете себя в безопасности. Но не ощущаете безопасность ваших денег...
+  components:
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpsuit/ert_security.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpsuit/ert_security.rsi
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.8
+          Slash: 0.8
+          Piercing: 0.8
+        securePartTypes:
+          Leg: 0.85
+          Arm: 0.8
+
+# Armor
+
+- type: entity
+  parent: ClothingOuterHardsuitERTLeader
+  id: ClothingOuterHardsuitOperativeCrimsonLily
+  name: Скафандр Оперативника Багровой Лилии
+  description: С таким скафандром можно и чужую станцию продать.
+  components:
+    - type: Sprite
+      sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/CrimsonLily/scaf.rsi
+    - type: Clothing
+      sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/CrimsonLily/scaf.rsi
+    - type: ToggleableClothing
+      clothingPrototype: ClothingHeadHelmetHardsuitOperativeCrimsonLily
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitOperativeCrimsonLily
+  noSpawn: true
+  name: Шлем скафандра Оперативника Багровой Лилии
+  description: С таким шлемом от скафандра можно и пулю смело в лоб ловить!
+  suffix: OCL
+  components:
+    - type: Sprite
+      sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/CrimsonLily/helmet.rsi
+    - type: Clothing
+      sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/CrimsonLily/helmet.rsi
+    - type: PointLight
+      color: "#ffadc6"
+      radius: 7
+    - type: PressureProtection
+      highPressureMultiplier: 0.60
+      lowPressureMultiplier: 5500
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.75
+          Slash: 0.75
+          Piercing: 0.75
+          Heat: 0.75
+          Radiation: 0.70
+          Caustic: 0.75
+        securePartTypes:
+          Head: 0.5
+
+# Storage
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackHolding
+  id: ClothingBackpackOperativeCrimsonLilyFilled
+  name: Рюкзак Оперативника Багровой Лилии
+  suffix: OCL
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxSurvivalSecurity
+        - id: Flash
+        - id: TrackingImplanter
+        - id: WeaponPulseCarbine
+        - id: WeaponPulsePistol
+        - id: SpCentComAccessConfigurator
+        - id: CrowbarRed
+    - type: Storage
+      maxTotalWeight: 56
+# Spawner
+
+- type: entity
+  id: SpawnPointOperativeCrimsonLily
+  parent: SpawnPointJobBase
+  name: operativecrimsonlily
+  components:
+  - type: SpawnPoint
+    job_id: OperativeCrimsonLily
+  - type: Sprite
+    layers:
+      - state: green
+      - state: qm
+
+- type: entity
+  id: RandomHumanoidSpawnerOperativeCrimsonLily
+  name: Оперативник Багровой Лилии
+  playTimeTracker: JobOperativeCrimsonLily
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: ertleader
+    - type: RandomHumanoidSpawner
+      settings: OperativeCrimsonLily
+    - type: RandomMetadata
+      nameSegments:
+        - NamesFirstCrimsonLily
+        - names_last
+
+- type: randomHumanoidSettings
+  id: OperativeCrimsonLily
+  speciesBlacklist:
+    - Arachnid
+    - Diona
+    - Moth
+    - Reptilian
+    - SlimePerson
+    - Vox
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Оперативник Багровой Лилии
+      description: Вы должны подчиняться Агенту Багровой Лилии, при его отсутствии - представителю Центкома
+      requirements:
+        - !type:OverallPlaytimeRequirement
+          time: 72000 # 20 h
+        - !type:DepartmentTimeRequirement
+          department: Security
+          time: 14400
+        - !type:DepartmentTimeRequirement
+          department: Cargo
+          time: 14400
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [OperativeCrimsonLilyStationGear]
+    - type: RandomMetadata
+      nameSegments:
+        - NamesFirstCrimsonLily
+        - names_last
+
+- type: dataset
+  id: NamesFirstCrimsonLily
+  values:
+  - Оперативник

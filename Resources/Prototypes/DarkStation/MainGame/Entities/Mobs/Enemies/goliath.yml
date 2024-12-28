@@ -1,0 +1,32 @@
+﻿- type: entity
+  id: MobSpGoliath
+  parent: SimpleSpaceMobBase
+  name: "Лавовый голиаф"
+  description: "Чудное создание, родом из лаваленда."
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Mobs/Enemies/goliath.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      collection: AlienClaw
+    damage:
+      groups:
+        Brute: 10
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: DamageStateVisuals
+    rotate: true
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead

@@ -1,0 +1,59 @@
+﻿- type: playTimeTracker
+  id: JobSecurityKnight
+
+- type: playTimeTracker
+  id: JobSecurityBorg
+
+- type: playTimeTracker
+  id: JobBlueShieldOfficer
+
+- type: playTimeTracker
+  id: JobCargoLogistician
+
+- type: playTimeTracker
+  id: JobAgentCrimsonLily
+
+- type: playTimeTracker
+  id: JobSpIFD
+
+- type: playTimeTracker
+  id: JobSpawnedAgentCrimsonLily
+
+- type: playTimeTracker
+  id: JobOperativeCrimsonLily
+
+- type: playTimeTracker
+  id: JobSpNanoTrasenRepresentative
+
+- type: playTimeTracker
+  id: JobIAA
+
+# - type: playTimeTracker
+#   id: JobSpICC
+
+- type: playTimeTracker
+  id: JobSpCCO
+
+- type: playTimeTracker
+  id: JobArmoredChaplain
+
+- type: playTimeTracker
+  id: JobPathologist
+
+- type: playTimeTracker
+  id: JobSeniorEngineer
+
+- type: playTimeTracker
+  id: JobSeniorOfficer
+
+- type: playTimeTracker
+  id: JobSeniorPhysician
+
+- type: playTimeTracker
+  id: JobSeniorResearcher
+
+- type: playTimeTracker
+  id: JobSAI
+
+- type: playTimeTracker
+  id: JobSurger

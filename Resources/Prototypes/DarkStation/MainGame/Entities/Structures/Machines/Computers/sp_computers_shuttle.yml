@@ -1,0 +1,19 @@
+
+- type: entity
+  parent: BaseComputerShuttle
+  id: ComputerShuttleCentComms
+  name: консоль управления шаттлом ЦК
+  description: Используется для пилотирования шаттла ЦК.
+  components:
+  - type: Tag
+    tags:
+      - NanoTrasen
+      - CentComms
+  - type: RadarConsole
+    maxRange: 1536
+  - type: WorldLoader
+    radius: 1536
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#c94242"

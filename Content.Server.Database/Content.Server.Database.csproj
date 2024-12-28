@@ -28,5 +28,45 @@
     <ProjectReference Include="..\Content.Shared.Database\Content.Shared.Database.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Migrations\Sqlite\20241221191858_PatronPets.cs" />
+    <Compile Remove="Migrations\Sqlite\20241221191858_PatronPets.Designer.cs" />
+    <Compile Remove="Migrations\Sqlite\20241221191629_Loadouts.cs" />
+    <Compile Remove="Migrations\Sqlite\20241221191629_Loadouts.Designer.cs" />
+    <Compile Remove="Migrations\Sqlite\20241221191143_PatronItemsToProfile.cs" />
+    <Compile Remove="Migrations\Sqlite\20241221191143_PatronItemsToProfile.Designer.cs" />
+    <Compile Remove="Migrations\Sqlite\20241221191021_Patrons.Designer.cs" />
+    <Compile Remove="Migrations\Postgres\20241221191905_PatronPets.cs" />
+    <Compile Remove="Migrations\Postgres\20241221191905_PatronPets.Designer.cs" />
+    <Compile Remove="Migrations\Postgres\20241221191637_Loadouts.cs" />
+    <Compile Remove="Migrations\Postgres\20241221191637_Loadouts.Designer.cs" />
+    <Compile Remove="Migrations\Postgres\20241221191155_PatronItemsToProfile.cs" />
+    <Compile Remove="Migrations\Postgres\20241221191155_PatronItemsToProfile.Designer.cs" />
+    <Compile Remove="Migrations\Postgres\20241221191033_Patrons.cs" />
+    <Compile Remove="Migrations\Postgres\20241221191033_Patrons.Designer.cs" />
+    <Compile Remove="Migrations\Postgres\20241222075213_Patrons.cs" />
+    <Compile Remove="Migrations\Postgres\20241222075213_Patrons.Designer.cs" />
+    <Compile Remove="Migrations\Sqlite\20241222075242_PatronItemsToProfile.cs" />
+    <Compile Remove="Migrations\Sqlite\20241222075242_PatronItemsToProfile.Designer.cs" />
+    <Compile Remove="Migrations\Sqlite\20241222075016_PatronPets.cs" />
+    <Compile Remove="Migrations\Sqlite\20241222075016_PatronPets.Designer.cs" />
+    <Compile Remove="Migrations\Postgres\20241222075251_PatronItemsToProfile.cs" />
+    <Compile Remove="Migrations\Postgres\20241222075251_PatronItemsToProfile.Designer.cs" />
+    <Compile Remove="Migrations\Postgres\20241222075030_PatronPets.cs" />
+    <Compile Remove="Migrations\Postgres\20241222075030_PatronPets.Designer.cs" />
+    <Compile Remove="Migrations\Sqlite\20241222100557_Patrons.cs" />
+    <Compile Remove="Migrations\Sqlite\20241222100557_Patrons.Designer.cs" />
+    <Compile Remove="Migrations\Postgres\20241222100613_Patrons.cs" />
+    <Compile Remove="Migrations\Postgres\20241222100613_Patrons.Designer.cs" />
+    <Compile Remove="Migrations\Sqlite\20241222083113_PatronPets.cs" />
+    <Compile Remove="Migrations\Sqlite\20241222083113_PatronPets.Designer.cs" />
+    <Compile Remove="Migrations\Sqlite\20241222083049_PatronItemsToProfile.cs" />
+    <Compile Remove="Migrations\Sqlite\20241222083049_PatronItemsToProfile.Designer.cs" />
+    <Compile Remove="Migrations\Postgres\20241222083126_PatronPets.cs" />
+    <Compile Remove="Migrations\Postgres\20241222083126_PatronPets.Designer.cs" />
+    <Compile Remove="Migrations\Postgres\20241222083100_PatronItemsToProfile.cs" />
+    <Compile Remove="Migrations\Postgres\20241222083100_PatronItemsToProfile.Designer.cs" />
+  </ItemGroup>
+
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
 </Project>

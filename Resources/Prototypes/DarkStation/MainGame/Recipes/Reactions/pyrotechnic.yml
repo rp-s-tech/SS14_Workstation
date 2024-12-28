@@ -1,0 +1,12 @@
+- type: reaction
+  id: Teslium
+  minTemp: 400
+  reactants:
+    Ash:
+      amount: 3
+    Silver:
+      amount: 1
+    Plasma:
+      amount: 1
+  products:
+    Teslium: 5

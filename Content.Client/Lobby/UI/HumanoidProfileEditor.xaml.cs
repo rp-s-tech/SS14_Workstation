@@ -9,6 +9,8 @@ using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Sprite;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
+using Content.Shared.ADT.CCVar;
+using Content.Shared.ADT.SpeechBarks;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
 using Content.Shared.GameTicking;
@@ -33,6 +35,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
+using Content.Shared.RPSX.Patron;
 
 namespace Content.Client.Lobby.UI
 {
@@ -49,6 +52,7 @@ namespace Content.Client.Lobby.UI
         private readonly MarkingManager _markingManager;
         private readonly JobRequirementsManager _requirements;
         private readonly LobbyUIController _controller;
+        private readonly ISponsorsManager _sponsorsManager;
 
         private FlavorText.FlavorText? _flavorText;
         private TextEdit? _flavorTextEdit;
@@ -113,6 +117,7 @@ namespace Content.Client.Lobby.UI
             IPrototypeManager prototypeManager,
             IResourceManager resManager,
             JobRequirementsManager requirements,
+            ISponsorsManager sponsorsManager,
             MarkingManager markings)
         {
             RobustXamlLoader.Load(this);
@@ -125,6 +130,7 @@ namespace Content.Client.Lobby.UI
             _markingManager = markings;
             _preferencesManager = preferencesManager;
             _resManager = resManager;
+            _sponsorsManager = sponsorsManager;
             _requirements = requirements;
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
 
@@ -199,9 +205,6 @@ namespace Content.Client.Lobby.UI
 
             PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-male-text"), (int) Gender.Male);
             PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-female-text"), (int) Gender.Female);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-epicene-text"), (int) Gender.Epicene);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-neuter-text"), (int) Gender.Neuter);
-
             PronounsButton.OnItemSelected += args =>
             {
                 PronounsButton.SelectId(args.Id);
@@ -209,6 +212,20 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion Gender
+
+            // ADT Barks Start
+            #region Voice
+
+            if (configurationManager.GetCVar(ADTCCVars.BarksEnabled))
+            {
+                BarksContainer.Visible = true;
+                BarksPitchContainer.Visible = true;
+                BarksDelayContainer.Visible = true;
+                InitializeBarks();
+            }
+
+            #endregion
+            // ADT Barks End
 
             RefreshSpecies();
 
@@ -413,6 +430,15 @@ namespace Content.Client.Lobby.UI
 
             #endregion Markings
 
+            #region PatronItems
+
+            TabContainer.SetTabTitle(5, Loc.GetString("Донат"));
+
+            CPatronItems.ItemsChanged += OnPatronItemsChange;
+            CPatronItems.PetChanged += OnPatronPetChange;
+
+            #endregion PatronItems
+
             RefreshFlavorText();
 
             #region Dummy
@@ -440,6 +466,7 @@ namespace Content.Client.Lobby.UI
             SpeciesInfoButton.OnPressed += OnSpeciesInfoButtonPressed;
 
             UpdateSpeciesGuidebookIcon();
+            ReloadPreview();
             IsDirty = false;
         }
 
@@ -596,7 +623,7 @@ namespace Content.Client.Lobby.UI
 
             _species.AddRange(_prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart));
             var speciesIds = _species.Select(o => o.ID).ToList();
-
+            _sponsorsManager.TryGetSponsorTier(out var tier);
             for (var i = 0; i < _species.Count; i++)
             {
                 var name = Loc.GetString(_species[i].Name);
@@ -606,6 +633,14 @@ namespace Content.Client.Lobby.UI
                 {
                     SpeciesButton.SelectId(i);
                 }
+
+                if(!_species[i].SponsorOnly)
+                    continue;
+
+                if (tier?.AllowedSpecies.Contains(_species[i].ID) == true)
+                    continue;
+
+                SpeciesButton.SetItemDisabled(i, true);
             }
 
             // If our species isn't available then reset it to default.
@@ -753,6 +788,8 @@ namespace Content.Client.Lobby.UI
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
+            UpdatePatronItems();
+            UpdateBarkVoicesControls(); // ADT Barks
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
@@ -1131,6 +1168,26 @@ namespace Content.Client.Lobby.UI
             ReloadProfilePreview();
         }
 
+        private void OnPatronItemsChange(List<string> items)
+        {
+            if (Profile == null)
+                return;
+
+            Profile = Profile.WithPatronItems(items);
+            SetDirty();
+            ReloadProfilePreview();
+        }
+
+        private void OnPatronPetChange(string petId, string petName)
+        {
+            if (Profile == null)
+                return;
+
+            Profile = Profile.WithPatronPet(petId, petName);
+            SetDirty();
+            ReloadProfilePreview();
+        }
+
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -1173,7 +1230,7 @@ namespace Content.Client.Lobby.UI
                     Profile = Profile?.WithGender(Gender.Female);
                     break;
                 default:
-                    Profile = Profile?.WithGender(Gender.Epicene);
+                    Profile = Profile?.WithGender(Gender.Male);
                     break;
             }
 
@@ -1187,6 +1244,35 @@ namespace Content.Client.Lobby.UI
             Profile = Profile?.WithGender(newGender);
             ReloadPreview();
         }
+        // ADT Barks start
+        private void SetBarkProto(string prototype)
+        {
+            Profile = Profile?.WithBarkProto(prototype);
+            ReloadPreview();
+            SetDirty();
+        }
+
+        private void SetBarkPitch(float pitch)
+        {
+            Profile = Profile?.WithBarkPitch(Math.Clamp(pitch, _cfgManager.GetCVar(ADTCCVars.BarksMinPitch), _cfgManager.GetCVar(ADTCCVars.BarksMaxPitch)));
+            ReloadPreview();
+            SetDirty();
+        }
+
+        private void SetBarkMinVariation(float variation)
+        {
+            Profile = Profile?.WithBarkMinVariation(Math.Clamp(variation, _cfgManager.GetCVar(ADTCCVars.BarksMinDelay), Profile.Bark.MaxVar));
+            ReloadPreview();
+            SetDirty();
+        }
+
+        private void SetBarkMaxVariation(float variation)
+        {
+            Profile = Profile?.WithBarkMaxVariation(Math.Clamp(variation, Profile.Bark.MinVar, _cfgManager.GetCVar(ADTCCVars.BarksMaxDelay)));
+            ReloadPreview();
+            SetDirty();
+        }
+        // ADT Barks end
 
         private void SetSpecies(string newSpecies)
         {
@@ -1386,6 +1472,15 @@ namespace Content.Client.Lobby.UI
             Markings.SetData(Profile.Appearance.Markings, Profile.Species,
                 Profile.Sex, Profile.Appearance.SkinColor, Profile.Appearance.EyeColor
             );
+        }
+
+        private void UpdatePatronItems()
+        {
+            if (Profile == null)
+                return;
+
+            var data = Profile.SponsorData;
+            CPatronItems.SetPatronData(data.Items, data.PetData.PetId, data.PetData.PetName);
         }
 
         private void UpdateGenderControls()

@@ -1,0 +1,47 @@
+- type: weightedRandomFillSolution
+  id: Shavermaweighted
+  fills:
+  - quantity: 5
+    weight: 1
+    reagents:
+    - Laughter
+  - quantity: 5
+    weight: 1
+    reagents:
+    - Cryter
+
+
+- type: entity
+  parent: FoodBase
+  id: Shaverma
+  name: Шаурма
+  description: Шаверма или шаурма? Точно сделано не из собаки... Наверное...
+  components:
+  - type: FlavorProfile
+    flavors:
+      - oily
+      - bread
+      - meaty
+      - cabbage
+      - onion
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Consumable/Food/shaverma.rsi
+    state: icon
+  - type: Food
+    transferAmount: 5
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 7
+        - ReagentId: Vitamin
+          Quantity: 3
+  - type: Item
+    size: Tiny
+    sprite: DarkStation/MainGame/Objects/Consumable/Food/shaverma.rsi
+    state: icon
+  - type: RandomFillSolution
+    solution: food
+    weightedRandomId: Shavermaweighted

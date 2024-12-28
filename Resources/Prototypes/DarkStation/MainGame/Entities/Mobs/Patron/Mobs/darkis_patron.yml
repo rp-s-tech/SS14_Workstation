@@ -1,0 +1,102 @@
+﻿- type: entity
+  id: BaseMobDarkis
+  parent: SimpleMobBase
+  abstract: true
+  name: Darkis
+  description: Существо олицетворяющее эту станцию.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - PetsNT
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: darkis
+      sprite: Chupackabra/chupackabra.rsi
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 130
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: darkis
+      Dead:
+        Base: darkis_dead
+  - type: CombatMode
+  - type: ReplacementAccent
+    accent: xeno
+  - type: NoSlip
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - VimPilot
+
+- type: entity
+  id: MobDarkis
+  parent: BaseMobDarkis
+  components:
+  - type: Butcherable
+    spawned:
+    - id: Singularity
+      amount: 1
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1500: Dead
+  - type: MeleeWeapon
+    hidden: true
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 13
+        Poison: 13
+
+- type: entity
+  id: MobDarkisPatron
+  parent: BaseMobDarkis
+  description: САМЫЙ ОБЫЧНЫЙ ПЁС!
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: darkis
+      sprite: DarkStation/MainGame/Mobs/Pets/darkis.rsi
+  - type: PointLight
+    enabled: true
+    radius: 1.5
+    softness: 3
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 5
+        Poison: 5
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5.2
+    baseSprintSpeed: 5.2
+  - type: StaminaDamageOnHit
+    damage: 5

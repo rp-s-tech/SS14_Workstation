@@ -1,13 +1,17 @@
 - type: npcFaction
   id: Dragon
   hostile:
-    - NanoTrasen
-    - Syndicate
-    - Xeno
-    - PetsNT
-    - Zombie
-    - Revolutionary
-    - AllHostile
+  - NanoTrasen
+  - Syndicate
+  - Xeno
+  - PetsNT
+  - Vampire
+  - Zombie
+  - Revolutionary
+  - Ratvar
+  - NarsiCult
+  - Vampire
+  - Desecrate
 
 - type: npcFaction
   id: NanoTrasen
@@ -15,16 +19,15 @@
   - SimpleHostile
   - Syndicate
   - Xeno
+  - Vampire
   - Zombie
   - Revolutionary
-  - Dragon
-  - AllHostile
+  - Desecrate
 
 - type: npcFaction
   id: Mouse
   hostile:
-    - PetsNT
-    - AllHostile
+  - PetsNT
 
 - type: npcFaction
   id: Passive
@@ -36,7 +39,7 @@
   - SimpleHostile
   - Zombie
   - Xeno
-  - AllHostile
+  - Desecrate
 
 - type: npcFaction
   id: SimpleHostile
@@ -45,9 +48,28 @@
   - Syndicate
   - Passive
   - PetsNT
+  - Vampire
   - Zombie
   - Revolutionary
-  - AllHostile
+  - SimpleHostileNanoTrasen
+  - Desecrate
+
+#Hostile for everyone, but not PetsNT, Turret (for correct attack commands work, with personal pets)
+- type: npcFaction
+  id: SimpleHostileNanoTrasen
+  hostile:
+  - NanoTrasen #To attack every player by command
+  - Syndicate
+  - Passive
+  - Vampire
+  - Zombie
+  - Revolutionary
+  - SimpleHostile
+  - Xeno
+  - Dragon
+  - Mouse
+  - Ratvar
+  - Desecrate
 
 - type: npcFaction
   id: SimpleNeutral
@@ -59,9 +81,10 @@
   - SimpleHostile
   - Xeno
   - PetsNT
+  - Vampire
   - Zombie
-  - Dragon
-  - AllHostile
+  - SimpleHostile
+  - Desecrate
 
 - type: npcFaction
   id: Xeno
@@ -70,9 +93,11 @@
   - Syndicate
   - Passive
   - PetsNT
+  - Vampire
   - Zombie
   - Revolutionary
-  - AllHostile
+  - SimpleHostileNanoTrasen
+  - Desecrate
 
 - type: npcFaction
   id: Zombie
@@ -83,8 +108,9 @@
   - Syndicate
   - Passive
   - PetsNT
-  - Revolutionary
-  - AllHostile
+  - Vampire
+  - SimpleHostileNanoTrasen
+  - Desecrate
 
 - type: npcFaction
   id: Revolutionary
@@ -93,19 +119,64 @@
   - Zombie
   - SimpleHostile
   - Dragon
-  - AllHostile
+  - Vampire
+  - SimpleHostileNanoTrasen
+  - Desecrate
 
 - type: npcFaction
-  id: AllHostile
+  id: NarsiCult
   hostile:
   - NanoTrasen
+  - Zombie
+  - SimpleHostile
   - Dragon
-  - Mouse
+  - Vampire
+  - Revolutionary
+  - Syndicate
+  - Passive
+  - SimpleHostileNanoTrasen
+  - Ratvar
+  - Desecrate
+
+- type: npcFaction
+  id: Ratvar
+  hostile:
+  - NanoTrasen
+  - Zombie
+  - SimpleHostile
+  - Dragon
+  - Vampire
+  - Revolutionary
+  - Syndicate
+  - Passive
+  - SimpleHostileNanoTrasen
+  - NarsiCult
+  - Desecrate
+
+- type: npcFaction
+  id: Vampire
+  hostile:
+  - NanoTrasen
+  - Syndicate
   - Passive
   - PetsNT
-  - SimpleHostile
-  - SimpleNeutral
-  - Syndicate
   - Xeno
   - Zombie
   - Revolutionary
+  - SimpleHostileNanoTrasen
+  - Desecrate
+  - Dragon
+
+- type: npcFaction
+  id: Desecrate
+  hostile:
+  - NanoTrasen
+  - Syndicate
+  - Passive
+  - PetsNT
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - SimpleHostileNanoTrasen
+  - Vampire
+  - Dragon

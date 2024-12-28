@@ -1,0 +1,17 @@
+- type: entity
+  id: PelletShotgunSalt
+  name: дробина (.50 соль)
+  noSpawn: true
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Guns/Ammunition/Casings/salt_ammo.rsi
+    layers:
+      - state: saltproj
+  - type: Projectile
+    damageBodyParts: true
+    damage:
+      types:
+        Blunt: 1
+  - type: StaminaDamageOnCollide
+    damage: 6

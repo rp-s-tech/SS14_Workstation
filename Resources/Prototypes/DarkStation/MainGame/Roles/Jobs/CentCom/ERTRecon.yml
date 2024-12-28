@@ -1,0 +1,87 @@
+- type: job
+  id: ERTRecon
+  name: job-name-ertrecon
+  description: job-description-ertrecon
+  playTimeTracker: JobERTRecon
+  setPreference: false
+  startingGear: ERTReconGearEVA
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+
+- type: startingGear
+  id: ERTReconGearEVA
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitERTRecon
+    back: WeaponSniperBarrettERTRecon
+    shoes: ClothingShoesBootsMagAdv
+    mask: ClothingMaskGasSecurity
+    eyes: ClothingEyesERTRecon
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitERTRecon
+    suitstorage: OxygenTankFilled
+    id: ERTLeaderPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltERTReconWebbingFilling
+    pocket1: Flare
+
+- type: entity
+  id: RandomHumanoidSpawnerERTRecon
+  name: ОБР Разведчик
+  suffix: ERTRole, Armored EVA
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: ertreconeva
+    - type: RandomMetadata
+      nameSegments:
+        - NamesFirstMilitaryMiddle
+        - names_last_recon
+    - type: RandomHumanoidSpawner
+      settings: ERTRecon
+
+- type: entity
+  id: SpawnPointERTRecon
+  parent: SpawnPointJobBase
+  name: ERTrecon
+  components:
+  - type: SpawnPoint
+    job_id: ERTRecon
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ertreconeva
+
+- type: randomHumanoidSettings
+  id: ERTRecon
+  speciesBlacklist:
+    - Diona
+    - Vox
+  parent: EventHumanoidMindShielded
+  randomizeName: false
+  components:
+    - type: MindShield
+    - type: GhostRole
+      name: ghost-role-information-ert-recon-name
+      description: ghost-role-information-ert-recon-description
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ ERTReconGearEVA ]
+    - type: RandomMetadata
+      nameSegments:
+        - NamesFirstMilitaryMiddle
+        - names_last_recon
+    - type: ErtScout
+
+- type: dataset
+  id: names_last_recon
+  values:
+  - Ghost
+  - Ranger
+  - Hunter
+  - Sniper
+  - Wolf
+  - Recon
+

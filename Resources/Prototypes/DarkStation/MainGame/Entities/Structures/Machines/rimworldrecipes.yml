@@ -1,0 +1,131 @@
+- type: latheRecipe
+  id: WarHammer
+  icon:
+    sprite: DarkStation/MainGame/Objects/Weapons/Melee/topor.rsi
+    state: icon
+  result: WarHammer
+  completetime: 100
+  materials:
+    Steel: 5000
+    Wood: 1000
+
+- type: latheRecipe
+  id: Gladius
+  icon:
+    sprite: DarkStation/MainGame/Objects/Weapons/Melee/gladius.rsi
+    state: icon
+  result: Gladius
+  completetime: 50
+  materials:
+    Steel: 1000
+    Wood: 200
+
+- type: latheRecipe
+  id: ClothingMedievalHelmetBasic
+  result: ClothingMedievalHelmetBasic
+  completetime: 15
+  materials:
+    Cloth: 50
+    Steel: 500
+
+- type: latheRecipe
+  id: ClothingMedievalArmorBasic
+  result: ClothingMedievalArmorBasic
+  completetime: 30
+  materials:
+    Cloth: 150
+    Steel: 1000
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitUnderarmor
+  result: ClothingUniformJumpsuitUnderarmor
+  completetime: 15
+  materials:
+    Cloth: 50
+    Steel: 400
+
+- type: entity
+  id: ElectroForge
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  name: Единственная надежда на всеми забытой планете
+  description: Кузня для производства снаряжения
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Machines/electric_forge.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: [ "enum.LatheVisualLayers.IsRunning" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ChangeConstructionNodeBehavior
+        node: machineFrame
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Machine
+    board: ElectroForgeCircuitboard
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    staticRecipes:
+    - ClothingMedievalArmorBasic
+    - ClothingMedievalHelmetBasic
+    - Gladius
+    - WarHammer
+    - ClothingUniformJumpsuitUnderarmor
+
+  - type: ActivatableUI
+    key: enum.LatheUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.LatheUiKey.Key:
+        type: LatheBoundUserInterface
+      enum.ResearchClientUiKey.Key:
+        type: ResearchClientBoundUserInterface
+  - type: Transform
+    anchored: true
+  - type: Pullable
+  - type: StaticPrice
+    price: 800
+  - type: ResearchClient
+  - type: TechnologyDatabase
+
+- type: entity
+  id: ElectroForgeCircuitboard
+  parent: BaseMachineCircuitboard
+  name: electroForge machine board
+  description: A machine printed circuit board for an ElectroForge
+  components:
+  - type: MachineBoard
+    prototype: ElectroForge
+    requirements:
+      MatterBin: 3
+      Manipulator: 1
+    materialRequirements:
+      Glass: 1

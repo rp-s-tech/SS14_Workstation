@@ -21,6 +21,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Shared.GameTicking;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Administration.Managers;
 
@@ -39,6 +41,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly ITaskManager _taskManager = default!;
     [Dependency] private readonly UserDbDataManager _userDbData = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -184,6 +187,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         _sawmill.Info(logMessage);
         _chat.SendAdminAlert(logMessage);
+
+        _entityManager.EventBus.RaiseEvent(EventSource.Local, new BanEvent(targetUsername ?? targetName, expires, reason, adminName));
 
         KickMatchingConnectedPlayers(banDef, "newly placed ban");
     }

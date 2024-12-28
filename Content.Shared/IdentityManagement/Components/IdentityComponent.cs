@@ -59,8 +59,7 @@ public sealed class IdentityRepresentation
         var genderString = TrueGender switch
         {
             Gender.Female => Loc.GetString("identity-gender-feminine"),
-            Gender.Male => Loc.GetString("identity-gender-masculine"),
-            Gender.Epicene or Gender.Neuter or _ => Loc.GetString("identity-gender-person")
+            Gender.Male => Loc.GetString("identity-gender-masculine")
         };
 
         // i.e. 'young assistant man' or 'old cargo technician person' or 'middle-aged captain'
