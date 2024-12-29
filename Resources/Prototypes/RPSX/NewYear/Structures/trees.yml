@@ -1,0 +1,59 @@
+- type: entity
+  id: DecoratedFirTreeRPSX
+  parent: BaseStructure
+  name: Ёлочка
+  components:
+  - type: Sprite
+    sprite: RPSX\NewYear\Structures\Trees.rsi\32x48.rsi
+    layers:
+      - state: tree1
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 75
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Log:
+                min: 1
+                max: 4
+
+- type: entity
+  id: DecoratedFirTreeRPSX2
+  parent: DecoratedFirTreeRPSX
+  name: Ёлочка   
+  components:
+  - type: Sprite
+    layers:
+      - state: tree2
+
+- type: entity
+  id: DecoratedFirTreeRPSX3
+  parent: DecoratedFirTreeRPSX
+  name: Ёлочка   
+  components:
+  - type: Sprite
+    sprite: RPSX\NewYear\Structures\Trees.rsi\64x64.rsi
+    layers:
+      - state: Engineers_tree_broken
+
+- type: entity
+  id: DecoratedFirTreeRPSX4
+  parent: DecoratedFirTreeRPSX3
+  name: Ёлочка   
+  components:
+  - type: Sprite
+    layers:
+      - state: Engineers_tree
