@@ -1,0 +1,56 @@
+- type: entity
+  parent: PosterBase
+  id: PosterNewYearRPSX1
+  name: "С НГ"
+  description: "Кажется, что эти буквы что-то значат..."
+  components:
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: RPSX\NewYear\Structures\Wallmounts\posters.rsi
+    state: posterNY1
+    snapCardinals: true
+
+- type: entity
+  parent: PosterNewYearRPSX1
+  id: PosterNewYearRPSX2
+  name: "В будущее!"
+  description: "Тьма уходит... впереди только светлое будущее, так ведь?"
+  components:
+  - type: Sprite
+    state: posterNY2
+
+- type: entity
+  parent: PosterNewYearRPSX1
+  id: PosterNewYearRPSX3
+  name: "С новым годом!"
+  description: "Надеемся, что вы были хорошими в этом году!"
+  components:
+  - type: Sprite
+    state: posterNY3
+
+- type: entity
+  parent: PosterNewYearRPSX1
+  id: PosterNewYearRPSX4
+  name: "Уютная картина"
+  description: "Просто уютная картина. Можете рассмотреть её поближе, если хотите."
+  components:
+  - type: Sprite
+    state: posterNY4
+
+- type: entity
+  parent: PosterNewYearRPSX1
+  id: PosterNewYearRPSX5
+  name: "Чертёж"
+  description: "Чертёж невероятно сложного устройства. Рассмотрев его, вы явно не поймете что тут изображено"
+  components:
+  - type: Sprite
+    state: posterNY5
+
+- type: entity
+  parent: PosterNewYearRPSX1
+  id: PosterNewYearRPSX6
+  name: "С новым годом!"
+  description: "Даже синдикат позаботился о том, чтобы поздравить вас с новым годом!"
+  components:
+  - type: Sprite
+    state: posterNY6

@@ -1,0 +1,46 @@
+- type: entity
+  id: RPSXGiftBoxBase
+  parent: BaseStorageItem
+  name: "Подарочная коробка"
+  description: "Интересно, что же там внутри..."
+  abstract: true
+  components:
+  - type: Sprite
+    layers:
+      - map: [ base ]
+        state: icon
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,7,4
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Appearance
+
+- type: entity
+  name: "Подарочная коробка"
+  parent: RPSXGiftBoxBase
+  id: RPSXGiftBox
+  description: "Интересно, что же там внутри..."
+  components:
+  - type: Sprite
+    sprite: RPSX\NewYear\Objects\presentbox.rsi
+    state: icon
+  - type: Item
+    sprite: RPSX\NewYear\Objects\presentbox.rsi
+
+- type: entity
+  name: "Мешок"
+  parent: RPSXGiftBoxBase
+  id: RPSXRedBag
+  description: "Красивый, красный мешок. Дети точно обрадуются его наполнению!"
+  components:
+  - type: Sprite
+    sprite: RPSX\NewYear\Objects\santa-bag.rsi
+    state: icon
+  - type: Item
+    sprite: RPSX\NewYear\Objects\santa-bag.rsi
