@@ -1,0 +1,23 @@
+﻿<transactions:PdaBankTransactions
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.RPSXClient.PDA.Bank.Transactions"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:transactions="clr-namespace:Content.Client.RPSX.Bank.PDA.UI.Transactions">
+
+    <PanelContainer Margin="0 1 0 0">
+        <PanelContainer.PanelOverride>
+            <graphics:StyleBoxFlat BackgroundColor="#202023" />
+        </PanelContainer.PanelOverride>
+
+        <BoxContainer Orientation="Vertical" Margin="0 8 0 8">
+            <GridContainer Columns="4" HorizontalExpand="True">
+                <RichTextLabel StyleClasses="LabelSubText" Name="Location" HorizontalAlignment="Center" HorizontalExpand="True" />
+                <RichTextLabel StyleClasses="LabelSubText" Name="TransactionType" HorizontalAlignment="Center" HorizontalExpand="True" />
+                <RichTextLabel StyleClasses="LabelSubText" Name="TransactionStatus" HorizontalAlignment="Center" HorizontalExpand="True" />
+                <RichTextLabel StyleClasses="LabelSubText" Name="Sum" HorizontalAlignment="Center" HorizontalExpand="True" />
+            </GridContainer>
+
+        </BoxContainer>
+    </PanelContainer>
+
+</transactions:PdaBankTransactions>

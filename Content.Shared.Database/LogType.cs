@@ -439,4 +439,14 @@ public enum LogType
     /// A ghost warped to an entity through the ghost warp menu.
     /// </summary>
     GhostWarp = 95,
+
+
+    ///<summary>
+    /// RPSX Economics log. Using ATM
+    ///</summary>
+    ATMUsage = 1000,
+    ///<summary>
+    /// RPSX Economics log. Getting salary
+    ///</summary>
+    Salary = 1001,
 }

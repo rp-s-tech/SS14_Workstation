@@ -8,6 +8,8 @@
     - outerClothing
   - type: Sprite
     state: icon
+  - type: VendingPrice
+    price: 750
 
 - type: entity
   abstract: true
@@ -42,6 +44,8 @@
         type: StorageBoundUserInterface
   - type: StaticPrice
     price: 70
+  - type: VendingPrice
+    price: 1000
 
 - type: entity
   abstract: true

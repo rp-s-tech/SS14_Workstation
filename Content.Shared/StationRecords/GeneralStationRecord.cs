@@ -1,4 +1,7 @@
+using Content.Shared.RPSX.Bank.Transactions;
+using Content.Shared.RPSX.Roles.Salary;
 using Robust.Shared.Enums;
+using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.StationRecords;
@@ -68,4 +71,18 @@ public sealed record GeneralStationRecord
     /// </summary>
     [DataField]
     public string? DNA;
+
+    //RPSX start
+    [ViewVariables]
+    public CrewSalaryEntry? Salary;
+
+    [ViewVariables]
+    public List<BankTransaction> BankTransactions = new();
+
+    [ViewVariables]
+    public NetUserId? NetUserId;
+
+    [ViewVariables]
+    public NetEntity? MobEntity;
+    // RPSX end
 }

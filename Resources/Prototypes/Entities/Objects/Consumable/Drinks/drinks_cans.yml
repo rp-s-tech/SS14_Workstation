@@ -67,6 +67,8 @@
     tags:
     - DrinkCan
   - type: DnaSubstanceTrace
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   parent: DrinkCanBaseFull
@@ -561,6 +563,8 @@
   - type: Tag
     tags:
     - Beer
+  - type: VendingPrice
+    price: 300
 
 - type: entity
   parent: DrinkCanBaseFull
@@ -583,3 +587,5 @@
   - type: Tag
     tags:
     - Wine
+  - type: VendingPrice
+    price: 400

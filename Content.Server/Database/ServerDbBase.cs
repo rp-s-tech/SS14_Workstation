@@ -263,6 +263,7 @@ namespace Content.Server.Database
                 profile.FlavorText,
                 profile.Species,
                 profile.Age,
+                profile.BankBalance,
                 sex,
                 gender,
                 new HumanoidCharacterAppearance

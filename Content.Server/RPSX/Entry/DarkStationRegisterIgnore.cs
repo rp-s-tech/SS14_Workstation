@@ -1,7 +1,9 @@
-﻿using Content.Server.Entry;
+using Content.Server.Entry;
 using Content.Server.RPSX.Bridges;
+using Content.Shared.RPSX.Patron;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
+using Content.Server.RPSX.Sponsors;
 
 namespace Content.Server.RPSX.Entry;
 
@@ -29,5 +31,8 @@ public sealed class RPSXRegisterIgnore
             return;
 
         IoCManager.RegisterInstance<IStatusResponseProvider>(new StubStatusResponseProvider());
+        IoCManager.RegisterInstance<ISalaryBridge>(new StubSalaryBridge());
+        IoCManager.RegisterInstance<IBankBridge>(new StubBankBridge());
+
     }
 }

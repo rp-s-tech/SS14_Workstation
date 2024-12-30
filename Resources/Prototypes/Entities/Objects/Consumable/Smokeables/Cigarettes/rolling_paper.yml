@@ -38,6 +38,8 @@
         amount: 2
       - id: CigaretteFilter
         amount: 2
+  - type: VendingPrice
+    price: 150
 
 - type: entity
   id: PaperRolling

@@ -51,6 +51,8 @@
   - type: WirelessNetworkConnection
     range: 1200
   - type: StationLimitedNetwork
+  - type: VendingPrice
+    price: 650
 
 - type: entity
   abstract: true

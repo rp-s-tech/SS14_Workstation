@@ -1,4 +1,5 @@
 using Content.Shared.Eui;
+using Content.Shared.RPSX.Roles.Salary;
 using NetSerializer;
 using Robust.Shared.Serialization;
 
@@ -53,13 +54,15 @@ public sealed class CrewManifestEntry
     public string JobIcon { get; }
 
     public string JobPrototype { get; }
+    public CrewSalaryEntry? Salary { get; }
 
-    public CrewManifestEntry(string name, string jobTitle, string jobIcon, string jobPrototype)
+    public CrewManifestEntry(string name, string jobTitle, string jobIcon, string jobPrototype, CrewSalaryEntry? salary)
     {
         Name = name;
         JobTitle = jobTitle;
         JobIcon = jobIcon;
         JobPrototype = jobPrototype;
+        Salary = salary;
     }
 }
 

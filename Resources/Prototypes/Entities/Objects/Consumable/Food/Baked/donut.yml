@@ -22,6 +22,8 @@
   - type: Item
     sprite: Objects/Consumable/Food/Baked/donut.rsi
     size: Tiny
+  - type: VendingPrice
+    price: 200
 # Tastes like donut.
 
 # The sprinkles are now an overlay, so you can put them on any donut! If we really

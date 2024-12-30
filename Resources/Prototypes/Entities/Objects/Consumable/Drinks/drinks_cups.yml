@@ -206,6 +206,8 @@
     fillBaseName: icon-
   - type: TrashOnSolutionEmpty
     solution: drink
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   parent: DrinkBaseCup
@@ -234,6 +236,8 @@
     fillBaseName: icon-
   - type: TrashOnSolutionEmpty
     solution: drink
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   parent: DrinkBaseCup
@@ -260,6 +264,8 @@
     changeColor: false
   - type: TrashOnSolutionEmpty
     solution: drink
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   parent: DrinkBaseCup
@@ -288,6 +294,8 @@
     fillBaseName: icon-
   - type: TrashOnSolutionEmpty
     solution: drink
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   parent: DrinkBaseCup
@@ -316,6 +324,8 @@
     fillBaseName: icon-
   - type: TrashOnSolutionEmpty
     solution: drink
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   parent: DrinkBaseCup

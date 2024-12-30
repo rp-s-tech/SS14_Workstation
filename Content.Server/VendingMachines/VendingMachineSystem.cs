@@ -6,6 +6,7 @@ using Content.Server.Cargo.Systems;
 using Content.Server.Emp;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Server.RPSX.Bridges;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Actions;
@@ -26,6 +27,9 @@ using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Configuration;
+using Robust.Shared.Player;
+using Content.Shared.RPSX.CCVars;
 
 namespace Content.Server.VendingMachines
 {
@@ -39,6 +43,8 @@ namespace Content.Server.VendingMachines
         [Dependency] private readonly IGameTiming _timing = default!;
         [Dependency] private readonly SpeakOnUIClosedSystem _speakOnUIClosed = default!;
         [Dependency] private readonly SharedPointLightSystem _light = default!;
+        [Dependency] private readonly IBankBridge _bankBridge = default!;
+        [Dependency] private readonly IConfigurationManager _cfg = default!;
 
         private const float WallVendEjectDistanceFromWall = 1f;
 
@@ -249,7 +255,7 @@ namespace Content.Server.VendingMachines
         /// <param name="itemId">The prototype ID of the item</param>
         /// <param name="throwItem">Whether the item should be thrown in a random direction after ejection</param>
         /// <param name="vendComponent"></param>
-        public void TryEjectVendorItem(EntityUid uid, InventoryType type, string itemId, bool throwItem, VendingMachineComponent? vendComponent = null)
+        public void TryEjectVendorItem(EntityUid uid, EntityUid? sender, InventoryType type, string itemId, bool throwItem, VendingMachineComponent? vendComponent = null)
         {
             if (!Resolve(uid, ref vendComponent))
                 return;
@@ -278,6 +284,12 @@ namespace Content.Server.VendingMachines
             if (string.IsNullOrEmpty(entry.ID))
                 return;
 
+            if (HandleVendingPrice(uid, sender, entry))
+            {
+                Deny(uid, vendComponent);
+                return;
+            }
+
 
             // Start Ejecting, and prevent users from ordering while anim playing
             vendComponent.Ejecting = true;
@@ -293,6 +305,22 @@ namespace Content.Server.VendingMachines
             Audio.PlayPvs(vendComponent.SoundVend, uid);
         }
 
+        private bool HandleVendingPrice(EntityUid uid, EntityUid? sender, VendingMachineInventoryEntry entry)
+        {
+            if (!_cfg.GetCVar(RPSXCCVars.EconomyEnabled))
+                return false;
+
+            if (sender == null || entry.Price == 0 || !TryComp<ActorComponent>(sender, out var actor))
+                return false;
+
+            var transaction = _bankBridge.CreateBuyTransaction(uid, entry.Price);
+            if (_bankBridge.TryExecuteTransaction(sender.Value, actor.PlayerSession.UserId, transaction))
+                return false;
+
+            Popup.PopupEntity(Loc.GetString("vending-machine-component-no-money"), uid);
+            return true;
+        }
+
         /// <summary>
         /// Checks whether the user is authorized to use the vending machine, then ejects the provided item if true
         /// </summary>
@@ -305,7 +333,7 @@ namespace Content.Server.VendingMachines
         {
             if (IsAuthorized(uid, sender, component))
             {
-                TryEjectVendorItem(uid, type, itemId, component.CanShoot, component);
+                TryEjectVendorItem(uid, sender, type, itemId, component.CanShoot, component);
             }
         }
 
@@ -373,7 +401,7 @@ namespace Content.Server.VendingMachines
             }
             else
             {
-                TryEjectVendorItem(uid, item.Type, item.ID, throwItem, vendComponent);
+                TryEjectVendorItem(uid, null, item.Type, item.ID, throwItem, vendComponent);
             }
         }
 

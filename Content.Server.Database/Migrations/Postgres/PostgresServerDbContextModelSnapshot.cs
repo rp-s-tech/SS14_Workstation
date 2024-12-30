@@ -854,6 +854,10 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("integer")
                         .HasColumnName("age");
 
+                    b.Property<int>("BankBalance")
+                        .HasColumnType("integer")
+                        .HasColumnName("bank_balance");
+
                     b.Property<float>("BarkPitch")
                         .HasColumnType("real")
                         .HasColumnName("bark_pitch");

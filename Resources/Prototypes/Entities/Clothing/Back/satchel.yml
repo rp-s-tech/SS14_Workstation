@@ -11,6 +11,8 @@
     - 0,0,1,3
     - 3,0,6,3
     - 8,0,9,3
+  - type: VendingPrice
+    price: 750
 
 - type: entity
   parent: ClothingBackpackSatchel
@@ -20,6 +22,8 @@
   components:
   - type: Sprite
     sprite: Clothing/Back/Satchels/leather.rsi
+  - type: VendingPrice
+    price: 1000
 
 - type: entity
   parent: ClothingBackpackSatchel

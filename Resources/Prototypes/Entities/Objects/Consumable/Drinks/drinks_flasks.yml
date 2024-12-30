@@ -35,6 +35,8 @@
           Quantity: 50
   - type: TrashOnSolutionEmpty
     solution: drink
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   parent: FlaskBase

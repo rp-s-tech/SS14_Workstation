@@ -71,3 +71,5 @@
   - type: TemperatureProtection
     heatingCoefficient: 1.025
     coolingCoefficient: 0.5
+  - type: VendingPrice
+    price: 550
