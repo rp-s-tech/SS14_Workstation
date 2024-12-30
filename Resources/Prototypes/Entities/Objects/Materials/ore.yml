@@ -12,6 +12,8 @@
   - type: Tag
     tags:
     - Ore
+  - type: Stack
+    count: 50
   - type: Fixtures
     fixtures:
       fix1:
