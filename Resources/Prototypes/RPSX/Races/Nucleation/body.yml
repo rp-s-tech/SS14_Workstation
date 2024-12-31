@@ -48,13 +48,14 @@
 
 - type: entity
   id: OrganNucleanHeart
-  parent: BaseAnimalOrgan
+  parent: OrganHumanHeart
   name: Сердце нуклеации
   description: почти не стучит..
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: heart-on
+    sprite: Mobs/Species/Nuclean/organs.rsi
+    state: "heart-on"
   - type: Organ
   - type: Metabolizer
     maxReagents: 2
@@ -71,7 +72,8 @@
   description: "Это трудно переварить."
   components:
   - type: Sprite
-    state: stomach
+    sprite: Mobs/Species/Nuclean/organs.rsi
+    state: "stomach"
   - type: Metabolizer
     maxReagents: 3
     metabolizerTypes: [ Nuclean ]
@@ -84,6 +86,9 @@
   parent: OrganHumanLiver
   name: Печень нуклеации
   components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/organs.rsi
+    state: "liver"
   - type: Metabolizer
     metabolizerTypes: [ Nuclean ]
     groups:
@@ -97,9 +102,10 @@
   description: "Отфильтровывает кислород из атмосферы, который затем поступает в кровоток для использования в качестве переносчика электронов."
   components:
   - type: Sprite
+    sprite: Mobs/Species/Nuclean/organs.rsi
     layers:
-      - state: lung-l
-      - state: lung-r
+      - state: "lung-l"
+      - state: "lung-r"
   - type: Item
     size: Small
     heldPrefix: lungs
@@ -134,9 +140,10 @@
   description: "Отфильтровывает токсины и кристаллы из кровотока."
   components:
   - type: Sprite
+    sprite: Mobs/Species/Nuclean/organs.rsi
     layers:
-      - state: kidney-l
-      - state: kidney-r
+      - state: "kidney-l"
+      - state: "kidney-r"
   - type: Item
     size: Small
     heldPrefix: kidneys
@@ -153,7 +160,8 @@
   description: "Источник невероятного, бесконечного интеллекта. Заражён.."
   components:
   - type: Sprite
-    state: brain
+    sprite: Mobs/Species/Nuclean/organs.rsi
+    state: "brain"
   - type: Organ
   - type: Input
     context: "ghost"
@@ -194,9 +202,10 @@
   description: "Вижу тебя! Несмотря на заражение, они сохранили свою главную функцию."
   components:
   - type: Sprite
+    sprite: Mobs/Species/Nuclean/organs.rsi
     layers:
-      - state: eyeball-l
-      - state: eyeball-r
+      - state: "eyeball-l"
+      - state: "eyeball-r"
   - type: Item
     size: Small
     heldPrefix: eyeballs
@@ -213,7 +222,7 @@
   - type: Extractable
     juiceSolution:
       reagents:
-      - ReagentId: Cryoxadone
+      - ReagentId: Blood
         Quantity: 10
 
 - type: entity

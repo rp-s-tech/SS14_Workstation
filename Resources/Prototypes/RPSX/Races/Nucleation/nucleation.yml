@@ -3,6 +3,13 @@
   name: Урист макНуклеация
   parent: BaseMobNucleation
   id: MobNucleation
+  components:
+  - type: Body
+    prototype: Nuclean
+    requiredLegs: 2
+  - type: Icon 
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: full
 
 - type: entity
   abstract: true
@@ -16,10 +23,6 @@
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
         color: "#fad51e"
-  - type: StatusEffects
-    - RadiationProtection # Основная фишка
-  - !type:AddImplantSpecial
-    implants: [ DeathAcidifierImplanter ] # Вторая основная фишка
   - type: Bloodstream
     bloodReagent: Blood
   - type: Vocal
@@ -27,25 +30,24 @@
       Male: MaleHuman
       Female: FemaleHuman
       Unsexed: MaleHuman
-  - type: ThermalRegulator # Как у человека
-    metabolismHeat: 800
-    radiatedHeat: 100
-    implicitHeatRegulation: 500
-    sweatHeatRegulation: 2000
-    shiveringHeatRegulation: 2000
-    normalBodyTemperature: 293.15
-    thermalRegulationTemperatureThreshold: 25
-  - type: Temperature # Как у человека
-    heatDamageThreshold: 325
-    coldDamageThreshold: 260
-    currentTemperature: 310.15
-    specificHeat: 42
-    coldDamage:
+  - type: MobThresholds # Здоровья у нуклеаций меньше чем у людей. Хрупкое тело.
+    thresholds:
+      0: Alive
+      80: Critical
+      160: Dead
+  - type: PassiveDamage # Небольшая регенерация до впадания в критическое состояние.
+    allowedStates:
+    - Alive
+    damageCap: 80
+    damage:
       types:
-        Cold: 0.1 #per second, scales with temperature & other constants
-    heatDamage:
-      types:
-        Heat: 1.5 #per second, scales with temperature & other constants
+        Heat: -0.02
+      groups:
+        Brute: -0.02
+        Toxin: -1
+  - type: StatusEffects # Возможно не работает, поэтому добавил регенерацию.
+    allowed:
+    - RadiationProtection
   - type: Body
     prototype: Nuclean
     requiredLegs: 2
@@ -71,12 +73,17 @@
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
 
-
 - type: entity
   parent: BaseSpeciesDummy
   id: MobNucleanDummy
   categories: [ HideSpawnMenu ]
   components:
+  - type: Body
+    prototype: Nuclean
+    requiredLegs: 2
+  - type: Icon 
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: full
   - type: Inventory
     femaleDisplacements:
       jumpsuit:

@@ -1,6 +1,6 @@
 - type: species
   id: Nucleation
-  name: нуклеация
+  name: Нуклеация
   roundStart: true
   prototype: MobNucleation
   sprites: MobNucleanSprites
@@ -17,14 +17,14 @@
 - type: speciesBaseSprites
   id: MobNucleanSprites
   sprites:
-    Special: MobHumanoidAnyMarking
+    Special: MobNucleanAnyMarking
     Head: MobNucleanHead
-    Hair: MobHumanoidAnyMarking
-    FacialHair: MobHumanoidAnyMarking
-    Snout: MobHumanoidAnyMarking
+    Hair: MobNucleanAnyMarking
+    FacialHair: MobNucleanAnyMarking
+    Snout: MobNucleanAnyMarking
     Chest: MobNucleanTorso
-    Eyes: MobHumanoidEyes
-    HeadTop: MobHumanoidAnyMarking
+    Eyes: MobNucleanEyes
+    HeadTop: MobNucleanAnyMarking
     LArm: MobNucleanLArm
     RArm: MobNucleanRArm
     LHand: MobNucleanLHand
@@ -66,98 +66,98 @@
       required: false
 
 - type: humanoidBaseSprite
-  id: MobHumanoidEyes
+  id: MobNucleanEyes
   baseSprite:
     sprite: Mobs/Customization/eyes.rsi
     state: eyes
 
 - type: humanoidBaseSprite
-  id: MobHumanoidAnyMarking
+  id: MobNucleanAnyMarking
 
 - type: humanoidBaseSprite
-  id: MobHumanoidMarkingMatchSkin
+  id: MobNucleanMarkingMatchSkin
   markingsMatchSkin: true
 
 - type: humanoidBaseSprite
-  id: MobHumanHead
+  id: MobNucleanHead
   baseSprite:
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: head_m
 
 - type: humanoidBaseSprite
-  id: MobHumanHeadMale
+  id: MobNucleanHeadMale
   baseSprite:
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: head_m
 
 - type: humanoidBaseSprite
-  id: MobHumanHeadFemale
+  id: MobNucleanHeadFemale
   baseSprite:
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: head_f
 
 - type: humanoidBaseSprite
-  id: MobHumanTorso
+  id: MobNucleanTorso
   baseSprite:
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: torso_m
 
 - type: humanoidBaseSprite
-  id: MobHumanTorsoMale
+  id: MobNucleanTorsoMale
   baseSprite:
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: torso_m
 
 - type: humanoidBaseSprite
-  id: MobHumanTorsoFemale
+  id: MobNucleanTorsoFemale
   baseSprite:
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: torso_f
 
 - type: humanoidBaseSprite
-  id: MobHumanLLeg
+  id: MobNucleanLLeg
   baseSprite:
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: l_leg
 
 - type: humanoidBaseSprite
-  id: MobHumanLArm
+  id: MobNucleanLArm
   baseSprite:
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: l_arm
 
 - type: humanoidBaseSprite
-  id: MobHumanLHand
+  id: MobNucleanLHand
   baseSprite:
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: l_hand
 
 - type: humanoidBaseSprite
-  id: MobHumanLFoot
+  id: MobNucleanLFoot
   baseSprite:
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: l_foot
 
 - type: humanoidBaseSprite
-  id: MobHumanRLeg
+  id: MobNucleanRLeg
   baseSprite:
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: r_leg
 
 - type: humanoidBaseSprite
-  id: MobHumanRArm
+  id: MobNucleanRArm
   baseSprite:
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: r_arm
 
 - type: humanoidBaseSprite
-  id: MobHumanRHand
+  id: MobNucleanRHand
   baseSprite:
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: r_hand
 
 - type: humanoidBaseSprite
-  id: MobHumanRFoot
+  id: MobNucleanRFoot
   baseSprite:
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: r_foot
