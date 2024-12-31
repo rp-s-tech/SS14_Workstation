@@ -84,9 +84,6 @@ namespace Content.Shared.Preferences
         public int Age { get; set; } = 18;
 
         [DataField]
-        public int BankBalance { get; set; } = 0;
-
-        [DataField]
         public Sex Sex { get; private set; } = Sex.Male;
 
         [DataField]
@@ -143,7 +140,6 @@ namespace Content.Shared.Preferences
             string flavortext,
             string species,
             int age,
-            int bankBalance,
             Sex sex,
             Gender gender,
             HumanoidCharacterAppearance appearance,
@@ -164,7 +160,6 @@ namespace Content.Shared.Preferences
             Age = age;
             Sex = sex;
             Gender = gender;
-            BankBalance = bankBalance;
             SponsorData = data;
             Appearance = appearance;
             SpawnPriority = spawnPriority;
@@ -198,7 +193,6 @@ namespace Content.Shared.Preferences
                 other.FlavorText,
                 other.Species,
                 other.Age,
-                other.BankBalance,
                 other.Sex,
                 other.Gender,
                 other.Appearance.Clone(),
@@ -523,14 +517,6 @@ namespace Content.Shared.Preferences
             };
         }
 
-        public HumanoidCharacterProfile WithBankBalance(int bankBalance)
-        {
-            return new(this)
-            {
-                BankBalance = bankBalance
-            };
-        }
-
         public HumanoidCharacterProfile WithoutTraitPreference(ProtoId<TraitPrototype> traitId, IPrototypeManager protoManager)
         {
             var list = new HashSet<ProtoId<TraitPrototype>>(_traitPreferences);
@@ -566,7 +552,6 @@ namespace Content.Shared.Preferences
             if (!Loadouts.SequenceEqual(other.Loadouts)) return false;
             if (FlavorText != other.FlavorText) return false;
             // RPSX start
-            if (BankBalance != other.BankBalance) return false;
             if (!Bark.MemberwiseEquals(other.Bark)) return false;
             // RPSX end
             return Appearance.MemberwiseEquals(other.Appearance);
@@ -678,12 +663,6 @@ namespace Content.Shared.Preferences
                 flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText);
             }
 
-            var bankBalance = BankBalance;
-            if (BankBalance <= 0)
-            {
-                bankBalance = 0;
-            }
-
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex, sponsorPrototypes);
 
             var prefsUnavailableMode = PreferenceUnavailable switch
@@ -735,7 +714,6 @@ namespace Content.Shared.Preferences
             Age = age;
             Sex = sex;
             Gender = gender;
-            BankBalance = bankBalance;
             Appearance = appearance;
             SpawnPriority = spawnPriority;
 

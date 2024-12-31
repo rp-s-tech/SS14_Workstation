@@ -50,6 +50,8 @@ namespace Content.Server.Database
 
         public DbSet<PatronProfileItem> PatronProfileItem {get; set;} = null!;
 
+        public DbSet<ProfileEconomics> ProfileEconomics {get; set; } = null!;
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Preference>()
@@ -335,6 +337,10 @@ namespace Content.Server.Database
                 .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.PetId })
                 .IsUnique();
 
+            modelBuilder.Entity<ProfileEconomics>()
+                .HasIndex(p => new { ProfileEconomicsProfileId = p.ProfileId })
+                .IsUnique();
+
             modelBuilder.Entity<RoleWhitelist>()
                 .HasOne(w => w.Player)
                 .WithMany(p => p.JobWhitelists)
@@ -415,7 +421,6 @@ namespace Content.Server.Database
         public int Age { get; set; }
         public string Sex { get; set; } = null!;
         public string Gender { get; set; } = null!;
-        public int BankBalance { get; set; }
         public string Species { get; set; } = null!;
         public string BarkProto { get; set; } = null!; // ADT Barks
         public float BarkPitch { get; set; } = 1f; // ADT Barks
@@ -442,6 +447,15 @@ namespace Content.Server.Database
 
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;
+    }
+
+    [Table("economics")]
+    public class ProfileEconomics
+    {
+        public int Id { get; set; }
+        public Profile Profile { get; set; } = null!;
+        public int ProfileId { get; set; }
+        public int Balance { get; set; }
     }
 
     public class PatronProfilePet
