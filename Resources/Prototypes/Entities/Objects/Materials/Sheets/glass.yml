@@ -12,6 +12,8 @@
     size: Normal
   - type: StaticPrice
     price: 0
+  - type: Stack
+    count: 50
   - type: Tag
     tags:
     - Sheet
