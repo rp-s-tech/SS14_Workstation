@@ -1,0 +1,93 @@
+- type: entity
+  save: false
+  name: Урист макНуклеация
+  parent: BaseMobNucleation
+  id: MobNucleation
+  components:
+  - type: Body
+    prototype: Nuclean
+    requiredLegs: 2
+  - type: Icon 
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: full
+
+- type: entity
+  abstract: true
+  save: false
+  parent: BaseMobSpeciesOrganic
+  id: BaseMobNucleation
+  name: Урист макНуклеация
+  components:
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#fad51e"
+  - type: Bloodstream
+    bloodReagent: Blood
+  - type: Vocal
+    sounds:
+      Male: MaleHuman
+      Female: FemaleHuman
+      Unsexed: MaleHuman
+  - type: MobThresholds # Здоровья у нуклеаций меньше чем у людей. Хрупкое тело.
+    thresholds:
+      0: Alive
+      80: Critical
+      160: Dead
+  - type: PassiveDamage # Небольшая регенерация до впадания в критическое состояние.
+    allowedStates:
+    - Alive
+    damageCap: 80
+    damage:
+      types:
+        Heat: -0.02
+      groups:
+        Brute: -0.02
+        Toxin: -1
+  - type: StatusEffects # Возможно не работает, поэтому добавил регенерацию.
+    allowed:
+    - RadiationProtection
+  - type: Body
+    prototype: Nuclean
+    requiredLegs: 2
+  - type: Hunger
+  - type: Icon 
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: full
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5
+  - type: HumanoidAppearance
+    species: Human
+    hideLayersOnEquip:
+    - Hair
+    - Snout
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: MobNucleanDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Body
+    prototype: Nuclean
+    requiredLegs: 2
+  - type: Icon 
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: full
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female

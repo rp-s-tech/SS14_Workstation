@@ -1,0 +1,326 @@
+#Тело Нуклеаций
+- type: body
+  name: "Нуклеация"
+  id: Nuclean
+  root: torso
+  slots:
+    head:
+      part: HeadNuclean
+      connections:
+      - torso
+      organs:
+        brain: OrganNucleanBrain
+        eyes: OrganNucleanEyes
+    torso:
+      part: TorsoNuclean
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      organs:
+        lungs: OrganNucleanLungs
+        stomach: OrganNucleanStomach
+        liver: OrganNucleanLiver
+        kidneys: OrganNucleanKidneys
+        heart: OrganNucleanHeart
+    right arm:
+      part: RightArmNuclean
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmNuclean
+      connections:
+      - left hand
+    right hand:
+      part: RightHandNuclean
+    left hand:
+      part: LeftHandNuclean
+    right leg:
+      part: RightLegNuclean
+    left leg:
+      part: LeftLegNuclean
+
+#Органы Нуклеаций
+- type: metabolizerType
+  id: Nuclean
+  name: Нуклеация
+
+- type: entity
+  id: OrganNucleanHeart
+  parent: OrganHumanHeart
+  name: Сердце нуклеации
+  description: почти не стучит..
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/organs.rsi
+    state: "heart-on"
+  - type: Organ
+  - type: Metabolizer
+    maxReagents: 2
+    metabolizerTypes: [ Nuclean ]
+    groups:
+    - id: Medicine
+    - id: Poison
+    - id: Narcotic
+
+- type: entity
+  id: OrganNucleanStomach
+  parent: OrganHumanStomach
+  name: Желудок нуклеации
+  description: "Это трудно переварить."
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/organs.rsi
+    state: "stomach"
+  - type: Metabolizer
+    maxReagents: 3
+    metabolizerTypes: [ Nuclean ]
+    groups:
+    - id: Food
+    - id: Drink
+
+- type: entity
+  id: OrganNucleanLiver
+  parent: OrganHumanLiver
+  name: Печень нуклеации
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/organs.rsi
+    state: "liver"
+  - type: Metabolizer
+    metabolizerTypes: [ Nuclean ]
+    groups:
+    - id: Alcohol
+      rateModifier: 0.8
+
+- type: entity
+  id: OrganNucleanLungs
+  parent: OrganHumanLungs
+  name: лёгкие нуклеации
+  description: "Отфильтровывает кислород из атмосферы, который затем поступает в кровоток для использования в качестве переносчика электронов."
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/organs.rsi
+    layers:
+      - state: "lung-l"
+      - state: "lung-r"
+  - type: Item
+    size: Small
+    heldPrefix: lungs
+  - type: Lung
+  - type: Metabolizer
+    removeEmpty: true
+    solutionOnBody: false
+    solution: "Lung"
+    metabolizerTypes: [ Nuclean ]
+    groups:
+    - id: Gas
+      rateModifier: 100.0
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+      Lung:
+        maxVol: 100.0
+        canReact: false
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+
+- type: entity
+  id: OrganNucleanKidneys
+  parent: OrganHumanKidneys
+  name: почки нуклеации
+  description: "Отфильтровывает токсины и кристаллы из кровотока."
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/organs.rsi
+    layers:
+      - state: "kidney-l"
+      - state: "kidney-r"
+  - type: Item
+    size: Small
+    heldPrefix: kidneys
+  # Почки просто удаляют все, что в данный момент не участвует в метаболизме, в качестве временной меры.
+  - type: Metabolizer
+    maxReagents: 5
+    metabolizerTypes: [ Nuclean ]
+    removeEmpty: true
+
+- type: entity
+  id: OrganNucleanBrain
+  parent: OrganHumanBrain
+  name: мозг нуклеации
+  description: "Источник невероятного, бесконечного интеллекта. Заражён.."
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/organs.rsi
+    state: "brain"
+  - type: Organ
+  - type: Input
+    context: "ghost"
+  - type: Brain
+  - type: InputMover
+  - type: Examiner
+  - type: BlockMovement
+  - type: BadFood
+  - type: Tag
+    tags:
+      - Meat
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: GreyMatter
+          Quantity: 5
+  - type: FlavorProfile
+    flavors:
+      - people
+  - type: FoodSequenceElement
+    entries:
+      Burger: Brain
+      Taco: Brain
+  - type: Item
+    size: Small
+    heldPrefix: brain
+
+- type: entity
+  id: OrganNucleanEyes
+  parent: OrganHumanEyes
+  name: глаза нуклеации
+  description: "Вижу тебя! Несмотря на заражение, они сохранили свою главную функцию."
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/organs.rsi
+    layers:
+      - state: "eyeball-l"
+      - state: "eyeball-r"
+  - type: Item
+    size: Small
+    heldPrefix: eyeballs
+
+#Части Нуклеации
+- type: entity
+  id: PartNuclean
+  parent: [BaseItem, BasePart]
+  name: "Часть тела нуклеации"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/parts.rsi
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: TorsoNuclean
+  name: "Туловище нуклеации"
+  parent: [PartNuclean, BaseTorso]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: "torso_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Cryoxadone
+        Quantity: 20
+
+- type: entity
+  id: HeadNuclean
+  name: "Голова нуклеации"
+  parent: [PartNuclean, BaseHead]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: "head_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Cryoxadone
+        Quantity: 10
+
+- type: entity
+  id: LeftArmNuclean
+  name: "Левая рука нуклеации"
+  parent: [PartNuclean, BaseLeftArm]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: "l_arm"
+
+- type: entity
+  id: RightArmNuclean
+  name: "Правая рука нуклеации"
+  parent: [PartNuclean, BaseRightArm]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: "r_arm"
+
+- type: entity
+  id: LeftHandNuclean
+  name: "Левая рука нуклеации"
+  parent: [PartNuclean, BaseLeftHand]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: "l_hand"
+
+- type: entity
+  id: RightHandNuclean
+  name: "Правая рука нуклеации"
+  parent: [PartNuclean, BaseRightHand]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: "r_hand"
+
+- type: entity
+  id: LeftLegNuclean
+  name: "Левая нога нуклеации"
+  parent: [PartNuclean, BaseLeftLeg]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: "l_leg"
+
+- type: entity
+  id: RightLegNuclean
+  name: "Правая нога нуклеации"
+  parent: [PartNuclean, BaseRightLeg]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: "r_leg"
+
+- type: entity
+  id: LeftFootNuclean
+  name: "Левая нога нуклеации"
+  parent: [PartNuclean, BaseLeftFoot]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: "l_foot"
+
+- type: entity
+  id: RightFootNuclean
+  name: "Правая нога нуклеации"
+  parent: [PartNuclean, BaseRightFoot]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: "r_foot"
