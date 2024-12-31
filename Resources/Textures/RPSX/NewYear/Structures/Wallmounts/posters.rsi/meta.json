@@ -1,0 +1,31 @@
+{
+    "version": 1,
+    "copyright": "flamingo DS",
+    "license": "RPS-eXtended",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "posterNY1"
+        },
+        {
+            "name": "posterNY2"
+        },
+        {
+            "name": "posterNY3"
+        },
+        {
+            "name": "posterNY4"
+        },
+        {
+            "name": "posterNY5"
+        },
+        {
+            "name": "posterNY6",
+            "delays": 
+            [ [ 1, 1, 1, 1, 1, 1, 1 ] ]
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "license": "RPS-eXtended",
+  "copyright": "DS2, DS3, DS4 made by archont8176 DS. Other made by M1and1B DS",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "posterDS1"
+    },
+    {
+      "name": "posterDS2"
+    },
+    {
+      "name": "posterDS3"
+    },
+    {
+      "name": "posterDS4"
+    },
+    {
+      "name": "posterDS5"
+    },
+    {
+      "name": "posterDS6"
+    },
+    {
+      "name": "posterDS7"
+    }
+  ]
+}
