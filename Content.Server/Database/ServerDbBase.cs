@@ -1848,16 +1848,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             var economics = db.DbContext.ProfileEconomics
                 .SingleOrDefault(p => p.Profile == profile);
             if (economics is null)
-            {
-                economics = new ProfileEconomics
-                {
-                    Profile = profile,
-                    ProfileId = profile.Id,
-                    Balance = 0
-                };
-                db.DbContext.ProfileEconomics.Add(economics);
                 return 0;
-            }
             return economics.Balance;
         }
 

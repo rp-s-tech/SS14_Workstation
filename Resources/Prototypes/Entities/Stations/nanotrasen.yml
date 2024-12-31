@@ -25,6 +25,8 @@
     - BaseStationSiliconLawCrewsimov
     - BaseStationAllEventsEligible
     - BaseStationNanotrasen
+    - BaseStationCrewMembersSalary
+    - BaseCCOConsoleTargetStation
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
