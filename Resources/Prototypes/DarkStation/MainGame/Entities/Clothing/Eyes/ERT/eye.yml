@@ -12,7 +12,6 @@
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 5
-  - type: NVG
 
 #Охотник на вампиров
 - type: entity

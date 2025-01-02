@@ -231,8 +231,6 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
-  - type: NVG
-    slotFlags: [Head]
 
 #Captain's Hardsuit
 - type: entity
@@ -248,8 +246,6 @@
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
-  - type: NVG
-    slotFlags: [Head]
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -327,8 +323,6 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
-  - type: NVG
-    slotFlags: [Head]
 
 #Luxury Mining Hardsuit
 - type: entity
@@ -365,8 +359,6 @@
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
-  - type: NVG
-    slotFlags: [Head]
   - type: Armor
     modifiers:
       coefficients:
@@ -391,8 +383,6 @@
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
-  - type: NVG
-    slotFlags: [Head]
   - type: Armor
     modifiers:
       coefficients:
@@ -421,8 +411,6 @@
     coefficient: 0.005
   - type: FireProtection
     reduction: 0.2
-  - type: NVG
-    slotFlags: [Head]
   - type: Armor
     modifiers:
       coefficients:
@@ -447,8 +435,6 @@
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
-  - type: NVG
-    slotFlags: [Head]
   - type: Armor
     modifiers:
       coefficients:
@@ -473,8 +459,6 @@
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
-  - type: NVG
-    slotFlags: [Head]
   - type: Armor
     modifiers:
       coefficients:
@@ -678,8 +662,6 @@
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
     coefficient: 0.005
-  - type: NVG
-    slotFlags: [Head]
   - type: Armor
     modifiers:
       coefficients:
@@ -707,8 +689,6 @@
     lowPressureMultiplier: 1000
   - type: FireProtection
     reduction: 0.2
-  - type: NVG
-    slotFlags: [Head]
   - type: Armor
     modifiers:
       coefficients:
