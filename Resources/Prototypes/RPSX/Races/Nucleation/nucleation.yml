@@ -7,7 +7,7 @@
   - type: Body
     prototype: Nuclean
     requiredLegs: 2
-  - type: Icon 
+  - type: Icon
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: full
 
@@ -41,10 +41,11 @@
     damageCap: 80
     damage:
       types:
-        Heat: -0.02
+        Heat: -0.1
       groups:
-        Brute: -0.02
+        Brute: -0.2
         Toxin: -1
+        Airloss: -100
   - type: StatusEffects # Возможно не работает, поэтому добавил регенерацию.
     allowed:
     - RadiationProtection
@@ -52,7 +53,7 @@
     prototype: Nuclean
     requiredLegs: 2
   - type: Hunger
-  - type: Icon 
+  - type: Icon
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: full
   - type: Butcherable
@@ -81,7 +82,7 @@
   - type: Body
     prototype: Nuclean
     requiredLegs: 2
-  - type: Icon 
+  - type: Icon
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: full
   - type: Inventory
