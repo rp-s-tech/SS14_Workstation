@@ -60,6 +60,17 @@
     damageRecovery:
       types:
         Asphyxiation: -2.0
+  - type: Temperature
+    heatDamageThreshold: 310
+    coldDamageThreshold: 200
+    currentTemperature: 310.15
+    specificHeat: 42
+    coldDamage:
+      types:
+        Cold: 0.1 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat: 1.5 #per second, scales with temperature & other constants
   - type: Wagging
   # - type: LanguageSpeaker
   #   speaks:

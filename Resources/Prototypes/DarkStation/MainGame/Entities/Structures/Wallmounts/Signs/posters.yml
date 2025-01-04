@@ -36,7 +36,7 @@
   components:
   - type: Sprite
     drawdepth: WallMountedItems
-    sprite: DarkStation\MainGame\Structures\Structures\Wallmounts\posters.rsi
+    sprite: DarkStation/MainGame/Structures/Wallmounts/posters.rsi
     state: posterDS1
     snapCardinals: true
 
