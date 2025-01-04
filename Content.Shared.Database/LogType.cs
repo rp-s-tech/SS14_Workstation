@@ -440,6 +440,10 @@ public enum LogType
     /// </summary>
     GhostWarp = 95,
 
+    /// <summary>
+    /// A player interacted with a PDA or its cartridge component
+    /// </summary>
+    PdaInteract = 96,
 
     ///<summary>
     /// RPSX Economics log. Using ATM
@@ -449,4 +453,5 @@ public enum LogType
     /// RPSX Economics log. Getting salary
     ///</summary>
     Salary = 1001,
+    
 }
