@@ -1,0 +1,14 @@
+﻿- type: entity
+  name: Коробка Рыцаря Звёздной-пыли
+  parent: BoxCardboard
+  id: BoxHoloparasiteKnight
+  description: A box containing a holoparasite injector
+  components:
+  - type: StorageFill
+    contents:
+    - id: HoloparasiteInjectorKnight
+    - id: HoloparasiteInfo
+  - type: Sprite
+    layers:
+    - state: box
+    - state: holo

@@ -1,0 +1,18 @@
+#Gear
+- type: startingGear
+  id: USSRCommanderGear
+  equipment:
+    head: ClothingHeadUSSRCommanderBeret
+    jumpsuit: ClothingUniformJumpsuitCommanderUSSR
+    gloves: ClothingHandsGlovesLeather
+    back: ClothingMilitaryBackpack
+    shoes: ClothingShoesBootsCombat
+    id: PassengerPDA
+    ears: ClothingHeadsetSCPBasic
+    neck: ClothingNeckUSSPPin
+    pocket1: WeaponRevolverMateba
+    pocket2: SpeedLoaderMagnum
+    belt: ClothingBeltStorageWaistbag
+  InnerClothingSkirt: ClothingUniformJumpsuitHydroponicsSCP
+  satchel: ClothingBackpackMilitarySatchel
+  duffelbag: ClothingBackpackDuffelMilitary

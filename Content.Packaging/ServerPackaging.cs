@@ -13,16 +13,13 @@ public static class ServerPackaging
     private static readonly List<PlatformReg> Platforms = new()
     {
         new PlatformReg("win-x64", "Windows", true),
-        new PlatformReg("win-arm64", "Windows", true),
         new PlatformReg("linux-x64", "Linux", true),
         new PlatformReg("linux-arm64", "Linux", true),
         new PlatformReg("osx-x64", "MacOS", true),
-        new PlatformReg("osx-arm64", "MacOS", true),
         // Non-default platforms (i.e. for Watchdog Git)
         new PlatformReg("win-x86", "Windows", false),
         new PlatformReg("linux-x86", "Linux", false),
         new PlatformReg("linux-arm", "Linux", false),
-        new PlatformReg("freebsd-x64", "FreeBSD", false),
     };
 
     private static List<string> PlatformRids => Platforms
@@ -47,6 +44,7 @@ public static class ServerPackaging
         // Python script had Npgsql. though we want Npgsql.dll as well soooo
         "Npgsql",
         "Microsoft",
+        "FFMpeg"
     };
 
     private static readonly List<string> ServerNotExtraAssemblies = new()
@@ -71,6 +69,14 @@ public static class ServerPackaging
         "zh-Hans",
         "zh-Hant"
     };
+
+    private static readonly string SecretServerPath = Path.Combine("RPSX", "Content.RPSXServer",
+        "Content.RPSXServer.csproj");
+
+    // private static readonly string SecretSharedPath = Path.Combine("RPSX", "Content.RPSXServer",
+    //     "Content.RPSXServer.csproj");
+
+    private static readonly bool UseSecrets = File.Exists(SecretServerPath);
 
     public static async Task PackageServer(bool skipBuild, bool hybridAcz, IPackageLogger logger, string configuration, List<string>? platforms = null)
     {
@@ -120,6 +126,26 @@ public static class ServerPackaging
                     "/m"
                 }
             });
+
+            if (UseSecrets)
+            {
+                await ProcessHelpers.RunCheck(new ProcessStartInfo
+                {
+                    FileName = "dotnet",
+                    ArgumentList =
+                    {
+                        "build",
+                        SecretServerPath,
+                        "-c", "Release",
+                        "--nologo",
+                        "/v:m",
+                        $"/p:TargetOs={platform.TargetOs}",
+                        "/t:Rebuild",
+                        "/p:FullRelease=true",
+                        "/m"
+                    }
+                });
+            }
 
             await PublishClientServer(platform.Rid, platform.TargetOs, configuration);
         }
@@ -179,6 +205,12 @@ public static class ServerPackaging
         var inputPassResources = graph.InputResources;
         var contentAssemblies = new List<string>(ServerContentAssemblies);
 
+        if (UseSecrets)
+        {
+            contentAssemblies.Add("Content.RPSXServer");
+            // contentAssemblies.Add("Content.RPSXShared");
+        }
+
         // Additional assemblies that need to be copied such as EFCore.
         var sourcePath = Path.Combine(contentDir, "bin", "Content.Server");
 
@@ -192,6 +224,7 @@ public static class ServerPackaging
             if (!ServerNotExtraAssemblies.Any(o => fileName.StartsWith(o)) && ServerExtraAssemblies.Any(o => fileName.StartsWith(o)))
             {
                 contentAssemblies.Add(fileName);
+                System.Console.WriteLine(fileName);
             }
         }
 

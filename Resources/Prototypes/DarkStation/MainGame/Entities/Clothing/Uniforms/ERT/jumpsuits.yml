@@ -1,0 +1,84 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitERTChaplainDark
+  name: Комбинезон капеллана
+  description: Комбинезон в тёмных тонах, обеспечивающий капеллану максимальный комфорт во время несения Света Божьего
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/armoredchaplain.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/armoredchaplain.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitERTRecon
+  name: Форма разведчика ОБР
+  description: Униформа специально разработанная для разведчиков ОБР.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/ERTRecon/jumpsuit.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/ERTRecon/jumpsuit.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+      securePartTypes:
+        Leg: 0.75
+        Arm: 0.75
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitVampireHunter
+  name: Костюм охотника на вампиров
+  description: Пахнет чесноком
+  suffix: VampireHunter
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/vampire_hunter.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/vampire_hunter.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: N7SemiCivilUniform
+  name: гражданская форма N7
+  description: Лёгкая футболка и удобные тактические штаны для бойцов N7 в гражданской обстановке.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/n7civilform.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/n7civilform.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: N7FleetUniform
+  name: флотская форма N7
+  description: Строгая джерси в комплекте с брюками для флотского подразделения N7.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/n7fleetjersey.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/n7fleetjersey.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: N7StandartUniform
+  name: тактическая форма N7
+  description: Укреплённая пластинами абляционной керамики футболка в комплекте с боевыми тактическими штанами N7. Даёт лёгкую защиту от повреждений.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/n7tacticaluniform.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/n7tacticaluniform.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.85
+      securePartTypes:
+        Leg: 0.8
+        Arm: 0.8

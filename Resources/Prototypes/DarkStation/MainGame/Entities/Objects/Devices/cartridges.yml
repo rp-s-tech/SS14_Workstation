@@ -1,0 +1,17 @@
+- type: entity
+  parent: BaseItem
+  id: CrewMemberBankCartridge
+  name: картридж банка
+  description: уведомление о зарплатах в одной программе
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/cartridge.rsi
+    state: cart-y
+  - type: Cartridge
+    programName: Тинькофф
+    icon:
+      sprite: Interface/Misc/program_icons.rsi
+      state: crew_manifest
+  - type: BankCartridge
+  - type: UIFragment
+    ui: !type:PdaBankUi

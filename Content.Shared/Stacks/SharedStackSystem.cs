@@ -11,6 +11,7 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.Stacks
 {
@@ -110,6 +111,10 @@ namespace Content.Shared.Stacks
             if (donor == recipient)
                 return false;
 
+            var attemptEv = new StacksMergeAttemptEvent(GetNetEntity(donor), GetNetEntity(recipient));
+            RaiseLocalEvent(donor, attemptEv);
+            RaiseLocalEvent(recipient, attemptEv);
+
             if (!Resolve(recipient, ref recipientStack, false) || !Resolve(donor, ref donorStack, false))
                 return false;
 
@@ -119,6 +124,11 @@ namespace Content.Shared.Stacks
             transferred = Math.Min(donorStack.Count, GetAvailableSpace(recipientStack));
             SetCount(donor, donorStack.Count - transferred, donorStack);
             SetCount(recipient, recipientStack.Count + transferred, recipientStack);
+
+            var ev = new StacksMergedEvent(GetNetEntity(donor), GetNetEntity(recipient));
+            RaiseLocalEvent(recipient, ev);
+            RaiseLocalEvent(donor, ev);
+
             return transferred > 0;
         }
 
@@ -320,6 +330,13 @@ namespace Content.Shared.Stacks
             if (!Resolve(insertEnt, ref insertStack) || !Resolve(targetEnt, ref targetStack))
                 return false;
 
+            var attemptEv = new StacksAddContainerAttempt(GetNetEntity(insertEnt), GetNetEntity(targetEnt));
+            RaiseLocalEvent(insertEnt, attemptEv);
+            RaiseLocalEvent(targetEnt, attemptEv);
+
+            if (attemptEv.Cancelled)
+                return false;
+
             var count = insertStack.Count;
             return TryAdd(insertEnt, targetEnt, count, insertStack, targetStack);
         }
@@ -412,4 +429,45 @@ namespace Content.Shared.Stacks
             NewCount = newCount;
         }
     }
+
+    //RPSX Events start
+    [Serializable, NetSerializable]
+    public sealed class StacksMergedEvent : EntityEventArgs
+    {
+        public NetEntity Donor;
+        public NetEntity Recipient;
+
+        public StacksMergedEvent(NetEntity donor, NetEntity recipient)
+        {
+            Donor = donor;
+            Recipient = recipient;
+        }
+    }
+
+    [Serializable, NetSerializable]
+    public sealed class StacksMergeAttemptEvent : CancellableEntityEventArgs
+    {
+        public NetEntity Donor;
+        public NetEntity Recipient;
+
+        public StacksMergeAttemptEvent(NetEntity donor, NetEntity recipient)
+        {
+            Donor = donor;
+            Recipient = recipient;
+        }
+    }
+
+    [Serializable, NetSerializable]
+    public sealed class StacksAddContainerAttempt : CancellableEntityEventArgs
+    {
+        public NetEntity Donor;
+        public NetEntity Recipient;
+
+        public StacksAddContainerAttempt(NetEntity donor, NetEntity recipient)
+        {
+            Donor = donor;
+            Recipient = recipient;
+        }
+    }
+    //RPSX Events end
 }

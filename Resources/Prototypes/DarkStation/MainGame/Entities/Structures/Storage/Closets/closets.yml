@@ -1,0 +1,122 @@
+- type: entity
+  id: SYWardrobeBase
+  parent: ClosetBase
+  abstract: true
+  description: Стандартное хранилище Синдиката для одежды и снаряжения.
+
+- type: entity
+  id: SYWardrobeCargo
+  parent: SYWardrobeBase
+  name: гардероб снабжения Синдиката
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Storage/Closets/taipanclosets.rsi
+  - type: EntityStorageVisuals
+    stateBaseClosed: cargo
+    stateDoorOpen: cargo_open
+    stateDoorClosed: cargo_door
+
+- type: entity
+  id: SYWardrobeChef
+  parent: SYWardrobeBase
+  name: гардероб повара Синдиката
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Storage/Closets/taipanclosets.rsi
+  - type: EntityStorageVisuals
+    stateBaseClosed: chef
+    stateDoorOpen: chef_open
+    stateDoorClosed: chef_door
+
+- type: entity
+  id: SYWardrobeEngi
+  parent: SYWardrobeBase
+  name: гардероб инженеров Синдиката
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Storage/Closets/taipanclosets.rsi
+  - type: EntityStorageVisuals
+    stateBaseClosed: engineering
+    stateDoorOpen: engineering_open
+    stateDoorClosed: engineering_door
+
+- type: entity
+  id: SYWardrobeHydro
+  parent: SYWardrobeBase
+  name: гардероб ботаников Синдиката
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Storage/Closets/taipanclosets.rsi
+  - type: EntityStorageVisuals
+    stateBaseClosed: hydro
+    stateDoorOpen: hydro_open
+    stateDoorClosed: hydro_door
+
+- type: entity
+  id: SYWardrobeMed
+  parent: SYWardrobeBase
+  name: гардероб медиков Синдиката
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Storage/Closets/taipanclosets.rsi
+  - type: EntityStorageVisuals
+    stateBaseClosed: med
+    stateDoorOpen: med_open
+    stateDoorClosed: med_door
+
+- type: entity
+  id: SYWardrobeOrange
+  parent: SYWardrobeBase
+  name: оранжевый гардероб Синдиката
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Storage/Closets/taipanclosets.rsi
+  - type: EntityStorageVisuals
+    stateBaseClosed: orange
+    stateDoorOpen: orange_open
+    stateDoorClosed: orange_door
+
+- type: entity
+  id: SYWardrobeRD
+  parent: SYWardrobeBase
+  name: гардероб научрука Синдиката
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Storage/Closets/taipanclosets.rsi
+  - type: EntityStorageVisuals
+    stateBaseClosed: rd
+    stateDoorOpen: rd_open
+    stateDoorClosed: rd_door
+
+- type: entity
+  id: SYWardrobeScience
+  parent: SYWardrobeBase
+  name: гардероб учёных Синдиката
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Storage/Closets/taipanclosets.rsi
+  - type: EntityStorageVisuals
+    stateBaseClosed: science
+    stateDoorOpen: science_open
+    stateDoorClosed: science_door
+
+- type: entity
+  id: SYWardrobeSecurity
+  parent: SYWardrobeBase
+  name: гардероб охраны Синдиката
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: DarkStation/MainGame/Structures/Storage/Closets/taipanclosets.rsi
+  - type: EntityStorageVisuals
+    stateBaseClosed: security
+    stateDoorOpen: security_open
+    stateDoorClosed: security_door

@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using System.Text.Json;
 using System.Threading;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Shared.Administration.Logs;
@@ -26,6 +27,7 @@ namespace Content.Server.Database
 {
     public interface IServerDbManager
     {
+
         void Init();
 
         void Shutdown();
@@ -41,6 +43,11 @@ namespace Content.Server.Database
         Task SaveCharacterSlotAsync(NetUserId userId, ICharacterProfile? profile, int slot);
 
         Task SaveAdminOOCColorAsync(NetUserId userId, Color color);
+
+        //RPSX start
+        Task<int> GetProfileEconomics(NetUserId userId, int slot);
+        Task SaveProfileEconomics(NetUserId userId, int slot, int balance);
+        //RPSX end
 
         // Single method for two operations for transaction.
         Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot);
@@ -990,6 +997,19 @@ namespace Content.Server.Database
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.RemoveJobWhitelist(player, job));
         }
+
+        //RPSX start
+        public Task<int> GetProfileEconomics(NetUserId userId, int slot)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetProfileEconomics(userId, slot));
+        }
+        public Task SaveProfileEconomics(NetUserId userId, int slot, int newbal)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.SaveProfileEconomics(userId, slot, newbal));
+        }
+        //RPSX end
 
         public void SubscribeToNotifications(Action<DatabaseNotification> handler)
         {

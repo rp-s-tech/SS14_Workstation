@@ -231,6 +231,7 @@
       Wood: 100
   - type: Stack
     stackType: WoodPlank
+    count: 50
     baseLayer: base
     layerStates:
     - wood
@@ -358,6 +359,7 @@
   components:
   - type: Stack
     stackType: Diamond
+    count: 50
     baseLayer: base
     layerStates:
     - diamond
@@ -383,6 +385,14 @@
   - type: PhysicalComposition
     materialComposition:
       Diamond: 100
+
+- type: entity
+  parent: MaterialDiamond
+  id: MaterialDiamond10
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
 
 - type: entity
   parent: MaterialDiamond

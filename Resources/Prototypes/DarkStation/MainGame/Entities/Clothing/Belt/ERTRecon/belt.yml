@@ -1,0 +1,15 @@
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltERTReconWebbing
+  name: Разгрузочный жилет снайпера ОБР
+  description: Идеальный для хранения патронов и прочего мусора у себя на груди.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Belt/ERTRecon/belt.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Belt/ERTRecon/belt.rsi
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxSlots: 7
+    maxItemSize: Normal

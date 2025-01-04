@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "license": "Собственная лицензия. Полный запрет на копирование и использование вне проекта Dark Station без одобрения текущего владельца проекта",
+  "copyright": "M1and1B DS",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "dssign1"
+    },
+    {
+      "name": "dssign2"
+    },
+    {
+      "name": "dssign3"
+    },
+    {
+      "name": "dssign4"
+    },
+    {
+      "name": "dssign5"
+    },
+    {
+      "name": "dssign6"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+- type: entity
+  id: ShellShotgunSalt
+  name: ружейный патрон (.50 соль)
+  parent: BaseShellShotgun
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Guns/Ammunition/Casings/salt_ammo.rsi
+    layers:
+      - state: salt
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunSalt
+    count: 11
+    spread: 5
+  - type: SpentAmmoVisuals
+    state: "salt"

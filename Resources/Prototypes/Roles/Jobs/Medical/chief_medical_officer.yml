@@ -12,6 +12,9 @@
     - !type:RoleTimeRequirement
       role: JobMedicalDoctor
       time: 21600 #6 hrs
+    - !type:RoleTimeRequirement
+      role: JobParamedic
+      time: 21600 # 6h
     - !type:DepartmentTimeRequirement
       department: Medical
       time: 36000 #10 hrs

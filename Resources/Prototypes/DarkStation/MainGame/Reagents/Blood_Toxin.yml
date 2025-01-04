@@ -1,0 +1,27 @@
+- type: reagent
+  id: SPBiolin
+  name: reagent-name-biolin
+  group: Medicine
+  desc: reagent-desc-biolin
+  physicalDesc: reagent-physical-desc-inky
+  flavor: medicine
+  color: "#ea91d7"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:ChemVomit
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+        probability: 0.3
+      - !type:HealthChange
+        damage:
+          types:
+            Slash: 5
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.9
+        sprintSpeedModifier: 0.7      
+
+       
+
+        

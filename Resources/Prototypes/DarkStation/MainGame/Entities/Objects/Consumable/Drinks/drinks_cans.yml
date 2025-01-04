@@ -1,0 +1,65 @@
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkCrunchyChaosCan
+  name: банка хрустящего хаоса
+  description: Алкогольное слияние цитрусовых и сладкого мёда, которое столь нравится дворфам.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: CrunchyChaos
+          Quantity: 30
+  - type: Drink
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/crunchychaos.rsi
+  - type: Item
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/crunchychaos.rsi
+  - type: Tag
+    tags:
+    - Beer
+
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkPurpleFuzzblastCan
+  name: банка фиолетового фаззбласта
+  description: Пикантное дворфийское лавандово-карамельное наслаждение.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: PurpleFuzzblast
+          Quantity: 30
+  - type: Drink
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/purplefuzzblast.rsi
+  - type: Item
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/purplefuzzblast.rsi
+  - type: Tag
+    tags:
+    - Beer
+
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkDeepDrifterCan
+  name: банка глубокой зыбучки
+  description: Тёмный шоколад, ароматом и вкусом напоминающий таёжную подстилку дворфийских предгорий.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: DeepDrifter
+          Quantity: 30
+  - type: Drink
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/deepdrifter.rsi
+  - type: Item
+    sprite: DarkStation/MainGame/Objects/Consumable/Drinks/deepdrifter.rsi
+  - type: Tag
+    tags:
+    - Beer

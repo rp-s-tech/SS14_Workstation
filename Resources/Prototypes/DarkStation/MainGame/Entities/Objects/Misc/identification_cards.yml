@@ -1,0 +1,73 @@
+- type: entity
+  parent: IDCardStandard
+  id: POCCIDCard
+  name: ИД Карта НШЦК
+  components:
+  - type: Sprite
+    layers:
+    - state: idpocc
+  - type: IdCard
+    jobTitle: Central Commander
+    jobIcon: JobIconPOCC
+  - type: Access
+    groups:
+    - AllAccessCentCom
+    tags:
+    - CentralCommand
+
+- type: entity
+  parent: IDCardStandard
+  id: SecurityPilotIDCard
+  name: ID карта Пилота
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idpilot
+  - type: PresetIdCard
+    job: SecurityPilot
+
+- type: entity
+  parent: IDCardStandard
+  id: PrisonerIDCard
+  name: ID карта заключённого
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Misc/id_cards/prisoner.rsi
+    layers:
+    - state: prisoner
+  - type: Clothing
+    sprite: DarkStation/MainGame/Objects/Misc/id_cards/prisoner.rsi
+  - type: IdCard
+    jobTitle: Заключенный
+    jobIcon: JobIconPrisoner
+
+- type: entity
+  parent: IDCardStandard
+  id: BlueShieldOfficerIDCard
+  name: ID карта офицера синего щита
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Misc/id_cards/blueshield.rsi
+    layers:
+    - state: gold
+    - state: idblueshield
+  - type: Clothing
+    sprite: DarkStation/MainGame/Objects/Misc/id_cards/bluesheald.rsi
+  - type: PresetIdCard
+    job: BlueShieldOfficer
+
+- type: entity
+  parent: IDCardStandard
+  id: IFDIDCard
+  name: ID карта инспектора ФД
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Misc/id_cards/ifd_id.rsi
+    layers:
+    - state: id_card
+    - state: idifd
+  - type: Clothing
+    sprite: DarkStation/MainGame/Objects/Misc/id_cards/ifd_id.rsi
+  - type: PresetIdCard
+    job: JobSpIFD

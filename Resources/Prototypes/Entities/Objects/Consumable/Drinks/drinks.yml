@@ -1422,6 +1422,8 @@
   - type: Icon
     sprite: Objects/Consumable/Drinks/nothing.rsi
     state: icon
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   parent: DrinkGlass

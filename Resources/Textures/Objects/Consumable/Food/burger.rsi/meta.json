@@ -179,6 +179,12 @@
     {
       "name": "mothroach"
     },
+      {
+          "name": "lizardtail-cheese"
+      },
+      {
+          "name": "lizardtail"
+      },
     {
       "name": "inhand-right",
       "directions": 4

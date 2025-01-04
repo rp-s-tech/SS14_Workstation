@@ -1,0 +1,35 @@
+- type: stationGoal
+  id: StationGoalSpServicesCookingOne
+  graph:
+    - name: Goal
+      steps:
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-will-send-in-few-minutes
+          delay: 60
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-special-service-cooking-one
+          delay: 120
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-special-service-cooking-one
+
+- type: stationGoal
+  id: StationGoalSpServicesCookingTwo
+  graph:
+    - name: Goal
+      steps:
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-will-send-in-few-minutes
+          delay: 60
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-special-service-cooking-two
+          delay: 120
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-special-service-cooking-two

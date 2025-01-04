@@ -1,0 +1,61 @@
+- type: stationGoal
+  id: StationGoalShuttle
+  graph:
+    - name: Goal
+      steps:
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-will-send-in-few-minutes
+          delay: 60
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-shuttle
+          delay: 120
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-shuttle
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-shuttle-requirements
+          delay: 30
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-shuttle-cargo
+          delay: 300
+
+        - !type:AddProductsToCargo
+          advancedCargoPrototypes:
+            - ShuttleMiniGravitation
+
+- type: stationGoal
+  id: StationGoalShuttleSecurity
+  graph:
+    - name: Goal
+      steps:
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-will-send-in-few-minutes
+          delay: 60
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-shuttle-security
+          delay: 120
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-shuttle-security
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-shuttle-security-requirements
+          delay: 30
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-shuttle-cargo
+          delay: 300
+
+        - !type:AddProductsToCargo
+          advancedCargoPrototypes:
+            - ShuttleMiniGravitation

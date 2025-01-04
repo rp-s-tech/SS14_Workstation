@@ -24,10 +24,11 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.RPSX.Patron;
 
 namespace Content.Client.Lobby;
 
-public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState>, IOnStateExited<LobbyState>
+public sealed partial class LobbyUIController : UIController, IOnStateEntered<LobbyState>, IOnStateExited<LobbyState>
 {
     [Dependency] private readonly IClientPreferencesManager _preferencesManager = default!;
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
@@ -39,11 +40,13 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     [Dependency] private readonly IStateManager _stateManager = default!;
     [Dependency] private readonly JobRequirementsManager _requirements = default!;
     [Dependency] private readonly MarkingManager _markings = default!;
+    [Dependency] private readonly ISponsorsManager _sponsorsManager = default!;
     [UISystemDependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
     [UISystemDependency] private readonly ClientInventorySystem _inventory = default!;
     [UISystemDependency] private readonly StationSpawningSystem _spawn = default!;
     [UISystemDependency] private readonly GuidebookSystem _guide = default!;
     [UISystemDependency] private readonly LoadoutSystem _loadouts = default!;
+
 
     private CharacterSetupGui? _characterSetup;
     private HumanoidProfileEditor? _profileEditor;
@@ -275,6 +278,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _prototypeManager,
             _resourceCache,
             _requirements,
+            _sponsorsManager,
             _markings);
 
         _profileEditor.OnOpenGuidebook += _guide.OpenHelp;
@@ -455,21 +459,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     {
         EntityUid dummyEnt;
 
-        EntProtoId? previewEntity = null;
-        if (humanoid != null && jobClothes)
-        {
-            job ??= GetPreferredJob(humanoid);
-
-            previewEntity = job.JobPreviewEntity ?? (EntProtoId?)job?.JobEntity;
-        }
-
-        if (previewEntity != null)
-        {
-            // Special type like borg or AI, do not spawn a human just spawn the entity.
-            dummyEnt = EntityManager.SpawnEntity(previewEntity, MapCoordinates.Nullspace);
-            return dummyEnt;
-        }
-        else if (humanoid is not null)
+        if (humanoid is not null)
         {
             var dummy = _prototypeManager.Index<SpeciesPrototype>(humanoid.Species).DollPrototype;
             dummyEnt = EntityManager.SpawnEntity(dummy, MapCoordinates.Nullspace);
@@ -483,8 +473,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         if (humanoid != null && jobClothes)
         {
-            DebugTools.Assert(job != null);
-
+            job ??= GetPreferredJob(humanoid);
             GiveDummyJobClothes(dummyEnt, humanoid, job);
 
             if (_prototypeManager.HasIndex<RoleLoadoutPrototype>(LoadoutSystem.GetJobPrototype(job.ID)))

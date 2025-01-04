@@ -22,6 +22,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.RPSX.Patron;
 
 namespace Content.Server.Players.PlayTimeTracking;
 
@@ -39,6 +40,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly SharedRoleSystem _roles = default!;
     [Dependency] private readonly PlayTimeTrackingManager _tracking = default!;
+    [Dependency] private readonly ISponsorsManager _sponsorsManager = default!;
 
     public override void Initialize()
     {
@@ -201,6 +203,12 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
             !_cfg.GetCVar(CCVars.GameRoleTimers))
             return true;
 
+        if (_sponsorsManager.IsUserHasRoleTimeByPass(player.UserId))
+        {
+            Log.Debug($"User - {player.UserId} has roleTimeByPass - IsAllowed");
+            return true;
+        }
+
         if (!_tracking.TryGetTrackerTimes(player, out var playTimes))
         {
             Log.Error($"Unable to check playtimes {Environment.StackTrace}");
@@ -215,6 +223,12 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         var roles = new HashSet<ProtoId<JobPrototype>>();
         if (!_cfg.GetCVar(CCVars.GameRoleTimers))
             return roles;
+
+        if (_sponsorsManager.IsUserHasRoleTimeByPass(player.UserId))
+        {
+            Log.Debug($"User - {player.UserId} has roleTimeByPass - DisallowedJobs");
+            return roles;
+        }
 
         if (!_tracking.TryGetTrackerTimes(player, out var playTimes))
         {
@@ -235,6 +249,12 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
     {
         if (!_cfg.GetCVar(CCVars.GameRoleTimers))
             return;
+
+        if (_sponsorsManager.IsUserHasRoleTimeByPass(userId))
+        {
+            Log.Debug($"User - {userId} has roleTimeByPass - RemoveDisallowedJobs");
+            return;
+        }
 
         var player = _playerManager.GetSessionById(userId);
         if (!_tracking.TryGetTrackerTimes(player, out var playTimes))

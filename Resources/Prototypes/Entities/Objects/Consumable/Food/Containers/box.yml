@@ -569,6 +569,8 @@
       - id: GoldenBikeHorn
         prob: 0.1
         orGroup: GiftPool
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   id: HappyHonkMime
@@ -586,6 +588,8 @@
   - type: Item
     sprite: Objects/Storage/Happyhonk/mime.rsi
     heldPrefix: box
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   id: HappyHonkNukie
@@ -618,6 +622,8 @@
         orGroup: GiftPool
       - id: PlushieNuke
         orGroup: GiftPool
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   parent: HappyHonkNukie
@@ -688,6 +694,8 @@
   - type: StorageFill
     contents:
       - id: CluwneHorn
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   id: FoodMealHappyHonkClown

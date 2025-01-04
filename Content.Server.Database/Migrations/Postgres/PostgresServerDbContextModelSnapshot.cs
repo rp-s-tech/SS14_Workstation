@@ -664,6 +664,69 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("job", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.PatronProfileItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("patron_profile_item_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ItemProtoId")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("item_proto_id");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("integer")
+                        .HasColumnName("profile_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_patron_profile_item");
+
+                    b.HasIndex("ProfileId", "ItemProtoId")
+                        .IsUnique();
+
+                    b.ToTable("patron_profile_item", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.PatronProfilePet", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("patron_profile_pets_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("PetId")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("pet_id");
+
+                    b.Property<string>("PetName")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("pet_name");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("integer")
+                        .HasColumnName("profile_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_patron_profile_pets");
+
+                    b.HasIndex("ProfileId")
+                        .IsUnique()
+                        .HasDatabaseName("IX_patron_profile_pets_profile_id");
+
+                    b.HasIndex("ProfileId", "PetId")
+                        .IsUnique();
+
+                    b.ToTable("patron_profile_pets", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.PlayTime", b =>
                 {
                     b.Property<int>("Id")
@@ -791,6 +854,15 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("integer")
                         .HasColumnName("age");
 
+                    b.Property<float>("BarkPitch")
+                        .HasColumnType("real")
+                        .HasColumnName("bark_pitch");
+
+                    b.Property<string>("BarkProto")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("bark_proto");
+
                     b.Property<string>("CharacterName")
                         .IsRequired()
                         .HasColumnType("text")
@@ -830,6 +902,14 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("hair_name");
+
+                    b.Property<float>("HighBarkVar")
+                        .HasColumnType("real")
+                        .HasColumnName("high_bark_var");
+
+                    b.Property<float>("LowBarkVar")
+                        .HasColumnType("real")
+                        .HasColumnName("low_bark_var");
 
                     b.Property<JsonDocument>("Markings")
                         .HasColumnType("jsonb")
@@ -876,6 +956,33 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsUnique();
 
                     b.ToTable("profile", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.ProfileEconomics", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("economics_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Balance")
+                        .HasColumnType("integer")
+                        .HasColumnName("balance");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("integer")
+                        .HasColumnName("profile_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_economics");
+
+                    b.HasIndex("ProfileId")
+                        .IsUnique()
+                        .HasDatabaseName("IX_economics_profile_id");
+
+                    b.ToTable("economics", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.ProfileLoadout", b =>
@@ -1667,6 +1774,30 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Profile");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.PatronProfileItem", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithMany("Items")
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_patron_profile_item_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.PatronProfilePet", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithOne("PatronProfilePet")
+                        .HasForeignKey("Content.Server.Database.PatronProfilePet", "ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_patron_profile_pets_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Player", b =>
                 {
                     b.OwnsOne("Content.Server.Database.TypedHwid", "LastSeenHWId", b1 =>
@@ -1708,6 +1839,18 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasConstraintName("FK_profile_preference_preference_id");
 
                     b.Navigation("Preference");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.ProfileEconomics", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithMany()
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_economics_profile_profile_id");
+
+                    b.Navigation("Profile");
                 });
 
             modelBuilder.Entity("Content.Server.Database.ProfileLoadout", b =>
@@ -2027,9 +2170,14 @@ namespace Content.Server.Database.Migrations.Postgres
                 {
                     b.Navigation("Antags");
 
+                    b.Navigation("Items");
+
                     b.Navigation("Jobs");
 
                     b.Navigation("Loadouts");
+
+                    b.Navigation("PatronProfilePet")
+                        .IsRequired();
 
                     b.Navigation("Traits");
                 });

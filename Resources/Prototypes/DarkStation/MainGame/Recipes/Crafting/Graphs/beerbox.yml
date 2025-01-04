@@ -1,0 +1,13 @@
+- type: constructionGraph
+  id: BeerBox
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: beerbox
+          steps:
+            - material: WoodPlank
+              amount: 5
+              doAfter: 2
+    - node: beerbox
+      entity: BeerBoxEmpty

@@ -50,6 +50,8 @@
     sprite: Clothing/Head/Soft/bluesoft.rsi
   - type: Clothing
     sprite: Clothing/Head/Soft/bluesoft.rsi
+  - type: VendingPrice
+    price: 350
 
 - type: entity
   parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatBluesoft]
@@ -109,6 +111,8 @@
     sprite: Clothing/Head/Soft/corpsoft.rsi
   - type: Clothing
     sprite: Clothing/Head/Soft/corpsoft.rsi
+  - type: VendingPrice
+    price: 350
 
 - type: entity
   parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatCorpsoft]
@@ -125,6 +129,8 @@
     sprite: Clothing/Head/Soft/greensoft.rsi
   - type: Clothing
     sprite: Clothing/Head/Soft/greensoft.rsi
+  - type: VendingPrice
+    price: 350
 
 - type: entity
   parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatGreensoft]
@@ -141,6 +147,8 @@
     sprite: Clothing/Head/Soft/blacksoft.rsi
   - type: Clothing
     sprite: Clothing/Head/Soft/blacksoft.rsi
+  - type: VendingPrice
+    price: 350
 
 - type: entity
   parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatBlacksoft]
@@ -157,6 +165,8 @@
     sprite: Clothing/Head/Soft/greysoft.rsi
   - type: Clothing
     sprite: Clothing/Head/Soft/greysoft.rsi
+  - type: VendingPrice
+    price: 350
 
 - type: entity
   parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatGreysoft]
@@ -173,6 +183,8 @@
     sprite: Clothing/Head/Soft/mimesoft.rsi
   - type: Clothing
     sprite: Clothing/Head/Soft/mimesoft.rsi
+  - type: VendingPrice
+    price: 350
 
 - type: entity
   parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatMimesoft]
@@ -189,6 +201,8 @@
     sprite: Clothing/Head/Soft/orangesoft.rsi
   - type: Clothing
     sprite: Clothing/Head/Soft/orangesoft.rsi
+  - type: VendingPrice
+    price: 350
 
 - type: entity
   parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatOrangesoft]
@@ -210,6 +224,8 @@
     - ClothMade
     - HamsterWearable
     - WhitelistChameleon
+  - type: VendingPrice
+    price: 350
 
 - type: entity
   parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatPurplesoft]
@@ -232,6 +248,8 @@
     sprite: Clothing/Head/Soft/redsoft.rsi
   - type: Clothing
     sprite: Clothing/Head/Soft/redsoft.rsi
+  - type: VendingPrice
+    price: 350
 
 - type: entity
   parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatRedsoft]
@@ -264,6 +282,8 @@
     sprite: Clothing/Head/Soft/yellowsoft.rsi
   - type: Clothing
     sprite: Clothing/Head/Soft/yellowsoft.rsi
+  - type: VendingPrice
+    price: 350
 
 - type: entity
   parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatYellowsoft]

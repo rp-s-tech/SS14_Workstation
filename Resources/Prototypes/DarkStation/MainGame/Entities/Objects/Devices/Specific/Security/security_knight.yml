@@ -1,0 +1,12 @@
+﻿- type: entity
+  name: Инжектор Звёздной-пыли
+  id: HoloparasiteInjectorKnight
+  parent: BaseItem
+  description: A complex artwork of handheld machinery allowing the user to host a holoparasite guardian.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/hypospray.rsi
+    state: combat_hypo
+    netsync: false
+  - type: GuardianCreator
+    guardianProto: MobGuardianSecurity

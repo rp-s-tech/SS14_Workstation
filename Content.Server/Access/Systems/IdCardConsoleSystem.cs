@@ -13,6 +13,7 @@ using Robust.Shared.Prototypes;
 using System.Linq;
 using static Content.Shared.Access.Components.IdCardConsoleComponent;
 using Content.Shared.Access;
+using Content.Server.RPSX.Bridges;
 
 namespace Content.Server.Access.Systems;
 
@@ -26,6 +27,7 @@ public sealed class IdCardConsoleSystem : SharedIdCardConsoleSystem
     [Dependency] private readonly AccessSystem _access = default!;
     [Dependency] private readonly IdCardSystem _idCard = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly ISalaryBridge _salaryBridge = default!; //RPSX Economics
 
     public override void Initialize()
     {
@@ -206,6 +208,7 @@ public sealed class IdCardConsoleSystem : SharedIdCardConsoleSystem
         {
             record.JobPrototype = newJobProto.ID;
             record.JobIcon = newJobProto.Icon;
+            record.Salary = _salaryBridge.GetCrewMemberSalary(key, newJobProto.ID);
         }
 
         _record.Synchronize(key);

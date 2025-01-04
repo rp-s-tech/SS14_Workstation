@@ -1,0 +1,13 @@
+﻿- type: entity
+  id: ActionSelectGhostSkin
+  name: "Выбрать скин призрака"
+  description: "Донатеры могут выбрать себе скин призрака"
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon:
+      sprite: DarkStation/MainGame/Mobs/Ghosts/ghost_plague_doctor.rsi
+      state: animated
+    checkCanInteract: false
+    event: !type:SponsorOpenGhostSkinsEvent
+    priority: -10

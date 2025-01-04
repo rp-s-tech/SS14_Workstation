@@ -5,6 +5,7 @@ using Content.Server.Administration.Managers;
 using Content.Server.Afk;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
+using Content.Server.Corvax.GuideGenerator;
 using Content.Server.Database;
 using Content.Server.EUI;
 using Content.Server.GameTicking;
@@ -14,7 +15,6 @@ using Content.Server.Info;
 using Content.Server.IoC;
 using Content.Server.Maps;
 using Content.Server.NodeContainer.NodeGroups;
-using Content.Server.Objectives;
 using Content.Server.Players;
 using Content.Server.Players.JobWhitelist;
 using Content.Server.Players.PlayTimeTracking;
@@ -33,6 +33,9 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Server.RPSX.Bridges;
+using Content.Server.RPSX.Entry;
+using Content.Shared.RPSX.Patron;
 
 namespace Content.Server.Entry
 {
@@ -47,6 +50,7 @@ namespace Content.Server.Entry
         private PlayTimeTrackingManager? _playTimeTracking;
         private IEntitySystemManager? _sysMan;
         private IServerDbManager? _dbManager;
+        private RPSXRegisterIgnore _rpsxRegisterIgnore = new();
 
         /// <inheritdoc />
         public override void Init()
@@ -73,6 +77,7 @@ namespace Content.Server.Entry
             prototypes.RegisterIgnore("parallax");
 
             ServerContentIoC.Register();
+            _rpsxRegisterIgnore.RegisterIgnore(prototypes, factory, res);
 
             foreach (var callback in TestingCallbacks)
             {
@@ -105,6 +110,7 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<ContentNetworkResourceManager>().Initialize();
                 IoCManager.Resolve<GhostKickManager>().Initialize();
                 IoCManager.Resolve<ServerInfoManager>().Initialize();
+                IoCManager.Resolve<ISponsorsManager>().Initialize(); // RPSX
                 IoCManager.Resolve<ServerApi>().Initialize();
 
                 _voteManager.Initialize();
@@ -133,6 +139,17 @@ namespace Content.Server.Entry
                 file = resourceManager.UserData.OpenWriteText(resPath.WithName("react_" + dest));
                 ReactionJsonGenerator.PublishJson(file);
                 file.Flush();
+                // Corvax-Wiki-Start
+                file = resourceManager.UserData.OpenWriteText(resPath.WithName("entity_" + dest));
+                EntityJsonGenerator.PublishJson(file);
+                file.Flush();
+                file = resourceManager.UserData.OpenWriteText(resPath.WithName("mealrecipes_" + dest));
+                MealsRecipesJsonGenerator.PublishJson(file);
+                file.Flush();
+                file = resourceManager.UserData.OpenWriteText(resPath.WithName("healthchangereagents_" + dest));
+                HealthChangeReagentsJsonGenerator.PublishJson(file);
+                file.Flush();
+                // Corvax-Wiki-End
                 IoCManager.Resolve<IBaseServer>().Shutdown("Data generation done");
             }
             else
@@ -146,7 +163,6 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<IGameMapManager>().Initialize();
                 IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<GameTicker>().PostInitialize();
                 IoCManager.Resolve<IBanManager>().Initialize();
-                IoCManager.Resolve<IConnectionManager>().PostInit();
             }
         }
 

@@ -1,0 +1,27 @@
+﻿- type: entity
+  parent: BaseMobShepherd
+  id: Muhtar
+  name: Мухтар
+  description: Верный помощник инструктора СБ
+  components:
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostileNanoTrasen
+  - type: HTN
+    rootTask:
+      task: PetCompound
+    blackboard:
+      IdleRange: !type:Single
+        3.5
+      FollowCloseRange: !type:Single
+        2.0
+      FollowRange: !type:Single
+        3.0
+  - type: Loadout
+    prototypes: [ MuhtarGear ]
+
+#Gear
+- type: startingGear
+  id: MuhtarGear
+  equipment:
+    back: ClothingBackpackDuffelDogFilled

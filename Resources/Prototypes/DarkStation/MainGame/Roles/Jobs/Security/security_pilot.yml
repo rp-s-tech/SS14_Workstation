@@ -1,0 +1,36 @@
+- type: job
+  id: SecurityPilot
+  name: Пилот Службы Безопасности
+  description: Пилот челнока Службы Безопасности
+  playTimeTracker: JobSecurityPilot
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 36000 # 10h
+  startingGear: PilotGear
+  icon: "JobIconPilot"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  chatHighlight: SecurityChatHighlight
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+  - Cryogenics
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: PilotGear
+  equipment:
+    id: SecurityPilotPDA
+    eyes: ClothingEyesGlassesSecurity
+    ears: ClothingHeadsetSecurity
+    pocket1: WeaponPistolMk58
+  storage:
+    back:
+    - MagazinePistol
+    - Flash

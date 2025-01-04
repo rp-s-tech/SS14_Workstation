@@ -62,6 +62,8 @@
     - cigar7
     - cigar8
   - type: Appearance
+  - type: VendingPrice
+    price: 1500
 
 - type: entity
   id: CigarGoldCase

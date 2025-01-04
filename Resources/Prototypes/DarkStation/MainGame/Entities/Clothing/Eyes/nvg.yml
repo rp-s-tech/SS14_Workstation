@@ -1,0 +1,24 @@
+- type: entity
+  name: Стандартное ПНВ
+  id: ClothingEyesVision
+  parent: BaseItem
+  description: Прибор ночного видения. Обеспечивает изображение местности в условиях низкой освещенности.
+  components:
+  - type: Item
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
+    quickEquip: true
+    slots: [ Eyes ]
+  - type: UseDelay
+    delay: 4
+  - type: NVG
+
+- type: entity
+  parent: [ ClothingEyesVision ]
+  id: ClothingEyesVisionNuki
+  suffix: nuke
+  components:
+  - type: ShowSyndicateIcons

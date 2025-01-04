@@ -88,6 +88,8 @@
     radius: 1.1 #smallest possible
     color: orange
   - type: ItemTogglePointLight
+  - type: VendingPrice
+    price: 250
 
 - type: entity
   name: cheap lighter
@@ -117,6 +119,9 @@
         - ReagentId: WeldingFuel
           Quantity: 4
         maxVol: 4 #uses less fuel than a welder, so this isnt as bad as it looks
+  - type: VendingPrice
+    price: 200
+
 
 - type: entity
   name: flippo lighter
@@ -210,6 +215,8 @@
   - type: UseDelay
   - type: IgnitionSource
     ignited: false
+  - type: VendingPrice
+    price: 400
 
 - type: entity
   name: flippo engraved lighter

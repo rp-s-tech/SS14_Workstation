@@ -1,0 +1,204 @@
+#Капелан
+- type: entity
+  id: ClothingOuterHardsuitChaplain
+  parent: ClothingOuterHardsuitSyndieCommander
+  name: Скафандр капеллана
+  description: Модифицированный скафандр ОБР, используемый для защиты капеллана в космической среде.
+  components:
+  - type: OnEquipFactionTrigger
+    faction: NanoTrasen
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/armchaprig.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/armchaprig.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ChaplainHardsuitHelmet
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ChaplainHardsuitHelmet
+  noSpawn: true
+  name: Шлем скафандра капеллана
+  description: Шлем для скафандра, разработанного для капелланов.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/armchaprighelmgray.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/armchaprighelmgray.rsi
+  - type: PointLight
+    color: "#addbff"
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+      securePartTypes:
+        Head: 0.5
+
+#Разведчик
+- type: entity
+  parent: [ ClothingOuterHardsuitBase, BaseToggleClothing ]
+  id:  ClothingOuterHardsuitERTRecon
+  name: Скафандр ОБР разведчика
+  description: Скафандр ОБР разведчика, обладающий стелс технологией.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/ERTRecon/hardsuit.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/ERTRecon/hardsuit.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitERTRecon
+  - type: ErtScoutSuit
+  - type: ToggleClothing
+    action: ActionTogglePhaseCloak
+  - type: ComponentToggler
+    parent: true
+    components:
+    - type: Stealth
+      minVisibility: 0
+      lastVisibility: 0
+  - type: PowerCellDraw
+    drawRate: 1.8 # 200 seconds on the default cell
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+    # throwing in a recharger would bypass glove charging mechanic
+    fitsInCharger: false
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellSmall
+        disableEject: false
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitERTRecon
+  noSpawn: true
+  name: Шлем скафандра ОБР разведчика
+  description: Шлем обеспечивающий хорошую защиту головы разведчика.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/ERTRecon/hardsuithelmet.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/ERTRecon/hardsuithelmet.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.3
+    lowPressureMultiplier: 1000
+
+#N7
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitN7
+  name: скафандр N7
+  description: Боевой скафандр отряда специального назначения NanoTrasen. При своей лёгкости обладает хорошими защитными качествами.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/n7base.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/n7base.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 10000
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.25
+        Slash: 0.2
+        Piercing: 0.2
+        Heat: 0.3
+        Radiation: 0.1
+        Caustic: 0.3
+      securePartTypes:
+        Leg: 0.5
+        Arm: 0.5
+
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitN7BaseHelm
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitN7BaseHelm
+  noSpawn: true
+  name: шлем скафандра N7
+  description: Шлем скафандра N7, дающий бойцу отличную защиту и большой угол обзора.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/n7basehelm.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/n7basehelm.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 10000
+  - type: PointLight
+    radius: 9
+    energy: 4
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitN7Heavy
+  name: скафандр N7 "Защитник"
+  description: Укреплённый вариант стандартного скафандра N7 для затяжных боёв, когда нельзя надеяться на подкрепление.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/n7heavy.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/n7heavy.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 10000
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.8
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.2
+        Slash: 0.15
+        Piercing: 0.1
+        Heat: 0.3
+        Radiation: 0.1
+        Caustic: 0.3
+      securePartTypes:
+        Leg: 0.3
+        Arm: 0.3
+
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitN7HeavyHelm
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitN7HeavyHelm
+  noSpawn: true
+  name: шлем N7 "Защитник"
+  description: Модернизированный шлем скафандра N7 для брони "Защитник".
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/n7heavyhelm.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/n7heavyhelm.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 10000
+  - type: PointLight
+    radius: 10
+    energy: 4

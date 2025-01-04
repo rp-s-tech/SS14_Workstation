@@ -24,6 +24,8 @@
       visible: false
   - type: HideLayerClothing # needed since head bandana inherits from mask bandana
     slots: []
+  - type: VendingPrice
+    price: 300
   - type: Tag
     tags:
     - Bandana

@@ -8,6 +8,8 @@
     sprite: Clothing/Head/Hats/beaver_hat.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/beaver_hat.rsi
+  - type: VendingPrice
+    price: 350
 
 - type: entity
   parent: ClothingHeadBase
@@ -24,6 +26,8 @@
     - ClothMade
     - HamsterWearable
     - WhitelistChameleon
+  - type: VendingPrice
+    price: 600
 
 - type: entity
   parent: ClothingHeadBase
@@ -41,6 +45,8 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+  - type: VendingPrice
+    price: 600
 
 - type: entity
   parent: ClothingHeadBase
@@ -419,6 +425,8 @@
     sprite: Clothing/Head/Hats/redwizard.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/redwizard.rsi
+  - type: VendingPrice
+    price: 500
 
 - type: entity
   parent: ClothingHeadBase
@@ -534,6 +542,8 @@
     sprite: Clothing/Head/Hats/violetwizard.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/violetwizard.rsi
+  - type: VendingPrice
+    price: 500
 
 - type: entity
   parent: ClothingHeadBase
@@ -577,6 +587,8 @@
     sprite: Clothing/Head/Hats/wizard_fake.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/wizard_fake.rsi
+  - type: VendingPrice
+    price: 500
 
 - type: entity
   abstract: true
@@ -600,6 +612,8 @@
     - ClothMade
     - HamsterWearable
     - WhitelistChameleon
+  - type: VendingPrice
+    price: 500
 
 - type: entity
   parent: ClothingHeadBase
@@ -690,6 +704,8 @@
     sprite: Clothing/Head/Hats/fishcap.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/fishcap.rsi
+  - type: VendingPrice
+    price: 350
 
 - type: entity
   parent: ClothingHeadBase
@@ -717,6 +733,8 @@
     sprite: Clothing/Head/Hats/rasta.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/rasta.rsi
+  - type: VendingPrice
+    price: 350
 
 - type: entity
   parent: ClothingHeadBase
@@ -1000,6 +1018,8 @@
     sprite: Clothing/Head/Hats/greyflatcap.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/greyflatcap.rsi
+  - type: VendingPrice
+    price: 500
 
 - type: entity
   parent: ClothingHeadBase
@@ -1014,6 +1034,8 @@
     sprite: Clothing/Head/Hats/brownflatcap.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/brownflatcap.rsi
+  - type: VendingPrice
+    price: 500
 
 - type: entity
   parent: ClothingHeadBase

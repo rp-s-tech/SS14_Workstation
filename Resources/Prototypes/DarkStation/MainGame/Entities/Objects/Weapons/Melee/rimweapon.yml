@@ -1,0 +1,46 @@
+- type: entity
+  name: Боевой молот
+  parent: BaseItem
+  id: WarHammer
+  description: Отлично подходит для разрешения препятствий
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Melee/topor.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 20
+        Structural: 10
+  - type: Item
+    size: Normal
+  - type: Tool
+    qualities:
+    - Rolling
+    speed: 0.70
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+
+- type: entity
+  name: Гладиус
+  parent: BaseItem
+  id: Gladius
+  description: короткий солдатский меч
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Melee/gladius.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Slash: 10
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    size: Normal
+    sprite: DarkStation/MainGame/Objects/Weapons/Melee/gladius.rsi

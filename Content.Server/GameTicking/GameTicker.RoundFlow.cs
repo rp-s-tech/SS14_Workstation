@@ -365,6 +365,9 @@ namespace Content.Server.GameTicking
             var textEv = new RoundEndTextAppendEvent();
             RaiseLocalEvent(textEv);
 
+            var roundendedevent = new RoundEndedEvent(RoundId, RoundDuration());
+            RaiseLocalEvent(roundendedevent);
+
             var roundEndText = $"{text}\n{textEv.Text}";
 
             //Get the timespan of the round.

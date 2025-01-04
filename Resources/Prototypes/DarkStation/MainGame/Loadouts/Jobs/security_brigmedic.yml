@@ -1,0 +1,78 @@
+﻿#Jumpsuit
+- type: loadout
+  id: SecurityBrigMedicJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBrigmedic
+
+- type: loadout
+  id: SecurityBrigMedicJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtBrigmedic
+
+#Back
+- type: loadout
+  id: SecurityBrigMedicBackpack
+  equipment:
+    back: ClothingBackpackBrigmedic
+
+- type: loadout
+  id: SecurityBrigMedicBackpackDuffel
+  equipment:
+    back: ClothingBackpackDuffelBrigmedic
+
+- type: loadout
+  id: SecurityBrigMedicBackpackSatchel
+  equipment:
+    back: ClothingBackpackSatchelBrigmedic
+
+#OuterClothing
+- type: loadout
+  id: SecurityBrigMedicCoatAMG
+  equipment:
+    outerClothing: ClothingOuterCoatAMG
+
+- type: loadout
+  id: SecurityBrigMedicCoat
+  equipment:
+    outerClothing: ClothingOuterCoatLabSecurityMedic
+
+- type: loadout
+  id: SecurityBrigMedicHardsuitApotecary
+  equipment:
+    outerClothing: ClothingOuterHardsuitApotecaryBrigmedic
+
+#Shoes
+- type: loadout
+  id: SecurityBrigMedicShoesRed
+  equipment:
+    shoes: ClothingShoesColorRed
+
+#Gloves
+- type: loadout
+  id: SecurityBrigMedicGloves
+  equipment:
+    gloves: ClothingHandsGlovesNitrile
+
+#Eyes
+- type: loadout
+  id: SecurityBrigMedicEyesHudMedical
+  equipment:
+    eyes: ClothingEyesHudMedical
+
+#Head
+- type: loadout
+  id: SecurityBrigMedicHeadHatBeret
+  equipment:
+    head: ClothingHeadHatBeretBrigmedic
+
+#Mask
+- type: loadout
+  id: SecurityBrigMedicMaskBreathMedicalSecurity
+  equipment:
+    mask: ClothingMaskBreathMedicalSecurity
+
+#Belt
+- type: loadout
+  id: SecurityBrigMedicBeltMedicalFilled
+  equipment:
+    belt: ClothingBeltMedicalFilled

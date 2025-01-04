@@ -1,0 +1,62 @@
+- type: job
+  id: SpIFD
+  name: Инспектор ФД
+  description: Защищает деньги НТ
+  playTimeTracker: JobSpIFD
+  setPreference: true
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 1080000 # 300 hrs
+  - !type:RoleTimeRequirement
+    role: JobIAA
+    time: 288000 # 80 hrs
+  - !type:DepartmentTimeRequirement
+    department: Cargo
+    time: 216000 # 60 hrs
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 144000 # 40 hrs
+  - !type:RoleTimeRequirement
+    role: JobQuartermaster
+    time: 72000 # 20 hrs
+  startingGear: SpIFDGear
+  icon: "JobIconSpFinDep"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: Агенту Багровой Лилии, при его отсутствии - представителю Центкома
+  canBeAntag: false
+  whitelisted: true
+  sponsorIgnoreWhitelist: false
+  accessGroups:
+  - AllAccessCrimsonLily
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: SpIFDGear
+  equipment:
+    eyes: ClothingEyesGlassesSunglasses
+    id: IFDPDA
+    ears: ClothingHeadsetIFD
+    pocket1: BoxFolderBlack
+    pocket2: RubberStampSpIFD
+  storage:
+    back:
+    - Flash
+    - HandheldSpCargoOrders
+    - TelescopicBaton
+
+# Spawner
+
+- type: entity
+  id: SpawnPointSpIFD
+  parent: SpawnPointJobBase
+  name: Spawner SpIFD
+  components:
+  - type: SpawnPoint
+    job_id: SpIFD
+  - type: Sprite
+    layers:
+    - state: green
+    - state: qm

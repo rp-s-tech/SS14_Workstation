@@ -1,0 +1,31 @@
+{
+    "version": 1,
+    "license": "Собственная лицензия. Полный запрет на копирование и использование вне проекта Dark Station без одобрения текущего владельца проекта",
+    "copyright": "Ynotka DS",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "dog_ears",
+            "directions": 4
+        },
+        {
+            "name": "long_dog_ears",
+            "directions": 4
+        },
+        {
+            "name": "short_dog_ears",
+            "directions": 4
+        },
+        {
+            "name": "bulldog_ears",
+            "directions": 4
+        },
+        {
+            "name": "alabai_ears",
+            "directions": 4
+        }
+    ]
+}

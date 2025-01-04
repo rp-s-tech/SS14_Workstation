@@ -1,0 +1,33 @@
+- type: job
+  id: SeniorResearcher
+  name: job-name-senior-researcher
+  description: job-description-senior-researcher
+  playTimeTracker: JobSeniorResearcher
+  setPreference: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 28800 # 8h
+  startingGear: SeniorResearcherGear
+  icon: "JobIconSeniorResearcher"
+  supervisors: job-supervisors-rd
+  canBeAntag: false
+  chatHighlight: ScientistChatHighlight
+  access:
+  - Research
+  - Maintenance
+
+- type: startingGear
+  id: SeniorResearcherGear
+  equipment:
+    head: ClothingHeadHatBeretRND
+    jumpsuit: ClothingUniformJumpsuitSeniorResearcher
+    back: ClothingBackpackScienceFilled
+    shoes: ClothingShoesColorBlack
+    outerClothing: ClothingOuterCoatLabSeniorResearcher
+    id: SeniorResearcherPDA
+    ears: ClothingHeadsetScience
+    neck: ClothingNeckCloakSeniorResearcher
+  innerClothingSkirt: ClothingUniformJumpskirtSeniorResearcher
+  satchel: ClothingBackpackSatchelScienceFilled
+  duffelbag: ClothingBackpackDuffelScienceFilled

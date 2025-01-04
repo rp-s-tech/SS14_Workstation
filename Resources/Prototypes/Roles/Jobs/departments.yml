@@ -7,6 +7,7 @@
   - CargoTechnician
   - Quartermaster
   - SalvageSpecialist
+  - CargoLogistician
 
 - type: department
   id: Civilian
@@ -23,7 +24,6 @@
   - Clown
   - HeadOfPersonnel
   - Janitor
-  - Lawyer
   - Librarian
   - Mime
   - Musician
@@ -64,15 +64,6 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
-  - CentralCommandOfficial
-  - CBURN
-  - ERTLeader
-  - ERTChaplain
-  - ERTJanitor
-  - ERTMedical
-  - ERTSecurity
-  - ERTEngineer
-  - DeathSquad
   primary: false
   weight: 100
 
@@ -84,6 +75,7 @@
   roles:
   - AtmosphericTechnician
   - ChiefEngineer
+  - SeniorEngineer
   - StationEngineer
   - TechnicalAssistant
 
@@ -99,19 +91,26 @@
   - MedicalIntern
   - Psychologist
   - Paramedic
+  - SeniorPhysician
+  - Pathologist
+  - Surger
 
 - type: department
   id: Security
   name: department-Security
   description: department-Security-description
   color: "#DE3A3A"
-  weight: 20
+  weight: 50
   roles:
   - HeadOfSecurity
   - SecurityCadet
   - SecurityOfficer
+  - SeniorOfficer
   - Detective
   - Warden
+  - SecurityKnight
+  - Brigmedic
+  - SecurityPilot
 
 - type: department
   id: Science
@@ -120,6 +119,7 @@
   color: "#D381C9"
   roles:
   - ResearchDirector
+  - SeniorResearcher
   - Scientist
   - ResearchAssistant
 

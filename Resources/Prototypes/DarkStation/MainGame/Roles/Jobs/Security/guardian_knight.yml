@@ -1,0 +1,28 @@
+- type: entity
+  id: MobGuardianSecurity
+  parent: MobGuardianBase
+  name: "Голопаразит Рыцаря Звёздной Пыли"
+  description: "Экспериментальная разработка NanoTrasen"
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: DarkStation/MainGame/Mobs/Security/guardiansKnight.rsi
+    netsync: false
+    layers:
+    - state: star
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+    noRot: true
+  - type: RandomSprite
+    available:
+    - enum.DamageStateVisualLayers.Base:
+        star: ""
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: Голопаразит рыцаря звездной пыли
+    description: Выполняйте приказы своего хозяина
+    requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 36000 # 10h
+  - type: GhostTakeoverAvailable

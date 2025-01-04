@@ -1,4 +1,7 @@
+using Content.Shared.RPSX.Bank.Transactions;
+using Content.Shared.RPSX.Roles.Salary;
 using Robust.Shared.Enums;
+using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.StationRecords;
@@ -47,7 +50,7 @@ public sealed record GeneralStationRecord
     /// </summary>
     /// <remarks>Sex should be placed in a medical record, not a general record.</remarks>
     [DataField]
-    public Gender Gender = Gender.Epicene;
+    public Gender Gender = Gender.Male;
 
     /// <summary>
     ///     The priority to display this record at.
@@ -68,4 +71,18 @@ public sealed record GeneralStationRecord
     /// </summary>
     [DataField]
     public string? DNA;
+
+    //RPSX start
+    [ViewVariables]
+    public CrewSalaryEntry? Salary;
+
+    [ViewVariables]
+    public List<BankTransaction> BankTransactions = new();
+
+    [ViewVariables]
+    public NetUserId? NetUserId;
+
+    [ViewVariables]
+    public NetEntity? MobEntity;
+    // RPSX end
 }

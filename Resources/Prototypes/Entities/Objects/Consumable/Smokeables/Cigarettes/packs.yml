@@ -66,6 +66,8 @@
     - cig5
     - cig6
   - type: Appearance
+  - type: VendingPrice
+    price: 500
 
 - type: entity
   id: CigPackMixedBase

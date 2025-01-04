@@ -21,6 +21,10 @@
       "directions": 4
     },
     {
+      "name": "equipped-HAND-vox",
+      "directions": 4
+    },
+    {
       "name": "red-equipped-HAND",
       "directions": 4
     },

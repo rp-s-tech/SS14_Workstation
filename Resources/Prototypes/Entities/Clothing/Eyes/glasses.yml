@@ -81,6 +81,9 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
+  - type: VendingPrice
+    price: 500
+
 
 - type: entity
   parent: ClothingEyesBase
@@ -141,6 +144,8 @@
     - WhitelistChameleon
   - type: IdentityBlocker
     coverage: EYES
+  - type: VendingPrice
+    price: 750
 
 - type: entity
   parent: ClothingEyesGlassesCheapSunglasses
@@ -188,7 +193,7 @@
   parent: [ClothingEyesBase, BaseCommandContraband]
   id: ClothingEyesGlassesCommand
   name: administration glasses
-  description: Upgraded sunglasses that provide flash immunity and show ID card status. 
+  description: Upgraded sunglasses that provide flash immunity and show ID card status.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/commandglasses.rsi
@@ -265,3 +270,4 @@
   - type: Clothing
     sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
   - type: FlashImmunity
+  - type: NVG

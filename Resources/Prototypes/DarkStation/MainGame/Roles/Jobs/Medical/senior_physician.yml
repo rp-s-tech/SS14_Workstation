@@ -1,0 +1,43 @@
+- type: job
+  id: SeniorPhysician
+  name: job-name-senior-physician
+  description: job-description-senior-physician
+  playTimeTracker: JobSeniorPhysician
+  setPreference: false
+  # Summary 16h at med
+  requirements:
+  - !type:RoleTimeRequirement
+    role: JobChemist
+    time: 14400 # 4h
+  - !type:RoleTimeRequirement
+    role: JobMedicalDoctor
+    time: 14400 # 4h
+  - !type:RoleTimeRequirement
+    role: JobParamedic
+    time: 14400 # 4h
+
+  startingGear: SeniorPhysicianGear
+  icon: "JobIconSeniorPhysician"
+  supervisors: job-supervisors-cmo
+  canBeAntag: false
+  chatHighlight: MedicalChatHighlight
+  access:
+  - Medical
+  - Maintenance
+  - Chemistry
+
+- type: startingGear
+  id: SeniorPhysicianGear
+  equipment:
+    head: ClothingHeadHatBeretSeniorPhysician
+    jumpsuit: ClothingUniformJumpsuitSeniorPhysician
+    back: ClothingBackpackMedicalFilled
+    shoes: ClothingShoesColorBlack
+    outerClothing: ClothingOuterCoatLabSeniorPhysician
+    id: SeniorPhysicianPDA
+    ears: ClothingHeadsetMedical
+    belt: ClothingBeltMedicalFilled
+    neck: ClothingNeckCloakGoliathCloakSeniorPhysican
+  innerClothingSkirt: ClothingUniformJumpskirtSeniorPhysician
+  satchel: ClothingBackpackSatchelMedicalFilled
+  duffelbag: ClothingBackpackDuffelMedicalFilled

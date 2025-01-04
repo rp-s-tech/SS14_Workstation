@@ -1,0 +1,219 @@
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitPOCC
+  name: Скафандр НШЦК
+  description: Лёгко бронированный скафандр Начальника Штаба ЦК, так и чувствуется крутость, да?
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/pocshardsuit.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/pocshardsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 10000
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+        Radiation: 0.1
+        Caustic: 0.8
+      securePartTypes:
+        Leg: 0.4
+        Arm: 0.4
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitPOCC
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitPOCC
+  noSpawn: true
+  name: Шлем скафандра НШЦК
+  description: Лёгко бронированный шлем скафандра Начальника Штаба ЦК, так и чувствуется крутость, да?
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/pocshelmet.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/pocshelmet.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 10000
+  - type: PointLight
+    radius: 9
+    energy: 4
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitSecurityPilot
+  name: Скафандр пилота службы безопасности
+  description: Специальный костюм, защищающий от опасных сред низкого давления. Имеет дополнительный слой брони.
+  components:
+    - type: Sprite
+      sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/sbpilothardsuit.rsi
+    - type: Clothing
+      sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/sbpilothardsuit.rsi
+    - type: PressureProtection
+      highPressureMultiplier: 0.5
+      lowPressureMultiplier: 1000
+    - type: ExplosionResistance
+      damageCoefficient: 0.4
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.6
+          Slash: 0.6
+          Piercing: 0.6
+          Caustic: 0.7
+        securePartTypes:
+          Leg: 0.5
+          Arm: 0.5
+    - type: ClothingSpeedModifier
+      walkModifier: 0.75
+      sprintModifier: 0.75
+    - type: ToggleableClothing
+      clothingPrototype: ClothingHeadHelmetHardsuitSecurityPilot
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitApotecaryBrigmedic
+  name: Скафандр бригмедика "Апотекарий"
+  description: А сразу и не скажешь, что человек в этом скафандре будет тебя лечить..
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/apotecary.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/apotecary.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.3
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.7
+        Caustic: 0.8
+      securePartTypes:
+        Leg: 0.6
+        Arm: 0.6
+  - type: PointLight
+    color: "#f5cd84"
+  # - type: StaminaArmor
+  #   coefficient: 0.8
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitApotecaryBrigmedic
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitSecurityPilot
+  noSpawn: true
+  name: Шлем пилота службы безопасности
+  description: Бронированный шлем пилота СБ
+  components:
+    - type: Sprite
+      sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/sbpilothardsuit_helmet.rsi
+    - type: Clothing
+      sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/sbpilothardsuit_helmet.rsi
+    - type: PointLight
+      color: "#ffeead"
+    - type: PressureProtection
+      highPressureMultiplier: 0.525
+      lowPressureMultiplier: 1000
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.9
+          Slash: 0.9
+          Piercing: 0.9
+          Heat: 0.9
+        securePartTypes:
+          Head: 0.5
+
+#Blueshield
+- type: entity
+  parent: ClothingOuterHardsuitSecurity
+  id: ClothingOuterHardsuitBlueShield
+  name: "Скафандр офицера синего щита"
+  description: "Скафандр полностью идентичен по характеристикам скафандрам службы безопасности, но отличается уникальным дизайном и расцветкой"
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/blueshield/hardsuit.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/blueshield/hardsuit.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitBlueshield
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitSecurity
+  id: ClothingHeadHelmetHardsuitBlueshield
+  name: "Шлем скафандра офицера синего щита"
+  description: "Бронированный шлем скафандра"
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/blueshield/head.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/blueshield/head.rsi
+  - type: PointLight
+    color: "#ffeead"
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitIFD
+  name: Скафандр ИФД
+  description: Лёгкобронированный скафандр Инспектора ФД, так и чувствуется богатство, да?
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/ifd.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/ifd.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 10000
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+        Radiation: 0.1
+        Caustic: 0.8
+      securePartTypes:
+        Leg: 0.6
+        Arm: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitIFD
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitIFD
+  noSpawn: true
+  name: Шлем скафандра ИФД
+  description: Лёгкобронированный шлем скафандра Инспектора ФД, так и чувствуется богатство, да?
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/ifd.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/ifd.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 10000
+  - type: PointLight
+    radius: 9
+    energy: 4

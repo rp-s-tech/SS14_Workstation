@@ -1,0 +1,28 @@
+# I DON'T KNOW WHAT NOT WORKING, FUCKING TREE
+
+- type: entity
+  parent: BaseTreeLarge
+  id: SpSakuraTree
+  description: Это... Сакура? Откуда она тут?!
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Decoration/Flora/sp_flora_sakura.rsi
+    state: sakura
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15000
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.35,0.1,0.35"
+        density: 3500
+        layer:
+        - WallLayer

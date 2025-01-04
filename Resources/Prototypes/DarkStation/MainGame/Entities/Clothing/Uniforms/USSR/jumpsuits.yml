@@ -1,0 +1,23 @@
+﻿- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCommanderUSSR
+  name: Шинель командира СССП
+  description: Смииир-но!
+  suffix: USSR
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/USSR/commander.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/USSR/commander.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSolderUSSR
+  name: Форма солдата СССП
+  description: Союз не рушимый...
+  suffix: USSR
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/USSR/solder.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/USSR/solder.rsi

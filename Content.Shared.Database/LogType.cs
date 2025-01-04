@@ -444,4 +444,14 @@ public enum LogType
     /// A player interacted with a PDA or its cartridge component
     /// </summary>
     PdaInteract = 96,
+
+    ///<summary>
+    /// RPSX Economics log. Using ATM
+    ///</summary>
+    ATMUsage = 1000,
+    ///<summary>
+    /// RPSX Economics log. Getting salary
+    ///</summary>
+    Salary = 1001,
+    
 }

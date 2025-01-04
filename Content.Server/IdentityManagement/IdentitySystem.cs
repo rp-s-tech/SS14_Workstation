@@ -143,7 +143,7 @@ public sealed class IdentitySystem : SharedIdentitySystem
         HumanoidAppearanceComponent? appearance=null)
     {
         int age = 18;
-        Gender gender = Gender.Epicene;
+        Gender gender = Gender.Male;
         string species = SharedHumanoidAppearanceSystem.DefaultSpecies;
 
         // Always use their actual age and gender, since that can't really be changed by an ID.
