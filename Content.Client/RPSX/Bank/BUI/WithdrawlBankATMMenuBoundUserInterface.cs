@@ -17,6 +17,9 @@ public sealed class WithdrawBankATMMenuBoundUserInterface : BoundUserInterface
         _menu = new WithdrawBankATMMenu();
         _menu.WithdrawRequest += OnWithdraw;
         _menu.OnClose += Close;
+
+        _menu.SetLoading(true);
+
         _menu.OpenCentered();
     }
 
@@ -44,6 +47,7 @@ public sealed class WithdrawBankATMMenuBoundUserInterface : BoundUserInterface
         if (state is not BankATMMenuInterfaceState bankState)
             return;
 
+        _menu?.SetLoading(false);
         _menu?.SetEnabled(bankState.Enabled);
         _menu?.SetBalance(bankState.Balance);
     }

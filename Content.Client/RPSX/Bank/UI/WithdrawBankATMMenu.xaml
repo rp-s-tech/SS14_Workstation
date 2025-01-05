@@ -8,7 +8,7 @@
             <Label Text="{Loc 'bank-atm-menu-balance-label'}"
                    StyleClasses="LabelKeyText" />
             <Label Name="BalanceLabel"
-                   Text="{Loc 'bank-atm-menu-no-bank'}" />
+                   Text="{Loc 'bank-atm-menu-loading'}" />
         </BoxContainer>
         <LineEdit Name="WithdrawEdit" MinSize="80 0" />
         <Button Name="WithdrawButton"

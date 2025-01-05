@@ -18,6 +18,9 @@ public sealed class BankATMMenuBoundUserInterface : BoundUserInterface
         _menu.WithdrawRequest += OnWithdraw;
         _menu.DepositRequest += OnDeposit;
         _menu.OnClose += Close;
+
+        _menu.SetLoading(true);
+
         _menu.OpenCentered();
     }
 
@@ -50,6 +53,7 @@ public sealed class BankATMMenuBoundUserInterface : BoundUserInterface
         if (state is not BankATMMenuInterfaceState bankState)
             return;
 
+        _menu?.SetLoading(false);
         _menu?.SetEnabled(bankState.Enabled);
         _menu?.SetBalance(bankState.Balance);
         _menu?.SetDeposit(bankState.Deposit);

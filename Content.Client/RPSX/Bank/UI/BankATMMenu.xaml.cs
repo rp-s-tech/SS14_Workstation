@@ -53,4 +53,18 @@ public sealed partial class BankATMMenu : FancyWindow
             Amount = amount;
         }
     }
+    public void SetLoading(bool isLoading)
+    {
+        if (isLoading)
+        {
+            BalanceLabel.Text = Loc.GetString("Загрузка...");
+            WithdrawButton.Disabled = true;
+            DepositButton.Disabled = true;
+        }
+        else
+        {
+            WithdrawButton.Disabled = false;
+            DepositButton.Disabled = false;
+        }
+    }
 }
