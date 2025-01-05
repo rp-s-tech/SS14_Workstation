@@ -1020,6 +1020,8 @@ namespace Content.Server.Database
          * Reservation by commenting out the value is likely sufficient for this purpose, but may impact projects which depend on SS14 like SS14.Admin.
          */
         BabyJail = 4,
+        Discord  = 5,
+
     }
 
     public class ServerBanHit

@@ -81,7 +81,7 @@ public sealed class AdminSystem : EntitySystem
         Subs.CVar(_config, CCVars.PanicBunkerShowReason, OnPanicBunkerShowReasonChanged, true);
         Subs.CVar(_config, CCVars.PanicBunkerMinAccountAge, OnPanicBunkerMinAccountAgeChanged, true);
         Subs.CVar(_config, CCVars.PanicBunkerMinOverallMinutes, OnPanicBunkerMinOverallMinutesChanged, true);
-        Subs.CVar(_config, CCVars.DiscordAuthEnabled, OnDiscordAuthChanged, true);
+        Subs.CVar(_config, RPSXCCVars.DiscordAuthEnabled, OnDiscordAuthChanged, true);
 
         /*
          * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.

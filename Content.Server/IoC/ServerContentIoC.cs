@@ -32,6 +32,7 @@ using Content.Shared.Players.RateLimiting;
 using Content.Shared.RPSX.Patron; //RPSX
 using Content.Server.RPSX.Sponsors; //RPSX
 using Content.Server.RPSX.Bridges; //RPSX
+using Content.Server.RPSX.Discord; //RPSX
 
 namespace Content.Server.IoC
 {
@@ -79,6 +80,7 @@ namespace Content.Server.IoC
 
             //RPSX
             IoCManager.Register<ISponsorsManager, SponsorsManager>();
+            IoCManager.Register<IDiscordAuthManager, DiscordAuthManager>();
         }
     }
 }

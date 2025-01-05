@@ -31,7 +31,7 @@ public sealed class SponsorsManager : ISponsorsManager
     public void Initialize()
     {
         _sawmill = Logger.GetSawmill("sponsors");
-        _cfg.OnValueChanged(SponsorsCvars.SponsorsApiUrl, s => _apiUrl = s, true);
+        _cfg.OnValueChanged(RPSXCCVars.SponsorsApiUrl, s => _apiUrl = s, true);
 
         _netMgr.RegisterNetMessage<MsgSponsorInfo>();
 

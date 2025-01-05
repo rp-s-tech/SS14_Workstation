@@ -67,11 +67,4 @@ public sealed partial class CCVars
         CVarDef.Create("discord.bans_webhook", "", CVar.SERVERONLY);
         // CVarDef.Create("discord.bans_webhook", string.Empty, CVar.SERVERONLY);
 
-    /// <summary>
-    ///     Enable discord verify.
-    /// </summary>
-    ///
-    public static readonly CVarDef<bool> DiscordAuthEnabled =
-        CVarDef.Create("discord.auth.enabled", false, CVar.NOTIFY | CVar.REPLICATED);
-
 }

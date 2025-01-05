@@ -7,6 +7,7 @@ using Content.Server.Chat.Managers;
 using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Server.Preferences.Managers;
+using Content.Server.RPSX.Discord;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Players.PlayTimeTracking;
@@ -61,6 +62,7 @@ namespace Content.Server.Connection
         [Dependency] private readonly ILogManager _logManager = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
+        [Dependency] private readonly IDiscordAuthManager _discordAuthManager = default!;
 
         private ISawmill _sawmill = default!;
         private readonly Dictionary<NetUserId, TimeSpan> _temporaryBypasses = [];
@@ -75,6 +77,9 @@ namespace Content.Server.Connection
             _plyMgr.PlayerStatusChanged += PlayerStatusChanged;
             // Approval-based IP bans disabled because they don't play well with Happy Eyeballs.
             // _netMgr.HandleApprovalCallback = HandleApproval;
+
+            // Инициализируем DiscordAuthManager
+            _discordAuthManager.Initialize();
         }
 
         public void AddTemporaryConnectBypass(NetUserId user, TimeSpan duration)
@@ -318,6 +323,20 @@ namespace Content.Server.Connection
 
                     // Whitelisted, don't check any more.
                     break;
+                }
+            }
+
+            if (_cfg.GetCVar(RPSXCCVars.DiscordAuthEnabled))
+            {
+                var discordInfo = await _discordAuthManager.LoadDiscordAuthInfo(userId);
+                if (discordInfo == null || discordInfo.Verify != "true")
+                {
+                    return (ConnectionDenyReason.Discord, "You are not verified with Discord!", null);
+                }
+
+                if (discordInfo.Discord != null)
+                {
+                    _discordAuthManager.CacheDiscordId(userId, discordInfo.Discord);
                 }
             }
 
