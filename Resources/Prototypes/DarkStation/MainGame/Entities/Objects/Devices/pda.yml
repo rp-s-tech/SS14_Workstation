@@ -24,7 +24,8 @@
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
-    state: pda-securitypilot
+    layers:
+      - state: pda-securitypilot
   - type: Pda
     id: SecurityPilotIDCard
     state: pda-securitypilot
@@ -42,6 +43,8 @@
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
+    layers:
+      - state: pda-blueshield
   - type: Pda
     id: BlueShieldOfficerIDCard
     state: pda-blueshield
@@ -57,6 +60,8 @@
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Devices/ifd_pda.rsi
+    layers:
+      - state: pda-ifd
   - type: Pda
     id: IFDIDCard
     state: pda-ifd

@@ -264,6 +264,8 @@
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
+    layers:
+      - state: pda-ABL
   - type: Pda
     id: AgentCrimsonLilyIDCard
     state: pda-ABL
