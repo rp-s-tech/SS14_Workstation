@@ -1,6 +1,0 @@
-- type: entity
-  parent: AlwaysPoweredLightExterior
-  id: AlwaysPoweredLightExteriorRPSX
-  components:
-  - type: Sprite
-    sprite: RPSX\MainGame\Structures\Wallmounts/Lighting/strobe-lighting.rsi
