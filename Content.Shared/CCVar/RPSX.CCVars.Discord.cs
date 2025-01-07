@@ -17,4 +17,17 @@ public sealed partial class RPSXCCVars : CVars
     /// </summary>
     public static readonly CVarDef<string> DiscordAuthServer =
         CVarDef.Create("discord.api_url", "" , CVar.SERVERONLY); //"127.0.0.1:5000"
+
+    /// <summary>
+    ///     Enable discord verify.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordAHelpIcon =
+        CVarDef.Create("discord.ahelp_webhook_apiicon", ":desktop:" , CVar.SERVERONLY);
+
+
+    /// <summary>
+    ///     Enable discord verify.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordAHelpColor =
+        CVarDef.Create("discord.ahelp_webhook_color", "pink" , CVar.SERVERONLY);
 }
