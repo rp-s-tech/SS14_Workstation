@@ -879,6 +879,7 @@
       - Dropper
       - Jug
       - Syringe
+      - MechanicalInjector # Exodus-ThickSyringes
       - Implanter
       - PillCanister
       - BodyBag

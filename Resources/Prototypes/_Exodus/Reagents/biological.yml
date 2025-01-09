@@ -1,0 +1,11 @@
+- type: reagent
+  parent: Blood
+  id: ZessulBlood
+  name: reagent-name-zessul-blood
+  group: Biological
+  desc: reagent-desc-zessul-blood
+  flavor: metallic
+  color: "#800000"
+  recognizable: true
+  physicalDesc: reagent-physical-desc-ferrous
+  slippery: false
