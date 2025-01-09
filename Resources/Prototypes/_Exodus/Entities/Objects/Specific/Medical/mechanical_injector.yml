@@ -1,0 +1,60 @@
+- type: entity
+  id: MechanicalInjector
+  parent: BaseSyringe
+  name: mechanical injector
+  description: A special injector for races with thick skin. Intimidating enough to make your patient more careful. Please don't use it to intimidate the crew.
+  components:
+    - type: Injector
+      transferAmount: 15
+      toggleState: Draw
+      effectsAfterInjection:
+        - !type:Emote
+          conditions:
+            - !type:HasTag
+              tag: ThickSkin
+              invert: true
+          emote: Scream
+          showInChat: true
+        - !type:HealthChange
+          conditions:
+            - !type:HasTag
+              tag: ThickSkin
+              invert: true
+          damage:
+            types:
+              Piercing: 10
+        - !type:ModifyBleedAmount
+          conditions:
+            - !type:HasTag
+              tag: ThickSkin
+              invert: true
+          amount: 5
+        - !type:PopupMessage
+          conditions:
+            - !type:HasTag
+              tag: ThickSkin
+              invert: true
+          visualType: MediumCaution
+          messages: ["mechanical-injector-effect-pain-message"]
+    - type: Sprite
+      sprite: Exodus/Objects/Specific/Medical/mechanical_injector.rsi
+      layers:
+        - state: icon
+          map: ["enum.SolutionContainerLayers.Base"]
+        - state: syringe1
+          map: ["enum.SolutionContainerLayers.Fill"]
+          visible: false
+    - type: SolutionContainerVisuals
+      maxFillLevels: 2
+      fillBaseName: syringe
+      inHandsMaxFillLevels: 0
+    - type: Icon
+      sprite: Exodus/Objects/Specific/Medical/mechanical_injector.rsi
+      state: icon
+    - type: Item
+      size: Small
+      sprite: Exodus/Objects/Specific/Medical/mechanical_injector.rsi
+    - type: Tag
+      tags:
+        - Syringe
+        - ThickSyringe
