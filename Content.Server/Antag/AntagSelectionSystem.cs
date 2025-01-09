@@ -102,6 +102,8 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
                 args.PlayerPool.Remove(session);
                 GameTicker.PlayerJoinGame(session);
             }
+            var ev = new AntagSelectionEnd(comp.SelectedSessions, AntagSelectionTime.PrePlayerSpawn);
+            RaiseLocalEvent(uid, ref ev);
         }
     }
 
@@ -114,6 +116,9 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
                 continue;
 
             ChooseAntags((uid, comp), args.Players);
+
+            var ev = new AntagSelectionEnd(comp.SelectedSessions, AntagSelectionTime.PostPlayerSpawn);
+            RaiseLocalEvent(uid, ref ev);
         }
     }
 
@@ -516,3 +521,7 @@ public record struct AntagSelectLocationEvent(ICommonSession? Session, Entity<An
 /// </summary>
 [ByRefEvent]
 public readonly record struct AfterAntagEntitySelectedEvent(ICommonSession? Session, EntityUid EntityUid, Entity<AntagSelectionComponent> GameRule, AntagSelectionDefinition Def);
+
+
+[ByRefEvent]
+public readonly record struct AntagSelectionEnd(IEnumerable<ICommonSession>? Sessions, AntagSelectionTime selectionTime);

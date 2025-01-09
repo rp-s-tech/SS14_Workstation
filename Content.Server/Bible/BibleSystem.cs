@@ -18,6 +18,11 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Content.Server.Chemistry.Containers.EntitySystems;
+using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Chemistry.Components.SolutionManager;
+using Content.Shared.Mobs.Components;
+using Content.Server.RPSX.Bridges;
 
 namespace Content.Server.Bible
 {
@@ -33,6 +38,14 @@ namespace Content.Server.Bible
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly UseDelaySystem _delay = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
+        [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
+        [Dependency] private readonly ISaintedBridge _saintedBridge = default!;
+
+        [ValidatePrototypeId<ReagentPrototype>]
+        private const string Water = "Water";
+
+        [ValidatePrototypeId<ReagentPrototype>]
+        private const string Holywater = "Holywater";
 
         public override void Initialize()
         {
@@ -99,10 +112,6 @@ namespace Content.Server.Bible
             if (!TryComp(uid, out UseDelayComponent? useDelay) || _delay.IsDelayed((uid, useDelay)))
                 return;
 
-            if (args.Target == null || args.Target == args.User || !_mobStateSystem.IsAlive(args.Target.Value))
-            {
-                return;
-            }
 
             if (!HasComp<BibleUserComponent>(args.User))
             {
@@ -115,8 +124,29 @@ namespace Content.Server.Bible
                 return;
             }
 
+            if (args.Target == null)
+                return;
+
+            if (_saintedBridge.TryMakeSainted(args.User, args.Target.Value))
+            {
+                _audio.PlayEntity(_audio.GetSound(component.HealSoundPath), Filter.Pvs(args.Target.Value), args.User, true);
+                return;
+            }
+
+            if (HasComp<SolutionContainerManagerComponent>(args.Target) && !HasComp<MobStateComponent>(args.Target))
+            {
+                MakeWaterSaint(uid, args.Target.Value, component);
+                return;
+            }
+
+            if (args.Target == args.User || !_mobStateSystem.IsAlive(args.Target.Value))
+            {
+                return;
+            }
+
             // This only has a chance to fail if the target is not wearing anything on their head and is not a familiar.
-            if (!_invSystem.TryGetSlotEntity(args.Target.Value, "head", out var _) && !HasComp<FamiliarComponent>(args.Target.Value))
+            if (!_invSystem.TryGetSlotEntity(args.Target.Value, "head", out var _) &&
+                !HasComp<FamiliarComponent>(args.Target.Value))
             {
                 if (_random.Prob(component.FailChance))
                 {
@@ -155,10 +185,42 @@ namespace Content.Server.Bible
             }
         }
 
+        private void MakeWaterSaint(EntityUid user, EntityUid target, BibleComponent component)
+        {
+            if (!TryComp<SolutionContainerManagerComponent>(target, out var managerComponent))
+                return;
+
+            var waterReagentId = new ReagentId(Water, null);
+            var saintWater = new ReagentId(Holywater, null);
+            var isSainted = false;
+
+            foreach (var (_, (_, solution)) in _solutionContainerSystem.EnumerateSolutions((target, managerComponent)))
+            {
+                var waterInSolution = solution.Solution.GetReagentQuantity(waterReagentId);
+                if (waterInSolution <= 0)
+                    continue;
+
+                solution.Solution.RemoveReagent(waterReagentId, waterInSolution);
+                solution.Solution.AddReagent(saintWater, waterInSolution);
+
+                // _solutionContainerSystem.UpdateChemicals(solution); TODO
+
+                isSainted = true;
+            }
+
+            if (!isSainted)
+            {
+                _popupSystem.PopupEntity("В емкости нет простой воды!", target, PopupType.Large);
+                return;
+            }
+
+            _popupSystem.PopupEntity("Простая вода в емкости стала святой!", target, PopupType.Large);
+            _audio.PlayEntity(_audio.GetSound(component.HealSoundPath), Filter.Pvs(target), user, true);
+        }
+
         private void AddSummonVerb(EntityUid uid, SummonableComponent component, GetVerbsEvent<AlternativeVerb> args)
         {
-            if (!args.CanInteract || !args.CanAccess || component.AlreadySummoned || component.SpecialItemPrototype == null)
-                return;
+            if (!args.CanInteract || !args.CanAccess || component.AlreadySummoned || component.SpecialItemPrototype == null) return;
 
             if (component.RequiresBibleUser && !HasComp<BibleUserComponent>(args.User))
                 return;
