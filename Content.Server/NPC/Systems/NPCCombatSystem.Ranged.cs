@@ -1,6 +1,8 @@
 using Content.Server.NPC.Components;
 using Content.Shared.CombatMode;
 using Content.Shared.Interaction;
+using Content.Shared.NPC.Systems; // Exodus-TurretsImprovement
+using Content.Shared.Physics; // Exodus-TurretsImprovement
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Map;
@@ -12,6 +14,7 @@ public sealed partial class NPCCombatSystem
 {
     [Dependency] private readonly SharedCombatModeSystem _combat = default!;
     [Dependency] private readonly RotateToFaceSystem _rotate = default!;
+    [Dependency] private readonly NpcFactionSystem _faction = default!; // Exodus-TurretsImprovement
 
     private EntityQuery<CombatModeComponent> _combatQuery;
     private EntityQuery<NPCSteeringComponent> _steeringQuery;
@@ -133,7 +136,7 @@ public sealed partial class NPCCombatSystem
             {
                 comp.LOSAccumulator += UnoccludedCooldown;
                 // For consistency with NPC steering.
-                comp.TargetInLOS = _interaction.InRangeUnobstructed(uid, comp.Target, distance + 0.1f);
+                comp.TargetInLOS = IsEnemyInLOS(uid, comp.Target, distance + 0.1f); // Exodus-TurretsImprovement
             }
 
             if (!comp.TargetInLOS)
@@ -202,7 +205,17 @@ public sealed partial class NPCCombatSystem
                 return;
             }
 
-            _gun.AttemptShoot(uid, gunUid, gun, targetCordinates);
+            _gun.AttemptShoot(uid, gunUid, gun, targetCordinates, /* Exodus-NPCsAbilityToTargetEnemy-Start */ comp.Target /* Exodus-NPCsAbilityToTargetEnemy-End */);
         }
     }
+
+    // Exodus-TurretsImprovement-Start
+    public bool IsEnemyInLOS(EntityUid uid, EntityUid target, float distance)
+    {
+        return
+            _interaction.InRangeUnobstructed(uid, target, distance) &&
+            _interaction.InRangeUnobstructed(uid, target, distance, CollisionGroup.BulletImpassable,
+                (ent) => !_faction.IsEntityFriendly(uid, ent));
+    }
+    // Exodus-TurretsImprovement-End
 }
