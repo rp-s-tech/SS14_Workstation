@@ -1,0 +1,22 @@
+- type: constructionGraph
+  id: SalvageMaximalSuit
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: ClothingOuterHardsuitSalvageMaximal
+          steps:
+            - tag: HardsuitMining
+              name: mining hardsuit
+              icon:
+                sprite: Clothing/OuterClothing/Hardsuits/salvage.rsi
+                state: icon
+              doAfter: 5
+            - material: Durathread
+              amount: 5
+              doAfter: 5
+            - material: GoliathHide
+              amount: 3
+              doAfter: 5
+    - node: ClothingOuterHardsuitSalvageMaximal
+      entity: ClothingOuterHardsuitSalvageMaximal
