@@ -1,0 +1,63 @@
+
+- type: entity
+  id: LockerScientistResprite
+  parent: LockerScientist
+  name: Scientist closet
+  suffix: Resprite
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: Exodus/Structures/Storage/closet.rsi
+    noRot: true
+    layers:
+    - state: science_suit
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: science_suit_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+      shader: unshaded
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: EntityStorageVisuals
+    stateBaseClosed: science_suit
+    stateDoorOpen: science_suit_open
+    stateDoorClosed: science_suit_door
+  - type: AccessReader
+    access: [ [ "Research" ] ]
+- type: entity
+  id: LockerScienceSuitFilledResprite
+  suffix: Filled, Hardsuit, Resprite
+  parent: LockerScientistResprite
+  name: Scientist closet
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingHandsGlovesLatex
+      - id: ClothingHeadsetScience
+      - id: ClothingMaskSterile
+      - id: ClothingOuterCoatRnd
+      - id: AnomalyScanner
+      - id: NodeScanner
+      - id: NetworkConfigurator
+        prob: 0.5
+      - id: ClothingOuterHardsuitRnd
+
+- type: entity
+  id: LockerScienceSuitFilled
+  suffix: Filled, Hardsuit
+  parent: LockerScientist
+  name: Scientist closet
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingHandsGlovesLatex
+      - id: ClothingHeadsetScience
+      - id: ClothingMaskSterile
+      - id: ClothingOuterCoatRnd
+      - id: AnomalyScanner
+      - id: NodeScanner
+      - id: NetworkConfigurator
+        prob: 0.5
+      - id: ClothingOuterHardsuitRnd
