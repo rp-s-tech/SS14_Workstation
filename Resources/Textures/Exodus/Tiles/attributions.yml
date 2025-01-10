@@ -1,0 +1,31 @@
+- files:
+    [
+      "cobblestone_plates.png",
+      "cobblestone.png",
+      "marble.png",
+      "masonry-brown1.png",
+      "masonry-brown2.png",
+      "masonry-brown3.png",
+      "masonry-brown4.png",
+      "masonry-brown5.png",
+      "masonry-brown6.png",
+      "masonry-brown7.png",
+      "masonry-gray1.png",
+      "masonry-gray2.png",
+      "masonry-gray3.png",
+      "masonry-gray4.png",
+      "masonry-gray5.png",
+      "masonry-gray6.png",
+      "masonry-gray7.png",
+      "masonry-light1.png",
+      "masonry-light2.png",
+      "masonry-light3.png",
+      "masonry-light4.png",
+      "masonry-light5.png",
+      "masonry-light6.png",
+      "masonry-light7.png",
+      "masonry-light8.png",
+    ]
+  license: "Custom"
+  copyright: "Under CLA, by Askolot (discord:788252896016990219), owned by Space Exodus"
+  source: "https://github.com/space-exodus/space-station-14"
