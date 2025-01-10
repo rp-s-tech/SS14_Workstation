@@ -1,0 +1,38 @@
+- type: tile
+  id: FloorCobblestone
+  name: tiles-cobblestone
+  sprite: /Textures/Exodus/Tiles/cobblestone.png
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+
+- type: tile
+  id: FloorCobblestonePlates
+  name: tiles-cobblestone-plates
+  sprite: /Textures/Exodus/Tiles/cobblestone_plates.png
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+
+- type: tile
+  id: FloorMarble
+  name: tiles-marble
+  sprite: /Textures/Exodus/Tiles/marble.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
