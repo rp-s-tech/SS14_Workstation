@@ -1,0 +1,78 @@
+- type: entity
+  id: BaseDungeonArc
+  abstract: true
+  name: old faith arch
+  description: A fancy arch with multiple patterns. It seems to be made of bone. It seems it shouldn't be here...
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: Exodus/Structures/Decoration/arcs.rsi
+    drawdepth: OverMobs
+  - type: Clickable
+  - type: SpriteFade
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-2.5,-1.3,-1.5,0"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "1.5,0,2.5,-1.3"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000
+
+- type: entity
+  id: DungeonArc
+  parent: BaseDungeonArc
+  components:
+  - type: Sprite
+    state: arc
+
+- type: entity
+  id: DungeonArcAlt1
+  parent: BaseDungeonArc
+  components:
+  - type: Sprite
+    state: arc1
+
+- type: entity
+  id: DungeonArcAlt2
+  parent: BaseDungeonArc
+  components:
+  - type: Physics
+    canCollide: false
+  - type: Sprite
+    state: arc2
+
+- type: entity
+  id: DungeonArcBlockage
+  parent: BaseDungeonArc
+  name: blockage
+  description: Deaf. Dead end. It's worth looking for another road.
+  components:
+  - type: Sprite
+    state: blockage
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-2,-0.8,2,0.8"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000

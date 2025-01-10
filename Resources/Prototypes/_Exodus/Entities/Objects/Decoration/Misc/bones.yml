@@ -1,0 +1,40 @@
+- type: entity
+  id: BaseDecorativeBone
+  abstract: true
+  parent: BaseItem
+  name: rib
+  description: Dried by wind and time. It seems to be inside...
+  components:
+    - type: Sprite
+      sprite: Exodus/Objects/Decoration/bones.rsi
+      scale: 0.5,0.5
+
+- type: entity
+  id: DecorativeOldBone
+  parent: BaseDecorativeBone
+  components:
+    - type: Sprite
+      state: bone
+
+- type: entity
+  id: DecorativeOldBoneAlt1
+  parent: BaseDecorativeBone
+  components:
+    - type: Sprite
+      state: bone1
+
+- type: entity
+  id: DecorativeOldBones
+  parent: BaseDecorativeBone
+  name: ribs
+  description: Dried by wind and time. They seem to be inside...
+  components:
+    - type: Sprite
+      state: bones
+
+- type: entity
+  id: DecorativeOldBonesAlt1
+  parent: DecorativeOldBones
+  components:
+    - type: Sprite
+      state: bones1

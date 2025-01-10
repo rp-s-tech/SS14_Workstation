@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from https://github.com/ss220-space/Paradise/tree/5b5674bb6783568071de2d7058f0571c0226f7fd",
+    "size": {
+        "x": 160,
+        "y": 160
+    },
+    "states": [
+        {
+            "name": "arc"
+        },
+        {
+            "name": "arc1"
+        },
+        {
+            "name": "arc2"
+        },
+        {
+            "name": "blockage"
+        }
+    ]
+}
