@@ -1,0 +1,11 @@
+ent-BaseShuttleCore = Базовое ядро шаттла
+    .desc = Базовый прототип ядра шаттла
+    .suffix = Energy cores
+ent-BaseRNDCore = Base core
+    .desc = { ent-BaseShuttleCore.desc }
+ent-BaseNTCore = Base core
+    .desc = { ent-BaseShuttleCore.desc }
+ent-BaseSYNCore = Base core
+    .desc = { ent-BaseShuttleCore.desc }
+ent-BaseHMCore = Base core
+    .desc = { ent-BaseShuttleCore.desc }

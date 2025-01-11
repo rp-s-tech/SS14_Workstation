@@ -1,4 +1,4 @@
-﻿marking-FoxEarsDark = Лисьи ушки (анимация)
+marking-FoxEarsDark = Лисьи ушки (анимация)
 marking-FoxEarsDark-ears-outer = Кисточки
 marking-FoxEarsDark-ears-inner = Ухо
 

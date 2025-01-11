@@ -1,0 +1,9 @@
+ent-AirlockSpCrimsonLilyLocked = шлюз
+    .suffix = Багровая Линия, ЦентКом, Закрыт
+    .desc = { ent-AirlockCommand.desc }
+ent-AirlockSpCrimsonLilyGlassLocked = стеклянный шлюз
+    .suffix = Багровая Линия, ЦентКом, Закрыт
+    .desc = { ent-AirlockCommandGlass.desc }
+ent-HighSecSpCrimsonLilyLocked = бронированная дверь
+    .suffix = Багровая Линия, ЦентКом, Закрыт
+    .desc = { ent-HighSecDoor.desc }

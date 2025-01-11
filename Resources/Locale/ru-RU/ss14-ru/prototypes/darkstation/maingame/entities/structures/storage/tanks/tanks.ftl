@@ -1,0 +1,12 @@
+ent-DwarfBeerTank = бочка дворфийского пива
+    .desc = Бочка крафтого дворфийского пива. Кто знает, какой сорт плещется внутри?
+    .suffix = Empty
+ent-DwarfBeerTankFullCrunchyChaos = { ent-DwarfBeerTank }
+    .suffix = Хрустящий Хаос
+    .desc = { ent-DwarfBeerTank.desc }
+ent-DwarfBeerTankFullPurpleFuzzblast = { ent-DwarfBeerTank }
+    .suffix = Фиолетовый Фаззбласт
+    .desc = { ent-DwarfBeerTank.desc }
+ent-DwarfBeerTankFullDeepDrifter = { ent-DwarfBeerTank }
+    .suffix = Глубокая Зыбучка
+    .desc = { ent-DwarfBeerTank.desc }

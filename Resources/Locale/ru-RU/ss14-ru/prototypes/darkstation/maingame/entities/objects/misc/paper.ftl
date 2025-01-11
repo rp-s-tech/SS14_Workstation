@@ -1,0 +1,9 @@
+ent-PenRadioSyndie = ручка
+    .desc = Ручка с чёрными чернилами
+ent-PaperTrash = обрезки бумаги
+    .desc = Ничего не разобрать.
+ent-BoxFolderTaipan = { ent-BoxFolderBase }
+    .suffix = Тайпан / Синдикат
+    .desc = { ent-BoxFolderBase.desc }
+ent-POCCPen = Ручка НШЦК
+    .desc = Чёрная ручка с элементами золота.

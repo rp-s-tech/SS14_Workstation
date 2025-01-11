@@ -1,6 +1,6 @@
 - type: entity
   save: false
-  name: Урист макНуклеация
+  name: Urist McNucleation
   parent: BaseMobNucleation
   id: MobNucleation
   components:
@@ -16,7 +16,7 @@
   save: false
   parent: BaseMobSpeciesOrganic
   id: BaseMobNucleation
-  name: Урист макНуклеация
+  name: Urist McNucleation
   components:
   - type: DamageVisuals
     damageOverlayGroups:

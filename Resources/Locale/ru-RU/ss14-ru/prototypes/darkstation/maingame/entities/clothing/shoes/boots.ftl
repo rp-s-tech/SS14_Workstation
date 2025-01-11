@@ -1,0 +1,17 @@
+ent-N7TacticalBoots = тактические берцы N7
+    .desc = Универсальные тактические берцы N7, подходящие как для гражданской формы, так и для служебной.
+ent-ClothingShoesBootsCombatPOCC = Туфли НШЦК
+    .desc = { ent-ClothingShoesMilitaryBase.desc }
+ent-ClothingShoesGrayJedi = Сапоги
+    .desc = Сапоги Серого Джедая.
+    .suffix = Джедая
+ent-ClothingShoesBootsCombatKnight = Туфли Звёздной-пыли
+    .desc = Необычно бизарные туфли, имеющие необычно бизарные свойства.
+ent-ClothingShoesWinterBootsHonkomother = Зимние ботинки Хонкоматери
+    .desc = Эти ботинки Хонкоматери согреют вас и принесут смех в любую зиму.
+ent-ClothingShoesWaPpink = Лакированые туфли
+    .desc = Дорогие, лакированные туфли адвоката.
+ent-ClothingShoesWaPBej = Лакированые туфли
+    .desc = Дорогие, лакированные туфли адвоката.
+ent-ClothingShoesWaPDark = Лакированые туфли
+    .desc = Дорогие, лакированные туфли адвоката.

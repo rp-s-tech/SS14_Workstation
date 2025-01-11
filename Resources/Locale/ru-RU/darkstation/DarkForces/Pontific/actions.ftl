@@ -1,4 +1,4 @@
-﻿pontific-fel-alert = Количество скверны: {$fel}
+pontific-fel-alert = Количество скверны: { $fel }
 pontific-prayer-blocked = Вы не можете молиться, пока ваши клинки в пламени
 pontific-dark-altar-spawn-blocked = Не удается вызвать алтарь
 pontific-not-enough-fel = Недостаточно скверны
