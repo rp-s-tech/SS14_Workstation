@@ -1,11 +1,10 @@
-﻿#UI
+#UI
 vampire-abilities-title = Способности вампира
 vampire-abilities-learn = Изучить
 vampire-abilities-name = Название:
 vampire-abilities-bloodrequired = Требуется крови:
 vampire-abilities-current-blood-level = Текущий уровень крови:
 vampire-abilities-total-blood-level = Всего выпито крови:
-
 #Abilities
 vampire-statistic = Меню Вампира
 vampire-statistic-description = Изучайте новые способности, по своему вкусу
@@ -35,7 +34,6 @@ vampire-chiroptean-screech = Ультразвуковой визг
 vampire-chiroptean-screech-description = Оглушает всех людей в радиусе слышимости, а также ломает стекла. Может оглушить траллов вампиров, но не других вампиров.
 vampire-enthrall-screech = Порабощение
 vampire-enthrall-description = Превращает жертву в вашего верного раба
-
 ent-VampireStatisticAction = {LOC (vampire-statistic)}
     .desc = {LOC (vampire-statistic-description)}
 

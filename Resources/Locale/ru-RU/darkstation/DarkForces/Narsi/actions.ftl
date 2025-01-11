@@ -1,4 +1,4 @@
-﻿ent-NarsiCultistLeaderAction = Общий сбор
+ent-NarsiCultistLeaderAction = Общий сбор
     .desc = Призовите всех живых культистов к себе
 
 ent-NarsiCultistEmpAction = Перегрузка

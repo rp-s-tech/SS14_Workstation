@@ -1,4 +1,4 @@
-﻿ghost-role-information-scp-soap-name = Странное мыло (SCP-UNKNOWN)
+ghost-role-information-scp-soap-name = Странное мыло (SCP-UNKNOWN)
 ghost-role-information-scp-soap-description = Принесите в этот мир чистоту и весёлые подскальзывания, в самые неудобные моменты
 
 ghost-role-information-scp-173-name = "Статуя" (SCP-173)

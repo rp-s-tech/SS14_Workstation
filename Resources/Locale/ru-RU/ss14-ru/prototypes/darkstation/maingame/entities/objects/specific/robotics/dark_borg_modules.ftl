@@ -1,0 +1,10 @@
+ent-BaseBorgModuleSecurity = { ent-BaseBorgModule }
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleStun = Модуль нелетального снаряжения
+    .desc = { ent-BaseBorgModuleSecurity.desc }
+ent-StunbatonBorg = { ent-Stunbaton }
+    .desc = { ent-Stunbaton.desc }
+ent-WeaponDisablerBorg = { ent-WeaponDisabler }
+    .desc = { ent-WeaponDisabler.desc }
+ent-BorgModuleSecurityWeapon = Оружейный модуль
+    .desc = { ent-BaseBorgModuleSecurity.desc }

@@ -1,4 +1,4 @@
-﻿loadout-group-senior-officer-jumpsuit = Инструктор СБ, комбинезон
+loadout-group-senior-officer-jumpsuit = Инструктор СБ, комбинезон
 loadout-group-senior-officer-head = Инструктор СБ, голова
 loadout-group-senior-officer-neck = Инструктор СБ, шея
 loadout-group-senior-officer-outerclothing = Инструктор СБ, верхняя одежда

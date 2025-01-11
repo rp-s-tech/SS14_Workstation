@@ -1,0 +1,10 @@
+ent-POCCIDCard = ID карта НШЦК
+    .desc = { ent-IDCardStandard.desc }
+ent-SecurityPilotIDCard = ID карта Пилота
+    .desc = { ent-IDCardStandard.desc }
+ent-PrisonerIDCard = ID карта заключённого
+    .desc = { ent-IDCardStandard.desc }
+ent-BlueShieldOfficerIDCard = ID карта офицера синего щита
+    .desc = { ent-IDCardStandard.desc }
+ent-IFDIDCard = ID карта инспектора ФД
+    .desc = { ent-IDCardStandard.desc }

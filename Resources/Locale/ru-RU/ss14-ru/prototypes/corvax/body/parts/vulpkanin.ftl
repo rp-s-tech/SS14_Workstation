@@ -20,3 +20,5 @@ ent-LeftFootVulpkanin = левая стопа вульпканина
     .desc = { ent-PartVulpkanin.desc }
 ent-RightFootVulpkanin = правая стопа вульпканина
     .desc = { ent-PartVulpkanin.desc }
+ent-TailVulpkanin = пушистый, мягкий хвост
+    .desc = { ent-PartVulpkanin.desc }

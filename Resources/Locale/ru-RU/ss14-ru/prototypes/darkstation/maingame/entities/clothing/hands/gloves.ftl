@@ -1,0 +1,17 @@
+ent-ClothingHandsGlovesChaplain = Тактические перчатки капеллана
+    .desc = Огнеупорные изолированные стильные тактические перчатки.
+ent-ClothingHandsGlovesPOCC = Перчатки НШЦК
+    .desc = Белые перчатки с тактическими свойствами
+ent-ClothingHandsGlovesGrayJedi = Перчатки
+    .desc = Перчатки Серого Джедая.
+    .suffix = Джедая
+ent-ClothingHandsGlovesCombatSecurityKnight = боевые перчатки РЗП
+    .desc = { ent-ClothingHandsGlovesCombat.desc }
+ent-ClothingHandsBlueShieldOfficerGlovesCombat = Перчатки офицера синего щита
+    .desc = { ent-ClothingHandsGlovesCombat.desc }
+ent-ClothingHandsGlovesIFD = Перчатки ИФД
+    .desc = От этих перчаток пахнет деньгами
+ent-ClothingHandsMaxTacGloves = Перчатки Макс-так
+    .desc = { ent-ClothingHandsGlovesCombat.desc }
+ent-ClothingHandsGlovesFingerlessVergil = перчатки Тёмного Ангела
+    .desc = Кожаные перчатки без пальцев, показывающие, что рука их обладателя не дрогнет.

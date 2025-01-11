@@ -1,4 +1,4 @@
-ui-lobby-title = Добро пожаловать на [RPSX] Space Station!
+ui-lobby-title = Лобби
 ui-lobby-ahelp-button = AHelp
 ui-lobby-options-button = Настройки
 ui-lobby-leave-button = Выйти

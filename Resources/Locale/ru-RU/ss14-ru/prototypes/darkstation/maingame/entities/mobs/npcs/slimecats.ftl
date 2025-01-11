@@ -1,0 +1,9 @@
+ent-SlimeCatYellow = Слаймокот
+    .desc = Какой он милашка!
+    .suffix = (желтый)
+ent-SlimeCatWhite = Слаймокот
+    .desc = Какой он милашка!
+    .suffix = (белый)
+ent-SlimeCatRed = Слаймокот
+    .desc = Какой он милашка!
+    .suffix = (красный)
