@@ -36,6 +36,7 @@ using Robust.Shared.Utility;
 using Content.Server.RPSX.Bridges;
 using Content.Server.RPSX.Entry;
 using Content.Shared.RPSX.Patron;
+using Content.Server.SS220.TTS;
 
 namespace Content.Server.Entry
 {
@@ -127,6 +128,7 @@ namespace Content.Server.Entry
 
             IoCManager.Resolve<IChatSanitizationManager>().Initialize();
             IoCManager.Resolve<IChatManager>().Initialize();
+            IoCManager.Resolve<TTSManager>().Initialize(); // Corvax-TTS
             var configManager = IoCManager.Resolve<IConfigurationManager>();
             var resourceManager = IoCManager.Resolve<IResourceManager>();
             var dest = configManager.GetCVar(CCVars.DestinationFile);

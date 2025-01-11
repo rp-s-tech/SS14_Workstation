@@ -277,6 +277,8 @@
   - type: SpeechBarks
     data:
       proto: Synth3
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
 
 - type: entity
   id: BaseBorgChassisNT

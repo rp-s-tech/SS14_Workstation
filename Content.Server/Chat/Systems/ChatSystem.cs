@@ -4,6 +4,7 @@ using System.Text;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
+using Content.Server.Examine;
 using Content.Server.GameTicking;
 using Content.Server.Players.RateLimiting;
 using Content.Server.Speech.Components;
@@ -18,10 +19,12 @@ using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Ghost;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Interaction;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Players;
 using Content.Shared.Players.RateLimiting;
 using Content.Shared.Radio;
+using Content.Shared.Speech;
 using Content.Shared.Whitelist;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
@@ -68,6 +71,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
     public const string DefaultAnnouncementSound = "/Audio/Corvax/Announcements/announce.ogg"; // Corvax-Announcements
     public const string CentComAnnouncementSound = "/Audio/Corvax/Announcements/centcomm.ogg"; // Corvax-Announcements
+    public Color DefaultEntityColor = new Color(145, 241, 50);
 
     private bool _loocEnabled = true;
     private bool _deadLoocEnabled;
@@ -914,6 +918,7 @@ public record ExpandICChatRecipientsEvent(EntityUid Source, float VoiceRange, Di
 {
 }
 
+
 /// <summary>
 ///     Raised broadcast in order to transform speech.transmit
 /// </summary>
@@ -950,6 +955,7 @@ public sealed class EntitySpokeEvent : EntityEventArgs
     public readonly string Message;
     public readonly string OriginalMessage;
     public readonly string? ObfuscatedMessage; // not null if this was a whisper
+    public readonly bool IsRadio; // radio message is always a whisper
 
     /// <summary>
     ///     If the entity was trying to speak into a radio, this was the channel they were trying to access. If a radio
@@ -964,8 +970,10 @@ public sealed class EntitySpokeEvent : EntityEventArgs
         OriginalMessage = originalMessage; // Corvax-TTS: Spec symbol sanitize
         Channel = channel;
         ObfuscatedMessage = obfuscatedMessage;
+        IsRadio = channel != null;
     }
 }
+
 
 /// <summary>
 ///     InGame IC chat is for chat that is specifically ingame (not lobby) but is also in character, i.e. speaking.
@@ -1000,4 +1008,34 @@ public enum ChatTransmitRange : byte
     HideChat,
     /// Ghosts can't hear or see it at all. Regular players can if in-range.
     NoGhosts
+}
+
+public sealed class AnnouncementSpokeEvent : EntityEventArgs
+{
+    public readonly Filter Source;
+    public readonly string AnnouncementSound;
+    public readonly AudioParams AnnouncementSoundParams;
+    public readonly string Message;
+
+    public AnnouncementSpokeEvent(Filter source, string announcementSound, AudioParams announcementSoundParams, string message)
+    {
+        Source = source;
+        Message = message;
+        AnnouncementSound = announcementSound;
+        AnnouncementSoundParams = announcementSoundParams;
+    }
+}
+
+public sealed class RadioSpokeEvent : EntityEventArgs
+{
+    public readonly EntityUid Source;
+    public readonly string Message;
+    public readonly EntityUid[] Receivers;
+
+    public RadioSpokeEvent(EntityUid source, string message, EntityUid[] receivers)
+    {
+        Source = source;
+        Message = message;
+        Receivers = receivers;
+    }
 }

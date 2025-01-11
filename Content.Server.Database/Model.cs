@@ -422,6 +422,7 @@ namespace Content.Server.Database
         public string Sex { get; set; } = null!;
         public string Gender { get; set; } = null!;
         public string Species { get; set; } = null!;
+        public string Voice { get; set; } = null!; // Corvax-TTS
         public string BarkProto { get; set; } = null!; // ADT Barks
         public float BarkPitch { get; set; } = 1f; // ADT Barks
         public float LowBarkVar { get; set; } = 0.1f; // ADT Barks
