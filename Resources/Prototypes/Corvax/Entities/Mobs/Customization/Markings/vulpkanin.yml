@@ -58,7 +58,6 @@
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
       state: vulp_face
 
-
 # Animated
 - type: marking
   id: FoxTailAnimated
