@@ -19,7 +19,7 @@
   description: Нas protection from cosmic radiation.
   components:
     - type: Pda
-      id: PilotIDCard
+      id: SecurityPilotIDCard
       state: pda-seniorofficer
     - type: PdaBorderColor
       borderColor: "#A32D26"

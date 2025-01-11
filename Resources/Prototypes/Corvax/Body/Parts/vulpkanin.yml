@@ -13,7 +13,6 @@
             Quantity: 3
           - ReagentId: Blood
             Quantity: 10
-    - type: BodyPart
 
 - type: entity
   id: TorsoVulpkanin
@@ -46,16 +45,6 @@
             Quantity: 5
           - ReagentId: Blood
             Quantity: 10
-    - type: Input
-      context: "ghost"
-    - type: MovementSpeedModifier
-      baseWalkSpeed: 0
-      baseSprintSpeed: 0
-    - type: InputMover
-    - type: GhostOnMove
-    - type: Tag
-      tags:
-      - Head
 
 - type: entity
   id: LeftArmVulpkanin
@@ -102,8 +91,8 @@
       sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
       state: "l_leg"
     - type: MovementBodyPart
-      walkSpeed : 2.8
-      sprintSpeed : 4.6
+      walkSpeed : 2.7
+      sprintSpeed : 4.5
 
 - type: entity
   id: RightLegVulpkanin
@@ -114,8 +103,8 @@
       sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
       state: "r_leg"
     - type: MovementBodyPart
-      walkSpeed : 2.8
-      sprintSpeed : 4.6
+      walkSpeed : 2.7
+      sprintSpeed : 4.5
 
 - type: entity
   id: LeftFootVulpkanin
@@ -125,6 +114,7 @@
     - type: Sprite
       sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
       state: "l_foot"
+
 - type: entity
   id: RightFootVulpkanin
   name: "right vulpkanin foot"
