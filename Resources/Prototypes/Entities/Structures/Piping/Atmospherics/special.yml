@@ -22,12 +22,14 @@
   - type: Airtight
     noAirWhenFullyAirBlocked: false
   - type: Clickable
-  - type: Construction
-    graph: LittleVent
-    node: littlevent
   - type: Tag
     tags:
       - SpreaderIgnore
+ # Exodus-Tiny-Fan-Craft-Start
+  - type: Construction
+    graph: AtmosDeviceFan
+    node: AtmosDeviceFan
+ # Exodus-Tiny-Fan-Craft-End
 
 - type: entity
   id: AtmosDeviceFanDirectional

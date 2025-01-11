@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: EngineeringAtmosDeviceFanTinyParts
+  icon:
+    sprite: Structures/Piping/Atmospherics/tinyfan.rsi
+    state: icon
+  product: CrateEngineeringAASElectronic
+  cost: 6000
+  category: cargoproduct-category-name-engineering
+  group: market

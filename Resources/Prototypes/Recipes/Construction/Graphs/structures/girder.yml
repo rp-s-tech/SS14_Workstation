@@ -6,8 +6,9 @@
       edges:
         - to: girder
           completed:
-            - !type:SnapToGrid
-              southRotation: true
+            # Exodus-Construction-Rotate-Fix-Start
+            - !type:SnapToGrid { }
+            # Exodus-Construction-Rotate-Fix-End
           steps:
             - material: Steel
               amount: 2
@@ -28,11 +29,25 @@
           steps:
             - tool: Screwing
               doAfter: 2
+       # Exodus-Wall-Diagonal-Craft-Start
+        - to: diagonalWall
+          completed:
+            - !type:SnapToGrid { }
+          conditions:
+            - !type:EntityAnchored { }
+          steps:
+            - tool: Cutting
+              doAfter: 4
+            - material: Steel
+              amount: 1
+              doAfter: 1
+       # Exodus-Wall-Diagonal-Craft-End
 
         - to: wall
           completed:
-            - !type:SnapToGrid
-              southRotation: true
+            # Exodus-Construction-Rotate-Fix-Start
+            - !type:SnapToGrid { }
+            # Exodus-Construction-Rotate-Fix-End
           conditions:
             - !type:EntityAnchored {}
           steps:
@@ -42,8 +57,9 @@
 
         - to: reinforcedGirder
           completed:
-            - !type:SnapToGrid
-              southRotation: false
+            # Exodus-Construction-Rotate-Fix-Start
+            - !type:SnapToGrid { }
+            # Exodus-Construction-Rotate-Fix-End
           conditions:
             - !type:EntityAnchored {}
           steps:
@@ -149,6 +165,19 @@
             - material: Steel
               amount: 2
               doAfter: 1
+   # Exodus-Wall-Diagonal-Craft-Start
+    - node: diagonalWall
+      entity: WallSolidDiagonal
+      edges:
+        - to: girder
+          completed:
+            - !type:GivePrototype
+              prototype: SheetSteel1
+              amount: 1
+          steps:
+            - tool: Welding
+              doAfter: 10
+   # Exodus-Wall-Diagonal-Craft-End
 
     - node: wall
       entity: WallSolid
@@ -305,8 +334,9 @@
 
         - to: diagonalshuttleWall
           completed:
-            - !type:SnapToGrid
-              southRotation: false
+            # Exodus-Construction-Rotate-Fix-Start
+            - !type:SnapToGrid { }
+            # Exodus-Construction-Rotate-Fix-End
           conditions:
             - !type:EntityAnchored { }
           steps:
