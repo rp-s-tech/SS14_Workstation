@@ -21,7 +21,7 @@ using Content.Server.Gravity;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Shuttles.Components;
 using Content.Shared.DeviceLinking.Events;
-using Content.Shared.UserInterface;
+using Content.Shared.USerInterface;
 
 namespace Content.Server.RPSX.EnergyCores;
 

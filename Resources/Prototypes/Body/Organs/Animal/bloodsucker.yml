@@ -6,6 +6,9 @@
   components:
   - type: Metabolizer
     metabolizerTypes: [ Bloodsucker ]
+  - type: Tag
+    tags:
+    - Stomach
 
 - type: entity
   id: OrganBloodsuckerLiver
@@ -15,6 +18,9 @@
   components:
   - type: Metabolizer
     metabolizerTypes: [ Bloodsucker ]
+  - type: Tag
+    tags:
+    - Liver
 
 - type: entity
   id: OrganBloodsuckerHeart
@@ -24,3 +30,6 @@
   components:
   - type: Metabolizer
     metabolizerTypes: [ Bloodsucker ]
+  - type: Tag
+    tags:
+    - Heart

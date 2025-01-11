@@ -37,3 +37,48 @@
 
 - type: Tag
   id: Dog
+
+#Surgery
+- type: Tag
+  id: Torso
+
+- type: Tag
+  id: LArm
+
+- type: Tag
+  id: RArm
+
+- type: Tag
+  id: LLeg
+
+- type: Tag
+  id: RLeg
+
+- type: Tag
+  id: Heart
+
+- type: Tag
+  id: Lungs
+
+- type: Tag
+  id: Stomach
+
+- type: Tag
+  id: Liver
+
+- type: Tag
+  id: Kidneys
+
+- type: Tag
+  id: Eyes
+
+
+#Ratvar
+- type: Tag
+  id: RatvarBorgModule
+
+- type: Tag
+  id: RatvarDroneUsable
+
+- type: Tag
+  id: SamSword

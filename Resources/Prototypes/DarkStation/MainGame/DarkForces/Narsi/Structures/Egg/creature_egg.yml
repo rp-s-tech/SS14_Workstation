@@ -29,31 +29,31 @@
         startingItem: null
         whitelist:
           tags:
-          - LArm
+          - Lungs
       arm_r_slot:
         name: narsi-creature-egg-right-arm-slot
         startingItem: null
         whitelist:
           tags:
-          - RArm
+          - Stomach
       leg_l_slot:
         name: narsi-creature-egg-left-leg-slot
         startingItem: null
         whitelist:
           tags:
-          - LLeg
+          - Kidneys
       leg_r_slot:
         name: narsi-creature-egg-right-leg-slot
         startingItem: null
         whitelist:
           tags:
-          - RLeg
+          - Liver
       head_slot:
         name: narsi-creature-egg-head-slot
         startingItem: null
         whitelist:
           tags:
-          - Head
+          - Eyes
       heart_slot:
         name: narsi-creature-egg-heart-slot
         startingItem: null

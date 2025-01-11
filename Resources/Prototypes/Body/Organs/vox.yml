@@ -13,3 +13,6 @@
   - type: Item
     size: Small
     heldPrefix: lungs
+  - type: Tag
+    tags:
+    - Lungs

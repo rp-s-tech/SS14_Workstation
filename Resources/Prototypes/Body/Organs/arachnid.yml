@@ -50,6 +50,9 @@
           Quantity: 5
   - type: Metabolizer
     updateInterval: 1.5
+  - type: Tag
+    tags:
+    - Stomach
 
 - type: entity
   id: OrganArachnidLungs
@@ -85,6 +88,9 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
+  - type: Tag
+    tags:
+    - Lungs
 
 - type: entity
   id: OrganArachnidHeart
@@ -105,6 +111,9 @@
     - id: Medicine
     - id: Poison
     - id: Narcotic
+  - type: Tag
+    tags:
+    - Heart
 
 - type: entity
   id: OrganArachnidLiver
@@ -125,6 +134,9 @@
     groups:
     - id: Alcohol
       rateModifier: 0.1 # removes alcohol very slowly along with the stomach removing it as a drink
+  - type: Tag
+    tags:
+    - Liver
 
 - type: entity
   id: OrganArachnidKidneys
@@ -146,6 +158,9 @@
     maxReagents: 5
     metabolizerTypes: [Animal]
     removeEmpty: true
+  - type: Tag
+    tags:
+    - Kidneys
 
 - type: entity
   id: OrganArachnidEyes
@@ -160,6 +175,9 @@
   - type: Item
     size: Small
     heldPrefix: eyeballs
+  - type: Tag
+    tags:
+    - Eyes
 
 - type: entity
   id: OrganArachnidTongue

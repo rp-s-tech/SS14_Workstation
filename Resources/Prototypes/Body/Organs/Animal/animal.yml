@@ -63,6 +63,9 @@
   - type: Item
     size: Small
     heldPrefix: lungs
+  - type: Tag
+    tags:
+    - Lungs
 
 - type: entity
   id: OrganAnimalStomach
@@ -92,6 +95,9 @@
   - type: Item
     size: Small
     heldPrefix: stomach
+  - type: Tag
+    tags:
+    - Stomach
 
 - type: entity
   id: OrganMouseStomach
@@ -106,6 +112,9 @@
   - type: Item
     size: Small
     heldPrefix: stomach
+  - type: Tag
+    tags:
+    - Stomach
 
 - type: entity
   id: OrganAnimalLiver
@@ -125,6 +134,9 @@
   - type: Item
     size: Small
     heldPrefix: liver
+  - type: Tag
+    tags:
+    - Liver
 
 - type: entity
   id: OrganAnimalHeart
@@ -145,6 +157,9 @@
   - type: Item
     size: Small
     heldPrefix: heart
+  - type: Tag
+    tags:
+    - Heart
 
 - type: entity
   id: OrganAnimalKidneys
@@ -164,3 +179,6 @@
   - type: Item
     size: Small
     heldPrefix: kidneys
+  - type: Tag
+    tags:
+    - Kidneys

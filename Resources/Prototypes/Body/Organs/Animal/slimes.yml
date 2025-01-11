@@ -24,6 +24,9 @@
       solutions:
         stomach:
           maxVol: 30.0
+    - type: Tag
+      tags:
+      - Stomach
 
 - type: entity
   id: OrganSlimesLungs
@@ -55,3 +58,6 @@
         Lung:
           maxVol: 100.0
           canReact: false
+    - type: Tag
+      tags:
+      - Lungs
