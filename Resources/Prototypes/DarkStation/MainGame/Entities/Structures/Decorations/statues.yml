@@ -6,7 +6,7 @@
   components:
   - type: Sprite
     noRot: true
-    sprite: DarkStation/MainGame/Structures/Decoration/station_statues.rsi
+    sprite: DarkStation/MainGame/Structures/Decorations/station_statues.rsi
     state: delta
     drawdepth: Mobs
     offset: "0.0,0.5"
@@ -19,7 +19,7 @@
   components:
   - type: Sprite
     noRot: true
-    sprite: DarkStation/MainGame/Structures/Decoration/station_statues.rsi
+    sprite: DarkStation/MainGame/Structures/Decorations/station_statues.rsi
     state: box
     drawdepth: Mobs
     offset: "0.0,0.5"
