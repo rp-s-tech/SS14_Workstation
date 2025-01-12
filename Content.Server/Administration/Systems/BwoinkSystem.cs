@@ -819,6 +819,15 @@ public async Task SendBwoinkMessage(NetUserId sender, NetUserId recipient, strin
         Log.Warning($"Failed to send Bwoink message: Recipient {recipient} does not have an active channel.");
     }
 
+    var admins = GetTargetAdmins();
+    foreach (var adminChannel in admins)
+    {
+        if (session != null && adminChannel == session.Channel)
+            continue;
+
+        RaiseNetworkEvent(bwoinkMessage, adminChannel);
+    }
+
     // Отправляем сообщение на вебхук Discord
     if (_webhookUrl != string.Empty)
     {
