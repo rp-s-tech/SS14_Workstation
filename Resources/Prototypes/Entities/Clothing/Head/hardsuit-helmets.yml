@@ -246,6 +246,7 @@
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
+  - type: NightVision # RPSX EDIT
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -323,6 +324,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: NightVision # RPSX EDIT 
+  
 
 #Luxury Mining Hardsuit
 - type: entity
@@ -559,6 +562,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: NightVision # RPSX EDIT
+    color: "#5ECDF7"
 
 #ERT Chaplain Hardsuit
 - type: entity
@@ -573,7 +578,9 @@
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertchaplain.rsi
   - type: PointLight
     color: "#ffffff"
-
+  - type: NightVision # RPSX EDIT
+    color: "#5ECDF7"
+    
 #ERT Engineer Hardsuit
 - type: entity
   parent: ClothingHeadHelmetHardsuitSyndie
@@ -594,6 +601,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: NightVision # RPSX EDIT
+    color: "#5ECDF7"
 
 #ERT Medical Hardsuit
 - type: entity
@@ -608,6 +617,8 @@
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertmedical.rsi
   - type: PointLight
     color: "#44c9b1"
+  - type: NightVision # RPSX EDIT
+    color: "#5ECDF7"
 
 #ERT Security Hardsuit
 - type: entity
@@ -629,6 +640,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: NightVision # RPSX EDIT
+    color: "#5ECDF7"
 
 #ERT Janitor Hardsuit
 - type: entity
@@ -698,6 +711,11 @@
         Heat: 0.80
         Radiation: 0.80
         Caustic: 0.95
+  # RPSX EDIT START 
+  - type: ThermalVision
+    color: "#5ECDF7"
+    lightRadius: 15
+  # RPSX EDIT END
 
 #MISC. HARDSUITS
 #Clown Hardsuit
