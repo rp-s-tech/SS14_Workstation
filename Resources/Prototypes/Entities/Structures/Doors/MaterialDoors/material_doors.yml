@@ -192,6 +192,11 @@
   - type: Construction
     graph: DoorGraph
     node: silverDoor
+  - type: SaintSilver
+    damageOnCollide:
+      types:
+        Holiness: 20
+    pushOnCollide: true
 
 - type: entity
   id: BananiumDoor

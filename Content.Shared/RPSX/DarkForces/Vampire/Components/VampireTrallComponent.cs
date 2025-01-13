@@ -16,7 +16,7 @@ public sealed partial class VampireTrallComponent : Component
     public EntityUid OwnerUid;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public ProtoId<StatusIconPrototype> StatusIcon { get; set; } = "VampireTrallIcon";
+    public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "VampireTrallIcon";
 
     [DataField]
     public SoundSpecifier Alert = new SoundPathSpecifier("/Audio/DarkStation/DarkForces/Vampire/vampalert.ogg");

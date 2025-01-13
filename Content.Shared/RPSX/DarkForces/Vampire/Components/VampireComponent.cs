@@ -67,5 +67,5 @@ public sealed partial class VampireComponent : Component
 
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
-    public ProtoId<StatusIconPrototype> StatusIcon { get; set; } = "VampireIcon";
+    public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "VampireIcon";
 }

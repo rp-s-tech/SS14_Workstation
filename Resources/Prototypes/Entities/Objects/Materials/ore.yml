@@ -187,6 +187,11 @@
           Quantity: 10
   - type: Item
     heldPrefix: silver
+  - type: SaintSilver
+    damageOnCollide:
+      types:
+        Holiness: 20
+    pushOnCollide: true
 
 - type: entity
   parent: SilverOre

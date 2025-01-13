@@ -40,6 +40,9 @@
   suffix: Full
   components:
   - type: Material
+  - type: MidasMaterial
+    targets:
+    - MidasTouchSteel
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
@@ -176,6 +179,9 @@
   suffix: Full
   components:
   - type: Material
+  - type: MidasMaterial
+    targets:
+    - MidasTouchPlasteel
   - type: PhysicalComposition
     materialComposition:
       Plasteel: 100
