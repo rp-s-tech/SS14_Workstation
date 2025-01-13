@@ -1,6 +1,7 @@
 ﻿- type: alert
   id: PontificFel
   category: PontificFel
+  clickEvent: !type:PontificFelAlertEvent
   icons:
     - sprite: /Textures/DarkStation/MainGame/DarkForces/Pontific/pontiff/interface/fel.rsi
       state: fel0
@@ -28,4 +29,3 @@
   description: Количество накопленной скверны (нажмите чтобы увидеть подробнее)
   minSeverity: 0
   maxSeverity: 10
-  clickEvent: !type:PontificFelAlertEvent
