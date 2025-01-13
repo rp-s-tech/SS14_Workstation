@@ -27,6 +27,13 @@ public sealed partial class AudioTab : Control
             scale: ContentAudioSystem.MasterVolumeMultiplier);
         masterVolume.ImmediateValueChanged += OnMasterVolumeSliderChanged;
 
+        // Corvax-TTS-Start
+        Control.AddOptionPercentSlider(
+            TTSVars.TTSVolume,
+            SliderVolumeTts,
+            scale: ContentAudioSystem.TtsMultiplier);
+        // Corvax-TTS-End
+
         // ADT Barks start
         Control.AddOptionPercentSlider(
             ADTCCVars.BarksVolume,
@@ -38,7 +45,7 @@ public sealed partial class AudioTab : Control
             DropDownBarksOrTTS,
             [
                 new OptionDropDownCVar<bool>.ValueOption(true, Loc.GetString("ui-options-barks-speech")),
-                // new OptionDropDownCVar<bool>.ValueOption(false, Loc.GetString("ui-options-tts-speech")),
+                new OptionDropDownCVar<bool>.ValueOption(false, Loc.GetString("ui-options-tts-speech")),
             ]);
 
         // ADT Barks end

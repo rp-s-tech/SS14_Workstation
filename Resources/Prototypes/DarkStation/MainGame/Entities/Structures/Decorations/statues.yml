@@ -1,0 +1,25 @@
+- type: entity
+  id: DeltaStatue
+  parent: BaseStructure
+  name: статуя станции "Дельта"
+  description: Прекраснейшая статуя с надписью "Станция Дельта".
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: DarkStation/MainGame/Structures/Decorations/station_statues.rsi
+    state: delta
+    drawdepth: Mobs
+    offset: "0.0,0.5"
+
+- type: entity
+  id: BoxStatue
+  parent: BaseStructure
+  name: статуя станции "Бокс"
+  description: Прекраснейшая статуя с надписью "Станция Бокс".
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: DarkStation/MainGame/Structures/Decorations/station_statues.rsi
+    state: box
+    drawdepth: Mobs
+    offset: "0.0,0.5"

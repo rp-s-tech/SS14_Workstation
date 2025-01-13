@@ -1,0 +1,53 @@
+- type: entity
+  parent: CollideFloorTrap
+  id: FloorTrapSpikes
+  name: maybe it could be dangerous...
+  description: You're not going to try this with your feet, are you?
+  suffix: Trap, Spikes
+  components:
+    - type: Clickable
+    - type: Sprite
+      sprite: Exodus/Tiles/Misc/floortrap.rsi
+      state: floortrap
+    - type: TriggerOnCollide
+      fixtureID: floortrap
+    - type: SpawnOnTrigger
+      proto: FloorTrapSpikesActivated
+    - type: DeleteOnTrigger
+
+- type: entity
+  parent: CollideFloorTrap
+  id: FloorTrapSpikesActivated
+  name: spike trap
+  description: You're not going to try this with your feet, are you?
+  suffix: Trap, Spikes, Activated
+  components:
+    - type: Clickable
+    - type: InteractionOutline
+    - type: Sprite
+      sprite: Exodus/Tiles/Misc/floortrap.rsi
+      state: floortrap_spikes
+      noRot: true
+    - type: DamageContacts
+      damage:
+        types:
+          Piercing: 25
+
+- type: entity
+  parent: FloorTrapSpikes
+  id: FloorTrapSpikesPoison
+  suffix: Trap, Spikes, Poison
+  components:
+    - type: SpawnOnTrigger
+      proto: FloorTrapSpikesPoisonActivated
+
+- type: entity
+  parent: FloorTrapSpikesActivated
+  id: FloorTrapSpikesPoisonActivated
+  suffix: Trap, Spikes, Poison, Activated
+  components:
+    - type: DamageContacts
+      damage:
+        types:
+          Piercing: 25
+          Poison: 10

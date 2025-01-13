@@ -138,7 +138,7 @@ public abstract partial class SharedGunSystem : EntitySystem
             return;
 
         gun.ShootCoordinates = GetCoordinates(msg.Coordinates);
-        gun.Target = GetEntity(msg.Target);
+        // gun.Target = GetEntity(msg.Target); // Exodus-NPCsAbilityToTargetEnemy
         AttemptShoot(user.Value, ent, gun);
     }
 
@@ -206,10 +206,10 @@ public abstract partial class SharedGunSystem : EntitySystem
     /// <summary>
     /// Attempts to shoot at the target coordinates. Resets the shot counter after every shot.
     /// </summary>
-    public void AttemptShoot(EntityUid user, EntityUid gunUid, GunComponent gun, EntityCoordinates toCoordinates)
+    public void AttemptShoot(EntityUid user, EntityUid gunUid, GunComponent gun, EntityCoordinates toCoordinates, /* Exodus-NPCsAbilityToTargetEnemy-Start */ EntityUid? target = null /* Exodus-NPCsAbilityToTargetEnemy-End */)
     {
         gun.ShootCoordinates = toCoordinates;
-        AttemptShoot(user, gunUid, gun);
+        AttemptShoot(user, gunUid, gun, /* Exodus-NPCsAbilityToTargetEnemy-Start */ target /* Exodus-NPCsAbilityToTargetEnemy-End */);
         gun.ShotCounter = 0;
         EntityManager.DirtyField(gunUid, gun, nameof(GunComponent.ShotCounter));
     }
@@ -217,21 +217,26 @@ public abstract partial class SharedGunSystem : EntitySystem
     /// <summary>
     /// Shoots by assuming the gun is the user at default coordinates.
     /// </summary>
-    public void AttemptShoot(EntityUid gunUid, GunComponent gun)
+    public void AttemptShoot(EntityUid gunUid, GunComponent gun, /* Exodus-NPCsAbilityToTargetEnemy-Start */ EntityUid? target = null /* Exodus-NPCsAbilityToTargetEnemy-End */)
     {
         var coordinates = new EntityCoordinates(gunUid, gun.DefaultDirection);
         gun.ShootCoordinates = coordinates;
-        AttemptShoot(gunUid, gunUid, gun);
+        AttemptShoot(gunUid, gunUid, gun, /* Exodus-NPCsAbilityToTargetEnemy-Start */ target /* Exodus-NPCsAbilityToTargetEnemy-End */);
         gun.ShotCounter = 0;
     }
 
-    private void AttemptShoot(EntityUid user, EntityUid gunUid, GunComponent gun)
+    private void AttemptShoot(EntityUid user, EntityUid gunUid, GunComponent gun, /* Exodus-NPCsAbilityToTargetEnemy-Start */ EntityUid? target = null /* Exodus-NPCsAbilityToTargetEnemy-End */)
     {
         if (gun.FireRateModified <= 0f ||
             !_actionBlockerSystem.CanAttack(user))
         {
             return;
         }
+
+        // Exodus-NPCsAbilityToTargetEnemy-Start
+        if (target != null)
+            gun.Target = target.Value;
+        // Exodus-NPCsAbilityToTargetEnemy-End
 
         var toCoordinates = gun.ShootCoordinates;
 

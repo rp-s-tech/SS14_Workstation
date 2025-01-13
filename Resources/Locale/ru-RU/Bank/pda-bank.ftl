@@ -1,13 +1,11 @@
-﻿pda-bank-transaction-type-Salary = Зарплата
+pda-bank-transaction-type-Salary = Зарплата
 pda-bank-transaction-type-Withdraw = Снятие наличных
 pda-bank-transaction-type-Deposit = Пополнение
 pda-bank-transaction-type-Buy = Покупка
 pda-bank-transaction-type-Unknown = Неизвестно
-
 pda-bank-transaction-status-Success = Успешно
 pda-bank-transaction-status-Failure = Ошибка
 pda-bank-transaction-status-InProgress = В процессе
 pda-bank-transaction-status-Unknown = Неизвестно
-
 pda-bank-transaction-location-CentralCommand = Центральное Командование
 pda-bank-transaction-location-Unknown = Неизвестно

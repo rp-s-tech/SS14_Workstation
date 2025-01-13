@@ -17,6 +17,7 @@ injector-component-cannot-inject-message = Вы не можете ничего �
 injector-component-inject-success-message = Вы вводите { $amount }ед. в { $target }!
 injector-component-transfer-success-message = Вы перемещаете { $amount }ед. в { $target }.
 injector-component-draw-success-message = Вы набираете { $amount }ед. из { $target }.
+injector-component-target-injectable-whitelist-failed-message = Для { $target } этот шприц не подходит
 injector-component-target-already-full-message = { $target } полон!
 injector-component-target-is-empty-message = { $target } пуст!
 injector-component-cannot-toggle-draw-message = Больше не набрать!

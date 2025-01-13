@@ -1,0 +1,19 @@
+- type: entity
+  id: AASElectronics
+  parent: BaseElectronics
+  name: AAS electronics
+  description: Circuit used in AAS construction.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: charger_APC
+    - type: PhysicalComposition
+      materialComposition:
+        Glass: 50
+      chemicalComposition:
+        Silicon: 20
+    - type: StaticPrice
+      price: 3000
+    - type: Tag
+      tags:
+      - AASElectronics

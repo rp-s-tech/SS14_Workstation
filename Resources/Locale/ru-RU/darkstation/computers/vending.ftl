@@ -1,8 +1,8 @@
-﻿#economy
+#economy
 vending-machine-component-buy = Купить
 vending-machine-component-get = Получить
-vending-machine-component-price = {$price} кредитов
-vending-machine-component-product-amount = {$amount}
+vending-machine-component-price = { $price } кредитов
+vending-machine-component-product-amount = { $amount }
 vending-machine-component-price-free = Бесплатно
 vending-machine-component-user = Пользователь:
 vending-machine-component-user-credits = Доступно кредитов:

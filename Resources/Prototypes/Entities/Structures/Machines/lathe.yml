@@ -151,6 +151,7 @@
       - LightBulb
       - LedLightBulb
       - DimLightBulb
+      - WarmLightBulb
       - Bucket
       - DrinkMug
       - DrinkMugMetal
@@ -879,6 +880,7 @@
       - Dropper
       - Jug
       - Syringe
+      - MechanicalInjector # Exodus-ThickSyringes
       - Implanter
       - PillCanister
       - BodyBag

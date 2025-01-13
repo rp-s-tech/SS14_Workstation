@@ -1,0 +1,66 @@
+- type: entity
+  parent: [ClothingOuterBase, AllowSuitStorageClothing]
+  id: ClothingOuterHardsuitRnd
+  name: scientist's hardsuit
+  description: A sturdy brand-new hardsuit. Will protect you from most of your work. It does not protect against mental breakdown.
+  components:
+  - type: Sprite
+    sprite: Exodus/Clothing/OuterClothing/Hardsuits/rnd.rsi
+  - type: Clothing
+    sprite: Exodus/Clothing/OuterClothing/Hardsuits/rnd.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.6
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: HeldSpeedModifier
+  - type: Item
+    size: Ginormous
+  - type: ProtectedFromStepTriggers
+    slots: WITHOUT_POCKET
+  - type: TemperatureProtection
+    heatingCoefficient: 0.6
+    coolingCoefficient: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.40
+  - type: Armor
+    modifiers:
+      coefficients:
+        Cold: 0.85
+        Shock: 0.85
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Radiation: 0.30
+        Heat: 0.60
+        Caustic: 0.5
+  - type: GroupExamine
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitRnd
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10 # the average lightbulb only does around four damage!
+    slots: OUTERCLOTHING
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitRnd
+  name: scientist's hardsuit helmet
+  description: Pretty strong.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Exodus/Clothing/Head/Hardsuits/rndhelmet.rsi
+  - type: Clothing
+    sprite: Exodus/Clothing/Head/Hardsuits/rndhelmet.rsi
+  - type: PointLight
+    color: "#a4fef4"
+  - type: PressureProtection
+    highPressureMultiplier: 0.60
+    lowPressureMultiplier: 1000

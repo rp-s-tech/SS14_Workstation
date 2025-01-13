@@ -213,6 +213,18 @@ namespace Content.Client.Lobby.UI
 
             #endregion Gender
 
+            // Corvax-TTS-Start
+            #region Voice
+
+            if (configurationManager.GetCVar(TTSVars.TTSEnabled))
+            {
+                TTSContainer.Visible = true;
+                InitializeVoice();
+            }
+
+            #endregion
+            // Corvax-TTS-End
+
             // ADT Barks Start
             #region Voice
 
@@ -789,6 +801,7 @@ namespace Content.Client.Lobby.UI
             UpdateSaveButton();
             UpdateMarkings();
             UpdatePatronItems();
+            UpdateTTSVoicesControls(); // Corvax-TTS
             UpdateBarkVoicesControls(); // ADT Barks
             UpdateHairPickers();
             UpdateCMarkingsHair();
@@ -1235,6 +1248,7 @@ namespace Content.Client.Lobby.UI
             }
 
             UpdateGenderControls();
+            UpdateTTSVoicesControls(); // Corvax-TTS
             Markings.SetSex(newSex);
             ReloadPreview();
         }
@@ -1244,6 +1258,14 @@ namespace Content.Client.Lobby.UI
             Profile = Profile?.WithGender(newGender);
             ReloadPreview();
         }
+
+        // Corvax-TTS-Start
+        private void SetVoice(string newVoice)
+        {
+            Profile = Profile?.WithVoice(newVoice);
+            IsDirty = true;
+        }
+        // Corvax-TTS-End
         // ADT Barks start
         private void SetBarkProto(string prototype)
         {

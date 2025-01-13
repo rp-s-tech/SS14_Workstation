@@ -1,5 +1,7 @@
 reagent-name-blood = кровь
 reagent-desc-blood = Я надеюсь, что это кетчуп.
+reagent-name-zessul-blood = кровь Зессул
+reagent-desc-zessul-blood = Я надеюсь, что это кетчуп.
 reagent-name-insect-blood = кровь насекомого
 reagent-desc-insect-blood = Окей, а это реально мерзко. Она выглядит почти... живой?
 reagent-name-slime = слизь

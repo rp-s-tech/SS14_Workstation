@@ -13,13 +13,15 @@ public sealed class VoiceMaskBuiState : BoundUserInterfaceState
 {
     public readonly string Name;
     public readonly string? Verb;
+    public readonly string Voice; // Corvax-TTS
     public readonly string Bark; // ADT Barks
     public readonly float Pitch; // ADT Barks
-    public VoiceMaskBuiState(string name, string bark, float pitch, string? verb)
+    public VoiceMaskBuiState(string name, string voice, string bark, float pitch, string? verb)
     // public VoiceMaskBuiState(string name, string voice, string? verb)
     {
         Name = name;
         Verb = verb;
+        Voice = voice;  // Corvax-TTS
         Bark = bark; // ADT Barks
         Pitch = pitch; // ADT Barks
     }

@@ -1,0 +1,15 @@
+ent-FloorCarpetItemCargo = { ent-FloorCarpetItemRed }
+    .suffix = Снабжение
+    .desc = { ent-FloorCarpetItemRed.desc }
+ent-FloorCarpetItemEngineering = { ent-FloorCarpetItemRed }
+    .suffix = Инженерный
+    .desc = { ent-FloorCarpetItemRed.desc }
+ent-FloorCarpetItemMedical = { ent-FloorCarpetItemRed }
+    .suffix = Медицинский
+    .desc = { ent-FloorCarpetItemRed.desc }
+ent-FloorCarpetItemRND = { ent-FloorCarpetItemRed }
+    .suffix = НИО
+    .desc = { ent-FloorCarpetItemRed.desc }
+ent-FloorCarpetItemSecurity = { ent-FloorCarpetItemRed }
+    .suffix = Безопасность
+    .desc = { ent-FloorCarpetItemRed.desc }

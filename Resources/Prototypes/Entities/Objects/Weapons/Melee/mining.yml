@@ -195,3 +195,7 @@
   - type: Item
     size: Ginormous
     sprite: Objects/Weapons/Melee/crusher_glaive-inhands.rsi
+  # Exodus-MRP-Start
+  - type: Clothing
+    slots: SUITSTORAGE
+  # Exodus-MRP-End

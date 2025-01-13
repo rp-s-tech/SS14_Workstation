@@ -277,6 +277,8 @@
   - type: SpeechBarks
     data:
       proto: Synth3
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
 
 - type: entity
   id: BaseBorgChassisNT
@@ -316,6 +318,7 @@
     access: [["SyndicateAgent"], ["NuclearOperative"]]
   - type: SiliconLawProvider
     laws: SyndicateStatic
+    subverted: true
   - type: IntrinsicRadioTransmitter
     channels:
     - Binary

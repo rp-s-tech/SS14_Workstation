@@ -33,6 +33,7 @@ using Content.Shared.RPSX.Patron; //RPSX
 using Content.Server.RPSX.Sponsors; //RPSX
 using Content.Server.RPSX.Bridges; //RPSX
 using Content.Server.RPSX.Discord; //RPSX
+using Content.Server.SS220.TTS;
 
 namespace Content.Server.IoC
 {
@@ -77,10 +78,12 @@ namespace Content.Server.IoC
             IoCManager.Register<PlayerRateLimitManager>();
             IoCManager.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
             IoCManager.Register<MappingManager>();
+            IoCManager.Register<ConnectionManager>();
 
             //RPSX
             IoCManager.Register<ISponsorsManager, SponsorsManager>();
             IoCManager.Register<IDiscordAuthManager, DiscordAuthManager>();
+            IoCManager.Register<TTSManager>();
         }
     }
 }

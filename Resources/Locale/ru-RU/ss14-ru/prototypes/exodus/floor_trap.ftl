@@ -1,0 +1,12 @@
+ent-FloorTrapSpikes = возможно это может быть опасно...
+  .desc = Ты же не будешь пробовать это своими ногами?
+  .suffix = Ловушка, Шипы
+ent-FloorTrapSpikesActivated = ловушка с шипами
+  .desc = { ent-FloorTrapSpikes.desc }
+  .suffix = Ловушка, Шипы, Активированный
+ent-FloorTrapSpikesPoison = { ent-FloorTrapSpikes }
+  .desc = { ent-FloorTrapSpikes.desc }
+  .suffix = Ловушка, Шипы, Ядовитый
+ent-FloorTrapSpikesPoisonActivated = { ent-FloorTrapSpikesActivated }
+  .desc = { ent-FloorTrapSpikesActivated.desc }
+  .suffix = Ловушка, Шипы, Ядовитый, Активированный

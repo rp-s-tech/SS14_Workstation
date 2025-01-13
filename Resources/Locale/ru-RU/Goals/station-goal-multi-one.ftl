@@ -13,10 +13,8 @@ station-goal-multione-first-artifact-shuttle =
     Внимание! Мы пристыковались к станции.
     У вас есть 10 минут, чтобы выгрузить все артефакты из шаттла.
     После чего шаттл улетит, все оставшиеся на борту погибнут.
-station-goal-multione-first-artifact-shuttle-undoc-in-5-munitues =
-    Шаттл отстыкуется через 5 минут
-station-goal-multione-first-artifact-shuttle-undoc-in-30-seconds =
-    Шаттл отстыкуется через 30 секунд
+station-goal-multione-first-artifact-shuttle-undoc-in-5-munitues = Шаттл отстыкуется через 5 минут
+station-goal-multione-first-artifact-shuttle-undoc-in-30-seconds = Шаттл отстыкуется через 30 секунд
 station-goal-multione-second-shuttle =
     Вторая цель вашей станции - постройка шаттла для транспортировки артефактов на ЦК.
     Требования к шаттлу будут высланы на факс.
@@ -27,7 +25,4 @@ station-goal-multione-second-shuttle-requirements =
     2) Мини-отдел РНД, который содержит внутри себя комнату для КАЖДОГО артефакта, присланных ранее.
     3) Комнаты для артефактов должны иметь размер 2x2 минимум.
     4) Шаттл должен иметь собственные источники питания и атмосферу.
-station-goal-multione-second-add-cargo =
-    Для успешной постройки шаттла, мы добавили отделу карго, возможность заказать дополнительные компоненты.
-
-
+station-goal-multione-second-add-cargo = Для успешной постройки шаттла, мы добавили отделу карго, возможность заказать дополнительные компоненты.

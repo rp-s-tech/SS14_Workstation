@@ -1,0 +1,33 @@
+- type: constructionGraph
+  id: AtmosDeviceFan
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: AtmosDeviceFanFrame
+          steps:
+            - material: Steel
+              amount: 5
+
+    - node: AtmosDeviceFanFrame
+      entity: AtmosDeviceFanFrame
+      edges:
+        - to: AtmosDeviceFanFrameWire
+          steps:
+          - material: CableMV
+            amount: 10
+            doAfter: 1
+
+    - node: AtmosDeviceFanFrameWire
+      entity: AtmosDeviceFanFrameWire
+      edges:
+        - to: AtmosDeviceFan
+          steps:
+            - tag: AASElectronics
+              name: AAS Electronics
+              icon:
+                sprite: Objects/Misc/module.rsi
+                state: charger_APC
+              doAfter: 2
+    - node: AtmosDeviceFan
+      entity: AtmosDeviceFanTiny
