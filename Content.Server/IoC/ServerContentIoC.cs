@@ -78,6 +78,7 @@ namespace Content.Server.IoC
             IoCManager.Register<PlayerRateLimitManager>();
             IoCManager.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
             IoCManager.Register<MappingManager>();
+            IoCManager.Register<ConnectionManager>();
 
             //RPSX
             IoCManager.Register<ISponsorsManager, SponsorsManager>();

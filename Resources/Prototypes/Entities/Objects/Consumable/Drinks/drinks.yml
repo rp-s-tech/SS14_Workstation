@@ -2001,7 +2001,7 @@
 - type: entity
   parent: DrinkGlass
   id: DrinkTheMartinez
-  suffix: The Martinez
+  suffix: the martinez
   components:
     - type: SolutionContainerManager
       solutions:

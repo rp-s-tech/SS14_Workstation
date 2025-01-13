@@ -7,33 +7,54 @@ namespace Content.Client.Lobby.UI;
 
 public sealed partial class HumanoidProfileEditor
 {
-    private List<TTSVoicePrototype> _voiceList = default!;
+    private List<TTSVoicePrototype> _voiceList = new();
 
     private void InitializeVoice()
     {
+        if (_prototypeManager == null)
+        {
+            Logger.Error("PrototypeManager is null. Voice initialization skipped.");
+            return;
+        }
+
         _voiceList = _prototypeManager
             .EnumeratePrototypes<TTSVoicePrototype>()
             .Where(o => o.RoundStart)
             .OrderBy(o => Loc.GetString(o.Name))
             .ToList();
 
-        VoiceButton.OnItemSelected += args =>
+        if (VoiceButton != null)
         {
-            VoiceButton.SelectId(args.Id);
-            SetVoice(_voiceList[args.Id].ID);
-        };
+            VoiceButton.OnItemSelected += args =>
+            {
+                VoiceButton.SelectId(args.Id);
+                SetVoice(_voiceList[args.Id].ID);
+            };
+        }
 
-        VoicePlayButton.OnPressed += _ => PlayPreviewTTS();
+        if (VoicePlayButton != null)
+        {
+            VoicePlayButton.OnPressed += _ => PlayPreviewTTS();
+        }
     }
 
     private void UpdateTTSVoicesControls()
     {
         if (Profile is null)
+        {
+            Logger.Warning("Profile is null. Cannot update TTS voices controls.");
             return;
+        }
+
+        if (VoiceButton == null)
+        {
+            Logger.Warning("VoiceButton is null. Cannot update TTS voices controls.");
+            return;
+        }
 
         VoiceButton.Clear();
 
-        var firstVoiceChoiceId = 1;
+        var firstVoiceChoiceId = -1; // Updated default to indicate no valid choice yet.
         for (var i = 0; i < _voiceList.Count; i++)
         {
             var voice = _voiceList[i];
@@ -43,12 +64,12 @@ public sealed partial class HumanoidProfileEditor
             var name = Loc.GetString(voice.Name);
             VoiceButton.AddItem(name, i);
 
-            if (firstVoiceChoiceId == 1)
+            if (firstVoiceChoiceId == -1)
                 firstVoiceChoiceId = i;
         }
 
         var voiceChoiceId = _voiceList.FindIndex(x => x.ID == Profile.Voice);
-        if (!VoiceButton.TrySelectId(voiceChoiceId) &&
+        if (!VoiceButton.TrySelectId(voiceChoiceId) && firstVoiceChoiceId != -1 &&
             VoiceButton.TrySelectId(firstVoiceChoiceId))
         {
             SetVoice(_voiceList[firstVoiceChoiceId].ID);
@@ -58,8 +79,18 @@ public sealed partial class HumanoidProfileEditor
     private void PlayPreviewTTS()
     {
         if (Profile is null)
+        {
+            Logger.Warning("Profile is null. Cannot play TTS preview.");
             return;
+        }
 
-        _entManager.System<TTSSystem>().RequestPreviewTTS(Profile.Voice);
+        var ttsSystem = _entManager?.System<TTSSystem>();
+        if (ttsSystem == null)
+        {
+            Logger.Error("TTSSystem is null. Cannot play TTS preview.");
+            return;
+        }
+
+        ttsSystem.RequestPreviewTTS(Profile.Voice);
     }
 }
