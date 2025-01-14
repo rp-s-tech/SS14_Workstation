@@ -10,29 +10,37 @@
       effectsAfterInjection:
         - !type:Emote
           conditions:
-            - !type:HasTag
-              tag: ThickSkin
+            - !type:HasTags
+              tags:
+                - ThickSkin
+                - Bottle
               invert: true
           emote: Scream
           showInChat: true
         - !type:HealthChange
           conditions:
-            - !type:HasTag
-              tag: ThickSkin
+            - !type:HasTags
+              tags:
+                - ThickSkin
+                - Bottle
               invert: true
           damage:
             types:
               Piercing: 10
         - !type:ModifyBleedAmount
           conditions:
-            - !type:HasTag
-              tag: ThickSkin
+            - !type:HasTags
+              tags:
+                - ThickSkin
+                - Bottle
               invert: true
           amount: 5
         - !type:PopupMessage
           conditions:
-            - !type:HasTag
-              tag: ThickSkin
+            - !type:HasTags
+              tags:
+                - ThickSkin
+                - Bottle
               invert: true
           visualType: MediumCaution
           messages: ["mechanical-injector-effect-pain-message"]
