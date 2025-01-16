@@ -133,6 +133,7 @@
     - NotekeeperCartridge
     - NewsReaderCartridge
     - WantedListCartridge
+    - CrewMemberBankCartridge
 
 - type: entity
   parent: BasePDA
@@ -146,6 +147,7 @@
       - NotekeeperCartridge
       - NewsReaderCartridge
       - MedTekCartridge
+      - CrewMemberBankCartridge
 
 - type: entity
   parent: BasePDA
@@ -495,6 +497,7 @@
       - NotekeeperCartridge
       - NewsReaderCartridge
       - AstroNavCartridge
+      - CrewMemberBankCartridge
 
 - type: entity
   parent: BasePDA
@@ -844,6 +847,7 @@
     - NewsReaderCartridge
     - WantedListCartridge
     - LogProbeCartridge
+    - CrewMemberBankCartridge
 
 - type: entity
   parent: BaseSecurityPDA
@@ -914,6 +918,7 @@
       - WantedListCartridge
       - LogProbeCartridge
       - AstroNavCartridge
+      - CrewMemberBankCartridge
 
 - type: entity
   parent: CentcomPDA
@@ -938,6 +943,7 @@
       - WantedListCartridge
       - MedTekCartridge
       - AstroNavCartridge
+      - CrewMemberBankCartridge
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
@@ -1086,6 +1092,7 @@
       - WantedListCartridge
       - LogProbeCartridge
       - AstroNavCartridge
+      - CrewMemberBankCartridge
 
 - type: entity
   parent: ERTLeaderPDA
@@ -1254,6 +1261,7 @@
     - NewsReaderCartridge
     - WantedListCartridge
     - LogProbeCartridge
+    - CrewMemberBankCartridge
 
 - type: entity
   parent: BaseMedicalPDA
@@ -1281,6 +1289,7 @@
     - NewsReaderCartridge
     - WantedListCartridge
     - MedTekCartridge
+    - CrewMemberBankCartridge
 
 - type: entity
   parent: ClownPDA

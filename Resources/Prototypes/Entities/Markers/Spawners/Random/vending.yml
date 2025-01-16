@@ -43,8 +43,6 @@
       weight: 40
     - id: VendingMachineWinter
       weight: 40
-    - id: VendingMachinePride
-      weight: 10
     - id: VendingMachineTheater
       weight: 10
 
