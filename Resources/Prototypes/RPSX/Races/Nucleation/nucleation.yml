@@ -7,7 +7,7 @@
   - type: Body
     prototype: Nuclean
     requiredLegs: 2
-  - type: Icon 
+  - type: Icon
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: full
 
@@ -59,7 +59,7 @@
   - type: Body
     prototype: Nuclean
     requiredLegs: 2
-  - type: Icon 
+  - type: Icon
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: full
   - type: Butcherable
@@ -88,7 +88,7 @@
   - type: Body
     prototype: Nuclean
     requiredLegs: 2
-  - type: Icon 
+  - type: Icon
     sprite: Mobs/Species/Nuclean/parts.rsi
     state: full
   - type: Inventory
@@ -357,6 +357,7 @@
     - DoorBumpOpener
     - AnomalyHost
   - type: SpeechBarks
+  - type: TTS
 
 - type: entity
   save: false
