@@ -247,6 +247,7 @@
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
   - type: NightVision # RPSX EDIT
+    isEquipment: true
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -324,7 +325,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
-  - type: NightVision # RPSX EDIT 
+  - type: NightVision # RPSX EDIT
+    isEquipment: true  
   
 
 #Luxury Mining Hardsuit
@@ -563,6 +565,7 @@
         Piercing: 0.9
         Heat: 0.9
   - type: NightVision # RPSX EDIT
+    isEquipment: true
     color: "#5ECDF7"
 
 #ERT Chaplain Hardsuit
@@ -579,6 +582,7 @@
   - type: PointLight
     color: "#ffffff"
   - type: NightVision # RPSX EDIT
+    isEquipment: true
     color: "#5ECDF7"
     
 #ERT Engineer Hardsuit
@@ -602,6 +606,7 @@
         Piercing: 0.9
         Heat: 0.9
   - type: NightVision # RPSX EDIT
+    isEquipment: true
     color: "#5ECDF7"
 
 #ERT Medical Hardsuit
@@ -618,6 +623,7 @@
   - type: PointLight
     color: "#44c9b1"
   - type: NightVision # RPSX EDIT
+    isEquipment: true
     color: "#5ECDF7"
 
 #ERT Security Hardsuit
@@ -641,6 +647,7 @@
         Piercing: 0.9
         Heat: 0.9
   - type: NightVision # RPSX EDIT
+    isEquipment: true
     color: "#5ECDF7"
 
 #ERT Janitor Hardsuit
@@ -682,6 +689,9 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: NightVision # RPSX EDIT
+    isEquipment: true
+    color: "#5ECDF7"
 
 #Deathsquad Hardsuit
 - type: entity
@@ -713,6 +723,7 @@
         Caustic: 0.95
   # RPSX EDIT START 
   - type: ThermalVision
+    isEquipment: true
     color: "#5ECDF7"
     lightRadius: 15
   # RPSX EDIT END

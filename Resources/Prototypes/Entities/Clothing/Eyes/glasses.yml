@@ -266,3 +266,4 @@
     sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
   - type: FlashImmunity
   - type: NightVision # RPSX EDIT
+    isEquipment: true
