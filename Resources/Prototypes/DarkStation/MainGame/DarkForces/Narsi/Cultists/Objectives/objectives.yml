@@ -117,3 +117,5 @@
       sprite: DarkStation/MainGame/DarkForces/Cult/Icons/task.rsi
       state: narsi_icon
   - type: NarsiCultSummonObjective
+  - type: NarsiObjective
+    bloodScore: 0

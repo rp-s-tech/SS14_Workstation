@@ -4,7 +4,12 @@
   id: RitualDagger
   description: A strange dagger used by sinister groups for rituals and sacrifices.
   components:
+  - type: UserInterface
+    interfaces:
+      enum.SecretListingKey.Key:
+        type: SecretListingBUI
   - type: Sharp
+  - type: NarsiRitualDagger
   - type: Sprite
     sprite: Objects/Weapons/Melee/cult_dagger.rsi
     state: icon
