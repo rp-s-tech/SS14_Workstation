@@ -52,7 +52,7 @@ public sealed class TTSVars : CVars
     /// VoiceId for Announcement TTS
     /// </summary>
     public static readonly CVarDef<string> TTSAnnounceVoiceId =
-        CVarDef.Create("tts.announce_voice", "Announcer", CVar.SERVERONLY | CVar.ARCHIVE);
+        CVarDef.Create("tts.announce_voice", "adjutant", CVar.SERVERONLY | CVar.ARCHIVE);
 
     /// <summary>
     /// Default volume setting of TTS Announce sound
