@@ -217,6 +217,8 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 2
     fillBaseName: packet-solid-
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   parent: BaseFoodCondimentPacket
@@ -302,6 +304,8 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 2
     fillBaseName: packet-solid-
+  - type: VendingPrice
+    price: 75
 
 - type: entity
   parent: BaseFoodCondimentPacket

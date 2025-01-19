@@ -1,0 +1,13 @@
+- type: construction
+  name: tiny fan
+  id: AtmosDeviceFanTiny
+  graph: AtmosDeviceFan
+  startNode: start
+  targetNode: AtmosDeviceFan
+  category: construction-category-utilities
+  description: "A tiny fan, releasing a thin gust of air."
+  icon:
+    sprite: Structures/Piping/Atmospherics/tinyfan.rsi
+    state: icon
+  objectType: Structure
+  placementMode: SnapgridCenter

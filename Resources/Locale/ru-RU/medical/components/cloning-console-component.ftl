@@ -2,6 +2,7 @@
 
 cloning-console-window-title = Консоль клонирования
 cloning-console-window-clone-button-text = Клонировать
+cloning-console-window-scanner-tab-name = Сканер
 cloning-console-window-scanner-id = ID: [color=white]{ $scannerOccupantName }[/color]
 cloning-console-window-pod-id = ID: [color=white]{ $podOccupantName }[/color]
 cloning-console-window-no-patient-data-text = Нет данных о пациенте.

@@ -99,6 +99,7 @@ namespace Content.Server.Administration.Systems
                 string.Empty,
                 string.Empty,
                 true,
+                false,
                 _gameTicker.RoundDuration().ToString("hh\\:mm\\:ss"),
                 _gameTicker.RunLevel,
                 playedSound: false
@@ -230,6 +231,7 @@ namespace Content.Server.Administration.Systems
                 session.Name,
                 message,
                 true,
+                false,
                 roundTime,
                 _gameTicker.RunLevel,
                 playedSound: true,
@@ -756,6 +758,7 @@ namespace Content.Server.Administration.Systems
                     senderSession.Name,
                     str,
                     !personalChannel,
+                    false,
                     _gameTicker.RoundDuration().ToString("hh\\:mm\\:ss"),
                     _gameTicker.RunLevel,
                     playedSound: playSound,
@@ -772,6 +775,95 @@ namespace Content.Server.Administration.Systems
             var starMuteMsg = new BwoinkTextMessage(message.UserId, SystemUserId, systemText);
             RaiseNetworkEvent(starMuteMsg, senderSession.Channel);
         }
+
+public async Task SendBwoinkMessage(NetUserId sender, NetUserId recipient, string text)
+{
+    if (string.IsNullOrWhiteSpace(text))
+        throw new ArgumentException("Message text cannot be empty", nameof(text));
+
+    // Находим имя отправителя через IPlayerLocator
+    string senderName = "[Unknown]";
+    var locatedPlayer = await _playerLocator.LookupIdAsync(sender);
+    if (locatedPlayer != null && !string.IsNullOrWhiteSpace(locatedPlayer.Username))
+    {
+        senderName = locatedPlayer.Username;
+    }
+    else
+    {
+        Log.Warning($"Failed to locate sender {sender}. Using default name.");
+    }
+
+    var colorHex = IoCManager.Resolve<IConfigurationManager>().GetCVar(RPSXCCVars.DiscordAHelpColor);
+    var colorName = string.IsNullOrEmpty(colorHex) ? "pink" : colorHex; // Используем "pink" по умолчанию, если значение не задано
+
+    var formattedText = $"[color={colorName}][bold]\\[Discord\\][/bold] {senderName}[/color]: {text}";
+
+
+    // Создаём сообщение Bwoink
+    var bwoinkMessage = new BwoinkTextMessage(
+        userId: recipient,
+        trueSender: sender,
+        text: formattedText,
+        sentAt: DateTime.Now,
+        playSound: true
+    );
+
+    // Проверяем наличие канала получателя
+    if (_playerManager.TryGetSessionById(recipient, out var session) && session.Channel != null)
+    {
+        // Отправляем сообщение через RaiseNetworkEvent
+        RaiseNetworkEvent(bwoinkMessage, session.Channel);
+    }
+    else
+    {
+        Log.Warning($"Failed to send Bwoink message: Recipient {recipient} does not have an active channel.");
+    }
+
+    var admins = GetTargetAdmins();
+    foreach (var adminChannel in admins)
+    {
+        if (session != null && adminChannel == session.Channel)
+            continue;
+
+        RaiseNetworkEvent(bwoinkMessage, adminChannel);
+    }
+
+    // Отправляем сообщение на вебхук Discord
+    if (_webhookUrl != string.Empty)
+    {
+        if (!_messageQueues.ContainsKey(bwoinkMessage.UserId))
+        {
+            _messageQueues[bwoinkMessage.UserId] = new Queue<DiscordRelayedData>();
+        }
+
+        // Ограничиваем длину сообщения, чтобы избежать проблем с лимитами Discord
+        var str = text;
+        var unameLength = senderName.Length;
+        if (unameLength + str.Length + _maxAdditionalChars > DescriptionMax)
+        {
+            str = str[..(DescriptionMax - _maxAdditionalChars - unameLength)];
+        }
+
+        // Создаём параметры для сообщения Discord
+        var nonAfkAdmins = GetNonAfkAdmins();
+        var messageParams = new AHelpMessageParams(
+            senderName,
+            str,
+            isAdmin: false,
+            isAPI: true,
+            _gameTicker.RoundDuration().ToString("hh\\:mm\\:ss"),
+            _gameTicker.RunLevel,
+            playedSound: true,
+            noReceivers: nonAfkAdmins.Count == 0
+        );
+
+        // Добавляем сообщение в очередь
+        _messageQueues[bwoinkMessage.UserId].Enqueue(GenerateAHelpMessage(messageParams));
+    }
+}
+
+
+
 
         private IList<INetChannel> GetNonAfkAdmins()
         {
@@ -794,10 +886,13 @@ namespace Content.Server.Administration.Systems
         {
             var stringbuilder = new StringBuilder();
 
+            var icon = IoCManager.Resolve<IConfigurationManager>().GetCVar(RPSXCCVars.DiscordAHelpIcon);
             if (parameters.Icon != null)
                 stringbuilder.Append(parameters.Icon);
             else if (parameters.IsAdmin)
                 stringbuilder.Append(":outbox_tray:");
+            else if (parameters.IsAPI)
+                stringbuilder.Append(icon);
             else if (parameters.NoReceivers)
                 stringbuilder.Append(":sos:");
             else
@@ -866,6 +961,7 @@ namespace Content.Server.Administration.Systems
         public string Username { get; set; }
         public string Message { get; set; }
         public bool IsAdmin { get; set; }
+        public bool IsAPI { get; set; }
         public string RoundTime { get; set; }
         public GameRunLevel RoundState { get; set; }
         public bool PlayedSound { get; set; }
@@ -876,6 +972,7 @@ namespace Content.Server.Administration.Systems
             string username,
             string message,
             bool isAdmin,
+            bool isAPI,
             string roundTime,
             GameRunLevel roundState,
             bool playedSound,
@@ -885,6 +982,7 @@ namespace Content.Server.Administration.Systems
             Username = username;
             Message = message;
             IsAdmin = isAdmin;
+            IsAPI = isAPI;
             RoundTime = roundTime;
             RoundState = roundState;
             PlayedSound = playedSound;

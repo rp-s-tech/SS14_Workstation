@@ -1159,6 +1159,8 @@
       sprite: Clothing/Uniforms/Jumpsuit/flannel.rsi
     - type: Clothing
       sprite: Clothing/Uniforms/Jumpsuit/flannel.rsi
+    - type: VendingPrice
+      price: 1000
 
 - type: entity
   parent: ClothingUniformBase
@@ -1286,6 +1288,8 @@
       - state: equipped-INNERCLOTHING-jumpsuit
       - state: equipped-INNERCLOTHING-shirt
         color: "#134fc1"
+  - type: VendingPrice
+    price: 1000
 
 - type: entity
   parent: ClothingUniformBase
@@ -1316,6 +1320,8 @@
       - state: equipped-INNERCLOTHING-jumpsuit
       - state: equipped-INNERCLOTHING-shirt
         color: "#9c0dff"
+  - type: VendingPrice
+    price: 1000
 
 - type: entity
   parent: ClothingUniformBase
@@ -1346,6 +1352,8 @@
       - state: equipped-INNERCLOTHING-jumpsuit
       - state: equipped-INNERCLOTHING-shirt
         color: "#b30000"
+  - type: VendingPrice
+    price: 1000
 
 - type: entity
   parent: ClothingUniformBase
@@ -1376,6 +1384,8 @@
       - state: equipped-INNERCLOTHING-jumpsuit
       - state: equipped-INNERCLOTHING-shirt
         color: "#00661D"
+  - type: VendingPrice
+    price: 1000
 
 - type: entity
   parent: ClothingUniformBase
@@ -1387,3 +1397,5 @@
     sprite: Clothing/Uniforms/Jumpsuit/familiar_garbs.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/familiar_garbs.rsi
+  - type: VendingPrice
+    price: 1000

@@ -47,6 +47,7 @@
     - type: GridSpawn
       groups:
         trade: !type:GridSpawnGroup
+          nameGrid: false # Exodus | Normal name for trading outpost grid
           addComponents:
             - type: ProtectedGrid
             - type: TradeStation
@@ -70,6 +71,7 @@
           - /Maps/Ruins/syndicate_dropship.yml
           - /Maps/Ruins/whiteship_ancient.yml
           - /Maps/Ruins/whiteship_bluespacejumper.yml
+          - /Maps/Ruins/wrecklaimer.yml
         vgroid: !type:DungeonSpawnGroup
           minimumDistance: 300
           maximumDistance: 350
@@ -81,12 +83,19 @@
             inherent: true
           protos:
           - VGRoid
+        # Exodus-SalvageShuttle-start
+        mining: !type:GridSpawnGroup
+          nameGrid: false
+          paths:
+          - /Maps/Exodus/Shuttles/mining.yml
+        # Exodus-SalvageShuttle-end
 
 - type: entity
   id: BaseStationCentcomm
   abstract: true
   components:
     - type: StationCentcomm
+      map: "/Maps/corvax_centcomm.yml" # Corvax-Mapping
 
 - type: entity
   id: BaseStationEvacuation
@@ -131,3 +140,17 @@
   abstract: true
   components:
     - type: StationEventEligible # For when someone makes this more granular in the future.
+
+
+- type: entity
+  id: BaseStationCrewMembersSalary
+  abstract: true
+  components:
+    - type: CrewMemberStationSalary
+      salaries: StandardNanoTrasenSalaries
+
+- type: entity
+  id: BaseCCOConsoleTargetStation
+  abstract: true
+  components:
+  - type: CCOConsoleTarget

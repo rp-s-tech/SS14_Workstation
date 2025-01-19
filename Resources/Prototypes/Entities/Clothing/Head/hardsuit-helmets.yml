@@ -56,6 +56,10 @@
         shader: unshaded
   - type: PointLight
     color: "#adffe6"
+  # Exodus-Engineering-Flashligt-Start
+    radius: 5
+    energy: 3
+  # Exodus-Engineering-Flashligt-End
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -77,7 +81,11 @@
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/engineering.rsi
   - type: PointLight
-    color: "#ffdbad"
+  # Exodus-Engineering-Flashligt-Start
+    color: "#dad871"
+    radius: 5
+    energy: 3
+  # Exodus-Engineering-Flashligt-End
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
@@ -261,7 +269,11 @@
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/engineering-white.rsi
   - type: PointLight # Corvax-Resprite
-    color: "#e6aa5c"
+  # Exodus-Engineering-Flashligt-Start
+    color: "#dad871"
+    radius: 7
+    energy: 3
+  # Exodus-Engineering-Flashligt-End
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000

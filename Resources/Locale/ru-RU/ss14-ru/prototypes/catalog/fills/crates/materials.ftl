@@ -18,3 +18,7 @@ ent-CrateMaterialCardboard = ящик картона
     .desc = 60 единиц картона.
 ent-CrateMaterialPaper = ящик бумаги
     .desc = 90 листов бумаги.
+ent-CrateMaterialHFuelTank = ящик топливного бака
+    .desc = { ent-CrateGenericSteel.desc }
+ent-CrateMaterialHWaterTank = ящик водяного бака
+    .desc = { ent-CrateGenericSteel.desc }

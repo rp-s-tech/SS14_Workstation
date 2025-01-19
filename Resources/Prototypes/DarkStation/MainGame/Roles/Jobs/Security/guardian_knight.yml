@@ -26,3 +26,5 @@
     - !type:OverallPlaytimeRequirement
       time: 36000 # 10h
   - type: GhostTakeoverAvailable
+  - type: TTS
+    VoicePrototypeId: sentrybot

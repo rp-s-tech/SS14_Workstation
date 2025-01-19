@@ -84,6 +84,7 @@
     materialComposition:
       Plasma: 100
   - type: Stack
+    count: 50
     stackType: Plasma
     baseLayer: base
     layerStates:
@@ -147,6 +148,7 @@
     materialComposition:
       Plastic: 100
   - type: Stack
+    count: 50
     stackType: Plastic
     baseLayer: base
     layerStates:
@@ -196,7 +198,7 @@
     count: 1
 
 - type: entity
-  parent: [SheetOtherBase, FoodBase]
+  parent: [SheetOtherBase, EdibleBase]
   id: SheetUranium
   name: uranium
   suffix: Full
@@ -209,6 +211,7 @@
     materialComposition:
       Uranium: 100
   - type: Stack
+    count: 50
     stackType: Uranium
     baseLayer: base
     layerStates:
@@ -263,6 +266,7 @@
       materialComposition:
         Meaterial: 100
     - type: Stack
+      count: 50
       stackType: MeatSheets
       baseLayer: base
       layerStates:

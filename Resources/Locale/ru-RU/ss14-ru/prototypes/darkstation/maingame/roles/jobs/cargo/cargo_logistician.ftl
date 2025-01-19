@@ -1,0 +1,12 @@
+ent-ClothingUniformJumpsuitCargoLogistician = Униформа логиста
+    .desc = Стильная униформа (на самом деле, нет).
+ent-ClothingUniformJumpskirtCargoLogistician = Униформа логиста
+    .desc = Стильная униформа (на самом деле, нет).
+ent-CargoLogisticianPDA = КПК логиста
+    .desc = Гармоничный КПК для любителя денег.
+ent-CargoLogisticianIDCard = ID карта логиста
+    .desc = { ent-IDCardStandard.desc }
+ent-ClothingHeadHatCargoLogistician = Кепка логиста
+    .desc = Лучший головной убор во время жаркого потока заказов.
+ent-ClothingHeadsetCargoLogistician = Гарнитура Логиста
+    .desc = Гарнитура логиста для работы с отделом и принятия прямых заказов от командования.

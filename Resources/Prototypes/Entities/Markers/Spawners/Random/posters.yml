@@ -92,6 +92,8 @@
       - PosterContrabandInterdyne
       - PosterContrabandWaffleCorp
       - PosterContrabandMissingSpacepen
+      ## RPSX
+      - PosterNewYearRPSX6
     chance: 1
 
 - type: entity
@@ -157,4 +159,10 @@
       - PosterLegitSafetyMothHardhat
       - PosterLegitSafetyMothSSD
       - PosterLegitOppenhopper
+      ## RPSX
+      - PosterNewYearRPSX1
+      - PosterNewYearRPSX2
+      - PosterNewYearRPSX3
+      - PosterNewYearRPSX4
+      - PosterNewYearRPSX5
     chance: 1

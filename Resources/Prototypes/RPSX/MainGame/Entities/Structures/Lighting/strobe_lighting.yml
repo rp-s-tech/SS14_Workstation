@@ -1,0 +1,28 @@
+- type: entity
+  id: PoweredlightLEDRPSX
+  description: "A light fixture. Draws power and produces light when equipped with a light tube."
+  suffix: LED
+  parent: Poweredlight
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: LedLightTube
+  - type: PointLight
+    radius: 15
+    energy: 1
+    softness: 0.9
+    color: "#EEEEFF"
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 1 # LEDs don't get as hot
+    popupText: powered-light-component-burn-hand
+  - type: Sprite
+    sprite: RPSX/MainGame/Structures/Wallmounts/Lighting/light_tube.rsi
+    drawdepth: WallMountedItems
+    layers:
+    - map: ["enum.PoweredLightLayers.Base"]
+      state: base
+    - map: ["enum.PoweredLightLayers.Glow"]
+      state: glow
+      shader: unshaded
+    state: base

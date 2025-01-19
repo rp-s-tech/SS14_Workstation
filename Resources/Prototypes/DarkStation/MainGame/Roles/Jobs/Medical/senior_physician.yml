@@ -13,9 +13,6 @@
     role: JobMedicalDoctor
     time: 14400 # 4h
   - !type:RoleTimeRequirement
-    role: JobSurger
-    time: 14400 # 4h
-  - !type:RoleTimeRequirement
     role: JobParamedic
     time: 14400 # 4h
 

@@ -1,0 +1,51 @@
+- type: entity
+  id: BaseExodusStatue
+  abstract: true
+  parent: BaseStructure
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      sprite: Exodus/Structures/Decoration/statues.rsi
+      drawdepth: Mobs
+      offset: "0.0,0.5"
+      noRot: true
+    - type: HeldSpeedModifier
+      walkModifier: 0.1
+      sprintModifier: 0.1
+
+- type: entity
+  id: DrakeStatue
+  name: stone guardian
+  description: An ancient replica of a powerful creature. Too lifelike to be a mere imitator.
+  parent: BaseExodusStatue
+  components:
+    - type: Sprite
+      state: drake
+
+- type: entity
+  parent: BaseExodusStatue
+  id: DrakeStatueOld
+  name: old stone guardian
+  description: Desecrated and disfigured. Looks at you with hatred.
+  components:
+    - type: Sprite
+      state: drake_old
+
+- type: entity
+  parent: BaseExodusStatue
+  id: ObedientStatue
+  name: obedient statue
+  description: Nobody knows who he is. Maybe someone important.
+  components:
+    - type: Sprite
+      state: obedient
+
+- type: entity
+  parent: BaseExodusStatue
+  id: AdeptStatue
+  name: adept statue
+  description: Knowing the other side of the coin. Covered in an unpleasant sticky substance.
+  components:
+    - type: Sprite
+      state: adept

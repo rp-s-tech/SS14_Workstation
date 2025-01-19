@@ -41,6 +41,10 @@ namespace Content.Shared.VendingMachines
         [DataField, AutoNetworkedField]
         public Dictionary<string, VendingMachineInventoryEntry> ContrabandInventory = new();
 
+        [DataField]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public bool Paid;
+
         [DataField, AutoNetworkedField]
         public bool Contraband;
 
@@ -189,11 +193,14 @@ namespace Content.Shared.VendingMachines
         public string ID;
         [ViewVariables(VVAccess.ReadWrite)]
         public uint Amount;
-        public VendingMachineInventoryEntry(InventoryType type, string id, uint amount)
+        [ViewVariables(VVAccess.ReadWrite)]
+        public int Price;
+        public VendingMachineInventoryEntry(InventoryType type, string id, uint amount, int price)
         {
             Type = type;
             ID = id;
             Amount = amount;
+            Price = price;
         }
     }
 

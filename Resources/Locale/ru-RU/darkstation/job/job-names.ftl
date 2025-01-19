@@ -1,14 +1,13 @@
-﻿job-name-agentcrimsonlily = Агент Багровой Лилии
-job-name-blueshield = офицер "Синий щит"
-job-name-senior-engineer = ведущий инженер
-job-name-senior-researcher = ведущий учёный
-job-name-senior-physician = ведущий врач
-job-name-senior-officer = инструктор СБ
-
-
+job-name-agentcrimsonlily = Агент Багровой Лилии
+job-name-blueshield = Офицер "Синий щит"
+job-name-senior-engineer = Ведущий инженер
+job-name-senior-researcher = Ведущий учёный
+job-name-senior-physician = Ведущий врач
+job-name-senior-officer = Инструктор СБ
 JobAgentCrimsonLily = Агент Багровой Лилии
-JobSeniorEngineer = ведущий инженер
-JobSeniorOfficer = инструктор СБ
-JobSeniorPhysician = ведущий врач
-JobSeniorResearcher = ведущий учёный
-JobBlueShield = офицер "Синий щит"
+JobSeniorEngineer = Ведущий инженер
+JobSeniorOfficer = Инструктор СБ
+JobSeniorPhysician = Ведущий врач
+JobSeniorResearcher = Ведущий учёный
+JobBlueShield = Офицер "Синий щит"
+JobPathologist = Патологоанатом

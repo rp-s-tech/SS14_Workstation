@@ -18,6 +18,7 @@ using Robust.Shared.GameStates;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Robust.Server.Audio;
+using Content.Shared.Whitelist; // Exodus-ThickSyringes
 
 namespace Content.Server.Chemistry.EntitySystems;
 
@@ -25,6 +26,7 @@ public sealed class HypospraySystem : SharedHypospraySystem
 {
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly InteractionSystem _interaction = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!; // Exodus-ThickSyringes
 
     public override void Initialize()
     {
@@ -130,11 +132,25 @@ public sealed class HypospraySystem : SharedHypospraySystem
             return true;
         }
 
-        if (!_solutionContainers.TryGetInjectableSolution(target, out var targetSoln, out var targetSolution))
+        // Exodus-ThickSyringes-Start | Add fetching of InjectableSolutionComponent and check it's whitelist
+        if (!TryComp<InjectableSolutionComponent>(target, out var injectable))
         {
             _popup.PopupEntity(Loc.GetString("hypospray-cant-inject", ("target", Identity.Entity(target, EntityManager))), target, user);
             return false;
         }
+
+        if (!_solutionContainers.TryGetInjectableSolution((target, injectable), out var targetSoln, out var targetSolution))
+        {
+            _popup.PopupEntity(Loc.GetString("hypospray-cant-inject", ("target", Identity.Entity(target, EntityManager))), target, user);
+            return false;
+        }
+
+        if (_whitelist.IsWhitelistFail(injectable.Whitelist, entity.Owner))
+        {
+            _popup.PopupEntity(Loc.GetString("hypospray-cant-inject", ("target", Identity.Entity(target, EntityManager))), target, user);
+            return false;
+        }
+        // Exodus-ThickSyringes-End
 
         _popup.PopupEntity(Loc.GetString(msgFormat ?? "hypospray-component-inject-other-message", ("other", target)), target, user);
 

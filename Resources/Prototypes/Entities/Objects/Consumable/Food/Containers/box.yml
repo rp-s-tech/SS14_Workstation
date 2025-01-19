@@ -274,6 +274,17 @@
       prob: 0.10
       orGroup: Pizza
     - id: KnifePlastic
+  
+- type: entity
+  name: pizza box
+  parent: FoodBoxPizzaFilled
+  id: FoodBoxPizzaCotton
+  suffix: Cotton Pizza
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodPizzaCotton
+    - id: KnifePlastic
 
 # Nugget
 
@@ -558,6 +569,8 @@
       - id: GoldenBikeHorn
         prob: 0.1
         orGroup: GiftPool
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   id: HappyHonkMime
@@ -575,6 +588,8 @@
   - type: Item
     sprite: Objects/Storage/Happyhonk/mime.rsi
     heldPrefix: box
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   id: HappyHonkNukie
@@ -607,6 +622,8 @@
         orGroup: GiftPool
       - id: PlushieNuke
         orGroup: GiftPool
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   parent: HappyHonkNukie
@@ -677,6 +694,8 @@
   - type: StorageFill
     contents:
       - id: CluwneHorn
+  - type: VendingPrice
+    price: 200
 
 - type: entity
   id: FoodMealHappyHonkClown

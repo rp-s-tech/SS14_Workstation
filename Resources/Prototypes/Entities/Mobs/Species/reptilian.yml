@@ -12,6 +12,7 @@
     - HeadTop
     - HeadSide
   - type: Hunger
+    baseDecayRate: 0.0333333333 # Exodus-ReptilianLore
   - type: Puller
     needsHands: false
   - type: Thirst
@@ -53,7 +54,7 @@
         Slash: 5
   - type: Temperature
     heatDamageThreshold: 400
-    coldDamageThreshold: 285
+    coldDamageThreshold: 273 # Exodus-ReptilianLore
     currentTemperature: 310.15
     specificHeat: 42
     coldDamage:
@@ -68,15 +69,83 @@
       295: 0.6
       285: 0.4
   - type: Wagging
+  # Exodus-ThickSyringes-Start
+  # Exodus-ReptilianLore-Start | Zessul Blood heals reptilians better
+  - type: Bloodstream
+    bloodReagent: ZessulBlood
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 30
+    damage:
+      types:
+        Heat: -0.4
+      groups:
+        Brute: -0.4
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      120: Critical
+      200: Dead
+  # Exodus-ReptilianLore | Drawsiness
+  - type: PassiveEffects
+    effects:
+    - !type:Emote
+      conditions:
+        - !type:Temperature
+          max: 283
+      emote: Yawn
+      showInChat: true
+      probability: 0.2
+    - !type:GenericStatusEffect
+      conditions:
+        - !type:Temperature
+          max: 283
+      key: Drowsiness
+      component: Drowsiness
+      time: 4
+      type: Add
+      refresh: false
+  # Exodus-ReptilianLore-End
+  - type: InjectableSolution
+    solution: chemicals
+    whitelist:
+      tags:
+        - ThickSyringe
+  - type: Tag
+    tags:
+      - ThickSkin
+      - CanPilot
+      - FootstepSound
+      - DoorBumpOpener
+      - AnomalyHost
+  # Exodus-ThickSyringes-End
   - type: Inventory
     speciesId: reptilian
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Mobs/Species/Human/displacement.rsi
+            sprite: Corvax/Mobs/Species/displacement.rsi # Corvax-Digitigrade
             state: jumpsuit-female
-
+    # Corvax-Digitigrade-Start
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: jumpsuit
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
+    # Corvax-Displacements-End
 
 - type: entity
   parent: BaseSpeciesDummy
@@ -96,7 +165,25 @@
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Mobs/Species/Human/displacement.rsi
+            sprite: Corvax/Mobs/Species/displacement.rsi # Corvax-Digitigrade
             state: jumpsuit-female
+    # Corvax-Digitigrade-Start
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: jumpsuit
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
+    # Corvax-Digitigrade-End
 
 #Weh

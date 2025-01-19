@@ -81,6 +81,9 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
+  - type: VendingPrice
+    price: 500
+
 
 - type: entity
   parent: ClothingEyesBase
@@ -141,6 +144,8 @@
     - WhitelistChameleon
   - type: IdentityBlocker
     coverage: EYES
+  - type: VendingPrice
+    price: 750
 
 - type: entity
   parent: ClothingEyesGlassesCheapSunglasses

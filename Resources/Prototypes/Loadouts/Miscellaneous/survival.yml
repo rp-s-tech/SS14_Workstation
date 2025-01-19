@@ -18,6 +18,7 @@
     - Human
     - Moth
     - Reptilian
+    - Nucleation  # RPSX
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox

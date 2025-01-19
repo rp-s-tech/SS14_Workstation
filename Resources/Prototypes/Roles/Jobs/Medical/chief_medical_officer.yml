@@ -13,9 +13,6 @@
       role: JobMedicalDoctor
       time: 21600 #6 hrs
     - !type:RoleTimeRequirement
-      role: JobSurger
-      time: 10800 #6 hrs
-    - !type:RoleTimeRequirement
       role: JobParamedic
       time: 21600 # 6h
     - !type:DepartmentTimeRequirement

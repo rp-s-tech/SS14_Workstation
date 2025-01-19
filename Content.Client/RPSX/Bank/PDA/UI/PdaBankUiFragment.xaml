@@ -1,0 +1,51 @@
+﻿<ui:PdaBankUiFragment
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.RPSXClient.PDA.Bank"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:ui="clr-namespace:Content.Client.RPSX.Bank.PDA.UI">
+
+    <PanelContainer HorizontalExpand="True">
+        <PanelContainer.PanelOverride>
+            <graphics:StyleBoxFlat BackgroundColor="#1A1C24" />
+        </PanelContainer.PanelOverride>
+
+        <BoxContainer Orientation="Vertical" Margin="8 8 8 8">
+
+            <BoxContainer Orientation="Horizontal">
+                <Label StyleClasses="StatusFieldTitle" Text="Пользователь:" />
+                <Label Name="Username" Text="Неизвестно" Margin="8 0 8 0" />
+            </BoxContainer>
+
+            <BoxContainer Orientation="Horizontal">
+                <Label StyleClasses="StatusFieldTitle" Text="Баланс:" />
+                <Label Name="UserBalance" Text="Неизвестно" Margin="8 0 8 0" />
+            </BoxContainer>
+
+            <BoxContainer Orientation="Horizontal">
+                <Label StyleClasses="StatusFieldTitle" Text="Тариф:" />
+                <Label Text="Неизвестно" Margin="8 0 8 0" />
+            </BoxContainer>
+        </BoxContainer>
+    </PanelContainer>
+
+    <PanelContainer HorizontalExpand="True"  Margin="0 8 0 0">
+        <PanelContainer.PanelOverride>
+            <graphics:StyleBoxFlat BackgroundColor="#1A1C24" />
+        </PanelContainer.PanelOverride>
+
+        <GridContainer Columns="4" HorizontalExpand="True" Margin="0 8 0 8">
+            <Label StyleClasses="StatusFieldTitle" Text="Агент" Align="Center" HorizontalExpand="True" />
+            <Label StyleClasses="StatusFieldTitle" Text="Тип операции" Align="Center" HorizontalExpand="True" />
+            <Label StyleClasses="StatusFieldTitle" Text="Статус" Align="Center" HorizontalExpand="True" />
+            <Label StyleClasses="StatusFieldTitle" Text="Сумма" Align="Center" HorizontalExpand="True" />
+        </GridContainer>
+    </PanelContainer>
+
+    <ScrollContainer VerticalExpand="True"
+                     HScrollEnabled="False"
+                     VScrollEnabled="True">
+
+        <BoxContainer Name="TransactionsList" Orientation="Vertical" VerticalExpand="True" />
+    </ScrollContainer>
+
+</ui:PdaBankUiFragment>

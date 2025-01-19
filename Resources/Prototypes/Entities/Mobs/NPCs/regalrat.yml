@@ -91,6 +91,8 @@
     name: ghost-role-information-rat-king-name
     description: ghost-role-information-rat-king-description
     rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
@@ -126,6 +128,8 @@
     color: "#A3A3A3"
     activateSound: null
     deactivateSound: null
+  - type: TTS # Corvax-TTS
+    voice: Rat
 
 - type: entity
   id: MobRatKingBuff

@@ -5,6 +5,7 @@
   description: You gotta have money.
   components:
   - type: Cash
+  - type: BankSecureCash
   - type: Item
     shape:
     - 0,0,1,0
@@ -44,6 +45,9 @@
         mask:
         - ItemMask
   - type: Appearance
+  - type: Tag
+    tags:
+    - Currency
 
 - type: material
   id: Credit

@@ -1,0 +1,247 @@
+#region Brown
+- type: tile
+  id: FloorMasonryBrown1
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-brown1.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryBrown2
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-brown2.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryBrown3
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-brown3.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryBrown4
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-brown4.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryBrown5
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-brown5.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryBrown6
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-brown6.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryBrown7
+  name: tiles-masonry-overgrown
+  sprite: /Textures/Exodus/Tiles/masonry-brown7.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+#endregion
+
+#region Gray
+- type: tile
+  id: FloorMasonryGray1
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-gray1.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryGray2
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-gray2.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryGray3
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-gray3.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryGray4
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-gray4.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryGray5
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-gray5.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryGray6
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-gray6.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryGray7
+  name: tiles-masonry-overgrown
+  sprite: /Textures/Exodus/Tiles/masonry-gray7.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+#endregion
+
+#region Light
+- type: tile
+  id: FloorMasonryLight1
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-light1.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryLight2
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-light2.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryLight3
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-light3.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryLight4
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-light4.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryLight5
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-light5.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryLight6
+  name: tiles-masonry
+  sprite: /Textures/Exodus/Tiles/masonry-light6.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryLight7
+  name: tiles-masonry-overgrown
+  sprite: /Textures/Exodus/Tiles/masonry-light7.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMasonryLight8
+  name: tiles-masonry-overgrown
+  sprite: /Textures/Exodus/Tiles/masonry-light8.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+#endregion

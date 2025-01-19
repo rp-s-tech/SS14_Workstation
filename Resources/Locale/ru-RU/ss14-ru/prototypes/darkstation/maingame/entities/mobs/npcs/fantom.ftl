@@ -1,0 +1,10 @@
+ent-MobFantomSnake = змея
+    .desc = Шшшш! Ууксы не ядовиты.
+ent-MobFantomCarp = { ent-BaseMobCarp }
+    .desc = { ent-BaseMobCarp.desc }
+ent-MobFantomSpiderSpace = космический паук
+    .desc = Он так светится, выглядит опасным.
+ent-MobFantomXenoDrone = Дрон
+    .desc = { ent-MobXeno.desc }
+ent-MobHumanFantom = Фантом
+    .desc = Обычный человек, наверное

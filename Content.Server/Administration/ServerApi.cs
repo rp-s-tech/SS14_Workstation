@@ -81,6 +81,8 @@ public sealed partial class ServerApi : IPostInjectInit
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/force_preset", ActionForcePreset);
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/set_motd", ActionForceMotd);
         RegisterActorHandler(HttpMethod.Patch, "/admin/actions/panic_bunker", ActionPanicPunker);
+        RegisterHandler(HttpMethod.Post, "/admin/actions/bwoink/send", HandleBwoinkSend);
+
     }
 
     public void Initialize()
@@ -392,6 +394,36 @@ public sealed partial class ServerApi : IPostInjectInit
             ticker.RestartRound();
             _sawmill.Info($"Forced instant round restart by {FormatLogActor(actor)}");
             await RespondOk(context);
+        });
+    }
+    private async Task HandleBwoinkSend(IStatusHandlerContext context)
+    {
+        // Чтение JSON-запроса
+        var request = await ReadJson<BwoinkRequest>(context);
+        if (request == null)
+            return;
+
+        await RunOnMainThread(async () =>
+        {
+            try
+            {
+                var bwoinkSystem = _entitySystemManager.GetEntitySystem<BwoinkSystem>();
+
+                // Преобразуем GUID в NetUserId
+                var senderId = new NetUserId(request.SenderUid);
+                var recipientId = new NetUserId(request.RecipientUid);
+
+                // Отправляем сообщение через систему Bwoink
+                bwoinkSystem.SendBwoinkMessage(senderId, recipientId, request.Message);
+
+                _sawmill.Info($"[Bwoink] {senderId} -> {recipientId}: {request.Message}");
+                await RespondOk(context);
+            }
+            catch (Exception ex)
+            {
+                _sawmill.Error($"Error processing Bwoink send request: {ex}");
+                await RespondBadRequest(context, "Failed to send bwoink message", ExceptionData.FromException(ex));
+            }
         });
     }
 
@@ -709,4 +741,12 @@ public sealed partial class ServerApi : IPostInjectInit
     }
 
     #endregion
+
+    private sealed class BwoinkRequest
+    {
+        public required Guid SenderUid { get; init; }
+        public required Guid RecipientUid { get; init; }
+        public required string Message { get; init; }
+    }
+
 }

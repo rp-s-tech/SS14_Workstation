@@ -1,0 +1,15 @@
+ent-CarpetCargo = { ent-CarpetBase }
+    .suffix = Снабжение
+    .desc = { ent-CarpetBase.desc }
+ent-CarpetEngineering = { ent-CarpetBase }
+    .suffix = Инженерный
+    .desc = { ent-CarpetBase.desc }
+ent-CarpetMedical = { ent-CarpetBase }
+    .suffix = Медицинский
+    .desc = { ent-CarpetBase.desc }
+ent-CarpetRND = { ent-CarpetBase }
+    .suffix = НИО
+    .desc = { ent-CarpetBase.desc }
+ent-CarpetSecurity = { ent-CarpetBase }
+    .suffix = Безопасность
+    .desc = { ent-CarpetBase.desc }

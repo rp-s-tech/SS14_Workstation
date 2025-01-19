@@ -1,0 +1,24 @@
+- type: gameMapPool
+  id: DefaultRPSXMapPool
+  maps:
+  - Amber
+  - Bagel
+  - Box
+  - Cog
+  - Core
+  - Elkridge
+  - Fland
+  - Gate
+  - Loop
+  - Marathon
+  - Meta
+  - Oasis
+  - Omega
+  - Packed
+  - CorvaxDelta
+  - CorvaxGelta
+  - CorvaxGlacier
+  - CorvaxIshimura
+  - CorvaxSilly
+  - CorvaxSplit
+  #- Train

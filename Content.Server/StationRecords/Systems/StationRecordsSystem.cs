@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Access.Systems;
 using Content.Server.Forensics;
+using Content.Server.RPSX.Bridges;
 using Content.Shared.Access.Components;
 using Content.Shared.GameTicking;
 using Content.Shared.Inventory;
@@ -9,6 +10,7 @@ using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.StationRecords;
 using Robust.Shared.Enums;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.StationRecords.Systems;
@@ -38,6 +40,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
     [Dependency] private readonly StationRecordKeyStorageSystem _keyStorage = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IdCardSystem _idCard = default!;
+    [Dependency] private readonly ISalaryBridge _salaryBridge = default!;
 
     public override void Initialize()
     {
@@ -93,7 +96,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
         TryComp<FingerprintComponent>(player, out var fingerprintComponent);
         TryComp<DnaComponent>(player, out var dnaComponent);
 
-        CreateGeneralRecord(station, idUid.Value, profile.Name, profile.Age, profile.Species, profile.Gender, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, profile, records);
+        CreateGeneralRecord(station, player, idUid.Value, profile.Name, profile.Age, profile.Species, profile.Gender, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, profile, records);
     }
 
 
@@ -106,6 +109,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
     ///     record with the bare minimum of information involved.
     /// </remarks>
     /// <param name="station">The entity uid of the station.</param>
+    /// <param name="player">The entity uid of a player.</param>
     /// <param name="idUid">The entity uid of an entity's ID card. Can be null.</param>
     /// <param name="name">Name of the character.</param>
     /// <param name="species">Species of the character.</param>
@@ -126,6 +130,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
     /// <param name="records">Station records component.</param>
     public void CreateGeneralRecord(
         EntityUid station,
+        EntityUid player,
         EntityUid? idUid,
         string name,
         int age,
@@ -147,7 +152,9 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
             SetIdKey(idUid, new StationRecordKey(id, station));
             return;
         }
+        TryComp<ActorComponent>(player, out var actorComponent);
 
+        var crewMemberSalary = _salaryBridge.GetCrewMemberSalary(station, jobId);
         var record = new GeneralStationRecord()
         {
             Name = name,
@@ -159,7 +166,10 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
             Gender = gender,
             DisplayPriority = jobPrototype.RealDisplayWeight,
             Fingerprint = mobFingerprint,
-            DNA = dna
+            DNA = dna,
+            Salary = crewMemberSalary,
+            MobEntity = GetNetEntity(player),
+            NetUserId = actorComponent?.PlayerSession.UserId
         };
 
         var key = AddRecordEntry(station, record);

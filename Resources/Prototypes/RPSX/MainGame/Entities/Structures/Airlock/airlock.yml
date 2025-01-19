@@ -1,0 +1,9 @@
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockGlassRPSX
+  components:
+  - type: Sprite
+    sprite: RPSX\MainGame\Structures\Airlocks\glass.rsi
+  - type: Wires
+    layoutId: AirlockService

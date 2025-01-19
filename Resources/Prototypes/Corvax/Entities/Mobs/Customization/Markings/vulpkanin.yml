@@ -58,7 +58,6 @@
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
       state: vulp_face
 
-
 # Animated
 - type: marking
   id: FoxTailAnimated
@@ -78,6 +77,6 @@
   speciesRestriction: []
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
-      state: wolf_tail_waggin
+      state: tail_wolf_waggin
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
-      state: wolf_tail_inner_waggin
+      state: tail_wolf_inner_waggin

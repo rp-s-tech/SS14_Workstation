@@ -1,0 +1,119 @@
+# TODO: Add descriptions (many)
+# TODO BODY: Part damage
+- type: entity
+  id: PartNewHuman
+  parent: [BaseItem, BasePart]
+  name: "human body part"
+  abstract: true
+  components:
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: TorsoNewHuman
+  name: "human torso"
+  parent: [PartNewHuman, BaseTorso]
+  components:
+  - type: Sprite
+    sprite: RPSX\MainGame\Mobs\Species\Human\parts.rsi
+    state: "torso_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20
+
+- type: entity
+  id: HeadNewHuman
+  name: "human head"
+  parent: [PartNewHuman, BaseHead]
+  components:
+  - type: Sprite
+    sprite: RPSX\MainGame\Mobs\Species\Human\parts.rsi
+    state: "head_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: LeftNewArmHuman
+  name: "left human arm"
+  parent: [PartNewHuman, BaseLeftArm]
+  components:
+  - type: Sprite
+    sprite: RPSX\MainGame\Mobs\Species\Human\parts.rsi
+    state: "l_arm"
+
+- type: entity
+  id: RightArmNewHuman
+  name: "right human arm"
+  parent: [PartNewHuman, BaseRightArm]
+  components:
+  - type: Sprite
+    sprite: RPSX\MainGame\Mobs\Species\Human\parts.rsi
+    state: "r_arm"
+
+- type: entity
+  id: LeftHandNewHuman
+  name: "left human hand"
+  parent: [PartNewHuman, BaseLeftHand]
+  components:
+  - type: Sprite
+    sprite: RPSX\MainGame\Mobs\Species\Human\parts.rsi
+    state: "l_hand"
+
+- type: entity
+  id: RightHandNewHuman
+  name: "right human hand"
+  parent: [PartNewHuman, BaseRightHand]
+  components:
+  - type: Sprite
+    sprite: RPSX\MainGame\Mobs\Species\Human\parts.rsi
+    state: "r_hand"
+
+- type: entity
+  id: LeftLegNewHuman
+  name: "left human leg"
+  parent: [PartNewHuman, BaseLeftLeg]
+  components:
+  - type: Sprite
+    sprite: RPSX\MainGame\Mobs\Species\Human\parts.rsi
+    state: "l_leg"
+
+- type: entity
+  id: RightLegNewHuman
+  name: "right human leg"
+  parent: [PartNewHuman, BaseRightLeg]
+  components:
+  - type: Sprite
+    sprite: RPSX\MainGame\Mobs\Species\Human\parts.rsi
+    state: "r_leg"
+
+- type: entity
+  id: LeftFootNewHuman
+  name: "left human foot"
+  parent: [PartNewHuman, BaseLeftFoot]
+  components:
+  - type: Sprite
+    sprite: RPSX\MainGame\Mobs\Species\Human\parts.rsi
+    state: "l_foot"
+
+- type: entity
+  id: RightFootNewHuman
+  name: "right human foot"
+  parent: [PartNewHuman, BaseRightFoot]
+  components:
+  - type: Sprite
+    sprite: RPSX\MainGame\Mobs\Species\Human\parts.rsi
+    state: "r_foot"

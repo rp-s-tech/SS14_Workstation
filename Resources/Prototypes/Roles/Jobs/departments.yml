@@ -93,6 +93,7 @@
   - Paramedic
   - SeniorPhysician
   - Pathologist
+  - Surger
 
 - type: department
   id: Security

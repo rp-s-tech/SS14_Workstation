@@ -1,0 +1,10 @@
+ent-ActionPetOrderStay = Остановиться
+    .desc = Приказать перестать следовать за вами
+ent-ActionPetOrderFollow = Следовать
+    .desc = Приказать следовать за вами
+ent-ActionPetOrderAttack = Атаковать
+    .desc = Переводит в боевой режим. Атакует любого, на кого вы укажите
+ent-ActionPetMakeGhostRole = Сделать гостролью
+    .desc = Сделает питомца гостролью, его сможет занять любой призрак
+ent-ActionPetRemoveGhostRole = Убрать гостроль
+    .desc = Убирает гостроль и выгоняет игрока из нее

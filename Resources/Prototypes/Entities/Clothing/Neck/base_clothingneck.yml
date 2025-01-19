@@ -29,6 +29,8 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+  - type: VendingPrice
+    price: 400
 
 - type: entity
   abstract: true

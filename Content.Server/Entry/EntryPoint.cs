@@ -36,6 +36,7 @@ using Robust.Shared.Utility;
 using Content.Server.RPSX.Bridges;
 using Content.Server.RPSX.Entry;
 using Content.Shared.RPSX.Patron;
+using Content.Server.SS220.TTS;
 
 namespace Content.Server.Entry
 {
@@ -50,6 +51,8 @@ namespace Content.Server.Entry
         private PlayTimeTrackingManager? _playTimeTracking;
         private IEntitySystemManager? _sysMan;
         private IServerDbManager? _dbManager;
+        private IWatchlistWebhookManager _watchlistWebhookManager = default!;
+        private IConnectionManager? _connectionManager;
         private RPSXRegisterIgnore _rpsxRegisterIgnore = new();
 
         /// <inheritdoc />
@@ -96,8 +99,10 @@ namespace Content.Server.Entry
                 _voteManager = IoCManager.Resolve<IVoteManager>();
                 _updateManager = IoCManager.Resolve<ServerUpdateManager>();
                 _playTimeTracking = IoCManager.Resolve<PlayTimeTrackingManager>();
+                _connectionManager = IoCManager.Resolve<IConnectionManager>();
                 _sysMan = IoCManager.Resolve<IEntitySystemManager>();
                 _dbManager = IoCManager.Resolve<IServerDbManager>();
+                _watchlistWebhookManager = IoCManager.Resolve<IWatchlistWebhookManager>();
 
                 logManager.GetSawmill("Storage").Level = LogLevel.Info;
                 logManager.GetSawmill("db.ef").Level = LogLevel.Info;
@@ -116,6 +121,7 @@ namespace Content.Server.Entry
                 _voteManager.Initialize();
                 _updateManager.Initialize();
                 _playTimeTracking.Initialize();
+                _watchlistWebhookManager.Initialize();
                 IoCManager.Resolve<JobWhitelistManager>().Initialize();
                 IoCManager.Resolve<PlayerRateLimitManager>().Initialize();
             }
@@ -127,6 +133,7 @@ namespace Content.Server.Entry
 
             IoCManager.Resolve<IChatSanitizationManager>().Initialize();
             IoCManager.Resolve<IChatManager>().Initialize();
+            IoCManager.Resolve<TTSManager>().Initialize(); // Corvax-TTS
             var configManager = IoCManager.Resolve<IConfigurationManager>();
             var resourceManager = IoCManager.Resolve<IResourceManager>();
             var dest = configManager.GetCVar(CCVars.DestinationFile);
@@ -182,6 +189,8 @@ namespace Content.Server.Entry
                 case ModUpdateLevel.FramePostEngine:
                     _updateManager.Update();
                     _playTimeTracking?.Update();
+                    _watchlistWebhookManager.Update();
+                    _connectionManager?.Update();
                     break;
             }
         }

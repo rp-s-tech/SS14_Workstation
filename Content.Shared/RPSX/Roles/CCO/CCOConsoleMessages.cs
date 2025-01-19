@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Serialization;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.RPSX.Roles.CCO;
 
@@ -25,6 +25,20 @@ public sealed class CcoConsoleSendEmergencyShuttleMessage : BoundUserInterfaceMe
 [Serializable, NetSerializable]
 public sealed class CcoConsoleCancelEmergencyShuttleMessage : BoundUserInterfaceMessage
 {
+}
+
+[Serializable, NetSerializable]
+public sealed class CcoConsoleCrewMemberSalaryBonusMessage(int bonus, uint record) : BoundUserInterfaceMessage
+{
+    public readonly int Bonus = bonus;
+    public readonly uint Record = record;
+}
+
+[Serializable, NetSerializable]
+public sealed class CcoConsoleCrewMemberSalaryPenaltyMessage(int penalty, uint record) : BoundUserInterfaceMessage
+{
+    public readonly int Penalty = penalty;
+    public readonly uint Record = record;
 }
 
 [Serializable, NetSerializable]

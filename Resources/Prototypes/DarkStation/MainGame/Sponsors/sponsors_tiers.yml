@@ -34,6 +34,8 @@
   ghosts:
   - MobObserverSponsorAngel
   - MobObserverSponsorDemon
+  allowedSpecies:
+  - Nucleation
 
 - type: sponsorTier
   id: Specialist
@@ -73,6 +75,8 @@
   - MobObserverSponsorDark
   - MobObserverSponsorDemon
   - MobObserverSponsorGhostClown
+  allowedSpecies:
+  - Nucleation
 
 - type: sponsorTier
   id: Officer
@@ -115,6 +119,8 @@
   - MobObserverSponsorDemon
   - MobObserverSponsorGhostClown
   - MobObserverSponsorMime
+  allowedSpecies:
+  - Nucleation
 
 - type: sponsorTier
   id: Supervisor
@@ -159,6 +165,8 @@
   - MobObserverSponsorMime
   - MobObserverSponsorPlagueDoctor
   - MobObserverSponsorShadow
+  allowedSpecies:
+  - Nucleation
 
 - type: sponsorTier
   id: Corporate
@@ -209,3 +217,65 @@
   - MobObserverSponsorTerminator
   allowedSpecies:
   - Vulpkanin
+  - Nucleation
+
+## Роль для частых игроков при текущем онлайне
+
+- type: sponsorTier
+  id: FrequentVisitor
+  availableItems: 0
+  roleTimeByPass: false
+  havePriorityJoin: true
+  allowedSpecies:
+  - Nucleation
+
+- type: sponsorTier
+  id: FullAccess
+  availableItems: 2
+  roleTimeByPass: true
+  havePriorityJoin: true
+  allowedMarkings:
+  - FoxEarsDark
+  - FoxTailDark
+  - DevilEarsDark
+  - DevilTailDark
+  - SlimeFoxEars
+  - SlimeCatTail
+  - SlimeCatEarsStubby
+  - SlimeCatEarsCurled
+  - SlimeCatEarsTorn
+  - SlimeCatTailStripes
+  - CatEarsStubby
+  - CatEarsCurled
+  - CatEarsTorn
+  - CatEars
+  - CatTail
+  - CatTailStripes
+  - FoxEars
+  - HumanHairCotton
+  - HumanHairFingerwave
+  - HumanHairFortuneteller
+  - HumanHairFortunetellerAlt
+  - HumanHairLongdtails
+  - HumanHairLooseSlicked
+  - HumanHairQuadcurls
+  - HumanHairShy
+  - HumanHairSpicy
+  - HumanHairWife
+  petCategories:
+  - SponsorSmallPets
+  - SponsorMediumPets
+  ghosts:
+  - MobObserverSponsorAngel
+  - MobObserverSponsorDark
+  - MobObserverSponsorDemon
+  - MobObserverSponsorGhostClown
+  - MobObserverSponsorMime
+  - MobObserverSponsorPlagueDoctor
+  - MobObserverSponsorShadow
+  - MobObserverSponsorHawai
+  - MobObserverSponsorSkeleton
+  - MobObserverSponsorTerminator
+  allowedSpecies:
+  - Vulpkanin
+  - Nucleation

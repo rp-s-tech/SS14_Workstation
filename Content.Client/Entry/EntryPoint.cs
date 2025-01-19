@@ -127,6 +127,7 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("CentralCommandFaxPrototype");
             _prototypeManager.RegisterIgnore("ERTGroup");
             _prototypeManager.RegisterIgnore("flavor");
+            _prototypeManager.RegisterIgnore("salaries"); //RPSX
 
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();

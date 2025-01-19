@@ -1,0 +1,28 @@
+- type: entity
+  id: ElmosFire
+  name: St. Elmo's Fire
+  description: After so many years...
+  suffix: Not burning
+  parent: BaseStructure
+  components:
+  - type: Sprite
+    sprite: Exodus/Structures/Lighting/Decoration/elmosfire.rsi
+    noRot: true
+    offset: "0.0,0.5"
+    state: base
+  - type: PointLight
+    radius: 10
+    energy: 2.5
+    softness: 0.9
+    color: "#FF6F00FF"
+  - type: HeldSpeedModifier
+    walkModifier: 0.1
+    sprintModifier: 0.1
+
+- type: entity
+  id: ElmosFireLighten
+  parent: ElmosFire
+  suffix: Burning
+  components:
+    - type: Sprite
+      state: glow

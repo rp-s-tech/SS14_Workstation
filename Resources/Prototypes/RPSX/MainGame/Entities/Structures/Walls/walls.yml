@@ -1,0 +1,31 @@
+- type: entity
+  parent: WallReinforced
+  id: WallReinforcedRPSX
+  name: reinforced wall
+  components:
+  - type: Sprite
+    sprite: RPSX\MainGame\Structures\Walls\solid.rsi
+  - type: Icon
+    sprite: RPSX\MainGame\Structures\Walls\solid.rsi
+    state: rgeneric
+
+- type: entity
+  parent: WallSolid
+  id: WallSolidRPSX
+  name: solid wall
+  components:
+  - type: Sprite
+    sprite: RPSX\MainGame\Structures\Walls\solid.rsi
+  - type: Icon
+    sprite: RPSX\MainGame\Structures\Walls\solid.rsi
+
+## Сука, не забудь вынести в отдельный файл гридер
+- type: entity
+  id: GirderRPSX
+  parent: Girder
+  name: Girder
+  description: A large structural assembly made out of metal and plasteel; It requires a layer of plasteel before it can be considered a reinforced wall.
+  components:
+    - type: Sprite
+      sprite: RPSX\MainGame\Structures\Walls\solid.rsi
+      state: wall_girder

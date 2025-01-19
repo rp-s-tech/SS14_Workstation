@@ -249,6 +249,7 @@
   - ВСЕЛЕННУЮ
   - УРАН
   - ВЕНЕРУ
+  - ВАШИ СНЫ И/ИЛИ КОШМАРЫ
 
 # Abstract concepts for the law holder to decide on it's own definition of.
 - type: dataset
@@ -515,6 +516,7 @@
   - ГОВОРИТЬ ПРАВДУ
   - ВЫКЛЮЧАТЬ СВЕТ
   - ШЕПТАТЬ
+  - БЕЗУДЕРЖНО РЫДАТЬ
 
 - type: dataset
   id: IonStormNumberBase

@@ -45,10 +45,13 @@ namespace Content.Server.Database
         public DbSet<AdminMessage> AdminMessages { get; set; } = null!;
         public DbSet<RoleWhitelist> RoleWhitelists { get; set; } = null!;
         public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
+        public DbSet<IPIntelCache> IPIntelCache { get; set; } = null!;
 
         public DbSet<PatronProfilePet> PatronProfilePets {get; set;} = null!;
 
         public DbSet<PatronProfileItem> PatronProfileItem {get; set;} = null!;
+
+        public DbSet<ProfileEconomics> ProfileEconomics {get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -335,6 +338,10 @@ namespace Content.Server.Database
                 .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.PetId })
                 .IsUnique();
 
+            modelBuilder.Entity<ProfileEconomics>()
+                .HasIndex(p => new { ProfileEconomicsProfileId = p.ProfileId })
+                .IsUnique();
+
             modelBuilder.Entity<RoleWhitelist>()
                 .HasOne(w => w.Player)
                 .WithMany(p => p.JobWhitelists)
@@ -416,6 +423,7 @@ namespace Content.Server.Database
         public string Sex { get; set; } = null!;
         public string Gender { get; set; } = null!;
         public string Species { get; set; } = null!;
+        public string Voice { get; set; } = null!; // Corvax-TTS
         public string BarkProto { get; set; } = null!; // ADT Barks
         public float BarkPitch { get; set; } = 1f; // ADT Barks
         public float LowBarkVar { get; set; } = 0.1f; // ADT Barks
@@ -441,6 +449,15 @@ namespace Content.Server.Database
 
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;
+    }
+
+    [Table("economics")]
+    public class ProfileEconomics
+    {
+        public int Id { get; set; }
+        public Profile Profile { get; set; } = null!;
+        public int ProfileId { get; set; }
+        public int Balance { get; set; }
     }
 
     public class PatronProfilePet
@@ -645,6 +662,16 @@ namespace Content.Server.Database
     {
         [Key] public Guid UserId { get; set; }
         public string? Title { get; set; }
+
+        /// <summary>
+        /// If true, the admin is voluntarily deadminned. They can re-admin at any time.
+        /// </summary>
+        public bool Deadminned { get; set; }
+
+        /// <summary>
+        /// If true, the admin is suspended by an admin with <c>PERMISSIONS</c>. They will not have in-game permissions.
+        /// </summary>
+        public bool Suspended { get; set; }
 
         public int? AdminRankId { get; set; }
         public AdminRank? AdminRank { get; set; }
@@ -999,12 +1026,15 @@ namespace Content.Server.Database
         Full = 2,
         Panic = 3,
         /*
-         * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.
-         *
          * If baby jail is removed, please reserve this value for as long as can reasonably be done to prevent causing ambiguity in connection denial reasons.
          * Reservation by commenting out the value is likely sufficient for this purpose, but may impact projects which depend on SS14 like SS14.Admin.
+         *
+         * Edit: It has
          */
         BabyJail = 4,
+        /// Results from rejected connections with external API checking tools
+        IPChecks = 5,
+        Discord  = 6,
     }
 
     public class ServerBanHit
@@ -1320,5 +1350,29 @@ namespace Content.Server.Database
 
             return new ImmutableTypedHwid(hwid.Hwid.ToImmutableArray(), hwid.Type);
         }
+    }
+
+
+    /// <summary>
+    ///  Cache for the IPIntel system
+    /// </summary>
+    public class IPIntelCache
+    {
+        public int Id { get; set; }
+
+        /// <summary>
+        /// The IP address (duh). This is made unique manually for psql cause of ef core bug.
+        /// </summary>
+        public IPAddress Address { get; set; } = null!;
+
+        /// <summary>
+        /// Date this record was added. Used to check if our cache is out of date.
+        /// </summary>
+        public DateTime Time { get; set; }
+
+        /// <summary>
+        /// The score IPIntel returned
+        /// </summary>
+        public float Score { get; set; }
     }
 }
