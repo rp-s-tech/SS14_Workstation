@@ -19,6 +19,13 @@ public sealed class RPSXRegisterIgnore
             componentFactory.RegisterIgnore(IgnoredSecretComponents.List);
 
             prototypeManager.RegisterIgnore("stationGoal");
+            prototypeManager.RegisterIgnore("narsiAbilityPrototype");
+            prototypeManager.RegisterIgnore("narsiRitualCategory");
+            prototypeManager.RegisterIgnore("narsiRitual");
+            prototypeManager.RegisterIgnore("diseaseBlacklistPrototype");
+            prototypeManager.RegisterIgnore("disease");
+            prototypeManager.RegisterIgnore("diseaseCure");
+            prototypeManager.RegisterIgnore("diseaseStage");
 
         }
 
@@ -30,6 +37,10 @@ public sealed class RPSXRegisterIgnore
         if (useSecrets)
             return;
 
+        IoCManager.RegisterInstance<IAntagBridge>(new StubAntagBridge());
+        IoCManager.RegisterInstance<IVampireBridge>(new StubVampireBridge());
+        IoCManager.RegisterInstance<ISaintedBridge>(new StubSaintedBridge());
+        IoCManager.RegisterInstance<IDiseasesBridge>(new StubDiseasesBridge());
         IoCManager.RegisterInstance<IStatusResponseProvider>(new StubStatusResponseProvider());
         IoCManager.RegisterInstance<ISalaryBridge>(new StubSalaryBridge());
         IoCManager.RegisterInstance<IBankBridge>(new StubBankBridge());
