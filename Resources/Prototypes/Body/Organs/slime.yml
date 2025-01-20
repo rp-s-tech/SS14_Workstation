@@ -36,8 +36,11 @@
     - type: Item
       size: Small
       heldPrefix: brain
+    - type: Tag
+      tags:
+      - Stomach
 
-      
+
 - type: entity
   id: OrganSlimeLungs
   parent: BaseHumanOrgan
@@ -76,3 +79,6 @@
   - type: Item
     size: Small
     heldPrefix: lungs
+  - type: Tag
+    tags:
+    - Lungs

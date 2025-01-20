@@ -74,7 +74,7 @@
   - type: Item
     size: Small
     heldPrefix: brain
-  
+
 - type: entity
   id: OrganHumanEyes
   parent: BaseHumanOrgan
@@ -88,6 +88,9 @@
   - type: Item
     size: Small
     heldPrefix: eyeballs
+  - type: Tag
+    tags:
+    - Eyes
 
 - type: entity
   id: OrganHumanTongue
@@ -154,6 +157,9 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
+  - type: Tag
+    tags:
+    - Lungs
 
 - type: entity
   id: OrganHumanHeart
@@ -176,6 +182,9 @@
   - type: Item
     size: Small
     heldPrefix: heart
+  - type: Tag
+    tags:
+    - Heart
 
 - type: entity
   id: OrganHumanStomach
@@ -208,6 +217,9 @@
     groups:
     - id: Food
     - id: Drink
+  - type: Tag
+    tags:
+    - Stomach
 
 - type: entity
   id: OrganHumanLiver
@@ -226,6 +238,9 @@
     groups:
     - id: Alcohol
       rateModifier: 0.1 # removes alcohol very slowly along with the stomach removing it as a drink
+  - type: Tag
+    tags:
+    - Liver
 
 - type: entity
   id: OrganHumanKidneys
@@ -245,3 +260,6 @@
     maxReagents: 5
     metabolizerTypes: [Human]
     removeEmpty: true
+  - type: Tag
+    tags:
+    - Kidneys

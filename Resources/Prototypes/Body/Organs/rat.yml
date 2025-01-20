@@ -5,6 +5,9 @@
   components:
   - type: Metabolizer
     metabolizerTypes: [ Rat ]
+  - type: Tag
+    tags:
+    - Lungs
 
 - type: entity
   id: OrganRatStomach
@@ -22,3 +25,6 @@
           Quantity: 5
   - type: Sprite
     state: stomach
+  - type: Tag
+    tags:
+    - Stomach

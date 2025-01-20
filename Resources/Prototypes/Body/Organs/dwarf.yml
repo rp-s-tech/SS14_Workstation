@@ -5,6 +5,9 @@
   components:
   - type: Metabolizer
     metabolizerTypes: [Dwarf]
+  - type: Tag
+    tags:
+    - Heart
 
 - type: entity
   id: OrganDwarfLiver
@@ -13,6 +16,9 @@
   components:
   - type: Metabolizer
     metabolizerTypes: [Dwarf]
+  - type: Tag
+    tags:
+    - Liver
 
 - type: entity
   id: OrganDwarfStomach
@@ -36,3 +42,6 @@
     # mm very yummy
     maxReagents: 5
     metabolizerTypes: [Dwarf]
+  - type: Tag
+    tags:
+    - Stomach

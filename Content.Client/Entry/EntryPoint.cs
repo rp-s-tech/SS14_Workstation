@@ -128,6 +128,9 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("ERTGroup");
             _prototypeManager.RegisterIgnore("flavor");
             _prototypeManager.RegisterIgnore("salaries"); //RPSX
+            _prototypeManager.RegisterIgnore("narsiAbilityPrototype"); //RPSX
+            _prototypeManager.RegisterIgnore("narsiRitualCategory"); //RPSX
+            _prototypeManager.RegisterIgnore("narsiRitual"); //RPSX
 
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();

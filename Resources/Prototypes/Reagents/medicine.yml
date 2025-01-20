@@ -1057,6 +1057,7 @@
       effects:
       - !type:SatiateThirst
         factor: 3
+      - !type:SaintWaterDrinkEffect
     Medicine:
       effects:
       - !type:HealthChange
@@ -1075,15 +1076,10 @@
       methods: [ Touch ]
       effects:
       - !type:ExtinguishReaction
-    Acidic:
-      methods: [ Touch ]
+    Flammable:
+      methods: [ Touch, Injection, Ingestion ]
       effects:
-      - !type:HealthChange
-        scaleByQuantity: true
-        ignoreResistances: false
-        damage:
-          types:
-            Holy: 0.5
+      - !type:SaintWaterFlammableEffect
   plantMetabolism:
   - !type:PlantAdjustWater
     amount: 1
@@ -1169,7 +1165,7 @@
         conditions:
         - !type:ReagentThreshold
           min: 12
-          
+
 - type: reagent
   id: Opporozidone #Name based of an altered version of the startreck chem "Opporozine"
   name: reagent-name-opporozidone

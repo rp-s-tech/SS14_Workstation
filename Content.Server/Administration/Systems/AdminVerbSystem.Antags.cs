@@ -151,5 +151,7 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-thief"),
         };
         args.Verbs.Add(thief);
+
+        AddDarkStationAntags(args, targetPlayer);
     }
 }

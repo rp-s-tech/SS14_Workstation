@@ -60,6 +60,11 @@
     node: airlock
   - type: StaticPrice
     price: 350
+  - type: SaintSilver
+    damageOnCollide:
+      types:
+        Holiness: 20
+    pushOnCollide: true
 
 - type: entity
   id: AirlockGlassShuttle

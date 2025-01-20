@@ -343,6 +343,11 @@ public sealed partial class PolymorphSystem : EntitySystem
                 ("parent", Identity.Entity(uid, EntityManager)),
                 ("child", Identity.Entity(parent, EntityManager))),
             parent);
+
+        var ev = new PolymorphRevertedEvent(parent, uid);
+        RaiseLocalEvent(uid, ev);
+        RaiseLocalEvent(parent, ev);
+
         QueueDel(uid);
 
         return parent;
@@ -389,5 +394,17 @@ public sealed partial class PolymorphSystem : EntitySystem
 
         if (target.Comp.PolymorphActions.TryGetValue(id, out var val))
             _actions.RemoveAction(target, val);
+    }
+}
+
+// RPSX
+public sealed class PolymorphRevertedEvent : EntityEventArgs
+{
+    public EntityUid Original;
+    public EntityUid Polymorph;
+    public PolymorphRevertedEvent(EntityUid original, EntityUid polymorph)
+    {
+        Original = original;
+        Polymorph = polymorph;
     }
 }
