@@ -13,6 +13,9 @@
     sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/armchaprig.rsi
   - type: ToggleableClothing
     clothingPrototype: ChaplainHardsuitHelmet
+  - type: NightVision # RPSX EDIT
+    isEquipment: true
+    color: "#5ECDF7"
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
@@ -82,6 +85,9 @@
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellSmall
         disableEject: false
+  - type: NightVision # RPSX EDIT
+    isEquipment: true
+    color: "#5ECDF7"
 
 - type: entity
   parent: ClothingHeadHardsuitBase

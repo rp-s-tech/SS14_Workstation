@@ -1,0 +1,39 @@
+- type: entity
+  id: ToggleNightVision
+  name: Переключить ночное видение
+  description: Переключает ночное зрение.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: BigAction
+    priority: -20
+    useDelay: 1
+    icon:
+      sprite: _White/Clothing/Eyes/Goggles/nightvision.rsi
+      state: icon
+    event: !type:ToggleNightVisionEvent
+
+- type: entity
+  id: ToggleThermalVision
+  name: Переключить термальное зрение
+  description: Toggles thermal vision.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: BigAction
+    priority: -20
+    useDelay: 1
+    icon:
+      sprite: _White/Clothing/Eyes/Goggles/thermal.rsi
+      state: icon
+    event: !type:ToggleThermalVisionEvent
+    
+- type: entity
+  id: PulseThermalVision
+  parent: ToggleThermalVision
+  name: Импульсное термальное зрение
+  description: Временно включает термальное зрение.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 4

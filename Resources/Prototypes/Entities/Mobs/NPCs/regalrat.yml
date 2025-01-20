@@ -124,6 +124,10 @@
     attributes:
       gender: male
   - type: Sharp
+  - type: NightVision # RPSX EDIT
+    color: "#A3A3A3"
+    activateSound: null
+    deactivateSound: null
   - type: TTS # Corvax-TTS
     voice: Rat
 
@@ -296,6 +300,10 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
+  - type: NightVision # RPSX EDIT 
+    color: "#A3A3A3"
+    activateSound: null
+    deactivateSound: null
 
 - type: weightedRandomEntity
   id: RatKingLoot

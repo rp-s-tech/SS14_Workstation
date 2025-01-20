@@ -1,0 +1,63 @@
+# Night Vision
+
+- type: listing
+  id: UplinkNightGoggles
+  name: Очки ночного зрения
+  description: Они позволяют вам видеть в темноте, при этом выглядят как обычные солнцезащитные очки!
+  productEntity: ClothingEyesNightVisionGogglesSyndie
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
+
+- type: listing
+  id: UplinkNightGogglesNukie
+  name: Очки ночного зрения
+  description: Они позволяют вам видеть в темноте, при этом выглядят как обычные солнцезащитные очки!
+  productEntity: ClothingEyesNightVisionGogglesNukie
+  cost:
+    Telecrystal: 10 
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+
+# Thermal Vision
+
+- type: listing
+  id: UplinkThermalGoggles
+  name: Очки термального зрения
+  description: Они позволяют вам видеть существ независимо от препятствий, при этом выглядят как обычные солнцезащитные очки!
+  productEntity: ClothingEyesThermalVisionGogglesSyndie
+  cost:
+    Telecrystal: 6 
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
+
+- type: listing
+  id: UplinkThermalGogglesNukie
+  name: Очки термального зрения
+  description: Они позволяют вам видеть существ независимо от препятствий, при этом выглядят как обычные солнцезащитные очки!
+  productEntity: ClothingEyesThermalVisionGogglesNukie
+  cost:
+    Telecrystal: 10 
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
