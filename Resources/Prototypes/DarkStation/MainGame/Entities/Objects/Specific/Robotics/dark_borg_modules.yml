@@ -12,7 +12,7 @@
   id: BorgModuleStun
   parent: BaseBorgModuleSecurity
   name: "Модуль нелетального снаряжения"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:

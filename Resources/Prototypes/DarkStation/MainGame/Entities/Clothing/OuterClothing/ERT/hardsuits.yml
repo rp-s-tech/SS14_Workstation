@@ -20,7 +20,7 @@
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ChaplainHardsuitHelmet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Шлем скафандра капеллана
   description: Шлем для скафандра, разработанного для капелланов.
   components:
@@ -92,7 +92,7 @@
 - type: entity
   parent: ClothingHeadHardsuitBase
   id: ClothingHeadHelmetHardsuitERTRecon
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Шлем скафандра ОБР разведчика
   description: Шлем обеспечивающий хорошую защиту головы разведчика.
   components:
@@ -142,7 +142,7 @@
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitN7BaseHelm
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: шлем скафандра N7
   description: Шлем скафандра N7, дающий бойцу отличную защиту и большой угол обзора.
   components:
@@ -194,7 +194,7 @@
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitN7HeavyHelm
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: шлем N7 "Защитник"
   description: Модернизированный шлем скафандра N7 для брони "Защитник".
   components:

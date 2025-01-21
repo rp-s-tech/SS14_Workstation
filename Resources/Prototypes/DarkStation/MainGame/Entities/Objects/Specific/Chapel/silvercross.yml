@@ -24,7 +24,7 @@
   - type: SaintSilver
     damageOnCollide:
       types:
-        Holiness: 10
+        Holiness: 15
     pushOnCollide: true
   - type: SaintCross
     enabled: true

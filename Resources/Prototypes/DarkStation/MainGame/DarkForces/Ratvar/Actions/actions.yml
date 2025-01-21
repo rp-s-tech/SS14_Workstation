@@ -1,6 +1,6 @@
 ﻿- type: entity
   id: RatvarMidasTouch
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "Рука Мидаса"
   description: "Рука Мидаса — первое и основное заклинание, дарованное Светочем праведникам."
   components:
@@ -20,7 +20,7 @@
 
 - type: entity
   id: RatvarClockMagic
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "Зачаровать предмет"
   description: "Позволяет выбрать зачарование для предмета"
   components:

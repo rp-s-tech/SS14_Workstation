@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseRune
   id: NarsiBaseRune
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   suffix: Narsi
   components:
     - type: NarsiRune

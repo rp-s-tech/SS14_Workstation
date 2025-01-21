@@ -1,7 +1,7 @@
 ﻿- type: entity
   id: BaseSpaceLizard
   parent: SimpleSpaceMobBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "Космическая ящерица"
   description: "Выглядит радиактивно"
   components:

@@ -127,15 +127,15 @@ namespace Content.Server.Bible
             if (args.Target == null)
                 return;
 
-            if (_saintedBridge.TryMakeSainted(args.User, args.Target.Value))
-            {
-                _audio.PlayEntity(_audio.GetSound(component.HealSoundPath), Filter.Pvs(args.Target.Value), args.User, true);
-                return;
-            }
-
             if (HasComp<SolutionContainerManagerComponent>(args.Target) && !HasComp<MobStateComponent>(args.Target))
             {
                 MakeWaterSaint(uid, args.Target.Value, component);
+                return;
+            }
+
+            if (_saintedBridge.TryMakeSainted(args.User, args.Target.Value))
+            {
+                _audio.PlayEntity(_audio.GetSound(component.HealSoundPath), Filter.Pvs(args.Target.Value), args.User, true);
                 return;
             }
 

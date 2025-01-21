@@ -34,6 +34,7 @@
           Brute: 10
         types:
           Fel: 20
+          Structural: 15
     - type: SlowOnDamage
       speedModifierThresholds:
         450: 0.9
