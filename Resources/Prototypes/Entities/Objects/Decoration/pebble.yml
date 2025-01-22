@@ -1,0 +1,304 @@
+- type: entity
+  parent: BaseItem
+  id: BasePebble
+  name: peeble
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Decoration/Pebble/pebble.rsi
+  - type: Item
+    sprite: Exodus/Objects/Decoration/Pebble/pebble.rsi
+    size: Tiny
+  - type: PhysicalComposition
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+
+- type: entity
+  parent: BasePebble
+  id: BaseBlackPebble
+  name: black peeble
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Decoration/Pebble/blackpebble.rsi
+  - type: Item
+    sprite: Exodus/Objects/Decoration/Pebble/blackpebble.rsi
+    size: Tiny
+
+
+#region Black
+- type: entity
+  parent: BaseBlackPebble
+  id: BlackPebble01
+  components:
+  - type: Sprite
+    state: blackpebble01
+  - type: Item
+    heldPrefix: blackpebble01
+
+- type: entity
+  parent: BaseBlackPebble
+  id: BlackPebble02
+  components:
+  - type: Sprite
+    state: blackpebble02
+  - type: Item
+    heldPrefix: blackpebble02
+
+- type: entity
+  parent: BaseBlackPebble
+  id: BlackPebble03
+  components:
+  - type: Sprite
+    state: blackpebble03
+  - type: Item
+    heldPrefix: blackpebble03
+
+- type: entity
+  parent: BaseBlackPebble
+  id: BlackPebble04
+  components:
+  - type: Sprite
+    state: blackpebble04
+  - type: Item
+    heldPrefix: blackpebble04
+
+- type: entity
+  parent: BaseBlackPebble
+  id: BlackPebble05
+  components:
+  - type: Sprite
+    state: blackpebble05
+  - type: Item
+    heldPrefix: blackpebble05
+
+- type: entity
+  parent: BaseBlackPebble
+  id: BlackPebble06
+  components:
+  - type: Sprite
+    state: blackpebble06
+  - type: Item
+    heldPrefix: blackpebble06
+
+- type: entity
+  parent: BaseBlackPebble
+  id: BlackPebble07
+  components:
+  - type: Sprite
+    state: blackpebble07
+  - type: Item
+    heldPrefix: blackpebble07
+
+- type: entity
+  parent: BaseBlackPebble
+  id: BlackPebble08
+  components:
+  - type: Sprite
+    state: blackpebble08
+  - type: Item
+    heldPrefix: blackpebble08
+
+- type: entity
+  parent: BaseBlackPebble
+  id: BlackPebble09
+  components:
+  - type: Sprite
+    state: blackpebble09
+  - type: Item
+    heldPrefix: blackpebble09
+
+- type: entity
+  parent: BaseBlackPebble
+  id: BlackPebble10
+  components:
+  - type: Sprite
+    state: blackpebble10
+  - type: Item
+    heldPrefix: blackpebble10
+
+- type: entity
+  parent: BaseBlackPebble
+  id: BlackPebble11
+  components:
+  - type: Sprite
+    state: blackpebble10
+  - type: Item
+    heldPrefix: blackpebble11
+
+- type: entity
+  parent: BaseBlackPebble
+  id: BlackPebble12
+  components:
+  - type: Sprite
+    state: blackpebble12
+  - type: Item
+    heldPrefix: blackpebble12
+
+- type: entity
+  parent: BaseBlackPebble
+  id: BlackPebble13
+  components:
+  - type: Sprite
+    state: blackpebble13
+  - type: Item
+    heldPrefix: blackpebble13
+
+- type: entity
+  parent: BaseBlackPebble
+  id: BlackPebble14
+  components:
+  - type: Sprite
+    state: blackpebble14
+  - type: Item
+    heldPrefix: blackpebble14
+
+- type: entity
+  parent: BaseBlackPebble
+  id: BlackPebble15
+  components:
+  - type: Sprite
+    state: blackpebble15
+  - type: Item
+    heldPrefix: blackpebble15
+#endregion
+
+
+#region White
+- type: entity
+  parent: BasePebble
+  id: Pebble01
+  components:
+  - type: Sprite
+    state: pebble01
+  - type: Item
+    heldPrefix: pebble01
+
+- type: entity
+  parent: BasePebble
+  id: Pebble02
+  components:
+  - type: Sprite
+    state: pebble02
+  - type: Item
+    heldPrefix: pebble02
+
+- type: entity
+  parent: BasePebble
+  id: Pebble03
+  components:
+  - type: Sprite
+    state: pebble03
+  - type: Item
+    heldPrefix: pebble03
+
+- type: entity
+  parent: BasePebble
+  id: Pebble04
+  components:
+  - type: Sprite
+    state: pebble04
+  - type: Item
+    heldPrefix: pebble04
+
+- type: entity
+  parent: BasePebble
+  id: Pebble05
+  components:
+  - type: Sprite
+    state: pebble05
+  - type: Item
+    heldPrefix: pebble05
+
+- type: entity
+  parent: BasePebble
+  id: Pebble06
+  components:
+  - type: Sprite
+    state: pebble06
+  - type: Item
+    heldPrefix: pebble06
+
+- type: entity
+  parent: BasePebble
+  id: Pebble07
+  components:
+  - type: Sprite
+    state: pebble07
+  - type: Item
+    heldPrefix: pebble07
+
+- type: entity
+  parent: BasePebble
+  id: Pebble08
+  components:
+  - type: Sprite
+    state: pebble08
+  - type: Item
+    heldPrefix: pebble08
+
+- type: entity
+  parent: BasePebble
+  id: Pebble09
+  components:
+  - type: Sprite
+    state: pebble09
+  - type: Item
+    heldPrefix: pebble09
+
+- type: entity
+  parent: BasePebble
+  id: Pebble10
+  components:
+  - type: Sprite
+    state: pebble10
+  - type: Item
+    heldPrefix: pebble10
+
+- type: entity
+  parent: BasePebble
+  id: Pebble11
+  components:
+  - type: Sprite
+    state: pebble10
+  - type: Item
+    heldPrefix: pebble11
+
+- type: entity
+  parent: BasePebble
+  id: Pebble12
+  components:
+  - type: Sprite
+    state: pebble12
+  - type: Item
+    heldPrefix: pebble12
+
+- type: entity
+  parent: BasePebble
+  id: Pebble13
+  components:
+  - type: Sprite
+    state: pebble13
+  - type: Item
+    heldPrefix: pebble13
+
+- type: entity
+  parent: BasePebble
+  id: Pebble14
+  components:
+  - type: Sprite
+    state: pebble14
+  - type: Item
+    heldPrefix: pebble14
+
+- type: entity
+  parent: BasePebble
+  id: Pebble15
+  components:
+  - type: Sprite
+    state: pebble15
+  - type: Item
+    heldPrefix: pebble15
+#endregion
