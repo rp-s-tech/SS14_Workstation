@@ -1689,6 +1689,7 @@
       Dead:
         Base: splat-0
   - type: Food
+    requireDead: false # Exodus-EatTheMice
   - type: FlavorProfile
     flavors:
     - meaty
@@ -1716,7 +1717,7 @@
       food:
         reagents:
         - ReagentId: UncookedAnimalProteins
-          Quantity: 3
+          Quantity: 6 # Exodus-MRP
   - type: Butcherable
     spawned:
     - id: FoodMeatRat
@@ -3282,6 +3283,7 @@
       Dead:
         Base: splat-0
   - type: Food
+    requireDead: false # Exodus-EatTheMice
   - type: FlavorProfile
     flavors:
     - meaty
@@ -3294,9 +3296,9 @@
       food:
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
+          Quantity: 2.5 # Exodus-MRP
         - ReagentId: Blood
-          Quantity: 55
+          Quantity: 2.5 # Exodus-MRP
         - ReagentId: Fat
           Quantity: 5
   - type: Butcherable
