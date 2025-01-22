@@ -34,6 +34,10 @@ using Content.Shared.Containers.ItemSlots;
 using Robust.Server.GameObjects;
 using Content.Shared.Whitelist;
 using Content.Shared.Destructible;
+using Content.Shared.Damage; // Exodus-EatTheMice
+using Robust.Shared.Prototypes; // Exodus-EatTheMice
+using Content.Shared.Mobs.Components; // Exodus-EatTheMice
+using Content.Shared.Damage.Prototypes; // Exodus-EatTheMice
 
 namespace Content.Server.Nutrition.EntitySystems;
 
@@ -60,6 +64,11 @@ public sealed class FoodSystem : EntitySystem
     [Dependency] private readonly StomachSystem _stomach = default!;
     [Dependency] private readonly UtensilSystem _utensil = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    // Exodus-EatTheMice-Start
+    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    // Exodus-EatTheMice-End
 
     public const float MaxFeedDistance = 1.0f;
 
@@ -274,6 +283,14 @@ public sealed class FoodSystem : EntitySystem
 
         _reaction.DoEntityReaction(args.Target.Value, solution, ReactionMethod.Ingestion);
         _stomach.TryTransferSolution(stomachToUse!.Value.Owner, split, stomachToUse);
+
+        // Exodus-EatTheMice-Start
+        if (TryComp<MobThresholdsComponent>(entity, out var mobThresholds) && _mobThreshold.TryGetDeadThreshold(entity, out var deadThreshold, mobThresholds))
+        {
+            var damage = (FixedPoint2)(transferAmount * deadThreshold * 2 / solution.MaxVolume);
+            _damageable.TryChangeDamage(entity, new(_prototypeManager.Index<DamageTypePrototype>("Blunt"), damage));
+        }
+        // Exodus-EatTheMice-End
 
         var flavors = args.FlavorMessage;
 
