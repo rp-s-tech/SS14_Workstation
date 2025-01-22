@@ -1,6 +1,6 @@
 - type: entity
   id: BaseNarsiMob
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter

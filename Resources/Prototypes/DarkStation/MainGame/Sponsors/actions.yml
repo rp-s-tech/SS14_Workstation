@@ -2,7 +2,7 @@
   id: ActionSelectGhostSkin
   name: "Выбрать скин призрака"
   description: "Донатеры могут выбрать себе скин призрака"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon:

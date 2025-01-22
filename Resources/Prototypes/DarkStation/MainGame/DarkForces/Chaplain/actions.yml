@@ -2,7 +2,7 @@
   id: ActionChaplainGreatPrayer
   name: "Великая молитва"
   description: "Uses hunger to lay an egg."
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: DarkStation/MainGame/DarkForces/Chaplain/actions.rsi, state: great-prayer }
@@ -13,7 +13,7 @@
   id: ActionChaplainDefenceBarrier
   name: "Барьер от темных сил"
   description: "Создайте временный барьер от тёмных сил. Это даст вам время для перегруппировки или побега"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: DarkStation/MainGame/DarkForces/Chaplain/actions.rsi, state: barrier }
@@ -24,7 +24,7 @@
   id: ActionChaplainExorcism
   name: "Экзорцизм"
   description: "Возвращает человека в свое настоящее тело, если он заколдован темной магией"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
     useDelay: 60
@@ -45,7 +45,7 @@
   id: ActionChaplainNarsiExile
   name: "Начать ритуал изгнания Нар'Си"
   description: "Когда начнется ритуал, вокруг священника появится защитное поле от Нар'Си. Культисты и люди смогу пройти через него"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon:

@@ -1,7 +1,7 @@
 - type: entity
   id: PontificRule
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: PontificRule
   - type: AntagSelection
@@ -15,12 +15,13 @@
 - type: entity
   id: NarsiCult
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: NarsiRule
   - type: AntagSelection
     definitions:
     - prefRoles: [ NarsiCultist ]
+      min: 2
       max: 4
       playerRatio: 10
       briefing:
@@ -62,7 +63,7 @@
 - type: entity
   id: Ratvar
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: RatvarRule
   - type: AntagSelection
@@ -106,7 +107,7 @@
 - type: entity
   id: Vampire
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: VampireRule
   - type: AntagSelection

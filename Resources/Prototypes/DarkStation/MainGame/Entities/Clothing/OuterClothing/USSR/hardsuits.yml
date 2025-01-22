@@ -35,7 +35,7 @@
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitSolderUSSPHead
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: шлем скафандра солдата СССП
   components:
   - type: Sprite

@@ -34,7 +34,7 @@
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitPOCC
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Шлем скафандра НШЦК
   description: Лёгко бронированный шлем скафандра Начальника Штаба ЦК, так и чувствуется крутость, да?
   components:
@@ -117,7 +117,7 @@
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitSecurityPilot
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Шлем пилота службы безопасности
   description: Бронированный шлем пилота СБ
   components:
@@ -203,7 +203,7 @@
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitIFD
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Шлем скафандра ИФД
   description: Лёгкобронированный шлем скафандра Инспектора ФД, так и чувствуется богатство, да?
   components:

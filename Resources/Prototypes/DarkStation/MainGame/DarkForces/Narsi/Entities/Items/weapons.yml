@@ -8,7 +8,7 @@
   name: Призрачный топор
   parent: BaseNarsiWeapon
   id: NarsiCultGhostAxe
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sharp
     - type: Sprite

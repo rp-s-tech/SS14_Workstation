@@ -63,7 +63,7 @@
   - type: SaintSilver
     damageOnCollide:
       types:
-        Holiness: 20
+        Holiness: 10
     pushOnCollide: true
 
 - type: entity

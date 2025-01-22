@@ -1,6 +1,6 @@
 ﻿- type: entity
   id: VampireBloodObjective
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: "Выпейте указанное количество крови"
   components:
   - type: Objective
@@ -14,7 +14,7 @@
 
 - type: entity
   id: VampireEnthrallObjective
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: "Сделайте своими рабами указанное количество человек"
   components:
   - type: Objective

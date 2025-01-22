@@ -2,7 +2,7 @@
   id: BulletMagnumSilver
   name: серебряная пуля (.45 magnum high-velocity)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damageBodyParts: true

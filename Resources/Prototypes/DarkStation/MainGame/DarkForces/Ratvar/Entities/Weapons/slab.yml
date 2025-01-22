@@ -69,7 +69,7 @@
 
 - type: entity
   id: ActionRatvarSlabStun
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "Оглушение"
   description: "Оглушает цель"
   components:
@@ -87,7 +87,7 @@
 
 - type: entity
   id: ActionRatvarSlabDoors
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "Создание прохода"
   description: "Открывает двери и шкафы"
   components:
@@ -105,7 +105,7 @@
 
 - type: entity
   id: ActionRatvarSlabWalls
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "Терраформ"
   description: "При использовании на ОБЫЧНОЙ стене, делает из неё фальшивую стену"
   components:
@@ -123,7 +123,7 @@
 
 - type: entity
   id: ActionRatvarSlabTeleport
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "Телепортация"
   description: "Телепортация к алтарю или видимой области"
   components:
@@ -135,7 +135,7 @@
 
 - type: entity
   id: ActionRatvarSlabHidings
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "Сокрытие шестерней"
   description: "Маскирует постройки праведников под кусты и шкафы"
   components:

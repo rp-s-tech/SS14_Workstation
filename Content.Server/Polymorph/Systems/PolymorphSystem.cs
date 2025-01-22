@@ -22,6 +22,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.RPSX.DarkForces.Saint.Chaplain.Events;
 
 namespace Content.Server.Polymorph.Systems;
 
@@ -59,6 +60,7 @@ public sealed partial class PolymorphSystem : EntitySystem
         SubscribeLocalEvent<PolymorphedEntityComponent, BeforeFullyEatenEvent>(OnBeforeFullyEaten);
         SubscribeLocalEvent<PolymorphedEntityComponent, BeforeFullySlicedEvent>(OnBeforeFullySliced);
         SubscribeLocalEvent<PolymorphedEntityComponent, DestructionEventArgs>(OnDestruction);
+        SubscribeLocalEvent<PolymorphedEntityComponent, ChaplainExorcismEvent>(OnExorcism);
 
         InitializeCollide();
         InitializeMap();
@@ -101,6 +103,14 @@ public sealed partial class PolymorphSystem : EntitySystem
                 CreatePolymorphAction(morph, ent);
             }
         }
+    }
+
+    private void OnExorcism(EntityUid uid, PolymorphedEntityComponent component, ChaplainExorcismEvent args)
+    {
+        if (!component.Configuration.RevertOnSaint)
+            return;
+
+        Revert(uid);
     }
 
     private void OnMapInit(Entity<PolymorphedEntityComponent> ent, ref MapInitEvent args)

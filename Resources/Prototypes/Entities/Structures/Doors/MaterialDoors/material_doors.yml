@@ -60,6 +60,11 @@
     mode: NoSprite
   - type: Occluder
   - type: BlockWeather
+  - type: Saintable
+    damageOnCollide:
+      types:
+        Holiness: 4
+    pushOnCollide: true
 
 - type: entity
   parent: BaseMaterialDoor

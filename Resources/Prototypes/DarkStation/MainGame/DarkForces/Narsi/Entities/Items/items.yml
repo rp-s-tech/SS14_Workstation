@@ -1,7 +1,7 @@
 - type: entity
   name: Теневые оковы
   description: Что-то магическое связывает ваши руки
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: HandcuffsCult
   parent: BaseItem
   components:
