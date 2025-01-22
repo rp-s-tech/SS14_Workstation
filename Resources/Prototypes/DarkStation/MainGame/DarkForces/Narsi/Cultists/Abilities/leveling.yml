@@ -1,6 +1,6 @@
 ﻿- type: entity
   id: NarsiCultProgressHolder
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: NarsiCultProgress
     bloodPoints: 10

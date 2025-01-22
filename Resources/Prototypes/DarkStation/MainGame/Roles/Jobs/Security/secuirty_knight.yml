@@ -58,7 +58,7 @@
     state: pda-knight
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: ClothingBackpackSecurity_Knight
   id: ClothingBackpackSecurity_KnightFilled
   components:

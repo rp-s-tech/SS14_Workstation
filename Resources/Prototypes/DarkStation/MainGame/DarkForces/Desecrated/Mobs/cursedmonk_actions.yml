@@ -2,7 +2,7 @@
   id: ActionAttackLighting
   name: Выстрел молнией
   description: Создает молнию, которая наносит мощный урон скверной.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: EntityTargetAction
       icon:
@@ -17,7 +17,7 @@
 - type: entity
   name: молния скверны
   id: CursedMonkLightning
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: /Textures/Effects/lightning.rsi

@@ -3,6 +3,8 @@
   abstract: true
   parent: SimpleSpaceMobBase
   components:
+  - type: Damageable
+    damageContainer: Biological
   - type: ZombieImmune
   - type: CombatMode
   - type: InputMover

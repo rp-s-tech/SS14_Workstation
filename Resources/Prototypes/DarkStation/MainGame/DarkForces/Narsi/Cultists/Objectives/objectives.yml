@@ -1,6 +1,6 @@
 ﻿- type: entity
   id: BaseNarsiObjective
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Objective
     difficulty: 0.0
@@ -13,7 +13,7 @@
 - type: entity
   id: NarsiKillObjective
   parent: BaseNarsiObjective
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "Нар'Си требует жертву"
   description: "Положите труп жертвы на руну предложения и активируйте ее"
   components:
@@ -24,7 +24,7 @@
 - type: entity
   id: NarsiRitualObjective
   parent: BaseNarsiObjective
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: "Используйте алтарь Нар'Си для проведения ритуала"
   components:
   - type: Objective
@@ -42,7 +42,7 @@
 - type: entity
   id: NarsiCreatureEggObjective
   parent: BaseNarsiObjective
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: "Постройте яйцо сущности и вырастите существо"
   components:
   - type: Objective
@@ -60,7 +60,7 @@
 - type: entity
   id: NarsiBuildingAltarObjective
   parent: BaseNarsiObjective
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "Постройте Оккультный Алтарь Нар'Си"
   description: "Нам необходима эта постройка, для развития культа"
   components:
@@ -76,7 +76,7 @@
 - type: entity
   id: NarsiBuildingForgeObjective
   parent: BaseNarsiObjective
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "Постройте Тёмную кузню"
   description: "Нам необходима эта постройка, для создания брони и оружия"
   components:
@@ -92,7 +92,7 @@
 - type: entity
   id: NarsiBuildingPilonObjective
   parent: BaseNarsiObjective
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "Постройте пилон"
   description: "Чтобы не откиснуть от ран"
   components:
@@ -108,7 +108,7 @@
 - type: entity
   id: NarsiSummonObjective
   parent: BaseNarsiObjective
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "Призовите Нар'Си!"
   description: "Пришло время призвать Нар'Си!"
   components:

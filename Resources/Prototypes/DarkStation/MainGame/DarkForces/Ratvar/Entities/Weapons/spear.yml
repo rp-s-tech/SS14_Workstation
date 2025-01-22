@@ -43,7 +43,7 @@
 
 - type: entity
   id: RatvarSpearElectricalTouch
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "Электрошок"
   description: "При ударе (нужно держать в двух руках) испускает слабый ЭМИ гуманоидам и сильный ЭМИ боргам и мехам."
   components:
@@ -54,7 +54,7 @@
 
 - type: entity
   id: RatvarSpearConfusion
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "Смятение"
   description: "После удара (нужно держать в двух руках) ваша цель не сможет ходить по прямой 15 секунд"
   components:

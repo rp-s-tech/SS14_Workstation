@@ -44,7 +44,7 @@
 
 - type: entity
   id: RatvarHammmerKnockOff
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "Отбрасывание"
   description: "После удара (необходимо держать молот в обеих руках) отбросит противника на очень большое расстояние."
   components:

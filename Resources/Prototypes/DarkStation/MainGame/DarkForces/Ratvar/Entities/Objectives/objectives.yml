@@ -1,6 +1,6 @@
 ﻿- type: entity
   id: RatvarConvertObjective
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: "Используйте Алтарь, чтобы конвертировать члена экипажа"
   components:
   - type: Objective
@@ -14,7 +14,7 @@
 
 - type: entity
   id: RatvarBeaconsObjective
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: "Постройте маяки, чтобы набрать как можно больше мощности"
   components:
   - type: Objective
@@ -28,7 +28,7 @@
 
 - type: entity
   id: RatvarPowerObjective
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: "Накопите мощность, чтобы у нас была сила для призыва Ратвара!"
   components:
   - type: Objective
@@ -42,7 +42,7 @@
 
 - type: entity
   id: RatvarSummonObjective
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: "Мы готовы к призыву Ратвара!"
   components:
   - type: Objective

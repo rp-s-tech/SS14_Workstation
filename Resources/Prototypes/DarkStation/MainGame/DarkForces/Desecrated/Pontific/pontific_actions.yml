@@ -2,7 +2,7 @@
   id: ActionPontificDarkPrayer
   name: "Темный Молебнен"
   description: "Понтифик падает наземь, вознося молитвы во тьму, наделяющую его скверной"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon:
@@ -17,7 +17,7 @@
   id: ActionPontificLungeOfFaith
   name: "Выпад веры"
   description: "Увеличивает скорость и урон Понтифика в 1.25 раз. Требует 20 скверны"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon:
@@ -32,7 +32,7 @@
   id: ActionPontificBloodyAltar
   name: "Кровавый алтарь"
   description: "Понтифик молебном вызывает из тьмы алтарь, увеличивающих количество очков при последующим молебне в 1.75 раз. Требует 180 скверны"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon:
@@ -47,7 +47,7 @@
   id: ActionPontificSpawnMonk
   name: "Призыв служителя"
   description: "Призывает проклятого монаха церкви Гартулла. Требует 50 скверны"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon:
@@ -62,7 +62,7 @@
   id: ActionPontificSpawnGuardian
   name: "Слово храмовника"
   description: "Призывает рыцаря церкви Гартулла. Требует 75 скверны"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon:
@@ -77,7 +77,7 @@
   id: ActionPontificFelLightning
   name: "Великое осквернение"
   description: "Мощная молния наполенная скверной. Требует 55 скверны"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: EntityTargetAction
       icon:
@@ -98,7 +98,7 @@
   id: ActionPontificFlameSwords
   name: "Скверное пламя"
   description: "Мечи Понтифика загораются скверным пламенем, увеличивая скорость и урон Понтифика в 1.75 раз. Требует 40 скверны"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon:
@@ -113,7 +113,7 @@
   id: ActionPontificKudzu
   name: "Осквернённые лилии"
   description: "Создает осквернённые лилии, которые распространяются и медленно заполняют станцию. Наносит урон скверной при контакте"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon:
@@ -128,7 +128,7 @@
 - type: entity
   name: "молния скверны"
   id: PontificLightning
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: /Textures/Effects/lightning.rsi

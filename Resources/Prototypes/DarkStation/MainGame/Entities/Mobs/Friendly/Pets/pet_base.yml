@@ -58,7 +58,7 @@
   id: ActionPetOrderStay
   name: "Остановиться"
   description: "Приказать перестать следовать за вами"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 1
@@ -77,7 +77,7 @@
   id: ActionPetOrderFollow
   name: "Следовать"
   description: "Приказать следовать за вами"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 1
@@ -96,7 +96,7 @@
   id: ActionPetOrderAttack
   name: "Атаковать"
   description: "Переводит в боевой режим. Атакует любого, на кого вы укажите"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 1
@@ -115,7 +115,7 @@
   id: ActionPetMakeGhostRole
   name: "Сделать гостролью"
   description: "Сделает питомца гостролью, его сможет занять любой призрак"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 1
@@ -129,7 +129,7 @@
   id: ActionPetRemoveGhostRole
   name: "Убрать гостроль"
   description: "Убирает гостроль и выгоняет игрока из нее"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 1

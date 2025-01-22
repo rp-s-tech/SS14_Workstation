@@ -143,6 +143,15 @@
     priority: 1
   - type: StaticPrice
     price: 500
+  - type: RatvarGearTarget
+    gearSlot:
+      ejectOnBreak: true
+      whitelist:
+        components:
+        - RatvarGear
+  - type: ContainerContainer
+    containers:
+      RatvarGear: !type:ContainerSlot
 
 # APC under construction
 - type: entity

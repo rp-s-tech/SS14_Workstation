@@ -112,6 +112,10 @@
     mode: SnapgridCenter
   components:
   - type: Clickable
+  - type: Saintable
+    damageOnCollide:
+      types:
+        Holiness: 5
   - type: Slippery
   - type: Transform
     noRot: true
