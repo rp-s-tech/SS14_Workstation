@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "by Piv2r",
+  "size": {
+    "x": 48,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "bigrockssolid01"
+    },
+	  {
+      "name": "bigrockssolid02"
+    },
+    {
+      "name": "bigrockssolid03"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "by Piv2r",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "smallrockssolid01"
+    },
+    {
+      "name": "smallrockssolid02"
+    },
+    {
+      "name": "smallrockssolid03"
+    },
+    {
+      "name": "smallrockssolid04"
+    },
+    {
+      "name": "smallrockssolid05"
+    },
+    {
+      "name": "smallrockssolid06"
+    },
+    {
+      "name": "smallrockssolid07"
+    },
+    {
+      "name": "smallrockssolid08"
+    },
+    {
+      "name": "smallrockssolid09"
+    },
+    {
+      "name": "smallrockssolid10"
+    },
+    {
+      "name": "smallrockssolid11"
+    },
+    {
+      "name": "smallrockssolid12"
+    },
+    {
+      "name": "smallrockssolid13"
+    },
+    {
+      "name": "smallrockssolid14"
+    },
+    {
+      "name": "smallrockssolid15"
+    },
+    {
+      "name": "smallrockssolid16"
+    },
+    {
+      "name": "smallrockssolid17"
+    },
+    {
+      "name": "smallrockssolid18"
+    },
+    {
+      "name": "smallrockssolid19"
+    },
+    {
+      "name": "smallrockssolid20"
+    },
+    {
+      "name": "smallrockssolid21"
+    },
+    {
+      "name": "smallrockssolid22"
+    },
+    {
+      "name": "smallrockssolid23"
+    },
+    {
+      "name": "smallrockssolid24"
+    },
+    {
+      "name": "smallrockssolid25"
+    },
+    {
+      "name": "smallrockssolid26"
+    },
+    {
+      "name": "smallrockssolid27"
+    },
+    {
+      "name": "smallrockssolid28"
+    },
+    {
+      "name": "smallrockssolid29"
+    },
+    {
+      "name": "smallrockssolid30"
+    }
+  ]
+}

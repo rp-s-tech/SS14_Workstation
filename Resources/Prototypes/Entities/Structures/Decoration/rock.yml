@@ -1,0 +1,625 @@
+- type: entity
+  parent: BaseRock
+  id: SmallBaseRock
+  name: rock
+  description: heeeeavy
+  abstract: true
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Exodus/Structures/Decoration/RockSolid/smallrocksolid.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 1000
+        layer:
+        - HalfWallLayer
+        - Opaque
+
+- type: entity
+  parent: BaseRock
+  id: MiddleBaseRock
+  name: rock
+  description: heeeeavy
+  abstract: true
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Exodus/Structures/Decoration/RockSolid/middlerocksolid.rsi
+
+- type: entity
+  parent: BaseRock
+  id: BigBaseRock
+  name: rock
+  description: heeeeavy
+  abstract: true
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Exodus/Structures/Decoration/RockSolid/bigrocksolid.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,1"
+        density: 1000
+        layer:
+        - HalfWallLayer
+        - Opaque
+
+- type: entity
+  parent: BaseRock
+  id: LargeBaseRock
+  name: rock
+  description: heeeeavy
+  abstract: true
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Exodus/Structures/Decoration/RockSolid/largerocksolid.rsi
+    offset: 0,0.9
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.7,-0.2,0.7,2"
+        density: 1000
+        layer:
+        - HalfWallLayer
+        - Opaque
+  - type: Climbable
+    delay: 10.0
+
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallBlackBaseRock
+  name: black rock
+  description: heeeeavy
+  abstract: true
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Exodus/Structures/Decoration/BlackRockSolid/smallblackrocksolid.rsi
+
+- type: entity
+  parent: BaseRock
+  id: MiddleBlackBaseRock
+  name: black rock
+  description: heeeeavy
+  abstract: true
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Exodus/Structures/Decoration/BlackRockSolid/middleblackrocksolid.rsi
+
+- type: entity
+  parent: BaseRock
+  id: BigBlackBaseRock
+  name: black rock
+  description: heeeeavy
+  abstract: true
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Exodus/Structures/Decoration/BlackRockSolid/bigblackrocksolid.rsi
+
+- type: entity
+  parent: BaseRock
+  id: LargeBlackBaseRock
+  name: rock
+  description: heeeeavy
+  abstract: true
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Exodus/Structures/Decoration/BlackRockSolid/largeblackrocksolid.rsi
+    offset: 0,0.9
+
+#region White
+#32x32
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid01
+  components:
+  - type: Sprite
+    state: smallrockssolid01
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid02
+  components:
+  - type: Sprite
+    state: smallrockssolid02
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid03
+  components:
+  - type: Sprite
+    state: smallrockssolid03
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid04
+  components:
+  - type: Sprite
+    state: smallrockssolid04
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid05
+  components:
+  - type: Sprite
+    state: smallrockssolid05
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid06
+  components:
+  - type: Sprite
+    state: smallrockssolid06
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid07
+  components:
+  - type: Sprite
+    state: smallrockssolid07
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid08
+  components:
+  - type: Sprite
+    state: smallrockssolid08
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid09
+  components:
+  - type: Sprite
+    state: smallrockssolid09
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid10
+  components:
+  - type: Sprite
+    state: smallrockssolid10
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid11
+  components:
+  - type: Sprite
+    state: smallrockssolid11
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid12
+  components:
+  - type: Sprite
+    state: smallrockssolid12
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid13
+  components:
+  - type: Sprite
+    state: smallrockssolid13
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid14
+  components:
+  - type: Sprite
+    state: smallrockssolid14
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid15
+  components:
+  - type: Sprite
+    state: smallrockssolid15
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid16
+  components:
+  - type: Sprite
+    state: smallrockssolid16
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid17
+  components:
+  - type: Sprite
+    state: smallrockssolid17
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid18
+  components:
+  - type: Sprite
+    state: smallrockssolid18
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid19
+  components:
+  - type: Sprite
+    state: smallrockssolid19
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid20
+  components:
+  - type: Sprite
+    state: smallrockssolid20
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid21
+  components:
+  - type: Sprite
+    state: smallrockssolid21
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid22
+  components:
+  - type: Sprite
+    state: smallrockssolid22
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid23
+  components:
+  - type: Sprite
+    state: smallrockssolid23
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid24
+  components:
+  - type: Sprite
+    state: smallrockssolid24
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid25
+  components:
+  - type: Sprite
+    state: smallrockssolid25
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid26
+  components:
+  - type: Sprite
+    state: smallrockssolid26
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid27
+  components:
+  - type: Sprite
+    state: smallrockssolid27
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid28
+  components:
+  - type: Sprite
+    state: smallrockssolid28
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid29
+  components:
+  - type: Sprite
+    state: smallrockssolid29
+
+- type: entity
+  parent: SmallBaseRock
+  id: SmallRockSolid30
+  components:
+  - type: Sprite
+    state: smallrockssolid30
+#48x48
+- type: entity
+  parent: MiddleBaseRock
+  id: MiddleRockSolid01
+  components:
+  - type: Sprite
+    state: middlerockssolid01
+
+- type: entity
+  parent: MiddleBaseRock
+  id: MiddleRockSolid02
+  components:
+  - type: Sprite
+    state: middlerockssolid02
+
+- type: entity
+  parent: MiddleBaseRock
+  id: MiddleRockSolid03
+  components:
+  - type: Sprite
+    state: middlerockssolid03
+
+- type: entity
+  parent: MiddleBaseRock
+  id: MiddleRockSolid04
+  components:
+  - type: Sprite
+    state: middlerockssolid04
+
+- type: entity
+  parent: MiddleBaseRock
+  id: MiddleRockSolid05
+  components:
+  - type: Sprite
+    state: middlerockssolid05
+
+- type: entity
+  parent: MiddleBaseRock
+  id: MiddleRockSolid06
+  components:
+  - type: Sprite
+    state: middlerockssolid06
+
+- type: entity
+  parent: MiddleBaseRock
+  id: MiddleRockSolid07
+  components:
+  - type: Sprite
+    state: middlerockssolid07
+
+- type: entity
+  parent: MiddleBaseRock
+  id: MiddleRockSolid08
+  components:
+  - type: Sprite
+    state: middlerockssolid08
+
+- type: entity
+  parent: MiddleBaseRock
+  id: MiddleRockSolid09
+  components:
+  - type: Sprite
+    state: middlerockssolid09
+#48x64
+- type: entity
+  parent: BigBaseRock
+  id: BigRockSolid01
+  components:
+  - type: Sprite
+    state: bigrockssolid01
+
+- type: entity
+  parent: BigBaseRock
+  id: BigRockSolid02
+  components:
+  - type: Sprite
+    state: bigrockssolid02
+
+- type: entity
+  parent: BigBaseRock
+  id: BigRockSolid03
+  components:
+  - type: Sprite
+    state: bigrockssolid03
+#64x80
+- type: entity
+  parent: LargeBaseRock
+  id: LargeRockSolid01
+  components:
+  - type: Sprite
+    state: largerockssolid01
+#endregion
+
+
+#region Black
+- type: entity
+  parent: SmallBlackBaseRock
+  id: SmallBlackRockSolid01
+  components:
+  - type: Sprite
+    state: smallblackrockssolid01
+
+- type: entity
+  parent: SmallBlackBaseRock
+  id: SmallBlackRockSolid02
+  components:
+  - type: Sprite
+    state: smallblackrockssolid02
+
+- type: entity
+  parent: SmallBlackBaseRock
+  id: SmallBlackRockSolid03
+  components:
+  - type: Sprite
+    state: smallblackrockssolid03
+
+- type: entity
+  parent: SmallBlackBaseRock
+  id: SmallBlackRockSolid04
+  components:
+  - type: Sprite
+    state: smallblackrockssolid04
+
+- type: entity
+  parent: SmallBlackBaseRock
+  id: SmallBlackRockSolid05
+  components:
+  - type: Sprite
+    state: smallblackrockssolid05
+- type: entity
+  parent: SmallBlackBaseRock
+  id: SmallBlackRockSolid06
+  components:
+  - type: Sprite
+    state: smallblackrockssolid06
+
+- type: entity
+  parent: SmallBlackBaseRock
+  id: SmallBlackRockSolid07
+  components:
+  - type: Sprite
+    state: smallblackrockssolid07
+
+- type: entity
+  parent: SmallBlackBaseRock
+  id: SmallBlackRockSolid08
+  components:
+  - type: Sprite
+    state: smallblackrockssolid08
+
+- type: entity
+  parent: SmallBlackBaseRock
+  id: SmallBlackRockSolid09
+  components:
+  - type: Sprite
+    state: smallblackrockssolid09
+
+- type: entity
+  parent: SmallBlackBaseRock
+  id: SmallBlackRockSolid10
+  components:
+  - type: Sprite
+    state: smallblackrockssolid10
+- type: entity
+  parent: SmallBlackBaseRock
+  id: SmallBlackRockSolid11
+  components:
+  - type: Sprite
+    state: smallblackrockssolid11
+
+- type: entity
+  parent: SmallBlackBaseRock
+  id: SmallBlackRockSolid12
+  components:
+  - type: Sprite
+    state: smallblackrockssolid12
+
+- type: entity
+  parent: SmallBlackBaseRock
+  id: SmallBlackRockSolid13
+  components:
+  - type: Sprite
+    state: smallblackrockssolid13
+
+- type: entity
+  parent: SmallBlackBaseRock
+  id: SmallBlackRockSolid14
+  components:
+  - type: Sprite
+    state: smallblackrockssolid14
+
+- type: entity
+  parent: SmallBlackBaseRock
+  id: SmallBlackRockSolid15
+  components:
+  - type: Sprite
+    state: smallblackrockssolid15
+- type: entity
+  parent: SmallBlackBaseRock
+  id: SmallBlackRockSolid16
+  components:
+  - type: Sprite
+    state: smallblackrockssolid16
+
+#48x48
+- type: entity
+  parent: MiddleBlackBaseRock
+  id: MiddleBlackRockSolid01
+  components:
+  - type: Sprite
+    state: middleblackrockssolid01
+
+- type: entity
+  parent: MiddleBlackBaseRock
+  id: MiddleBlackRockSolid02
+  components:
+  - type: Sprite
+    state: middleblackrockssolid02
+
+- type: entity
+  parent: MiddleBlackBaseRock
+  id: MiddleBlackRockSolid03
+  components:
+  - type: Sprite
+    state: middleblackrockssolid03
+
+- type: entity
+  parent: MiddleBlackBaseRock
+  id: MiddleBlackRockSolid04
+  components:
+  - type: Sprite
+    state: middleblackrockssolid04
+
+- type: entity
+  parent: MiddleBlackBaseRock
+  id: MiddleBlackRockSolid05
+  components:
+  - type: Sprite
+    state: middleblackrockssolid05
+
+- type: entity
+  parent: MiddleBlackBaseRock
+  id: MiddleBlackRockSolid06
+  components:
+  - type: Sprite
+    state: middleblackrockssolid06
+
+- type: entity
+  parent: MiddleBlackBaseRock
+  id: MiddleBlackRockSolid07
+  components:
+  - type: Sprite
+    state: middleblackrockssolid07
+
+- type: entity
+  parent: MiddleBlackBaseRock
+  id: MiddleBlackRockSolid08
+  components:
+  - type: Sprite
+    state: middleblackrockssolid08
+
+- type: entity
+  parent: MiddleBlackBaseRock
+  id: MiddleBlackRockSolid09
+  components:
+  - type: Sprite
+    state: middleblackrockssolid09
+#48x64
+- type: entity
+  parent: BigBlackBaseRock
+  id: BigBlackRockSolid01
+  components:
+  - type: Sprite
+    state: bigblackrockssolid01
+
+- type: entity
+  parent: BigBlackBaseRock
+  id: BigBlackRockSolid02
+  components:
+  - type: Sprite
+    state: bigblackrockssolid02
+
+- type: entity
+  parent: BigBlackBaseRock
+  id: BigBlackRockSolid03
+  components:
+  - type: Sprite
+    state: bigblackrockssolid03
+#64x80
+- type: entity
+  parent: LargeBlackBaseRock
+  id: LargeBlackRockSolid01
+  components:
+  - type: Sprite
+    state: largeblackrockssolid01
+#endregion
