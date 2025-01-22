@@ -1,4 +1,10 @@
 - type: Tag
+  id: Letter
+
+- type: Tag
+  id: NuclearCodes
+
+- type: Tag
   id: AASElectronics
 
 - type: Tag

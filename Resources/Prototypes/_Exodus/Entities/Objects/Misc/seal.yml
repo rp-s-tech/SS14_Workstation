@@ -1,0 +1,9 @@
+- type: entity
+  parent: BaseItem
+  id: DeactivatedSeal
+  name: deactivated seal
+  description: Deactivated seal of something that was sealed earlier. Useless now.
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Misc/seal.rsi
+    state: seal
