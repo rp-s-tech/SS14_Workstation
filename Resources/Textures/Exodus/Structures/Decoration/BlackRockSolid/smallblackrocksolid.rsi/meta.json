@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "by Piv2r",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "smallblackrockssolid01"
+    },
+    {
+      "name": "smallblackrockssolid02"
+    },
+    {
+      "name": "smallblackrockssolid03"
+    },
+    {
+      "name": "smallblackrockssolid04"
+    },
+    {
+      "name": "smallblackrockssolid05"
+    },
+    {
+      "name": "smallblackrockssolid06"
+    },
+    {
+      "name": "smallblackrockssolid07"
+    },
+    {
+      "name": "smallblackrockssolid08"
+    },
+    {
+      "name": "smallblackrockssolid09"
+    },
+    {
+      "name": "smallblackrockssolid10"
+    },
+    {
+      "name": "smallblackrockssolid11"
+    },
+    {
+      "name": "smallblackrockssolid12"
+    },
+    {
+      "name": "smallblackrockssolid13"
+    },
+    {
+      "name": "smallblackrockssolid14"
+    },
+    {
+      "name": "smallblackrockssolid15"
+    },
+    {
+      "name": "smallblackrockssolid16"
+    }
+  ]
+}

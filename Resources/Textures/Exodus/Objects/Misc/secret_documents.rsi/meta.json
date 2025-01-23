@@ -1,0 +1,20 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "by Asler (discord ID: 788252896016990219)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "sec-doc_seal"
+        },
+		{
+			"name": "folder-sec-doc"
+		},
+		{
+			"name": "records"
+		}
+    ]
+}

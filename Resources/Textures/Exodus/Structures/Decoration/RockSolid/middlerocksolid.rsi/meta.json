@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "by Piv2r",
+  "size": {
+    "x": 48,
+    "y": 48
+  },
+  "states": [
+    {
+      "name": "middlerockssolid01"
+    },
+    {
+      "name": "middlerockssolid02"
+    },
+    {
+      "name": "middlerockssolid03"
+    },
+    {
+      "name": "middlerockssolid04"
+    },
+    {
+      "name": "middlerockssolid05"
+    },
+    {
+      "name": "middlerockssolid06"
+    },
+    {
+      "name": "middlerockssolid07"
+    },
+    {
+      "name": "middlerockssolid08"
+    },
+    {
+      "name": "middlerockssolid09"
+    }
+  ]
+}

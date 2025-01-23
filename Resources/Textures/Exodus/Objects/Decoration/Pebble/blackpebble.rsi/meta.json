@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "by Piv2r",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "blackpebble01"
+    },
+    {
+      "name": "blackpebble02"
+    },
+    {
+      "name": "blackpebble03"
+    },
+    {
+      "name": "blackpebble04"
+    },
+    {
+      "name": "blackpebble05"
+    },
+    {
+      "name": "blackpebble06"
+    },
+    {
+      "name": "blackpebble07"
+    },
+    {
+      "name": "blackpebble08"
+    },
+    {
+      "name": "blackpebble09"
+    },
+    {
+      "name": "blackpebble10"
+    },
+    {
+      "name": "blackpebble11"
+    },
+    {
+      "name": "blackpebble12"
+    },
+    {
+      "name": "blackpebble13"
+    },
+    {
+      "name": "blackpebble14"
+    },
+    {
+      "name": "blackpebble15"
+    }
+  ]
+}

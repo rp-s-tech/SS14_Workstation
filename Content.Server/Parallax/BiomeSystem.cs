@@ -91,7 +91,51 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
         Subs.CVar(_configManager, CVars.NetMaxUpdateRange, SetLoadRange, true);
         InitializeCommands();
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(ProtoReload);
+        SubscribeLocalEvent<TransformComponent, EntityTerminatingEvent>(OnEntityRemove); // Exodus-MapSavingFix
     }
+
+    // Exodus-MapSavingFix-Start
+    private void OnEntityRemove(EntityUid uid, TransformComponent transform, ref EntityTerminatingEvent ev)
+    {
+        // this is needed for clearing entities from BiomeComponent.LoadedEntities when they're getting deleted or else the biome cannot be saved
+        // this is happens due to transforming of EntityUid to the zero (or invalid entityuid in other words) which creates key duplicates in dictionary
+        // cuz of that serializer crashes
+
+        // is entity on biome
+        if (!_biomeQuery.TryGetComponent(transform.MapUid, out var biome))
+            return;
+
+        // is map initialized, if it is - we have nothing to do here
+        if (TryComp<MapComponent>(transform.MapUid, out var map) && map.MapInitialized)
+        {
+            return;
+        }
+
+        // get chunk coordinates
+        var cords = _transform.GetWorldPosition(transform);
+        var vector = new Vector2i((int)Math.Floor(cords.X / ChunkSize) * ChunkSize, (int)Math.Floor(cords.Y / ChunkSize) * ChunkSize);
+
+        // get chunk containing deleted entity
+        biome.LoadedEntities.TryGetValue(vector, out var entities);
+        DebugTools.Assert(entities is not null, $"Cannot get chunk for entity {ev.Entity}");
+        // the actual fix
+        entities.Remove(ev.Entity);
+
+        // needed to prevent maps from regenerating
+        // when chunk is getting unloaded and then loaded again - deleted entities will be generated again
+        // did it manually cuz using of ReserveTiles is a high overhead to edit only one tile
+        var modifiedTileCords = cords.Floored();
+        if (biome.ModifiedTiles.TryGetValue(vector, out var modifiedTilesChunk))
+        {
+            if (!modifiedTilesChunk.TryGetValue(modifiedTileCords, out _))
+                modifiedTilesChunk.Add(modifiedTileCords);
+        }
+        else
+        {
+            biome.ModifiedTiles.Add(vector, new() { modifiedTileCords });
+        }
+    }
+    // Exodus-MapSavingFix-End
 
     private void ProtoReload(PrototypesReloadedEventArgs obj)
     {
@@ -320,7 +364,7 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
     private bool CanLoad(EntityUid uid)
     {
-        return !_ghostQuery.HasComp(uid);
+        return !_ghostQuery.TryComp(uid, out var ghost) || ghost.CanGhostInteract; // Exodus-AdminQOL
     }
 
     public override void Update(float frameTime)
