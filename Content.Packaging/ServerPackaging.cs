@@ -70,13 +70,14 @@ public static class ServerPackaging
         "zh-Hant"
     };
 
-    private static readonly string SecretServerPath = Path.Combine("RPSX", "Content.RPSXServer",
+    private static readonly string RPSXServerPath = Path.Combine("RPSX", "Content.RPSXServer",
         "Content.RPSXServer.csproj");
 
     // private static readonly string SecretSharedPath = Path.Combine("RPSX", "Content.RPSXServer",
     //     "Content.RPSXServer.csproj");
 
-    private static readonly bool UseSecrets = File.Exists(SecretServerPath);
+    private static readonly bool UseRPSX = File.Exists(RPSXServerPath);
+    private static readonly bool UseExodus = File.Exists(Path.Combine("Exodus", "ExodusSecrets.sln")); // Exodus-Secrets
 
     public static async Task PackageServer(bool skipBuild, bool hybridAcz, IPackageLogger logger, string configuration, List<string>? platforms = null)
     {
@@ -127,7 +128,7 @@ public static class ServerPackaging
                 }
             });
 
-            if (UseSecrets)
+            if (UseRPSX)
             {
                 await ProcessHelpers.RunCheck(new ProcessStartInfo
                 {
@@ -135,7 +136,7 @@ public static class ServerPackaging
                     ArgumentList =
                     {
                         "build",
-                        SecretServerPath,
+                        RPSXServerPath,
                         "-c", "Release",
                         "--nologo",
                         "/v:m",
@@ -146,6 +147,27 @@ public static class ServerPackaging
                     }
                 });
             }
+            // Exodus-Secrets-Start
+            if (UseExodus)
+            {
+                await ProcessHelpers.RunCheck(new ProcessStartInfo
+                {
+                    FileName = "dotnet",
+                    ArgumentList =
+                    {
+                        "build",
+                        Path.Combine("Exodus","Content.Exodus.Server", "Content.Exodus.Server.csproj"),
+                        "-c", "Release",
+                        "--nologo",
+                        "/v:m",
+                        $"/p:TargetOs={platform.TargetOs}",
+                        "/t:Rebuild",
+                        "/p:FullRelease=true",
+                        "/m"
+                    }
+                });
+            }
+            // Exodus-Secrets-End
 
             await PublishClientServer(platform.Rid, platform.TargetOs, configuration);
         }
@@ -205,11 +227,15 @@ public static class ServerPackaging
         var inputPassResources = graph.InputResources;
         var contentAssemblies = new List<string>(ServerContentAssemblies);
 
-        if (UseSecrets)
+        if (UseRPSX)
         {
             contentAssemblies.Add("Content.RPSXServer");
             // contentAssemblies.Add("Content.RPSXShared");
         }
+        // Exodus-Secrets-Start
+        if (UseExodus)
+            contentAssemblies.AddRange(["Content.Exodus.Shared", "Content.Exodus.Server"]);
+        // Exodus-Secrets-End
 
         // Additional assemblies that need to be copied such as EFCore.
         var sourcePath = Path.Combine(contentDir, "bin", "Content.Server");
