@@ -108,9 +108,11 @@ public sealed class SealSystem : SharedSealSystem
         if (!Resolve(uid, ref component))
             return;
 
-        PopupSystem.PopupEntity(Loc.GetString("seal-comp-do-unseal-success", ("entityName", Identity.Name(uid, EntityManager))), uid, user.Value);
-
-        AudioSystem.PlayPredicted(component.UnsealingSound, uid, user);
+        if (user is not null)
+        {
+            PopupSystem.PopupEntity(Loc.GetString("seal-comp-do-unseal-success", ("entityName", Identity.Name(uid, EntityManager))), uid, user.Value);
+            AudioSystem.PlayPredicted(component.UnsealingSound, uid, user.Value);
+        }
 
         component.Sealed = false;
         AppearanceSystem.SetData(uid, SealVisual.Sealed, false);
