@@ -2,6 +2,10 @@
 	path = RobustToolbox
 	url = https://github.com/space-wizards/RobustToolbox.git
 	branch = master
+[submodule "Exodus"]
+	path = Exodus
+	url = ssh://git@git.rp-s.tech:2222/rps/ss14/exodus/exodus.git
+	update = none
 [submodule "RPSX"]
 	path = RPSX
 	url = ssh://git@git.rp-s.tech:2222/rps/ss14/private/rpsx.git
