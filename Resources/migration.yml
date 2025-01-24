@@ -414,8 +414,10 @@ FoodMeatFiestaKebab: FoodKebabSkewer
 #2024-08-14
 ClothingBeltSuspenders: ClothingBeltSuspendersRed
 
-# 2024-08-19
-ClothingNeckShockCollar: ClothingBackpackElectropack
+# Exodus-ShockCollar-Start
+# # 2024-08-19
+# ClothingNeckShockCollar: ClothingBackpackElectropack
+# Exodus-ShockCollar-End
 
 # 2024-08-22
 ComputerShuttleSalvage: null

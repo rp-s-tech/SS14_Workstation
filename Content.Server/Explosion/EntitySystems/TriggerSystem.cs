@@ -138,7 +138,7 @@ namespace Content.Server.Explosion.EntitySystems
                 return;
             }
 
-            _electrocution.TryDoElectrocution(containerEnt, null, shockOnTrigger.Comp.Damage, shockOnTrigger.Comp.Duration, true);
+            _electrocution.TryDoElectrocution(containerEnt, null, shockOnTrigger.Comp.Damage, shockOnTrigger.Comp.Duration, true, /* Exodus-ShockCollar-Start */ ignoreInsulation: shockOnTrigger.Comp.IgnoreInsulation /* Exodus-ShockCollar-End*/);
             shockOnTrigger.Comp.NextTrigger = curTime + shockOnTrigger.Comp.Cooldown;
         }
 

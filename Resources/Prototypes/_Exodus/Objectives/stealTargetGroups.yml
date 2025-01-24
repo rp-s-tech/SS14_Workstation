@@ -4,3 +4,10 @@
   sprite:
     sprite: Exodus/Objects/Misc/secret_documents.rsi
     state: folder-sec-doc
+
+- type: stealTargetGroup
+  id: ClothingNeckShockCollar
+  name: shock collar
+  sprite:
+    sprite: Clothing/Neck/Misc/shock_collar.rsi
+    state: icon

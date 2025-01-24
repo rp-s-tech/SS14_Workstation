@@ -19,6 +19,10 @@
       - id: ClothingOuterHardsuitWarden
       - id: HoloprojectorSecurity
       - id: BookSpaceLaw
+      # Exodus-ShockCollar-Start
+      - id: ClothingNeckShockCollar
+        amount: 2
+      # Exodus-ShockCollar-End
       - id: ClothingBackpackElectropack
         amount: 2
       - id: RemoteSignaller
@@ -44,6 +48,10 @@
       - id: DoorRemoteArmory
       - id: HoloprojectorSecurity
       - id: BookSpaceLaw
+      # Exodus-ShockCollar-Start
+      - id: ClothingNeckShockCollar
+        amount: 2
+      # Exodus-ShockCollar-End
       - id: ClothingBackpackElectropack
         amount: 2
       - id: RemoteSignaller
