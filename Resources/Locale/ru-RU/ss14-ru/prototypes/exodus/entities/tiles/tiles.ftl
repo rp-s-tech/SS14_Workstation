@@ -1,0 +1,9 @@
+tiles-concrete-tile-weather = Внутренний бетонный пол
+tiles-concrete-slab-weather = Внутренняя бетонная плита
+tiles-concrete-smooth-weather = Внутренний гладкий бетонный пол
+tiles-gray-concrete-tile-weather = Внутренний серый бетонный пол
+tiles-gray-concrete-slab-weather = Внутренняя серая бетонная плита
+tiles-gray-concrete-smooth-weather = Внутренний гладкий серый бетонный пол
+tiles-old-concrete-tile-weather = Внутренний старый бетонный пол
+tiles-old-concrete-slab-weather = Внутренняя старая бетонная плита
+tiles-old-concrete-smooth-weather = Внутренний старый гладкий бетонный пол
