@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseStructureDynamic
   id: SYSmartFridge
-  name: Умный холодильник Синдиката
-  description: Охлаждаемое хранилище для складирования лекарств и химикатов.
+  name: Syndicate's smart fridge
+  description: Refrigerated storage for the storage of drugs and chemicals.
   components:
   - type: Advertise
     pack: SmartFridgeAds

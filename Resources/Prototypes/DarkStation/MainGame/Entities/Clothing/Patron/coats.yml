@@ -1,20 +1,11 @@
-﻿- type: entity
-  parent: ClothingOuterStorageBase
-  id: ClothingOuterDogiPatron
-  name: "доги самурая"
-  description: "Доги - это вид традиционной японской одежды. Доги изготавливается из тяжелой, плотной ткани, практичен в бою и стилен на вид. Спина украшена замысловатыми узорами и вышивкой."
-  suffix: Patron
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Coats/dogi.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Coats/dogi.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Slash: 0.95
-        Piercing: 0.95
-      securePartTypes:
-        Leg: 0.75
-        Arm: 0.75
+﻿ - type: entity
+   parent: ClothingOuterStorageBase
+   id: ClothingOuterDogiPatron
+   name: samurai dogi
+   description: Dogi is a type of traditional Japanese clothing. The dogi is made of heavy, dense fabric, practical in combat and stylish in appearance. The back is decorated with intricate patterns and embroidery.
+   suffix: Patron
+   components:
+   - type: Sprite
+     sprite: Clothing/OuterClothing/Coats/dogi.rsi
+   - type: Clothing
+     sprite: Clothing/OuterClothing/Coats/dogi.rsi

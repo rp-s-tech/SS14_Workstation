@@ -1,8 +1,8 @@
 - type: entity
   id: SYAutolathe
   parent: BaseLathe
-  name: автолат Синдиката
-  description: Он производит изделия из металла и стекла.
+  name: Syndicate autolatte
+  description: It manufactures metal and glass products.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Structures/Machines/autolathe.rsi
@@ -140,8 +140,8 @@
 - type: entity
   id: SYCircuitImprinter
   parent: BaseLathe
-  name: принтер схем Синдиката
-  description: Печатает платы для машин Синдиката.
+  name: Syndicate circuit printer
+  description: Prints circuit boards for Syndicate machines.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Structures/Machines/circuit_imprinter.rsi
@@ -258,7 +258,7 @@
 - type: entity
   parent: BaseLathe
   id: SYUniformPrinter
-  name: принтер униформы Синдиката
+  name: Syndicate uniform printer
   description: Печать новой или запасной униформы Синдиката.
   components:
   - type: Transform
@@ -373,8 +373,8 @@
 - type: entity
   id: SYProtolathe
   parent: BaseLathe
-  name: протолат Синдиката
-  description: Создаёт злодейства из различных материалов.
+  name: Syndicate protolate
+  description: Creates villainesses out of a variety of materials.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Structures/Machines/protolathe.rsi

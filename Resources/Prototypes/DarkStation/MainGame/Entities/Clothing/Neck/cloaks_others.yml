@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakGoliathCloakNTGreen
-  name: плащ голиафа
-  description: Плащ голиафа, сделанный из шкуры выносливой фауны с далекой планеты. Однако с течением времени его защитные свойства ослабли.
+  name: goliath's cloak
+  description: Goliath's cloak, made from the hide of a hardy fauna from a distant planet. However, over time, its protective properties have weakened.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/green.rsi
@@ -13,8 +13,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakGoliathCloakNTBlue
-  name: плащ голиафа
-  description: Плащ голиафа, сделанный из шкуры выносливой фауны с далекой планеты. Однако с течением времени его защитные свойства ослабли.
+  name: goliath's cloak
+  description: Goliath's cloak, made from the hide of a hardy fauna from a distant planet. However, over time, its protective properties have weakened.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/blue.rsi
@@ -25,8 +25,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakGoliathCloakBrigmedic
-  name: плащ бригмедика
-  description: Плащ бригмедика, сделанный из шкуры выносливой фауны с далекой планеты. Однако с течением времени его защитные свойства ослабли.
+  name: brigmedic cloak
+  description: Brigmedic cloak, made from the hide of hardy fauna from a distant planet. However, over time, its protective properties have weakened.
   components:
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/goliathcloak.rsi
@@ -38,8 +38,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakGoliathCloakCargoLogistician
-  name: плащ логиста
-  description: Плащ логиста, сделанный из шкуры выносливой фауны с далекой планеты. Однако с течением времени его защитные свойства ослабли.
+  name: logistian cloack
+  description: Logistician cloak made from the hide of hardy fauna from a distant planet. However, over time, its protective properties have weakened.
   components:
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/cargogoliath.rsi
@@ -50,8 +50,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckPOCC
-  name: Плащ НШЦК
-  description: Так и чувствуется серьезность.
+  name: POCC cloack
+  description: That's how serious it feels.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/pocscloak2.rsi
@@ -71,8 +71,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNakidPOCC
-  name: Накидка НШЦК
-  description: Так и чувствуется серьезность.
+  name: POCC cape
+  description: That's how serious it feels.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/pocscloak.rsi
@@ -92,8 +92,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakEasterBasket
-  name: пасхальный плащ
-  description: Плащ профессионального сборщика яиц, он собрал их всех!
+  name: easter cloak
+  description: The cape of a professional egg collector, he collected them all!
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/easter_basket.rsi
@@ -104,8 +104,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakHappyEaster
-  name: пасхальный плащ
-  description: Плащ профессионального сборщика яиц, он собрал их всех!
+  name: easter cloak
+  description: The cape of a professional egg collector, he collected them all!
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/happy_easter.rsi
@@ -116,8 +116,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckIFD
-  name: Плащ ИФД
-  description: Этот плащ пахнет так, как будто его достали из денежной ванны.
+  name: FD inspector cloack
+  description: This cape smells like it was taken out of a money bath.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/IFD_cloaks.rsi

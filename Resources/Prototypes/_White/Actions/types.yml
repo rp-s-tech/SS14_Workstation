@@ -1,7 +1,7 @@
 - type: entity
   id: ToggleNightVision
-  name: Переключить ночное видение
-  description: Переключает ночное зрение.
+  name: Toggle Night Vision
+  description: Toggles night vision.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -15,7 +15,7 @@
 
 - type: entity
   id: ToggleThermalVision
-  name: Переключить термальное зрение
+  name: Toggle Thermal Vision
   description: Toggles thermal vision.
   categories: [ HideSpawnMenu ]
   components:
@@ -31,8 +31,8 @@
 - type: entity
   id: PulseThermalVision
   parent: ToggleThermalVision
-  name: Импульсное термальное зрение
-  description: Временно включает термальное зрение.
+  name: Pulse Thermal Vision
+  description: Activate thermal vision temporarily.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction

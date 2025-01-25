@@ -19,7 +19,7 @@
 - type: entity
   parent: DrinkGlass
   id: DrinkShalnayaPulya
-  suffix:
+  suffix: Stray bullet
   components:
   - type: SolutionContainerManager
     solutions:
@@ -35,7 +35,7 @@
 - type: entity
   parent: DrinkGlass
   id: DrinkRadostEnta
-  suffix:
+  suffix: Joy of ant
   components:
   - type: SolutionContainerManager
     solutions:
@@ -51,7 +51,7 @@
 - type: entity
   parent: DrinkGlass
   id: DrinkMiamnaMama
-  suffix:
+  suffix: MimanaMama
   components:
   - type: SolutionContainerManager
     solutions:
@@ -67,7 +67,7 @@
 - type: entity
   parent: DrinkGlass
   id: DrinkGinSonic
-  suffix:
+  suffix: Gin sonic
   components:
   - type: SolutionContainerManager
     solutions:

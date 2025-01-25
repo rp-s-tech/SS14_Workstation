@@ -1,8 +1,8 @@
 - type: entity
   id: SYCargoTelepad
   parent: [ BaseMachinePowered, ConstructibleMachine ]
-  name: грузовой телепад Синдиката
-  description: Захватите пиццу у грязных корпоратов и приступайте к работе.
+  name: Syndicate cargo telepad
+  description: Grab some pizza from the dirty corporatists and get to work.
   components:
   - type: InteractionOutline
   - type: Physics

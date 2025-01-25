@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingShoesBase
   id: ClothingChaplainBoots
-  name: Тактические ботинки капеллана
-  description: Тактические ботинки, усовершенствованные с помощью системы антискольжения.
+  name: chaplain's tactical boots
+  description: Tactical boots enhanced with an anti-slip system.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Shoes/Specific/armchapboots.rsi
@@ -16,8 +16,8 @@
 - type: entity
   parent: ClothingShoesBaseButcherable
   id: WW2GermanyShoes
-  name: походные ботинки
-  description: Обувь подразделений Вермахта образца первой половины Второй мировой войны.
+  name: walking boots
+  description: Footwear of Wehrmacht units of the first half of World War II.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Shoes/Specific/ww2bootsger.rsi
@@ -27,8 +27,8 @@
 - type: entity
   parent: ClothingShoesClown
   id: ClothingShoesHonkomother
-  name: Туфли Хонкоматери
-  description: Благословленные самой Хонкоматерью, эти туфли наполнят каждый ваш шаг смехом.
+  name: Honkomother shoes
+  description: Blessed by Honkomother herself, these shoes will fill your every step with laughter.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Shoes/honkomother_shoes.rsi
@@ -38,8 +38,8 @@
 - type: entity
   parent: ClothingShoesClown
   id: ClothingAmongShoes
-  name: Тапочки-амонгусики
-  description: Каждый ваш шаг наполнен предательством
+  name: amongus slippers
+  description: Every step you take is filled with betrayal.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Shoes/among_shoes.rsi

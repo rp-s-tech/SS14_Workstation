@@ -1,7 +1,7 @@
 - type: job
   id: SpIFD
-  name: Инспектор ФД
-  description: Защищает деньги НТ
+  name: job-name-fin-dep-inspector
+  description: job-description-finance-defend
   playTimeTracker: JobSpIFD
   setPreference: true
   requirements:
@@ -23,7 +23,7 @@
   icon: "JobIconSpFinDep"
   requireAdminNotify: true
   joinNotifyCrew: true
-  supervisors: Агенту Багровой Лилии, при его отсутствии - представителю Центкома
+  supervisors: job-supervisors-crimson-lily-agent
   canBeAntag: false
   whitelisted: true
   sponsorIgnoreWhitelist: false
@@ -59,4 +59,4 @@
   - type: Sprite
     layers:
     - state: green
-    - state: qm
+    - state: dark_Fin_DepAgent

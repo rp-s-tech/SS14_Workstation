@@ -1,6 +1,6 @@
 - type: entity
   id: ShellShotgunSalt
-  name: ружейный патрон (.50 соль)
+  name: shell (.50 salt)
   parent: BaseShellShotgun
   components:
   - type: Sprite

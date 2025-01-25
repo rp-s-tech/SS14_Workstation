@@ -1,8 +1,8 @@
 - type: entity
-  name: Перцовый баллончик
+  name: pepper spray
   id: PepperSpray
   parent: SprayBottle
-  description: Берегите свой покой с перцовым ангелом-хранителем в кармане.
+  description: Guard your peace with a pepper guardian angel in your pocket.
   suffix: "Filled"
   components:
   - type: Sprite

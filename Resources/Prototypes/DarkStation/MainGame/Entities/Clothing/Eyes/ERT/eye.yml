@@ -1,9 +1,8 @@
-#Разведчик
 - type: entity
   parent: ClothingEyesBase
   id: ClothingEyesERTRecon
-  name: Специальные очки разведчиков
-  description: Способны вести запись, защищать глаза от ослепления и показывать людей в темноте.
+  name: recon vision
+  description: Capable of recording, protecting eyes from blinding, and showing people in the dark.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Eyes/ERTRecon/eyes.rsi
@@ -13,12 +12,11 @@
   - type: EyeProtection
     protectionTime: 5
 
-#Охотник на вампиров
 - type: entity
   parent: ClothingEyesBase
   id: ClothingEyesGlassesVampireHunter
-  name: Очки охотника за вампиром
-  description: Защищают охотника от гипноза
+  name: vampire hunter glasses
+  description: Protect the hunter from hypnosis.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/secglasses.rsi

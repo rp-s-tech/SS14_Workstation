@@ -1,11 +1,11 @@
-ent-ClothingHeadsetAltPOCC = Гарнитура НШЦК
+ent-ClothingHeadsetAltPOCC = гарнитура НШЦК
     .desc = { ent-ClothingHeadsetAlt.desc }
-ent-ClothingHeadsetAltGrayJedi = Гарнитура
+ent-ClothingHeadsetAltGrayJedi = гарнитура
     .desc = Гарнитура Серого Джедая.
-    .suffix = Джедая
+    .suffix = Джедай
 ent-ClothingHeadsetSecurityKnight = { ent-ClothingHeadsetSecurity }
     .desc = { ent-ClothingHeadsetSecurity.desc }
-ent-ClothingHeadsetBlueShield = Гарнитура Синего Щита
+ent-ClothingHeadsetBlueShield = гарнитура офицера Синего Щита
     .desc = Предоставляет доступ к связи по станции, так и с представителями центрального командования.
-ent-ClothingHeadsetIFD = Гарнитура ИФД
+ent-ClothingHeadsetIFD = гарнитура инспектора ФД
     .desc = { ent-ClothingHeadset.desc }

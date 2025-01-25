@@ -1,9 +1,9 @@
 - type: entity
   parent: ClothingMaskGasAtmos
   id: ClothingMaskGasGrayJedi
-  suffix: Джедая
-  name: Дыхательная маска
-  description: Маска Серого Джедая.
+  suffix: Jedi
+  name: gas mask
+  description: Gray Jedi mask.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Mask/jedimask.rsi
@@ -16,8 +16,8 @@
 - type: entity
   parent: ClothingMaskClownBase
   id: ClothingMaskHonkomother
-  name: Клоунская маска Хонкоматери
-  description: Маска, вдохновленная образом Хонкоматери, несет в себе дух смеха и хаоса.
+  name: honkomothers clown mask
+  description: The mask, inspired by the image of Honkomothers, carries the spirit of laughter and chaos.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Mask/honkomother_mask.rsi

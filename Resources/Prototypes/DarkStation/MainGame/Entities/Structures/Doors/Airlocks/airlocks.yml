@@ -1,7 +1,7 @@
 - type: entity
   id: AirlockTaipanAtmos
   parent: AirlockGlass
-  suffix: Тайпан, Атмос
+  suffix: Taipan, Atmos
   components:
   - type: AccessReader
     access: [["SyndicateAgent"]]
@@ -11,7 +11,7 @@
 - type: entity
   id: AirlockTaipanCargo
   parent: AirlockGlass
-  suffix: Тайпан, Карго
+  suffix: Taipan, Cargo
   components:
   - type: AccessReader
     access: [["SyndicateAgent"]]
@@ -21,7 +21,7 @@
 - type: entity
   id: AirlockTaipanComm
   parent: AirlockGlass
-  suffix: Тайпан, Командование
+  suffix: Taipan, Command
   components:
   - type: AccessReader
     access: [["SyndicateAgent"]]
@@ -31,7 +31,7 @@
 - type: entity
   id: AirlockTaipanEng
   parent: AirlockGlass
-  suffix: Тайпан, Инженерный
+  suffix: Taipan, Engineering
   components:
   - type: AccessReader
     access: [["SyndicateAgent"]]
@@ -41,7 +41,7 @@
 - type: entity
   id: AirlockTaipanMaint
   parent: AirlockGlass
-  suffix: Тайпан, Техтоннели
+  suffix: Taipan, Maintenance
   components:
   - type: AccessReader
     access: [["SyndicateAgent"]]
@@ -51,7 +51,7 @@
 - type: entity
   id: AirlockTaipanMed
   parent: AirlockGlass
-  suffix: Тайпан, Медицинский
+  suffix: Taipan, Medical
   components:
   - type: AccessReader
     access: [["SyndicateAgent"]]
@@ -61,7 +61,7 @@
 - type: entity
   id: AirlockTaipanRND
   parent: AirlockGlass
-  suffix: Тайпан, Научный
+  suffix: Taipan, Science
   components:
   - type: AccessReader
     access: [["SyndicateAgent"]]
@@ -71,7 +71,7 @@
 - type: entity
   id: AirlockTaipanService
   parent: AirlockGlass
-  suffix: Тайпан, Сервис
+  suffix: Taipan, Service
   components:
   - type: AccessReader
     access: [["SyndicateAgent"]]
@@ -81,7 +81,7 @@
 - type: entity
   id: AirlockTaipanBase
   parent: AirlockGlass
-  suffix: Тайпан, коридоры или СБ
+  suffix: Taipan, Hallways
   components:
   - type: AccessReader
     access: [["SyndicateAgent"]]

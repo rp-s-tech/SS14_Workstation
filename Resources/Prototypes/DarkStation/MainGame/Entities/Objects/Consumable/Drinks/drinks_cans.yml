@@ -1,7 +1,7 @@
 - type: entity
   parent: DrinkCanBaseFull
   id: DrinkCrunchyChaosCan
-  name: банка хрустящего хаоса
+  name: crunchy chaos can
   description: Алкогольное слияние цитрусовых и сладкого мёда, которое столь нравится дворфам.
   components:
   - type: SolutionContainerManager
@@ -23,8 +23,8 @@
 - type: entity
   parent: DrinkCanBaseFull
   id: DrinkPurpleFuzzblastCan
-  name: банка фиолетового фаззбласта
-  description: Пикантное дворфийское лавандово-карамельное наслаждение.
+  name: purple fuzzblast can
+  description: A savory dwarf lavender-caramel delight.
   components:
   - type: SolutionContainerManager
     solutions:
@@ -45,8 +45,8 @@
 - type: entity
   parent: DrinkCanBaseFull
   id: DrinkDeepDrifterCan
-  name: банка глубокой зыбучки
-  description: Тёмный шоколад, ароматом и вкусом напоминающий таёжную подстилку дворфийских предгорий.
+  name: deep drifter can
+  description: Dark chocolate, with an aroma and flavor reminiscent of the taiga underbrush of the dwarf foothills.
   components:
   - type: SolutionContainerManager
     solutions:

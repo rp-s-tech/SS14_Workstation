@@ -1,10 +1,10 @@
 - type: entity
-  name: Печать финансового департамента
+  name:  finance department rubber stamp
   parent: RubberStampBase
   id: RubberStampFinanceDepACL
   components:
   - type: Stamp
-    stampedName: "Агент Багровой Лилии"
+    stampedName: stamp-component-stamped-name-acl
     stampedColor: "#990000"
     stampState: "paper_stamp-centcom"
   - type: Sprite
@@ -12,12 +12,12 @@
     state: stamp-centcom
 
 - type: entity
-  name: Печать магистрата
+  name: magistrate rubber stamp
   parent: RubberStampBase
   id: RubberStampSpMagistration
   components:
   - type: Stamp
-    stampedName: "Магистрат"
+    stampedName: stamp-component-stamped-name-magistrat
     stampedColor: "#990000"
     stampState: "paper_stamp-centcom"
   - type: Sprite
@@ -25,12 +25,12 @@
     state: stamp-centcom
 
 - type: entity
-  name: Печать инспектора ФД
+  name: FD inspector rubber stamp
   parent: RubberStampBase
   id: RubberStampSpIFD
   components:
   - type: Stamp
-    stampedName: "Инспектор ФД"
+    stampedName: stamp-component-stamped-name-ifd
     stampedColor: "#a23e3e"
     stampState: "paper_stamp-centcom"
   - type: Sprite
@@ -38,12 +38,12 @@
     state: stamp-qm
 
 - type: entity
-  name: Печать представителя ЦК
+  name: central command representative rubber stamp
   parent: RubberStampBase
   id: RubberStampSpICC
   components:
   - type: Stamp
-    stampedName: "Представителя ЦК"
+    stampedName: stamp-component-stamped-name-icc
     stampedColor: "#006600"
     stampState: "paper_stamp-centcom"
   - type: Sprite
@@ -51,12 +51,12 @@
     state: stamp-centcom
 
 - type: entity
-  name: Печать представителя НТ
+  name: NanoTrasen representative rubber stamp
   parent: RubberStampBase
   id: RubberStampSpNTR
   components:
   - type: Stamp
-    stampedName: "Представитель НТ"
+    stampedName: stamp-component-stamped-name-ntr
     stampedColor: "#3681bb"
     stampState: "paper_stamp-centcom"
   - type: Sprite
@@ -64,12 +64,12 @@
     state: stamp-cap
 
 - type: entity
-  name: Печать НШЦК
+  name: POCC rubber stamp
   parent: RubberStampMime
   id: RubberStampPOCC
   components:
     - type: Stamp
-      stampedName: Начальник Штаба ЦК
+      stampedName: stamp-component-stamped-name-pocc
       stampState: "paper_stamp-pocc"
       stampedColor: "#000000"
     - type: Sprite
@@ -77,13 +77,13 @@
       state: stamp-pocc
 
 - type: entity
-  name: Печать Админа
+  name: admin rubber stamp
   parent: RubberStampBase
   id: RubberStampAdmin
   suffix: Admeme
   components:
   - type: Stamp
-    stampedName: "Админ Сервера Darkstation"
+    stampedName: stamp-component-stamped-name-dadmin
     stampedColor: "#990000"
     stampState: "paper_stamp-hos"
   - type: Sprite
@@ -91,13 +91,13 @@
     state: stamp-hos
 
 - type: entity
-  name: Печать "Вагнер и Партнёры"
+  name: Wagner & Partners rubber stamp
   parent: RubberStampBase
   id: RubberStampWaPDark
   suffix: WaP
   components:
   - type: Stamp
-    stampedName: Вагнер и Партнёры
+    stampedName: stamp-component-stamped-name-wap
     stampedColor: "#233D57"
     stampState: "paper_stamp-lawyer"
   - type: Sprite
@@ -105,13 +105,12 @@
     state: stamp-WaP-dark
 
 - type: entity
-  name: Печать "Вагнер и Партнёры"
   parent: RubberStampBase
   id: RubberStampWaPPink
   suffix: WaP
   components:
   - type: Stamp
-    stampedName: Вагнер и Партнёры
+    stampedName: stamp-component-stamped-name-wap
     stampedColor: "#233D57"
     stampState: "paper_stamp-lawyer"
   - type: Sprite
@@ -119,13 +118,12 @@
     state: stamp-WaP-pink
 
 - type: entity
-  name: Печать "Вагнер и Партнёры"
   parent: RubberStampBase
   id: RubberStampWaPBrown
   suffix: WaP
   components:
   - type: Stamp
-    stampedName: Вагнер и Партнёры
+    stampedName: stamp-component-stamped-name-wap
     stampedColor: "#233D57"
     stampState: "paper_stamp-lawyer"
   - type: Sprite

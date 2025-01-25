@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingHandsBase
   id: ClothingHandsGlovesChaplain
-  name: Тактические перчатки капеллана
-  description: Огнеупорные изолированные стильные тактические перчатки.
+  name: сhaplain's tactical gloves
+  description: Fireproof, insulated and stylish tactical gloves.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Hands/Gloves/armchapgloves.rsi
@@ -17,8 +17,8 @@
 - type: entity
   parent: ClothingHandsBase
   id: ClothingHandsGlovesPOCC
-  name: Перчатки НШЦК
-  description: Белые перчатки с тактическими свойствами
+  name: POCC gloves
+  description: White tactical gloves.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Hands/Gloves/pocsglove.rsi
@@ -33,9 +33,9 @@
 - type: entity
   parent: ClothingHandsBase
   id: ClothingHandsGlovesGrayJedi
-  suffix: Джедая
-  name: Перчатки
-  description: Перчатки Серого Джедая.
+  suffix: Jedi
+  name: gloves
+  description: Gray jedi gloves.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Hands/Gloves/jedihands.rsi
@@ -52,7 +52,7 @@
 - type: entity
   id: ClothingHandsGlovesCombatSecurityKnight
   parent: ClothingHandsGlovesCombat
-  name: "боевые перчатки РЗП"
+  name: Stardust combat gloves
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Hands/Gloves/security_knight.rsi
@@ -62,7 +62,7 @@
 - type: entity
   id: ClothingHandsBlueShieldOfficerGlovesCombat
   parent: ClothingHandsGlovesCombat
-  name: "Перчатки офицера синего щита"
+  name: Blueshield Officer's gloves
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Hands/Gloves/officer_blue_shield.rsi
@@ -72,8 +72,8 @@
 - type: entity
   parent: ClothingHandsBase
   id: ClothingHandsGlovesIFD
-  name: Перчатки ИФД
-  description: От этих перчаток пахнет деньгами
+  name: FD inspector gloves
+  description: These gloves smell like money.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Hands/Gloves/IFD_gloves.rsi
@@ -88,7 +88,7 @@
 - type: entity
   id: ClothingHandsMaxTacGloves
   parent: ClothingHandsGlovesCombat
-  name: Перчатки Макс-так
+  name: MAX-TAC gloves
   components:
     - type: Sprite
       sprite: DarkStation/MainGame/Clothing/Hands/Gloves/maxtac_gloves.rsi
@@ -98,8 +98,8 @@
 - type: entity
   parent: ClothingHandsButcherable
   id: ClothingHandsGlovesFingerlessVergil
-  name: перчатки Тёмного Ангела
-  description: Кожаные перчатки без пальцев, показывающие, что рука их обладателя не дрогнет.
+  name: dark angel gloves
+  description: Fingerless leather gloves that show the wearer's hand will not waver.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Hands/Gloves/vergil_gloves.rsi

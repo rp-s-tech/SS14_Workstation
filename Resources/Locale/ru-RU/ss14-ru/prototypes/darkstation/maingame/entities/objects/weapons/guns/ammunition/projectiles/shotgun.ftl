@@ -1,2 +1,2 @@
-ent-PelletShotgunSalt = дробина (.50 соль)
+ent-PelletShotgunSalt = дробинка (.50 соль)
     .desc = { ent-BaseBullet.desc }

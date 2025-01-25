@@ -1,6 +1,6 @@
-ent-ClothingNeckMantleUSSR = Плащ СССП, выдаваемый только членам партии
-    .desc = { ent-ClothingNeckBase.desc }
-ent-ClothingNeckCloakUSSR = Плащ СССП
+ent-ClothingNeckMantleUSSR = мантия СССП
+    .desc =  Выдается только членам партии.
+ent-ClothingNeckCloakUSSR = плащ СССП
     .desc = Красный плащ СССП что выдаётся только членам партии.
-ent-BedsheetUSSR = Одеяло СССП
-    .desc = Плащ выдаваемый за хорошую работу на протяжении малого количества лет работы на благо народа и СССП
+ent-BedsheetUSSR = одеяло СССП
+    .desc = Одеяло, выдаваемое почетным членам партии.

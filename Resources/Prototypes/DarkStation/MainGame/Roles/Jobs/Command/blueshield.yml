@@ -1,7 +1,7 @@
 - type: job
   id: BlueShieldOfficer
-  name: Офицер синего щита
-  description: Защищает глав
+  name: job-name-blueshield
+  description: job-description-blueShield
   playTimeTracker: JobBlueShieldOfficer
   requirements:
     - !type:DepartmentTimeRequirement
@@ -44,11 +44,11 @@
 - type: entity
   id: SpawnPointBlueShieldOfficer
   parent: SpawnPointJobBase
-  name: Spawner BlueShieldOfficer
+  name: Spawner BlueShield Officer
   components:
     - type: SpawnPoint
       job_id: BlueShieldOfficer
     - type: Sprite
       layers:
         - state: green
-        - state: captain
+        - state: dark_Blueshield

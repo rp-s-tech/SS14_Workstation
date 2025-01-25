@@ -1,9 +1,9 @@
 - type: entity
   parent: ClothingUniformBase
   id: SpMagistratUniformSuit
-  name: Костюм магистрата
+  name: magistrate suit
   suffix: Magistrate, Hoderf
-  description: Костюм особого пошива, по специальному заказу Ричарда Вагнера. Он так полюбился магистратам, что ныне его используют многие уважающие себя магистраты.
+  description: A specially tailored suit, specially commissioned by Richard Wagner. It was so favored by the magistrates that it is now used by many self-respecting magistrates.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/magistratebel.rsi
@@ -11,18 +11,19 @@
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/magistratebel.rsi
 
 - type: entity
-  name: Позолоченная зажигалка Магистрата
+  name: magistrate gold-plated lighter
   parent: FlippoAVDLighter
   id: SPFlippoMagistrateLighter
   suffix: Magistrate, Hoderf
-  description: Пахнет правосудием, дорогим виски и униженным экипажем.
+  description: Smells like justice, expensive whiskey and a humiliated crew.
+
 
 - type: entity
-  name: Кейс магистрата
+  name: magistrate briefcase
   parent: BriefcaseBrown
   id: SpBriefcaseMagistrate
   suffix: Magistrate, Hoderf
-  description: Для очень важных судебных разбирательств.
+  description: For very important litigation.
   components:
   - type: Sprite
     sprite: Objects/Storage/Briefcases/briefcase_magistrate.rsi

@@ -1,6 +1,6 @@
-ent-ClothingBackpackPatron = Улучшенный рюкзак
+ent-ClothingBackpackPatron = улучшенный рюкзак
     .desc = Такой рюкзак выдается лучшим сотрудникам Nanotrasen
     .suffix = Спонсор
-ent-ClothingBackpackSatchelPatron = Улучшенная сумка хранения
-    .desc = Такая сумка выдается лучшим сотрудникам Nanotrasen
+ent-ClothingBackpackSatchelPatron = улучшенная сумка
+    .desc = { ent-ClothingBackpackPatron.desc }
     .suffix = Спонсор

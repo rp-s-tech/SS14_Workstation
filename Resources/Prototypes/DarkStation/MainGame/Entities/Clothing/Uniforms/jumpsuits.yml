@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitPOCC
-  name: Костюм НШЦК
-  description: "Кажется человеку в этой одежде не стоит перечить"
+  name: POCC dress
+  description: It seems the man in those clothes is not to be crossed.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/pocstshirt.rsi
@@ -12,8 +12,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingJumpsuitSecPilot
-  name: Одежда пилота
-  description: Одежда настоящего покорителя космоса!
+  name: униформа пилота
+  description: The clothes of a true space conqueror!
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/sbpilotsuit.rsi
@@ -24,9 +24,9 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitGrayJedi
-  suffix: Джедая
-  name: Одежда
-  description: Одежда Серого Джедая.
+  suffix: Jedi
+  name: jedi roba
+  description: Gray jedi roba.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/jedijumpsuit.rsi
@@ -36,8 +36,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitUnderarmor
-  name: Поддоспешник
-  description: Специальная одежда для ношения под доспехами
+  name: under armor
+  description: Special clothing to be worn under armor.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/underarmor.rsi
@@ -47,8 +47,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitKnight
-  name: Костюм Звёздной-пыли
-  description: Одежда рыцаря, чей только вид даёт понять кто стоит перед тобой.
+  name: Stardust knight jumpsuit
+  description: The clothes of a knight whose mere appearance lets you know who stands before you.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/security_knight.rsi
@@ -58,8 +58,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformWaPPink
-  name: Дорогой костюм адвоката
-  description: Дорогой и качественный костюм индивидуального пошива.
+  name: expensive lawyer's suit
+  description: Expensive and high quality custom tailored suit.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/WaP_pink.rsi
@@ -67,10 +67,8 @@
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/WaP_pink.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformWaPPink
   id: ClothingUniformWaPBej
-  name: Дорогой костюм адвоката
-  description: Дорогой и качественный костюм индивидуального пошива.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/WaP_bej.rsi
@@ -78,10 +76,8 @@
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/WaP_bej.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformWaPPink
   id: ClothingUniformWaPDark
-  name: Дорогой костюм адвоката
-  description: Дорогой и качественный костюм индивидуального пошива.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/WaP_dark.rsi
@@ -91,8 +87,8 @@
 - type: entity
   id: ClothingUniformAlco
   parent: ClothingUniformBase
-  name: Алко Майка
-  description: Для настоящих обрыганов
+  name: alcoholic shirt
+  description: For real douche bags.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/alco.rsi
@@ -102,8 +98,8 @@
 - type: entity
   id: ClothingUniformHippy
   parent: ClothingUniformBase
-  name: Футболка Хиппи
-  description: Для любителей трогать траву
+  name: hippie shirt
+  description: For those who like to touch grass.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/hip.rsi
@@ -113,8 +109,6 @@
 - type: entity
   id: ClothingUniformHippySecond
   parent: ClothingUniformBase
-  name: Футболка Хиппи
-  description: Для любителей трогать траву
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/hip-two.rsi
@@ -124,8 +118,6 @@
 - type: entity
   id: ClothingUniformHippyThird
   parent: ClothingUniformBase
-  name: Футболка Хиппи
-  description: Для любителей трогать траву
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/hip-tri.rsi
@@ -135,8 +127,8 @@
 - type: entity
   id: ClothingUniformPank
   parent: ClothingUniformBase
-  name: Футболка панка
-  description: Для любителей надавать ящерам по лицу
+  name: punk shirt
+  description: For those who like to punch lizards in face.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/pank.rsi
@@ -146,8 +138,8 @@
 - type: entity
   id: ClothingUniformTelnih
   parent: ClothingUniformBase
-  name: Тельняжка
-  description: Нужны определенные заслуги, чтобы носить эту футболку
+  name: sailor's striped vest
+  description: It takes a certain amount of merit to wear that vest.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/telnih.rsi
@@ -157,8 +149,8 @@
 - type: entity
   id: ClothingUniformUnknownWTF
   parent: ClothingUniformBase
-  name: Футболка
-  description: Я не понял, что это за футболка, поэтому описания не будет
+  name: t-shirt
+  description: A plain dark shirt with an obscure pattern.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/rep.rsi
@@ -168,8 +160,8 @@
 - type: entity
   id: ClothingUniformEaster
   parent: ClothingUniformBase
-  name: пасхальная одежда
-  description: Солидный костюм, в котором вы будете лучшим собирателем яиц.
+  name: easter clothes
+  description: A solid costume that will make you a better egg collector.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/costum_easter.rsi
@@ -179,8 +171,8 @@
 - type: entity
   id: ClothingUniformJumpsuitBlueShield
   parent: ClothingUniformBase
-  name: Форма офицера Синего Щита
-  description: Мне платят не за то, чтобы я убивал и выживал, а за то, чтобы я погибал, но защищал.
+  name: Blueshield Officer's jumpsuit
+  description: I am not paid to kill and survive, but to die but protect.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/blueshield.rsi
@@ -190,8 +182,8 @@
 - type: entity
   id: ClothingUniformJumpsuitIFD
   parent: ClothingUniformSkirtBase
-  name: Комбинезон ИФД
-  description: Я есть деньги. Я есть богатство.
+  name: FD inspector jumpsuit
+  description: I am money. I am wealth.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/ifd.rsi
@@ -201,7 +193,7 @@
 - type: entity
   parent: ClothingUniformJumpsuitClown
   id: ClothingUniformJumpsuitHonkomother
-  name: Костюм Хонкоматери
+  name: Honkomother jumpsuit
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/honkomother_jumpsuit.rsi
@@ -211,7 +203,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitMaxtac
-  name: Униформа Макс-так
+  name: MAX-TAC jumpsuit
   components:
     - type: Sprite
       sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/maxtac_jumpsuit.rsi
@@ -230,8 +222,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitVergil
-  name: жилет Тёмного Ангела
-  description: Жилет без рукавов в комплекте с брюками, заряжающий владельца мотивацией.
+  name: dark angel vest
+  description: A sleeveless vest complete with pants that energizes the wearer with motivation.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/vergil_uniform.rsi

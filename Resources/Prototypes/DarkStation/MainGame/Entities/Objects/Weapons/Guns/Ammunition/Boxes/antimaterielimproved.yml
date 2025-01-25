@@ -3,7 +3,7 @@
   abstract: true
   parent: BaseItem
   id: BaseMagazineBoxAntiMaterielImproved
-  name: Бокс с патронами (.70 улучшенная антиматериальная)
+  name: cartridge box (.70 antiMateriel)
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -20,15 +20,15 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/anti_materiel.rsi
   - type: MagazineVisuals
-    magState: mag
-    steps: 2
+    magState: magb
+    steps: 4
     zeroVisible: false
   - type: Appearance
 
 - type: entity
   parent: BaseMagazineBoxAntiMateriel
   id: MagazineBoxAntiMaterielImproved
-  name: Бокс с патронами (.70 улучшенная антиматериальная)
+  name: cartridge box (.70 antiMateriel)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeAntiMaterielImproved
@@ -43,7 +43,7 @@
 - type: entity
   parent: BaseMagazineBoxAntiMateriel
   id: MagazineBoxAntiMaterielBigImproved
-  name: Бокс с патронами (.70 улучшенная антиматериальная)
+  name: cartridge box (.70 antiMateriel)
   components:
   - type: BallisticAmmoProvider
     capacity: 30
@@ -56,6 +56,6 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: magb
-    steps: 2
+    steps: 4
     zeroVisible: false
   - type: Appearance

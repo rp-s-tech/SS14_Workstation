@@ -1,4 +1,4 @@
-ent-SpawnPointPilot = пилот
+ent-SpawnPointPilot = Пилот
     .desc = { ent-SpawnPointJobBase.desc }
-ent-SpawnPointSurgeon = хирург
+ent-SpawnPointSurgeon = Хирург
     .desc = { ent-SpawnPointJobBase.desc }

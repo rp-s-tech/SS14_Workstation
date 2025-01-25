@@ -1,10 +1,10 @@
 - type: entity
-  name: Портативная консоль связи
+  name: portable communication console
   parent:
   - BaseItem
   - PowerCellSlotSmallItem
   id: HandheldSpCommandComms
-  description: Ручная консоль связи, позволяющая действовать в критических ситуациях.
+  description: A hand-held communication console that allows you to act in critical situations.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Specific/Command/handheldcommandcomms.rsi
@@ -30,7 +30,7 @@
     key: enum.CommunicationsConsoleUiKey.Key
     closeOnHandDeselect: false
   - type: CommunicationsConsole
-    title: портативная Консоль связи
+    title: comms-console-announcement-title-station-portable
   - type: UserInterface
     interfaces:
       enum.CommunicationsConsoleUiKey.Key:

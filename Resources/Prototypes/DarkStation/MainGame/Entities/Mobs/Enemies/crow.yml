@@ -1,8 +1,8 @@
 ﻿- type: entity
   id: MobCrow
   parent: SimpleSpaceMobBase
-  name: "Малый Темнокрыл"
-  description: "Обитатель планеты D.A.R.K - 208, интересно, он кусается?"
+  name: little darkwing
+  description: Inhabitant of planet D.A.R.K. - 208. I wonder if he bites.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Mobs/Enemies/crow.rsi

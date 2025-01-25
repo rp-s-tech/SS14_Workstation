@@ -1,2 +1,2 @@
-ent-SpawnPointBlueShieldOfficer = Spawner BlueShieldOfficer
+ent-SpawnPointBlueShieldOfficer = Офицер "Синий Щит"
     .desc = { ent-SpawnPointJobBase.desc }

@@ -1,68 +1,68 @@
-- type: job
-  id: Surger
-  name: Хирург
-  description: Защищайте хирургический кабинет от интернов, оперируйте ящеров без анестезии, тайно торгуйте вырезанными почками - что может быть лучше?
-  playTimeTracker: JobSurger
-  requirements:
-  - !type:RoleTimeRequirement
-    role: JobPathologist
-    time: 14400 # 4h
-  startingGear: SurgerGear
-  icon: "JobIconSurger"
-  supervisors: job-supervisors-cmo
-  chatHighlight: MedicalChatHighlight
-  access:
-  - Medical
-  - Maintenance
-  extendedAccess:
-  - Chemistry
+# - type: job
+#   id: Surger
+#   name: Хирург
+#   description: Защищайте хирургический кабинет от интернов, оперируйте ящеров без анестезии, тайно торгуйте вырезанными почками - что может быть лучше?
+#   playTimeTracker: JobSurger
+#   requirements:
+#   - !type:RoleTimeRequirement
+#     role: JobPathologist
+#     time: 14400 # 4h
+#   startingGear: SurgerGear
+#   icon: "JobIconSurger"
+#   supervisors: job-supervisors-cmo
+#   chatHighlight: MedicalChatHighlight
+#   access:
+#   - Medical
+#   - Maintenance
+#   extendedAccess:
+#   - Chemistry
 
-- type: startingGear
-  id: SurgerGear
-  equipment:
-    id: SurgeryMedicalPDA
-    ears: ClothingHeadsetMedical
-    belt: ClothingBeltMedicalFilled
+# - type: startingGear
+#   id: SurgerGear
+#   equipment:
+#     id: SurgeryMedicalPDA
+#     ears: ClothingHeadsetMedical
+#     belt: ClothingBeltMedicalFilled
 
-- type: entity
-  parent: BasePDA
-  id: SurgeryMedicalPDA
-  name: КПК хирурга
-  description: В нем какие-то заметки о почках
-  components:
-  - type: Pda
-    id: SurgeryMedicalIDCard
-    state: pda-medical
-  - type: PdaBorderColor
-    borderColor: "#d7d7d0"
-    accentVColor: "#447987"
-  - type: Icon
-    state: pda-medical
-  - type: HealthAnalyzer
-    scanDelay: 1
-    scanningEndSound:
-      path: "/Audio/Items/Medical/healthscanner.ogg"
+# - type: entity
+#   parent: BasePDA
+#   id: SurgeryMedicalPDA
+#   name: КПК хирурга
+#   description: В нем какие-то заметки о почках
+#   components:
+#   - type: Pda
+#     id: SurgeryMedicalIDCard
+#     state: pda-medical
+#   - type: PdaBorderColor
+#     borderColor: "#d7d7d0"
+#     accentVColor: "#447987"
+#   - type: Icon
+#     state: pda-medical
+#   - type: HealthAnalyzer
+#     scanDelay: 1
+#     scanningEndSound:
+#       path: "/Audio/Items/Medical/healthscanner.ogg"
 
-- type: entity
-  parent: IDCardStandard
-  id: SurgeryMedicalIDCard
-  name: ID карта хирурга
-  components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: idmedicaldoctor
-  - type: PresetIdCard
-    job: Surger
+# - type: entity
+#   parent: IDCardStandard
+#   id: SurgeryMedicalIDCard
+#   name: ID карта хирурга
+#   components:
+#   - type: Sprite
+#     layers:
+#     - state: default
+#     - state: idmedicaldoctor
+#   - type: PresetIdCard
+#     job: Surger
 
-- type: entity
-  id: SpawnPointSurger
-  parent: SpawnPointJobBase
-  name: хирург
-  components:
-  - type: SpawnPoint
-    job_id: Surger
-  - type: Sprite
-    layers:
-    - state: green
-    - state: doctor
+# - type: entity
+#   id: SpawnPointSurger
+#   parent: SpawnPointJobBase
+#   name: хирург
+#   components:
+#   - type: SpawnPoint
+#     job_id: Surger
+#   - type: Sprite
+#     layers:
+#     - state: green
+#     - state: doctor

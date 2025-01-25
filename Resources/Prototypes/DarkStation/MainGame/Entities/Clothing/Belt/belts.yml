@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingBeltStorageBase
   id: ClothingBeltSheathPOCC
-  name: сабельные ножны
-  description: Украшенные ножны, предназначенные для хранения офицерского клинка.
+  name: saber sheath
+  description: Decorated sheath designed to hold an officer's blade.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Belt/pocssheath.rsi
@@ -25,9 +25,9 @@
 - type: entity
   parent: ClothingBeltStorageBase
   id: ClothingBeltGrayJedi
-  suffix: Джедая
-  name: Броневой пояс
-  description: Бронепояс Серого Джедая.
+  suffix: Jedi
+  name: armored belt
+  description: Grey jedi armored belt.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Belt/jedibelt.rsi
@@ -44,8 +44,8 @@
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase]
   id: ClothingBeltSheathVergilYamato
-  name: ножны Ямато
-  description: Чёрные лакированные ножны легендарного клинка.
+  name: Yamato sheath
+  description: Lacquered scabbard of the legendary blade.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Belt/yamato_sheath.rsi

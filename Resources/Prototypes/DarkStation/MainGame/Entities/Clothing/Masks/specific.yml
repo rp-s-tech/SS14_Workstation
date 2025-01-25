@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingMaskBase
   id: Hokkeymask
-  name: Хоккейная маска
-  description: Веет ужасом.
+  name: hokkey mask
+  description: It's terrifying.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Mask/Specific/hokkeymask.rsi

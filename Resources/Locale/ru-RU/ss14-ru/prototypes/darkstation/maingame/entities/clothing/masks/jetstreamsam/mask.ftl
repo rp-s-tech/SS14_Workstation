@@ -1,2 +1,2 @@
-ent-ClothingMaskHardsuitJetsteamSam = Маска Реактивного Сэма.
+ent-ClothingMaskHardsuitJetsteamSam = маска Реактивного Сэма
     .desc = Маска которая готова дать вам возможность дышать и защитить своё "прекрасное" лицо.

@@ -1,7 +1,7 @@
 - type: entity
   parent: IDCardStandard
   id: POCCIDCard
-  name: ИД Карта НШЦК
+  name: POCC ID card
   components:
   - type: Sprite
     layers:
@@ -18,7 +18,7 @@
 - type: entity
   parent: IDCardStandard
   id: SecurityPilotIDCard
-  name: ID карта Пилота
+  name: pilot ID card
   components:
   - type: Sprite
     layers:
@@ -30,7 +30,7 @@
 - type: entity
   parent: IDCardStandard
   id: PrisonerIDCard
-  name: ID карта заключённого
+  name: prisoner ID card
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Misc/id_cards/prisoner.rsi
@@ -45,7 +45,7 @@
 - type: entity
   parent: IDCardStandard
   id: BlueShieldOfficerIDCard
-  name: ID карта офицера синего щита
+  name: Blueshield Officer's ID card
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Misc/id_cards/blueshield.rsi
@@ -60,7 +60,7 @@
 - type: entity
   parent: IDCardStandard
   id: IFDIDCard
-  name: ID карта инспектора ФД
+  name: FD inspector ID card
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Misc/id_cards/ifd_id.rsi
@@ -71,3 +71,17 @@
     sprite: DarkStation/MainGame/Objects/Misc/id_cards/ifd_id.rsi
   - type: PresetIdCard
     job: JobSpIFD
+
+- type: entity
+  parent: IDCardStandard
+  id: ERTReconIDCard
+  name: ERT recon ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: ert_recon
+  - type: PresetIdCard
+    job: ERTRecon
+  - type: Item
+    heldPrefix: blue

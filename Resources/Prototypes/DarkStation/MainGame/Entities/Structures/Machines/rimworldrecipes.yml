@@ -47,8 +47,8 @@
 - type: entity
   id: ElectroForge
   parent: [ BaseMachinePowered, ConstructibleMachine ]
-  name: Единственная надежда на всеми забытой планете
-  description: Кузня для производства снаряжения
+  name: The only hope on a forgotten planet
+  description: Forge for the production of equipment.
   components:
   - type: Appearance
   - type: Sprite
@@ -120,7 +120,7 @@
   id: ElectroForgeCircuitboard
   parent: BaseMachineCircuitboard
   name: electroForge machine board
-  description: A machine printed circuit board for an ElectroForge
+  description: A machine printed circuit board for an ElectroForge.
   components:
   - type: MachineBoard
     prototype: ElectroForge

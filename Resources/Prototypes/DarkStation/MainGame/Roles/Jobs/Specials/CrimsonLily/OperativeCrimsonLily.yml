@@ -1,7 +1,7 @@
 - type: job
   id: OperativeCrimsonLily
-  name: Оперативник Багровой Лилии
-  description: Защищает деньги НТ
+  name: crimson-lily-operative
+  description: job-description-finance-defend
   playTimeTracker: JobOperativeCrimsonLily
   setPreference: false
   requirements:
@@ -15,7 +15,7 @@
   icon: "JobIconOperativeCrimsonLily"
   requireAdminNotify: true
   joinNotifyCrew: true
-  supervisors: Агенту Багровой Лилии, при его отсутствии - представителю Центкома
+  supervisors: job-supervisors-crimson-lily-operative-commander
   canBeAntag: false
   accessGroups:
     - AllAccessAgentCrimsonLily
@@ -44,16 +44,16 @@
 - type: entity
   parent: ClothingHeadHatBeret
   id: ClothingHeadHatBeretOperativeCrimsonLily
-  name: Берет Оперативника Багровой Лилии
+  name: Operative Crimson Lily Beret
   suffix: OCL
-  description: Стильно, модно и уважаемо.
+  description: Stylish, fashionable and respectable.
 
 - type: entity
   parent: ClothingEyesGlassesSecurity
   id: ClothingEyesGlassesOperativeCrimsonLily
-  name: Очки Оперативника Багровой Лилии
+  name: ClothingEyesGlassesOperativeCrimsonLily
   suffix: OCL
-  description: Специальные очки Оперативника Багровой Лилии позволяющие мониторить статус личностей пред ним.
+  description: Specialised Crimson Lily Operative goggles that allow you to monitor the status of individuals in front of him.
   components:
     - type: EyeProtection
 
@@ -62,26 +62,26 @@
 - type: entity
   parent: ClothingHandsGlovesPowerglove
   id: ClothingHandsGlovesPowergloveOperativeCrimsonLily
-  name: Силовые перчатки Оперативника Багровой Лилии
-  description: Специальные силовые перчатки Оперативника Багровой Лилии для продуктивной деятельности.
+  name: Crimson Lily Operative Power Gloves
+  description: The Crimson Lily Operative's special power gloves for productive activities.
   components:
     - type: Insulated
 
 - type: entity
   parent: ClothingShoesBootsMagSyndie
   id: ClothingShoesBootsMagOperativeCrimsonLily
-  name: Магнитные ботинки Оперативника Багровой Лилии
+  name: Crimson Lily Operative Magnetic Boots
   suffix: OCL
-  description: С такими магнитными ботинками, мало что страшно.
+  description: With these magnetic boots, there's little to fear.
 
 # Chest
 
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitOperativeCrimsonLily
-  name: униформа Оперативника Багровой Лилии
+  name: Operative Crimson Lily uniform.
   suffix: OCL
-  description: Рядом с ним вы чувствуете себя в безопасности. Но не ощущаете безопасность ваших денег...
+  description: You feel safe around him. But you don't feel the safety of your money...
   components:
     - type: Sprite
       sprite: Clothing/Uniforms/Jumpsuit/ert_security.rsi
@@ -102,8 +102,8 @@
 - type: entity
   parent: ClothingOuterHardsuitERTLeader
   id: ClothingOuterHardsuitOperativeCrimsonLily
-  name: Скафандр Оперативника Багровой Лилии
-  description: С таким скафандром можно и чужую станцию продать.
+  name: Crimson Lily Operative Suit.
+  Description: With a suit like this, you could sell another station.
   components:
     - type: Sprite
       sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/CrimsonLily/scaf.rsi
@@ -116,8 +116,8 @@
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitOperativeCrimsonLily
   categories: [ HideSpawnMenu ]
-  name: Шлем скафандра Оперативника Багровой Лилии
-  description: С таким шлемом от скафандра можно и пулю смело в лоб ловить!
+  name: Crimson Lily Operative spacesuit helmet
+  Description: With this spacesuit helmet you can catch a bullet in the forehead!
   suffix: OCL
   components:
     - type: Sprite
@@ -147,7 +147,7 @@
   categories: [ HideSpawnMenu ]
   parent: ClothingBackpackHolding
   id: ClothingBackpackOperativeCrimsonLilyFilled
-  name: Рюкзак Оперативника Багровой Лилии
+  name: Сrimson Lily operative Backpack
   suffix: OCL
   components:
     - type: StorageFill
@@ -166,18 +166,18 @@
 - type: entity
   id: SpawnPointOperativeCrimsonLily
   parent: SpawnPointJobBase
-  name: operativecrimsonlily
+  name: Сrimson Lily operative
   components:
   - type: SpawnPoint
     job_id: OperativeCrimsonLily
   - type: Sprite
     layers:
       - state: green
-      - state: qm
+      - state: dark_OperativeCrimsonLily
 
 - type: entity
   id: RandomHumanoidSpawnerOperativeCrimsonLily
-  name: Оперативник Багровой Лилии
+  name: Сrimson Lily operative
   playTimeTracker: JobOperativeCrimsonLily
   components:
     - type: Sprite

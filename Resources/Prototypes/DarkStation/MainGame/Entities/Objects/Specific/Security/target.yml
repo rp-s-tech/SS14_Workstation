@@ -1,8 +1,8 @@
 - type: entity
-  name: мишень-вульпа
+  name: vulp target
   id: TargetVulpa
   parent: BaseTarget
-  description: Мишень для стрельбы. Выглядит, как... Боже, ну и мерзость.
+  description: Target for shooting. It looks like a, uh... Vulp?...
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Specific/Security/vulpa.rsi

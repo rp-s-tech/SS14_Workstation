@@ -17,8 +17,8 @@
 - type: entity
   parent: DrinkBottlePlasticBaseFull
   id: DrinkSaintWaterJug
-  name: кувшин святой воды
-  description: Отпугивает темные силы
+  name: jug of holy water
+  description: Scares away the dark forces.
   components:
   - type: SolutionContainerManager
     solutions:
@@ -34,8 +34,8 @@
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottlePlasticBaseFull]
   id: DrinkBaltika9BottleFull
-  name: бутылка балтики 9
-  description: То самое легендарное крепкое пиво, производящее по неизменному оригинальному рецепту.
+  name: bottle of baltika 9
+  description: That legendary strong beer, produced according to the unchanged original recipe.
   components:
   - type: Item
     size: Small
@@ -59,8 +59,8 @@
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
   id: DrinkShalnayaPulyaBottleFull
-  name: "Шальная Пуля"
-  description: Элитный напиток созданный из текилы и качественного сусального серебра 999 пробы.
+  name: stray bullet
+  description: An elite drink created from tequila and quality 999 silver leaf.
   components:
   - type: SolutionContainerManager
     solutions:

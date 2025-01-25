@@ -1,8 +1,8 @@
 - type: entity
   parent: VendingMachine
   id: SurgeonMat
-  name: ХирургМат
-  description: Автомат с хирургическими принадлежностями внутри. Рви, круши, кромсай... Возможно, даже зашивай!
+  name: SurgeonMat
+  description: A vending machine with surgical supplies inside. Tear, twist, shred. Maybe even stitch it up!
   components:
   - type: VendingMachine
     pack: SurgeonMatInventory
@@ -34,8 +34,8 @@
 - type: entity
   parent: VendingMachine
   id: SYVendingMachineMedical
-  name: НаноМед Плюс Синдиката
-  description: Это медицинский раздатчик препаратов. Только натуральные химикаты!
+  name: Syndicate NanoMed plus
+  description: It's a medical drug dispenser. Natural chemicals only!
   components:
   - type: VendingMachine
     pack: NanoMedPlusInventory
@@ -70,8 +70,8 @@
 - type: entity
   parent: VendingMachineWallmount
   id: SYVendingMachineWallMedical
-  name: НаноМед Синдиката
-  description: Это настенный раздатчик медицинского оборудования. Только натуральные химикаты!
+  name: Syndicate NanoMed plus
+  description: This is a wall-mounted dispenser of medical equipment. Natural chemicals only!
   components:
   - type: VendingMachine
     pack: NanoMedInventory
@@ -98,8 +98,8 @@
 - type: entity
   parent: VendingMachine
   id: SYVendingMachineCart
-  name: ПТех Синдиката
-  description: Автомат ПТех! Предоставляем ШИКАРНЫЙ выбор картриджей для КПК.
+  name: Syndicate PTech
+  description: Automatic PTech! We provide a CHICAGOUS selection of cartridges for PDAs.
   components:
   - type: VendingMachine
     pack: SYPTechInventory

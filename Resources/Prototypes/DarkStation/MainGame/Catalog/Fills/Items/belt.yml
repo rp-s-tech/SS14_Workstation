@@ -15,8 +15,8 @@
   - type: StorageFill
     contents:
       - id: MagazineBoxAntiMaterielBigImproved
-      - id: WeaponPulsePistol
       - id: WeaponTaser
+      - id: WeaponPulsePistol
       - id: FlashlightSeclite
       - id: Handcuffs
         amount: 2

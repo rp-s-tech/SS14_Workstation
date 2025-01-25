@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: ClothingUniformSkirtBase
   id: SYChefSkirt
-  name: юбка-комбинезон повара Синдиката
-  description: Испачкано кровью. Не факт, что животных.
+  name: syndicate chef's jumpskirt skirt
+  description: It's stained with blood. Not necessarily animal blood.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/taipanchefskirt.rsi
@@ -12,8 +12,8 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: SYBotanySkirt
-  name: юбка-комбинезон ботаника Синдиката
-  description: Думаю, этот гатфрукт вырос достаточно больши...
+  name: syndicate botany jumpskirt skirt
+  description: I think this gatfruit has grown quite lar...
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/taipanbotanyskirt.rsi

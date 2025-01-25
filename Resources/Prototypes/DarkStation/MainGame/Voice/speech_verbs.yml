@@ -1,0 +1,7 @@
+﻿- type: speechVerb
+  id: WawaSay
+  name: chat-speech-verb-name-slugcat
+  speechVerbStrings:
+    - chat-speech-verb-slugcat-1
+    - chat-speech-verb-slugcat-2
+    - chat-speech-verb-slugcat-3

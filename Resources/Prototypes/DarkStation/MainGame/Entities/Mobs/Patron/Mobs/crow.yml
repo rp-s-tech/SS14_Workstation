@@ -1,0 +1,17 @@
+﻿- type: entity
+  id: MobCrowPatron
+  parent: MobCrow
+  categories: [ HideSpawnMenu ]
+  suffix: Pet
+  components:
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      collection: AlienClaw
+    damage:
+      groups:
+        Brute: 5
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      70: Dead

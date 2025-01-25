@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: WW2GermanyGrenadierUniform
-  name: гренадёрское снаряжение
-  description: Плотная куртка и полевые брюки. Тёмно-зелёные нашивки говорят о том, что эта форма принадлежит отделению мотопехоты.
+  name: grenadier uniform
+  description: Tight jacket and field pants. The dark green patches indicate that this uniform belongs to the Motorized Infantry Division.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Specific/grenadier.rsi
@@ -21,8 +21,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: WW2GermanySoldierUniform
-  name: пехотное снаряжение
-  description: Типовая пехотная экипировка пехотных подразделений Вермахта.
+  name: infantry uniform
+  description: Typical infantry equipment of Wehrmacht infantry units.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Specific/schutze.rsi
@@ -32,8 +32,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: WW2GermanyGeneralUniform
-  name: генеральская полевая форма
-  description: Судя по нашивкам, данный вариант формы принадлежит генерал-фельдмаршалу Вермахта.
+  name: general field uniform
+  description: Judging by the patches, this version of the uniform belongs to a Wehrmacht Field Marshal General.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Specific/general.rsi

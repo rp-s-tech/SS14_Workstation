@@ -1,7 +1,7 @@
 - type: entity
   parent: CryogenicSleepUnit
   id: SYCryogenic
-  name: криопод Синдиката
+  name: Syndicate cryogenic
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Structures/syndiecryo.rsi
@@ -17,8 +17,8 @@
 - type: entity
   parent: CryogenicSleepUnit
   id: SYCryogenicFilled
-  name: криопод Синдиката (с агентом)
-  description: Содержит в себе "замороженного" во всех смыслах агента Синдиката.
+  name: Syndicate cryogenic (agent)
+  description: Contains an agent of the Syndicate “frozen” in every sense.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Structures/syndiecryo.rsi

@@ -1,4 +1,4 @@
 - type: entity
   parent: [ ClothingHeadBandBase, SYBotanyHeadMask ]
   id: SYBotanyHead
-  name: бандана ботаника Синдиката
+  name: syndicate botany bandana

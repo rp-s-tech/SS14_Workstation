@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseCartridge
   id: CartridgeAntiMaterielImproved
-  name: Патрон (.70 улучшенная антиматериальная)
+  name: cartridge (.70 antiMateriel)
   components:
   - type: Tag
     tags:

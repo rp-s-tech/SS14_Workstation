@@ -17,19 +17,19 @@
     jumpsuit: ClothingUniformJumpsuitERTRecon
     back: WeaponSniperBarrettERTRecon
     shoes: ClothingShoesBootsMagAdv
-    mask: ClothingMaskGasSecurity
+    mask: ClothingMaskGasERT
     eyes: ClothingEyesERTRecon
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitERTRecon
     suitstorage: OxygenTankFilled
-    id: ERTLeaderPDA
+    id: ERTReconPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltERTReconWebbingFilling
     pocket1: Flare
 
 - type: entity
   id: RandomHumanoidSpawnerERTRecon
-  name: ОБР Разведчик
+  name: ERT Recon
   suffix: ERTRole, Armored EVA
   components:
     - type: Sprite
@@ -45,7 +45,7 @@
 - type: entity
   id: SpawnPointERTRecon
   parent: SpawnPointJobBase
-  name: ERTrecon
+  name: ERT Recon
   components:
   - type: SpawnPoint
     job_id: ERTRecon
@@ -58,7 +58,6 @@
   id: ERTRecon
   speciesBlacklist:
     - Diona
-    - Vox
   parent: EventHumanoidMindShielded
   randomizeName: false
   components:
@@ -66,22 +65,16 @@
     - type: GhostRole
       name: ghost-role-information-ert-recon-name
       description: ghost-role-information-ert-recon-description
+      raffle:
+        settings: short
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ ERTReconGearEVA ]
     - type: RandomMetadata
       nameSegments:
         - NamesFirstMilitaryMiddle
-        - names_last_recon
+        - NamesLastRecon
     - type: ErtScout
 
-- type: dataset
-  id: names_last_recon
-  values:
-  - Ghost
-  - Ranger
-  - Hunter
-  - Sniper
-  - Wolf
-  - Recon
+
 

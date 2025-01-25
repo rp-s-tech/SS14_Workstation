@@ -1,6 +1,6 @@
 - type: accessLevel
   id: SpCrimsonLily
-  name: Багровая Лилия
+  name: id-card-access-level-crimsonlily
 
 - type: accessGroup
   id: StationAccessAgentCrimsonLily
@@ -26,7 +26,7 @@
   - CentralCommand
   - SpCrimsonLily
 
-  
+
 - type: accessGroup
   id: AllAccessAgentCrimsonLily
   tags:

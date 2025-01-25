@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: ClothingShoesMilitaryBase
   id: ClothingShoesBootsVampireHunter
-  name: Ботинки охотника на вампиров
-  suffix: VampireHunter
+  name: vampire hunter's boots
+  suffix: Vampire Hunter
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Shoes/vampire_hunter.rsi

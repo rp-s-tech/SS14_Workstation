@@ -1,7 +1,6 @@
 - type: entity
   parent: AirlockCommand
   id: AirlockSpCrimsonLilyLocked
-  name: шлюз
   suffix: CrimsonLily, CentCom, Locked
   components:
   - type: AccessReader
@@ -12,7 +11,6 @@
 - type: entity
   parent: AirlockCommandGlass
   id: AirlockSpCrimsonLilyGlassLocked
-  name: стеклянный шлюз
   suffix: CrimsonLily, CentCom, Locked
   components:
   - type: AccessReader
@@ -23,7 +21,6 @@
 - type: entity
   parent: HighSecDoor
   id: HighSecSpCrimsonLilyLocked
-  name: бронированная дверь
   suffix: CrimsonLily, CentCom, Locked
   components:
   - type: AccessReader

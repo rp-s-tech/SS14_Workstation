@@ -1,3 +1,3 @@
-ent-ClothingShoesBootsVampireHunter = Ботинки охотника на вампиров
+ent-ClothingShoesBootsVampireHunter = ботинки охотника на вампиров
     .suffix = Охотник на вампиров
     .desc = { ent-ClothingShoesMilitaryBase.desc }

@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: WW2GermanyGeneralHardhat
-  name: генеральская фуражка
-  description: Фуражска с козырьком, которую носили генерал-фельдмаршалы Вермахта вместе с полевой формой.
+  name: general's cap
+  description: A cap with a visor worn by Wehrmacht Field Marshal Generals along with their field uniforms.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hardhats/ww2hardhatger.rsi
@@ -12,8 +12,8 @@
 - type: entity
   id: ClothingHeadHelmetHardsuitApotecaryBrigmedic
   parent: ClothingHeadHardsuitBase
-  name: Шлем скафандра бригмедика "Апотекарий"
-  description: Кто-то ещё боится стоматологов?..
+  name: brigmedic hardsuit helmet "Apothecary"
+  description: Is anyone else afraid of dentists?
   components:
   - type: BreathMask
   - type: Sprite

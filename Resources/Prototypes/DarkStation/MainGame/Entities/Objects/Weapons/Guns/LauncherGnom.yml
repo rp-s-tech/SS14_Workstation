@@ -1,8 +1,8 @@
 - type: entity
-  name: Гранатомёт "Гном"
+  name: grenade launcher "Dwarf"
   parent: BaseWeaponLauncher
   id: WeaponLauncherGnom
-  description: Используйте это оружие для разрушения. Только не забудьте надеть броню сапёра.
+  description: Use these weapons for destruction. Just don't forget to wear your bomb squad armor.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Weapons/Guns/Launchers/Grenadelauncher.rsi

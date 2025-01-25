@@ -2,8 +2,8 @@
   id: BaseMobDarkis
   parent: SimpleMobBase
   abstract: true
-  name: Darkis
-  description: Существо олицетворяющее эту станцию.
+  name: darkis
+  description: The creature that personifies this station.
   components:
   - type: NpcFactionMember
     factions:
@@ -13,7 +13,7 @@
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: darkis
-      sprite: Chupackabra/chupackabra.rsi
+      sprite: DarkStation/MainGame/Mobs/Pets/darkis_old.rsi
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
@@ -74,7 +74,9 @@
 - type: entity
   id: MobDarkisPatron
   parent: BaseMobDarkis
-  description: САМЫЙ ОБЫЧНЫЙ ПЁС!
+  description: JUST A REGULAR DOG!
+  categories: [ HideSpawnMenu ]
+  suffix: Pet 
   components:
   - type: Sprite
     drawdepth: Mobs

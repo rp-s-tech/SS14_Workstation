@@ -1,7 +1,7 @@
 ent-ClothingBeltSheathPOCC = сабельные ножны
     .desc = Украшенные ножны, предназначенные для хранения офицерского клинка.
-ent-ClothingBeltGrayJedi = Броневой пояс
+ent-ClothingBeltGrayJedi = бронепояс
     .desc = Бронепояс Серого Джедая.
-    .suffix = Джедая
+    .suffix = Джедай
 ent-ClothingBeltSheathVergilYamato = ножны Ямато
-    .desc = Чёрные лакированные ножны легендарного клинка.
+    .desc = Лакированные ножны легендарного клинка.

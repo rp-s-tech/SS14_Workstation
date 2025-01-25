@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: WW2GermanyHelmet
-  name: каска с ремнями
-  description: Каска образца "Stahlhelm". Оборудована ремешками для наиболее удобного использования частями Вермахта.
+  name: hardhat with straps
+  description: Stahlhelm helmet. Equipped with straps for the most comfortable use by Wehrmacht units.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Helmets/ww2helmetger.rsi
@@ -21,8 +21,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: WW2GermanyHelmetGoggles
-  name: каска с ремнями и очками
-  description: Каска "Stahlhelm", оснащённая защитными очками для использования подразделениями панцергренадёров Вермахта.
+  name: hardhat with straps and goggles
+  description: Stahlhelm helmet fitted with protective goggles for use by Wehrmacht Panzergrenadier units.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Helmets/ww2helmet2ger.rsi
@@ -42,8 +42,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingMedievalHelmetBasic
-  name: Пехотный шлем
-  description: Защищает вашу голову от опасных ударов
+  name: Infantry helmet
+  description: Protects your head from dangerous blows.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Helmets/shlem.rsi
@@ -63,8 +63,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHelmetMaxtac
-  name: Шлем Макс-так
-  description: Прочный и надежный шлем для тактических операций, обеспечивающий высокую степень защиты от различных видов повреждений.
+  name: MAX-TAC helmet
+  description: A rugged and reliable helmet for tactical operations that provides a high degree of protection against various types of damage.
   components:
     - type: Sprite
       sprite: DarkStation/MainGame/Clothing/Head/Helmets/maxtac_helmet.rsi

@@ -37,8 +37,8 @@
 - type: playTimeTracker
   id: JobArmoredChaplain
 
-- type: playTimeTracker
-  id: JobPathologist
+# - type: playTimeTracker
+#   id: JobPathologist
 
 - type: playTimeTracker
   id: JobSeniorEngineer
@@ -55,5 +55,8 @@
 - type: playTimeTracker
   id: JobSAI
 
+# - type: playTimeTracker
+#   id: JobSurger
+
 - type: playTimeTracker
-  id: JobSurger
+  id: JobERTRecon

@@ -1,6 +1,6 @@
 - type: entity
   id: WW2MP40Magazine
-  name: магазин от MP-40
+  name: mp40 magazine
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider

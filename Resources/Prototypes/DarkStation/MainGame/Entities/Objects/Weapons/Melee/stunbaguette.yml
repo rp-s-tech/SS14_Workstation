@@ -1,8 +1,8 @@
 - type: entity
-  name: чёрствый багет
+  name: stale baguette
   parent: BaseItem
   id: Stunbaguette
-  description: Этот багет настолько твёрдый, что им можно ударить человека! Кто-то ещё хочет пошутить про лягушек и белый флаг?
+  description: This baguette is so hard you could hit a man with it! Anyone else want to make a joke about frogs and the white flag?
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Weapons/Melee/stunbaguette.rsi

@@ -4,12 +4,12 @@
     - name: Goal
       steps:
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-will-send-in-few-minutes
           delay: 60
 
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-special-chemistry-one
           delay: 120
 
@@ -22,12 +22,12 @@
     - name: Goal
       steps:
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-will-send-in-few-minutes
           delay: 60
 
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-special-chemistry-two
           delay: 120
 
@@ -40,12 +40,12 @@
     - name: Goal
       steps:
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-will-send-in-few-minutes
           delay: 60
 
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-special-chemistry-three
           delay: 120
 
@@ -58,12 +58,12 @@
     - name: Goal
       steps:
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-will-send-in-few-minutes
           delay: 60
 
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-special-chemistry-four
           delay: 120
 

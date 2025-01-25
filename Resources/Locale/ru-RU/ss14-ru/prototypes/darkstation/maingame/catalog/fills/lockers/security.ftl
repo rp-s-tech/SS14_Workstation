@@ -1,3 +1,3 @@
-ent-SuitStorageSecPilot = хранилище скафандра
-    .desc = Необычное высокотехнологичное хранилище, предназначенное для хранения космических скафандров.
+ent-SuitStorageSecPilot = { ent-SuitStorageBase }
     .suffix = Пилот СБ
+    .desc = { ent-SuitStorageBase.desc }

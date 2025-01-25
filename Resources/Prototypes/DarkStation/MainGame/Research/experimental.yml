@@ -1,6 +1,6 @@
 - type: technology
   id: CloningTechnology
-  name: Технологии клонирования
+  name: research-technology-cloning
   icon:
     sprite: Objects/Misc/module.rsi
     state: cpu_medical

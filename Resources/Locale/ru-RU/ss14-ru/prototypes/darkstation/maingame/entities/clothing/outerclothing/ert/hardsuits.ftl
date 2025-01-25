@@ -1,10 +1,10 @@
-ent-ClothingOuterHardsuitChaplain = Скафандр капеллана
+ent-ClothingOuterHardsuitChaplain = скафандр капеллана
     .desc = Модифицированный скафандр ОБР, используемый для защиты капеллана в космической среде.
-ent-ChaplainHardsuitHelmet = Шлем скафандра капеллана
+ent-ChaplainHardsuitHelmet = шлем скафандра капеллана
     .desc = Шлем для скафандра, разработанного для капелланов.
-ent-ClothingOuterHardsuitERTRecon = Скафандр ОБР разведчика
+ent-ClothingOuterHardsuitERTRecon = скафандр ОБР разведчика
     .desc = Скафандр ОБР разведчика, обладающий стелс технологией.
-ent-ClothingHeadHelmetHardsuitERTRecon = Шлем скафандра ОБР разведчика
+ent-ClothingHeadHelmetHardsuitERTRecon = шлем скафандра ОБР разведчика
     .desc = Шлем обеспечивающий хорошую защиту головы разведчика.
 ent-ClothingOuterHardsuitN7 = скафандр N7
     .desc = Боевой скафандр отряда специального назначения NanoTrasen. При своей лёгкости обладает хорошими защитными качествами.

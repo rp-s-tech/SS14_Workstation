@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: SYChefHat
-  name: поварской колпак Синдиката
-  description: А ты думал, он будет белым?
+  name: syndicate chef's hat
+  description: Did you think he'd be white?
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hats/taipanchefhat.rsi
@@ -26,8 +26,8 @@
 - type: entity
   parent: ClothingHeadBaseButcherable
   id: ClothingHeadBeretPOCCBeret
-  name: Берет НШЦК
-  description: Один вид этого берета, даёт понять напротив стоящему человеку, с кем он имеет дело.
+  name: POCC beret
+  description: The mere sight of this beret makes it clear to the person standing opposite who he is dealing with.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hats/Berets/pocsberet.rsi
@@ -46,8 +46,8 @@
 - type: entity
   parent: ClothingHeadBaseButcherable
   id: ClothingHeadCapPOCC
-  name: Фуражка НШЦК
-  description: Один вид этой фуражки, даёт понять напротив стоящему человеку, с кем он имеет дело.
+  name: head POCC
+  description: One kind of this forage, yesot understand opposite to standing person, with whom he has a case.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hats/Cap/pocscap.rsi
@@ -66,8 +66,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadSecPilot
-  name: Берет пилота
-  description: Берет настоящего покорителя космоса!
+  name: pilot beret
+  description: The beret of a true space invader!
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hats/sbpilotberet.rsi
@@ -77,8 +77,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadSecurityInstructor
-  name: Фуражка инструктора Службы Безопастности
-  description: Модная фуражка для модного инструктора.
+  name: security instructor's cap.
+  description: A fancy cap for a fancy instructor.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hats/isbhat.rsi
@@ -88,9 +88,9 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatGrayJediHead
-  suffix: Джедая
-  name: Шляпа
-  description: Шляпа Серого Джедая.
+  suffix: Jedi
+  name: hat
+  description: Gray jedi hat.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hats/jedihead.rsi
@@ -104,8 +104,8 @@
 - type: entity
   parent: ClothingHeadBaseButcherable
   id: ClothingHeadHelmetHelmetKnight
-  name: Кепка Звёздной-пыли
-  description: Один вид этой бизарной кепки, даёт понять напротив стоящему человеку, с кем он имеет дело.
+  name: Stardust knight cap
+  description: The mere sight of this bizarre cap, makes it clear to the person standing opposite who he is dealing with.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hats/Cap/security_knight.rsi
@@ -124,8 +124,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadPBunnyEars
-  name: белые ушки кролика
-  description: Стильные белые ушки, возможно кто-то потерял их во время прятания яиц.
+  name: white bunny ears
+  description: Stylish white ears, maybe someone lost them while hiding the eggs.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hats/Pbunny-White.rsi
@@ -135,8 +135,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadPBunnyPinkEars
-  name: розовые ушки кролика
-  description: Не менее стильные ушки чем белые, но больше подходят на женскую аудиторию.
+  name: pink bunny ears
+  description: Just as stylish as the white ears, but more suited to a female audience.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hats/Pbunny-Pink.rsi
@@ -146,8 +146,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretBlueShield
-  name: Берет Синего Щита
-  description: То, чем больше всего дорожит ОСЩ.
+  name: Blueshield Officer's beret
+  description: What the BSO holds most dear.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hats/Berets/blueshield.rsi
@@ -161,8 +161,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatCapBlueShield
-  name: Фуражка Синего Щита
-  description: Покажи им, кто здесь настоящий секьюрити!
+  name: Blueshield Officer's cap
+  description: Show them who's the real security guard here!
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hats/Cap/blueshield.rsi
@@ -176,8 +176,8 @@
 - type: entity
   parent: ClothingHeadBaseButcherable
   id: ClothingHeadHatCapIFD
-  name: Берет ИФД
-  description: Этот берет носит истинный повелитель денег. По крайней мере, пока его не украдут.
+  name: FD inspector beret
+  description: This beret is worn by the true lord of money. At least until it's stolen.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hats/Berets/ifd_beret.rsi
@@ -187,7 +187,7 @@
 - type: entity
   parent: ClothingHeadHatCentcom
   id: ClothingHeadHatSpFinDepOfficial
-  name: Фуражка финансового департамента
+  name: finance department cap
   suffix: SFD
   components:
   - type: Sprite

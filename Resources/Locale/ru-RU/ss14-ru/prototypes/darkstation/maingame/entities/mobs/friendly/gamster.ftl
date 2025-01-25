@@ -1,2 +1,2 @@
-ent-MobGamster = Гамстер
+ent-MobGamster = гамстер
     .desc = Ух е...

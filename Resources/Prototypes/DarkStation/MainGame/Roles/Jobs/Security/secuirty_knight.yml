@@ -1,7 +1,7 @@
 - type: job
   id: SecurityKnight
-  name: Рыцарь Звёздной-пыли
-  description: Рыцарь
+  name: job-name-security-knight
+  description: job-description-security-knight
   playTimeTracker: JobSecurityKnight
   requirements:
   - !type:DepartmentTimeRequirement
@@ -44,18 +44,6 @@
   duffelbag: ClothingBackpackSecurity_KnightFilled
   pocket1: HoloprojectorSecurity
   pocket2: Flash
-
-- type: entity
-  parent: BasePDA
-  id: Security_KnightPDA
-  name: КПК Рыцаря Звёздной-пыли
-  description: КПК дающий понять что перед вами не обычный сотрудник СБ.
-  components:
-  - type: Pda
-    id: SecurityIDCard #Security_KnightIDCard
-    state: pda-knight
-  - type: Icon
-    state: pda-knight
 
 - type: entity
   categories: [ HideSpawnMenu ]

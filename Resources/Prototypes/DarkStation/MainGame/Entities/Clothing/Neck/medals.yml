@@ -1,9 +1,9 @@
 #medal
 - type: entity
-  name: Медаль успешного кадета!
+  name: successful cadet medal
   parent: ClothingNeckBase
   id: ChocolateMedal
-  description: Шоколадная медаль для самого лучшего кадета в Службе Безопастности!
+  description: Chocolate medal for the best cadet in the Security Service!
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Neck/Medals/chocolate.rsi
@@ -19,8 +19,8 @@
 - type: entity
   parent: FoodSnackBase
   id: OpenChocolateMedal
-  name: Медаль "не успешного" кадета!
-  description: На вид как шоколадная медаль которую кто-то уже открыл. Если вы получили данную медаль, значит вы "не успешный" кадет!
+  name: (un)successful cadet medal
+  description: It looks like a chocolate medal that someone has already opened. If you received this medal, you are not a “(un)successful” cadet!
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Neck/Medals/chocolateopen.rsi

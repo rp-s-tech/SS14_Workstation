@@ -1,14 +1,15 @@
 ﻿- type: entity
   id: MobGorillaPatron
   parent: MobGorilla
-  name: "горилла"
-  description: "Крушит, ревёт, выглядит круто. Не стойте рядом с ней."
-  suffix: Patron
+  name: gorilla
+  description: Crashes, roars, looks cool. Don't stand next to her.
+  suffix: Pet
+  categories: [ HideSpawnMenu ]
   components:
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 7
+        Blunt: 5
     animation: WeaponArcFist
 
 - type: entity
@@ -16,6 +17,8 @@
   parent: [ SimpleMobBase, MobCombat ]
   id: MobHamsterPatron
   description: A cute, fluffy, robust hamster.
+  suffix: Patron
+  categories: [ HideSpawnMenu ]
   components:
   - type: Speech
     speechVerb: SmallMob

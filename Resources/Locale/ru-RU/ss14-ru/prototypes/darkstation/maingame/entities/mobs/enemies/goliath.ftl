@@ -1,2 +1,2 @@
-ent-MobSpGoliath = Лавовый голиаф
+ent-MobSpGoliath = лавовый голиаф
     .desc = Чудное создание, родом из лаваленда.

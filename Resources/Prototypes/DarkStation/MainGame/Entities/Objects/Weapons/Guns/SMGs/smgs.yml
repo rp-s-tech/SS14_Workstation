@@ -2,7 +2,7 @@
   name: MP-40
   parent: BaseWeaponSubMachineGun
   id: WW2GermanyWeaponMP40
-  description: Ручной пистолет-пулемёт Вермахта образца 1940 года, стреляет патронами 9х19 (.20).
+  description: Wehrmacht submachine gun of 1940, fires 9x19 (.20) cartridges.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Weapons/Guns/SMGs/mp40.rsi

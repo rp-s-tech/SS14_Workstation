@@ -1,2 +1,2 @@
-ent-ClothingBeltSheathSam = Ножны для высокочастотного меча
+ent-ClothingBeltSheathSam = ножны для высокочастотного меча
     .desc = Ножны великого для великого меча.

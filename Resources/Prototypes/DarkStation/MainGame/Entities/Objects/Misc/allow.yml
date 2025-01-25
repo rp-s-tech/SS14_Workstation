@@ -1,8 +1,8 @@
 - type: entity
-  name: Позолоченная зажигалка Агента Внутренних Дел
+  name: internal affairs agent gold-plated lighter
   parent: FlippoLighter
   id: FlippoAVDLighter
-  description: Пахнет правосудием и дорогим виски.
+  description: Smells like justice and expensive whiskey.
   components:
   - type: Sprite
     sprite: Objects/Tools/AVDzippo.rsi
@@ -24,7 +24,7 @@
 
 - type: stealTargetGroup
   id: FlippoAVDLighter
-  name: Позолоченная зажигалка Агента Внутренних Дел
+  name: internal affairs agent gold-plated lighter
   sprite:
     sprite: Objects/Tools/AVDzippo.rsi
     state: zippo_icon_base

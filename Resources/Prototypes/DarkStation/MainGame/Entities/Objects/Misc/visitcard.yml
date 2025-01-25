@@ -1,8 +1,8 @@
 - type: entity
-  name: Визитная карточка
+  name: visiting card
   parent: BaseItem
   id: WaPVisitcard
-  description: Надпись сзади:"Обращайтесь в Вагнер и Партнёры".
+  description: It says on the back, “Contact Wagner & Partners.”
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Misc/visitcards.rsi

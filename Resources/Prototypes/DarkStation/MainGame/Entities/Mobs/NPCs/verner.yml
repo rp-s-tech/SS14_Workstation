@@ -1,8 +1,8 @@
 - type: entity
-  name: Вернер
+  name: verner
   parent: SimpleMobBase
   id: MobVerner
-  description: Верный друг парамедика. Или, его надёжная замена.
+  description: A paramedic's loyal friend. Or his trusty replacement.
   components:
   - type: Sprite
     drawdepth: Mobs

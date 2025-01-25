@@ -1,9 +1,9 @@
 - type: entity
   id: Glowshroomf
-  name: Светогрибы
+  name: glowshroom
   parent: BaseKudzu
-  suffix: DONTMAP, Пол
-  description: Грибы растущие на полу и освещающие окружение
+  suffix: DONT MAP, tile
+  description: Mushrooms growing on the floor and illuminating the surroundings.
   components:
     - type: MeleeSound
       soundGroups:

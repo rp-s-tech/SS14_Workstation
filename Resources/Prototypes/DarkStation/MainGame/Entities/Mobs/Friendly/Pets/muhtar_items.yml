@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: ClothingBackpackDuffel
   id: ClothingBackpackDuffelDog
-  name: Армейский рюкзак для собаки
-  description: Обычный рюкзак, чтобы переносить вещи, но для собак.
+  name: army dog backpack
+  description: A regular backpack to carry stuff, but for dogs.
   components:
     - type: Sprite
       sprite: DarkStation/MainGame/Mobs/Friendly/muhtar_back.rsi
@@ -13,6 +13,7 @@
 - type: entity
   parent: ClothingBackpackDuffelDog
   id: ClothingBackpackDuffelDogFilled
+  suffix: Filled
   components:
     - type: StorageFill
       contents:
@@ -23,8 +24,8 @@
 - type: entity
   parent: ClothingOuterBase
   id: ClothingOuterHardsuitSecurityDog
-  name: Скафандр служебной собаки
-  description: Защищает любимого питомца
+  name: Service dog hardsuit
+  description: Protects your beloved pet.
   components:
     - type: Sprite
       sprite: DarkStation/MainGame/Mobs/Friendly/muhtar_hardsuit.rsi

@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingJumpskirtSecPilot
-  name: Одежда пилота
-  description: Одежда настоящего покорителя космоса!
+  name: pilot jumpskirt
+  description: The clothes of a true space conqueror!
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/sbpilotskirt.rsi
@@ -12,8 +12,8 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtKnight
-  name: Юбка Звёздной-пыли
-  description: "Одежда рыцаря, чей только вид даёт понять кто стоит перед тобой."
+  name: Stardust knight jumpskirt
+  description: The clothes of a knight whose mere appearance lets you know who stands before you.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/security_knight.rsi
@@ -23,8 +23,8 @@
 - type: entity
   id: ClothingUniformJumpskirtBlueShield
   parent: ClothingUniformSkirtBase
-  name: Юбка офицера Синего Щита
-  description: Мне платят не за то, чтобы я убивал и выживал..а за то, чтобы я погибал, но защищал.
+  name: Blueshield Officer's jumpskirt
+  description: I'm not paid to kill and survive...I'm paid to die, but to protect.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/blueshield.rsi
@@ -34,8 +34,8 @@
 - type: entity
   id: ClothingUniformJumpskirtIFD
   parent: ClothingUniformSkirtBase
-  name: Юбка-комбинезон ИФД
-  description: Я есть деньги. Я есть богатство.
+  name: FD inspector jumpskirt
+  description: I am money. I am wealth.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/ifd.rsi

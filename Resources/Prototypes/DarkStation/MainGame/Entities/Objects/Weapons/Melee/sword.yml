@@ -1,8 +1,8 @@
 - type: entity
-  name: Высокочастотный клинок "Мурасама".
+  name: murasama high-frequency blade
   parent: BaseItem
   id: SamSword
-  description: Кроваво-красный высокочастотный клинок..
+  description: Blood-red high-frequency blade...
   components:
   - type: Sharp
   - type: Sprite

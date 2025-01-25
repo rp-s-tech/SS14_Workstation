@@ -1,3 +1,3 @@
-ent-ClothingNeckCloakGrayJedi = Пластина
+ent-ClothingNeckCloakGrayJedi = пластина
     .desc = Пластина Серого Джедая.
-    .suffix = Джедая
+    .suffix = Джедай

@@ -1,10 +1,10 @@
-ent-ClothingUniformJumpsuitERTChaplainDark = Комбинезон капеллана
-    .desc = Комбинезон в тёмных тонах, обеспечивающий капеллану максимальный комфорт во время несения Света Божьего
-ent-ClothingUniformJumpsuitERTRecon = Форма разведчика ОБР
+ent-ClothingUniformJumpsuitERTChaplainDark = комбинезон капеллана
+    .desc = Комбинезон в тёмных тонах, обеспечивающий капеллану максимальный комфорт во время несения Света Божьего.
+ent-ClothingUniformJumpsuitERTRecon = униформа разведчика ОБР
     .desc = Униформа специально разработанная для разведчиков ОБР.
-ent-ClothingUniformJumpsuitVampireHunter = Костюм охотника на вампиров
-    .desc = Пахнет чесноком
-    .suffix = VampireHunter
+ent-ClothingUniformJumpsuitVampireHunter = комбинезон охотника на вампиров
+    .desc = Пахнет чесноком.
+    .suffix = Охотник на вампиров
 ent-N7SemiCivilUniform = гражданская форма N7
     .desc = Лёгкая футболка и удобные тактические штаны для бойцов N7 в гражданской обстановке.
 ent-N7FleetUniform = флотская форма N7

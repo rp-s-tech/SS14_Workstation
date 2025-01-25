@@ -4,12 +4,12 @@
     - name: Goal
       steps:
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-will-send-in-few-minutes
           delay: 60
 
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-energy-solar
           delay: 120
 
@@ -22,12 +22,12 @@
     - name: Goal
       steps:
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-will-send-in-few-minutes
           delay: 60
 
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-energy-autonomous
           delay: 120
 
@@ -44,12 +44,12 @@
     - name: Goal
       steps:
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-will-send-in-few-minutes
           delay: 60
 
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-energy-autonomous
           delay: 120
 
@@ -66,12 +66,12 @@
     - name: Goal
       steps:
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-will-send-in-few-minutes
           delay: 60
 
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-energy-autonomous
           delay: 120
 
@@ -88,12 +88,12 @@
     - name: Goal
       steps:
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-will-send-in-few-minutes
           delay: 60
 
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-energy-autonomous
           delay: 120
 

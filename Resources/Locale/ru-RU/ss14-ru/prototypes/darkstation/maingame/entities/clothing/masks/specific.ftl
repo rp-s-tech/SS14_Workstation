@@ -1,2 +1,2 @@
-ent-Hokkeymask = Хоккейная маска
+ent-Hokkeymask = хоккейная маска
     .desc = Веет ужасом.

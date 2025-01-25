@@ -56,8 +56,8 @@
 #actions
 - type: entity
   id: ActionPetOrderStay
-  name: "Остановиться"
-  description: "Приказать перестать следовать за вами"
+  name: stop
+  description: To order you to stop following you.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -75,8 +75,8 @@
 
 - type: entity
   id: ActionPetOrderFollow
-  name: "Следовать"
-  description: "Приказать следовать за вами"
+  name: Follow
+  description: Order me to follow you.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -94,8 +94,8 @@
 
 - type: entity
   id: ActionPetOrderAttack
-  name: "Атаковать"
-  description: "Переводит в боевой режим. Атакует любого, на кого вы укажите"
+  name: Attack
+  description: It puts you in combat mode. Attacks anyone you point at.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -113,8 +113,8 @@
 
 - type: entity
   id: ActionPetMakeGhostRole
-  name: "Сделать гостролью"
-  description: "Сделает питомца гостролью, его сможет занять любой призрак"
+  name: make the ghost role
+  description:  Makes the pet a ghost role, it can be occupied by any ghost.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -127,8 +127,8 @@
 
 - type: entity
   id: ActionPetRemoveGhostRole
-  name: "Убрать гостроль"
-  description: "Убирает гостроль и выгоняет игрока из нее"
+  name: remove the ghost role
+  description: Removes the ghost role and kicks the player out of it.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction

@@ -1,0 +1,11 @@
+ghost-role-information-ert-recon-name = ОБР Разведчик
+ghost-role-information-ert-recon-description = Помогите своим напарникам информацией, используйте невидимость и высокую подвижность!
+ghost-role-information-slugcat-name = космический слизнекот
+ghost-role-information-slugcat-description = Вава! Вавава. Ва, ва, ва, ВА!
+ghost-role-information-capibara-name = капибара Витя Текин
+ghost-role-information-capibara-description = Дружелюбный питомец отдела SCP.
+ghost-role-information-gamster-name = гамстер
+ghost-role-information-gamster-description = Накажи обидчика своего собрата!
+ghost-role-information-gamster-rules = Убейте того, кто запихнул Гамлета в микроволновку!
+ghost-role-information-slug-name = слизняк
+ghost-role-information-slug-description = Большой, толстый слизняк размером с тараканомоль. Ленивый, любит спать и воровать еду.

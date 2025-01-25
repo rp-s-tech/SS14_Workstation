@@ -82,8 +82,10 @@
 - type: entity
   id: ShepherdPatron
   parent: BaseMobShepherd
-  name: Овчарка
-  description: Красивый и умный пес
+  name: sheepdog
+  description: Handsome and intelligent dog.
+  categories: [ HideSpawnMenu ]
+  suffix: Pet
   components:
   - type: MobThresholds
     thresholds:
@@ -115,8 +117,8 @@
 - type: entity
   parent: ClothingBackpackDuffel
   id: ClothingBackpackDuffelPatronDog
-  name: "Рюкзак для собаки"
-  description: "Обычный рюкзак, чтобы переносить вещи, но для собак"
+  name: dog backpack
+  description: A regular backpack to carry stuff, but for dogs.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Mobs/Friendly/muhtar_back.rsi

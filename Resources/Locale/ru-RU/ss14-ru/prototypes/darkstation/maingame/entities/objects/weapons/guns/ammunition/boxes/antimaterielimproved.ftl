@@ -1,6 +1,6 @@
-ent-BaseMagazineBoxAntiMaterielImproved = Бокс с патронами (.70 улучшенная антиматериальная)
+ent-BaseMagazineBoxAntiMaterielImproved = коробка с патронами (.70 антиматериальные)
     .desc = { ent-BaseItem.desc }
-ent-MagazineBoxAntiMaterielImproved = Бокс с патронами (.70 улучшенная антиматериальная)
+ent-MagazineBoxAntiMaterielImproved = коробка с патронами (.70 антиматериальные)
     .desc = { ent-BaseMagazineBoxAntiMateriel.desc }
-ent-MagazineBoxAntiMaterielBigImproved = Бокс с патронами (.70 улучшенная антиматериальная)
+ent-MagazineBoxAntiMaterielBigImproved = коробка с патронами (.70 антиматериальные)
     .desc = { ent-BaseMagazineBoxAntiMateriel.desc }

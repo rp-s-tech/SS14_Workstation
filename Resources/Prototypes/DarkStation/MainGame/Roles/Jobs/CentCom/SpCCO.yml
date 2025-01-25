@@ -1,7 +1,7 @@
 ﻿- type: job
   id: SpCCO
-  name: Оператор ЦК
-  description: Отвечает на запросы станции
+  name: job-name-centcom-operator
+  description: job-description-centcom-operator
   playTimeTracker: JobSpCCO
   setPreference: true
   startingGear: CCOGear
@@ -33,21 +33,21 @@
 - type: entity
   id: SpawnPointSpCCO
   parent: SpawnPointJobBase
-  name: Оператор ЦК
+  name: Centcom Operator
   components:
     - type: SpawnPoint
       job_id: SpCCO
     - type: Sprite
       layers:
         - state: green
-        - state: captain
+        - state: dark_NanoTrasenOperator
 
 
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatCentComme
-  name: Пальто Центкома
-  description: Пальто для истиных бюрократов.
+  name: centcom coat
+  description: Coats for true bureaucrats.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Coats/CentComme.rsi
