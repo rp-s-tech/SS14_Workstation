@@ -1,0 +1,47 @@
+- type: entity
+  parent: FloorTileItemBase
+  id: FloorTileItemConcreteWOWeather
+  name: concrete tile
+  components:
+  - type: Sprite
+    state: concrete
+  - type: Item
+    heldPrefix: generic
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorConcreteWOWeather
+  - type: Stack
+    stackType: FloorTileConcreteWOWeather
+
+- type: entity
+  parent: FloorTileItemBase
+  id: FloorTileItemGrayConcreteWOWeather
+  name: gray concrete tile
+  components:
+  - type: Sprite
+    state: grayconcrete
+  - type: Item
+    heldPrefix: generic
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorGrayConcreteWOWeather
+  - type: Stack
+    stackType: FloorTileGrayConcreteWOWeather
+
+- type: entity
+  parent: FloorTileItemBase
+  id: FloorTileItemOldConcreteWOWeather
+  name: old concrete tile
+  components:
+  - type: Sprite
+    state: oldconcrete
+  - type: Item
+    heldPrefix: generic
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorOldConcreteWOWeather
+  - type: Stack
+    stackType: FloorTileOldConcreteWOWeather

@@ -1,4 +1,176 @@
 - type: tile
+  id: FloorConcreteWOWeather
+  name: tiles-concrete-tile-weather
+  sprite: /Textures/Tiles/Planet/Concrete/concrete.png
+  suffix: weather
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemConcreteWOWeather
+  heatCapacity: 10000
+  weather: false
+
+- type: tile
+  id: FloorConcreteMonoWOWeather
+  name: tiles-gray-concrete-slab-weather
+  sprite: /Textures/Tiles/Planet/Concrete/concrete_mono.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemConcreteWOWeather
+  heatCapacity: 10000
+  weather: false
+
+- type: tile
+  id: FloorConcreteSmoothWOWeather
+  name: tiles-gray-concrete-smooth-weather
+  sprite: /Textures/Tiles/Planet/Concrete/concrete_smooth.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemConcreteWOWeather
+  heatCapacity: 10000
+  weather: false
+
+- type: tile
+  id: FloorGrayConcreteWOWeather
+  name: tiles-gray-concrete-tile-weather
+  sprite: /Textures/Tiles/Planet/Concrete/grayconcrete.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemGrayConcreteWOWeather
+  heatCapacity: 10000
+  weather: false
+
+- type: tile
+  id: FloorGrayConcreteMonoWOWeather
+  name: tiles-gray-concrete-slab-weather
+  sprite: /Textures/Tiles/Planet/Concrete/grayconcrete_mono.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemGrayConcreteWOWeather
+  heatCapacity: 10000
+  weather: false
+
+- type: tile
+  id: FloorGrayConcreteSmoothWOWeather
+  name: tiles-old-concrete-smooth-weather
+  sprite: /Textures/Tiles/Planet/Concrete/grayconcrete_smooth.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemGrayConcreteWOWeather
+  heatCapacity: 10000
+  weather: false
+
+- type: tile
+  id: FloorOldConcreteWOWeather
+  name: tiles-old-concrete-tile-weather
+  sprite: /Textures/Tiles/Planet/Concrete/oldconcrete.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemOldConcreteWOWeather
+  heatCapacity: 10000
+  weather: false
+
+- type: tile
+  id: FloorOldConcreteMonoWOWeather
+  name: tiles-old-concrete-slab-weather
+  sprite: /Textures/Tiles/Planet/Concrete/oldconcrete_mono.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemOldConcreteWOWeather
+  heatCapacity: 10000
+  weather: false
+
+- type: tile
+  id: FloorOldConcreteSmoothWOWeather
+  name: tiles-old-concrete-smooth-weather
+  sprite: /Textures/Tiles/Planet/Concrete/oldconcrete_smooth.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemOldConcreteWOWeather
+  heatCapacity: 10000
+  weather: false
+
+- type: tile
   id: FloorCobblestone
   name: tiles-cobblestone
   sprite: /Textures/Exodus/Tiles/cobblestone.png
