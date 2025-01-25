@@ -1,8 +1,8 @@
 - type: entity
   id: SYBannerMedical
   parent: BannerBase
-  name: знамя медицины Синдиката
-  description: Знамя, прославляющее высокотехнологичную медицину Синдиката, обладающую вагоном и маленькой тележкой способов издевательств над псами NanoTrasen.
+  name: Syndicate medical banner
+  description: A banner glorifying the Syndicate's high-tech medicine, possessing a carload and a small cart of ways to bully NanoTrasen dogs.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Structures/Decorations/banner.rsi
@@ -11,8 +11,8 @@
 - type: entity
   id: BannerDSChaosRebellion
   parent: BannerBase
-  name: "знамя Повстанцев Хаоса"
-  description: "Освободить, Подорвать, Свергнуть"
+  name: Chaos Rebels banner
+  description: Liberate, Undermine, Overthrow.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Structures/Decorations/banner_chaosrebellion.rsi

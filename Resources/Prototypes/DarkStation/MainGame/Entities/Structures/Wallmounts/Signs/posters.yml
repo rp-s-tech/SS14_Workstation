@@ -1,20 +1,20 @@
 ﻿- type: entity
   parent: PosterBase
   id: PosterLegitFindEgg
-  name: "Найдите яйца!"
-  description: "Найдите их всех!"
+  name: Find the eggs!
+  description: Find them all!
   components:
   - type: Sprite
     drawdepth: WallMountedItems
-    sprite: DarkStation\GlobalEvent\EasterEgg\Structres\Wallmounts\posters.rsi
+    sprite: DarkStation/GlobalEvent/EasterEgg/Structres/Wallmounts/posters.rsi
     state: posterEG1
     snapCardinals: true
 
 - type: entity
   parent: PosterLegitFindEgg
   id: PosterLegitEasterEgg
-  name: "Счастливой пасхи"
-  description: "Постер поздравляющий вас с пасхой. Счастиливой пасхи!"
+  name: happy easter!
+  description: A poster wishing you a happy easter. Happy Easter!
   components:
   - type: Sprite
     state: posterEG2
@@ -22,8 +22,8 @@
 - type: entity
   parent: PosterLegitFindEgg
   id: PosterLegitFindLoxJi
-  name: "Найдите его!"
-  description: "Постер с просьбой найти потерянного унатха."
+  name: find him!
+  description: A poster asking for a lost unath to be found.
   components:
   - type: Sprite
     state: posterEG3
@@ -31,8 +31,8 @@
 - type: entity
   parent: PosterBase
   id: PosterLegitDSds
-  name: "Тёмная станция"
-  description: "Постер содержит приглашение в странное приложение."
+  name: dark Station
+  description: The poster contains an invitation to a strange app.
   components:
   - type: Sprite
     drawdepth: WallMountedItems
@@ -43,8 +43,8 @@
 - type: entity
   parent: PosterLegitDSds
   id: PosterLegitDSb
-  name: "Тёмный буквы!"
-  description: "Постер с буквами. Праздничный"
+  name: dark letters!
+  description: Letter Poster. Festive.
   components:
   - type: Sprite
     state: posterDS2
@@ -52,8 +52,8 @@
 - type: entity
   parent: PosterLegitDSds
   id: PosterLegitDS1984
-  name: "Тёмные числа"
-  description: "Прямо как в 1984!"
+  name: dark numbers
+  description: It's like 1984!
   components:
   - type: Sprite
     state: posterDS3
@@ -61,8 +61,8 @@
 - type: entity
   parent: PosterLegitDSds
   id: PosterLegitDScake
-  name: "Тёмный торт!"
-  description: "Постер с вкуснейшим праздничным тортом"
+  name: dark cake!
+  description: A poster of a delicious birthday cake.
   components:
   - type: Sprite
     state: posterDS4
@@ -70,8 +70,8 @@
 - type: entity
   parent: PosterLegitDSds
   id: PosterLegitDSSingularity
-  name: "Сингулярность"
-  description: "Сингулярность поглощает свет и форму, визуализируя мистическую мощь космоса."
+  name: singularity
+  description: The singularity absorbs light and form, visualizing the mystical power of the cosmos.
   components:
   - type: Sprite
     state: posterDS5
@@ -79,8 +79,8 @@
 - type: entity
   parent: PosterLegitDSds
   id: PosterLegitDSTesla
-  name: "Энергия Теслы"
-  description: "Искры живут и танцуют вокруг, а ты беги мой друг!"
+  name: tesla's energy
+  description: Sparks live and dance around, and you run my friend!
   components:
   - type: Sprite
     state: posterDS6
@@ -88,8 +88,8 @@
 - type: entity
   parent: PosterLegitDSds
   id: PosterLegitDSAnalysisUnknown
-  name: "Диагностика Неизвестного"
-  description: "Глубокий анализ неизвестного тела найденного в пределах Редспейса"
+  name: diagnosis of the Unknown
+  description: An in-depth analysis of an unknown body found within Redspace.
   components:
   - type: Sprite
     state: posterDS7

@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: BaseMobShepherd
   id: Muhtar
-  name: Мухтар
-  description: Верный помощник инструктора СБ
+  name: Muhtar
+  description: Loyal assistant to the security instructor.
   components:
   - type: NpcFactionMember
     factions:

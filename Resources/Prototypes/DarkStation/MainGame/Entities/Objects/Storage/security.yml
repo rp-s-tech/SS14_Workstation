@@ -1,5 +1,5 @@
 ﻿- type: entity
-  name: Коробка Рыцаря Звёздной-пыли
+  name: Stardust Knight box
   parent: BoxCardboard
   id: BoxHoloparasiteKnight
   description: A box containing a holoparasite injector

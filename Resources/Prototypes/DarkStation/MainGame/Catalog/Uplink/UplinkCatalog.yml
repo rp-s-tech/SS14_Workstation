@@ -1,47 +1,47 @@
 - type: listing
   id: ClothingEyesHudSyndiSP
-  name: Солнцезащитные очки
-  description: Обычные очки, не правда ли?
+  name: uplink-sunglasses-name
+  description: uplink-sunglasses-desc
   productEntity: ClothingEyesHudSyndiSP
   cost:
     Telecrystal: 3
   categories:
   - UplinkMisc
 
-- type: listing
-  id: UplinkSyndicateShuttleGunDuster
-  name: Орудие для шаттла
-  description: Чтобы разбомбить станцию используя шаттл
-  productEntity: ShuttleGunDuster
-  cost:
-    Telecrystal: 25
-  categories:
-  - UplinkExplosives
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+# - type: listing
+#   id: UplinkSyndicateShuttleGunDuster
+#   name: Орудие для шаттла
+#   description: Чтобы разбомбить станцию используя шаттл
+#   productEntity: ShuttleGunDuster
+#   cost:
+#     Telecrystal: 25
+#   categories:
+#   - UplinkExplosives
+#   conditions:
+#   - !type:StoreWhitelistCondition
+#     whitelist:
+#       tags:
+#       - NukeOpsUplink
 
-- type: listing
-  id: UplinkSyndicateMagazineGrenadeBlast
-  name: Боеприпасы для орудия шаттла
-  description: Без этого орудие не стреляет ¯\_(ツ)_/¯
-  productEntity: MagazineGrenadeBlast
-  cost:
-    Telecrystal: 15
-  categories:
-  - UplinkExplosives
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+# - type: listing
+#   id: UplinkSyndicateMagazineGrenadeBlast
+#   name: Боеприпасы для орудия шаттла
+#   description: Без этого орудие не стреляет ¯\_(ツ)_/¯
+#   productEntity: MagazineGrenadeBlast
+#   cost:
+#     Telecrystal: 15
+#   categories:
+#   - UplinkExplosives
+#   conditions:
+#   - !type:StoreWhitelistCondition
+#     whitelist:
+#       tags:
+#       - NukeOpsUplink
 
 - type: listing
   id: UplinkRadioPenSyndie
-  name: ручка-радио
-  description: Ручка, в которой скрыто радио, настроенное на канал Синдиката. Выглядит как обычная ручка.
+  name: uplink-radiopen-name
+  description: uplink-radiopen-desc
   productEntity: PenRadioSyndie
   icon: { sprite: Objects/Misc/pens.rsi, state: pen }
   cost:
@@ -55,8 +55,8 @@
 
 - type: listing
   id: UplinkStunBaguette
-  name: Чёрствый багет
-  description: Изощрённое оружие мимов Синдиката для быстрого оглушения людей.
+  name: uplink-stun-baget-name
+  description: uplink-stun-baget-desc
   productEntity: Stunbaguette
   icon: { sprite: /Textures/DarkStation/MainGame/Objects/Weapons/Melee/stunbaguette.rsi, state: icon }
   cost:
@@ -68,13 +68,24 @@
     whitelist:
     - Mime
 
+# - type: listing
+#   id: UplinkAkmsShortRBundle
+#   name: Набор АКСУ
+#   description: Укороченный автомат калашникова и магазины к нему
+#   icon: { sprite: /Textures/DarkStation/MainGame/Objects/Weapons/Guns/Rifles/akms.rsi, state: icon }
+#   productEntity: ClothingBackpackDuffelSyndicateFilledAKMS
+#   cost:
+#     Telecrystal: 17
+#   categories:
+#   - UplinkWeaponry
+
 - type: listing
-  id: UplinkAkmsShortRBundle
-  name: Набор АКСУ
-  description: Укороченный автомат калашникова и магазины к нему
-  icon: { sprite: /Textures/DarkStation/MainGame/Objects/Weapons/Guns/Rifles/akms.rsi, state: icon }
-  productEntity: ClothingBackpackDuffelSyndicateFilledAKMS
+  id: UplinkNightVisionDevice
+  name: uplink-night-vision-device-name
+  description: uplink-night-vision-device-desc
+  icon: { sprite: Clothing/Eyes/Glasses/ninjavisor.rsi, state: icon }
+  productEntity: ClothingEyesVisionNuki
   cost:
-    Telecrystal: 17
+    Telecrystal: 2
   categories:
-  - UplinkWeaponry
+  - UplinkWearables

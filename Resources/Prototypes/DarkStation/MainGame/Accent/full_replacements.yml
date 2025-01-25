@@ -1,0 +1,25 @@
+﻿- type: accent
+  id: Slugcat
+  fullReplacements:
+  - accent-words-slugcat-1
+  - accent-words-slugcat-2
+  - accent-words-slugcat-3
+  - accent-words-slugcat-4
+  - accent-words-slugcat-5
+  - accent-words-slugcat-6
+  - accent-words-slugcat-7
+  - accent-words-slugcat-8
+
+- type: accent
+  id: Capibara
+  fullReplacements:
+  - accent-words-capibara-1
+  - accent-words-capibara-2
+  - accent-words-capibara-3
+  - accent-words-capibara-4
+  - accent-words-capibara-5
+  - accent-words-capibara-6
+  - accent-words-capibara-7
+  - accent-words-capibara-8
+  - accent-words-capibara-9
+  - accent-words-capibara-10

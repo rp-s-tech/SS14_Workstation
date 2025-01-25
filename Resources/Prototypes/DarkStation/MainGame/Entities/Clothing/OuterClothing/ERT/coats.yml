@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterJacketVampireHunter
-  name: Пальто охотника на вампиров
-  suffix: VampireHunter
+  name: vampire hunter's coat
+  suffix: Vampire Hunter
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/Coats/vampire_hunter.rsi

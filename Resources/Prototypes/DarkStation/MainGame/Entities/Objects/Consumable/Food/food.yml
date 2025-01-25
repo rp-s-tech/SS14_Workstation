@@ -14,8 +14,8 @@
 - type: entity
   parent: FoodBase
   id: Shaverma
-  name: Шаурма
-  description: Шаверма или шаурма? Точно сделано не из собаки... Наверное...
+  name: shawarma
+  description: Shawarma or shaverma? Definitely not made from a dog... Probably...
   components:
   - type: FlavorProfile
     flavors:

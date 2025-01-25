@@ -1,6 +1,6 @@
 - type: entity
-  name: Светогриб
-  description: Он излучает немного света и чуть чуть радиоактивен.
+  name: glowshroom
+  description: It emits a little light and is slightly radioactive.
   id: Glowshroom
   parent: ProduceBase
   components:
@@ -42,8 +42,8 @@
     removeOnInteract: True
 
 - type: entity
-  name: Светокеп
-  description: Он излучает немного света и немного наэлектризован.
+  name: glowcap
+  description: It emits a little light and is a little electrified.
   id: Glowcap
   parent: ProduceBase
   components:

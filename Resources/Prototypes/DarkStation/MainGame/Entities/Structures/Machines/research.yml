@@ -1,8 +1,8 @@
 - type: entity
   id: SYResearchAndDevelopmentServer
   parent: [ BaseMachinePowered, ConstructibleMachine ]
-  name: сервер Синдиката
-  description: Содержит сверхсекретные научные изыскания Синдиката. Не стоит его трогать...
+  name: Syndicate server
+  description: It contains top-secret scientific research of the Syndicate. You don't want to touch it...
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Structures/Machines/server.rsi

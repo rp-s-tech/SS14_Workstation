@@ -1,7 +1,7 @@
 - type: entity
   parent: CrateGenericSteel
   id: SYCrateSyndiecrate
-  name: ящик Синдиката
+  name: Syndicate crate
   components:
   - type: Icon
     sprite: DarkStation/MainGame/Structures/Storage/Crates/syndiecrate.rsi
@@ -11,7 +11,7 @@
 - type: entity
   parent: CrateGenericSteel
   id: SYCrateSyndieMed
-  name: медицинский ящик Синдиката
+  name: Syndicate medical crate
   components:
   - type: Icon
     sprite: DarkStation/MainGame/Structures/Storage/Crates/syndiemedcrate.rsi
@@ -21,7 +21,7 @@
 - type: entity
   parent: CrateGenericSteel
   id: SYCrateSyndieOrange
-  name: оранжевый ящик Синдиката
+  name: Syndicate orange crate
   components:
   - type: Icon
     sprite: DarkStation/MainGame/Structures/Storage/Crates/syndieorange.rsi

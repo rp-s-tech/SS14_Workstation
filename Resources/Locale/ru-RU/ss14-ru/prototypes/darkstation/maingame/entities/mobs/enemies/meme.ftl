@@ -1,2 +1,2 @@
-ent-MobMeme = Нечто
+ent-MobMeme = нечто
     .desc = Боже, что это?!

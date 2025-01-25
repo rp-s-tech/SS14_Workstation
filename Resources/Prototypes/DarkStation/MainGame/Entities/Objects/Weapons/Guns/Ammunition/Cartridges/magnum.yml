@@ -1,0 +1,7 @@
+﻿- type: entity
+  id: CartridgeMagnumSilver
+  name: cartridge (.45 magnum, silver)
+  parent: BaseCartridgeMagnum
+  components:
+  - type: CartridgeAmmo
+    proto: BulletMagnumSilver

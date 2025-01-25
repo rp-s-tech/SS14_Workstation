@@ -1,6 +1,7 @@
-ent-ClothingBackpackDuffelDog = Армейский рюкзак для собаки
+ent-ClothingBackpackDuffelDog = армейский рюкзак для собаки
     .desc = Обычный рюкзак, чтобы переносить вещи, но для собак.
 ent-ClothingBackpackDuffelDogFilled = { ent-ClothingBackpackDuffelDog }
     .desc = { ent-ClothingBackpackDuffelDog.desc }
-ent-ClothingOuterHardsuitSecurityDog = Скафандр служебной собаки
-    .desc = Защищает любимого питомца
+    .suffix = Заполненный
+ent-ClothingOuterHardsuitSecurityDog = скафандр служебной собаки
+    .desc = Защищает любимого питомца.

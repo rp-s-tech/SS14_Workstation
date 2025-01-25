@@ -1,9 +1,9 @@
-ent-SpMagistratUniformSuit = Костюм магистрата
+ent-SpMagistratUniformSuit = костюм магистрата
     .desc = Костюм особого пошива, по специальному заказу Ричарда Вагнера. Он так полюбился магистратам, что ныне его используют многие уважающие себя магистраты.
     .suffix = Магистрат, Hoderf
-ent-SPFlippoMagistrateLighter = Позолоченная зажигалка Магистрата
+ent-SPFlippoMagistrateLighter = позолоченная зажигалка Магистрата
     .desc = Пахнет правосудием, дорогим виски и униженным экипажем.
     .suffix = Магистрат, Hoderf
-ent-SpBriefcaseMagistrate = Кейс магистрата
+ent-SpBriefcaseMagistrate = кейс магистрата
     .desc = Для очень важных судебных разбирательств.
     .suffix = Магистрат, Hoderf

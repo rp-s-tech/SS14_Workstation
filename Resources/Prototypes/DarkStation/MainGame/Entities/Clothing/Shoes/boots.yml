@@ -12,7 +12,7 @@
 - type: entity
   parent: ClothingShoesMilitaryBase
   id: ClothingShoesBootsCombatPOCC
-  name: Туфли НШЦК
+  name: POCC shoes
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Shoes/Boots/pocsboots.rsi
@@ -22,9 +22,9 @@
 - type: entity
   parent: ClothingShoesBaseButcherable
   id: ClothingShoesGrayJedi
-  suffix: Джедая
-  name: Сапоги
-  description: Сапоги Серого Джедая.
+  suffix: Jedi
+  name: shoes
+  description: Gray jedi shoes.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Shoes/Boots/jedishoes.rsi
@@ -35,8 +35,8 @@
 - type: entity
   parent: ClothingShoesMilitaryBase
   id: ClothingShoesBootsCombatKnight
-  name: Туфли Звёздной-пыли
-  description: Необычно бизарные туфли, имеющие необычно бизарные свойства.
+  name: Stardust knight shoes
+  description: Unusually bizarre shoes with unusually bizarre features.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Shoes/Boots/security_knight.rsi
@@ -46,8 +46,8 @@
 - type: entity
   parent: ClothingShoesBaseWinterBoots
   id: ClothingShoesWinterBootsHonkomother
-  name: Зимние ботинки Хонкоматери
-  description: Эти ботинки Хонкоматери согреют вас и принесут смех в любую зиму.
+  name: Honkomother winter boots
+  description: These Honkomother boots will keep you warm and bring laughter to any winter.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Shoes/Boots/honkomother_winterboots.rsi
@@ -55,10 +55,10 @@
     sprite: DarkStation/MainGame/Clothing/Shoes/Boots/honkomother_winterboots.rsi
 
 - type: entity
-  parent: ClothingShoesBaseWinterBoots
+  parent: ClothingShoesBaseButcherable
   id: ClothingShoesWaPpink
-  name: Лакированые туфли
-  description: Дорогие, лакированные туфли адвоката.
+  name: lacquered shoes
+  description: The lawyer's expensive, patent-leather shoes.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Shoes/Boots/WaP_boots_pink.rsi
@@ -66,10 +66,8 @@
     sprite: DarkStation/MainGame/Clothing/Shoes/Boots/WaP_boots_pink.rsi
 
 - type: entity
-  parent: ClothingShoesBaseWinterBoots
+  parent: ClothingShoesWaPpink
   id: ClothingShoesWaPBej
-  name: Лакированые туфли
-  description: Дорогие, лакированные туфли адвоката.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Shoes/Boots/WaP_boots_bej.rsi
@@ -77,10 +75,8 @@
     sprite: DarkStation/MainGame/Clothing/Shoes/Boots/WaP_boots_bej.rsi
 
 - type: entity
-  parent: ClothingShoesBaseWinterBoots
+  parent: ClothingShoesWaPpink
   id: ClothingShoesWaPDark
-  name: Лакированые туфли
-  description: Дорогие, лакированные туфли адвоката.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Shoes/Boots/WaP_boots_dark.rsi

@@ -74,6 +74,9 @@
 - type: randomHumanoidSettings
   id: ERTLeader
   parent: EventHumanoidMindShielded
+  speciesBlacklist:
+    - Diona
+    - Vox
   randomizeName: false
   components:
     - type: GhostRole

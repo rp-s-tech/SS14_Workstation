@@ -1,8 +1,8 @@
 - type: entity
-  name: Солид
+  name: solid
   parent: SimpleMobBase
   id: TYSnake
-  description: Змея рода тайпан, символ Синдиката. Очень ядовитая.
+  description: Taipan snake, symbol of the Syndicate. Very poisonous.
   components:
   - type: Sprite
     drawdepth: Mobs

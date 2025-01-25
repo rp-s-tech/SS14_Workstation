@@ -8,3 +8,5 @@ ent-BlueShieldOfficerIDCard = ID карта офицера синего щита
     .desc = { ent-IDCardStandard.desc }
 ent-IFDIDCard = ID карта инспектора ФД
     .desc = { ent-IDCardStandard.desc }
+ent-ERTReconIDCard = ID карта разведчик ОБР
+    .desc = { ent-CentcomIDCard.desc }

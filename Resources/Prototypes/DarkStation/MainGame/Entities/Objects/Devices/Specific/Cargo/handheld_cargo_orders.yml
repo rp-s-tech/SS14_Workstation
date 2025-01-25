@@ -1,10 +1,10 @@
 - type: entity
-  name: Портативный монитор заказов
+  name: portable order monitor
   parent:
   - BaseItem
   - PowerCellSlotSmallItem
   id: HandheldSpCargoOrders
-  description: Ручной монитор заказов, отображающий состояние счёта и предоставляющий возможность делать заказы.
+  description: Manual order monitor that displays account status and provides the ability to place orders.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Specific/Cargo/handheldcargoorders.rsi

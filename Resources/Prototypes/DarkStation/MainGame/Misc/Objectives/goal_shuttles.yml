@@ -4,12 +4,12 @@
     - name: Goal
       steps:
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-will-send-in-few-minutes
           delay: 60
 
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-shuttle
           delay: 120
 
@@ -21,7 +21,7 @@
           delay: 30
 
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-shuttle-cargo
           delay: 300
 
@@ -35,12 +35,12 @@
     - name: Goal
       steps:
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-will-send-in-few-minutes
           delay: 60
 
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-shuttle-security
           delay: 120
 
@@ -52,7 +52,7 @@
           delay: 30
 
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-shuttle-cargo
           delay: 300
 

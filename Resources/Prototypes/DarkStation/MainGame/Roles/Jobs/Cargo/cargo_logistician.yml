@@ -1,12 +1,12 @@
 - type: job
   id: CargoLogistician
-  name: Логист
-  description: Специализированный раб квартирмейстера для торговых непотребств
+  name: job-name-logistician
+  description: job-description-logistician
   playTimeTracker: JobCargoLogistician
   requirements:
   - !type:RoleTimeRequirement
     role: JobSalvageSpecialist
-    time: 18000 # salvage required 4h cargo + 4h for salvage
+    time: 18000
   weight: 10
   startingGear: CargoLogisticianGear
   icon: "JobIconCargoLogistician"
@@ -32,22 +32,22 @@
 - type: entity
   parent: ClothingUniformJumpsuitQM
   id: ClothingUniformJumpsuitCargoLogistician
-  name: Униформа логиста
-  description: Стильная униформа (на самом деле, нет).
+  name: logistician uniform
+  description: Stylish uniforms (actually, no).
 
 - type: entity
   parent: ClothingUniformJumpskirtQM
   id: ClothingUniformJumpskirtCargoLogistician
-  name: Униформа логиста
-  description: Стильная униформа (на самом деле, нет).
+  name: logistician uniform
+  description: Stylish uniforms (actually, no).
 
 # Accesuares
 
 - type: entity
   parent: QuartermasterPDA
   id: CargoLogisticianPDA
-  name: КПК логиста
-  description: Гармоничный КПК для любителя денег.
+  name: logistician PDA
+  description: A harmonious PDA for the money lover.
   components:
   - type: Pda
     id: CargoLogisticianIDCard
@@ -56,7 +56,7 @@
 - type: entity
   parent: IDCardStandard
   id: CargoLogisticianIDCard
-  name: ID карта логиста
+  name: logistician ID card
   components:
   - type: Sprite
     layers:
@@ -70,14 +70,14 @@
 - type: entity
   parent: ClothingHeadHatQMsoft
   id: ClothingHeadHatCargoLogistician
-  name: Кепка логиста
-  description: Лучший головной убор во время жаркого потока заказов.
+  name: logistician cap
+  description: Best headgear during hot order flow.
 
 - type: entity
   parent: ClothingHeadsetQM
   id: ClothingHeadsetCargoLogistician
-  name: Гарнитура Логиста
-  description: Гарнитура логиста для работы с отделом и принятия прямых заказов от командования.
+  name: logistician headset
+  description: A logistician's headset for working with the department and taking direct orders from the command.
   components:
   - type: ContainerFill
     containers:

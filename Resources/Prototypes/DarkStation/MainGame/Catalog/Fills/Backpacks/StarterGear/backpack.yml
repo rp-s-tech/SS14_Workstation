@@ -2,7 +2,4 @@
   categories: [ HideSpawnMenu ]
   parent: ClothingBackpackMedical
   id: ClothingBackpackPathologistFilled
-  components:
-    - type: StorageFill
-      contents:
-        - id:
+

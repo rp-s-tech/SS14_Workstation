@@ -1,0 +1,12 @@
+﻿- type: entity
+  id: BulletMagnumSilver
+  name: bullet (.45 magnum silver)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damageBodyParts: true
+    damage:
+      types:
+        Piercing: 20
+        Holiness: 35

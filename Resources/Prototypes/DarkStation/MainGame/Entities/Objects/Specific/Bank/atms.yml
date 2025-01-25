@@ -1,6 +1,7 @@
 ﻿- type: entity
   parent: BaseStructureComputer
   id: BaseBankATM
+  abstract: true
   placement:
     mode: SnapgridCenter
   components:
@@ -65,10 +66,10 @@
         damage: 0
 
 - type: entity
-  name: "Банкомат"
+  name: ATM machine
   parent: BaseBankATM
   id: ComputerBankATM
-  description: "Используется для снятия наличных и пополнения банковского счёта"
+  description: Used for cash withdrawals and bank account replenishment.
   components:
   - type: Sprite
     netsync: false
@@ -90,10 +91,10 @@
     castShadows: false
 
 - type: entity
-  name: "Настенный банкомат"
+  name: wall-mounted ATM
   parent: BaseBankATM
   id: ComputerWallmountBankATM
-  description: "Используется для снятия наличных и пополнения банковского счёта"
+  description: Used for cash withdrawals and bank account replenishment.
   components:
   - type: Transform
     anchored: true

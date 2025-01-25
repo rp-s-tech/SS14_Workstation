@@ -117,3 +117,8 @@ chat-speech-verb-name-electricity = Электричество
 chat-speech-verb-electricity-1 = трещит
 chat-speech-verb-electricity-2 = гудит
 chat-speech-verb-electricity-3 = скрипит
+### Slugcat
+chat-speech-verb-name-slugcat = Слизнекотовый
+chat-speech-verb-slugcat-1 = интонирует
+chat-speech-verb-slugcat-2 = утверждает
+chat-speech-verb-slugcat-3 = заявляет

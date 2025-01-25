@@ -1,3 +1,3 @@
-ent-VampireHunterSword = Серебряный меч
-    .suffix = VampireHunter
-    .desc = { ent-BaseItem.desc }
+ent-VampireHunterSword = серебряный меч
+    .suffix = Охотник на вампиров
+    .desc = Меч, которого боится вся нечисть.

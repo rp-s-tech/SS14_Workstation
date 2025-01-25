@@ -1,11 +1,11 @@
 ent-ClothingOuterArmorSecurity = бронежилет
     .desc = Стандартный бронежилет типа I, который обеспечивает хорошую защиту от большинства типов урона.
-ent-ClothingOuterGrayJediArmor = Бронекостюм
+ent-ClothingOuterGrayJediArmor = бронекостюм
     .desc = Бронекостюм Серого Джедая.
-    .suffix = Джедая
-ent-ClothingMedievalArmorBasic = Пластинчатый доспех
+    .suffix = Джедай
+ent-ClothingMedievalArmorBasic = пластинчатый доспех
     .desc = Хорошо защищает от режущих ударов
-ent-ClothingOuterArmorBlueShield = Бронежилет Синего Щита
+ent-ClothingOuterArmorBlueShield = бронежилет офицера Синего Щита
     .desc = Укреплённый кевларовый бронежилет, продлевающий жизнь ОСЩ на считанные мгновения, необходимые для обругивания бездарно погибшего командования.
-ent-ClothingOuterArmorMacTac = Бронежилет Макс-так
+ent-ClothingOuterArmorMacTac = бронежилет МАКС-ТАК
     .desc = Высокотехнологичный бронежилет, обеспечивающий максимальную защиту в условиях боевых действий.

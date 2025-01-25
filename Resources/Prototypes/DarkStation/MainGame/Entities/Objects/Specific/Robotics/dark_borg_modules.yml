@@ -11,7 +11,7 @@
 - type: entity
   id: BorgModuleStun
   parent: BaseBorgModuleSecurity
-  name: "Модуль нелетального снаряжения"
+  name: non-lethal equipment module
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -43,7 +43,7 @@
 - type: entity
   id: BorgModuleSecurityWeapon
   parent: BaseBorgModuleSecurity
-  name: "Оружейный модуль"
+  name: gun module
   components:
   - type: Sprite
     layers:

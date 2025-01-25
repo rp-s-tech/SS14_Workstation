@@ -92,8 +92,8 @@
   - Psychologist
   - Paramedic
   - SeniorPhysician
-  - Pathologist
-  - Surger
+  # - Pathologist
+  # - Surger
 
 - type: department
   id: Security

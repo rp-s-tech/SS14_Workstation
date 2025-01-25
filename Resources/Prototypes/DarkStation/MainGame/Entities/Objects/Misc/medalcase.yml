@@ -1,7 +1,7 @@
 - type: entity
   id: ChocolateMedalCase
-  name: Коробочка с медалями для кадетов!
-  description: Кейс с медалями.
+  name: box of medals for the cadets
+  description: Medal case.
   parent: BaseStorageItem
   components:
   - type: Sprite

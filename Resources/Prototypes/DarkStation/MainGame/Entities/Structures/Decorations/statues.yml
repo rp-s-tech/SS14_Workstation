@@ -1,8 +1,8 @@
 - type: entity
   id: DeltaStatue
   parent: BaseStructure
-  name: статуя станции "Дельта"
-  description: Прекраснейшая статуя с надписью "Станция Дельта".
+  name: statue of Delta station
+  description: The most beautiful statue that says “Delta Station.”
   components:
   - type: Sprite
     noRot: true
@@ -14,8 +14,8 @@
 - type: entity
   id: BoxStatue
   parent: BaseStructure
-  name: статуя станции "Бокс"
-  description: Прекраснейшая статуя с надписью "Станция Бокс".
+  name: statue of Box station
+  description: The most beautiful statue that says “Box Station.”
   components:
   - type: Sprite
     noRot: true

@@ -1,8 +1,8 @@
 - type: entity
-  name: Боевой молот
+  name: war hammer
   parent: BaseItem
   id: WarHammer
-  description: Отлично подходит для разрешения препятствий
+  description: Great for breaking down obstacles.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Weapons/Melee/topor.rsi
@@ -25,10 +25,10 @@
     - back
 
 - type: entity
-  name: Гладиус
+  name: Gladius
   parent: BaseItem
   id: Gladius
-  description: короткий солдатский меч
+  description: Short army sword.
   components:
   - type: Sharp
   - type: Sprite

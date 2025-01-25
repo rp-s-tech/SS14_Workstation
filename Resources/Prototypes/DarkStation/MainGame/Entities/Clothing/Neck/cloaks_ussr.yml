@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantleUSSR
-  name: Плащ СССП, выдаваемый только членам партии
-  description:
+  name: USSP mantle
+  description: Issued only to party members.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Neck/Mantles/ussr.rsi
@@ -12,8 +12,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakUSSR
-  name: Плащ СССП
-  description: Красный плащ СССП что выдаётся только членам партии.
+  name: USSP cloack
+  description: Issued only to party members.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Neck/Bedsheets/ussr.rsi
@@ -21,8 +21,8 @@
 - type: entity
   id: BedsheetUSSR
   parent: BedsheetBase
-  name: Одеяло СССП
-  description: Плащ выдаваемый за хорошую работу на протяжении малого количества лет работы на благо народа и СССП
+  name: USSP bedsheet
+  description: Blanket given to honorary party members.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Neck/Bedsheets/ussr.rsi

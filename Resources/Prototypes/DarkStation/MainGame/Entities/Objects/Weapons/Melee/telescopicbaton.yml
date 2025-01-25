@@ -1,8 +1,8 @@
 - type: entity
-  name: телескопическая дубинка
+  name: telescopic baton
   parent: BaseItem
   id: TelescopicBaton
-  description: Специальная раскладываемая дубинка для самообороны глав и наказания непослушных сотрудников.
+  description: A special folding baton for chapter self-defense and punishment of unruly officers.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Weapons/Melee/telescopicbaton.rsi

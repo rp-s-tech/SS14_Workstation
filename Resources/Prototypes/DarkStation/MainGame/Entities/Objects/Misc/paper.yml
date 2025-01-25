@@ -1,8 +1,8 @@
 - type: entity
-  name: ручка
+  name: pen
   parent: BaseItem
   id: PenRadioSyndie
-  description: Ручка с чёрными чернилами
+  description: A dark ink pen.
   components:
   - type: Tag
     tags:
@@ -28,8 +28,8 @@
 - type: entity
   parent: BaseItem
   id: PaperTrash
-  name: обрезки бумаги
-  description: Ничего не разобрать.
+  name: paper scraps
+  description: You can't make out anything.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Structures/Machines/shredder.rsi
@@ -46,7 +46,7 @@
 - type: entity
   id: BoxFolderTaipan
   parent: BoxFolderBase
-  suffix: Тайпан / Синдикат
+  suffix: Syndicate, Taipan
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Misc/folder.rsi
@@ -55,9 +55,9 @@
     - state: folder-base
 
 - type: entity
-  name: Ручка НШЦК
+  name: POCC pen
   parent: CyberPen
-  description: Чёрная ручка с элементами золота.
+  description: Black handle with gold elements.
   id: POCCPen
   components:
   - type: Sprite

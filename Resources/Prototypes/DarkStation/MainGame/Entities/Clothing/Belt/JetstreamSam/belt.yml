@@ -1,8 +1,8 @@
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase]
   id: ClothingBeltSheathSam
-  name: Ножны для высокочастотного меча
-  description: Ножны великого для великого меча.
+  name: scabbard for a high-frequency sword
+  description: The scabbard of the great for the great sword.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Belt/JetstreamSam/Sheath.rsi

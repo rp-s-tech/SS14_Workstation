@@ -103,7 +103,7 @@
   name: M4B1
   parent: BaseWeaponRifle
   id: WeaponRifleM4B4
-  description: Высококлассный штурмовой карабин, сделаный на базе проверенным временем карабина M4A1. Карабин был переделан под калибр .20, что позволяет использовать его практически на всех станциях вместо или вместе со стандартным Лектором
+  description: A top-of-the-line assault carbine based on the time-tested M4A1 carbine. The carbine has been converted to .20 caliber, which allows it to be used on almost all stations instead of or together with the standard Lecter.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Weapons/Guns/Rifles/m4a1.rsi
@@ -152,10 +152,10 @@
   - type: Appearance
 
 - type: entity
-  name: Карабин Delta 1
+  name: Carabin Delta 1
   parent: BaseWeaponRifle
   id: WeaponRifleXani
-  description: Новейшая экспериментальная разработка, которая только проходит испытания. На текущий момент настроена под калибр .20, но в любой момен это может быть изменено конструкторами
+  description: Newest experimental design that is just being tested. Currently configured for .20 caliber, but this can be changed at any time by the designers.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Weapons/Guns/Rifles/xani.rsi

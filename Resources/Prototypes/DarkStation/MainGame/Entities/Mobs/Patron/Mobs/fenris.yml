@@ -2,8 +2,8 @@
   id: BaseMobFenris
   parent: MobSiliconBase
   abstract: true
-  name: ФЕНРИС
-  description: Охранный робопёс для личного пользования.
+  name: F.E.N.R.I.S.
+  description: A security robopod for personal use.
   components:
   - type: NpcFactionMember
     factions:
@@ -190,7 +190,8 @@
 - type: entity
   id: MobFenrisPatron
   parent: BaseMobFenris
-  suffix: Питомец
+  categories: [ HideSpawnMenu ]
+  suffix: Pet
   components:
   - type: Sprite
     drawdepth: Mobs

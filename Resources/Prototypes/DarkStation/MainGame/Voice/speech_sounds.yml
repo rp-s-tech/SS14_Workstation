@@ -1,0 +1,8 @@
+- type: speechSounds
+  id: WawaSay
+  saySound:
+    path: /Audio/DarkStation/Mobs/SlugCat/wawa_statement.ogg
+  askSound:
+    path: /Audio/DarkStation/Mobs/SlugCat/wawa_question.ogg
+  exclaimSound:
+    path: /Audio/DarkStation/Mobs/SlugCat/wawa_exclaim.ogg

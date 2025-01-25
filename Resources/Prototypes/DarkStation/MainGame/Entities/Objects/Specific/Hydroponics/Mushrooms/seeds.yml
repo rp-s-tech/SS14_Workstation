@@ -1,6 +1,6 @@
 - type: entity
   parent: SeedBase
-  name: споры светогриба
+  name: glowshroom spores
   id: MyceliumGlowshroomSeeds
   components:
   - type: Seed
@@ -10,7 +10,7 @@
 
 - type: entity
   parent: SeedBase
-  name: споры светокепа
+  name: glowcap spores
   id: MyceliumGlowcapSeeds
   components:
   - type: Seed

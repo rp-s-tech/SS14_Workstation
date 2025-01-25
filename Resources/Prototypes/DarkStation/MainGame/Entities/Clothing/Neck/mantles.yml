@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantleBlueShield
-  name: Мантия Синего Щита
-  description: Символ вашей не власти, но властности!
+  name: Blueshield Officer's mantle
+  description: A symbol of your not power, but authority!
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Neck/Mantles/blueshield.rsi

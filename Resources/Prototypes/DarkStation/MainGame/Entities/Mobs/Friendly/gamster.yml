@@ -1,8 +1,8 @@
 - type: entity
-  name: Гамстер
+  name: gamster
   id: MobGamster
   parent: SimpleMobBase
-  description: Ух е...
+  description: Oh s...
   components:
     - type: CombatMode
     - type: MovementSpeedModifier
@@ -50,8 +50,8 @@
           Piercing: 8
     - type: Body
       prototype: Rat
-      requiredLegs: 1 # TODO: More than 1 leg
-    - type: Hunger # probably should be prototyped
+      requiredLegs: 1
+    - type: Hunger
       thresholds:
         Overfed: 200
         Okay: 150
@@ -78,9 +78,9 @@
           Base: dead
     - type: GhostRole
       makeSentient: true
-      name: Гамстер
-      description: Накажи свое обидчика!
-      rules: Убейте того, кто запихнул Гамлета в микроволновку!
+      name: ghost-role-information-gamster-name
+      description: ghost-role-information-gamster-description
+      rules: ghost-role-information-gamster-rules
     - type: GhostTakeoverAvailable
     - type: Tag
       tags:

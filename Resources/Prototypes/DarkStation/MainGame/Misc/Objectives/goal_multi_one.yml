@@ -4,12 +4,12 @@
     - name: GoalOne
       steps:
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-will-send-in-few-minutes-multi
           delay: 60
 
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-multione-first
           delay: 120
 
@@ -57,7 +57,7 @@
       delay: 600
       steps:
         - !type:AnnouncementStep
-          sender: Центральное командование
+          sender: station-goal-sender
           messageLoc: station-goal-multione-second-shuttle
 
         - !type:PrintGoalToFaxStep

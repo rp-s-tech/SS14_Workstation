@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitPOCC
-  name: Скафандр НШЦК
-  description: Лёгко бронированный скафандр Начальника Штаба ЦК, так и чувствуется крутость, да?
+  name: POCC hardsuit
+  description: The lightly armored hardsuit of the chief of staff of the Central Command, that's how cool it feels, right?
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/pocshardsuit.rsi
@@ -35,8 +35,8 @@
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitPOCC
   categories: [ HideSpawnMenu ]
-  name: Шлем скафандра НШЦК
-  description: Лёгко бронированный шлем скафандра Начальника Штаба ЦК, так и чувствуется крутость, да?
+  name: POCC hardsuit helmet
+  description: The lightly armored hardsuit helmet of the chief of staff of the Central Command, that's how cool it feels, right?
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/pocshelmet.rsi
@@ -52,8 +52,8 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitSecurityPilot
-  name: Скафандр пилота службы безопасности
-  description: Специальный костюм, защищающий от опасных сред низкого давления. Имеет дополнительный слой брони.
+  name: security pilot hardsuit
+  description: A special suit that protects against hazardous low-pressure environments. It has an additional layer of armor.
   components:
     - type: Sprite
       sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/sbpilothardsuit.rsi
@@ -83,8 +83,8 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitApotecaryBrigmedic
-  name: Скафандр бригмедика "Апотекарий"
-  description: А сразу и не скажешь, что человек в этом скафандре будет тебя лечить..
+  name: brigmedic hardsuit "Apothecary"
+  description: You'd never know a man in this hardsuit was gonna be treating you...
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/apotecary.rsi
@@ -118,8 +118,8 @@
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitSecurityPilot
   categories: [ HideSpawnMenu ]
-  name: Шлем пилота службы безопасности
-  description: Бронированный шлем пилота СБ
+  name: security pilot hardsuit helmet
+  description: Armored security pilot hardsuit helmet.
   components:
     - type: Sprite
       sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/sbpilothardsuit_helmet.rsi
@@ -144,8 +144,8 @@
 - type: entity
   parent: ClothingOuterHardsuitSecurity
   id: ClothingOuterHardsuitBlueShield
-  name: "Скафандр офицера синего щита"
-  description: "Скафандр полностью идентичен по характеристикам скафандрам службы безопасности, но отличается уникальным дизайном и расцветкой"
+  name: Blueshield Officer's hardsuit
+  description: The hardsuit is completely identical in features to the security hardsuits, but features a unique design and coloring.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/blueshield/hardsuit.rsi
@@ -157,8 +157,8 @@
 - type: entity
   parent: ClothingHeadHelmetHardsuitSecurity
   id: ClothingHeadHelmetHardsuitBlueshield
-  name: "Шлем скафандра офицера синего щита"
-  description: "Бронированный шлем скафандра"
+  name: Blueshield Officer's hardsuit helmet
+  description: Armored Blueshield Officer's hardsuit helmet.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/blueshield/head.rsi
@@ -170,8 +170,8 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitIFD
-  name: Скафандр ИФД
-  description: Лёгкобронированный скафандр Инспектора ФД, так и чувствуется богатство, да?
+  name: FD inspector hardsuit
+  description: Inspector FD lightly armored hardsuit, so it feels rich, doesn't it?
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/Hardsuits/ifd.rsi
@@ -204,8 +204,8 @@
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitIFD
   categories: [ HideSpawnMenu ]
-  name: Шлем скафандра ИФД
-  description: Лёгкобронированный шлем скафандра Инспектора ФД, так и чувствуется богатство, да?
+  name: FD inspector hardsuit helmet
+  description: Inspector FD lightly armored hardsuit helmet, so it feels rich, doesn't it?
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/ifd.rsi

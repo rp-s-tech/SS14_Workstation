@@ -1,7 +1,7 @@
 - type: job
   id: SpNanoTrasenRepresentative
-  name: Представитель НТ
-  description: Защищает интересы НТ
+  name: job-name-nanotrasen-representative
+  description: job-description-nanotrasen-representative
   playTimeTracker: JobSpNanoTrasenRepresentative
   setPreference: true
   startingGear: SpNanoTrasenRepresentativeGear
@@ -36,17 +36,17 @@
 
 - type: entity
   id: ClothingBackpackSNTR
-  name: Рюкзак представителя НТ
+  name: NanoTrasen representative backpack
   parent: ClothingBackpack
 
 - type: entity
   id: ClothingBackpackDuffelSNTR
-  name: Рюкзак представителя НТ
+  name: NanoTrasen representative duffel
   parent: ClothingBackpackDuffel
 
 - type: entity
   id: ClothingBackpackSatchelSNTR
-  name: Рюкзак представителя НТ
+  name: NanoTrasen representative satchel
   parent: ClothingBackpackSatchel
 
 # Clothing
@@ -54,8 +54,8 @@
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatSpNanoTrasenRepresentativeFormal
-  name: Пальто представителя NanoTrasen.
-  description: Лучшее одеяние как для защиты, так и для отображения силы.
+  name: NanoTrasen representative coat
+  description: The best garment for both protection and display of power.
   suffix: SNTR
   components:
   - type: Sprite
@@ -76,7 +76,7 @@
 - type: entity
   parent: ClothingUniformJumpsuitCentcomOfficial
   id: ClothingUniformJumpsuitSpNanoTrasenRepresentativeOfficial
-  name: Униформа представителя NanoTrasen
+  name: NanoTrasen representative jumpsuit
   suffix: SNTR
   components:
   - type: Sprite
@@ -87,7 +87,7 @@
 - type: entity
   parent: ClothingHeadHatCentcom
   id: ClothingHeadHatSpNanoTrasenRepresentativeOfficial
-  name: Фуражка представителя NanoTrasen
+  name: NanoTrasen representative cap
   suffix: SNTR
   components:
   - type: Sprite
@@ -98,9 +98,9 @@
 - type: entity
   parent: ClothingHeadsetAltCentCom
   id: ClothingHeadsetSpNanoTrasenRepresentative
-  name: Гарнитура представителя НТ
+  name: NanoTrasen representative headset
   suffix: SNTR
-  description: Гарнитура, используемая верхушкой Nanotrasen.
+  description: The headset used by the top Nanotrasen.
   components:
   - type: Sprite
     sprite: Clothing/Ears/Headsets/command.rsi
@@ -110,8 +110,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakSpNanoTrasenRepresentative
-  name: Плащ представителя НТ
-  description: Плащ, исплользуемый верхушкой Nanotrasen!
+  name: NanoTrasen representative cloack
+  description: The cloack, used by the top Nanotrasen.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/PNT-mantle.rsi
@@ -130,4 +130,4 @@
   - type: Sprite
     layers:
     - state: green
-    - state: captain
+    - state: dark_NanoTrasenRepresentative

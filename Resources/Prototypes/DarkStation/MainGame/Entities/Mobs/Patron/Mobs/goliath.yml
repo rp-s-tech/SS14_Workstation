@@ -1,0 +1,13 @@
+﻿- type: entity
+  id: MobSpGoliathPatron
+  parent: MobSpGoliath
+  categories: [ HideSpawnMenu ]
+  suffix: Pet
+  components:
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      collection: AlienClaw
+    damage:
+      groups:
+        Brute: 3

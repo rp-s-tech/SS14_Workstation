@@ -1,6 +1,6 @@
 #Тело Нуклеаций
 - type: body
-  name: "Нуклеация"
+  name: nucleation
   id: Nuclean
   root: torso
   slots:
@@ -68,8 +68,8 @@
 - type: entity
   id: OrganNucleanStomach
   parent: OrganHumanStomach
-  name: Желудок нуклеации
-  description: "Это трудно переварить."
+  name: nucleation stomach
+  description: It's hard to digest.
   components:
   - type: Sprite
     sprite: Mobs/Species/Nuclean/organs.rsi
@@ -84,7 +84,7 @@
 - type: entity
   id: OrganNucleanLiver
   parent: OrganHumanLiver
-  name: Печень нуклеации
+  name: nucleation liver
   components:
   - type: Sprite
     sprite: Mobs/Species/Nuclean/organs.rsi
@@ -98,8 +98,8 @@
 - type: entity
   id: OrganNucleanLungs
   parent: OrganHumanLungs
-  name: лёгкие нуклеации
-  description: "Отфильтровывает кислород из атмосферы, который затем поступает в кровоток для использования в качестве переносчика электронов."
+  name: nucleation lungs
+  description: Filters oxygen from the atmosphere, which then enters the bloodstream for use as an electron carrier.
   components:
   - type: Sprite
     sprite: Mobs/Species/Nuclean/organs.rsi
@@ -136,8 +136,8 @@
 - type: entity
   id: OrganNucleanKidneys
   parent: OrganHumanKidneys
-  name: почки нуклеации
-  description: "Отфильтровывает токсины и кристаллы из кровотока."
+  name: nucleation kidneys
+  description: Filters out toxins and crystals from the bloodstream.
   components:
   - type: Sprite
     sprite: Mobs/Species/Nuclean/organs.rsi
@@ -156,8 +156,8 @@
 - type: entity
   id: OrganNucleanBrain
   parent: OrganHumanBrain
-  name: мозг нуклеации
-  description: "Источник невероятного, бесконечного интеллекта. Заражён.."
+  name: nucleation brain
+  description: A source of incredible, infinite intelligence. Infected.
   components:
   - type: Sprite
     sprite: Mobs/Species/Nuclean/organs.rsi
@@ -198,8 +198,8 @@
 - type: entity
   id: OrganNucleanEyes
   parent: OrganHumanEyes
-  name: глаза нуклеации
-  description: "Вижу тебя! Несмотря на заражение, они сохранили свою главную функцию."
+  name: nucleation eyes
+  description: I see you! Despite the contamination, they have retained their primary function.
   components:
   - type: Sprite
     sprite: Mobs/Species/Nuclean/organs.rsi
@@ -214,7 +214,7 @@
 - type: entity
   id: PartNuclean
   parent: [BaseItem, BasePart]
-  name: "Часть тела нуклеации"
+  name: nucleation body part
   abstract: true
   components:
   - type: Sprite
@@ -227,7 +227,7 @@
 
 - type: entity
   id: TorsoNuclean
-  name: "Туловище нуклеации"
+  name: nucleation torso
   parent: [PartNuclean, BaseTorso]
   components:
   - type: Sprite
@@ -241,7 +241,7 @@
 
 - type: entity
   id: HeadNuclean
-  name: "Голова нуклеации"
+  name: nucleation head
   parent: [PartNuclean, BaseHead]
   components:
   - type: Sprite
@@ -255,7 +255,7 @@
 
 - type: entity
   id: LeftArmNuclean
-  name: "Левая рука нуклеации"
+  name: nucleation left arm
   parent: [PartNuclean, BaseLeftArm]
   components:
   - type: Sprite
@@ -264,7 +264,7 @@
 
 - type: entity
   id: RightArmNuclean
-  name: "Правая рука нуклеации"
+  name: nucleation right arm
   parent: [PartNuclean, BaseRightArm]
   components:
   - type: Sprite
@@ -273,7 +273,7 @@
 
 - type: entity
   id: LeftHandNuclean
-  name: "Левая рука нуклеации"
+  name: nucleation left hand
   parent: [PartNuclean, BaseLeftHand]
   components:
   - type: Sprite
@@ -282,7 +282,7 @@
 
 - type: entity
   id: RightHandNuclean
-  name: "Правая рука нуклеации"
+  name: nucleation right hand
   parent: [PartNuclean, BaseRightHand]
   components:
   - type: Sprite
@@ -291,7 +291,7 @@
 
 - type: entity
   id: LeftLegNuclean
-  name: "Левая нога нуклеации"
+  name: nucleation left leg
   parent: [PartNuclean, BaseLeftLeg]
   components:
   - type: Sprite
@@ -300,7 +300,7 @@
 
 - type: entity
   id: RightLegNuclean
-  name: "Правая нога нуклеации"
+  name: nucleation right leg
   parent: [PartNuclean, BaseRightLeg]
   components:
   - type: Sprite
@@ -309,7 +309,7 @@
 
 - type: entity
   id: LeftFootNuclean
-  name: "Левая нога нуклеации"
+  name: nucleation left foot
   parent: [PartNuclean, BaseLeftFoot]
   components:
   - type: Sprite
@@ -318,7 +318,7 @@
 
 - type: entity
   id: RightFootNuclean
-  name: "Правая нога нуклеации"
+  name: nucleation right foot
   parent: [PartNuclean, BaseRightFoot]
   components:
   - type: Sprite

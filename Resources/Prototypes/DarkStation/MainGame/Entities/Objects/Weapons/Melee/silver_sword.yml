@@ -1,8 +1,9 @@
 ﻿- type: entity
-  name: Серебряный меч
+  name: silver sword
   parent: BaseItem
   id: VampireHunterSword
-  suffix: VampireHunter
+  suffix: Vampire Hunter
+  description: A sword that all evil fears.
   components:
   - type: Sharp
   - type: Sprite

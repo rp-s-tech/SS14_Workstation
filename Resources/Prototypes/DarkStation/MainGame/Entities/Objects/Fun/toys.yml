@@ -1,8 +1,8 @@
 ﻿- type: entity
   id: Killawhale
   parent: BasePlushie
-  name: плюшевая касатка
-  description: большая и мягкая плюшевая косатка, жаль что не съедобная...
+  name: plushie killer whale
+  description: Big and soft plush killer whale, too bad it's not edible...
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Fun/killawhale.rsi

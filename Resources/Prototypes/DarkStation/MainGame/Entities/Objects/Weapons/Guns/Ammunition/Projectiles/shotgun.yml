@@ -1,6 +1,6 @@
 - type: entity
   id: PelletShotgunSalt
-  name: дробина (.50 соль)
+  name: pellet (.50 salt)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:

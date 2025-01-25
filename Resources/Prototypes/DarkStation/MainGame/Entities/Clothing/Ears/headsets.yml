@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingHeadsetAlt
   id: ClothingHeadsetAltPOCC
-  name: Гарнитура НШЦК
+  name: POCC headset
   components:
   - type: ContainerFill
     containers:
@@ -16,9 +16,9 @@
 - type: entity
   parent: ClothingHeadsetAlt
   id: ClothingHeadsetAltGrayJedi
-  suffix: Джедая
-  name: Гарнитура
-  description: Гарнитура Серого Джедая.
+  suffix: Jedi
+  name: headset
+  description: Grey Jedi Headset.
   components:
   - type: ContainerFill
     containers:
@@ -43,8 +43,8 @@
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetBlueShield
-  name: Гарнитура Синего Щита
-  description: Предоставляет доступ к связи по станции, так и с представителями центрального командования.
+  name: Blueshield Officer's headset
+  description: Provides access to both station communications and central command representatives.
   components:
   - type: ContainerFill
     containers:
@@ -59,7 +59,7 @@
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetIFD
-  name: Гарнитура ИФД
+  name: FD inspector headset
   components:
   - type: ContainerFill
     containers:

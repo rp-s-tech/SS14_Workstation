@@ -2,7 +2,7 @@
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   id: BulletAntiMaterielImproved
-  name: Пуля (.70 улучшенная антиматериальная)
+  name: bullet (.70 antiMateriel)
   components:
   - type: Projectile
     damageBodyParts: true

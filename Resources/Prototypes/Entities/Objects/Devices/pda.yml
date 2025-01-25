@@ -1145,10 +1145,11 @@
     id: ERTSecurityIDCard
 
 - type: entity
-  parent: ERTLeaderPDA
+  parent: BaseSecurityPDA
   id: CBURNPDA
   name: CBURN PDA
   description: Smells like rotten flesh.
+  suffix:
   components:
   - type: Pda
     id: CBURNIDcard
@@ -1156,6 +1157,22 @@
     borderColor: "#A32D26"
     accentHColor: "#447987"
     accentVColor: "#447987"
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - MedTekCartridge
+      - WantedListCartridge
+      - LogProbeCartridge
+      - AstroNavCartridge
+      - CrewMemberBankCartridge
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-ert
 
 - type: entity
   parent: BasePDA

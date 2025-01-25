@@ -1,14 +1,14 @@
 - type: entity
   parent: BaseItem
   id: CrewMemberBankCartridge
-  name: картридж банка
-  description: уведомление о зарплатах в одной программе
+  name: bank cartridge
+  description: A program that allows you to keep track of your bank account.
   components:
   - type: Sprite
     sprite: Objects/Devices/cartridge.rsi
     state: cart-y
   - type: Cartridge
-    programName: Тинькофф
+    programName: bank-program-name
     icon:
       sprite: Interface/Misc/program_icons.rsi
       state: crew_manifest

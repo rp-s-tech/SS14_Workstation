@@ -1,7 +1,7 @@
 ﻿- type: job
   id: SecurityBorg
-  name: СБ-Борг
-  description: Помогите отделу СБ в поимке преступников.
+  name: job-name-security-borg
+  description: job-description-security-borg
   playTimeTracker: JobSecurityBorg
   requirements:
   - !type:RoleTimeRequirement
@@ -16,7 +16,7 @@
 
 #СБ Борг
 - type: entity
-  name: СБ-Борг 001
+  name: SEC Borg 001
   id: MobSecurityBorg
   parent: BaseBorgChassisNT
   components:

@@ -1,8 +1,8 @@
 - type: entity
   parent: BasePDA
   id: POCCPDA
-  name: КПК НШЦК
-  description: Засекречено
+  name: POCC PDA
+  description: Secret...
   components:
   - type: Pda
     id: POCCIDCard
@@ -19,13 +19,21 @@
 - type: entity
   parent: BasePDA
   id: SecurityPilotPDA
-  name: КПК Пилота
-  description: Как оно связано с пилотами?
+  name: pilot PDA
+  description: What does it have to do with pilots?
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
     layers:
       - state: pda-securitypilot
+      - state: "light_overlay"
+        map: [ "enum.PdaVisualLayers.Flashlight" ]
+        shader: "unshaded"
+        visible: false
+      - state: "id_overlay"
+        map: [ "enum.PdaVisualLayers.IdLight" ]
+        shader: "unshaded"
+        visible: false
   - type: Pda
     id: SecurityPilotIDCard
     state: pda-securitypilot
@@ -38,13 +46,21 @@
 - type: entity
   parent: BasePDA
   id: BlueShieldOfficerPDA
-  name: КПК Офицера синего щита
-  description: Пахнет защитой
+  name: Blueshield Officer's PDA
+  description: Smells like protection.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
     layers:
       - state: pda-blueshield
+      - state: "light_overlay"
+        map: [ "enum.PdaVisualLayers.Flashlight" ]
+        shader: "unshaded"
+        visible: false
+      - state: "id_overlay"
+        map: [ "enum.PdaVisualLayers.IdLight" ]
+        shader: "unshaded"
+        visible: false
   - type: Pda
     id: BlueShieldOfficerIDCard
     state: pda-blueshield
@@ -55,16 +71,46 @@
 - type: entity
   parent: BasePDA
   id: IFDPDA
-  name: КПК Инспектора ФД
-  description: Пахнет огромной пачкой денег
+  name: finance department inspector PDA
+  description: Smells like a big wad of money.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Devices/ifd_pda.rsi
     layers:
       - state: pda-ifd
+      - state: "light_overlay"
+        map: [ "enum.PdaVisualLayers.Flashlight" ]
+        shader: "unshaded"
+        visible: false
+      - state: "id_overlay"
+        map: [ "enum.PdaVisualLayers.IdLight" ]
+        shader: "unshaded"
+        visible: false
   - type: Pda
     id: IFDIDCard
     state: pda-ifd
   - type: Icon
     sprite: DarkStation/MainGame/Objects/Devices/ifd_pda.rsi
     state: pda-ifd
+
+- type: entity
+  parent: ERTLeaderPDA
+  id: ERTReconPDA
+  name: ERT recon PDA
+  suffix: Recon
+  description: Red for firepower, it's so sneaky!
+  components:
+  - type: Pda
+    id: ERTReconIDCard
+
+- type: entity
+  parent: BasePDA
+  id: Security_KnightPDA
+  name: Stardust knight PDA
+  description: A PDA that lets you know you're not a regular security officer.
+  components:
+  - type: Pda
+    id: SecurityIDCard #Security_KnightIDCard
+    state: pda-knight
+  - type: Icon
+    state: pda-knight

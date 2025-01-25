@@ -1,9 +1,8 @@
 ﻿- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadUSSRCommanderBeret
-  name: Берет главы командира СССП
-  description: Берет
-  suffix: USSR
+  name: USSP commander beret
+  description: Simple beret and nothing else.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hats/USSR/commander_hat.rsi
@@ -13,9 +12,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadUSSRSolderBeret
-  name: Берет солдата СССП
-  description: Берет
-  suffix: USSR
+  name: USSP soldier beret
+  description: Simple beret and nothing else.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hats/USSR/solder_hat.rsi

@@ -43,3 +43,9 @@
   prefix: TELE
   minValue: 0
   maxValue: 999
+
+# RPSX slug cat
+- type: nameIdentifierGroup
+  id: SlugCat
+  minValue: 1
+  maxValue: 99

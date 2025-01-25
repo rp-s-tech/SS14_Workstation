@@ -2,7 +2,7 @@
   name: slug
   parent: SimpleMobBase
   id: MobDarkSlug
-  description: Большой, толстый слизняк размером с таракамоль. Ленивый, любит спать и воровать еду.
+  description: A big, fat slug about the size of a mothroach. Lazy, likes to sleep and steal food.
   components:
   - type: GhostRole
     makeSentient: true

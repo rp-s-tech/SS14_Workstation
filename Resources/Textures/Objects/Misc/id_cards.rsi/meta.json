@@ -35,6 +35,9 @@
         "name": "ert_security"
       },
       {
+        "name": "ert_recon"
+      },
+      {
         "name": "gold"
       },
       {

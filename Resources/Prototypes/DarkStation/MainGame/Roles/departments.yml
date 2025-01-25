@@ -1,14 +1,14 @@
 - type: department
   id: BlueShield
-  name: Синий Щит
-  description: Защита глав - наша задача!
+  name: department-BlueShield
+  description: department-BlueShield-description
   color: "#339FFF"
   roles:
   - BlueShieldOfficer
 
 - type: department
   id: LegalDepartment
-  name: Юридический отдел
+  name: department-LegalDepartment
   description: department-LegalDepartment-description
   color: "#5c4a41"
   weight: 10
@@ -18,8 +18,8 @@
 
 - type: department
   id: CrimsonLily
-  name: Багровая Лилия
-  description: Защита денег NanoTrasen и устранение угроз - первостепенная задача!
+  name: department-CrimsonLily
+  description: department-CrimsonLily-description
   color: "#990000"
   roles:
   - AgentCrimsonLily
@@ -28,8 +28,8 @@
 
 - type: department
   id: SpCentCommon
-  name: Центральное Командование
-  description: Надзор и управление, залог стабильности.
+  name: department-SpCentCommon
+  description: department-SpCentCommon-description
   color: "#00842e"
   roles:
   - SpNanoTrasenRepresentative

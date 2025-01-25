@@ -1,7 +1,7 @@
 - type: entity
   abstract: true
   id: ClothingMaskHardsuitBaseSam
-  name: Базовая маска
+  name: base mask
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite

@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingMaskBandanaBase
   id: SYBotanyHeadMask
-  name: бандана ботаника Синдиката
-  description: Сделано из смертокрапивы. Не верите? А зря.
+  name: syndicate botany bandana
+  description: It's made from deadly deathnettle. You don't believe me? You should.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Bandanas/taipanbotanybandana.rsi

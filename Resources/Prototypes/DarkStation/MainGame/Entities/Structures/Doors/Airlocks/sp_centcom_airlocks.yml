@@ -1,7 +1,6 @@
 - type: entity
   parent: HighSecDoor
   id: HighSecSpCentComLocked
-  name: бронированная дверь
   suffix: CentCom, Locked
   components:
   - type: AccessReader

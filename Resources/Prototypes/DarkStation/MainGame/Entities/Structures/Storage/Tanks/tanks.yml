@@ -1,8 +1,8 @@
 - type: entity
   id: DwarfBeerTank
   parent: StorageTank
-  name: бочка дворфийского пива
-  description: Бочка крафтого дворфийского пива. Кто знает, какой сорт плещется внутри?
+  name: barrel of dwarf beer
+  description: A keg of Kraft Dwarf beer. Who knows what kind of brew is brewing inside?
   suffix: Empty
   components:
     - type: Sprite
@@ -23,7 +23,7 @@
 - type: entity
   parent: DwarfBeerTank
   id: DwarfBeerTankFullCrunchyChaos
-  suffix: Хрустящий Хаос
+  suffix: Crunchy chaos
   components:
     - type: SolutionContainerManager
       solutions:
@@ -35,7 +35,7 @@
 - type: entity
   parent: DwarfBeerTank
   id: DwarfBeerTankFullPurpleFuzzblast
-  suffix: Фиолетовый Фаззбласт
+  suffix: Purple fuzzblast
   components:
     - type: SolutionContainerManager
       solutions:
@@ -47,7 +47,7 @@
 - type: entity
   parent: DwarfBeerTank
   id: DwarfBeerTankFullDeepDrifter
-  suffix: Глубокая Зыбучка
+  suffix: Deep drifter
   components:
     - type: SolutionContainerManager
       solutions:

@@ -24,9 +24,9 @@
 
 - type: reagent
   id: CrunchyChaos
-  name: хрустящий хаос
+  name: reagent-name-crunchy-chaos
   parent: BaseAlcohol
-  desc: Освежающий и бодрящий взрыв цитрусового заряда. Выбор настоящего разведчика.
+  desc: reagent-desc-crunchy-chaos
   physicalDesc: reagent-physical-desc-fizzy
   flavor: crunchychaos
   color: "#ffae0d"
@@ -69,9 +69,9 @@
 
 - type: reagent
   id: PurpleFuzzblast
-  name: фиолетовый фаззбласт
+  name: reagent-name-purple-fuzzblast
   parent: BaseAlcohol
-  desc: Одурманивающая лаванда, приправленная сладкой карамелью. Выбор настоящего инженера.
+  desc: reagent-desc-purple-fuzzblast
   physicalDesc: reagent-physical-desc-tangy
   flavor: purplefuzzblast
   color: "#7C5E99"

@@ -1,6 +1,6 @@
-ent-ClothingHeadUSSRCommanderBeret = Берет главы командира СССП
-    .desc = Берет
+ent-ClothingHeadUSSRCommanderBeret = берет главы командира СССП
+    .desc = Простой берет и ничего больше.
     .suffix = СССП
-ent-ClothingHeadUSSRSolderBeret = Берет солдата СССП
-    .desc = Берет
+ent-ClothingHeadUSSRSolderBeret = берет солдата СССП
+    .desc = Простой берет и ничего больше.
     .suffix = СССП

@@ -1,6 +1,6 @@
 ﻿- type: radioChannel
   id: Taipan
-  name: "Тайпан"
+  name: chat-radio-taipan
   keycode: 't'
   frequency: 1543
   color: "#a52626"
@@ -8,7 +8,7 @@
 
 - type: radioChannel
   id: CrimsonLily
-  name: Багровая Лилия
+  name: chat-radio-crimsonlily
   keycode: 'f'
   frequency: 7770
   color: "#990000"

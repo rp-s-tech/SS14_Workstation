@@ -1,8 +1,8 @@
 ﻿- type: entity
   id: MobSpGoliath
   parent: SimpleSpaceMobBase
-  name: "Лавовый голиаф"
-  description: "Чудное создание, родом из лаваленда."
+  name: lava goliath
+  description: A lovely creature from lavaland.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Mobs/Enemies/goliath.rsi

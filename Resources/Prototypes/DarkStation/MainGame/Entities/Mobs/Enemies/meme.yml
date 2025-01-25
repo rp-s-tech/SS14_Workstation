@@ -1,8 +1,8 @@
 - type: entity
-  name: Нечто
+  name: thing
   id: MobMeme
   parent: SimpleSpaceMobBase
-  description: Боже, что это?!
+  description: Oh, my God, what is that?!
   components:
     - type: ZombieImmune
     - type: Insulated

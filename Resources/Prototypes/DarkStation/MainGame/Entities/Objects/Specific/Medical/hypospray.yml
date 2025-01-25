@@ -1,8 +1,8 @@
 ﻿- type: entity
   id: ReusableMedipen
   parent: BaseItem
-  name: Многоразовый медипен
-  description: Секретная медицинская разработка. Позволяет пользоваться медипеном множество раз. Отличный вариант для испытаний лекарств или наркотиков...
+  name: reusable medipen
+  description: Secret medical development. Allows for multiple uses of the medipen. Great for drug or drug testing...
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/reusable_medipen.rsi

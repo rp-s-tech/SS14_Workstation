@@ -1,5 +1,5 @@
 ent-RandomHumanoidSpawnerERTRecon = ОБР Разведчик
-    .suffix = Роль ОБР, EVA, Лектер
+    .suffix = Роль ОБР, EVA, Barret
     .desc = { "" }
-ent-SpawnPointERTRecon = ERTRecon
+ent-SpawnPointERTRecon = ОБР Разведчик
     .desc = { ent-SpawnPointJobBase.desc }

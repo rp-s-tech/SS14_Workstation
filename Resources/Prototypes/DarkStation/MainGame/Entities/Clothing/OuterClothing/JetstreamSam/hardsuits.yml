@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitJetsteamSam
-  name: Костюм Реактивного Сэма.
-  description: Костюм некогда великого война, Сэма, данное чудо инженерной мысли повышает скорость владельца, ценой не самой высокой защиты, позволит выжить в лёгкой разгерметизации.
+  name: Jetstream Sam hardsuit
+  description: Hardsuit of the once great warrior, Sam, this marvel of engineering increases the wearer's speed, at the cost of not the highest protection, will allow survival in a light depressurization.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/JetstreamSam/Hardsuit.rsi
@@ -37,9 +37,9 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitJetsteamSamAdmeme
-  name: Костюм Реактивного Сэма.
+  name: Jetstream Sam hardsuit
   suffix: Адмемы
-  description: Костюм некогда великого война, Сэма, данное чудо инженерной мысли повышает скорость владельца, ценой не самой высокой защиты, позволит выжить в лёгкой разгерметизации.
+  description: Hardsuit of the once great warrior, Sam, this marvel of engineering increases the wearer's speed, at the cost of not the highest protection, will allow survival in a light depressurization.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/JetstreamSam/Hardsuit.rsi

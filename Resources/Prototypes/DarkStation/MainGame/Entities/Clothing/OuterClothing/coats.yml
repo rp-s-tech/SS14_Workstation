@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingChaplainCoat
-  name: Бронированная шинель капеллана
-  description: Шинель, укреплённая кевларовыми пластинами и оснащённая серебряными вставками для капеллана.
+  name: chaplain's armored coat
+  description: Overcoat reinforced with Kevlar plates and fitted with silver inserts for the chaplain.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/Coats/armchapcoat.rsi
@@ -15,18 +15,14 @@
         Slash: 0.70
         Piercing: 0.70
         Heat: 0.70
-        Fel: 0.4
-      securePartTypes:
-        Leg: 0.6
-        Arm: 0.6
   - type: ExplosionResistance
     damageCoefficient: 0.90
 
 - type: entity
   parent: ClothingOuterStorageBase
   id: BeelineBomber
-  name: пчелиный бомбер
-  description: Тёплый, уютный, пщщела наш друг!
+  name: bee bomber
+  description: Warm, cozy, beezz is our friend!
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/Coats/beeline.rsi
@@ -36,8 +32,8 @@
 - type: entity
   parent: ClothingOuterBaseLarge
   id: ClothingOuterRainCoat
-  name: Дождевик
-  description: Этот дождевик спасёт вас в плохую погоду.
+  name: raincoat
+  description: This raincoat will save you in bad weather.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/Coats/raincoat.rsi
@@ -73,8 +69,8 @@
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatSecPilot
-  name: Бомбер пилота
-  description: Бомбер настоящего покорителя космоса!
+  name: pilot bomber
+  description: The bomber of a true space conqueror!
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/Coats/sbpilotbomber.rsi
@@ -84,8 +80,8 @@
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatSecurityInstructor
-  name: Пальто инструктора Службы Безопастности
-  description: Модное пальтишко для модного инструктора.
+  name: security instructor coat
+  description: A fancy coat for a fancy instructor.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/Coats/isbcoat.rsi
@@ -95,8 +91,8 @@
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatKnight
-  name: Пальто Звёздной-пыли
-  description: Легендарное пальто безарного война, говорят именно в нём первый рыцарь звёздной пыли прибыл на станцию.
+  name: Stardust knight coat
+  description: The legendary coat of the bizarre warrior, it is said to be the one in which the first knight of Stardust arrived on the station.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/Coats/security_knight.rsi
@@ -119,8 +115,8 @@
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatBlueShield
-  name: Бронированная шинель Синего Щита
-  description: Теперь на 0.01% больше защиты!
+  name: Blueshield Officer's armored coat
+  description: Now there's 0.01% more defense!
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/Coats/blueshield.rsi
@@ -142,9 +138,8 @@
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatIFD
-  name: Кофта-бомбер ИФД
-  suffix: SFD
-  description: Уютная и теплая кофта блюстителя денежного порядка.
+  name: FD inspector bomber coat
+  description: The cozy and warm clothing of the guardian of monetary order.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/Coats/ifd.rsi
@@ -154,9 +149,8 @@
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatSpFinDepFormal
-  name: Пальто финансового департамента.
-  description: Лучшее одеяние как для защиты, так и для отображения силы.
-  suffix: SFD
+  name: finance department coat
+  description: The best garment for both protection and display of power.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/findep_formal.rsi
@@ -166,8 +160,8 @@
 - type: entity
   parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, ClothingOuterArmorBasic]
   id: ClothingOuterCoatVergil
-  name: плащ Тёмного Ангела
-  description: Этот плащ, с узором, напоминающим змею, создаёт впечатление надвигающейся бури.
+  name: dark angel cloak
+  description: This cloak, with its snake-like pattern, gives the impression of an approaching storm.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/Coats/vergil_coat.rsi

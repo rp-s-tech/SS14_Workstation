@@ -26,7 +26,7 @@ holopad-window-access-denied = Доступ запрещен
 holopad-window-select-contact-from-list = Выберите контакт для вызова
 holopad-window-fetching-contacts-list = Нет доступных для связи голографических устройств
 holopad-window-contact-label = { CAPITALIZE($label) }
-holopad-window-filter-line-placeholder = Search for a contact
+holopad-window-filter-line-placeholder = Поиск голопада
 # Flavor
 holopad-window-flavor-left = ⚠ Не входить, когда проектор активен
 holopad-window-flavor-right = v3.0.9
@@ -70,7 +70,7 @@ holopad-science-rnd = Научный - НИО
 holopad-science-front = Научный - Фронтальная часть
 holopad-science-breakroom = Научный - Комната отдыха
 # Medical
-holopad-medical-medbay = Медицинский - Медпункт
+holopad-medical-medbay = Медицинский - Холл
 holopad-medical-chemistry = Медицинский - Химия
 holopad-medical-cryopods = Медицинский - Криокапсулы
 holopad-medical-morgue = Медицинский - Морг
@@ -79,7 +79,7 @@ holopad-medical-paramedic = Медицинский - Парамедик
 holopad-medical-virology = Медицинский - Вирусология
 holopad-medical-front = Медицинский - Фронтальная часть
 holopad-medical-breakroom = Медицинский - Комната отдыха
-holopad-medical-clinic = Medical - Clinic
+holopad-medical-clinic = Медицинский  - Клиника
 # Cargo
 holopad-cargo-front = Грузовой - Фронтальная часть
 holopad-cargo-bay = Грузовой - Грузовой отсек

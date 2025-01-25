@@ -1,8 +1,8 @@
 - type: entity
-  name: Ямато
+  name: Yamato
   parent: BaseItem
   id: VergilYamato
-  description: Невероятно острый клинок, похожий на катану, по легендам способный разделять надвое сами души живых существ.
+  description: An incredibly sharp katana-like blade, legend has it that can split the very souls of living beings in two.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Weapons/Melee/yamato.rsi

@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: ClothingUniformBase
   id: SYChefSuit
-  name: комбинезон повара Синдиката
-  description: Испачкано кровью. Не факт, что животных.
+  name: syndicate chef's jumpsuit
+  description: It's stained with blood. Not necessarily animal blood.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/taipanchefsuit.rsi
@@ -12,8 +12,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: SYBotanySuit
-  name: комбинезон ботаника Синдиката
-  description: Думаю, этот гатфрукт вырос достаточно больши...
+  name: syndicate botany jumpsuit
+  description: I think this gatfruit has grown quite lar...
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/taipanbotanysuit.rsi
@@ -23,8 +23,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: SYCargoSalvageSpecialistSuit
-  name: комбинезон снабжения Синдиката
-  description: Рабочая форма космических разборочных бригад Синдиката. Как вы думаете, из-за кого вы встречаете так много рабочих частей станций NT в космосе?
+  name: syndicate supply jumpsuit
+  description: Work uniforms of the Syndicate's space demolition crews. Who do you think is the reason you encounter so many working parts of NT stations in space?
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/taipansalvagespec.rsi

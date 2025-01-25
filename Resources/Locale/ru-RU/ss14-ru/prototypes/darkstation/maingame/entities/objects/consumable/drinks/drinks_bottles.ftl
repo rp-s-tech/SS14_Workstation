@@ -1,7 +1,7 @@
 
 ent-DrinkSaintWaterJug = кувшин святой воды
-    .desc = Отпугивает темные силы
+    .desc = Отпугивает темные силы.
 ent-DrinkBaltika9BottleFull = бутылка балтики 9
     .desc = То самое легендарное крепкое пиво, производящее по неизменному оригинальному рецепту.
-ent-DrinkShalnayaPulyaBottleFull = Шальная Пуля
+ent-DrinkShalnayaPulyaBottleFull = шальная Пуля
     .desc = Элитный напиток созданный из текилы и качественного сусального серебра 999 пробы.

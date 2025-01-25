@@ -4,6 +4,8 @@
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: Nanotrasen_green
+  jobName: JobCentralCommandOfficial
+
 
 - type: jobIcon
   parent: JobIcon
@@ -11,6 +13,7 @@
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: Nanotrasen_brown
+  jobName: job-name-fin-dep-inspector
 
 - type: jobIcon
   parent: JobIcon
@@ -18,6 +21,7 @@
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: IAA
+  jobName: job-name-iaa
 
 - type: jobIcon
   parent: JobIcon
@@ -25,13 +29,7 @@
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: CargoLogistician
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconOperativeCrimsonLily
-  icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: OperativeCrimsonLily
+  jobName: job-name-logistician
 
 - type: jobIcon
   parent: JobIcon
@@ -39,20 +37,21 @@
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: KnightofStardust
+  jobName: job-name-security-knight
 
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconSurger
-  icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: Surger
+# - type: jobIcon
+#   parent: JobIcon
+#   id: JobIconSurger
+#   icon:
+#     sprite: /Textures/Interface/Misc/job_icons.rsi
+#     state: Surger
 
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconPathologist
-  icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: JobIconPathologist
+# - type: jobIcon
+#   parent: JobIcon
+#   id: JobIconPathologist
+#   icon:
+#     sprite: /Textures/Interface/Misc/job_icons.rsi
+#     state: JobIconPathologist
 
 - type: jobIcon
   parent: JobIcon
@@ -60,6 +59,7 @@
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: BlueShield
+  jobName: job-name-blueshield
 
 - type: jobIcon
   parent: JobIcon
@@ -67,6 +67,7 @@
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: AgentCrimsonLily
+  jobName: job-name-crimson-lily-agent
 
 - type: jobIcon
   parent: JobIcon
@@ -74,6 +75,7 @@
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: SecurityBorg
+  jobName: job-name-security-borg
 
 - type: jobIcon
   parent: JobIcon
@@ -81,13 +83,15 @@
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: Pocc
+  jobName: job-name-POCC
 
 - type: jobIcon
   parent: JobIcon
-  id: "JobIconArmoredChaplain"
+  id: JobIconArmoredChaplain
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: ArmoredChaplain
+  jobName: job-name-armored-chaplain
 
 - type: jobIcon
   parent: JobIcon
@@ -95,3 +99,4 @@
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: SecurityPilot
+  jobName: job-name-pilot

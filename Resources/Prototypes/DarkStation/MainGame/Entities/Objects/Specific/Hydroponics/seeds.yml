@@ -1,6 +1,6 @@
 ﻿- type: entity
   parent: SeedBase
-  name: пакет семян чайного дерева
+  name: packet of tea tree seeds
   id: TeahydroSeeds
   components:
   - type: Seed
@@ -10,7 +10,7 @@
 
 - type: entity
   parent: SeedBase
-  name: пакет семян блюспейс помидора
+  name: packet of bluespace tomato seeds
   id: BlueSpaceTomatoSeeds
   components:
   - type: Seed
@@ -20,7 +20,7 @@
 
 - type: entity
   parent: SeedBase
-  name: пакет семян мыльного куста
+  name: packet of soap tree seeds
   id: SoapTreeSeeds
   components:
   - type: Seed

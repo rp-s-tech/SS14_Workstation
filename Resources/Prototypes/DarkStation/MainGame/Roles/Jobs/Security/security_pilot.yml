@@ -1,7 +1,7 @@
 - type: job
   id: SecurityPilot
-  name: Пилот Службы Безопасности
-  description: Пилот челнока Службы Безопасности
+  name: job-name-pilot
+  description: job-description-pilot
   playTimeTracker: JobSecurityPilot
   requirements:
   - !type:DepartmentTimeRequirement

@@ -97,38 +97,38 @@
   #  # - Inventory # Corvax-Loadouts
 
 #Surgery
-- type: roleLoadout
-  id: JobSurger
-  groups:
-  - MedicalDoctorHead
-  - MedicalMask
-  - MedicalDoctorJumpsuit
-  - MedicalGloves
-  - MedicalBackpack
-  - MedicalDoctorOuterClothing
-  - MedicalShoes
-  - MedicalDoctorPDA
-  - Glasses
-  - SurvivalMedical
-  - GroupSpeciesBreathToolMedical
-  - Trinkets
+# - type: roleLoadout
+#   id: JobSurger
+#   groups:
+#   - MedicalDoctorHead
+#   - MedicalMask
+#   - MedicalDoctorJumpsuit
+#   - MedicalGloves
+#   - MedicalBackpack
+#   - MedicalDoctorOuterClothing
+#   - MedicalShoes
+#   - MedicalDoctorPDA
+#   - Glasses
+#   - SurvivalMedical
+#   - GroupSpeciesBreathToolMedical
+#   - Trinkets
 #  # - Inventory # Corvax-Loadouts
 
 #Pathologist
-- type: roleLoadout
-  id: JobPathologist
-  groups:
-  - MedicalDoctorHead
-  - MedicalMask
-  - MedicalDoctorJumpsuit
-  - MedicalGloves
-  - MedicalBackpack
-  - MedicalDoctorOuterClothing
-  - MedicalShoes
-  - Glasses
-  - SurvivalMedical
-  - GroupSpeciesBreathToolMedical
-  - Trinkets
+# - type: roleLoadout
+#   id: JobPathologist
+#   groups:
+#   - MedicalDoctorHead
+#   - MedicalMask
+#   - MedicalDoctorJumpsuit
+#   - MedicalGloves
+#   - MedicalBackpack
+#   - MedicalDoctorOuterClothing
+#   - MedicalShoes
+#   - Glasses
+#   - SurvivalMedical
+#   - GroupSpeciesBreathToolMedical
+#   - Trinkets
 
 #ABL
 - type: roleLoadout

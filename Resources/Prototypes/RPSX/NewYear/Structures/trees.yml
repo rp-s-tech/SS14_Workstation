@@ -1,7 +1,7 @@
 - type: entity
   id: DecoratedFirTreeRPSX
   parent: BaseStructure
-  name: Ёлочка
+  name: christmas tree
   components:
   - type: Sprite
     sprite: RPSX\NewYear\Structures\Trees.rsi\32x48.rsi
@@ -33,7 +33,6 @@
 - type: entity
   id: DecoratedFirTreeRPSX2
   parent: DecoratedFirTreeRPSX
-  name: Ёлочка   
   components:
   - type: Sprite
     layers:
@@ -42,7 +41,6 @@
 - type: entity
   id: DecoratedFirTreeRPSX3
   parent: DecoratedFirTreeRPSX
-  name: Ёлочка   
   components:
   - type: Sprite
     sprite: RPSX\NewYear\Structures\Trees.rsi\64x64.rsi
@@ -52,7 +50,6 @@
 - type: entity
   id: DecoratedFirTreeRPSX4
   parent: DecoratedFirTreeRPSX3
-  name: Ёлочка   
   components:
   - type: Sprite
     layers:

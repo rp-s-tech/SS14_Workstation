@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingBackpack
   id: ChaplainBackpack
-  name: Рюкзак капеллана
-  description: Вместительный рюкзак с серебряными вставками, созданный для капеллана.
+  name: chaplain's backpack
+  description: A roomy backpack with silver inserts designed for the chaplain.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Back/Backpacks/armchapbackpack.rsi
@@ -22,8 +22,8 @@
 - type: entity
   id: ClothingBackpackBlueShield
   parent: ClothingBackpack
-  name: Рюкзак Синего Щита
-  description: Универсальный рюкзак с шевроном Синего Щита.
+  name: Blueshield Officer's backpack
+  description: Versatile backpack with the BlueShield chevron.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Back/Backpacks/blueshield.rsi

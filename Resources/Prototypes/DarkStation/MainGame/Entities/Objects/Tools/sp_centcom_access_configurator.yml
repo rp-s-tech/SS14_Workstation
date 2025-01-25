@@ -1,8 +1,8 @@
 - type: entity
   parent: AccessConfigurator
   id: SpCentComAccessConfigurator
-  name: Конфигуратор доступов ЦентКом
-  description: Используется для изменения требований к уровню доступа к воздушным шлюзам и другим запираемым устройствам.
+  name: CenterCom access configurator
+  description: Used to modify access level requirements for airlocks and other lockable devices.
   components:
   - type: Clothing
     sprite: DarkStation/MainGame/Objects/Tools/centcom_access_configurator.rsi

@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitERTChaplainDark
-  name: Комбинезон капеллана
-  description: Комбинезон в тёмных тонах, обеспечивающий капеллану максимальный комфорт во время несения Света Божьего
+  name: chaplain's jumpsuit
+  description: A dark-colored jumpsuit that provides the chaplain with maximum comfort while carrying the Light of God.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/armoredchaplain.rsi
@@ -12,28 +12,19 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitERTRecon
-  name: Форма разведчика ОБР
-  description: Униформа специально разработанная для разведчиков ОБР.
+  name: ERT recon jumpsuit
+  description: Uniforms specially designed for ERT recon.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/ERTRecon/jumpsuit.rsi
   - type: Clothing
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/ERTRecon/jumpsuit.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.8
-      securePartTypes:
-        Leg: 0.75
-        Arm: 0.75
 
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitVampireHunter
-  name: Костюм охотника на вампиров
-  description: Пахнет чесноком
+  name: vampire hunter jumpsuit
+  description: Smells like garlic.
   suffix: VampireHunter
   components:
   - type: Sprite

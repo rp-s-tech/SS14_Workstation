@@ -1,2 +1,2 @@
-ent-BulletAntiMaterielImproved = Пуля (.70 улучшенная антиматериальная)
+ent-BulletAntiMaterielImproved = пуля (.70 антиматериальный)
     .desc = { ent-BaseBullet.desc }

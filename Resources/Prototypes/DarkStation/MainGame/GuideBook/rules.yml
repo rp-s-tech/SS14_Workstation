@@ -104,37 +104,44 @@
   text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule4.xml"
 
 - type: guideEntry
+  id: RPSXRule5
+  name: Правило 5
+  priority: 15
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule5.xml"
+
+- type: guideEntry
   id: RPSXRule6
   name: Правило 6
-  priority: 15
+  priority: 16
   ruleEntry: true
   text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule6.xml"
 
 - type: guideEntry
   id: RPSXRule7
   name: Правило 7
-  priority: 16
+  priority: 17
   ruleEntry: true
   text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule7.xml"
 
 - type: guideEntry
   id: RPSXRule8
   name: Правило 8
-  priority: 17
+  priority: 18
   ruleEntry: true
   text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule8.xml"
 
 - type: guideEntry
   id: RPSXRule9
   name: Правило 9
-  priority: 18
+  priority: 19
   ruleEntry: true
   text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule9.xml"
 
 - type: guideEntry
   id: RPSXRule10
   name: Правило 10
-  priority: 19
+  priority: 20
   ruleEntry: true
   text: "/ServerInfo/Guidebook/ServerRules/RPSX/Rule10.xml"
 

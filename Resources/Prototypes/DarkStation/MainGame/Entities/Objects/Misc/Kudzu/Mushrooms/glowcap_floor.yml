@@ -1,9 +1,9 @@
 - type: entity
   id: Glowcapf
-  name: Светокепы
+  name: glowcapf
   parent: BaseKudzu
-  suffix: DONTMAP, Пол
-  description: Грибы растущие на полу, которые освещающают окружение ещё сильнее
+  suffix: DONT MAP, tile
+  description: Mushrooms growing on the floor that light up the surroundings even more.
   components:
     - type: MeleeSound
       soundGroups:

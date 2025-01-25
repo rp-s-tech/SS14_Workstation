@@ -1,8 +1,8 @@
 ﻿- type: entity
-  name: Инжектор Звёздной-пыли
+  name: Stardust knight injector
   id: HoloparasiteInjectorKnight
   parent: BaseItem
-  description: A complex artwork of handheld machinery allowing the user to host a holoparasite guardian.
+  description: A sophisticated piece of artwork obtained from an enemy company, based on nanomachines, allowing the user to become the host of a dangerous holoparasite.
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/hypospray.rsi

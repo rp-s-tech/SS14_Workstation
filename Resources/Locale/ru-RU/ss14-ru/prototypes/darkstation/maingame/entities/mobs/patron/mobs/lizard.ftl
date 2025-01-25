@@ -4,3 +4,4 @@ ent-SpaceLizardAngry = { ent-BaseSpaceLizard }
     .desc = { ent-BaseSpaceLizard.desc }
 ent-SpaceLizardPatron = { ent-BaseSpaceLizard }
     .desc = { ent-BaseSpaceLizard.desc }
+    .suffix = Питомец

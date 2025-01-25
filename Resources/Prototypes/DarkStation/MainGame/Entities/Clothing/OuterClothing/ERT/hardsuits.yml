@@ -2,8 +2,8 @@
 - type: entity
   id: ClothingOuterHardsuitChaplain
   parent: ClothingOuterHardsuitSyndieCommander
-  name: Скафандр капеллана
-  description: Модифицированный скафандр ОБР, используемый для защиты капеллана в космической среде.
+  name: chaplain's spacesuit
+  description: A modified ERT spacesuit used to protect the chaplain in the space environment.
   components:
   - type: OnEquipFactionTrigger
     faction: NanoTrasen
@@ -21,8 +21,8 @@
   parent: ClothingHeadHardsuitWithLightBase
   id: ChaplainHardsuitHelmet
   categories: [ HideSpawnMenu ]
-  name: Шлем скафандра капеллана
-  description: Шлем для скафандра, разработанного для капелланов.
+  name: Chaplain's hardsuit helmet
+  description: Hardsuit helmet designed for chaplains.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/Head/Hardsuits/armchaprighelmgray.rsi
@@ -47,8 +47,8 @@
 - type: entity
   parent: [ ClothingOuterHardsuitBase, BaseToggleClothing ]
   id:  ClothingOuterHardsuitERTRecon
-  name: Скафандр ОБР разведчика
-  description: Скафандр ОБР разведчика, обладающий стелс технологией.
+  name: ERT recon hardsuit
+  description: ERT recon hardsuit with stealth technology.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/ERTRecon/hardsuit.rsi
@@ -64,6 +64,7 @@
   - type: ErtScoutSuit
   - type: ToggleClothing
     action: ActionTogglePhaseCloak
+    disableOnUnequip: true
   - type: ComponentToggler
     parent: true
     components:
@@ -72,6 +73,7 @@
       lastVisibility: 0
   - type: PowerCellDraw
     drawRate: 1.8 # 200 seconds on the default cell
+  - type: ToggleCellDraw
   - type: PowerCellSlot
     cellSlotId: cell_slot
     # throwing in a recharger would bypass glove charging mechanic
@@ -93,8 +95,8 @@
   parent: ClothingHeadHardsuitBase
   id: ClothingHeadHelmetHardsuitERTRecon
   categories: [ HideSpawnMenu ]
-  name: Шлем скафандра ОБР разведчика
-  description: Шлем обеспечивающий хорошую защиту головы разведчика.
+  name: ERT recon hardsuit helmet
+  description: A helmet that provides good protection for the scout's head.
   components:
   - type: Sprite
     sprite: DarkStation/MainGame/Clothing/OuterClothing/ERTRecon/hardsuithelmet.rsi
@@ -185,7 +187,6 @@
       securePartTypes:
         Leg: 0.3
         Arm: 0.3
-
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: ToggleableClothing

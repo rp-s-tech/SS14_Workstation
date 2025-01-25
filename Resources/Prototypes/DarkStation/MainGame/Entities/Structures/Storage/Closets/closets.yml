@@ -2,12 +2,12 @@
   id: SYWardrobeBase
   parent: ClosetBase
   abstract: true
-  description: Стандартное хранилище Синдиката для одежды и снаряжения.
+  description: Standard Syndicate storage for clothing and gear.
 
 - type: entity
   id: SYWardrobeCargo
   parent: SYWardrobeBase
-  name: гардероб снабжения Синдиката
+  name: Syndicate supply closet
   components:
   - type: Appearance
   - type: Sprite
@@ -20,7 +20,7 @@
 - type: entity
   id: SYWardrobeChef
   parent: SYWardrobeBase
-  name: гардероб повара Синдиката
+  name: Syndicate chef closet
   components:
   - type: Appearance
   - type: Sprite
@@ -33,7 +33,7 @@
 - type: entity
   id: SYWardrobeEngi
   parent: SYWardrobeBase
-  name: гардероб инженеров Синдиката
+  name: Syndicate engineers closet
   components:
   - type: Appearance
   - type: Sprite
@@ -46,7 +46,7 @@
 - type: entity
   id: SYWardrobeHydro
   parent: SYWardrobeBase
-  name: гардероб ботаников Синдиката
+  name: Syndicate botanic closet
   components:
   - type: Appearance
   - type: Sprite
@@ -59,7 +59,7 @@
 - type: entity
   id: SYWardrobeMed
   parent: SYWardrobeBase
-  name: гардероб медиков Синдиката
+  name: Syndicate medical closet
   components:
   - type: Appearance
   - type: Sprite
@@ -72,7 +72,7 @@
 - type: entity
   id: SYWardrobeOrange
   parent: SYWardrobeBase
-  name: оранжевый гардероб Синдиката
+  name: Syndicate orange closet
   components:
   - type: Appearance
   - type: Sprite
@@ -85,7 +85,7 @@
 - type: entity
   id: SYWardrobeRD
   parent: SYWardrobeBase
-  name: гардероб научрука Синдиката
+  name: Syndicate RD closet
   components:
   - type: Appearance
   - type: Sprite
@@ -98,7 +98,7 @@
 - type: entity
   id: SYWardrobeScience
   parent: SYWardrobeBase
-  name: гардероб учёных Синдиката
+  name: Syndicate scientist closet
   components:
   - type: Appearance
   - type: Sprite
@@ -111,7 +111,7 @@
 - type: entity
   id: SYWardrobeSecurity
   parent: SYWardrobeBase
-  name: гардероб охраны Синдиката
+  name: Syndicate security closet
   components:
   - type: Appearance
   - type: Sprite

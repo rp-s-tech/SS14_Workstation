@@ -1,8 +1,8 @@
 - type: entity
   parent: SimpleMobBase
   id: Capibara
-  name: Капибара Витя Текин
-  description: Дружелюбный питомец отдела SCP
+  name: capybara Vitya Tekin
+  description: The SCP department's friendly pet.
   components:
     - type: Sprite
       drawdepth: Mobs
@@ -35,7 +35,7 @@
       baseWalkSpeed : 4
       baseSprintSpeed : 4
     - type: ReplacementAccent
-      accent: capibaraAccent
+      accent: Capibara
     - type: Strippable
     - type: MobState
       allowedStates:
@@ -58,18 +58,12 @@
       allowMovement: true
       allowSpeech: true
       makeSentient: true
-      name: Капибара Витя Текин
-      description: Дружелюбный питомец отдела SCP
+      name: ghost-role-information-capibara-name
+      description: ghost-role-information-capibara-description
     - type: GhostTakeoverAvailable
 
-- type: accent
-  id: capibaraAccent
-  fullReplacements:
-  - Я капибара
-  - Капибара
-
 - type: entity
-  name: Спавнер капибары
+  name: capibara spawner
   id: SpawnMobCapibara
   parent: MarkerBase
   components:

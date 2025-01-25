@@ -1,8 +1,8 @@
 - type: entity
   id: SuppermatterHandbook
   parent: BaseItem
-  name: Книга о двигателе сверхматерии
-  description: Справочник о двигателе сверхматерии, написанный NanoTrasen.
+  name: book on the supermatter engine
+  description: A guide to the supermatter engine, written by NanoTrasen.
   components:
   - type: Sprite
     sprite: Objects/Misc/books.rsi

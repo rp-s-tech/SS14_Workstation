@@ -1,7 +1,7 @@
 ﻿- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadVampireHunter
-  name: Шляпа охотника на вампиров
+  name: vampire hunter hat
   suffix: VampireHunter
   components:
   - type: Sprite

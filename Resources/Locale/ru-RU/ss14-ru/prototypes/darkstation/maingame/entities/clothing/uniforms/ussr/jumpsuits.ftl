@@ -1,6 +1,6 @@
-ent-ClothingUniformJumpsuitCommanderUSSR = Шинель командира СССП
+ent-ClothingUniformJumpsuitCommanderUSSR = шинель командира СССП
     .desc = Смииир-но!
     .suffix = USSR
-ent-ClothingUniformJumpsuitSolderUSSR = Форма солдата СССП
+ent-ClothingUniformJumpsuitSolderUSSR = форма солдата СССП
     .desc = Союз не рушимый...
     .suffix = USSR
