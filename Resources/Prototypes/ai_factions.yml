@@ -53,6 +53,8 @@
   - Revolutionary
   - SimpleHostileNanoTrasen
   - Desecrate
+  - Ratvar
+  - NarsiCult
 
 #Hostile for everyone, but not PetsNT, Turret (for correct attack commands work, with personal pets)
 - type: npcFaction
@@ -70,6 +72,7 @@
   - Mouse
   - Ratvar
   - Desecrate
+  - NarsiCult
 
 - type: npcFaction
   id: SimpleNeutral
@@ -85,6 +88,8 @@
   - Zombie
   - SimpleHostile
   - Desecrate
+  - Ratvar
+  - NarsiCult
 
 - type: npcFaction
   id: Xeno
@@ -98,6 +103,8 @@
   - Revolutionary
   - SimpleHostileNanoTrasen
   - Desecrate
+  - Ratvar
+  - NarsiCult
 
 - type: npcFaction
   id: Zombie
@@ -111,6 +118,8 @@
   - Vampire
   - SimpleHostileNanoTrasen
   - Desecrate
+  - Ratvar
+  - NarsiCult
 
 - type: npcFaction
   id: Revolutionary
@@ -122,6 +131,8 @@
   - Vampire
   - SimpleHostileNanoTrasen
   - Desecrate
+  - Ratvar
+  - NarsiCult
 
 - type: npcFaction
   id: NarsiCult
@@ -166,6 +177,8 @@
   - SimpleHostileNanoTrasen
   - Desecrate
   - Dragon
+  - Ratvar
+  - NarsiCult
 
 - type: npcFaction
   id: Desecrate
@@ -180,3 +193,5 @@
   - SimpleHostileNanoTrasen
   - Vampire
   - Dragon
+  - Ratvar
+  - NarsiCult
