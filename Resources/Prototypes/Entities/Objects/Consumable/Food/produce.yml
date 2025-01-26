@@ -2186,7 +2186,7 @@
         - ReagentId: Vitamin
           Quantity: 4
   - type: Sprite
-    sprite: Objects/Specific/Hydroponics/berries.rsi
+    sprite: Exodus/Objects/Specific/Hydroponics/blueberry.rsi # Exodus-Resprite
   - type: Produce
     seedId: berries
   - type: Extractable

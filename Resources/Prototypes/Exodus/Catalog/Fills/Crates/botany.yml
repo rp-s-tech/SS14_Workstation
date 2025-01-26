@@ -1,0 +1,16 @@
+- type: entity
+  id: CrateHydroponicsSeedsFlower
+  parent: CrateHydroponics
+  name: flower seeds chest
+  description: some seeds for beauty lovers
+  components:
+  - type: StorageFill
+    contents:
+      - id: LilieSeeds
+        amount: 2
+      - id: SunflowerSeeds
+        amount: 2
+      - id: RoseSeeds
+        amount: 2
+      - id: FieldFlowersSeeds
+        amount: 2

@@ -622,7 +622,7 @@
     - type: Seed
       seedId: berries
     - type: Sprite
-      sprite: Objects/Specific/Hydroponics/berries.rsi
+      sprite: Exodus/Objects/Specific/Hydroponics/blueberry.rsi # Exodus-Resprite
 
 - type: entity
   parent: SeedBase
