@@ -1,0 +1,15 @@
+- type: entity
+  id: StimulantsImplanter
+  parent: BaseImplantOnlyImplanterSyndi
+  suffix: Stimulants
+  components:
+    - type: Implanter
+      implant: StimulantsImplant
+
+- type: entity
+  id: CombatInjectorImplanter
+  parent: BaseImplantOnlyImplanterSyndi
+  suffix: Combat Injector
+  components:
+    - type: Implanter
+      implant: CombatInjectorImplant

@@ -1,0 +1,30 @@
+- type: listing
+  id: UplinkStimulantsImplant
+  name: uplink-stimulants-implant-name
+  description: uplink-stimulants-implant-desc
+  productEntity: StimulantsImplanter
+  icon: { sprite: /Textures/Objects/Specific/Medical/medipen.rsi, state: stimpen }
+  cost:
+    Telecrystal: 8
+  categories:
+    - UplinkImplants
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
+    - !type:BuyerWhitelistCondition
+      blacklist:
+        components:
+          - SurplusBundle
+
+- type: listing
+  id: UplinkCombatInjectorImplant
+  name: uplink-combat-injector-implant-name
+  description: uplink-combat-injector-implant-desc
+  productEntity: CombatInjectorImplanter
+  icon: { sprite: /Textures/Objects/Specific/Medical/medipen.rsi, state: morphen }
+  cost:
+    Telecrystal: 8
+  categories:
+    - UplinkImplants
