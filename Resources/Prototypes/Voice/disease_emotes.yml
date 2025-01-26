@@ -3,6 +3,16 @@
   name: chat-emote-name-sneeze
   category: Vocal
   chatMessages: ["chat-emote-msg-sneeze"]
+  # Exodus-EmotesSounds-Start
+  chatTriggers:
+    - чихает
+    - чихнул
+    - чихнула
+    - пчихнул
+    - пчихнула
+    - апчи
+    - апчхи
+  # Exodus-EmotesSounds-End
 
 - type: emote
   id: Cough
@@ -19,13 +29,15 @@
   chatTriggers:
     - cough
     - coughs
-    - coughed 
-    - cough.
-    - coughs.
-    - coughed.
-    - cough!
-    - coughs!
-    - coughed!
+    - coughed
+    # Corvax-Localization-Start
+    - кашель
+    - кашляет
+    - кашлянул
+    # Corvax-Localization-End
+    # Exodus-Localization-Start
+    - кашлянула
+    # Exodus-Localization-End
 
 - type: emote
   id: CatMeow
@@ -38,6 +50,13 @@
   name: chat-emote-name-cathisses
   category: Vocal
   chatMessages: ["chat-emote-msg-cathisses"]
+  # Exodus-EmotesSounds-Start
+  available: false
+  chatTriggers:
+    - шипит
+    - шипение
+    - шикает
+  # Exodus-EmotesSounds-End
 
 - type: emote
   id: MonkeyScreeches
@@ -66,6 +85,14 @@
   chatTriggers:
     - yawn
     - yawns
+    # Corvax-Localization-Start
+    - зевок
+    - зевает
+    # Corvax-Localization-End
+    # Exodus-Localization-Start
+    - зевк
+    - зёвк
+    # Exodus-Localization-End
 
 - type: emote
   id: Snore
