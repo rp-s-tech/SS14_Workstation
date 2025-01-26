@@ -106,6 +106,8 @@
   #   understands:
   #   - GalacticCommon
   #   - Canilunzt
+  - type: TemperatureProtection # Exodus-MRP: Wool is a very good thermal insulator
+    coolingCoefficient: 0.1
 
 - type: entity
   save: false
