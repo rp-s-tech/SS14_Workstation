@@ -3,3 +3,13 @@
   name: Urist McVulp
   parent: [BaseMobVulpkanin, BaseMob]
   id: MobVulpkanin
+
+# RPSX edit start
+- type: entity
+  save: false
+  name: Urist McInfectedVulp
+  parent: [BaseMobVulpkanin, BaseMob]
+  id: MobInfectedVulpkanin
+  components:
+  - type: Vulpification
+# RPSX end

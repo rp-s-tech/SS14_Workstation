@@ -892,5 +892,37 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", superslipName, Loc.GetString("admin-smite-super-slip-description"))
         };
         args.Verbs.Add(superslip);
+
+        // RPSX edit start
+        var vulpkaninName = Loc.GetString("admin-smite-vulpkanin-species-swap-name").ToLowerInvariant();
+        Verb vulpkanin = new()
+        {
+            Text = vulpkaninName,
+            Category = VerbCategory.Smite,
+            Icon = new SpriteSpecifier.Rsi(new ("/Textures/Corvax/Mobs/Species/Vulpkanin/parts.rsi"), "head_icon_vulp"),
+            Act = () =>
+            {
+                _polymorphSystem.PolymorphEntity(args.Target, "AdminVulpkaninSmite");
+            },
+            Impact = LogImpact.Extreme,
+            Message = string.Join(": ", vulpkaninName, Loc.GetString("admin-smite-vulpkanin-species-swap-description"))
+        };
+        args.Verbs.Add(vulpkanin);
+
+        var infectedvulpkaninName = Loc.GetString("admin-smite-infected-vulpkanin-species-swap-name").ToLowerInvariant();
+        Verb infectedvulpkanin = new()
+        {
+            Text = infectedvulpkaninName,
+            Category = VerbCategory.Smite,
+            Icon = new SpriteSpecifier.Rsi(new ("/Textures/Corvax/Mobs/Species/Vulpkanin/parts.rsi"), "head_icon_infected_vulp"),
+            Act = () =>
+            {
+                _polymorphSystem.PolymorphEntity(args.Target, "AdminInfectedVulpkaninSmite");
+            },
+            Impact = LogImpact.Extreme,
+            Message = string.Join(": ", infectedvulpkaninName, Loc.GetString("admin-smite-infected-vulpkanin-species-swap-description"))
+        };
+        args.Verbs.Add(infectedvulpkanin);
+        // RPSX edit end
     }
 }

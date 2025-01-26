@@ -1,0 +1,23 @@
+﻿- type: polymorph
+  id: AdminVulpkaninSmite
+  configuration:
+    entity: MobVulpkanin
+    forced: true
+    transferName: true
+    transferHumanoidAppearance: false
+    inventory: Transfer
+    revertOnCrit: false
+    revertOnDeath: false
+    allowRepeatedMorphs: true
+
+- type: polymorph
+  id: AdminInfectedVulpkaninSmite
+  configuration:
+    entity: MobInfectedVulpkanin
+    forced: true
+    transferName: true
+    transferHumanoidAppearance: false
+    inventory: Transfer
+    revertOnCrit: false
+    revertOnDeath: false
+    allowRepeatedMorphs: true
