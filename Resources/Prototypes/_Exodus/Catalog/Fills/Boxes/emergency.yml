@@ -1,0 +1,101 @@
+- type: entity
+  parent: BoxSurvival
+  id: BoxSurvivalMechInjector
+  name: survival box
+  description: It's a box with basic internals inside.
+  suffix: Standard, Mech Injector
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskBreath
+    - id: EmergencyOxygenTankFilled
+    - id: MechanicalInjectorEpinephrine
+    - id: FoodSnackNutribrick
+    - id: DrinkWaterBottleFull
+
+- type: entity
+  id: BoxSurvivalEngineeringMechInjector
+  parent: BoxSurvivalEngineering
+  name: extended-capacity survival box
+  description: It's a box with basic internals inside. This one is labelled to contain an extended-capacity tank.
+  suffix: Extended, Mech Injector
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskBreath
+    - id: ExtendedEmergencyOxygenTankFilled
+    - id: MechanicalInjectorEpinephrine
+    - id: FoodSnackNutribrick
+    - id: DrinkWaterBottleFull
+
+- type: entity
+  id: BoxSurvivalSecurityMechInjector
+  parent: BoxSurvivalSecurity
+  name: survival box
+  description: It's a box with basic internals inside.
+  suffix: Security, Mech Injector
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskGasSecurity
+    - id: EmergencyOxygenTankFilled
+    - id: MechanicalInjectorEpinephrine
+    - id: FoodSnackNutribrick
+    - id: DrinkWaterBottleFull
+
+- type: entity
+  parent: BoxSurvivalMedical
+  id: BoxSurvivalMedicalMechInjector
+  name: survival box
+  description: It's a box with basic internals inside.
+  suffix: Medical, Mech Injector
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskBreathMedical
+    - id: EmergencyOxygenTankFilled
+    - id: MechanicalInjectorEpinephrine
+    - id: FoodSnackNutribrick
+    - id: DrinkWaterBottleFull
+
+- type: entity
+  parent: BoxMime
+  id: BoxMimeMechInjector
+  suffix: Mime, Emergency, Mech Injector
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskBreath
+    - id: EmergencyOxygenTankFilled
+    - id: MechanicalInjectorEpinephrine
+    - id: FoodBreadBaguette
+    - id: DrinkWaterBottleFull
+
+- type: entity
+  parent: BoxSurvivalSyndicate
+  id: BoxSurvivalSyndicateMechInjector
+  name: extended-capacity survival box
+  description: It's a box with basic internals inside. This one is labelled to contain an extended-capacity tank.
+  suffix: Syndicate, Mech Injector
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskGasSyndicate
+    - id: ExtendedEmergencyOxygenTankFilled
+    - id: MechanicalInjectorEpinephrine
+    - id: FoodSnackNutribrick
+
+- type: entity
+  parent: BoxHug
+  id: BoxHugMechInjector
+  name: box of hugs
+  description: A special box for sensitive people.
+  suffix: Emergency, Mech Injector
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskBreath
+    - id: EmergencyFunnyOxygenTankFilled
+    - id: MechanicalInjectorEpinephrine
+    - id: FoodSnackNutribrick
+    - id: DrinkWaterBottleFull
