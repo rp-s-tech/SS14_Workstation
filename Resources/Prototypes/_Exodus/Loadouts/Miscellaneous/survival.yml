@@ -1,0 +1,60 @@
+- type: loadoutEffectGroup
+  id: ThickSkinOxygenBreather
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Reptilian
+
+- type: loadout
+  id: EmergencyOxygenMechInjector
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ThickSkinOxygenBreather
+  storage:
+    back:
+    - BoxSurvivalMechInjector
+
+- type: loadout
+  id: EmergencyOxygenExtendedMechInjector
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ThickSkinOxygenBreather
+  storage:
+    back:
+    - BoxSurvivalEngineeringMechInjector
+
+- type: loadout
+  id: EmergencyOxygenSecurityMechInjector
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ThickSkinOxygenBreather
+  storage:
+    back:
+    - BoxSurvivalSecurityMechInjector
+
+- type: loadout
+  id: EmergencyOxygenMedicalMechInjector
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ThickSkinOxygenBreather
+  storage:
+    back:
+    - BoxSurvivalMedicalMechInjector
+
+- type: loadout
+  id: EmergencyOxygenClownMechInjector
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ThickSkinOxygenBreather
+  storage:
+    back:
+    - BoxHugMechInjector
+
+- type: loadout
+  id: EmergencyOxygenMimeMechInjector
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ThickSkinOxygenBreather
+  storage:
+    back:
+    - BoxMimeMechInjector

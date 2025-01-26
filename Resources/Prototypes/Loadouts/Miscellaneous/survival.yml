@@ -17,7 +17,7 @@
     - Dwarf
     - Human
     - Moth
-    - Reptilian
+    # - Reptilian # Exodus-ThickSyringes
     - Nucleation  # RPSX
 
 - type: loadoutEffectGroup

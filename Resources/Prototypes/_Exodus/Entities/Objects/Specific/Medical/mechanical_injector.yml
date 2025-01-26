@@ -66,3 +66,26 @@
       tags:
         - Syringe
         - ThickSyringe
+
+#region Prefilled
+- type: entity
+  parent: MechanicalInjector
+  id: PrefilledMechanicalInjector
+  components:
+  - type: Injector
+    toggleState: Inject
+
+- type: entity
+  suffix: epinephrine
+  parent: PrefilledMechanicalInjector
+  id: MechanicalInjectorEpinephrine
+  components:
+  - type: Label
+    currentLabel: reagent-name-epinephrine
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: Epinephrine
+          Quantity: 15
