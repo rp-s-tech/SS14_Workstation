@@ -58,6 +58,7 @@
   components:
   - type: MindRole
     antagPrototype: NarsiCultist
+    roleType: TeamAntagonist
   - type: NarsiCultRole
 
 - type: entity
@@ -102,6 +103,7 @@
   components:
   - type: MindRole
     antagPrototype: RatvarRighteous
+    roleType: TeamAntagonist
   - type: RatvarRole
 
 - type: entity
@@ -135,4 +137,5 @@
   components:
   - type: MindRole
     antagPrototype: Vampire
+    roleType: SoloAntagonist
   - type: VampireRole
