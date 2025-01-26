@@ -1,0 +1,7 @@
+- type: microwaveMealRecipe
+  id: RecipeSnackSemki
+  name: semki recipe
+  result: FoodSnackSemki
+  time: 5
+  solids:
+    SunflowerSeeds: 1

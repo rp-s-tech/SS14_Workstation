@@ -1,0 +1,43 @@
+- type: entity
+  parent: SeedBase
+  name: lilie seeds
+  id: LilieSeeds
+  components:
+  - type: Seed
+    seedId: lilie
+  - type: Sprite
+    sprite: Exodus/Objects/Specific/Hydroponics/lilie.rsi
+    state: seed
+
+- type: entity
+  parent: SeedBase
+  name: sunflower seeds
+  id: SunflowerSeeds
+  components:
+    - type: Seed
+      seedId: sunflower
+    - type: Sprite
+      sprite: Exodus/Objects/Specific/Hydroponics/sunflower.rsi
+      state: seed
+
+- type: entity
+  parent: SeedBase
+  name: rose seeds
+  id: RoseSeeds
+  components:
+    - type: Seed
+      seedId: rose
+    - type: Sprite
+      sprite: Exodus/Objects/Specific/Hydroponics/rose.rsi
+      state: seed
+
+- type: entity
+  parent: SeedBase
+  name: field flowers seeds
+  id: FieldFlowersSeeds
+  components:
+    - type: Seed
+      seedId: fieldflower
+    - type: Sprite
+      sprite: Exodus/Objects/Specific/Hydroponics/fieldflower.rsi
+      state: seed

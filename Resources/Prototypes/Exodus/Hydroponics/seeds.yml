@@ -1,0 +1,103 @@
+- type: seed
+  id: lilie
+  name: seeds-lilie-name
+  noun: seeds-noun-seeds
+  displayName: seeds-lilie-display-name
+  plantRsi: Exodus/Objects/Specific/Hydroponics/lilie.rsi
+  packetPrototype: LilieSeeds
+  productPrototypes:
+    - FlowerLilie
+  harvestRepeat: NoRepeat
+  lifespan: 55
+  maturation: 6
+  production: 3
+  yield: 3
+  potency: 10
+  idealLight: 6
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 10
+    Vitamin:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 25
+
+- type: seed
+  id: sunflower
+  name: seeds-sunflower-name
+  noun: seeds-noun-seeds
+  displayName: seeds-sunflower-display-name
+  plantRsi: Exodus/Objects/Specific/Hydroponics/sunflower.rsi
+  packetPrototype: SunflowerSeeds
+  productPrototypes:
+    - Sunflower
+  harvestRepeat: NoRepeat
+  lifespan: 55
+  maturation: 6
+  production: 3
+  yield: 3
+  potency: 10
+  idealLight: 6
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 10
+    Vitamin:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 25
+
+- type: seed
+  id: rose
+  name: seeds-rose-name
+  noun: seeds-noun-seeds
+  displayName: seeds-rose-display-name
+  plantRsi: Exodus/Objects/Specific/Hydroponics/rose.rsi
+  packetPrototype: RoseSeeds
+  productPrototypes:
+    - FlowerRose
+  harvestRepeat: NoRepeat
+  lifespan: 55
+  maturation: 6
+  production: 3
+  yield: 3
+  potency: 10
+  idealLight: 6
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 10
+    Vitamin:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 25
+
+- type: seed
+  id: fieldflower
+  name: seeds-fieldflower-name
+  noun: seeds-noun-seeds
+  displayName: seeds-fieldflower-display-name
+  plantRsi: Exodus/Objects/Specific/Hydroponics/fieldflower.rsi
+  packetPrototype: FieldFlowersSeeds
+  productPrototypes:
+    - FieldFlower
+  harvestRepeat: NoRepeat
+  lifespan: 55
+  maturation: 6
+  production: 3
+  yield: 3
+  potency: 10
+  idealLight: 6
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 10
+    Vitamin:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 25

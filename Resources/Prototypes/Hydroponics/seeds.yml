@@ -1709,7 +1709,7 @@
   name: seeds-berries-name
   noun: seeds-noun-seeds
   displayName: seeds-berries-display-name
-  plantRsi: Objects/Specific/Hydroponics/berries.rsi
+  plantRsi: Exodus/Objects/Specific/Hydroponics/blueberry.rsi # Exodus-Resprite
   packetPrototype: BerrySeeds
   productPrototypes:
     - FoodBerries

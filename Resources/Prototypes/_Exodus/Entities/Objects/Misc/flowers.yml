@@ -1,0 +1,59 @@
+- type: entity
+  name: lilie
+  parent: BaseItem
+  id: FlowerLilie
+  description: Hmm, smells good!
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Specific/Hydroponics/lilie.rsi
+    state: flower
+    scale: 0.6,0.6
+  - type: Item
+    heldPrefix: flower
+  - type: Produce
+    seedId: lilie
+
+- type: entity
+  name: sunflower
+  parent: BaseItem
+  id: Sunflower
+  description: Like a little sun!
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Specific/Hydroponics/sunflower.rsi
+    state: flower
+    scale: 0.6,0.6
+  - type: Item
+    heldPrefix: flower
+  - type: Produce
+    seedId: sunflower
+
+- type: entity
+  name: rose
+  parent: BaseItem
+  id: FlowerRose
+  description: Red, like a spilled blood...
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Specific/Hydroponics/rose.rsi
+    state: flower
+    scale: 0.6,0.6
+  - type: Item
+    heldPrefix: flower
+  - type: Produce
+    seedId: rose
+
+- type: entity
+  name: field flowers
+  parent: BaseItem
+  id: FieldFlower
+  description: Allergic's nightmare
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Specific/Hydroponics/fieldflower.rsi
+    state: flower
+    scale: 0.6,0.6
+  - type: Item
+    heldPrefix: flower
+  - type: Produce
+    seedId: fieldflower
