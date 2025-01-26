@@ -103,6 +103,7 @@
     actionPrototype: DionaGibAction
     allowedStates:
     - Dead
+  - type: NoSlip # Exodus-MRP
   - type: Inventory
     templateId: diona
     femaleDisplacements:
