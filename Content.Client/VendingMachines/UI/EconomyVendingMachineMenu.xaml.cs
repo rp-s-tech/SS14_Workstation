@@ -7,6 +7,7 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
+using Content.Shared.IdentityManagement;
 
 namespace Content.Client.VendingMachines.UI
 {
@@ -14,6 +15,7 @@ namespace Content.Client.VendingMachines.UI
     public sealed partial class EconomyVendingMachineMenu : FancyWindow
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+        [Dependency] private readonly IEntityManager _entityManager = default!;
 
         public event Action<ItemList.ItemListSelectedEventArgs>? OnItemSelected;
 
@@ -110,21 +112,24 @@ namespace Content.Client.VendingMachines.UI
                 vendingItem.Text = string.Empty;
                 vendingItem.Icon = null;
 
-                (var itemName, Texture? icon) = GetItemNameAndIcon(entry.ID, spriteSystem);
+                (var item, Texture? icon) = GetItemNameAndIcon(entry.ID, spriteSystem);
+                var dummy = _entityManager.Spawn(entry.ID);
+                var itemName = Identity.Name(dummy, _entityManager);
+                var itemText = $"{itemName} [{entry.Amount}]";
 
                 // search filter
                 if (!string.IsNullOrEmpty(filter) &&
-                    !itemName.ToLowerInvariant().Contains(filter.Trim().ToLowerInvariant()))
+                    !itemText.ToLowerInvariant().Contains(filter.Trim().ToLowerInvariant()))
                 {
                     VendingContents.Remove(vendingItem);
                     filterCount++;
                     continue;
                 }
 
-                if (itemName.Length > longestEntry.Length)
-                    longestEntry = itemName;
+                if (itemText.Length > longestEntry.Length)
+                    longestEntry = itemText;
 
-                vendingItem.Text = $"{itemName}";
+                vendingItem.Text = $"{itemText}";
                 vendingItem.Icon = icon;
                 filteredInventory.Add(i);
             }
