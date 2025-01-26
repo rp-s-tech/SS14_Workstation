@@ -1,0 +1,4 @@
+- files: ["f_sneeze.ogg", "m_sneeze.ogg", "roar.ogg", "roar2.ogg", "roar3.ogg", "rumble.ogg", "rumble2.ogg", "threat.ogg", "threat2.ogg", "whip_short.ogg", "whip.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from Paradise SS13"
+  source: "https://github.com/ss220-space/Paradise/pull/2973"

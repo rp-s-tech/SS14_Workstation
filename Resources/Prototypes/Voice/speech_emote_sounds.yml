@@ -92,6 +92,14 @@
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
     Laugh:
       path: /Audio/Animals/lizard_happy.ogg
+    # Exodus-EmotesSounds-Start
+    Sneeze:
+      path: /Audio/Exodus/Voice/Reptilian/m_sneeze.ogg
+    Growl:
+      collection: ReptilianGrowl
+    Rumble:
+      collection: ReptilianRumble
+    # Exodus-EmotesSounds-End
     Honk:
       collection: BikeHorn
     Whistle:
@@ -116,6 +124,14 @@
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
     Laugh:
       path: /Audio/Animals/lizard_happy.ogg
+    # Exodus-EmotesSounds-Start
+    Sneeze:
+      path: /Audio/Exodus/Voice/Reptilian/f_sneeze.ogg
+    Growl:
+      collection: ReptilianGrowl
+    Rumble:
+      collection: ReptilianRumble
+    # Exodus-EmotesSounds-End
     Honk:
       collection: BikeHorn
     Whistle:
