@@ -11,6 +11,12 @@
             "name": "full"
         },
         {
+            "name": "head_icon_vulp"
+        },
+        {
+            "name": "head_icon_infected_vulp"
+        },
+        {
             "name": "head_f",
             "directions": 4
         },
