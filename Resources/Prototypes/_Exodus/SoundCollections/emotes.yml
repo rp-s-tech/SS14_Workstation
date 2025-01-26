@@ -1,0 +1,15 @@
+#region Reptilian
+- type: soundCollection
+  id: ReptilianGrowl
+  files:
+    - /Audio/Exodus/Voice/Reptilian/roar.ogg
+    - /Audio/Exodus/Voice/Reptilian/roar2.ogg
+    - /Audio/Exodus/Voice/Reptilian/roar3.ogg
+    - /Audio/Exodus/Voice/Reptilian/threat.ogg
+    - /Audio/Exodus/Voice/Reptilian/threat2.ogg
+
+- type: soundCollection
+  id: ReptilianRumble
+  files:
+    - /Audio/Exodus/Voice/Reptilian/rumble.ogg
+    - /Audio/Exodus/Voice/Reptilian/rumble2.ogg

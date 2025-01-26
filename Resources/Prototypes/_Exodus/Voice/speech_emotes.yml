@@ -1,0 +1,8 @@
+- type: emote
+  id: Rumble
+  name: chat-emote-name-rumble
+  category: Vocal
+  available: false
+  chatMessages: [урчит]
+  chatTriggers:
+    - урчит
