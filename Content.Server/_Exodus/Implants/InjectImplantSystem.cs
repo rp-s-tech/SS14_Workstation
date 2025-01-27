@@ -14,7 +14,6 @@ using Content.Shared.Popups;
 
 namespace Content.Server.Exodus.Implants
 {
-
     public sealed partial class InjectImplantSystem : EntitySystem
     {
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
@@ -83,26 +82,30 @@ namespace Content.Server.Exodus.Implants
                 return;
             var user = implantComp.ImplantedEntity.Value;
 
+            var solution = GetSolutionToInject(component.InjectSolutions);
 
-            // Geting inject solutions form many avaible solutions
-            if (component.InjectSolutions.Count == 0)
+            if (solution is null)
             {
                 _popup.PopupEntity(Loc.GetString("inject-trigger-empty-message"), user, user);
                 return;
             }
 
-            foreach (var solData in component.InjectSolutions)
-            {
-                if (solData.UsedCount >= solData.Charges)
-                    continue;
-
-                InjectSolution(user, (uid, component), solData.Name, solData.TransferAmount);
-                solData.UsedCount += 1;
-                break;
-            }
-
+            InjectSolution(user, (uid, component), solution.Name, solution.TransferAmount);
+            solution.UsedCount += 1;
             args.Handled = true;
         }
 
+        private InjectSolutionData? GetSolutionToInject(List<InjectSolutionData> solutions)
+        {
+            foreach (var data in solutions)
+            {
+                if (data.UsedCount >= data.Charges)
+                    continue;
+
+                return data;
+            }
+
+            return null;
+        }
     }
 }
