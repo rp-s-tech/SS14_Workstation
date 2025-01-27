@@ -1,6 +1,7 @@
 - type: emote
   id: Rumble
   name: chat-emote-name-rumble
+  icon: RPSX/Interface/Actions/emotes.rsi/rumble.png
   category: Vocal
   available: false
   chatMessages: [урчит]
