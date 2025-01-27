@@ -1,0 +1,37 @@
+- type: emote
+  id: Whines
+  name: chat-emote-name-whines
+  category: Vocal
+  available: false
+  icon: RPSX/Interface/Actions/emotes.rsi/whines.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-whines"]
+  chatTriggers:
+  - скулит
+  - скулить
+
+- type: emote
+  id: Barking
+  name: chat-emote-name-barking
+  category: Vocal
+  available: false
+  icon: RPSX/Interface/Actions/emotes.rsi/barking.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-barking"]
+  chatTriggers:
+  - лает
+  - лаять
+  - гав
+  - гаф
+  - тяф
+  - лай

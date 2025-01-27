@@ -1,0 +1,128 @@
+- type: marking
+  id: VulpGradientLeftArm
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: RPSX/Mobs/Customization/vulpkanin.rsi
+    state: gradient_l_arm
+
+- type: marking
+  id: VulpGradientRightArm
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: RPSX/Mobs/Customization/vulpkanin.rsi
+    state: gradient_r_arm
+
+- type: marking
+  id: VulpGradientLeftLeg
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: RPSX/Mobs/Customization/vulpkanin.rsi
+    state: gradient_l_leg
+
+- type: marking
+  id: VulpGradientRightLeg
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: RPSX/Mobs/Customization/vulpkanin.rsi
+    state: gradient_r_leg
+
+- type: marking
+  id: VulpGradientLeftFoot
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: RPSX/Mobs/Customization/vulpkanin.rsi
+    state: gradient_l_foot
+
+- type: marking
+  id: VulpGradientRightFoot
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: RPSX/Mobs/Customization/vulpkanin.rsi
+    state: gradient_r_foot
+
+- type: marking
+  id: VulpGradientLeftHand
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: RPSX/Mobs/Customization/vulpkanin.rsi
+    state: gradient_l_hand
+
+- type: marking
+  id: VulpGradientRightHand
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: RPSX/Mobs/Customization/vulpkanin.rsi
+    state: gradient_r_hand
+
+
+
+
+
+
+- type: marking
+  id: FoxEarCroppedL
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: RPSX/Mobs/Customization/vulpkanin.rsi
+      state: vulp_ear_cropped_l
+
+- type: marking
+  id: FoxEarCroppedR
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: RPSX/Mobs/Customization/vulpkanin.rsi
+      state: vulp_ear_cropped_r
+
+- type: marking
+  id: FoxEarUp
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: RPSX/Mobs/Customization/vulpkanin.rsi
+      state: vulp_ear_up
+    - sprite: RPSX/Mobs/Customization/vulpkanin.rsi
+      state: vulp_ear_up_inner
+
+- type: marking
+  id: FluffyTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: RPSX/Mobs/Customization/vulpkanin.rsi
+      state: fluffy_tail
+    - sprite: RPSX/Mobs/Customization/vulpkanin.rsi
+      state: fluffy_tail_inner
+
+# Animated
+- type: marking
+  id: FluffyTailAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+    - sprite: RPSX/Mobs/Customization/vulpkanin.rsi
+      state: tail_fluffy_waggin
+    - sprite: RPSX/Mobs/Customization/vulpkanin.rsi
+      state: tail_fluffy_inner_waggin

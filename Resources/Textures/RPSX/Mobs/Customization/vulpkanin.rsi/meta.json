@@ -1,0 +1,191 @@
+{
+    "version": 1,
+    "license": "RPSX-eXtended",
+    "copyright": "Armatyra",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "fluffy_tail",
+            "directions": 4
+        },
+        {
+            "name": "fluffy_tail_inner",
+            "directions": 4
+        },
+        {
+            "name": "tail_fluffy_waggin",
+            "directions": 4,
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "tail_fluffy_inner_waggin",
+            "directions": 4,
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "vulp_ear_cropped_l",
+            "directions": 4
+        },
+        {
+            "name": "vulp_ear_cropped_r",
+            "directions": 4
+        },
+        {
+            "name": "vulp_ear_up",
+            "directions": 4
+        },
+        {
+            "name": "vulp_ear_up_inner",
+            "directions": 4
+        },
+        {
+            "name": "gradient_l_arm",
+            "directions": 4
+        },
+        {
+            "name": "gradient_r_arm",
+            "directions": 4
+        },
+        {
+            "name": "gradient_l_hand",
+            "directions": 4
+        },
+        {
+            "name": "gradient_r_hand",
+            "directions": 4
+        },
+        {
+            "name": "gradient_l_leg",
+            "directions": 4
+        },
+        {
+            "name": "gradient_r_leg",
+            "directions": 4
+        },
+        {
+            "name": "gradient_l_foot",
+            "directions": 4
+        },
+        {
+            "name": "gradient_r_foot",
+            "directions": 4
+        }
+    ]
+}

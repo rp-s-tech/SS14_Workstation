@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "RPS-eXtended",
+    "copyright": "by Askolot, (discord:788252896016990219)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "growl"
+        },
+        {
+            "name": "howl"
+        },
+        {
+            "name": "whines"
+        },
+        {
+            "name": "barking"
+        }
+    ]
+}

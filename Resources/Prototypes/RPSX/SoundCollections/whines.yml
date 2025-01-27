@@ -1,0 +1,6 @@
+- type: soundCollection
+  id: Whines
+  files:
+  - /Audio/_RPSX/Effects/Whines/Whines0.ogg
+  - /Audio/_RPSX/Effects/Whines/Whines1.ogg
+  - /Audio/_RPSX/Effects/Whines/Whines2.ogg
