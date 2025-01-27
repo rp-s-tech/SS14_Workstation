@@ -1,0 +1,79 @@
+{
+    "version": 1,
+    "license": "CLA",
+    "copyright": "by Askolot (discord:788252896016990219), owned by Space Exodus",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "ears_cutoff_inner",
+            "directions": 4
+        },
+        {
+            "name": "ears_cutoff_outer",
+            "directions": 4
+        },
+        {
+            "name": "ears_fennec_inner",
+            "directions": 4
+        },
+        {
+            "name": "ears_fennec_outer",
+            "directions": 4
+        },
+        {
+            "name": "ears_hyena_inner",
+            "directions": 4
+        },
+        {
+            "name": "ears_hyena_outer",
+            "directions": 4
+        },
+        {
+            "name": "ears_linx_inner",
+            "directions": 4
+        },
+        {
+            "name": "ears_linx_outer",
+            "directions": 4
+        },
+        {
+            "name": "ears_round_inner",
+            "directions": 4
+        },
+        {
+            "name": "ears_round_outer",
+            "directions": 4
+        },
+        {
+            "name": "ears_sharp_inner",
+            "directions": 4
+        },
+        {
+            "name": "ears_sharp_outer",
+            "directions": 4
+        },
+        {
+            "name": "ears_skar_left_inner",
+            "directions": 4
+        },
+        {
+            "name": "ears_skar_left_outer",
+            "directions": 4
+        },
+        {
+            "name": "ears_skar_right_inner",
+            "directions": 4
+        },
+        {
+            "name": "ears_skar_right_outer",
+            "directions": 4
+        },
+        {
+            "name": "ears_spaniel",
+            "directions": 4
+        }
+    ]
+}

@@ -1,0 +1,851 @@
+# Snouts
+- type: marking
+  id: VulpkaninSpotThroat
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_snout.rsi
+      state: throat
+
+- type: marking
+  id: VulpkaninSpotArrow
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_snout.rsi
+      state: arrow
+
+- type: marking
+  id: VulpkaninSpotRaccoon
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_snout.rsi
+      state: raccoon
+
+- type: marking
+  id: VulpkaninSpotArrows
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_snout.rsi
+      state: arrows
+
+- type: marking
+  id: VulpkaninSpotBelt
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_snout.rsi
+      state: belt
+
+- type: marking
+  id: VulpkaninSpotCase
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_snout.rsi
+      state: case
+
+- type: marking
+  id: VulpkaninSpotEyebrows
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_snout.rsi
+      state: eyebrows
+
+- type: marking
+  id: VulpkaninSpotHelmet
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_snout.rsi
+      state: helmet
+
+- type: marking
+  id: VulpkaninSpotLadle
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_snout.rsi
+      state: ladle
+
+- type: marking
+  id: VulpkaninSpotLantern
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_snout.rsi
+      state: lantern
+
+- type: marking
+  id: VulpkaninSpotMask
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_snout.rsi
+      state: mask
+
+- type: marking
+  id: VulpkaninSpotSiamisblurred
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_snout.rsi
+      state: siamisblurred
+
+- type: marking
+  id: VulpkaninSpotStar
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_snout.rsi
+      state: star
+
+- type: marking
+  id: VulpkaninSpotTear
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_snout.rsi
+      state: tear
+
+- type: marking
+  id: VulpkaninSpotTearsmall
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_snout.rsi
+      state: tearsmall
+
+- type: marking
+  id: VulpkaninSpotThai
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_snout.rsi
+      state: thai
+
+# Ears
+- type: marking
+  id: VulpkaninEarsCutoff
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_cutoff_outer
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_cutoff_inner
+
+- type: marking
+  id: VulpkaninEarsFennec
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_fennec_outer
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_fennec_inner
+
+- type: marking
+  id: VulpkaninEarsHyena
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_hyena_outer
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_hyena_inner
+
+- type: marking
+  id: VulpkaninEarsLinx
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_linx_outer
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_linx_inner
+
+- type: marking
+  id: VulpkaninEarsRound
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_round_outer
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_round_inner
+
+- type: marking
+  id: VulpkaninEarsSharp
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_sharp_outer
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_sharp_inner
+
+- type: marking
+  id: VulpkaninEarsSkarLeft
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_skar_left_outer
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_skar_left_inner
+
+- type: marking
+  id: VulpkaninEarsSkarRight
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_skar_right_outer
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_skar_right_inner
+
+- type: marking
+  id: VulpkaninEarsSpaniel
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_ears.rsi
+      state: ears_spaniel
+
+#region Foots
+
+- type: marking
+  id: VulpkaninFootsDotFootRight
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_foot.rsi
+      state: dot_foot_r
+
+- type: marking
+  id: VulpkaninFootsFullRight
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_foot.rsi
+      state: foots_r
+
+- type: marking
+  id: VulpkaninFootsTrailFootRight
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_foot.rsi
+      state: trail_foot_r
+
+- type: marking
+  id: VulpkaninFootsDotFootLeft
+  bodyPart: LFoot
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_foot.rsi
+      state: dot_foot_l
+
+- type: marking
+  id: VulpkaninFootsFullLeft
+  bodyPart: LFoot
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_foot.rsi
+      state: foots_l
+
+- type: marking
+  id: VulpkaninFootsTrailFootLeft
+  bodyPart: LFoot
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_foot.rsi
+      state: trail_foot_l
+
+#region Legs
+
+- type: marking
+  id: VulpkaninRightLegBun
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_leg.rsi
+      state: bun_r
+
+- type: marking
+  id: VulpkaninLeftLegBun
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_leg.rsi
+      state: bun_l
+
+- type: marking
+  id: VulpkaninRightLegHips
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_leg.rsi
+      state: hips_r
+
+- type: marking
+  id: VulpkaninLeftLegHips
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_leg.rsi
+      state: hips_l
+
+- type: marking
+  id: VulpkaninRightLegIncisionMark
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_leg.rsi
+      state: incision_mark_r
+
+- type: marking
+  id: VulpkaninLeftLegIncisionMark
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_leg.rsi
+      state: incision_mark_l
+
+- type: marking
+  id: VulpkaninRightLegInnerThigh
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_leg.rsi
+      state: inner_thigh_r
+
+- type: marking
+  id: VulpkaninLeftLegInnerThigh
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_leg.rsi
+      state: inner_thigh_l
+
+- type: marking
+  id: VulpkaninRightLegKneesocks
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_leg.rsi
+      state: kneesocks_r
+
+- type: marking
+  id: VulpkaninLeftLegKneesocks
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_leg.rsi
+      state: kneesocks_l
+
+- type: marking
+  id: VulpkaninRightLegLongStripes
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_leg.rsi
+      state: long_stripes_leg_r
+
+- type: marking
+  id: VulpkaninLeftLegLongStripes
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_leg.rsi
+      state: long_stripes_leg_l
+
+- type: marking
+  id: VulpkaninRightLegSocks
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_leg.rsi
+      state: socksleg_r
+
+- type: marking
+  id: VulpkaninLeftLegSocks
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_leg.rsi
+      state: socksleg_l
+
+#region Chest
+
+- type: marking
+  id: VulpkaninChestMaleBelly
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Male
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: belly_m
+
+- type: marking
+  id: VulpkaninChestFemaleBelly
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Female
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: belly_f
+
+- type: marking
+  id: VulpkaninChestBelt
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: belt
+
+- type: marking
+  id: VulpkaninChestBelt2
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: belt2
+
+- type: marking
+  id: VulpkaninChestMaleBreast
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Male
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: breast_m
+
+- type: marking
+  id: VulpkaninChestFemaleBreast
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Female
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: breast_f
+
+- type: marking
+  id: VulpkaninChestMaleChestAndThroat
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Male
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: chest_and_throat_m
+
+- type: marking
+  id: VulpkaninChestFemaleChestAndThroat
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Female
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: chest_and_throat_f
+
+- type: marking
+  id: VulpkaninChestMaleCross
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Male
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: cross_m
+
+- type: marking
+  id: VulpkaninChestFemaleCross
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Female
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: cross_f
+
+- type: marking
+  id: VulpkaninChestMaleHorza
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Male
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: horza_m
+
+- type: marking
+  id: VulpkaninChestFemaleHorza
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Female
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: horza_f
+
+- type: marking
+  id: VulpkaninChestHyena
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: hyena
+
+- type: marking
+  id: VulpkaninChestFemaleJackal
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Female
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: jackal1_f
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: jackal2_f
+
+- type: marking
+  id: VulpkaninChestMaleJackal
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Male
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: jackal1_m
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: jackal2_m
+
+- type: marking
+  id: VulpkaninChestMaleMane
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Male
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: mane_m
+
+- type: marking
+  id: VulpkaninChestFemaleMane
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Female
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: mane_f
+
+- type: marking
+  id: VulpkaninChestMaleMantle
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Male
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: mantle_m
+
+- type: marking
+  id: VulpkaninChestFemaleMantle
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Female
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: mantle_f
+
+- type: marking
+  id: VulpkaninChestMaleNecklac
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Male
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: necklac_m
+
+- type: marking
+  id: VulpkaninChestFemaleNecklac
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Female
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: necklace_f
+
+- type: marking
+  id: VulpkaninChestMaleNecklac2
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Male
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: necklace2_m
+
+- type: marking
+  id: VulpkaninChestFemaleNecklac2
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Female
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: necklace2_f
+
+- type: marking
+  id: VulpkaninChestSections
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: sections1_f
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: sections2_f
+
+- type: marking
+  id: VulpkaninChestMaleSheet
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Male
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: sheet_m
+
+- type: marking
+  id: VulpkaninChestFemaleSheet
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Female
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: sheet_f
+
+- type: marking
+  id: VulpkaninChestMaleSpot
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Male
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: spot_m
+
+- type: marking
+  id: VulpkaninChestFemaleSpot
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Female
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: spot_f
+
+- type: marking
+  id: VulpkaninChestFemaleSrite
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: srite
+
+- type: marking
+  id: VulpkaninChestMaleStripesAreFron
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Male
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: stripes_are_fron_m
+
+- type: marking
+  id: VulpkaninChestFemaleStripesAreFron
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: Female
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_torso.rsi
+      state: stripes_are_torn_f
+
+#region Arm
+
+- type: marking
+  id: VulpkaninArmRightArrowarm
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_arm.rsi
+      state: arrowarm_r
+
+- type: marking
+  id: VulpkaninArmLeftArrowarm
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_arm.rsi
+      state: arrowarm_l
+
+- type: marking
+  id: VulpkaninArmRightMittens
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_arm.rsi
+      state: mittens_r
+
+- type: marking
+  id: VulpkaninArmLeftMittens
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_arm.rsi
+      state: mittens_l
+
+- type: marking
+  id: VulpkaninArmRightShoulders
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_arm.rsi
+      state: shoulders_r
+
+- type: marking
+  id: VulpkaninArmLeftShoulders
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_arm.rsi
+      state: shoulders_l
+
+- type: marking
+  id: VulpkaninArmRightStripesarm
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_arm.rsi
+      state: stripesarm_r
+
+- type: marking
+  id: VulpkaninArmLeftStripesarm
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_arm.rsi
+      state: stripesarm_l
+
+#region Hand
+
+- type: marking
+  id: VulpkaninHandRightGlovelett
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_hand.rsi
+      state: glovelett_r
+
+- type: marking
+  id: VulpkaninHandLeftGlovelett
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_hand.rsi
+      state: glovelett_l
+
+- type: marking
+  id: VulpkaninHandRightGloves
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_hand.rsi
+      state: gloves_r
+
+- type: marking
+  id: VulpkaninHandLeftGloves
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Vulpkanin]
+  sprites:
+    - sprite: Exodus/Mobs/Customization/Vulpkanin/vulpkanin_hand.rsi
+      state: gloves_l

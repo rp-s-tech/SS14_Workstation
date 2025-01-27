@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "by Askolot, owned by Space Exodus",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "glovelett_l",
+      "directions": 4
+    },
+    {
+      "name": "glovelett_r",
+      "directions": 4
+    },
+    {
+      "name": "gloves_l",
+      "directions": 4
+    },
+    {
+      "name": "gloves_r",
+      "directions": 4
+    }
+  ]
+}

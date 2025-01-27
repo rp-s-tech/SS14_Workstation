@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "by Askolot, owned by Spase Exodus",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "arrowarm_l",
+      "directions": 4
+    },
+    {
+      "name": "arrowarm_r",
+      "directions": 4
+    },
+    {
+      "name": "mittens_l",
+      "directions": 4
+    },
+    {
+      "name": "mittens_r",
+      "directions": 4
+    },
+    {
+      "name": "shoulders_l",
+      "directions": 4
+    },
+    {
+      "name": "shoulders_r",
+      "directions": 4
+    },
+    {
+      "name": "stripesarm_l",
+      "directions": 4
+    },
+    {
+      "name": "stripesarm_r",
+      "directions": 4
+    }
+  ]
+}

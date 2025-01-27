@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "by Askolot, owned by Space Exodus",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "trail_foot_l",
+      "directions": 4
+    },
+    {
+      "name": "trail_foot_r",
+      "directions": 4
+    },
+    {
+      "name": "dot_foot_l",
+      "directions": 4
+    },
+    {
+      "name": "dot_foot_r",
+      "directions": 4
+    },
+    {
+      "name": "foots_l",
+      "directions": 4
+    },
+    {
+      "name": "foots_r",
+      "directions": 4
+    }
+  ]
+}
