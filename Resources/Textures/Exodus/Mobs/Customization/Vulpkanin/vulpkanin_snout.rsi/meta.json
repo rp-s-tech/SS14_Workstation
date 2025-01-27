@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "by Askolot (discord:788252896016990219), owned by Space Exodus",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "throat",
+      "directions": 4
+    },
+    {
+      "name": "arrow",
+      "directions": 4
+    },
+    {
+      "name": "raccoon",
+      "directions": 4
+    },
+    {
+      "name": "arrows",
+      "directions": 4
+    },
+    {
+      "name": "belt",
+      "directions": 4
+    },
+    {
+      "name": "case",
+      "directions": 4
+    },
+    {
+      "name": "eyebrows",
+      "directions": 4
+    },
+    {
+      "name": "helmet",
+      "directions": 4
+    },
+    {
+      "name": "ladle",
+      "directions": 4
+    },
+    {
+      "name": "lantern",
+      "directions": 4
+    },
+    {
+      "name": "mask",
+      "directions": 4
+    },
+    {
+      "name": "siamisblurred",
+      "directions": 4
+    },
+    {
+      "name": "star",
+      "directions": 4
+    },
+    {
+      "name": "tear",
+      "directions": 4
+    },
+    {
+      "name": "tearsmall",
+      "directions": 4
+    },
+    {
+      "name": "thai",
+      "directions": 4
+    }
+  ]
+}

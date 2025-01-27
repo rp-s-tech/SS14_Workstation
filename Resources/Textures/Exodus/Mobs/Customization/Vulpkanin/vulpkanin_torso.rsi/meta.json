@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "by Askolot, owned by Space Exodus",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "necklac_m",
+      "directions": 4
+    },
+    {
+      "name": "necklace_f",
+      "directions": 4
+    },
+    {
+      "name": "necklace2_f",
+      "directions": 4
+    },
+    {
+      "name": "necklace2_m",
+      "directions": 4
+    },
+    {
+      "name": "sections1_f",
+      "directions": 4
+    },
+    {
+      "name": "sections2_f",
+      "directions": 4
+    },
+    {
+      "name": "sheet_f",
+      "directions": 4
+    },
+    {
+      "name": "sheet_m",
+      "directions": 4
+    },
+    {
+      "name": "spot_f",
+      "directions": 4
+    },
+    {
+      "name": "spot_m",
+      "directions": 4
+    },
+    {
+      "name": "srite",
+      "directions": 4
+    },
+    {
+      "name": "stripes_are_fron_m",
+      "directions": 4
+    },
+    {
+      "name": "stripes_are_torn_f",
+      "directions": 4
+    },
+    {
+      "name": "belly_f",
+      "directions": 4
+    },
+    {
+      "name": "belly_m",
+      "directions": 4
+    },
+    {
+      "name": "belt",
+      "directions": 4
+    },
+    {
+      "name": "belt2",
+      "directions": 4
+    },
+    {
+      "name": "breast_f",
+      "directions": 4
+    },
+    {
+      "name": "breast_m",
+      "directions": 4
+    },
+    {
+      "name": "chest_and_throat_f",
+      "directions": 4
+    },
+    {
+      "name": "chest_and_throat_m",
+      "directions": 4
+    },
+    {
+      "name": "cross_f",
+      "directions": 4
+    },
+    {
+      "name": "cross_m",
+      "directions": 4
+    },
+    {
+      "name": "horza_f",
+      "directions": 4
+    },
+    {
+      "name": "horza_m",
+      "directions": 4
+    },
+    {
+      "name": "hyena",
+      "directions": 4
+    },
+    {
+      "name": "jackal1_f",
+      "directions": 4
+    },
+    {
+      "name": "jackal1_m",
+      "directions": 4
+    },
+    {
+      "name": "jackal2_f",
+      "directions": 4
+    },
+    {
+      "name": "jackal2_m",
+      "directions": 4
+    },
+    {
+      "name": "mane_f",
+      "directions": 4
+    },
+    {
+      "name": "mane_m",
+      "directions": 4
+    },
+    {
+      "name": "mantle_f",
+      "directions": 4
+    },
+    {
+      "name": "mantle_m",
+      "directions": 4
+    }
+  ]
+}

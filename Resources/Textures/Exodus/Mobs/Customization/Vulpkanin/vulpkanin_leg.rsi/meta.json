@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "by Askolot, owned by Space Exodus",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "inner_thigh_l",
+      "directions": 4
+    },
+    {
+      "name": "inner_thigh_r",
+      "directions": 4
+    },
+    {
+      "name": "kneesocks_l",
+      "directions": 4
+    },
+    {
+      "name": "kneesocks_r",
+      "directions": 4
+    },
+    {
+      "name": "long_stripes_leg_l",
+      "directions": 4
+    },
+    {
+      "name": "long_stripes_leg_r",
+      "directions": 4
+    },
+    {
+      "name": "socksleg_l",
+      "directions": 4
+    },
+    {
+      "name": "socksleg_r",
+      "directions": 4
+    },
+    {
+      "name": "bun_l",
+      "directions": 4
+    },
+    {
+      "name": "bun_r",
+      "directions": 4
+    },
+    {
+      "name": "hips_l",
+      "directions": 4
+    },
+    {
+      "name": "hips_r",
+      "directions": 4
+    },
+    {
+      "name": "incision_mark_l",
+      "directions": 4
+    },
+    {
+      "name": "incision_mark_r",
+      "directions": 4
+    }
+  ]
+}
