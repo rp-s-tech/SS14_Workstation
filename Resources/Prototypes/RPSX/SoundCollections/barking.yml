@@ -1,0 +1,8 @@
+- type: soundCollection
+  id: Barking
+  files:
+  - /Audio/_RPSX/Effects/Barking/Barking0.ogg
+  - /Audio/_RPSX/Effects/Barking/Barking1.ogg
+  - /Audio/_RPSX/Effects/Barking/Barking2.ogg
+  - /Audio/_RPSX/Effects/Barking/Barking3.ogg
+  - /Audio/_RPSX/Effects/Barking/Barking4.ogg

@@ -10,6 +10,10 @@
       collection: MaleLaugh
     Growl:
       collection: Growl
+    Whines:
+      collection: Whines
+    Barking:
+      collection: Barking
     Howl:
       path: /Audio/Corvax/Effects/howl.ogg
     Sneeze:
@@ -44,6 +48,10 @@
       collection: FemaleLaugh
     Growl:
       collection: Growl
+    Whines:
+      collection: Whines
+    Barking:
+      collection: Barking
     Howl:
       path: /Audio/Corvax/Effects/howl.ogg
     Sneeze:
