@@ -9,23 +9,25 @@
     <BoxContainer Orientation="Vertical" VerticalExpand="True" Margin="0 10 0 0">
         <BoxContainer Orientation="Horizontal" VerticalExpand="True">
             <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="10 0 10 5">
-                <BoxContainer Orientation="Horizontal">
+                <BoxContainer Orientation="Vertical">
                     <RichTextLabel Name="StatusLabel" HorizontalExpand="True"/>
                     <RichTextLabel Name="StatusStateLabel"/>
                 </BoxContainer>
                 <Control MinHeight="5"/>
-                <BoxContainer Orientation="Horizontal">
+                <BoxContainer Orientation="Vertical">
                     <RichTextLabel Name="PowerLabel" Margin="0 0 20 0" HorizontalExpand="True" VerticalAlignment="Center"/>
-                    <Button Name="OffButton" ToggleMode="False" Text="{Loc 'particle-accelerator-control-menu-off-button'}" StyleClasses="OpenRight"/>
-                    <Button Name="OnButton" ToggleMode="False" Text="{Loc 'particle-accelerator-control-menu-on-button'}" StyleClasses="OpenLeft"/>
+                    <BoxContainer Orientation="Horizontal">
+                        <Button Name="OffButton" ToggleMode="False" Text="{Loc 'particle-accelerator-control-menu-off-button'}" StyleClasses="OpenRight"/>
+                        <Button Name="OnButton" ToggleMode="False" Text="{Loc 'particle-accelerator-control-menu-on-button'}" StyleClasses="OpenLeft"/>
+                    </BoxContainer>
                 </BoxContainer>
                 <Control MinHeight="5"/>
-                <BoxContainer Orientation="Horizontal">
+                <BoxContainer Orientation="Vertical">
                     <RichTextLabel Name="StrengthLabel" Margin="0 0 20 0" HorizontalExpand="True" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     <SpinBox Name="StateSpinBox" Value="0"/>
                 </BoxContainer>
                 <Control MinHeight="5"/>
-                <BoxContainer Orientation="Horizontal">
+                <BoxContainer Orientation="Vertical">
                     <RichTextLabel Name="DrawLabel" HorizontalExpand="True"/>
                     <RichTextLabel Name="DrawValueLabel"/>
                 </BoxContainer>
