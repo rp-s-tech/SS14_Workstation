@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CC0-1.0",
-  "copyright": "Created by EmoGarbage, reshaded by Checkraze, resized and edited to wall version by sTiKyt",
+  "license": "RPS-eXtended",
+  "copyright": "by Piv2r",
   "size": {
     "x": 32,
     "y": 32
@@ -11,11 +11,38 @@
       "name": "icon"
     },
     {
-      "name": "printing", 
-      "delays": [[0.25, 0.25, 0.25, 0.25]]
+      "name": "printing",
+      "directions": 4,
+      "delays": [
+        [
+          0.25,
+          0.25,
+          0.25
+          ],
+          [
+          0.25,
+          0.25,
+          0.25
+        ],
+        [
+          0.25,
+          0.25,
+          0.25
+        ],
+        [
+          0.25,
+          0.25,
+          0.25
+        ]
+      ]
     },
     {
-      "name": "unshaded"
+      "name": "unshaded",
+      "directions": 4
+    },
+    {
+      "name": "base",
+      "directions": 4
     }
   ]
 }
