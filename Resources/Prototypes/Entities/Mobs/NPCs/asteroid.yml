@@ -210,6 +210,8 @@
     damage:
       types:
         Blunt: 0
+  - type: MovementIgnoreGravityComponent
+    gravityState: false
   - type: Gun
     fireRate: 0.66
     selectedMode: SemiAuto
