@@ -41,7 +41,7 @@
   canRotate: false
 
 - type: construction
-  name: Темная кузня
+  name: Тёмная кузня
   id: NarsiCultDarkForgeConstruction
   graph: NarsiCultDarkForgeGraph
   startNode: start

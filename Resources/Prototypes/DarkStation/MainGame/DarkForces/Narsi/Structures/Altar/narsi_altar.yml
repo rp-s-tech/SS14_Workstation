@@ -17,6 +17,7 @@
   - type: Strap
     position: Down
     rotation: -90
+    enabled: false
   - type: NarsiAltar
     visualsParams:
       visualsEntities:
@@ -25,6 +26,9 @@
       - NarsiPentagrama
   - type: NarsiCultStructure
     building: Altar
+  - type: ActivatableUI
+    key: enum.NarsiAltarInterfaceKey.Key
+    verbText: "Алтарь Нар'Си"
   - type: UserInterface
     interfaces:
       enum.NarsiAltarInterfaceKey.Key:

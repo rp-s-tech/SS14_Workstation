@@ -195,7 +195,7 @@
 - type: entity
   id: NarsiCultistCuffAction
   name: "Теневые оковы"
-  description: "Свяжите жертве руки"
+  description: "Свяжите жертве руки. Необходимо иметь 1 свободную руку."
   categories: [ HideSpawnMenu ]
   components:
     - type: EntityTargetAction

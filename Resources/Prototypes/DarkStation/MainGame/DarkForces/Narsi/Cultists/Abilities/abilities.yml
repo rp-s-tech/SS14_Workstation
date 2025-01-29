@@ -105,7 +105,7 @@
 - type: narsiAbilityPrototype
   id: NarsiCultistCuff
   name: "Теневые оковы"
-  description: "Свяжите жертве руки"
+  description: "Свяжите жертве руки. Необходимо иметь 1 свободную руку."
   level1Description: "Стандартный уровень способности"
   level2Description: "Перезарядка способности сокращена на 10%"
   level3Description: "Перезарядка способности сокращена на 20%"

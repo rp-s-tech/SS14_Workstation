@@ -51,6 +51,9 @@
     sprite: DarkStation/MainGame/DarkForces/Cult/Mobs/eye.rsi
     layers:
     - state: eye
+  - type: ActiveRadio
+    channels:
+    - NarsiCult
   - type: ContentEye
     maxZoom: 1.44,1.44
   - type: Fixtures
