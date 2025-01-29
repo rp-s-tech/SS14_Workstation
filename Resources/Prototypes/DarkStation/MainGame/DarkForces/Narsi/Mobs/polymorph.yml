@@ -68,7 +68,7 @@
   - type: Eye
     drawFov: false
   - type: Visibility
-    layer: 2 #ghost vis
+    layer: 220
   - type: MovementIgnoreGravity
   - type: MovementSpeedModifier
     baseWalkSpeed: 6
