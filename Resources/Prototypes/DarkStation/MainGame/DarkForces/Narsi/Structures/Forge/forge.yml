@@ -1,7 +1,7 @@
 - type: entity
   id: NarsiCultDarkForge
   parent: [BaseStructure, BaseNarsiStructure]
-  name: Темная кузня
+  name: Тёмная кузня
   suffix: Narsi
   components:
   - type: Sprite

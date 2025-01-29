@@ -3,7 +3,6 @@
   name: Превращения
   rituals:
   - NarsiGhostRitual
-  - NarsiCorgiRutual
   - NarsiChangeMindRitual
   - NarsiDarknessBlowoutRitual
 
@@ -27,30 +26,6 @@
       revertOnDeath: true
       duration: 240
     returnToAltar: true
-
-- type: narsiRitual
-  id: NarsiCorgiRutual
-  name: Гончая
-  description: Превратитесь в опасное существо, проклятого Корги. И задайте жару вашим врагам! Ваша жертва исчезнет, а вы станете проклятым Корги... Время действия 10 минут.
-  requirementsDesc: Для проведения ритуала, требуется 2 культиста, а также любая собака, закрепленная на алтаре
-  duration: 45
-  requirements:
-    cultistsCount: 2
-  effect: !type:NarsiPolymorphRitualEffect
-    configuration:
-      entity: MobCorgiNarsiRitual
-      forced: true
-      inventory: None
-      allowRepeatedMorphs: false
-      transferDamage: false
-      transferName: true
-      revertOnCrit: true
-      revertOnDeath: true
-      duration: 600
-    buckledEntityWhitelist:
-      tags:
-      - Dog
-    deleteBuckled: true
 
 - type: narsiRitual
   id: NarsiDarknessBlowoutRitual
