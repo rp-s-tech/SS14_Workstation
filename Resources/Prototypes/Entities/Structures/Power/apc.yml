@@ -152,6 +152,10 @@
   - type: ContainerContainer
     containers:
       RatvarGear: !type:ContainerSlot
+  - type: GuideHelp
+    guides:
+    - VoltageNetworks
+    - Power
 
 # APC under construction
 - type: entity
