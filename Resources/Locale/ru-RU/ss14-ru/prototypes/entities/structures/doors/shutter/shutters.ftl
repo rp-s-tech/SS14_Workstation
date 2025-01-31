@@ -17,3 +17,6 @@ ent-ShuttersWindowOpen = { ent-ShuttersWindow }
     .desc = { ent-ShuttersWindow.desc }
 ent-ShuttersFrame = каркас ставни
     .desc = Каркас для сборки ставни.
+ent-ShuttersWindowCentralCommand = { ent-ShuttersWindow }
+    .suffix = Центральное командование, Закрыт
+    .desc = { ent-ShuttersWindow.desc }
