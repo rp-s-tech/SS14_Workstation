@@ -54,3 +54,6 @@ ent-DeathAcidifierImplanter = { ent-BaseImplantOnlyImplanterSyndi }
 ent-MindShieldImplanter = { ent-BaseImplantOnlyImplanter }
     .suffix = щит разума
     .desc = { ent-BaseImplantOnlyImplanter.desc }
+ent-FakeMindShieldImplanter = { ent-BaseImplantOnlyImplanterSyndi }
+    .suffix = щит разума
+    .desc = { ent-BaseImplantOnlyImplanterSyndi.desc }

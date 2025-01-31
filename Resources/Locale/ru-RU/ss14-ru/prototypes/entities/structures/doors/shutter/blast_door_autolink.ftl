@@ -40,3 +40,6 @@ ent-BlastDoorWindows = { ent-BlastDoor }
 ent-BlastDoorWindowsOpen = { ent-BlastDoorOpen }
     .suffix = Открытый, Автолинк, Окна
     .desc = { ent-BlastDoorOpen.desc }
+ent-BlastDoorCentralCommand = { ent-BlastDoor }
+    .suffix = Центральное командование, Закрыт
+    .desc = { ent-BlastDoor.desc }
