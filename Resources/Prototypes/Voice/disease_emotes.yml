@@ -4,6 +4,7 @@
   category: Vocal
   icon: RPSX/Interface/Actions/emotes.rsi/sneeze.png
   chatMessages: ["chat-emote-msg-sneeze"]
+  available: false
   # Exodus-EmotesSounds-Start
   chatTriggers:
     - чихает

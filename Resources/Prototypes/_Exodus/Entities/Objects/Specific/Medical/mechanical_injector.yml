@@ -71,6 +71,7 @@
 - type: entity
   parent: MechanicalInjector
   id: PrefilledMechanicalInjector
+  abstract: true
   components:
   - type: Injector
     toggleState: Inject
