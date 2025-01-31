@@ -116,7 +116,7 @@
     whitelist:
       tags:
       - Wall
-    useDelay: 10
+    useDelay: 30
     range: 6
     itemIconStyle: BigItem
     event: !type:RatvarSlabWalls
