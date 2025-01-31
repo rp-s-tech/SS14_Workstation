@@ -78,14 +78,3 @@
 #     Telecrystal: 17
 #   categories:
 #   - UplinkWeaponry
-
-- type: listing
-  id: UplinkNightVisionDevice
-  name: uplink-night-vision-device-name
-  description: uplink-night-vision-device-desc
-  icon: { sprite: Clothing/Eyes/Glasses/ninjavisor.rsi, state: icon }
-  productEntity: ClothingEyesVisionNuki
-  cost:
-    Telecrystal: 2
-  categories:
-  - UplinkWearables

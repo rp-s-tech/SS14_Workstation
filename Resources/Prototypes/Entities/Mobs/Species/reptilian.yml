@@ -31,7 +31,7 @@
   - type: Speech
     speechSounds: Lizard
     speechVerb: Reptilian
-    allowedEmotes: ['Thump', 'Growl', 'Rumble'] # Exodus-EmotesSounds | Add growl and rumble
+    allowedEmotes: ['Thump', 'Growl', 'Rumble', 'Sneeze'] # Exodus-EmotesSounds | Add growl and rumble
   - type: TypingIndicator
     proto: lizard
   - type: Vocal
