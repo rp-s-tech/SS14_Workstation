@@ -21,8 +21,8 @@
   - type: AntagSelection
     definitions:
     - prefRoles: [ NarsiCultist ]
-      min: 2
-      max: 4
+      min: 3
+      max: 3
       playerRatio: 10
       briefing:
         text: narsi-cultist-briefing

@@ -82,3 +82,7 @@
 
 - type: Tag
   id: RatvarSpawnWhitelist
+
+#Narsi
+- type: Tag
+  id: NarsiAction
