@@ -15,6 +15,9 @@
         speech: "Ob'ruite na'vita's"
       sound: !type:SoundPathSpecifier
         path: /Audio/Magic/forcewall.ogg
+    - type: Tag
+      tags:
+      - NarsiAction
 
 #instantActions
 - type: entity
@@ -33,6 +36,9 @@
         speech: "Ob'ruite na'vita's"
       sound: !type:SoundPathSpecifier
         path: /Audio/Magic/forcewall.ogg
+    - type: Tag
+      tags:
+      - NarsiAction
 
 - type: entity
   id: NarsiCultistFireArmsAction
@@ -50,6 +56,9 @@
         speech: "Ig'nis ill'umina ma'nus mea's"
       sound: !type:SoundPathSpecifier
         path: /Audio/Magic/forcewall.ogg
+    - type: Tag
+      tags:
+      - NarsiAction
 
 - type: entity
   id: NarsiCultistStealthAction
@@ -67,6 +76,9 @@
         speech: "Ab'sconde me in te'nebri's"
       sound: !type:SoundPathSpecifier
         path: /Audio/Magic/forcewall.ogg
+    - type: Tag
+      tags:
+      - NarsiAction
 
 - type: entity
   id: NarsiCultistShadowAction
@@ -84,6 +96,9 @@
         speech: "ec'ce te'nebra'e"
       sound: !type:SoundPathSpecifier
         path: /Audio/Magic/forcewall.ogg
+    - type: Tag
+      tags:
+      - NarsiAction
 
 - type: entity
   id: NarsiCultistTeleportAction
@@ -101,6 +116,9 @@
         speech: "Ia'nua'e ad ru'ne"
       sound: !type:SoundPathSpecifier
         path: /Audio/Magic/forcewall.ogg
+    - type: Tag
+      tags:
+      - NarsiAction
 
 - type: entity
   id: NarsiCultistGhostAxeAction
@@ -118,6 +136,9 @@
         speech: "Da mi'hi ar'ma!"
       sound: !type:SoundPathSpecifier
         path: /Audio/Magic/forcewall.ogg
+    - type: Tag
+      tags:
+      - NarsiAction
 
 #EntityTargetActions
 - type: entity
@@ -143,6 +164,9 @@
         speech: "Cla'usa vermi's"
       sound: !type:SoundPathSpecifier
         path: /Audio/Magic/forcewall.ogg
+    - type: Tag
+      tags:
+      - NarsiAction
 
 - type: entity
   id: NarsiCultistBlindnessAction
@@ -167,6 +191,9 @@
         speech: "ec'ce te'nebra'e"
       sound: !type:SoundPathSpecifier
         path: /Audio/Magic/forcewall.ogg
+    - type: Tag
+      tags:
+      - NarsiAction
 
 - type: entity
   id: NarsiCultistStunAction
@@ -191,6 +218,9 @@
         speech: "Ca'dere ad are'æ"
       sound: !type:SoundPathSpecifier
         path: /Audio/Magic/forcewall.ogg
+    - type: Tag
+      tags:
+      - NarsiAction
 
 - type: entity
   id: NarsiCultistCuffAction
@@ -215,3 +245,6 @@
         speech: "Li'gabis in ma'nibus vi'ctima'e"
       sound: !type:SoundPathSpecifier
         path: /Audio/Magic/forcewall.ogg
+    - type: Tag
+      tags:
+      - NarsiAction
