@@ -13,8 +13,8 @@
             - !type:HasTags
               tags:
                 - ThickSkin
-                - Bottle
               invert: true
+            - !type:IsMob
           emote: Scream
           showInChat: true
         - !type:HealthChange
@@ -22,8 +22,8 @@
             - !type:HasTags
               tags:
                 - ThickSkin
-                - Bottle
               invert: true
+            - !type:IsMob
           damage:
             types:
               Piercing: 10
@@ -32,16 +32,16 @@
             - !type:HasTags
               tags:
                 - ThickSkin
-                - Bottle
               invert: true
+            - !type:IsMob
           amount: 5
         - !type:PopupMessage
           conditions:
             - !type:HasTags
               tags:
                 - ThickSkin
-                - Bottle
               invert: true
+            - !type:IsMob
           visualType: MediumCaution
           messages: ["mechanical-injector-effect-pain-message"]
     - type: Sprite
