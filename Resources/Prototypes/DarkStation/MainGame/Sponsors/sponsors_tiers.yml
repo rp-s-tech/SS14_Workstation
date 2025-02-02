@@ -226,6 +226,17 @@
   availableItems: 0
   roleTimeByPass: false
   havePriorityJoin: true
+  allowedMarkings:
+  - HumanHairCotton
+  - HumanHairFingerwave
+  - HumanHairFortuneteller
+  - HumanHairFortunetellerAlt
+  - HumanHairLongdtails
+  - HumanHairLooseSlicked
+  - HumanHairQuadcurls
+  - HumanHairShy
+  - HumanHairSpicy
+  - HumanHairWife
   allowedSpecies:
   - Nucleation
 
