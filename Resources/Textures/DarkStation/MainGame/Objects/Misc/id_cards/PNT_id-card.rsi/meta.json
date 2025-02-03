@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "RPS-eXtended",
+  "copyright": "Roisi DS",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+        "name": "icon"
+    },
+    {
+        "name": "gold"
+    },
+    {
+        "name": "ntr-inhand-left"
+    },
+    {
+        "name": "ntr-inhand-right"
+    }
+  ]
+}

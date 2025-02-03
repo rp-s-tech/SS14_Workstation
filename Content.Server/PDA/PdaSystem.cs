@@ -102,7 +102,7 @@ namespace Content.Server.PDA
 
         protected override void OnItemRemoved(EntityUid uid, PdaComponent pda, EntRemovedFromContainerMessage args)
         {
-            if (args.Container.ID != pda.IdSlot.ID && args.Container.ID != pda.PenSlot.ID && args.Container.ID != pda.PaiSlot.ID)
+            if (args.Container.ID != pda.IdSlot.ID && args.Container.ID != pda.PenSlot.ID && args.Container.ID != pda.PaiSlot.ID && args.Container.ID != pda.PaperSlot?.ID) // RPSX PDA paper
                 return;
 
             // TODO: This is super cursed just use compstates please.
@@ -199,6 +199,7 @@ namespace Content.Server.PDA
                 pda.FlashlightOn,
                 pda.PenSlot.HasItem,
                 pda.PaiSlot.HasItem,
+                pda.PaperSlot.HasItem, // RPSX PDA paper
                 new PdaIdInfoText
                 {
                     ActualOwnerName = pda.OwnerName,

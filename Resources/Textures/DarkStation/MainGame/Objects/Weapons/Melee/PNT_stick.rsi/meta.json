@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "license": "RPS-eXtended",
+  "copyright": "Rosi DS", 
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "stick-empty"
+    },
+    {
+      "name": "stick"
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "wielded-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "wielded-inhand-right",
+      "directions": 4
+    }
+  ]
+}

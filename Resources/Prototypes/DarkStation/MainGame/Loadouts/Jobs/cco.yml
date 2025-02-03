@@ -44,3 +44,18 @@
   id: CCOShoesCombat
   equipment:
     shoes: ClothingShoesBootsCombatFilled
+
+- type: loadout
+  id: CCODuffel
+  equipment:
+    back: ClothingBackpackDuffelCentComm
+
+- type: loadout
+  id: CCOBackpack
+  equipment:
+    back: ClothingBackpackCentComm
+
+- type: loadout
+  id: CCOSatchel
+  equipment:
+    back: ClothingBackpackSatchelCentComm

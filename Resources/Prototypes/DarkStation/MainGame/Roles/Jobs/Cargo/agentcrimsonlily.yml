@@ -265,7 +265,8 @@
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
     layers:
-      - state: pda-ABL
+      - map: [ "enum.PdaVisualLayers.Base" ]
+        state: "pda-ABL"
       - state: "light_overlay"
         map: [ "enum.PdaVisualLayers.Flashlight" ]
         shader: "unshaded"
@@ -277,6 +278,11 @@
   - type: Pda
     id: AgentCrimsonLilyIDCard
     state: pda-ABL
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-ABL
   - type: Icon
     sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
     state: pda-ABL

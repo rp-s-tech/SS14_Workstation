@@ -84,6 +84,20 @@
       baseSprintSpeed: 6.00
     - type: Vampire
       fullPower: true
+    - type: Speech
+      speechSounds: Alto
+    - type: DamageForceSay
+    - type: Vocal
+      sounds:
+        Male: MaleHuman
+        Female: FemaleHuman
+        Unsexed: MaleHuman
+    - type: Emoting
+    - type: BodyEmotes
+      soundsId: GeneralBodyEmotes
+    - type: Grammar
+      attributes:
+        proper: true
 
 - type: damageModifierSet
   id: VampireModiferSet

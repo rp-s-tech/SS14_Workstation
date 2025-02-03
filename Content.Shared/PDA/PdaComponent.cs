@@ -12,6 +12,7 @@ namespace Content.Shared.PDA
         public const string PdaIdSlotId = "PDA-id";
         public const string PdaPenSlotId = "PDA-pen";
         public const string PdaPaiSlotId = "PDA-pai";
+        public const string PdaPaperSlotId = "PDA-paper"; // RPSX PDA paper
 
         [DataField("idSlot")]
         public ItemSlot IdSlot = new();
@@ -20,6 +21,10 @@ namespace Content.Shared.PDA
         public ItemSlot PenSlot = new();
         [DataField("paiSlot")]
         public ItemSlot PaiSlot = new();
+        // RPSX PDA paper begin
+        [DataField("paperSlot")]
+        public ItemSlot PaperSlot = new();
+        // RPSX PDA paper end
 
         // Really this should just be using ItemSlot.StartingItem. However, seeing as we have so many different starting
         // PDA's and no nice way to inherit the other fields from the ItemSlot data definition, this makes the yaml much

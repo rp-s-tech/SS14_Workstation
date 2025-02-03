@@ -52,7 +52,12 @@ namespace Content.Client.PDA
             {
                 SendPredictedMessage(new ItemSlotButtonPressedEvent(PdaComponent.PdaPaiSlotId));
             };
-
+            // RPSX pda paper start
+            _menu.EjectPaperButton.OnPressed += _ =>
+            {
+                SendPredictedMessage(new ItemSlotButtonPressedEvent(PdaComponent.PdaPaperSlotId));
+            };
+            // RPSX pda paper end
             _menu.ActivateMusicButton.OnPressed += _ =>
             {
                 SendMessage(new PdaShowMusicMessage());

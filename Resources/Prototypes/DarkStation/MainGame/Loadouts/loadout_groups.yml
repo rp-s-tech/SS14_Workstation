@@ -361,3 +361,11 @@
   name: loadout-group-default-shoes
   loadouts:
     - CCOShoesCombat
+
+- type: loadoutGroup
+  id: CCOBackpack
+  name: loadout-group-default-backpack
+  loadouts:
+    - CCOSatchel
+    - CCOBackpack
+    - CCODuffel
