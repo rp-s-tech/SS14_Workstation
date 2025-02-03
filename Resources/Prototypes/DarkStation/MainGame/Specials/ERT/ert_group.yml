@@ -1,10 +1,10 @@
 - type: ERTGroup
   id: ERTShuttle
-  path: /Maps/DarkStationShuttles/ERT/ert_shuttle.yml
+  path: /Maps/RPSX/Shuttles/ert_shuttle.yml
   messageOnSpawn: "На станцию направлен отряд ОБР"
   soundOnSpawn: /Audio/Announcements/ert_yes.ogg
 
 - type: ERTGroup
   id: CBURNShuttle
-  path: /Maps/DarkStationShuttles/ERT/CBURNShuttle.yml
+  path: /Maps/RPSX/Shuttles/CBURNShuttle.yml
   messageOnSpawn: "К вам был выслан отряд РХБЗЗ. Выжившим рекомендуется застроиться в различных убежищах и неиздавать ни звука! Не вылезайте из своих укрытий, пока РХБЗ не зачистит станцию"

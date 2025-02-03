@@ -24,7 +24,7 @@
 - type: startingGear
   id: SpNanoTrasenRepresentativeGear
   equipment:
-    id: CentcomPDA
+    id: NTRPDA
     ears: ClothingHeadsetSpNanoTrasenRepresentative
     pocket1: BoxFolderBlack
     pocket2: RubberStampSpNTR
@@ -33,21 +33,202 @@
     - Flash
     - TelescopicBaton
     - SecurityWhistle
+  inhand:
+    - NTRCaneSheathFilled
 
 - type: entity
   id: ClothingBackpackSNTR
   name: NanoTrasen representative backpack
   parent: ClothingBackpack
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Back/Backpacks/pnt.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Back/Backpacks/pnt.rsi
 
 - type: entity
   id: ClothingBackpackDuffelSNTR
   name: NanoTrasen representative duffel
   parent: ClothingBackpackDuffel
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Back/Duffels/pnt.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Back/Duffels/pnt.rsi
 
 - type: entity
   id: ClothingBackpackSatchelSNTR
   name: NanoTrasen representative satchel
   parent: ClothingBackpackSatchel
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Back/Satchels/pnt.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Back/Satchels/pnt.rsi
+
+- type: entity
+  parent: BasePDA
+  id: NTRPDA
+  name: NanoTrasen representative's PDA
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
+    layers:
+      - map: [ "enum.PdaVisualLayers.Base" ]
+        state: "pda-NTR"
+      - state: "light_overlay"
+        map: [ "enum.PdaVisualLayers.Flashlight" ]
+        shader: "unshaded"
+        visible: false
+      - state: "id_overlay"
+        map: [ "enum.PdaVisualLayers.IdLight" ]
+        shader: "unshaded"
+        visible: false
+  - type: Pda
+    id: NTRIDCard
+    state: pda-NTR
+    penSlot:
+      startingItem: PenCentcom
+      whitelist:
+        tags:
+        - Write
+  - type: Icon
+    sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
+    state: pda-NTR
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-NTR
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - MedTekCartridge
+      - WantedListCartridge
+      - LogProbeCartridge
+      - AstroNavCartridge
+      - CrewMemberBankCartridge
+
+- type: entity
+  parent: IDCardStandard
+  id: NTRIDCard
+  name: NanoTrasen representative's ID card
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Misc/id_cards/PNT_id-card.rsi
+    layers:
+    - state: gold
+    - state: icon
+  - type: Clothing
+    sprite: DarkStation/MainGame/Objects/Misc/id_cards/PNT_id-card.rsi
+  - type: PresetIdCard
+    job: SpNanoTrasenRepresentative
+
+- type: entity
+  parent: BaseItem
+  id: NTRCane
+  name: NanoTrasen representative's cane
+  description: A wooden cane, which is covered with silver.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Melee/PNT_stick.rsi
+    state: stick
+  - type: Item
+    size: Normal
+    sprite: DarkStation/MainGame/Objects/Weapons/Melee/PNT_stick.rsi
+  - type: Appearance
+  - type: MeleeWeapon
+    wideAnimationRotation: 45
+    damage:
+      types:
+        Blunt: 5
+  - type: StaminaDamageOnHit
+    damage: 5
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 3
+  - type: UseDelay
+    delay: 1
+
+- type: entity
+  parent: NTRCane
+  id: NTRCaneSheath
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Melee/PNT_stick.rsi
+    state: stick-empty
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      item: !type:ContainerSlot
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ItemSlots
+    slots:
+      item:
+        name: NTRCaneBlade
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        whitelist:
+          tags:
+          - NTRCaneBlade
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+  - type: ItemMapper
+    mapLayers:
+      stick:
+        whitelist:
+          tags:
+          - NTRCaneBlade
+
+- type: entity
+  id: NTRCaneSheathFilled
+  parent: NTRCaneSheath
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - NTRCaneBlade
+
+- type: entity
+  name: NanoTrasen representative's cane blade
+  parent: [BaseItem, BaseCommandContraband]
+  id: NTRCaneBlade
+  description: A sharp blade with a cane shaped hilt.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: DarkStation/MainGame/Objects/Weapons/Melee/PNT_stick-blade.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 65
+    attackRate: 1.5
+    damage:
+      types:
+        Slash: 14
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    size: Normal
+    sprite: DarkStation/MainGame/Objects/Weapons/Melee/PNT_stick-blade.rsi
+  - type: Tag
+    tags:
+      - NTRCaneBlade
+  - type: DisarmMalus
+
+- type: Tag
+  id: NTRCaneBlade
 
 # Clothing
 

@@ -6,11 +6,15 @@
   components:
     - type: Pda
       id: IAAIDCard
-      state: pda-lawyer
     - type: PdaBorderColor
       borderColor: "#6f6192"
     - type: Icon
       state: pda-lawyer
+    - type: Appearance
+      appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-lawyer
 
 - type: entity
   parent: BasePDA

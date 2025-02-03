@@ -36,6 +36,12 @@
         },
         {
             "name": "pda-securitypilot"
+        },
+        {
+            "name": "pda-NTR"
+        },
+        {
+            "name": "pda-ifd"
         }
     ]
 }

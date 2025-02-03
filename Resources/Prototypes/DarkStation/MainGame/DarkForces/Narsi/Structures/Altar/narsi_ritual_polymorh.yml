@@ -62,7 +62,7 @@
   name: Обмен разумом
   description: Поменяйтесь разумом со своей жертвой
   requirementsDesc: Требуется 2 культиста и жертва на алтаре
-  duration: 120
+  duration: 60
   requirements:
     cultistsCount: 2
   effect: !type:NarsiChangeMindRitualEffect

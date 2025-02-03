@@ -53,3 +53,36 @@
     sprite: Clothing/OuterClothing/Coats/CentComme.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/CentComme.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelCentComm
+  name: centcom satchel
+  description: Satchel for true bureaucrats.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Back/Satchels/centcommsatchel.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Back/Satchels/centcommsatchel.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackCentComm
+  name: centcom backpack
+  description: Backpack for true bureaucrats.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Back/Backpacks/centcommbackpack.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Back/Backpacks/centcommbackpack.rsi
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelCentComm
+  name: centcom duffel
+  description: Duffel for true bureaucrats.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/Clothing/Back/Duffels/centcommduffle.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/Clothing/Back/Duffels/centcommduffle.rsi

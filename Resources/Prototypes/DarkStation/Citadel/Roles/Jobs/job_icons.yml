@@ -1,0 +1,55 @@
+﻿- type: statusIcon
+  parent: JobIcon
+  id: CitadelJobIconSNAB
+  icon:
+    sprite: /Textures/DarkStation/Citadel/Interface/Misc/job_icons.rsi
+    state: idCitadelSNAB
+
+- type: statusIcon
+  parent: JobIcon
+  id: CitadelJobIconSER
+  icon:
+    sprite: /Textures/DarkStation/Citadel/Interface/Misc/job_icons.rsi
+    state: idCitadelSER
+
+- type: statusIcon
+  parent: JobIcon
+  id: CitadelJobIconRND
+  icon:
+    sprite: /Textures/DarkStation/Citadel/Interface/Misc/job_icons.rsi
+    state: idCitadelRND
+
+- type: statusIcon
+  parent: JobIcon
+  id: CitadelJobIconPAS
+  icon:
+    sprite: /Textures/DarkStation/Citadel/Interface/Misc/job_icons.rsi
+    state: idCitadelPAS
+
+- type: statusIcon
+  parent: JobIcon
+  id: CitadelJobIconMIL
+  icon:
+    sprite: /Textures/DarkStation/Citadel/Interface/Misc/job_icons.rsi
+    state: idCitadelMIL
+
+- type: statusIcon
+  parent: JobIcon
+  id: CitadelJobIconMED
+  icon:
+    sprite: /Textures/DarkStation/Citadel/Interface/Misc/job_icons.rsi
+    state: idCitadelMED
+
+- type: statusIcon
+  parent: JobIcon
+  id: CitadelJobIconENG
+  icon:
+    sprite: /Textures/DarkStation/Citadel/Interface/Misc/job_icons.rsi
+    state: idCitadelENG
+
+- type: statusIcon
+  parent: JobIcon
+  id: CitadelJobIconADM
+  icon:
+    sprite: /Textures/DarkStation/Citadel/Interface/Misc/job_icons.rsi
+    state: idCitadelADM

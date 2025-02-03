@@ -6,7 +6,6 @@
   components:
   - type: Pda
     id: POCCIDCard
-    state: pda-pocc
     penSlot:
       startingItem: POCCPen
       priority: -1
@@ -15,6 +14,11 @@
         - Write
   - type: Icon
     state: pda-pocc
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-pocc
 
 - type: entity
   parent: BasePDA
@@ -25,7 +29,8 @@
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
     layers:
-      - state: pda-securitypilot
+      - map: [ "enum.PdaVisualLayers.Base" ]
+        state: pda-securitypilot
       - state: "light_overlay"
         map: [ "enum.PdaVisualLayers.Flashlight" ]
         shader: "unshaded"
@@ -36,12 +41,17 @@
         visible: false
   - type: Pda
     id: SecurityPilotIDCard
-    state: pda-securitypilot
   - type: PdaBorderColor
     borderColor: "#717059"
     accentVColor: "#A32D26"
   - type: Icon
     state: pda-securitypilot
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-securitypilot
+
 
 - type: entity
   parent: BasePDA
@@ -52,7 +62,8 @@
   - type: Sprite
     sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
     layers:
-      - state: pda-blueshield
+      - map: [ "enum.PdaVisualLayers.Base" ]
+        state: "pda-blueshield"
       - state: "light_overlay"
         map: [ "enum.PdaVisualLayers.Flashlight" ]
         shader: "unshaded"
@@ -63,7 +74,11 @@
         visible: false
   - type: Pda
     id: BlueShieldOfficerIDCard
-    state: pda-blueshield
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-blueshield
   - type: Icon
     sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
     state: pda-blueshield
@@ -75,9 +90,10 @@
   description: Smells like a big wad of money.
   components:
   - type: Sprite
-    sprite: DarkStation/MainGame/Objects/Devices/ifd_pda.rsi
+    sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
     layers:
-      - state: pda-ifd
+      - map: [ "enum.PdaVisualLayers.Base" ]
+        state: "pda-ifd"
       - state: "light_overlay"
         map: [ "enum.PdaVisualLayers.Flashlight" ]
         shader: "unshaded"
@@ -88,9 +104,13 @@
         visible: false
   - type: Pda
     id: IFDIDCard
-    state: pda-ifd
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-ifd
   - type: Icon
-    sprite: DarkStation/MainGame/Objects/Devices/ifd_pda.rsi
+    sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
     state: pda-ifd
 
 - type: entity
@@ -111,6 +131,10 @@
   components:
   - type: Pda
     id: SecurityIDCard #Security_KnightIDCard
-    state: pda-knight
   - type: Icon
     state: pda-knight
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-knight
