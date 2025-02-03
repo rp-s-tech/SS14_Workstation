@@ -28,28 +28,6 @@
         offset: 0
 
 - type: entity
-  parent: BaseSign
-  id: PosterBroken
-  name: broken poster
-  description: "You can't make out anything from the poster's original print. It's ruined."
-  components:
-  - type: Sprite
-    drawdepth: WallTops
-    sprite: DarkStation/Citadel/Structures/posters.rsi
-    state: poster_broken
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 5
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/poster_broken.ogg
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-
-- type: entity
   parent: PosterCitadelBase
   id: PosterCitadel1
   name: "Постер: Новый Порядок"
@@ -114,7 +92,7 @@
 
 - type: entity
   parent: PosterCitadelBase
-  id: PosterCitadel6
+  id: PosterCitadel7
   name: "Противостояние"
   description: "Бесконечное противостояние НП и СА"
   components:
