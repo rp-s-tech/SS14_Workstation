@@ -35,12 +35,7 @@ public sealed class BureaucraticErrorRule : StationEventSystem<BureaucraticError
         {
             var chosenJob = RobustRandom.PickAndTake(jobList);
             _stationJobs.MakeJobUnlimited(chosenStation.Value, chosenJob); // INFINITE chaos.
-            foreach (var job in jobList)
-            {
-                if (_stationJobs.IsJobUnlimited(chosenStation.Value, job))
-                    continue;
-                _stationJobs.TrySetJobSlot(chosenStation.Value, job, 0);
-            }
+            // RPSX - Do not nuke out entire job list
         }
         else
         {
@@ -54,7 +49,12 @@ public sealed class BureaucraticErrorRule : StationEventSystem<BureaucraticError
                 if (_stationJobs.IsJobUnlimited(chosenStation.Value, chosenJob))
                     continue;
 
-                _stationJobs.TryAdjustJobSlot(chosenStation.Value, chosenJob, RobustRandom.Next(-3, 6), clamp: true);
+                // RPSX-Start | Bureacratic error can only adjust jobs
+                if (!_stationJobs.TryGetJobSlot(chosenStation.Value, chosenJob, out var currentSlots))
+                    continue;
+
+                _stationJobs.TryAdjustJobSlot(chosenStation.Value, chosenJob, Math.Max(RobustRandom.Next(0, 6), currentSlots!.Value), clamp: true);
+                // RPSX-End
             }
         }
     }
