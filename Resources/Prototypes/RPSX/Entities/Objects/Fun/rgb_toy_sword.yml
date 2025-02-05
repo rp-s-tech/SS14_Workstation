@@ -1,0 +1,111 @@
+- type: entity
+  parent: ToySword
+  id: ToySwordWhite
+  name: toy_sword_white_name
+  suffix: white
+  description: toy_sword_white_desc
+  components:
+  - type: EnergySword
+    colorOptions:
+    - white
+  - type: Construction
+    graph: ToySwordCraft
+    node: ToySwordWhiteСraft
+
+- type: entity
+  parent: ToySword
+  id: ToySwordBlack
+  name: toy_sword_black_name
+  suffix: black
+  description: toy_sword_black_desc
+  components:
+  - type: EnergySword
+    colorOptions:
+    - black
+  - type: Construction
+    graph: ToySwordCraft
+    node: ToySwordBlackСraft
+
+- type: entity
+  parent: ToySword
+  id: ToySwordRed
+  name: toy_sword_red_name
+  suffix: red
+  description: toy_sword_red_desc
+  components:
+  - type: EnergySword
+    colorOptions:
+    - Red
+  - type: Construction
+    graph: ToySwordCraft
+    node: ToySwordRedСraft
+
+- type: entity
+  parent: ToySword
+  id: ToySwordOrange
+  name: toy_sword_orange_name
+  suffix: orange
+  description: toy_sword_orange_desc
+  components:
+  - type: EnergySword
+    colorOptions:
+    - orange
+  - type: Construction
+    graph: ToySwordCraft
+    node: ToySwordOrangeСraft
+
+- type: entity
+  parent: ToySword
+  id: ToySwordYellow
+  name: toy_sword_yellow_name
+  suffix: yellow
+  description: toy_sword_yellow_desc
+  components:
+  - type: EnergySword
+    colorOptions:
+    - yellow
+  - type: Construction
+    graph: ToySwordCraft
+    node: ToySwordYellowСraft
+
+- type: entity
+  parent: ToySword
+  id: ToySwordGreen
+  name: toy_sword_green_name
+  suffix: green
+  description: toy_sword_green_desc
+  components:
+  - type: EnergySword
+    colorOptions:
+    - green
+  - type: Construction
+    graph: ToySwordCraft
+    node: ToySwordGreenСraft
+
+- type: entity
+  parent: ToySword
+  id: ToySwordLightblue
+  name: toy_sword_lightblue_name
+  suffix: lightblue
+  description: toy_sword_lightblue_desc
+  components:
+  - type: EnergySword
+    colorOptions:
+    - lightblue
+  - type: Construction
+    graph: ToySwordCraft
+    node: ToySwordLightblueСraft
+
+- type: entity
+  parent: ToySword
+  id: ToySwordPurple
+  name: toy_sword_purple_name
+  suffix: purple
+  description: toy_sword_purple_desc
+  components:
+  - type: EnergySword
+    colorOptions:
+    - purple
+  - type: Construction
+    graph: ToySwordCraft
+    node: ToySwordPurpleСraft
