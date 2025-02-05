@@ -1,0 +1,57 @@
+- type: constructionGraph
+  id: ToySwordCraft
+  start: start
+  graph:        
+    - node: start
+      edges:
+      - to: ToySwordBlackСraft
+        steps:
+        - tag: CrayonBlack
+          doAfter: 3
+      - to: ToySwordWhiteСraft
+        steps:
+        - tag: CrayonWhite
+          doAfter: 3
+      - to: ToySwordRedСraft
+        steps:
+        - tag: CrayonRed
+          doAfter: 3
+      - to: ToySwordOrangeСraft
+        steps:
+        - tag: CrayonOrange
+          doAfter: 3
+      - to: ToySwordYellowСraft
+        steps:
+        - tag: CrayonYellow
+          doAfter: 3
+      - to: ToySwordGreenСraft
+        steps:
+        - tag: CrayonGreen
+          doAfter: 3
+      - to: ToySwordLightblueСraft
+        steps:
+        - tag: CrayonBlue
+          doAfter: 3
+      - to: ToySwordPurpleСraft
+        steps:
+        - tag: CrayonPurple
+          doAfter: 3
+    - node: ToySwordBlackСraft
+      entity: ToySwordBlack
+    - node: ToySwordWhiteСraft
+      entity: ToySwordWhite
+    - node: ToySwordRedСraft
+      entity: ToySwordRed
+    - node: ToySwordOrangeСraft
+      entity: ToySwordOrange
+    - node: ToySwordYellowСraft
+      entity: ToySwordYellow
+    - node: ToySwordGreenСraft
+      entity: ToySwordGreen
+    - node: ToySwordLightblueСraft
+      entity: ToySwordLightblue
+    - node: ToySwordPurpleСraft
+      entity: ToySwordPurple
+
+
+

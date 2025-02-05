@@ -1418,6 +1418,11 @@
         path: /Audio/Weapons/eblademiss.ogg
         params:
           variation: 0.125
+    # RPSX - Sword color change - start
+    - type: Construction
+      graph: ToySwordCraft
+      node: start
+    # RPSX - End
 
 - type: entity
   parent: BasePlushie
