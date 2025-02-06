@@ -1,5 +1,5 @@
 - type: entity
-  name: grenade launcher "Dwarf"
+  name: Gnome
   parent: BaseWeaponLauncher
   id: WeaponLauncherGnom
   description: Use these weapons for destruction. Just don't forget to wear your bomb squad armor.
