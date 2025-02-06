@@ -19,6 +19,7 @@
     - Moth
     # - Reptilian # Exodus-ThickSyringes
     - Nucleation  # RPSX
+    - Vulpkanin   # RPSX-Vulpkanins
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox
