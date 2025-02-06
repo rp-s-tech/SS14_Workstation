@@ -16,6 +16,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
+
 namespace Content.Shared.Teleportation.Systems;
 
 /// <summary>
@@ -25,17 +26,15 @@ public abstract class SharedPortalSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly INetManager _netMan = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    // [Dependency] private readonly EntityLookupSystem _lookup = default!;  // RPSX - RandomTeleport Refactor | Remove unnecessary
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly PullingSystem _pulling = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
+
     private const string PortalFixture = "portalFixture";
     private const string ProjectileFixture = "projectile";
-
-    private const int MaxRandomTeleportAttempts = 20;
-
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -143,9 +142,18 @@ public abstract class SharedPortalSystem : EntitySystem
         if (_netMan.IsClient)
             return;
 
+        // RPSX - RandomTeleport Refactor - start
         // no linked entity--teleport randomly
         if (component.RandomTeleport)
-            TeleportRandomly(uid, subject, component);
+        {
+            var newCoords = GetRandomCoords(uid, component);
+
+            if (newCoords.HasValue)
+            {
+                TeleportEntity(uid, subject, newCoords.Value);
+            }
+        }
+        // RPSX - end
     }
 
     private void OnEndCollide(EntityUid uid, PortalComponent component, ref EndCollideEvent args)
@@ -216,29 +224,16 @@ public abstract class SharedPortalSystem : EntitySystem
         _audio.PlayPredicted(arrivalSound, subject, subject);
     }
 
-    private void TeleportRandomly(EntityUid portal, EntityUid subject, PortalComponent? component = null)
-    {
-        if (!Resolve(portal, ref component))
-            return;
 
-        var xform = Transform(portal);
-        var coords = xform.Coordinates;
-        var newCoords = coords.Offset(_random.NextVector2(component.MaxRandomRadius));
-        for (var i = 0; i < MaxRandomTeleportAttempts; i++)
-        {
-            var randVector = _random.NextVector2(component.MaxRandomRadius);
-            newCoords = coords.Offset(randVector);
-            if (!_lookup.GetEntitiesIntersecting(newCoords.ToMap(EntityManager, _transform), LookupFlags.Static).Any())
-            {
-                break;
-            }
-        }
-
-        TeleportEntity(portal, subject, newCoords);
-    }
 
     protected virtual void LogTeleport(EntityUid portal, EntityUid subject, EntityCoordinates source,
         EntityCoordinates target)
     {
+    }
+
+    // RPSX - RandomTeleport Refactor | Replacement TeleportRandomly with GetRandomCoords
+    protected virtual EntityCoordinates? GetRandomCoords(EntityUid portal, PortalComponent? component = null)
+    {
+        return null;
     }
 }
