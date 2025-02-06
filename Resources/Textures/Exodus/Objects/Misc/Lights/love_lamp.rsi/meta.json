@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "license": "RPS-eXtended",
+    "copyright": "by Cog, (discord:834690530104967209)",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "lamp_heart"
+      },
+      {
+        "name": "lamp_heart-on"
+      }
+    ]
+  }

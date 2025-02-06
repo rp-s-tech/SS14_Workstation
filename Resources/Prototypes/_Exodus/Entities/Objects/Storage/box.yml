@@ -1,0 +1,117 @@
+- type: entity
+  name: gift box
+  parent: BoxCardboard
+  id: ValentineDayGiftBox
+  description: It's shockproof, no world mail has affected it.
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Storage/boxes.rsi
+    layers:
+    - state: icon
+      map: [ base ]
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,1,1
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,1,1
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+
+- type: entity
+  id: CandyBoxHeart
+  parent: BaseStorageItem
+  name: heart-shaped box
+  description: What's inside? Chocolate?
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Storage/candy_box.rsi
+    scale: 0.6,0.6
+    layers:
+      - map: [ base ]
+        state: icon
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,2,2
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,2
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Appearance
+  - type: Construction
+    graph: CandyboxHeart
+    node: candyboxHeart
+
+- type: entity
+  id: CandyBox
+  parent: BaseStorageItem
+  name: box full of surprises
+  description: All the good stuff inside!
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Consumable/Food/Baked/misc.rsi
+    layers:
+      - map: [ base ]
+        state: candy_box
+      - state: candy1
+        map: ["candy1"]
+        visible: false
+      - state: candy2
+        map: ["candy2"]
+        visible: false
+      - state: candy3
+        map: ["candy3"]
+        visible: false
+      - state: candy4
+        map: ["candy4"]
+        visible: false
+      - state: candy5
+        map: ["candy5"]
+        visible: false
+      - state: candy6
+        map: ["candy6"]
+        visible: false
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,2,1
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,1,1
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: candy_box_open }
+          False: { state: candy_box }
+  - type: Appearance
+  - type: ItemCounter
+    count:
+      tags: [Candy]
+    composite: true
+    layerStates:
+    - candy1
+    - candy2
+    - candy3
+    - candy4
+    - candy5
+    - candy6
+  - type: StorageFill
+    contents:
+    - id: FoodBakedValentineDaySnack
+      amount: 6
+

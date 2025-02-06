@@ -1,0 +1,11 @@
+- type: entity
+  parent: BasePlushie
+  id: PlushieHeart
+  name: plush heart
+  description: Allows you to give your hand and heart. Hand is not included in the set.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Exodus/Objects/Fun/toys.rsi
+    state: plush_heart

@@ -1,0 +1,17 @@
+- type: entity
+  id: PottedValentineDayPlant1
+  parent: PottedPlantBase
+  name: potted plant
+  description: A lovely piece of nature encased in a vase.
+  components:
+  - type: Sprite
+    sprite: Exodus/Structures/Furniture/potted_plants.rsi
+    state: plant-01
+
+- type: entity
+  id: PottedValentineDayPlant2
+  parent: PottedValentineDayPlant1
+  components:
+  - type: Sprite
+    sprite: Exodus/Structures/Furniture/potted_plants.rsi
+    state: plant-02

@@ -1,0 +1,29 @@
+- type: entity
+  name: onigiri
+  parent: FoodMealBase
+  id: FoodMealOnigiriMeat
+  description: Pretty much like the native OSG.
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Consumable/Food/Meals/onigiri.rsi
+    state: icon
+  - type: FlavorProfile
+    flavors:
+      - anime
+  - type: Tag
+    tags:
+    - Meat
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Protein
+          Quantity: 10
+        - ReagentId: Nutriment
+          Quantity: 5
+
+
+- type: entity
+  parent: FoodMealOnigiriMeat
+  id: FoodMealOnigiriFish

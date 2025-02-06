@@ -1,0 +1,19 @@
+- type: flavor
+  id: sakura
+  flavorType: Complex
+  description: flavor-complex-sakura
+
+- type: flavor
+  id: anime
+  flavorType: Complex
+  description: flavor-complex-anime
+
+- type: flavor
+  id: flowermadness
+  flavorType: Complex
+  description: flavor-complex-flower-madness
+
+- type: flavor
+  id: berrycreampie
+  flavorType: Complex
+  description: flavor-complex-berry-creampie

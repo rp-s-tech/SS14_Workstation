@@ -1,0 +1,16 @@
+- type: reagent
+  id: BerryIceCream
+  name: reagent-name-berry-icecream
+  parent: BaseSoda
+  desc: reagent-desc-berry-icecream
+  physicalDesc: reagent-physical-desc-creamy
+  flavor: berrycreampie
+  color: "#fffbd6"
+  recognizable: true
+  metamorphicSprite:
+    sprite: Exodus/Objects/Consumable/Drinks/berry_icecreamglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  fizziness: 0

@@ -1,0 +1,41 @@
+- type: entity
+  id: ValentineDayBow
+  parent: BaseBow
+  name: cupid's bow
+  description: Love that hurts.
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Weapons/Guns/Bow/love_bow.rsi
+    layers:
+    - state: unwielded
+      map: [ base ]
+    - state: unwielded-arrow
+      map: [ arrow ]
+      visible: false
+  - type: Appearance
+  - type: ItemMapper
+    spriteLayers:
+    - arrow
+    mapLayers:
+      arrow:
+        whitelist:
+          tags:
+          - ValentineDayArrow
+  - type: GenericVisualizer
+    visuals:
+      enum.WieldableVisuals.Wielded:
+        arrow:
+          True: { state: wielded-arrow }
+          False: { state: unwielded-arrow }
+        base:
+          True: { state: wielded }
+          False: { state: unwielded }
+  - type: ItemSlots
+    slots:
+      projectiles:
+        name: Projectiles
+        startingItem: null
+        insertSound: /Audio/Weapons/Guns/Misc/arrow_nock.ogg
+        whitelist:
+          tags:
+          - ValentineDayArrow

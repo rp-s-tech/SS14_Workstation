@@ -1,0 +1,36 @@
+- type: entity
+  name: flower cake
+  parent: FoodCakeBase
+  id: FoodCakeValentineDayFlowerPie
+  description: Cake that represents your love. Go for it, buddy!
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Consumable/Food/Baked/cake.rsi
+    state: cherry_love
+  - type: SliceableFood
+    slice: FoodCakeValentineDayFlowerPieSlice
+  - type: FlavorProfile
+    flavors:
+      - flowermadness
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+
+- type: entity
+  name: flower cake slice
+  parent: FoodCakeSliceBase
+  id: FoodCakeValentineDayFlowerPieSlice
+  description: Slice of cake that represents your love. Go for it, buddy!
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Consumable/Food/Baked/cake.rsi
+    state: cherry_love-slice
+  - type: FlavorProfile
+    flavors:
+      - flowermadness
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+    - Slice

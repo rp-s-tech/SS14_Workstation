@@ -1,0 +1,44 @@
+{
+    "version": 1,
+    "license": "RPS-eXtended",
+    "copyright": "by Askolot, (discord:788252896016990219)- cookie_heart, candy_box, candy_box_open; by Cog, (discord:834690530104967209) - candy_snack",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "cookie_heart"
+      },
+      {
+        "name": "candy_snack"
+      },
+      {
+        "name": "candy_box"
+      },
+      {
+        "name": "candy_box_open"
+      },
+      {
+        "name": "hanami_dango"
+      },
+      {
+        "name": "candy1"
+      },
+      {
+        "name": "candy2"
+      },
+      {
+        "name": "candy3"
+      },
+      {
+        "name": "candy4"
+      },
+      {
+        "name": "candy5"
+      },
+      {
+        "name": "candy6"
+      }
+    ]
+  }

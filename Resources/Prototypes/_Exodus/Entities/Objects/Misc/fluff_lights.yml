@@ -1,0 +1,19 @@
+- type: entity
+  name: rare lamp
+  id: ValentineDayLamp
+  parent: BaseLamp
+  description: Reminds me of a rustic cabin...
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Misc/Lights/love_lamp.rsi
+    layers:
+      - state: lamp_heart
+        map: [ "base" ]
+      - state: lamp_heart-on
+        shader: unshaded
+        visible: false
+        map: [ "light" ]
+  - type: Item
+    sprite: Exodus/Objects/Misc/Lights/love_lamp.rsi
+  - type: PointLight
+    color: "#ff83c5"

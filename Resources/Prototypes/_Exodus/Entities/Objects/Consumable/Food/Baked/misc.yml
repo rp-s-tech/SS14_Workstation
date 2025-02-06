@@ -1,0 +1,50 @@
+- type: entity
+  name: slimeman heart
+  parent: FoodBakedBase
+  id: FoodBakedValentineDayCookie
+  description: Great cherry filling. And what does this have to do with slimeballs?
+  components:
+  - type: FlavorProfile
+  - type: Sprite
+    sprite: Exodus/Objects/Consumable/Food/Baked/misc.rsi
+    state: cookie_heart
+
+- type: entity
+  name: candy
+  parent: FoodBakedBase
+  id: FoodBakedValentineDaySnack
+  description: Small tasty candy.
+  components:
+  - type: FlavorProfile
+  - type: Sprite
+    sprite: Exodus/Objects/Consumable/Food/Baked/misc.rsi
+    state: candy_snack
+  - type: Tag
+    tags:
+    - Candy
+
+- type: entity
+  name: hanami dango
+  parent: FoodBakedBase
+  id: FoodBakedHanamiDango
+  description: Sweetness in the form of round rice dumplings threaded on wooden skewers. Mmm, this chef knows his stuff!
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Consumable/Food/Baked/misc.rsi
+    state: hanami_dango
+  - type: FlavorProfile
+    flavors:
+      - sakura
+  - type: Tag
+    tags:
+    - Meat
+    - ClothMade
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: JuiceBerry
+          Quantity: 5

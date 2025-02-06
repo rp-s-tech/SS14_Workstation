@@ -1,0 +1,12 @@
+- type: entity
+  parent: GarlandsOff
+  id: ValentineDayGarlands
+  name: garland with hearts
+  description: Paper garland filled with holiday spirit! Amur!
+  suffix: On
+  components:
+  - type: Sprite
+    sprite: RPSX/MainGame/Objects/Decoration/love_garlands.rsi
+    layers:
+    - state: lights
+      shader: unshaded

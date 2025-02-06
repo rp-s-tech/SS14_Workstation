@@ -1,0 +1,36 @@
+- type: entity
+  parent: BaseArrow
+  id: ValentineDayArrow
+  name: cupid's arrow
+  description: Love that hurts.
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Weapons/Guns/Projectiles/love_arrows.rsi
+    layers:
+    - state: love_arrow
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 5
+  - type: SolutionContainerManager
+    solutions:
+      ammo:
+        maxVol: 10
+        reagents:
+          - ReagentId: Laughter
+            Quantity: 10
+  - type: Tag
+    tags:
+    - ValentineDayArrow
+  - type: RefillableSolution
+    solution: ammo
+  - type: InjectableSolution
+    solution: ammo
+  - type: SolutionInjectOnEmbed
+    transferAmount: 10
+    solution: ammo
+  - type: SolutionTransfer
+    maxTransferAmount: 10
