@@ -7,14 +7,14 @@
 
 - type: damageType
   id: Fel
-  name: "Скверна"
+  name: damage-type-fel
   armorCoefficientPrice: 0
   armorFlatPrice: 0
 
 #Урон святостью (наносится нежити)
 - type: damageType
   id: Holiness
-  name: "Святой урон"
+  name: damage-type-holiness
   armorCoefficientPrice: 0
   armorFlatPrice: 0
   shouldShowInAnalyzer: false

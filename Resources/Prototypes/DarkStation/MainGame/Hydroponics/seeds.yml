@@ -1,8 +1,8 @@
 - type: seed
   id: myceliumglowshroom
-  name: Светогриб
+  name: seeds-myceliumglowshroom-name
   noun: seeds-noun-seeds
-  displayName: Светогриб
+  displayName: seeds-myceliumglowshroom-display-name
   plantRsi: DarkStation/MainGame/Objects/Specific/Hydroponics/Mushrooms/glowshroom.rsa
   packetPrototype: MyceliumGlowshroomSeeds
   productPrototypes:
@@ -34,9 +34,9 @@
 
 - type: seed
   id: myceliumglowcap
-  name: Светокеп
+  name: seeds-myceliumglowcap-name
   noun: seeds-noun-seeds
-  displayName: Светокеп
+  displayName: seeds-myceliumglowcap-display-name
   plantRsi: DarkStation/MainGame/Objects/Specific/Hydroponics/Mushrooms/glowcap.rsa
   packetPrototype: MyceliumGlowcapSeeds
   productPrototypes:
