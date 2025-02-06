@@ -1,0 +1,12 @@
+- type: construction
+  name: heart-shaped box
+  id: CandyboxHeart
+  graph: CandyboxHeart
+  startNode: start
+  targetNode: candyboxHeart
+  category: construction-category-misc
+  objectType: Item
+  description: It's shockproof, no world mail has affected it.
+  icon:
+    sprite: Exodus/Objects/Storage/candy_box.rsi
+    state: icon

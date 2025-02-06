@@ -1,0 +1,105 @@
+- type: entity
+  name: love envelope
+  parent: BaseItem
+  id: ValentineCard
+  description: For special occasions.
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: valentinka_open
+      map: ["enum.EnvelopeVisualLayers.Open"]
+    - state: valentinka_closed
+      map: ["enum.EnvelopeVisualLayers.Sealed"]
+      visible: false
+    - state: valentinka_torn
+      map: ["enum.EnvelopeVisualLayers.Torn"]
+      visible: false
+  - type: Paper
+    content: envelope-default-message
+  - type: PaperVisuals
+    headerImagePath: "/Textures/Interface/Paper/paper_heading_postage_stamp.svg.96dpi.png"
+    headerMargin: 216.0, 0.0, 0.0, 0.0
+    contentMargin: 0.0, 0.0, 0.0, 0.0
+    maxWritableArea: 368.0, 256.0
+    backgroundModulate: "#fbd6e0"
+  - type: Envelope
+  - type: ContainerContainer
+    containers:
+      letter_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      letter_slot:
+        name: envelope-letter-slot
+        insertSound: /Audio/Effects/packetrip.ogg
+        ejectSound: /Audio/Effects/packetrip.ogg
+        whitelist:
+          tags:
+            - Paper
+  - type: ActivatableUI
+    key: enum.PaperUiKey.Key
+    requiresComplex: false
+  - type: UserInterface
+    interfaces:
+      enum.PaperUiKey.Key:
+        type: PaperBoundUserInterface
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - Trash
+    - Document
+  - type: Flammable
+    fireSpread: true
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    damage:
+      types:
+        Heat: 1
+  - type: FireVisuals
+    sprite: Effects/fire.rsi
+    normalState: fire
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:EmptyAllContainersBehaviour
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  name: scroll for a special occasion
+  parent: Paper
+  id: PaperValentineDay
+  description: Craft paper for your special occasion.
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: love_paper
+    - state: love_paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: "#dfd6b2"
+
+- type: entity
+  name: valentine card
+  parent: Paper
+  id: PaperValentineCard
+  description: For someone special...
+  components:
+  - type: Sprite
+    sprite: Exodus/Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper_heart
+    - state: paper_heart_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: "#ff1861"

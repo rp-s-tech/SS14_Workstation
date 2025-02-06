@@ -1,0 +1,13 @@
+- type: constructionGraph
+  id: CandyboxHeart
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: candyboxHeart
+      steps:
+      - material: Cardboard
+        amount: 3
+        doAfter: 5
+  - node: candyboxHeart
+    entity: CandyBoxHeart

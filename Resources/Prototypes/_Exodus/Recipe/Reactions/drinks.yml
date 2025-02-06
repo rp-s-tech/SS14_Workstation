@@ -1,0 +1,9 @@
+- type: reaction
+  id: BerryIceCream
+  reactants:
+    JuiceBerry:
+      amount: 1
+    IceCream:
+      amount: 1
+  products:
+    BerryIceCream: 2

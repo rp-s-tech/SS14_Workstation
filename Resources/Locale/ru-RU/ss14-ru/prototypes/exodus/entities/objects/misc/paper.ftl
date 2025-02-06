@@ -1,0 +1,6 @@
+ent-ValentineCard = конверт-валентинка
+    .desc = Для особого случая...
+ent-PaperValentineDay = свиток на особый случай
+    .desc = Крафт-бумага для вашего особого случая.
+ent-PaperValentineCard = валентинка
+    .desc = Для кого-то особенного...

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "RPS-eXtended",
+  "copyright": "by Piv2r (discord:716737363895648256)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+        "name": "icon-open"
+    }
+  ]
+}

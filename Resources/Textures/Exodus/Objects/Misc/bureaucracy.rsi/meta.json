@@ -1,0 +1,32 @@
+{
+    "version": 1,
+    "license": "RPS-eXtended",
+    "copyright": "by Cog, (discord:834690530104967209)",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "valentinka_closed"
+      },
+      {
+        "name": "valentinka_open"
+      },
+      {
+        "name": "valentinka_torn"
+      },
+      {
+        "name": "love_paper"
+      },
+      {
+        "name": "love_paper_words"
+      },
+      {
+        "name": "paper_heart"
+      },
+      {
+        "name": "paper_heart_words"
+      }
+    ]
+  }

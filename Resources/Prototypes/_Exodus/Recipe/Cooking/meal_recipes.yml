@@ -1,0 +1,63 @@
+- type: microwaveMealRecipe
+  id: RecipeValentineDayCookie
+  name: slimeman heart
+  result: FoodBakedValentineDayCookie
+  time: 5
+  solids:
+    FoodCherry: 1
+    FoodButterSlice: 1
+  reagents:
+    Flour: 10
+
+- type: microwaveMealRecipe
+  id: RecipeValentineDaySnack
+  name: candy
+  result: FoodBakedValentineDaySnack
+  time: 5
+  solids:
+    FoodButterSlice: 1
+  reagents:
+    Flour: 5
+    Cream: 5
+
+- type: microwaveMealRecipe
+  id: RecipeLoveValentineDayFlowerPie
+  name: flower cake
+  result: FoodCakeValentineDayFlowerPie
+  time: 5
+  solids:
+    FoodCakePlain: 1
+    FlowerRose: 1
+    FoodButterSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeFoodMealOnigiriMeat
+  name: onigiri
+  result: FoodMealOnigiriMeat
+  time: 5
+  reagents:
+    Rice: 10
+    Vinegar: 5
+  solids:
+    FoodMeatCutlet: 1
+
+- type: microwaveMealRecipe
+  id: RecipeFoodMealOnigiriFish
+  name: fish onigiri
+  result: FoodMealOnigiriFish
+  time: 5
+  reagents:
+    Rice: 10
+    Vinegar: 5
+  solids:
+    FoodMeatFish: 1
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedHanamiDango
+  name: hanami dango
+  result: FoodBakedHanamiDango
+  time: 5
+  reagents:
+    Rice: 10
+    Sugar: 5
+    JuiceBerry: 5
