@@ -1,14 +1,32 @@
 {
-  "version": 1,
-  "license": "RPS-eXtended",
-  "copyright": "by Piv2r (discord:716737363895648256)",
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "states": [
-    {
-      "name": "plush_heart"
-    }
-  ]
+    "version": 1,
+    "license": "CLA",
+    "copyright": "plush_heart by Piv2r (discord:716737363895648256), other by Askolot (discord:788252896016990219)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "plush_loxmat"
+        },
+        {
+            "name": "plush_fragoler"
+        },
+        {
+            "name": "plush_lokilife"
+        },
+        {
+            "name": "plush_asler"
+        },
+        {
+            "name": "plush_atima"
+        },
+        {
+            "name": "plush_jidor"
+        },
+        {
+            "name": "plush_heart"
+        }
+    ]
 }
