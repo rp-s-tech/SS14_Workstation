@@ -94,10 +94,6 @@ public abstract class EquipmentHudSystem<T> : EntitySystem where T : IComponent
 
     protected virtual void OnRefreshEquipmentHud(Entity<T> ent, ref InventoryRelayedEvent<RefreshEquipmentHudEvent<T>> args)
     {
-        // Goob edit start
-        args.Args.Active = true;
-        args.Args.Components.Add(component);
-        // Goob edit end
         OnRefreshComponentHud(ent, ref args.Args);
     }
 
