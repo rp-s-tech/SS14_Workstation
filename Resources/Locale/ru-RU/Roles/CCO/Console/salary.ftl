@@ -1,8 +1,7 @@
-﻿cco-console-no-salary = Зарплата не указана
-cco-console-salary = {$credits} кредитов
+cco-console-no-salary = Зарплата не указана
+cco-console-salary = { $credits } кредитов
 cco-console-max-bonus-tooltip = ОЦК не может назначить больше одной премии
-cco-console-bonus-or-penalty = {$credits} кредитов ({$count})
-
+cco-console-bonus-or-penalty = { $credits } кредитов ({ $count })
 cco-console-crew-member-title = Член экипажа:
 cco-console-crew-member-job = Должность:
 cco-console-crew-member-salary = Зарплата:

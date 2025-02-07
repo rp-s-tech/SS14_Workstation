@@ -43,4 +43,3 @@ ent-NTRCaneSheath = { ent-NTRCane }
 ent-NTRCaneSheathFilled = { ent-NTRCaneSheath }
     .suffix = Полный
     .desc = { ent-NTRCaneSheath.desc }
-

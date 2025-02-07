@@ -1,1 +1,1 @@
-﻿station-helper-name = ИИ Помощник
+station-helper-name = ИИ Помощник

@@ -2,7 +2,6 @@ ent-BasePebble = камень
     .desc = Просто камень. Что вы ещё от него хотите? Чтобы он вам читал стихи, написал симфонию?
 ent-BaseBlackPebble = базальтовый камень
     .desc = Базальтовый камень. Что вы ещё от него хотите? Чтобы он вам читал стихи, написал симфонию?
-
 ent-BlackPebble01 = { ent-BaseBlackPebble }
     .desc = { ent-BaseBlackPebble.desc }
 ent-BlackPebble02 = { ent-BaseBlackPebble }
@@ -33,7 +32,6 @@ ent-BlackPebble14 = { ent-BaseBlackPebble }
     .desc = { ent-BaseBlackPebble.desc }
 ent-BlackPebble15 = { ent-BaseBlackPebble }
     .desc = { ent-BaseBlackPebble.desc }
-
 ent-Pebble01 = { ent-BasePebble }
     .desc = { ent-BasePebble.desc }
 ent-Pebble02 = { ent-BasePebble }

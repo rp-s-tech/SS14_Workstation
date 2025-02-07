@@ -67,4 +67,3 @@ ent-FoodBakedCroissant = круассан
     .desc = Маслянистое, слоистое лакомство.
 ent-FoodBakedCroissantCotton = хлопковый круассан
     .desc = Маслянистый, слоистый, волокнистый деликатес.
-

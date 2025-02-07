@@ -92,6 +92,10 @@ chat-speech-verb-vox-1 = скрипит
 chat-speech-verb-vox-2 = визжит
 chat-speech-verb-vox-3 = каркает
 chat-speech-verb-name-small-mob = Мышь
+chat-speech-verb-name-goat = Goat
+chat-speech-verb-goat-1 = bleats
+chat-speech-verb-goat-2 = grunts
+chat-speech-verb-goat-3 = cries
 chat-speech-verb-small-mob-1 = скрипит
 chat-speech-verb-small-mob-2 = пищит
 chat-speech-verb-name-large-mob = Карп
@@ -117,7 +121,9 @@ chat-speech-verb-name-electricity = Электричество
 chat-speech-verb-electricity-1 = трещит
 chat-speech-verb-electricity-2 = гудит
 chat-speech-verb-electricity-3 = скрипит
+
 ### Slugcat
+
 chat-speech-verb-name-slugcat = Слизнекотовый
 chat-speech-verb-slugcat-1 = интонирует
 chat-speech-verb-slugcat-2 = утверждает

@@ -10,7 +10,6 @@ station-goal-special-update-stations-medical =
     - Палаты для пациентов.
     - Химическую лабораторию.
     - Зону расположения Главного Врача.
-
 station-goal-special-update-stations-science =
     Цель вашей смены - расширение станции.
     - Тип расширения: Научный отдел

@@ -6,8 +6,6 @@ accent-words-slugcat-5 = ВаВа!
 accent-words-slugcat-6 = ВаВа?
 accent-words-slugcat-7 = ВаВа.
 accent-words-slugcat-8 = ВаВа...
-
-
 accent-words-capibara-1 = Чурр!
 accent-words-capibara-2 = Вииип?
 accent-words-capibara-3 = Бррр...

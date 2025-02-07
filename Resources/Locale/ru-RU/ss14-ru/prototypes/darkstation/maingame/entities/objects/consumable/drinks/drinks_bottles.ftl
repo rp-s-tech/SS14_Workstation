@@ -1,4 +1,3 @@
-
 ent-DrinkSaintWaterJug = кувшин святой воды
     .desc = Отпугивает темные силы.
 ent-DrinkBaltika9BottleFull = бутылка балтики 9

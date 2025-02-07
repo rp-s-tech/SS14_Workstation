@@ -15,7 +15,6 @@ job-name-ertrecon = разведчик ОБР
 job-name-security-borg = СБ-Борг
 job-name-POCC = Начальниц Штаба ЦК
 job-name-armored-chaplain = Капеллан
-
 JobAgentCrimsonLily = Агент Багровой Лилии
 JobSeniorEngineer = Ведущий инженер
 JobSeniorOfficer = Инструктор СБ

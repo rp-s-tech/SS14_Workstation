@@ -1,4 +1,3 @@
-﻿
 advertisement-surg-1 = Нету ручек - нет конфетки.
 advertisement-surg-2 = I AM A SURGEON!!!
 advertisement-surg-3 = Бип-пуп-пип.
