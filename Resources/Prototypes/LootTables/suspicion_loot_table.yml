@@ -68,6 +68,11 @@
   - id: WeaponSubMachineGunC20r
     amount: 0
     maxAmount: 5
+  # RPSX-Vector-Revert-Start
+  - id: WeaponSubMachineGunVector
+    amount: 0
+    maxAmount: 5
+  # RPSX-Vector-Revert-End
   - id: WeaponSubMachineGunWt550
     amount: 0
     maxAmount: 5
