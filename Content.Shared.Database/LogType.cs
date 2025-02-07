@@ -445,6 +445,11 @@ public enum LogType
     /// </summary>
     PdaInteract = 96,
 
+    /// <summary>
+    /// An atmos networked device (such as a vent or pump) has had its settings changed, usually through an air alarm
+    /// </summary>
+    AtmosDeviceSetting = 97,
+    
     ///<summary>
     /// RPSX Economics log. Using ATM
     ///</summary>
@@ -453,5 +458,4 @@ public enum LogType
     /// RPSX Economics log. Getting salary
     ///</summary>
     Salary = 1001,
-    
 }

@@ -11,3 +11,6 @@
     ClothingEyesHudMedical: 2
     ClothingEyesEyepatchHudMedical: 2
     MechanicalInjector: 3 # Exodus-ThickSyringes
+  contrabandInventory:
+    FoodApple: 1
+    
