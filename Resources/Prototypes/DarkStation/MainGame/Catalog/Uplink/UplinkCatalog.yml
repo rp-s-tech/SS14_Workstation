@@ -40,8 +40,8 @@
 
 - type: listing
   id: UplinkRadioPenSyndie
-  name: uplink-radiopen-name
-  description: uplink-radiopen-desc
+  name: uplink-radio-pen-name
+  description: uplink-radio-pen-desc
   productEntity: PenRadioSyndie
   icon: { sprite: Objects/Misc/pens.rsi, state: pen }
   cost:

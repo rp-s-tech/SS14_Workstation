@@ -3,8 +3,8 @@ spellbook-fireball-name = Огненный шар
 spellbook-fireball-desc = Пусть большинство членов экипажа взорвутся от ярости, когда увидят летящий в них огненный шар!
 spellbook-blink-name = Прыжок
 spellbook-blink-desc = Не моргайте, иначе вы не заметите, как телепортируетесь.
-spellbook-voidapplause-name = Void Applause
-spellbook-voidapplause-desc = Swap places with the target, doesn't it make you want to do the boogie?
+spellbook-voidapplause-name = Аплодисменты пустоты
+spellbook-voidapplause-desc = Поменяйтесь местами с целью, разве вам не хочется сделать буги?
 spellbook-force-wall-name = Силовой барьер
 spellbook-force-wall-desc = Создайте три стены чистой энергии, через которые вы можете пройти, а другие - нет.
 spellbook-polymoprh-spider-name = Полиморф-паук
@@ -17,13 +17,12 @@ spellbook-ethereal-jaunt-name = Эфирная прогулка
 spellbook-ethereal-jaunt-description = Перейдите на Эфирный план чтобы ускользнуть от врагов!
 spellbook-mind-swap-name = Обмен разумами
 spellbook-mind-swap-description = Обменяйтесь телами с другим человеком!
-spellbook-smite-name = Smite
-spellbook-smite-desc = Don't like them? EXPLODE them into giblets! Requires Wizard Robe & Hat.
-spellbook-cluwne-name = Cluwne's Curse
-spellbook-cluwne-desc = For when you really hate someone and Smite isn't enough. Requires Wizard Robe & Hat.
-spellbook-slip-name = Slippery Slope
-spellbook-slip-desc = Learn the ancient ways of the Janitor and curse your target to be slippery. Requires Wizard Robe & Hat.
-
+spellbook-smite-name = Кара
+spellbook-smite-desc = Они тебе не нравятся? ВЗОРВИ ИХ, оставив только потроха. Требуется магическая шляпа и мантия волшебника.
+spellbook-cluwne-name = Проклятия клувня
+spellbook-cluwne-desc = Для случаев, когда вы действительно ненавидите кого-то, а кары недостаточно. Требуется магическая шляпа и мантия волшебника.
+spellbook-slip-name = Скользкая дорожка
+spellbook-slip-desc = Изучите древние приемы уборщика и прокляните свою цель, чтобы она подскальзывалась. Требуется магическая шляпа и мантия волшебника.
 # Equipment
 
 spellbook-wand-polymorph-door-name = Волшебная палочка входа

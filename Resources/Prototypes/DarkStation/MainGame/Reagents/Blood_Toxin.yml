@@ -20,8 +20,7 @@
             Slash: 5
       - !type:MovespeedModifier
         walkSpeedModifier: 0.9
-        sprintSpeedModifier: 0.7      
+        sprintSpeedModifier: 0.7
 
-       
 
-        
+
