@@ -291,6 +291,9 @@
   chatTriggers:
     - clap
     - claps their hands together
+    # RPSX-Localization-Start
+    - хлопает один раз
+    # RPSX-Localization-End
 
 - type: emote
   id: Snap
