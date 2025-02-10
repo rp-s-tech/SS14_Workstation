@@ -11,6 +11,12 @@
     - HeadTop
   - type: Hunger
   - type: Thirst
+  # Exodus-MothLore-Start | Stamina
+  - type: Stamina
+    baseDecay: 13
+  - type: StaminaArmor
+    coefficient: 1.1
+  # Exodus-Stamina-End
   - type: Icon
     sprite: Mobs/Species/Moth/parts.rsi
     state: full

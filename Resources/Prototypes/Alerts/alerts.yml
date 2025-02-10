@@ -5,7 +5,7 @@
   id: BaseAlertOrder
   order:
     - category: Health
-    - category: Stamina
+    # Exodus - Stamina Refactor | Remove Stamina Alert
     - alertType: SuitPower
     - category: Internals
     - alertType: Fire
@@ -314,28 +314,7 @@
   name: alerts-hunger-name
   description: alerts-hunger-desc
 
-- type: alert
-  id: Stamina
-  category: Stamina
-  icons:
-  - sprite: /Textures/Interface/Alerts/stamina.rsi
-    state: stamina0
-  - sprite: /Textures/Interface/Alerts/stamina.rsi
-    state: stamina1
-  - sprite: /Textures/Interface/Alerts/stamina.rsi
-    state: stamina2
-  - sprite: /Textures/Interface/Alerts/stamina.rsi
-    state: stamina3
-  - sprite: /Textures/Interface/Alerts/stamina.rsi
-    state: stamina4
-  - sprite: /Textures/Interface/Alerts/stamina.rsi
-    state: stamina5
-  - sprite: /Textures/Interface/Alerts/stamina.rsi
-    state: stamina6
-  name: alerts-stamina-name
-  description: alerts-stamina-desc
-  minSeverity: 0
-  maxSeverity: 6
+# Exodus - Stamina Refactor | Remove Stamina Alert
 
 - type: alert
   id: Starving

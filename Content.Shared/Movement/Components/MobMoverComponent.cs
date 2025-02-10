@@ -14,6 +14,11 @@ namespace Content.Shared.Movement.Components
 
         [DataField] public float PushStrength = 600f;
 
+        // Exodus - Stamina Rush - Start
+        [DataField, AutoNetworkedField]
+        public float StepSoundMoveDistanceRushing = 5;
+        // Exodus - End
+
         [DataField, AutoNetworkedField]
         public float StepSoundMoveDistanceRunning = 2;
 

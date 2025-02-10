@@ -43,7 +43,12 @@ binds:
   key: S
 - function: Walk
   type: State
+  key: Control  # Exodus - Stamina Rush
+# Exodus - Stamina Rush - Start
+- function: Rush
+  type: State
   key: Shift
+# Exodus - End
 # Shuttle
 - function: ShuttleStrafeUp
   type: State

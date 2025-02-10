@@ -535,6 +535,7 @@
     slots:
     - Belt
   - type: Gun
+    fireRate: 0.5  # Exodus - Stamina Refactor
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser.ogg
   - type: ProjectileBatteryAmmoProvider

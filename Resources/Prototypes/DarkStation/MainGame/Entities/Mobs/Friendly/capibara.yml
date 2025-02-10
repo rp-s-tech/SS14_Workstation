@@ -46,8 +46,7 @@
         0: Alive
         50: Critical
         100: Dead
-    - type: Stamina
-      excess: 100
+    - type: Stamina # Exodus - Stamina Refactor
     - type: Appearance
     - type: Butcherable
       spawned:

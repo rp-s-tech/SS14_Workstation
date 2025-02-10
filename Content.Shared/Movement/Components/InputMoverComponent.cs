@@ -40,6 +40,7 @@ namespace Content.Shared.Movement.Components
 
         public Vector2 CurTickWalkMovement;
         public Vector2 CurTickSprintMovement;
+        public Vector2 CurTickRushMovement; // Exodus - Stamina Rush
 
         public MoveButtons HeldMoveButtons = MoveButtons.None;
 
@@ -70,7 +71,16 @@ namespace Content.Shared.Movement.Components
 
         public const float LerpTime = 1.0f;
 
-        public bool Sprinting => (HeldMoveButtons & MoveButtons.Walk) == 0x0;
+        // Exodus - Rush - Start | Beauty states check | Add third state
+        public bool Moving => (HeldMoveButtons & MoveButtons.AnyDirection) != 0x0;
+        public bool Walking => HeldMoveButtons.HasFlag(MoveButtons.Walk) &&
+                               !HeldMoveButtons.HasFlag(MoveButtons.Rush);
+
+        public bool Sprinting => !HeldMoveButtons.HasFlag(MoveButtons.Walk) &&
+                                 !HeldMoveButtons.HasFlag(MoveButtons.Rush);
+        public bool Rushing => Moving &&
+                               HeldMoveButtons.HasFlag(MoveButtons.Rush);
+        // Exodus - End
 
         [ViewVariables(VVAccess.ReadWrite)]
         public bool CanMove = true;

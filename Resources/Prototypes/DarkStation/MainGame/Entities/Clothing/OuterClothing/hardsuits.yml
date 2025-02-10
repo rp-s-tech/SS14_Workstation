@@ -105,8 +105,6 @@
         Arm: 0.6
   - type: PointLight
     color: "#f5cd84"
-  # - type: StaminaArmor
-  #   coefficient: 0.8
   - type: ClothingSpeedModifier
     walkModifier: 0.85
     sprintModifier: 0.85

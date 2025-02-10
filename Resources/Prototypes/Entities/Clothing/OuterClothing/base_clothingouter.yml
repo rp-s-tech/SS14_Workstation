@@ -129,6 +129,8 @@
         Piercing: 0.95
         Heat: 0.90
         Radiation: 0.25
+  - type: StaminaArmor # RPSX - Stamina Refactor
+    coefficient: 0.5
   - type: ToggleableClothing
     slot: head
   - type: ContainerContainer
