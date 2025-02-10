@@ -167,7 +167,7 @@
   - type: Clothing
     sprite: DarkStation/MainGame/Objects/Weapons/Guns/Rifles/xani.rsi
   - type: Gun
-    fireRate: 8
+    fireRate: 6.5
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
