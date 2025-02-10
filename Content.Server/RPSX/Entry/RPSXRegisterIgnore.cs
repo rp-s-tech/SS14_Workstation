@@ -11,8 +11,8 @@ public sealed class RPSXRegisterIgnore
 {
     public void RegisterIgnore(IPrototypeManager prototypeManager, IComponentFactory componentFactory, IResourceManager res)
     {
-        var useSecrets = res.ContentFileExists("/Content.RPSXServer.dll") ||
-                         res.ContentFileExists("/Assemblies/Content.RPSXServer.dll");
+        var useSecrets = res.ContentFileExists("/Content.RPSX.Server.dll") ||
+                         res.ContentFileExists("/Assemblies/Content.RPSX.Server.dll");
 
         if (!useSecrets)
         {

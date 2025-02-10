@@ -137,9 +137,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Robust.Xaml", "RobustToolbo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RPSX", "RPSX", "{2CE962A7-7EDD-43F6-A68C-F84492026320}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Content.RPSXClient", "RPSX\Content.RPSXClient\Content.RPSXClient.csproj", "{46B3C026-3DFB-4FA4-AAB7-82FC8775D1FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Content.RPSX.Client", "RPSX\Content.RPSX.Client\Content.RPSX.Client.csproj", "{46B3C026-3DFB-4FA4-AAB7-82FC8775D1FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Content.RPSXServer", "RPSX\Content.RPSXServer\Content.RPSXServer.csproj", "{14F16DCB-8F0D-4AA6-93FA-C6F827AA11E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Content.RPSX.Server", "RPSX\Content.RPSX.Server\Content.RPSX.Server.csproj", "{14F16DCB-8F0D-4AA6-93FA-C6F827AA11E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

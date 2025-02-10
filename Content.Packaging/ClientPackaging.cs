@@ -11,10 +11,10 @@ namespace Content.Packaging;
 public static class ClientPackaging
 {
     private static readonly bool UseExodus = File.Exists(Path.Combine("Exodus", "ExodusSecrets.sln")); // Exodus-Secrets
-    private static readonly string RPSXClientPath = Path.Combine("RPSX", "Content.RPSXClient", "Content.RPSXClient.csproj");
-    // private static readonly string SecretSharedPath = Path.Combine("RPSX", "Content.RPSXShared", "Content.RPSXShared.csproj");
+    private static readonly bool UseRPSXClient = File.Exists(RPSXClientPath); // RPSX-Secrets
+    private static readonly string RPSXClientPath = Path.Combine("RPSX", "Content.RPSX.Client", "Content.RPSX.Client.csproj"); // RPSX-Secrets
 
-    private static readonly bool UseRPSXClient = File.Exists(RPSXClientPath);
+
     /// <summary>
     /// Be advised this can be called from server packaging during a HybridACZ build.
     /// </summary>
@@ -116,11 +116,14 @@ public static class ClientPackaging
         var inputPass = graph.Input;
 
         var assemblies = new List<string> { "Content.Client", "Content.Shared", "Content.Shared.Database" };
+
+        // RPSX-Secrets-Start
         if (UseRPSXClient)
         {
             assemblies.Add("Content.RPSXClient");
             // assemblies.Add("Content.RPSXShared");
         }
+        // RPSX-Secrets-End
         // Exodus-Secrets-Start: Add Corvax interfaces to Magic ACZ
         if (UseExodus)
             assemblies.AddRange(["Content.Exodus.Shared", "Content.Exodus.Client"]);

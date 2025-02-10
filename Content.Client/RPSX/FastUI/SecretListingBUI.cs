@@ -3,7 +3,7 @@ using Content.Shared.RPSX.FastUI;
 using Robust.Client.GameObjects;
 using Robust.Shared.GameObjects;
 
-namespace Content.RPSXClient.FastUI;
+namespace Content.RPSX.Client.FastUI;
 
 public sealed class SecretListingBUI : BoundUserInterface
 {
@@ -11,13 +11,13 @@ public sealed class SecretListingBUI : BoundUserInterface
     public SecretListingBUI(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
     }
-    private Client.RPSX.FastUI.SecretListingBUIWindow? _window;
+    private Content.Client.RPSX.FastUI.SecretListingBUIWindow? _window;
     private NetEntity userEntity = NetEntity.Invalid;
 
     protected override void Open()
     {
         base.Open();
-        _window = new Client.RPSX.FastUI.SecretListingBUIWindow();
+        _window = new Content.Client.RPSX.FastUI.SecretListingBUIWindow();
         _window.OpenCentered();
         _window.OnClose += Close;
         _window.OnListingButtonPressed += (_, data, key) =>

@@ -1,6 +1,6 @@
 ﻿<transactions:PdaBankTransactions
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.RPSXClient.PDA.Bank.Transactions"
+    xmlns:controls="clr-namespace:Content.RPSX.Client.PDA.Bank.Transactions"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:transactions="clr-namespace:Content.Client.RPSX.Bank.PDA.UI.Transactions">
 

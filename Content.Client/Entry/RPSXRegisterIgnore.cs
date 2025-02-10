@@ -20,7 +20,7 @@ public sealed class RPSXRegisterIgnore
 
     private bool UseSecrets(IResourceManager res)
     {
-        return res.ContentFileExists("/Content.RPSXClient.dll") ||
-               res.ContentFileExists("/Assemblies/Content.RPSXClient.dll");
+        return res.ContentFileExists("/Content.RPSX.Client.dll") ||
+               res.ContentFileExists("/Assemblies/Content.RPSX.Client.dll");
     }
 }

@@ -1,6 +1,4 @@
-﻿using Robust.Shared.GameObjects;
-
-namespace Content.RPSXServer.DarkForces.Saint.Chaplain.Components;
+﻿namespace Content.Shared.RPSX.DarkForces.Saint.Chaplain;
 
 [RegisterComponent]
 public sealed partial class ChaplainBarrierTargetComponent : Component
