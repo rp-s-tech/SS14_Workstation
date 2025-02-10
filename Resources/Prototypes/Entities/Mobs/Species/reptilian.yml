@@ -120,6 +120,12 @@
       - DoorBumpOpener
       - AnomalyHost
   # Exodus-ThickSyringes-End
+  # Exodus-ReptilianLore-Start | Stamina Armor
+  - type: Stamina
+    baseDecay: 7
+  - type: StaminaArmor
+    coefficient: 0.8
+  # Exodus-StaminaArmor-End
   - type: Inventory
     speciesId: reptilian
     femaleDisplacements:

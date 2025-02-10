@@ -1,8 +1,9 @@
+// Exodus - Stamina Refactor
 using Content.Shared.Damage.Components;
 
 namespace Content.Shared.Damage.Systems;
 
-public sealed partial class StaminaSystem
+public abstract partial class SharedStaminaSystem  // Exodus - Stamina Refactor | Shared for stamina
 {
     private void InitializeModifier()
     {
@@ -16,6 +17,7 @@ public sealed partial class StaminaSystem
             return;
 
         stamina.CritThreshold *= comp.Modifier;
+        UpdateStamina(uid, stamina);  // Exodus - Stamina Refactor | Check if damage pass critical level
     }
 
     private void OnModifierShutdown(EntityUid uid, StaminaModifierComponent comp, ComponentShutdown args)
@@ -24,6 +26,7 @@ public sealed partial class StaminaSystem
             return;
 
         stamina.CritThreshold /= comp.Modifier;
+        UpdateStamina(uid, stamina);  // Exodus - Stamina Refactor | Check if damage pass critical level
     }
 
     /// <summary>

@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.CCVar;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Friction;
 using Content.Shared.Gravity;
 using Content.Shared.Inventory;
@@ -9,6 +10,7 @@ using Content.Shared.Maps;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
+using Content.Shared.RPSX.Stamina;
 using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -39,6 +41,7 @@ public abstract partial class SharedMoverController : VirtualController
     [Dependency] private   readonly EntityLookupSystem _lookup = default!;
     [Dependency] private   readonly InventorySystem _inventory = default!;
     [Dependency] private   readonly MobStateSystem _mobState = default!;
+    [Dependency] private   readonly RushSystem _rushSystem = default!;  // Exodus - Stamina Rush
     [Dependency] private   readonly SharedAudioSystem _audio = default!;
     [Dependency] private   readonly SharedContainerSystem _container = default!;
     [Dependency] private   readonly SharedMapSystem _mapSystem = default!;
@@ -94,6 +97,7 @@ public abstract partial class SharedMoverController : VirtualController
         Subs.CVar(_configManager, CCVars.RelativeMovement, value => _relativeMovement = value, true);
         Subs.CVar(_configManager, CCVars.StopSpeed, value => _stopSpeed = value, true);
         UpdatesBefore.Add(typeof(TileFrictionController));
+        UpdatesBefore.Add(typeof(SharedStaminaSystem));  // Exodus - Rush
     }
 
     public override void Shutdown()
@@ -159,7 +163,7 @@ public abstract partial class SharedMoverController : VirtualController
         UsedMobMovement[uid] = true;
         // Specifically don't use mover.Owner because that may be different to the actual physics body being moved.
         var weightless = _gravity.IsWeightless(physicsUid, physicsComponent, xform);
-        var (walkDir, sprintDir) = GetVelocityInput(mover);
+        var (walkDir, sprintDir, rushDir) = GetVelocityInput((uid, mover));  // Exodus - Rush | Add third movement type
         var touching = false;
 
         // Handle wall-pushes.
@@ -199,8 +203,9 @@ public abstract partial class SharedMoverController : VirtualController
 
         var walkSpeed = moveSpeedComponent?.CurrentWalkSpeed ?? MovementSpeedModifierComponent.DefaultBaseWalkSpeed;
         var sprintSpeed = moveSpeedComponent?.CurrentSprintSpeed ?? MovementSpeedModifierComponent.DefaultBaseSprintSpeed;
+        var rushSpeed = sprintSpeed * _rushSystem.GetRushModify(uid);
 
-        var total = walkDir * walkSpeed + sprintDir * sprintSpeed;
+        var total = walkDir * walkSpeed + sprintDir * sprintSpeed + rushDir * rushSpeed;
 
         var parentRotation = GetParentGridAngle(mover);
         var worldTotal = _relativeMovement ? parentRotation.RotateVec(total) : total;
@@ -255,7 +260,15 @@ public abstract partial class SharedMoverController : VirtualController
             if (!weightless && MobMoverQuery.TryGetComponent(uid, out var mobMover) &&
                 TryGetSound(weightless, uid, mover, mobMover, xform, out var sound, tileDef: tileDef))
             {
-                var soundModifier = mover.Sprinting ? 3.5f : 1.5f;
+                // Exodus - Stamina Rush - Start | Add third movement type
+                float soundModifier;
+                if (mover.Rushing)
+                    soundModifier = 10.0f;
+                else if (mover.Walking)
+                    soundModifier = 1.5f;
+                else
+                    soundModifier = 3.5f;
+                // Exodus - End
 
                 var audioParams = sound.Params
                     .WithVolume(sound.Params.Volume + soundModifier)
@@ -405,9 +418,15 @@ public abstract partial class SharedMoverController : VirtualController
             return false;
 
         var coordinates = xform.Coordinates;
-        var distanceNeeded = mover.Sprinting
-            ? mobMover.StepSoundMoveDistanceRunning
-            : mobMover.StepSoundMoveDistanceWalking;
+        // Exodus - Stamina Rush - Start | Add third movement type
+        float distanceNeeded;
+        if (mover.Rushing)
+            distanceNeeded = mobMover.StepSoundMoveDistanceRushing;
+        else if (mover.Walking)
+            distanceNeeded = mobMover.StepSoundMoveDistanceWalking;
+        else
+            distanceNeeded = mobMover.StepSoundMoveDistanceRunning;
+        // Exodus - End
 
         // Handle footsteps.
         if (!weightless)

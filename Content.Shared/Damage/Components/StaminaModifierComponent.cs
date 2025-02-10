@@ -6,7 +6,7 @@ namespace Content.Shared.Damage.Components;
 /// <summary>
 /// Multiplies the entity's <see cref="StaminaComponent.StaminaDamage"/> by the <see cref="Modifier"/>.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(StaminaSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(SharedStaminaSystem))] // Exodus - Stamina Refactor
 public sealed partial class StaminaModifierComponent : Component
 {
     /// <summary>
@@ -15,5 +15,5 @@ public sealed partial class StaminaModifierComponent : Component
     /// If you have too much damage when the modifier is removed, you suffer "withdrawl" and instantly stamcrit.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("modifier"), AutoNetworkedField]
-    public float Modifier = 2f;
+    public float Modifier = 1.7f; // Exodus - Balance
 }

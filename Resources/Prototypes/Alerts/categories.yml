@@ -16,8 +16,7 @@
 - type: alertCategory
   id: Internals
 
-- type: alertCategory
-  id: Stamina
+# Exodus - Stamina Refactor | Remove Stamina Alert
 
 - type: alertCategory
   id: Piloting

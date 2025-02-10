@@ -38,6 +38,7 @@ namespace Content.Shared.Movement.Systems
                 .Bind(EngineKeyFunctions.MoveRight, moveRightCmdHandler)
                 .Bind(EngineKeyFunctions.MoveDown, moveDownCmdHandler)
                 .Bind(EngineKeyFunctions.Walk, new WalkInputCmdHandler(this))
+                .Bind(ContentKeyFunctions.Rush, new RushInputCmdHandler(this))  // Exodus - Rush
                 .Bind(EngineKeyFunctions.CameraRotateLeft, new CameraRotateInputCmdHandler(this, Direction.East))
                 .Bind(EngineKeyFunctions.CameraRotateRight, new CameraRotateInputCmdHandler(this, Direction.West))
                 .Bind(EngineKeyFunctions.CameraReset, new CameraResetInputCmdHandler(this))
@@ -359,48 +360,85 @@ namespace Content.Shared.Movement.Systems
             SetSprinting((uid, moverComp), subTick, walking);
         }
 
-        public (Vector2 Walking, Vector2 Sprinting) GetVelocityInput(InputMoverComponent mover)
+        // Exodus - Stamina Rush - Start
+        private void HandleRushChange(EntityUid uid, ushort subTick, bool rushing)
+        {
+            MoverQuery.TryGetComponent(uid, out var moverComp);
+
+            if (TryComp<RelayInputMoverComponent>(uid, out var relayMover))
+            {
+                // if we swap to relay then stop our existing input if we ever change back.
+                if (moverComp != null)
+                {
+                    SetMoveInput((uid, moverComp), MoveButtons.None);
+                }
+
+                HandleRushChange(relayMover.RelayEntity, subTick, rushing);
+                return;
+            }
+
+            if (moverComp == null) return;
+
+            SetRushing((uid, moverComp), subTick, rushing);
+        }
+        // Exodus - End
+
+        // Exodus - Rush - Start
+        public (Vector2 Walking, Vector2 Sprinting, Vector2 Rushing) GetVelocityInput(Entity<InputMoverComponent> entity)
         {
             if (!Timing.InSimulation)
             {
                 // Outside of simulation we'll be running client predicted movement per-frame.
                 // So return a full-length vector as if it's a full tick.
                 // Physics system will have the correct time step anyways.
-                var immediateDir = DirVecForButtons(mover.HeldMoveButtons);
-                return mover.Sprinting ? (Vector2.Zero, immediateDir) : (immediateDir, Vector2.Zero);
+                var immediateDir = DirVecForButtons(entity.Comp.HeldMoveButtons);
+
+                // Exodus | Add third movement type
+                if (entity.Comp.Rushing)
+                    return (Vector2.Zero, Vector2.Zero, immediateDir);
+                else if (entity.Comp.Walking)
+                    return (immediateDir, Vector2.Zero, Vector2.Zero);
+                else
+                    return (Vector2.Zero, immediateDir, Vector2.Zero);
             }
 
             Vector2 walk;
             Vector2 sprint;
+            Vector2 rush;  // Exodus | Add third movement type
             float remainingFraction;
 
-            if (Timing.CurTick > mover.LastInputTick)
+            if (Timing.CurTick > entity.Comp.LastInputTick)
             {
                 walk = Vector2.Zero;
                 sprint = Vector2.Zero;
+                rush = Vector2.Zero;  // Exodus | Add third movement type
                 remainingFraction = 1;
             }
             else
             {
-                walk = mover.CurTickWalkMovement;
-                sprint = mover.CurTickSprintMovement;
-                remainingFraction = (ushort.MaxValue - mover.LastInputSubTick) / (float) ushort.MaxValue;
+                walk = entity.Comp.CurTickWalkMovement;
+                sprint = entity.Comp.CurTickSprintMovement;
+                rush = entity.Comp.CurTickRushMovement;  // Exodus | Add third movement type
+                remainingFraction = (ushort.MaxValue - entity.Comp.LastInputSubTick) / (float)ushort.MaxValue;
             }
 
-            var curDir = DirVecForButtons(mover.HeldMoveButtons) * remainingFraction;
+            var curDir = DirVecForButtons(entity.Comp.HeldMoveButtons) * remainingFraction;
 
-            if (mover.Sprinting)
+            // Exodus | Add third movement type
+            if (entity.Comp.Rushing)
             {
-                sprint += curDir;
+                var (rushFrac, sprintFrac) = _rushSystem.GetRushFracAndUdpateStamina(entity, remainingFraction);
+                rush += curDir * rushFrac;
+                sprint += curDir * sprintFrac;
             }
-            else
-            {
+            if (entity.Comp.Walking)
                 walk += curDir;
-            }
+            if (entity.Comp.Sprinting)
+                sprint += curDir;
 
-            // Logger.Info($"{curDir}{walk}{sprint}");
-            return (walk, sprint);
+            return (walk, sprint, rush); // Exodus | Add third movement type
         }
+        // Exodus - End
 
         /// <summary>
         ///     Toggles one of the four cardinal directions. Each of the four directions are
@@ -426,15 +464,25 @@ namespace Content.Shared.Movement.Systems
         private void SetMoveInput(Entity<InputMoverComponent> entity, ushort subTick, bool enabled, MoveButtons bit)
         {
             // Modifies held state of a movement button at a certain sub tick and updates current tick movement vectors.
-            ResetSubtick(entity.Comp);
+            ResetSubtick(entity);
 
             if (subTick >= entity.Comp.LastInputSubTick)
             {
-                var fraction = (subTick - entity.Comp.LastInputSubTick) / (float) ushort.MaxValue;
+                // Exodus - Rush - Start
+                var fraction = (subTick - entity.Comp.LastInputSubTick) / (float)ushort.MaxValue;
+                var lastAmount = DirVecForButtons(entity.Comp.HeldMoveButtons) * fraction;
 
-                ref var lastMoveAmount = ref entity.Comp.Sprinting ? ref entity.Comp.CurTickSprintMovement : ref entity.Comp.CurTickWalkMovement;
-
-                lastMoveAmount += DirVecForButtons(entity.Comp.HeldMoveButtons) * fraction;
+                if (entity.Comp.Sprinting)
+                    entity.Comp.CurTickSprintMovement += lastAmount;
+                if (entity.Comp.Walking)
+                    entity.Comp.CurTickWalkMovement += lastAmount;
+                if (entity.Comp.Rushing) // Exodus | Add third movement type
+                {
+                    var (rushFrac, sprintFrac) = _rushSystem.GetRushFracAndUdpateStamina(entity, fraction);
+                    entity.Comp.CurTickRushMovement += lastAmount * rushFrac;
+                    entity.Comp.CurTickSprintMovement += lastAmount * sprintFrac;
+                }
+                // Exodus - End
 
                 entity.Comp.LastInputSubTick = subTick;
             }
@@ -453,14 +501,15 @@ namespace Content.Shared.Movement.Systems
             SetMoveInput(entity, buttons);
         }
 
-        private void ResetSubtick(InputMoverComponent component)
+        private void ResetSubtick(Entity<InputMoverComponent> entity)
         {
-            if (Timing.CurTick <= component.LastInputTick) return;
+            if (Timing.CurTick <= entity.Comp.LastInputTick) return;
 
-            component.CurTickWalkMovement = Vector2.Zero;
-            component.CurTickSprintMovement = Vector2.Zero;
-            component.LastInputTick = Timing.CurTick;
-            component.LastInputSubTick = 0;
+            entity.Comp.CurTickWalkMovement = Vector2.Zero;
+            entity.Comp.CurTickSprintMovement = Vector2.Zero;
+            entity.Comp.CurTickRushMovement = Vector2.Zero;
+            entity.Comp.LastInputTick = Timing.CurTick;
+            entity.Comp.LastInputSubTick = 0;
         }
 
         public virtual void SetSprinting(Entity<InputMoverComponent> entity, ushort subTick, bool walking)
@@ -469,6 +518,15 @@ namespace Content.Shared.Movement.Systems
 
             SetMoveInput(entity, subTick, walking, MoveButtons.Walk);
         }
+
+        // Exodus - Stamina Rush - Start
+        public virtual void SetRushing(Entity<InputMoverComponent> entity, ushort subTick, bool rushing)
+        {
+            // Logger.Info($"[{_gameTiming.CurTick}/{subTick}] Sprint: {enabled}");
+
+            SetMoveInput(entity, subTick, rushing, MoveButtons.Rush);
+        }
+        // Exodus - End
 
         /// <summary>
         ///     Retrieves the normalized direction vector for a specified combination of movement keys.
@@ -589,6 +647,26 @@ namespace Content.Shared.Movement.Systems
             }
         }
 
+        // Exodus - Stamina Rush - Start
+        private sealed class RushInputCmdHandler : InputCmdHandler
+        {
+            private SharedMoverController _controller;
+
+            public RushInputCmdHandler(SharedMoverController controller)
+            {
+                _controller = controller;
+            }
+
+            public override bool HandleCmdMessage(IEntityManager entManager, ICommonSession? session, IFullInputCmdMessage message)
+            {
+                if (session?.AttachedEntity == null) return false;
+
+                _controller.HandleRushChange(session.AttachedEntity.Value, message.SubTick, message.State == BoundKeyState.Down);
+                return false;
+            }
+        }
+        // Exodus - End
+
         private sealed class ShuttleInputCmdHandler : InputCmdHandler
         {
             private readonly SharedMoverController _controller;
@@ -620,6 +698,7 @@ namespace Content.Shared.Movement.Systems
         Left = 4,
         Right = 8,
         Walk = 16,
+        Rush = 32, // Exodus - Rush
         AnyDirection = Up | Down | Left | Right,
     }
 

@@ -7,6 +7,11 @@
   components:
   - type: Hunger
   - type: Thirst
+  # Exodus-DwarfLore-Start | Stamina
+  - type: Stamina
+    baseDecay: 8
+    critThreshold: 120
+  # Exodus-Stamina-End
   - type: Icon
     sprite: Mobs/Species/Slime/parts.rsi # It was like this beforehand, no idea why.
     state: full
