@@ -119,10 +119,7 @@ public static class ClientPackaging
 
         // RPSX-Secrets-Start
         if (UseRPSXClient)
-        {
-            assemblies.Add("Content.RPSXClient");
-            // assemblies.Add("Content.RPSXShared");
-        }
+            assemblies.AddRange(["Content.RPSX.Shared", "Content.RPSX.Client"]);
         // RPSX-Secrets-End
         // Exodus-Secrets-Start: Add Corvax interfaces to Magic ACZ
         if (UseExodus)

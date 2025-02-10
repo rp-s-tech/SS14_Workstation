@@ -226,10 +226,7 @@ public static class ServerPackaging
 
         // RPSX-Secrets-Start
         if (UseRPSX)
-        {
-            contentAssemblies.Add("Content.RPSXServer");
-            // contentAssemblies.Add("Content.RPSXShared");
-        }
+            contentAssemblies.AddRange(["Content.RPSX.Shared", "Content.RPSX.Server"]);
         // RPSX-Secrets-End
         // Exodus-Secrets-Start
         if (UseExodus)
