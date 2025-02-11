@@ -1,0 +1,17 @@
+- type: entity
+  parent: DrinkGlass
+  id: DrinkBerryIceCreamGlass
+  suffix: Berry ice cream
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: BerryIceCream
+          Quantity: 30
+  - type: Icon
+    sprite: Exodus/Objects/Consumable/Drinks/berry_icecreamglass.rsi
+    state: icon
+  - type: Sprite
+    sprite: Exodus/Objects/Consumable/Drinks/berry_icecreamglass.rsi
