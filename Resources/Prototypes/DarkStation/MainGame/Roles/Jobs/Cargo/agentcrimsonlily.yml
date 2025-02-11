@@ -321,15 +321,3 @@
     - state: crypt_blue
     - state: nano_label
 
-# Spawner
-- type: entity
-  id: SpawnPointAgentCrimsonLily
-  parent: SpawnPointJobBase
-  name: Spawner AgentCrimsonLily
-  components:
-  - type: SpawnPoint
-    job_id: AgentCrimsonLily
-  - type: Sprite
-    layers:
-    - state: green
-    - state: dark_AgentCrimsonLily

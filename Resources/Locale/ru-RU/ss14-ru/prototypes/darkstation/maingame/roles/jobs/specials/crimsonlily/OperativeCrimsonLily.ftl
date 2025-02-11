@@ -20,7 +20,4 @@ ent-ClothingHeadHelmetHardsuitOperativeCrimsonLily = шлем скафандра
 ent-ClothingBackpackOperativeCrimsonLilyFilled = рюкзак Оперативника Багровой Лилии
     .suffix = OCL
     .desc = { ent-ClothingBackpackHolding.desc }
-ent-SpawnPointOperativeCrimsonLily = Оперативник Багровой Лилии
-    .desc = { ent-SpawnPointJobBase.desc }
-ent-RandomHumanoidSpawnerOperativeCrimsonLily = Оперативник Багровой Лилии
-    .desc = { "" }
+
