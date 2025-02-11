@@ -559,6 +559,8 @@
   packetPrototype: BlueTomatoSeeds
   productPrototypes:
     - FoodBlueTomato
+  mutationPrototypes:
+      - bluespaceTomato # RPSX edit
   harvestRepeat: Repeat
   lifespan: 25
   maturation: 8
