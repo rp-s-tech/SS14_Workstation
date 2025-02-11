@@ -299,16 +299,3 @@
   - type: StealTarget
     stealGroup: HeadCloak
 
-# Spawner
-
-- type: entity
-  id: SpawnPointSpNanoTrasenRepresentative
-  parent: SpawnPointJobBase
-  name: Spawner SpNanoTrasenRepresentative
-  components:
-  - type: SpawnPoint
-    job_id: SpNanoTrasenRepresentative
-  - type: Sprite
-    layers:
-    - state: green
-    - state: dark_NanoTrasenRepresentative

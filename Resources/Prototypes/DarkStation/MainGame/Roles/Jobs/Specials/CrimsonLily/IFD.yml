@@ -47,16 +47,3 @@
     - HandheldSpCargoOrders
     - TelescopicBaton
 
-# Spawner
-
-- type: entity
-  id: SpawnPointSpIFD
-  parent: SpawnPointJobBase
-  name: Spawner SpIFD
-  components:
-  - type: SpawnPoint
-    job_id: SpIFD
-  - type: Sprite
-    layers:
-    - state: green
-    - state: dark_Fin_DepAgent

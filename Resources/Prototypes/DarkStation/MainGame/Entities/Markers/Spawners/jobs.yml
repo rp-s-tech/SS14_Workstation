@@ -1,7 +1,7 @@
 - type: entity
   id: SpawnPointPilot
   parent: SpawnPointJobBase
-  name: pilot
+  name: Pilot
   components:
   - type: SpawnPoint
     job_id: SecurityPilot
@@ -9,3 +9,135 @@
     layers:
       - state: green
       - state: pilot
+
+- type: entity
+  id: SpawnPointAgentCrimsonLily
+  parent: SpawnPointJobBase
+  name: Crimson Lily Agent
+  components:
+  - type: SpawnPoint
+    job_id: AgentCrimsonLily
+  - type: Sprite
+    layers:
+    - state: green
+    - state: dark_AgentCrimsonLily
+
+- type: entity
+  id: SpawnPointSpCCO
+  parent: SpawnPointJobBase
+  name: Centcom Operator
+  components:
+    - type: SpawnPoint
+      job_id: SpCCO
+    - type: Sprite
+      layers:
+        - state: green
+        - state: dark_NanoTrasenOperator
+
+- type: entity
+  id: SpawnPointSpNanoTrasenRepresentative
+  parent: SpawnPointJobBase
+  name: NanoTrasen Representative
+  components:
+  - type: SpawnPoint
+    job_id: SpNanoTrasenRepresentative
+  - type: Sprite
+    layers:
+    - state: green
+    - state: dark_NanoTrasenRepresentative
+
+- type: entity
+  id: SpawnPointBlueShieldOfficer
+  parent: SpawnPointJobBase
+  name: BlueShield Officer
+  components:
+    - type: SpawnPoint
+      job_id: BlueShieldOfficer
+    - type: Sprite
+      layers:
+        - state: green
+        - state: dark_Blueshield
+
+- type: entity
+  id: SpawnPointSpIFD
+  parent: SpawnPointJobBase
+  name: Inspector FD
+  components:
+  - type: SpawnPoint
+    job_id: SpIFD
+  - type: Sprite
+    layers:
+    - state: green
+    - state: dark_FinDepAgent
+
+- type: entity
+  id: SpawnPointOperativeCrimsonLily
+  parent: SpawnPointJobBase
+  name: Сrimson Lily operative
+  components:
+  - type: SpawnPoint
+    job_id: OperativeCrimsonLily
+  - type: Sprite
+    layers:
+      - state: green
+      - state: dark_OperativeCrimsonLily
+
+- type: entity
+  id: SpawnPointStardustKnight
+  parent: SpawnPointJobBase
+  name: Stardust knight
+  components:
+  - type: SpawnPoint
+    job_id: SecurityKnight
+  - type: Sprite
+    layers:
+      - state: green
+      - state: dark_stardustknight
+
+- type: entity
+  id: SpawnPointSeniorOfficer
+  parent: SpawnPointJobBase
+  name: Senior officer
+  components:
+  - type: SpawnPoint
+    job_id: SeniorOfficer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: dark_seniorofficer
+
+- type: entity
+  id: SpawnPointCargoLogistician
+  parent: SpawnPointJobBase
+  name: Cargo Logistician
+  components:
+  - type: SpawnPoint
+    job_id: CargoLogistician
+  - type: Sprite
+    layers:
+      - state: green
+      - state: dark_Logistiacian
+
+- type: entity
+  id: SpawnPointBrigmedic
+  parent: SpawnPointJobBase
+  name: Brigmedic
+  components:
+  - type: SpawnPoint
+    job_id: Brigmedic
+  - type: Sprite
+    layers:
+      - state: green
+      - state: brigmedic
+
+- type: entity
+  id: SpawnPointIAA
+  parent: SpawnPointJobBase
+  name: IAA
+  components:
+  - type: SpawnPoint
+    job_id: IAA
+  - type: Sprite
+    layers:
+      - state: green
+      - state: lawyer

@@ -1,5 +1,3 @@
-ent-SpawnPointSpCCO = оператор ЦК
-    .desc = { ent-SpawnPointJobBase.desc }
 ent-ClothingOuterCoatCentComme = пальто Центком
     .desc = Пальто для истиных бюрократов.
 ent-ClothingBackpackSatchelCentComm = сумка Центком

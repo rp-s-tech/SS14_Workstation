@@ -161,19 +161,6 @@
         - id: CrowbarRed
     - type: Storage
       maxTotalWeight: 56
-# Spawner
-
-- type: entity
-  id: SpawnPointOperativeCrimsonLily
-  parent: SpawnPointJobBase
-  name: Сrimson Lily operative
-  components:
-  - type: SpawnPoint
-    job_id: OperativeCrimsonLily
-  - type: Sprite
-    layers:
-      - state: green
-      - state: dark_OperativeCrimsonLily
 
 - type: entity
   id: RandomHumanoidSpawnerOperativeCrimsonLily

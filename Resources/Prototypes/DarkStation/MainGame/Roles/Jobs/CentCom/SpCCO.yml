@@ -29,20 +29,6 @@
     pocket1: BoxFolderBlack
     pocket2: PenCentcom
 
-
-- type: entity
-  id: SpawnPointSpCCO
-  parent: SpawnPointJobBase
-  name: Centcom Operator
-  components:
-    - type: SpawnPoint
-      job_id: SpCCO
-    - type: Sprite
-      layers:
-        - state: green
-        - state: dark_NanoTrasenOperator
-
-
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatCentComme
