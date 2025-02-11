@@ -89,8 +89,6 @@ namespace Content.Server.Connection
             // Approval-based IP bans disabled because they don't play well with Happy Eyeballs.
             // _netMgr.HandleApprovalCallback = HandleApproval;
 
-            // Инициализируем DiscordAuthManager
-            _discordAuthManager.Initialize();
         }
 
         public void AddTemporaryConnectBypass(NetUserId user, TimeSpan duration)
@@ -311,6 +309,17 @@ namespace Content.Server.Connection
                 return (ConnectionDenyReason.Full, Loc.GetString("soft-player-cap-full"), null);
             }
 
+            if (_cfg.GetCVar(RPSXCCVars.DiscordAuthEnabled))
+            {
+                var playerUserId = e.UserData.UserId;
+                _discordAuthManager.RefreshVerification(playerUserId);
+
+                if (!await _discordAuthManager.IsVerifiedAsync(playerUserId))
+                {
+                    return (ConnectionDenyReason.Discord, "Вы не верифицированы через Discord!", null);
+                }
+            }
+            
             // Checks for whitelist IF it's enabled AND the user isn't an admin. Admins are always allowed.
             if (_cfg.GetCVar(CCVars.WhitelistEnabled) && adminData is null)
             {
@@ -338,20 +347,6 @@ namespace Content.Server.Connection
 
                     // Whitelisted, don't check any more.
                     break;
-                }
-            }
-
-            if (_cfg.GetCVar(RPSXCCVars.DiscordAuthEnabled))
-            {
-                var discordInfo = await _discordAuthManager.LoadDiscordAuthInfo(userId);
-                if (discordInfo == null || discordInfo.Verify != "true")
-                {
-                    return (ConnectionDenyReason.Discord, "You are not verified with Discord!", null);
-                }
-
-                if (discordInfo.Discord != null)
-                {
-                    _discordAuthManager.CacheDiscordId(userId, discordInfo.Discord);
                 }
             }
 

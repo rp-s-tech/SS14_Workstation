@@ -44,11 +44,6 @@ namespace Content.Server.Database
 
         Task SaveAdminOOCColorAsync(NetUserId userId, Color color);
 
-        //RPSX start
-        Task<int> GetProfileEconomics(NetUserId userId, int slot);
-        Task SaveProfileEconomics(NetUserId userId, int slot, int balance);
-        //RPSX end
-
         // Single method for two operations for transaction.
         Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot);
         Task<PlayerPreferences?> GetPlayerPreferencesAsync(NetUserId userId, CancellationToken cancel);
@@ -365,6 +360,14 @@ namespace Content.Server.Database
         /// </remarks>
         /// <param name="notification">The notification to send.</param>
         Task SendNotification(DatabaseNotification notification);
+
+        #endregion
+
+        #region RPSX
+
+        Task<int> GetProfileEconomics(NetUserId userId, int slot);
+        Task SaveProfileEconomics(NetUserId userId, int slot, int balance);
+        Task<bool>  IsDiscordVerifiedAsync(NetUserId userId);
 
         #endregion
     }
@@ -1048,7 +1051,7 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.CleanIPIntelCache(range));
         }
 
-        //RPSX start
+        #region RPSX
         public Task<int> GetProfileEconomics(NetUserId userId, int slot)
         {
             DbReadOpsMetric.Inc();
@@ -1059,7 +1062,14 @@ namespace Content.Server.Database
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.SaveProfileEconomics(userId, slot, newbal));
         }
-        //RPSX end
+
+        public Task<bool> IsDiscordVerifiedAsync(NetUserId userId)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.IsDiscordVerifiedAsync(userId));
+        }
+
+        #endregion
 
         public void SubscribeToNotifications(Action<DatabaseNotification> handler)
         {

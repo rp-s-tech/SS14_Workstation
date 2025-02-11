@@ -1916,7 +1916,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
         }
 
-        // RPSX
+        #region RPSX
         public async Task<int> GetProfileEconomics(NetUserId userId, int slot)
         {
             await using var db = await GetDb();
@@ -1979,5 +1979,12 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             economics.Balance = newbal;
             await db.DbContext.SaveChangesAsync();
         }
+        public async Task<bool> IsDiscordVerifiedAsync(NetUserId userId)
+        {
+            await using var db = await GetDb();
+            return await db.DbContext.DiscordUsers.AnyAsync(u => u.PlayerUserId == userId.UserId && u.Verify == 1);
+        }
+
+        #endregion
     }
 }

@@ -52,6 +52,7 @@ namespace Content.Server.Database
         public DbSet<PatronProfileItem> PatronProfileItem {get; set;} = null!;
 
         public DbSet<ProfileEconomics> ProfileEconomics {get; set; } = null!;
+        public DbSet<DiscordUser> DiscordUsers { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -342,6 +343,10 @@ namespace Content.Server.Database
                 .HasIndex(p => new { ProfileEconomicsProfileId = p.ProfileId })
                 .IsUnique();
 
+            modelBuilder.Entity<DiscordUser>()
+                .HasIndex(u => u.DiscordId)
+                .IsUnique();
+
             modelBuilder.Entity<RoleWhitelist>()
                 .HasOne(w => w.Player)
                 .WithMany(p => p.JobWhitelists)
@@ -451,6 +456,8 @@ namespace Content.Server.Database
         public Preference Preference { get; set; } = null!;
     }
 
+    #region RPSX
+
     [Table("economics")]
     public class ProfileEconomics
     {
@@ -478,6 +485,31 @@ namespace Content.Server.Database
         public int ProfileId { get; set; }
     }
 
+    [Table("rpsx_discord_data")]
+    public class DiscordUser
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("id")]
+        public int ID { get; set; }
+
+        [Required]
+        [Column("date_created")]
+        public DateTime DateCreated { get; set; } = DateTime.UtcNow;
+
+        [Required]
+        [Column("userID")]
+        public Guid PlayerUserId { get; set; }
+
+        [Column("discordID", TypeName = "text")]
+        public string? DiscordId { get; set; }
+
+        [Required]
+        [Column("verify")]
+        public int Verify { get; set; } = 0;
+    }
+
+    #endregion
     public class Job
     {
         public int Id { get; set; }
