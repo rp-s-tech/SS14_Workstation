@@ -17,11 +17,39 @@ binds:
   type: State
   key: MouseLeft
   canFocus: true
+# Exodus - Battle Rework - Start | Add additional modification for use and use secondary
+- function: Use
+  type: State
+  key: MouseLeft
+  canFocus: true
+  mod1: Shift
+- function: Use
+  type: State
+  key: MouseLeft
+  canFocus: true
+  mod1: Control
+# Exodus - End
+
 - function: UseSecondary
   type: State
   key: MouseRight
   canFocus: true
   priority: -1 # UIRightClick & EditorCancelPlace should fire first.
+# Exodus - Battle Rework - Start | Add additional modification for use and use secondary
+- function: UseSecondary
+  type: State
+  key: MouseRight
+  canFocus: true
+  priority: -1 # UIRightClick & EditorCancelPlace should fire first.
+  mod1: Shift
+- function: UseSecondary
+  type: State
+  key: MouseRight
+  canFocus: true
+  priority: -1 # UIRightClick & EditorCancelPlace should fire first.
+  mod1: Control
+# Exodus - End
+
 - function: ShowDebugMonitors
   type: Toggle
   key: F3
@@ -44,7 +72,7 @@ binds:
 - function: Walk
   type: State
   key: Control  # Exodus - Stamina Rush
-# Exodus - Stamina Rush - Start
+# Exodus - Rush - Start
 - function: Rush
   type: State
   key: Shift
@@ -205,18 +233,13 @@ binds:
   canFocus: true
 - function: ExamineEntity
   type: State
-  key: MouseLeft
+  key: MouseMiddle
   canFocus: true
-  mod1: Shift
 - function: ActivateItemInWorld
   type: State
   key: E
+# RPSX - Battle | Remove second AltActivateItemInWorld binding
 - function: AltActivateItemInWorld
-  type: State
-  key: MouseLeft
-  canFocus: true
-  mod1: Alt
-- function: AltActivateItemInWorld # secondary binding
   type: State
   key: E
   mod1: Alt
@@ -228,11 +251,11 @@ binds:
   type: State
   canFocus: true
   key: MouseLeft
-  mod1: Control
+  mod1: Alt  # RPSX - Battle | Need MouseLeft for other func
 - function: MovePulledObject
   type: State
   key: MouseRight
-  mod1: Control
+  mod1: Alt # RPSX - Battle | Need MouseRight for other func
 - function: ReleasePulledObject
   type: State
   key: H
@@ -500,7 +523,7 @@ binds:
 - function: Point
   type: State
   key: MouseMiddle
-  mod1: Shift
+  mod1: Alt # RPSX - Battle
 - function: ArcadeUp
   type: State
   key: Up
