@@ -9,3 +9,4 @@
 [submodule "RPSX"]
 	path = RPSX
 	url = ssh://git@git.rp-s.tech:2222/rps/ss14/private/rpsx.git
+    update = none
