@@ -1,5 +1,4 @@
-﻿using Content.RPSXServer.DarkForces.Saint.Chaplain.Components;
-using Content.Shared.Throwing;
+﻿using Content.Shared.Throwing;
 using Robust.Shared.Physics.Events;
 using ChaplainBarrierComponent = Content.Shared.RPSX.DarkForces.Saint.Chaplain.Components.ChaplainBarrierComponent;
 

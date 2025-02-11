@@ -70,14 +70,16 @@ public static class ServerPackaging
         "zh-Hant"
     };
 
-    private static readonly string RPSXServerPath = Path.Combine("RPSX", "Content.RPSXServer",
-        "Content.RPSXServer.csproj");
-
-    // private static readonly string SecretSharedPath = Path.Combine("RPSX", "Content.RPSXServer",
-    //     "Content.RPSXServer.csproj");
-
+    // RPSX-Secrets-Start
+    private static readonly string RPSXServerPath = Path.Combine("RPSX", "Content.RPSX.Server",
+        "Content.RPSX.Server.csproj");
     private static readonly bool UseRPSX = File.Exists(RPSXServerPath);
-    private static readonly bool UseExodus = File.Exists(Path.Combine("Exodus", "ExodusSecrets.sln")); // Exodus-Secrets
+    // RPSX-Secrets-End
+
+    // Exodus-Secrets-Start
+    private static readonly string ExodusServerPath = Path.Combine("Exodus", "Content.Exodus.Server", "Content.Exodus.Server.csproj");
+    private static readonly bool UseExodus = File.Exists(ExodusServerPath);
+    // Exodus-Secrets-End
 
     public static async Task PackageServer(bool skipBuild, bool hybridAcz, IPackageLogger logger, string configuration, List<string>? platforms = null)
     {
@@ -128,6 +130,7 @@ public static class ServerPackaging
                 }
             });
 
+            // RPSX-Secrets-Start
             if (UseRPSX)
             {
                 await ProcessHelpers.RunCheck(new ProcessStartInfo
@@ -147,6 +150,7 @@ public static class ServerPackaging
                     }
                 });
             }
+            // RPSX-Secrets-End
             // Exodus-Secrets-Start
             if (UseExodus)
             {
@@ -156,7 +160,7 @@ public static class ServerPackaging
                     ArgumentList =
                     {
                         "build",
-                        Path.Combine("Exodus","Content.Exodus.Server", "Content.Exodus.Server.csproj"),
+                        ExodusServerPath,
                         "-c", "Release",
                         "--nologo",
                         "/v:m",
@@ -227,11 +231,10 @@ public static class ServerPackaging
         var inputPassResources = graph.InputResources;
         var contentAssemblies = new List<string>(ServerContentAssemblies);
 
+        // RPSX-Secrets-Start
         if (UseRPSX)
-        {
-            contentAssemblies.Add("Content.RPSXServer");
-            // contentAssemblies.Add("Content.RPSXShared");
-        }
+            contentAssemblies.AddRange(["Content.RPSX.Shared", "Content.RPSX.Server"]);
+        // RPSX-Secrets-End
         // Exodus-Secrets-Start
         if (UseExodus)
             contentAssemblies.AddRange(["Content.Exodus.Shared", "Content.Exodus.Server"]);

@@ -7,6 +7,10 @@
 *.userosscache
 *.sln.docstates
 
+# Secrets
+*RPSXSecrets/
+*rpsx-secrets/
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
