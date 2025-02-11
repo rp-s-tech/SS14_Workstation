@@ -1,0 +1,44 @@
+- type: entity
+  name: bluespace tomato
+  parent: FoodTomato
+  id: FoodBluespaceTomato
+  description: These portals are mesmerizing..
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 24
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Teletoxin
+          Quantity: 15
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: RPSX/MainGame/Specific/Hydroponics/bluspace_tomato.rsi
+  - type: Produce
+    seedId: bluespaceTomato
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: Teletoxin
+        Quantity: 7
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: desecration
+      - !type:SpillBehavior
+        solution: food
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Fruit
+    - Vegetable

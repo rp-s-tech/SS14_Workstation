@@ -21,7 +21,7 @@ public sealed class RandomTeleportSystem : EntitySystem
 
         for (var i = 0; i < MaxRandomTeleportAttempts; i++)
         {
-            var randVector = _random.NextVector2(MaxRandomTeleportAttempts);
+            var randVector = _random.NextVector2(radius);
             newCoords = coords.Offset(randVector);
 
             if (!_entityLookup.GetEntitiesIntersecting(_xform.ToMapCoordinates(newCoords), LookupFlags.Static).Any())

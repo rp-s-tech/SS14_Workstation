@@ -1,0 +1,21 @@
+- type: reagent
+  id: Teletoxin
+  name: reagent-name-teletoxin
+  group: Toxins
+  desc: reagent-desc-teletoxin
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: bitter
+  color: "#00ffff"
+  metabolisms:
+    Poison:
+      metabolismRate: 1
+      effects:
+      - !type:RandomTeleportEffect
+        teleportRadius: 3
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 1.2
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.9
+        sprintSpeedModifier: 0.9
