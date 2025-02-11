@@ -10,9 +10,14 @@ namespace Content.Packaging;
 
 public static class ClientPackaging
 {
-    private static readonly bool UseExodus = File.Exists(Path.Combine("Exodus", "ExodusSecrets.sln")); // Exodus-Secrets
-    private static readonly bool UseRPSXClient = File.Exists(RPSXClientPath); // RPSX-Secrets
-    private static readonly string RPSXClientPath = Path.Combine("RPSX", "Content.RPSX.Client", "Content.RPSX.Client.csproj"); // RPSX-Secrets
+    // Exodus-Secrets-Start
+    private static readonly bool UseExodus = File.Exists(ExodusClientPath);
+    private static readonly string ExodusClientPath = Path.Combine("Exodus", "Content.Exodus.Client", "Content.Exodus.Client.csproj");
+    // Exodus-Secrets-End
+    // RPSX-Secrets-Start
+    private static readonly bool UseRPSX = File.Exists(RPSXClientPath);
+    private static readonly string RPSXClientPath = Path.Combine("RPSX", "Content.RPSX.Client", "Content.RPSX.Client.csproj");
+    // RPSX-Secrets-End
 
 
     /// <summary>
@@ -40,7 +45,8 @@ public static class ClientPackaging
                 }
             });
 
-            if (UseRPSXClient)
+            // RPSX-Secrets-Start
+            if (UseRPSX)
             {
                 await ProcessHelpers.RunCheck(new ProcessStartInfo
                 {
@@ -58,6 +64,7 @@ public static class ClientPackaging
                     }
                 });
             }
+            // RPSX-Secrets-End
             // Exodus-Secrets-Start
             if (UseExodus)
             {
@@ -67,7 +74,7 @@ public static class ClientPackaging
                     ArgumentList =
                     {
                         "build",
-                        Path.Combine("Exodus", "Content.Exodus.Client", "Content.Exodus.Client.csproj"),
+                        ExodusClientPath,
                         "-c", configuration,
                         "--nologo",
                         "/v:m",
@@ -118,7 +125,7 @@ public static class ClientPackaging
         var assemblies = new List<string> { "Content.Client", "Content.Shared", "Content.Shared.Database" };
 
         // RPSX-Secrets-Start
-        if (UseRPSXClient)
+        if (UseRPSX)
             assemblies.AddRange(["Content.RPSX.Shared", "Content.RPSX.Client"]);
         // RPSX-Secrets-End
         // Exodus-Secrets-Start: Add Corvax interfaces to Magic ACZ

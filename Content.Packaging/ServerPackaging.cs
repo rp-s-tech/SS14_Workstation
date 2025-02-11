@@ -70,11 +70,16 @@ public static class ServerPackaging
         "zh-Hant"
     };
 
+    // RPSX-Secrets-Start
     private static readonly string RPSXServerPath = Path.Combine("RPSX", "Content.RPSX.Server",
-        "Content.RPSX.Server.csproj"); // RPSX-Secrets
+        "Content.RPSX.Server.csproj");
+    private static readonly bool UseRPSX = File.Exists(RPSXServerPath);
+    // RPSX-Secrets-End
 
-    private static readonly bool UseRPSX = File.Exists(RPSXServerPath); // RPSX-Secrets
-    private static readonly bool UseExodus = File.Exists(Path.Combine("Exodus", "ExodusSecrets.sln")); // Exodus-Secrets
+    // Exodus-Secrets-Start
+    private static readonly string ExodusServerPath = Path.Combine("Exodus", "Content.Exodus.Server", "Content.Exodus.Server.csproj");
+    private static readonly bool UseExodus = File.Exists(ExodusServerPath);
+    // Exodus-Secrets-End
 
     public static async Task PackageServer(bool skipBuild, bool hybridAcz, IPackageLogger logger, string configuration, List<string>? platforms = null)
     {
@@ -125,6 +130,7 @@ public static class ServerPackaging
                 }
             });
 
+            // RPSX-Secrets-Start
             if (UseRPSX)
             {
                 await ProcessHelpers.RunCheck(new ProcessStartInfo
@@ -144,6 +150,7 @@ public static class ServerPackaging
                     }
                 });
             }
+            // RPSX-Secrets-End
             // Exodus-Secrets-Start
             if (UseExodus)
             {
@@ -153,7 +160,7 @@ public static class ServerPackaging
                     ArgumentList =
                     {
                         "build",
-                        Path.Combine("Exodus","Content.Exodus.Server", "Content.Exodus.Server.csproj"),
+                        ExodusServerPath,
                         "-c", "Release",
                         "--nologo",
                         "/v:m",
