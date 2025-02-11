@@ -1,0 +1,523 @@
+ntts-speaker-papich = [Media] Папич
+ntts-speaker-papich-description = Голос популярного стримера Папича
+
+ntts-speaker-bebey = [Media] Бэбэй
+ntts-speaker-bebey-description = Голос популярного стримера Бэбэя
+
+ntts-speaker-puchkow = [Media] Дмитрий Пучков
+ntts-speaker-puchkow-description = Голос медийной личности Дмитрия Пучкова
+
+ntts-speaker-moriarti = [Media] Мориарти
+ntts-speaker-moriarti-description = Голос медийной личности Мориарти
+
+ntts-speaker-charlotte = [Media] Шарлотта
+ntts-speaker-charlotte-description = Голос виртуального ютубера Charlotte Ch
+
+ntts-speaker-planya = [Media] Планя
+ntts-speaker-planya-description = Голос виртуального ютубера Planya Ch
+
+ntts-speaker-mana = [Media] Мана
+ntts-speaker-mana-description = Голос виртуального ютубера Mana Renewal
+
+ntts-speaker-amina = [Media] Амина
+ntts-speaker-amina-description = Голос виртуального ютубера St. Amina Renewal
+
+ntts-speaker-biden = [Media] Джо Байден
+ntts-speaker-biden-description = Голос американского президента Джо Байдена
+
+ntts-speaker-obama = [Media] Барак Обама
+ntts-speaker-obama-description = Голос американского президента Барака Обамы
+
+ntts-speaker-trump = [Media] Дональд Трамп
+ntts-speaker-trump-description = Голос американского президента Дональда Трампа
+
+ntts-speaker-dbkn2 = [Media] Добакин
+ntts-speaker-dbkn2-description = Голос начинающего диктора Добакина
+
+ntts-speaker-xrenoid = [Media] Хреноид
+ntts-speaker-xrenoid-description = Голос начинающего диктора Хреноида
+
+ntts-speaker-valtos = [Media] Валтос
+ntts-speaker-valtos-description = Голос начинающего диктора Валтоса
+
+ntts-speaker-briman = [Half-Life 2] Уоллес Брин
+ntts-speaker-briman-description = Голос персонажа Уоллес Брин из игры Half-Life 2
+
+ntts-speaker-father-grigori = [Half-Life 2] Отец Григорий
+ntts-speaker-father-grigori-description = Голос персонажа Отец Григорий из игры Half-Life 2
+
+ntts-speaker-kleiner = [Half-Life 2] Доктор Кляйнер
+ntts-speaker-kleiner-description = Голос персонажа Доктор Кляйнер из игры Half-Life 2
+
+ntts-speaker-mossman = [Half-Life 2] Джудит Моссман
+ntts-speaker-mossman-description = Голос персонажа Джудит Моссман из игры Half-Life 2
+
+ntts-speaker-vance = [Half-Life 2] Илай Вэнс
+ntts-speaker-vance-description = Голос персонажа Илай Вэнс из игры Half-Life 2
+
+ntts-speaker-alyx = [Half-Life 2] Аликс Вэнс
+ntts-speaker-alyx-description = Голос персонажа Аликс Вэнс из игры Half-Life 2
+
+ntts-speaker-gman = [Half-Life 2] G-Man
+ntts-speaker-gman-description = Голос персонажа G-Man из игры Half-Life 2
+
+ntts-speaker-barni = [Half-Life 2] Барни Калхун
+ntts-speaker-barni-description = Голос персонажа Барни Калхун из игры Half-Life 2
+
+ntts-speaker-neco = [Fate] Неко-Арк
+ntts-speaker-neco-description = Голос персонажа Неко-Арк из Fate
+
+ntts-speaker-neco-arc-2 = [Fate] Неко-Арк 2
+ntts-speaker-neco-arc-2-description = Голос персонажа Неко-Арк из Fate
+
+ntts-speaker-angry-neco-arc = [Fate] Злая Неко-Арк
+ntts-speaker-angry-neco-arc-description = Злой голос персонажа Неко-Арк из Fate
+
+ntts-speaker-villager = [Minecraft] Житель
+ntts-speaker-villager-description = Голос персонажа Житель из игры Minecraft
+
+ntts-speaker-squidward = [Sponge Bob] Сквидвард
+ntts-speaker-squidward-description = Голос персонажа Сквидвард из мультфильма Губка Боб
+
+ntts-speaker-sentrybot = [Fallout 3] SentryBot
+ntts-speaker-sentrybot-description = Голос персонажа SentryBot из Fallout 3
+
+ntts-speaker-moira-brown = [Fallout 3] Мойра Браун
+ntts-speaker-moira-brown-description = Голос персонажа Мойра Браун из Fallout 3
+
+ntts-speaker-robert-maccready = [Fallout 3] Робер МакКриди
+ntts-speaker-robert-maccready-description = Голос персонажа Робер МакКриди из Fallout 3
+
+ntts-speaker-jericho-fl3 = [Fallout 3] Джерико
+ntts-speaker-jericho-fl3-description = Голос персонажа Джерико из Fallout 3
+
+ntts-speaker-mister-gutsy-fl3 = [Fallout 3] Мистер Храбрец
+ntts-speaker-mister-gutsy-fl3-description = Голос персонажа Мистер Храбрец из Fallout 3
+
+ntts-speaker-mister-handy-fl3 = [Fallout 3] Мистер Помощник
+ntts-speaker-mister-handy-fl3-description = Голос персонажа Мистер Помощник из Fallout 3
+
+ntts-speaker-threedog = [Fallout 3] Тридогнайт
+ntts-speaker-threedog-description = Голос персонажа Тридогнайт из Fallout 3
+
+ntts-speaker-threedog-radio = [Fallout 3] Тридогнайт Радио
+ntts-speaker-threedog-radio-description = Голос персонажа Тридогнайт версия по радио из Fallout 3
+
+ntts-speaker-sarah-lyons-fl3 = [Fallout 3] Сара Лайонс
+ntts-speaker-sarah-lyons-fl3-description = Голос персонажа Сара Лайонс из Fallout 3
+
+ntts-speaker-colin-moriarty-fl3 = [Fallout 3] Колин Мориарти
+ntts-speaker-colin-moriarty-fl3-description = Голос персонажа Колин Мориарти из Fallout 3
+
+ntts-speaker-elder-lyons-fl3 = [Fallout 3] Старейшина Лайонс
+ntts-speaker-elder-lyons-fl3-description = Голос персонажа Старейшина Лайонс из Fallout 3
+
+ntts-speaker-romka = [Tiny Bunny] Рома Пятифанов
+ntts-speaker-romka-description = Голос персонажа Рома Пятифанов из игры Tiny Bunny
+
+ntts-speaker-boris-petrov-father-tb = [Tiny Bunny] Борис Петров
+ntts-speaker-boris-petrov-father-tb-description = Голос персонажа Борис Петров из игры Tiny Bunny
+
+ntts-speaker-karina-petrova-tb = [Tiny Bunny] Карина Петрова
+ntts-speaker-karina-petrova-tb-description = Голос персонажа Карина Петрова из игры Tiny Bunny
+
+ntts-speaker-kate-smirnova-tb = [Tiny Bunny] Катя Смирнова
+ntts-speaker-kate-smirnova-tb-description = Голос персонажа Катя Смирнова из игры Tiny Bunny
+
+ntts-speaker-semen-baburin-tb = [Tiny Bunny] Семён Бабурин
+ntts-speaker-semen-baburin-tb-description = Голос персонажа Семён Бабурин из игры Tiny Bunny
+
+ntts-speaker-tihonov-tb = [Tiny Bunny] Лейтенант Тихонов
+ntts-speaker-tihonov-tb-description = Голос персонажа Лейтенант Тихонов из игры Tiny Bunny
+
+ntts-speaker-polina = [Tiny Bunny] Полина Морозова
+ntts-speaker-polina-description = Голос персонажа Полина Морозова из игры Tiny Bunny
+
+ntts-speaker-cicero = [TES 5 Skyrim] Цицерон
+ntts-speaker-cicero-description = Голос персонажа Цицерон из игры TES 5 Skyrim
+
+ntts-speaker-sheogorath = [TES 5 Skyrim] Шеогорат
+ntts-speaker-sheogorath-description = Голос персонажа Шеогорат из игры TES 5 Skyrim
+
+ntts-speaker-kodlakwhitemane = [TES 5 Skyrim] Кодлак Белая Грива
+ntts-speaker-kodlakwhitemane-description = Голос персонажа Кодлак Белая Грива из игры TES 5 Skyrim
+
+ntts-speaker-khajiit = [TES 5 Skyrim] Каджит
+ntts-speaker-khajiit-description = Голос персонажа Каджит из игры TES 5 Skyrim
+
+ntts-speaker-elenwen = [TES 5 Skyrim] Эленвен
+ntts-speaker-elenwen-description = Голос персонажа Эленвен из игры TES 5 Skyrim
+
+ntts-speaker-emperor = [TES 5 Skyrim] Тит Мид II
+ntts-speaker-emperor-description = Голос персонажа Тит Мид II из игры TES 5 Skyrim
+
+ntts-speaker-guard = [TES 5 Skyrim] Стражник
+ntts-speaker-guard-description = Голос Стражников из игры TES 5 Skyrim
+
+ntts-speaker-hagraven = [TES 5 Skyrim] Ворожея
+ntts-speaker-hagraven-description = Голос Ворожей из игры TES 5 Skyrim
+
+ntts-speaker-hermaeus-mora = [TES 5 Skyrim] Хермеус Мора
+ntts-speaker-hermaeus-mora-description = Голос персонажа Хермеус Мора из игры TES 5 Skyrim
+
+ntts-speaker-nord = [TES 5 Skyrim] Норд
+ntts-speaker-nord-description = Голос Нордов из игры TES 5 Skyrim
+
+ntts-speaker-ulfric = [TES 5 Skyrim] Ульфрик Буревестник
+ntts-speaker-ulfric-description = Голос персонажа Ульфрик Буревестник из игры TES 5 Skyrim
+
+ntts-speaker-astrid = [TES 5 Skyrim] Астрид
+ntts-speaker-astrid-description = Голос персонажа Астрид из игры TES 5 Skyrim
+
+ntts-speaker-maven = [TES 5 Skyrim] Мавен Чёрный Вереск
+ntts-speaker-maven-description = Голос персонажа Мавен Чёрный Вереск из игры TES 5 Skyrim
+
+ntts-speaker-nazir = [TES 5 Skyrim] Назир
+ntts-speaker-nazir-description = Голос персонажа Назир из игры TES 5 Skyrim
+
+ntts-speaker-female-commander = [TES 5 Skyrim] Женщина командир
+ntts-speaker-female-commander-description = Голос женских персонажей командиров из игры TES 5 Skyrim
+
+ntts-speaker-lord-harkon = [TES 5 Skyrim] Лорд Харкон
+ntts-speaker-lord-harkon-description = Голос персонажа Лорд Харкон из игры TES 5 Skyrim
+
+ntts-speaker-serana = [TES 5 Skyrim] Серана
+ntts-speaker-serana-description = Голос персонажа Серана из игры TES 5 Skyrim
+
+ntts-speaker-glados = [Portal 2] GLaDOS
+ntts-speaker-glados-description = Голос персонажа GLaDOS из игры Portal 2
+
+ntts-speaker-adventure-core = [Portal 2] Модуль Приключений
+ntts-speaker-adventure-core-description = Голос персонажа Модуль Приключений из игры Portal 2
+
+ntts-speaker-fact-core = [Portal 2] Модуль Фактов
+ntts-speaker-fact-core-description = Голос персонажа Модуль Фактов из игры Portal 2
+
+ntts-speaker-space-core = [Portal 2] Модуль Космоса
+ntts-speaker-space-core-description = Голос персонажа Модуль Космоса из игры Portal 2
+
+ntts-speaker-turret-floor = [Portal 2] Турель
+ntts-speaker-turret-floor-description = Голос персонажа Турель из игры Portal 2
+
+ntts-speaker-geralt = [The Witcher 3] Геральт из Ривии
+ntts-speaker-geralt-description = Голос персонажа Геральт из Ривии из игры The Witcher 3
+
+ntts-speaker-cirilla = [The Witcher 3] Цирилла
+ntts-speaker-cirilla-description = Голос персонажа Цирилла из игры The Witcher 3
+
+ntts-speaker-cerys = [The Witcher 3] Керис ан Крайт
+ntts-speaker-cerys-description = Голос персонажа Керис ан Крайт из игры The Witcher 3
+
+ntts-speaker-lambert = [The Witcher 3] Ламберт
+ntts-speaker-lambert-description = Голос персонажа Ламберт из игры The Witcher 3
+
+ntts-speaker-triss = [The Witcher 3] Трисс
+ntts-speaker-triss-description = Голос персонажа Трисс из игры The Witcher 3
+
+ntts-speaker-azir = [League of Legends] Азир
+ntts-speaker-azir-description = Голос персонажа Азир из игры League of Legends
+
+ntts-speaker-ekko = [League of Legends] Экко
+ntts-speaker-ekko-description = Голос персонажа Экко из игры League of Legends
+
+ntts-speaker-twitch = [League of Legends] Твич
+ntts-speaker-twitch-description = Голос персонажа Твич из игры League of Legends
+
+ntts-speaker-ziggs = [League of Legends] Зиггс
+ntts-speaker-ziggs-description = Голос персонажа Зиггс из игры League of Legends
+
+ntts-speaker-caitlyn = [League of Legends] Кэйтлин
+ntts-speaker-caitlyn-description = Голос персонажа Кэйтлин из игры League of Legends
+
+ntts-speaker-arthas = [Warcraft 3] Артас Менетил
+ntts-speaker-arthas-description = Голос персонажа Артас Менетил из игры Warcraft 3
+
+ntts-speaker-illidan = [Warcraft 3] Иллидан Ярость Бури
+ntts-speaker-illidan-description = Голос персонажа Иллидан Ярость Бури из игры Warcraft 3
+
+ntts-speaker-rexxar = [Warcraft 3] Рексар
+ntts-speaker-rexxar-description = Голос персонажа Рексар из игры Warcraft 3
+
+ntts-speaker-voljin = [Warcraft 3] Вол'джин
+ntts-speaker-voljin-description = Голос персонажа Вол'джин из игры Warcraft 3
+
+ntts-speaker-bandit = [S.T.A.L.K.E.R.] Бандит
+ntts-speaker-bandit-description = Голос персонажа Бандита из игры S.T.A.L.K.E.R.
+
+ntts-speaker-forester = [S.T.A.L.K.E.R.] Лесник
+ntts-speaker-forester-description = Голос персонажа Лесник из игры S.T.A.L.K.E.R.
+
+ntts-speaker-sidorovich = [S.T.A.L.K.E.R.] Сидорович
+ntts-speaker-sidorovich-description = Голос персонажа Сидорович из игры S.T.A.L.K.E.R.
+
+ntts-speaker-strelok = [S.T.A.L.K.E.R.] Стрелок
+ntts-speaker-strelok-description = Голос персонажа Стрелок из игры S.T.A.L.K.E.R.
+
+ntts-speaker-tracer = [Overwatch] Трэйсер
+ntts-speaker-tracer-description = Голос персонажа Трэйсер из игры Overwatch
+
+ntts-speaker-soldier = [Team Fortress 2] Солдат
+ntts-speaker-soldier-description = Голос персонажа Солдат из Team Fortress 2 из английской озвучки
+
+ntts-speaker-engineer = [Team Fortress 2] Инженер
+ntts-speaker-engineer-description = Голос персонажа Инженер из игры Team Fortress 2
+
+ntts-speaker-heavy = [Team Fortress 2] Хэви
+ntts-speaker-heavy-description = Голос персонажа Хэви из игры Team Fortress 2
+
+ntts-speaker-medic = [Team Fortress 2] Медик
+ntts-speaker-medic-description = Голос персонажа Медик из игры Team Fortress 2
+
+ntts-speaker-demoman = [Team Fortress 2] Подрывник
+ntts-speaker-demoman-description = Голос персонажа Подрывник из игры Team Fortress 2
+
+ntts-speaker-sniper = [Team Fortress 2] Снайпер
+ntts-speaker-sniper-description = Голос персонажа Снайпер из игры Team Fortress 2
+
+ntts-speaker-spy = [Team Fortress 2] Шпион
+ntts-speaker-spy-description = Голос персонажа Шпион из игры Team Fortress 2
+
+ntts-speaker-punisher = [The Punisher] Каратель
+ntts-speaker-punisher-description = Голос персонажа Каратель из игры The Punisher
+
+ntts-speaker-johnny = [Cyberpunk 2077] Джонни Сильверхенд
+ntts-speaker-johnny-description = Голос персонажа Джонни Сильверхенд из игры Cyberpunk 2077
+
+ntts-speaker-panam = [Cyberpunk 2077] Панам Палмер
+ntts-speaker-panam-description = Голос персонажа Панам Палмер из игры Cyberpunk 2077
+
+ntts-speaker-v-female = [Cyberpunk 2077] Ви
+ntts-speaker-v-female-description = Голос персонажа Ви из игры Cyberpunk 2077
+
+ntts-speaker-judy = [Cyberpunk 2077] Джуди Альварес
+ntts-speaker-judy-description = Голос персонажа Джуди Альварес из игры Cyberpunk 2077
+
+ntts-speaker-mitch = [Cyberpunk 2077] Митч Андерсон
+ntts-speaker-mitch-description = Голос персонажа Митч Андерсон из игры Cyberpunk 2077
+
+ntts-speaker-skippy = [Cyberpunk 2077] Скиппи
+ntts-speaker-skippy-description = Голос персонажа Скиппи из игры Cyberpunk 2077
+
+ntts-speaker-jackie = [Cyberpunk 2077] Джеки Уэллс
+ntts-speaker-jackie-description = Голос персонажа Джеки Уэллс из игры Cyberpunk 2077
+
+ntts-speaker-dornan = [Fallout 2] Сержант Дорнан
+ntts-speaker-dornan-description = Голос персонажа Сержант Дорнан из игры Fallout 2
+
+ntts-speaker-officer-enclave = [Fallout 2] Офицер Анклава
+ntts-speaker-officer-enclave-description = Голос персонажа Офицер Анклава из игры Fallout 2
+
+ntts-speaker-richardson = [Fallout 2] Дик Ричардсон
+ntts-speaker-richardson-description = Голос персонажа Ричард «Дик» Ричардсон из игры Fallout 2
+
+ntts-speaker-butch = [Fallout 2] Бутч Харрис
+ntts-speaker-butch-description = Голос персонажа Бутч Харрис из игры Fallout 2
+
+ntts-speaker-marcus = [Fallout 2] Маркус
+ntts-speaker-marcus-description = Голос персонажа Маркус из игры Fallout 2
+
+ntts-speaker-sulik = [Fallout 2] Сулик
+ntts-speaker-sulik-description = Голос персонажа Сулик из игры Fallout 2
+
+ntts-speaker-myron = [Fallout 2] Майрон
+ntts-speaker-myron-description = Голос персонажа Майрон из игры Fallout 2
+
+ntts-speaker-good-thalya = [Dungeons 3] Добрая Талия
+ntts-speaker-good-thalya-description = Голос персонажа Добрая Талия из игры Dungeons 3
+
+ntts-speaker-evil-thalya = [Dungeons 3] Злая Талия
+ntts-speaker-evil-thalya-description = Голос персонажа Злая Талия из игры Dungeons 3
+
+ntts-speaker-narrator-d3 = [Dungeons 3] Рассказчик
+ntts-speaker-narrator-d3-description = Голос персонажа Рассказчик из игры Dungeons 3
+
+ntts-speaker-dude = [Postal 2] Чувак
+ntts-speaker-dude-description = Голос персонажа Чувак из игры Postal 2
+
+ntts-speaker-anduin = [Hearthstone] Андуин Ринн
+ntts-speaker-anduin-description = Голос персонажа Андуин Ринн из игры Hearthstone
+
+ntts-speaker-brukan = [Hearthstone] Бру'кан
+ntts-speaker-brukan-description = Голос персонажа Бру'кан из игры Hearthstone
+
+ntts-speaker-garrosh = [Hearthstone] Гаррош Адский Крик
+ntts-speaker-garrosh-description = Голос персонажа Гаррош Адский Крик из игры Hearthstone
+
+ntts-speaker-jaina = [Hearthstone] Джайна Праудмур
+ntts-speaker-jaina-description = Голос персонажа Джайна Праудмур из игры Hearthstone
+
+ntts-speaker-uther-hs = [Hearthstone] Утер Светоносный
+ntts-speaker-uther-hs-description = Голос персонажа Утер Светоносный из игры Hearthstone
+
+ntts-speaker-adjutant = [StarCraft 2] Адъютант
+ntts-speaker-adjutant-description = Голос персонажа Адъютант из игры StarCraft 2
+
+ntts-speaker-hanson = [StarCraft 2] Ариэль Хэнсон
+ntts-speaker-hanson-description = Голос персонажа Ариэль Хэнсон из игры StarCraft 2
+
+ntts-speaker-bralik = [StarCraft 2] Бралик
+ntts-speaker-bralik-description = Голос персонажа Бралик из игры StarCraft 2
+
+ntts-speaker-horner = [StarCraft 2] Мэтт Хорнер
+ntts-speaker-horner-description = Голос персонажа Мэтт Хорнер из игры StarCraft 2
+
+ntts-speaker-tosh = [StarCraft 2] Габриэль Тош
+ntts-speaker-tosh-description = Голос персонажа Габриэль Тош из игры StarCraft 2
+
+ntts-speaker-tychus = [StarCraft 2] Тайкус Финдли
+ntts-speaker-tychus-description = Голос персонажа Тайкус Финдли из игры StarCraft 2
+
+ntts-speaker-amitkakkar = [Hogwarts Legacy] Амит Таккар
+ntts-speaker-amitkakkar-description = Голос персонажа Амит Таккар из игры Hogwarts Legacy
+
+ntts-speaker-eleazarfig = [Hogwarts Legacy] Элеазар Фиг
+ntts-speaker-eleazarfig-description = Голос персонажа Элеазар Фиг из игры Hogwarts Legacy
+
+ntts-speaker-ernielark = [Hogwarts Legacy] Эрни Ларк
+ntts-speaker-ernielark-description = Голос персонажа Эрни Ларк из игры Hogwarts Legacy
+
+ntts-speaker-ignatiaflootravel = [Hogwarts Legacy] Игнатия Уайлдсмит
+ntts-speaker-ignatiaflootravel-description = Голос персонажа Игнатия Уайлдсмит из игры Hogwarts Legacy
+
+ntts-speaker-lodgok = [Hogwarts Legacy] Лодгок
+ntts-speaker-lodgok-description = Голос персонажа Лодгок из игры Hogwarts Legacy
+
+ntts-speaker-phineasblack = [Hogwarts Legacy] Финеас Найджелус Блэк
+ntts-speaker-phineasblack-description = Голос персонажа Финеас Найджелус Блэк из игры Hogwarts Legacy
+
+ntts-speaker-ranrak = [Hogwarts Legacy] Ранрок
+ntts-speaker-ranrak-description = Голос персонажа Ранрок из игры Hogwarts Legacy
+
+ntts-speaker-victorrookwood = [Hogwarts Legacy] Виктор Руквуд
+ntts-speaker-victorrookwood-description = Голос персонажа Виктор Руквуд из игры Hogwarts Legacy
+
+ntts-speaker-zenobianoke = [Hogwarts Legacy] Зенобия Ноук
+ntts-speaker-zenobianoke-description = Голос персонажа Зенобия Ноук из игры Hogwarts Legacy
+
+ntts-speaker-gladwinmoon = [Hogwarts Legacy] Глэдвин Мун
+ntts-speaker-gladwinmoon-description = Голос персонажа Глэдвин Мун из игры Hogwarts Legacy
+
+ntts-speaker-matildaweasley = [Hogwarts Legacy] Матильда Уизли
+ntts-speaker-matildaweasley-description = Голос персонажа Матильда Уизли из игры Hogwarts Legacy
+
+ntts-speaker-natsaionai = [Hogwarts Legacy] Натсай Онай
+ntts-speaker-natsaionai-description = Голос персонажа Натсай Онай из игры Hogwarts Legacy
+
+ntts-speaker-ominisgaunt = [Hogwarts Legacy] Оминис Мракс
+ntts-speaker-ominisgaunt-description = Голос персонажа Оминис Мракс из игры Hogwarts Legacy
+
+ntts-speaker-poppysweeting = [Hogwarts Legacy] Поппи Добринг
+ntts-speaker-poppysweeting-description = Голос персонажа Поппи Добринг из игры Hogwarts Legacy
+
+ntts-speaker-generic-goblin-c = [Hogwarts Legacy] Гоблин В
+ntts-speaker-generic-goblin-c-description = Голос персонажа Гоблин В из игры Hogwarts Legacy
+
+ntts-speaker-dinah-hecat = [Hogwarts Legacy] Дина Гекат
+ntts-speaker-dinah-hecat-description = Голос персонажа Дина Гекат из игры Hogwarts Legacy
+
+ntts-speaker-aesop-sharp = [Hogwarts Legacy] Эзоп Шарп
+ntts-speaker-aesop-sharp-description = Голос персонажа Эзоп Шарп из игры Hogwarts Legacy
+
+ntts-speaker-abraham-ronen = [Hogwarts Legacy] Абрахам Ронен
+ntts-speaker-abraham-ronen-description = Голос персонажа Абрахам Ронен из игры Hogwarts Legacy
+
+ntts-speaker-samantha-dale = [Hogwarts Legacy] Саманта Дейл
+ntts-speaker-samantha-dale-description = Голос персонажа Саманта Дейл из игры Hogwarts Legacy
+
+ntts-speaker-sirona-ryan = [Hogwarts Legacy] Сирона Райан
+ntts-speaker-sirona-ryan-description = Голос персонажа Сирона Райан из игры Hogwarts Legacy
+
+ntts-speaker-sophronia-franklin = [Hogwarts Legacy] Софрония Франклин
+ntts-speaker-sophronia-franklin-description = Голос персонажа Софрония Франклин из игры Hogwarts Legacy
+
+ntts-speaker-abaddon-dota-2 = [Dota 2] Abaddon
+ntts-speaker-abaddon-dota-2-description = Голос персонажа Abaddon из игры Dota 2
+
+ntts-speaker-alchemist-dota-2 = [Dota 2] Achemist
+ntts-speaker-alchemist-dota-2-description = Голос персонажа Achemist из игры Dota 2
+
+ntts-speaker-anti-mage-dota-2 = [Dota 2] Anti-Mage
+ntts-speaker-anti-mage-dota-2-description = Голос персонажа Anti-Mage из игры Dota 2
+
+ntts-speaker-arc-warden-dota-2 = [Dota 2] Arc Warden
+ntts-speaker-arc-warden-dota-2-description = Голос персонажа Arc Warden из игры Dota 2
+
+ntts-speaker-batrider-dota-2 = [Dota 2] Batrider
+ntts-speaker-batrider-dota-2-description = Голос персонажа Batrider из игры Dota 2
+
+ntts-speaker-bloodseeker-dota-2 = [Dota 2] Bloodseeker
+ntts-speaker-bloodseeker-dota-2-description = Голос персонажа Bloodseeker из игры Dota 2
+
+ntts-speaker-bounty-hunter-dota-2 = [Dota 2] Bounty Hunter
+ntts-speaker-bounty-hunter-dota-2-description = Голос персонажа Bounty Hunter из игры Dota 2
+
+ntts-speaker-bristleback-dota-2 = [Dota 2] Bristleback
+ntts-speaker-bristleback-dota-2-description = Голос персонажа Bristleback из игры Dota 2
+
+ntts-speaker-broodmother-dota-2 = [Dota 2] Broodmother
+ntts-speaker-broodmother-dota-2-description = Голос персонажа Broodmother из игры Dota 2
+
+ntts-speaker-centaur-warrunner-dota-2 = [Dota 2] Centaur Warrunner
+ntts-speaker-centaur-warrunner-dota-2-description = Голос персонажа Centaur Warrunner из игры Dota 2
+
+ntts-speaker-clinkz-dota-2 = [Dota 2] Clinkz
+ntts-speaker-clinkz-dota-2-description = Голос персонажа Clinkz из игры Dota 2
+
+ntts-speaker-clockwerk-dota-2 = [Dota 2] Clockwerk
+ntts-speaker-clockwerk-dota-2-description = Голос персонажа Clockwerk из игры Dota 2
+
+ntts-speaker-crystal-maiden-dota-2 = [Dota 2] Crystal Maiden
+ntts-speaker-crystal-maiden-dota-2-description = Голос персонажа Crystal Maiden из игры Dota 2
+
+ntts-speaker-dazzle-dota-2 = [Dota 2] Dazzle
+ntts-speaker-dazzle-dota-2-description = Голос персонажа Dazzle из игры Dota 2
+
+ntts-speaker-disruptor-dota-2 = [Dota 2] Disruptor
+ntts-speaker-disruptor-dota-2-description = Голос персонажа Disruptor из игры Dota 2
+
+ntts-speaker-doom-dota-2 = [Dota 2] Doom
+ntts-speaker-doom-dota-2-description = Голос персонажа Doom из игры Dota 2
+
+ntts-speaker-dragon-knight-dota-2 = [Dota 2] Dragon Knight
+ntts-speaker-dragon-knight-dota-2-description = Голос персонажа Dragon Knight из игры Dota 2
+
+ntts-speaker-dragon-knight-dragon-dota-2 = [Dota 2] Dragon Knight Dragon
+ntts-speaker-dragon-knight-dragon-dota-2-description = Голос персонажа Dragon Knight Dragon из игры Dota 2
+
+ntts-speaker-drow-ranger-dota-2 = [Dota 2] Drow Ranger
+ntts-speaker-drow-ranger-dota-2-description = Голос персонажа Drow Ranger из игры Dota 2
+
+ntts-speaker-invoker-dota-2 = [Dota 2] Invoker
+ntts-speaker-invoker-dota-2-description = Голос персонажа Invoker из игры Dota 2
+
+ntts-speaker-juggernaut-dota-2 = [Dota 2] Juggernaut
+ntts-speaker-juggernaut-dota-2-description = Голос персонажа Juggernaut из игры Dota 2
+
+ntts-speaker-keeper-of-the-light-dota-2 = [Dota 2] Keeper Of The Light
+ntts-speaker-keeper-of-the-light-dota-2-description = Голос персонажа Keeper Of The Light из игры Dota 2
+
+ntts-speaker-kunkka-dota-2 = [Dota 2] Kunkka
+ntts-speaker-kunkka-dota-2-description = Голос персонажа Kunkka из игры Dota 2
+
+ntts-speaker-legion-commander-demon-dota-2 = [Dota 2] Legion Commander Demon
+ntts-speaker-legion-commander-demon-dota-2-description = Голос персонажа Legion Commander Demon из игры Dota 2
+
+ntts-speaker-legion-commander-dota-2 = [Dota 2] Legion Commander
+ntts-speaker-legion-commander-dota-2-description = Голос персонажа Legion Commander из игры Dota 2
+
+ntts-speaker-enigma-dota-2 = [Dota 2] Enigma
+ntts-speaker-enigma-dota-2-description = Голос персонажа Enigma из игры Dota 2
+
+ntts-speaker-gyrocopter-dota-2 = [Dota 2] Gyrocopter
+ntts-speaker-gyrocopter-dota-2-description = Голос персонажа Gyrocopter из игры Dota 2
+
+ntts-speaker-huskar-dota-2 = [Dota 2] Huskar
+ntts-speaker-huskar-dota-2-description = Голос персонажа Huskar из игры Dota 2
+
+
+ntts-speaker-earthshaker-dota-2 = [Dota 2] Earthshaker
+ntts-speaker-earthshaker-dota-2-description = Голос персонажа Earthshaker из игры Dota 2
+
+ntts-speaker-ember-spirit-dota-2 = [Dota 2] Ember Spirit
+ntts-speaker-ember-spirit-dota-2-description = Голос персонажа Ember Spirit из игры Dota 2
+
