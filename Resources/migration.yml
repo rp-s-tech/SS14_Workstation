@@ -418,10 +418,12 @@ ClothingBeltSuspenders: ClothingBeltSuspendersRed
 # ClothingNeckShockCollar: ClothingBackpackElectropack
 # Exodus-ShockCollar-End
 
+#Corvax-mining-shuttle-return-Start
 # 2024-08-22
-ComputerShuttleSalvage: null
-SalvageShuttleConsoleCircuitboard: null
-SalvageShuttleCircuitboardStealObjective: null
+# ComputerShuttleSalvage: null
+# SalvageShuttleConsoleCircuitboard: null
+# SalvageShuttleCircuitboardStealObjective: null
+#Corvax-mining-shuttle-return-End
 
 # 2024-08-28
 ClothingBackpackDuffelSyndicateCostumeCentcom: null
