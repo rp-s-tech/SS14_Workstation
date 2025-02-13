@@ -186,6 +186,7 @@
     - Reptilian
     - SlimePerson
     - Vox
+    - Nucleation
   randomizeName: false
   components:
     - type: GhostRole

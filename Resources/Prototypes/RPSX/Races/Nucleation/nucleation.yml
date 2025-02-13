@@ -383,6 +383,7 @@
         Heat: -0.07
       groups:
         Brute: -0.07
+        Radiation: -2
   - type: Fingerprint
   - type: Blindable
   # Other

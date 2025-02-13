@@ -58,6 +58,8 @@
   id: ERTRecon
   speciesBlacklist:
     - Diona
+    - Vox
+    - Nucleation
   parent: EventHumanoidMindShielded
   randomizeName: false
   components:

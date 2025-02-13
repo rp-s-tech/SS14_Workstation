@@ -77,6 +77,7 @@
   speciesBlacklist:
     - Diona
     - Vox
+    - Nucleation
   randomizeName: false
   components:
     - type: GhostRole
@@ -360,6 +361,8 @@
   id: ERTSecurity
   speciesBlacklist: # Corvax-MRP
     - Diona
+    - Vox
+    - Nucleation
   parent: ERTLeader
   components:
     - type: GhostRole
@@ -507,6 +510,8 @@
 - type: randomHumanoidSettings
   speciesBlacklist: # Corvax-MRP
     - Diona
+    - Vox
+    - Nucleation
   id: CBURNAgent
   parent: EventHumanoidMindShielded
   components:

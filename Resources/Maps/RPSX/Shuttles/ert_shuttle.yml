@@ -5211,13 +5211,6 @@ entities:
     - type: Transform
       pos: 0.66495323,1.4972726
       parent: 1
-- proto: MagazineBoxAntiMaterielBig
-  entities:
-  - uid: 653
-    components:
-    - type: Transform
-      pos: 0.44620323,1.8410225
-      parent: 1
 - proto: MagazineBoxRifleBig
   entities:
   - uid: 656
