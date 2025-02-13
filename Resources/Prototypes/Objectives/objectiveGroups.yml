@@ -23,6 +23,7 @@
     HandTeleporterStealObjective: 0.5
     EnergyShotgunStealObjective: 0.5
     BookSecretDocumentsObjective: 0.5 # Exodus-NukeSecretDocuments
+    RifleXaniStealObjective: 0.5 # RPSX-BlueshieldOfficeRr-Gunsteal
 
 - type: weightedRandom
   id: TraitorObjectiveGroupKill
