@@ -153,7 +153,7 @@
 
 - type: entity
   name: Carabin Delta 1
-  parent: BaseWeaponRifle
+  parent: [BaseWeaponRifle, BaseGrandTheftContraband]
   id: WeaponRifleXani
   description: Newest experimental design that is just being tested. Currently configured for .20 caliber, but this can be changed at any time by the designers.
   components:
@@ -202,3 +202,8 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
+  - type: Tag
+    tags:
+    - HighRiskItem
+  - type: StealTarget
+    stealGroup: WeaponRifleXani

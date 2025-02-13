@@ -1,0 +1,13 @@
+
+## BlueShield
+- type: entity
+  parent: BaseTraitorStealObjective
+  id: RifleXaniStealObjective
+  components:
+  - type: Objective
+    difficulty: 3
+  - type: NotJobRequirement
+    job: BlueShieldOfficer
+  - type: StealCondition
+    stealGroup: WeaponRifleXani
+    owner: job-name-blueshield

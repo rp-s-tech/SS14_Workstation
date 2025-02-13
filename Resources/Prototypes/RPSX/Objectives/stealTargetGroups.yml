@@ -1,0 +1,7 @@
+
+- type: stealTargetGroup
+  id: WeaponRifleXani
+  name: steal-target-groups-weapon-rifle-xani
+  sprite:
+    sprite: DarkStation/MainGame/Objects/Weapons/Guns/Rifles/xani.rsi
+    state: icon
