@@ -22,7 +22,6 @@
 - type: startingGear
   id: CCOGear
   equipment:
-    outerClothing: ClothingOuterArmorSecurity
     id: CentcomPDA
     ears: ClothingHeadsetAltCentCom
     belt: WeaponPistolN1984

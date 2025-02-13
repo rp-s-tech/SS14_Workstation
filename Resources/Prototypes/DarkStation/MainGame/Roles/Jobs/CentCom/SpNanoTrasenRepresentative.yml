@@ -10,8 +10,12 @@
   joinNotifyCrew: true
   supervisors: job-supervisors-centcom
   canBeAntag: false
-  whitelisted: true
+  whitelisted: false
   sponsorIgnoreWhitelist: false
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobSpCCO
+      time: 540000 # 150 часов
   accessGroups:
   - AllAccessCentCom
   special:
