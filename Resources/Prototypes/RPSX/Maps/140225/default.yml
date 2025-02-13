@@ -1,0 +1,14 @@
+- type: gameMapPool
+  id: 14RPSXMapPool
+  maps:
+  - 14RPSXBagel
+  - 14RPSXMarathon
+  - 14RPSXAmber
+  - 14RPSXAspid
+  - 14RPSXBox
+  - 14RPSXCluster
+  - 14RPSXElkridge
+  - 14RPSXSaltern
+  - 14RPSXSilly
+  - 14RPSXDelta
+  - 14RPSXPacked
