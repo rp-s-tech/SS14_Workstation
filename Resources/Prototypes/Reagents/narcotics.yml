@@ -14,14 +14,16 @@
       - !type:HealthChange
         damage:
           types:
-            Poison: 2  # Exodus - Balance
+            Poison: 1  # Exodus - Balance
+            Caustic: 1 # Exodus - Balance
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
           min: 15  # Exodus - Balance
         damage:
           types:
-            Poison: 2 # this is added to the base damage of the meth.
+            Poison: 1  # Exodus - Balance
+            Caustic: 1 # Exodus - Balance
             Asphyxiation: 2
     Narcotic:
       effects:
@@ -87,7 +89,8 @@
           min: 15 # Exodus - Balance
         damage:
           types:
-            Poison: 2 # this is added to the base damage of the meth.
+            Poison: 1 # this is added to the base damage of the meth.
+            Caustic: 1 # Exodus - Balance
             Asphyxiation: 2
       - !type:Jitter
       - !type:GenericStatusEffect
@@ -143,15 +146,16 @@
       metabolismRate: 1.0
       effects:
       - !type:MovespeedModifier
-        walkSpeedModifier: 1.35   # Exodus - Balance
-        sprintSpeedModifier: 1.35 # Exodus - Balance
+        walkSpeedModifier: 1.30   # Exodus - Balance
+        sprintSpeedModifier: 1.30 # Exodus - Balance
       - !type:HealthChange
         conditions:
           - !type:ReagentThreshold
-            min: 80 #please wait 3 minutes before using another stimpack
+            min: 60 # Exodus - Balance
         damage:
           types:
             Poison: 1
+            Caustic: 1 # Exodus - Balance
       - !type:AdjustReagent
         conditions:
         - !type:ReagentThreshold
