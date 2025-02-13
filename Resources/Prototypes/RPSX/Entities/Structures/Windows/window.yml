@@ -1,0 +1,12 @@
+- type: entity
+  id: WindowRPSX
+  parent: Window
+  name: window
+  description: Don't smudge up the glass down there.
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: RPSX\MainGame\Structures\Windows\window.rsi
+  - type: Icon
+    sprite: RPSX\MainGame\Structures\Windows\window.rsi
+    state: full

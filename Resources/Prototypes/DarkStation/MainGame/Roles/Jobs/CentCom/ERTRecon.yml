@@ -9,7 +9,7 @@
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
-  - AllAccess
+  - AllAccessCentCom
 
 - type: startingGear
   id: ERTReconGearEVA
