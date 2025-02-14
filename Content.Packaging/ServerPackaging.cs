@@ -76,11 +76,6 @@ public static class ServerPackaging
     private static readonly bool UseRPSX = File.Exists(RPSXServerPath);
     // RPSX-Secrets-End
 
-    // Exodus-Secrets-Start
-    private static readonly string ExodusServerPath = Path.Combine("Exodus", "Content.Exodus.Server", "Content.Exodus.Server.csproj");
-    private static readonly bool UseExodus = File.Exists(ExodusServerPath);
-    // Exodus-Secrets-End
-
     public static async Task PackageServer(bool skipBuild, bool hybridAcz, IPackageLogger logger, string configuration, List<string>? platforms = null)
     {
         if (platforms == null)
@@ -151,27 +146,6 @@ public static class ServerPackaging
                 });
             }
             // RPSX-Secrets-End
-            // Exodus-Secrets-Start
-            if (UseExodus)
-            {
-                await ProcessHelpers.RunCheck(new ProcessStartInfo
-                {
-                    FileName = "dotnet",
-                    ArgumentList =
-                    {
-                        "build",
-                        ExodusServerPath,
-                        "-c", "Release",
-                        "--nologo",
-                        "/v:m",
-                        $"/p:TargetOs={platform.TargetOs}",
-                        "/t:Rebuild",
-                        "/p:FullRelease=true",
-                        "/m"
-                    }
-                });
-            }
-            // Exodus-Secrets-End
 
             await PublishClientServer(platform.Rid, platform.TargetOs, configuration);
         }
@@ -235,10 +209,6 @@ public static class ServerPackaging
         if (UseRPSX)
             contentAssemblies.AddRange(["Content.RPSX.Shared", "Content.RPSX.Server"]);
         // RPSX-Secrets-End
-        // Exodus-Secrets-Start
-        if (UseExodus)
-            contentAssemblies.AddRange(["Content.Exodus.Shared", "Content.Exodus.Server"]);
-        // Exodus-Secrets-End
 
         // Additional assemblies that need to be copied such as EFCore.
         var sourcePath = Path.Combine(contentDir, "bin", "Content.Server");
