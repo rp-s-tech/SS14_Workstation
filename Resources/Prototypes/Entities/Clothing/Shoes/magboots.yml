@@ -78,8 +78,8 @@
   description: These would look fetching on a fetcher like you.
   components:
   - type: ClothingSpeedModifier
-    walkModifier: 1.06  # RPSX-Balance
-    sprintModifier: 1.06  # RPSX-Balance
+    walkModifier: 1.1
+    sprintModifier: 1.1
   - type: StaticPrice
     price: 3000
 
