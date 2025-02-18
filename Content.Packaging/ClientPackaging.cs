@@ -11,8 +11,8 @@ namespace Content.Packaging;
 public static class ClientPackaging
 {
     // RPSX-Secrets-Start
-    private static readonly bool UseRPSX = File.Exists(RPSXClientPath);
     private static readonly string RPSXClientPath = Path.Combine("RPSX", "Content.RPSX.Client", "Content.RPSX.Client.csproj");
+    private static readonly bool UseRPSX = File.Exists(RPSXClientPath);
     // RPSX-Secrets-End
 
 
