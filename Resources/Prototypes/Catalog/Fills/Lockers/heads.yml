@@ -332,6 +332,7 @@
     - id: WantedListCartridge
     - id: BookSecretDocuments # Exodus-NukeSecretDocuments
     - id: DrinkHosFlask
+    - id: ClothingOuterCoatHoSGreatcoat # RPSX Greatcoat-Return
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
