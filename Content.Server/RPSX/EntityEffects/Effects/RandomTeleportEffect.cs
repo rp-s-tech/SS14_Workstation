@@ -4,6 +4,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Content.Server.RPSX.RandomTeleport;
 using Content.Shared.Maps;
+using Robust.Shared.Audio;
 
 
 namespace Content.Server.RPSX.EntityEffects.Effects;
@@ -11,10 +12,10 @@ namespace Content.Server.RPSX.EntityEffects.Effects;
 public sealed partial class RandomTeleportEffect : EntityEffect
 {
     [DataField]
-    public float Radius { get; set; } = 5f;
+    public float Radius = 5f;
 
     [DataField]
-    public string Sound { get; set; } = "/Audio/Effects/teleport_arrival.ogg";
+    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Effects/teleport_arrival.ogg");
 
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys) =>
         Loc.GetString("reagent-effect-guidebook-random-teleport", ("chance", Probability));
