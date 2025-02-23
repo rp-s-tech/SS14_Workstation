@@ -3,6 +3,7 @@ using Content.Shared.Zombies;
 using Content.Server.Actions;
 using Content.Server.Popups;
 using Content.Shared.Exodus.Geras;
+using Content.Shared.SS220.TTS; //RPSX | CloneVoiceFix
 using Robust.Shared.Player;
 
 namespace Content.Server.Exodus.Geras;
@@ -42,6 +43,16 @@ public sealed class GerasSystem : SharedGerasSystem
 
         if (!ent.HasValue)
             return;
+
+        //RPSX start | CloneVoiceFix
+        if (EntityManager.TryGetComponent<TTSComponent>(uid, out var originalTTS))
+        {
+            if (EntityManager.TryGetComponent<TTSComponent>(ent.Value, out var polymorphTTS))
+            {
+                polymorphTTS.VoicePrototypeId = originalTTS.VoicePrototypeId;
+            }
+        }
+        //RPSX end | CloneVoiceFix
 
         _popupSystem.PopupEntity(Loc.GetString("geras-popup-morph-message-others", ("entity", ent.Value)), ent.Value, Filter.PvsExcept(ent.Value), true);
         _popupSystem.PopupEntity(Loc.GetString("geras-popup-morph-message-user"), ent.Value, ent.Value);
