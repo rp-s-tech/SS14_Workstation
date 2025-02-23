@@ -6,7 +6,7 @@
   components:
   - type: Sprite
     drawdepth: WallMountedItems
-    sprite: RPSX\NewYear\Structures\Wallmounts\posters.rsi
+    sprite: RPSX/NewYear/Structures/Wallmounts/posters.rsi
     state: posterNY1
     snapCardinals: true
 
