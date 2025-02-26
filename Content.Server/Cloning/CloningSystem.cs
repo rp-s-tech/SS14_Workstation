@@ -24,6 +24,7 @@ using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Roles.Jobs;
+using Content.Shared.SS220.TTS; //RPSX | CloneVoiceFix
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
@@ -213,6 +214,16 @@ namespace Content.Server.Cloning
 
             var mob = Spawn(speciesPrototype.Prototype, _transformSystem.GetMapCoordinates(uid));
             _humanoidSystem.CloneAppearance(bodyToClone, mob);
+
+            //RPSX start | CloneVoiceFix
+            if (EntityManager.TryGetComponent<TTSComponent>(bodyToClone, out var originalTTS))
+            {
+                if (EntityManager.TryGetComponent<TTSComponent>(mob, out var cloneTTS))
+                {
+                    cloneTTS.VoicePrototypeId = originalTTS.VoicePrototypeId;
+                }
+            }
+            //RPSX end | CloneVoiceFix
 
             var ev = new CloningEvent(bodyToClone, mob);
             RaiseLocalEvent(bodyToClone, ref ev);

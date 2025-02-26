@@ -1,4 +1,5 @@
 using System.Linq;
+using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 
@@ -10,11 +11,15 @@ public sealed class RandomTeleportSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
 
     private const int MaxRandomTeleportAttempts = 20;
 
     public EntityCoordinates? GetRandomCoordinates(EntityUid uid, float radius)
     {
+        if (_container.IsEntityOrParentInContainer(uid))
+            return null;
+
         var xform = Transform(uid);
         var coords = xform.Coordinates;
         var newCoords = coords.Offset(_random.NextVector2(radius));

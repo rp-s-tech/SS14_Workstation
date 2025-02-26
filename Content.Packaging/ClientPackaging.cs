@@ -10,13 +10,9 @@ namespace Content.Packaging;
 
 public static class ClientPackaging
 {
-    // Exodus-Secrets-Start
-    private static readonly bool UseExodus = File.Exists(ExodusClientPath);
-    private static readonly string ExodusClientPath = Path.Combine("Exodus", "Content.Exodus.Client", "Content.Exodus.Client.csproj");
-    // Exodus-Secrets-End
     // RPSX-Secrets-Start
-    private static readonly bool UseRPSX = File.Exists(RPSXClientPath);
     private static readonly string RPSXClientPath = Path.Combine("RPSX", "Content.RPSX.Client", "Content.RPSX.Client.csproj");
+    private static readonly bool UseRPSX = File.Exists(RPSXClientPath);
     // RPSX-Secrets-End
 
 
@@ -65,26 +61,6 @@ public static class ClientPackaging
                 });
             }
             // RPSX-Secrets-End
-            // Exodus-Secrets-Start
-            if (UseExodus)
-            {
-                await ProcessHelpers.RunCheck(new ProcessStartInfo
-                {
-                    FileName = "dotnet",
-                    ArgumentList =
-                    {
-                        "build",
-                        ExodusClientPath,
-                        "-c", configuration,
-                        "--nologo",
-                        "/v:m",
-                        "/t:Rebuild",
-                        "/p:FullRelease=true",
-                        "/m"
-                    }
-                });
-            }
-            // Exodus-Secrets-End
         }
 
         logger.Info("Packaging client...");
@@ -128,10 +104,6 @@ public static class ClientPackaging
         if (UseRPSX)
             assemblies.AddRange(["Content.RPSX.Shared", "Content.RPSX.Client"]);
         // RPSX-Secrets-End
-        // Exodus-Secrets-Start: Add Corvax interfaces to Magic ACZ
-        if (UseExodus)
-            assemblies.AddRange(["Content.Exodus.Shared", "Content.Exodus.Client"]);
-        // Exodus-Secrets-End
 
         await RobustSharedPackaging.WriteContentAssemblies(
             inputPass,

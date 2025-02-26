@@ -25,19 +25,7 @@
       reagents:
       - ReagentId: Teletoxin
         Quantity: 7
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 1
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: desecration
-      - !type:SpillBehavior
-        solution: food
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+  - type: RandomFoodTeleport
   - type: Tag
     tags:
     - Fruit
