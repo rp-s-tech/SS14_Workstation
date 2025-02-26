@@ -44,7 +44,7 @@
   discountDownTo:
     Telecrystal: 4
   cost:
-    Telecrystal: 6 
+    Telecrystal: 6
   categories:
   - UplinkWearables
   conditions:
@@ -59,7 +59,7 @@
   description: uplink-thermal-vision-desc
   productEntity: ClothingEyesThermalVisionGogglesNukie
   cost:
-    Telecrystal: 10 
+    Telecrystal: 10
   categories:
   - UplinkWearables
   conditions:
@@ -76,6 +76,89 @@
   icon: { sprite: /Textures/Objects/Weapons/Melee/e_sword_double.rsi, state: icon }
   productEntity: EnergySwordDouble
   cost:
-    Telecrystal: 20
+    Telecrystal: 24
   categories:
   - UplinkWeaponry
+
+
+
+- type: listing
+  id: ClothingEyesHudSyndiSP
+  name: uplink-sunglasses-name
+  description: uplink-sunglasses-desc
+  productEntity: ClothingEyesHudSyndiSP
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkMisc
+
+# - type: listing
+#   id: UplinkSyndicateShuttleGunDuster
+#   name: Орудие для шаттла
+#   description: Чтобы разбомбить станцию используя шаттл
+#   productEntity: ShuttleGunDuster
+#   cost:
+#     Telecrystal: 25
+#   categories:
+#   - UplinkExplosives
+#   conditions:
+#   - !type:StoreWhitelistCondition
+#     whitelist:
+#       tags:
+#       - NukeOpsUplink
+
+# - type: listing
+#   id: UplinkSyndicateMagazineGrenadeBlast
+#   name: Боеприпасы для орудия шаттла
+#   description: Без этого орудие не стреляет ¯\_(ツ)_/¯
+#   productEntity: MagazineGrenadeBlast
+#   cost:
+#     Telecrystal: 15
+#   categories:
+#   - UplinkExplosives
+#   conditions:
+#   - !type:StoreWhitelistCondition
+#     whitelist:
+#       tags:
+#       - NukeOpsUplink
+
+- type: listing
+  id: UplinkRadioPenSyndie
+  name: uplink-radio-pen-name
+  description: uplink-radio-pen-desc
+  productEntity: PenRadioSyndie
+  icon: { sprite: Objects/Misc/pens.rsi, state: pen }
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Reporter
+
+- type: listing
+  id: UplinkStunBaguette
+  name: uplink-stun-baget-name
+  description: uplink-stun-baget-desc
+  productEntity: Stunbaguette
+  icon: { sprite: /Textures/DarkStation/MainGame/Objects/Weapons/Melee/stunbaguette.rsi, state: icon }
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Mime
+
+# - type: listing
+#   id: UplinkAkmsShortRBundle
+#   name: Набор АКСУ
+#   description: Укороченный автомат калашникова и магазины к нему
+#   icon: { sprite: /Textures/DarkStation/MainGame/Objects/Weapons/Guns/Rifles/akms.rsi, state: icon }
+#   productEntity: ClothingBackpackDuffelSyndicateFilledAKMS
+#   cost:
+#     Telecrystal: 17
+#   categories:
+#   - UplinkWeaponry

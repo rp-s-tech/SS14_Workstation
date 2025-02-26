@@ -78,8 +78,8 @@
   description: These would look fetching on a fetcher like you.
   components:
   - type: ClothingSpeedModifier
-    walkModifier: 1.10 #PVS isn't too much of an issue when you are blind...
-    sprintModifier: 1.10
+    walkModifier: 1.1
+    sprintModifier: 1.1
   - type: StaticPrice
     price: 3000
 
