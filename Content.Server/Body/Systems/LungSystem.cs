@@ -6,6 +6,7 @@ using Content.Shared.Atmos;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Clothing;
 using Content.Shared.Inventory.Events;
+using Content.Server.Body.Events;
 
 namespace Content.Server.Body.Systems;
 
@@ -81,6 +82,36 @@ public sealed class LungSystem : EntitySystem
 
         GasToReagent(lung.Air, solution);
         _solutionContainerSystem.UpdateChemicals(lung.Solution.Value);
+    }
+
+    public void GasToReagent(EntityUid lungs, EntityUid user, LungComponent lung)
+    {
+        if (!_solutionContainerSystem.ResolveSolution(lungs, lung.SolutionName, ref lung.Solution, out var solution))
+            return;
+
+        GasToReagent(user, lung, solution);
+        _solutionContainerSystem.UpdateChemicals(lung.Solution.Value);
+    }
+
+    private void GasToReagent(EntityUid user, LungComponent lungs, Solution solution)
+    {
+        foreach (var gasId in Enum.GetValues<Gas>())
+        {
+            var i = (int)gasId;
+            var moles = lungs.Air[i];
+            if (moles <= 0)
+                continue;
+
+            var reagent = _atmos.GasReagents[i];
+            if (reagent is null)
+                continue;
+
+            var amount = moles * Atmospherics.BreathMolesToReagentMultiplier;
+            solution.AddReagent(reagent, amount);
+
+            var ev = new OnEntityBreathGas(reagent, amount);
+            RaiseLocalEvent(user, ref ev);
+        }
     }
 
     private void GasToReagent(GasMixture gas, Solution solution)

@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageVersion Include="FFMpegCore" Version="5.1.0"/>
+    <PackageVersion Include="FFMpegCore" Version="5.1.0" />
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
 </Project>

@@ -26,6 +26,7 @@ using Content.Shared.Chat;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
 using Content.Shared.RPSX.Patron; // RPSX
+using Content.Client.RPSX.Bridges;
 
 namespace Content.Client.IoC
 {
@@ -63,6 +64,7 @@ namespace Content.Client.IoC
             collection.Register<TitleWindowManager>();
 
             collection.Register<ISponsorsManager, SponsorsManager>(); // RPSX
+            collection.RegisterInstance<ITargetDollWidgetBridge>(new StubTargetDollWidgetBridge());
 
         }
     }

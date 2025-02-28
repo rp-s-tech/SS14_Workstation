@@ -37,6 +37,9 @@ namespace Content.Server.Body.Systems
                 return;
 
             _mindSystem.TransferTo(mindId, newEntity, mind: mind);
+
+            var pumpEv = new SurgeryRequestPump();
+            RaiseLocalEvent(newEntity, ref pumpEv);
         }
 
         private void OnPointAttempt(Entity<BrainComponent> ent, ref PointAttemptEvent args)

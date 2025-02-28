@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Configuration;
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.RPSX.CCVars;
 
@@ -18,4 +18,7 @@ public sealed partial class RPSXCCVars
 
     public static readonly CVarDef<bool> IsDropTimeEnabled =
         CVarDef.Create("game.drop_time_enabled", false, CVar.SERVER);
+
+    public static readonly CVarDef<bool> SurgeryEnabled =
+        CVarDef.Create("surgery.enabled", false, CVar.REPLICATED | CVar.SERVER);
 }

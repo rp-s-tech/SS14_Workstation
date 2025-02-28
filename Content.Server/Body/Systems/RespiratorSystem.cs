@@ -18,6 +18,9 @@ using Content.Shared.Mobs.Systems;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Shared.Configuration;
+using Content.Shared.RPSX.CCVars;
+using Content.Server.Body.Events;
 
 namespace Content.Server.Body.Systems;
 
@@ -35,6 +38,7 @@ public sealed class RespiratorSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     private static readonly ProtoId<MetabolismGroupPrototype> GasId = new("Gas");
 
@@ -75,6 +79,14 @@ public sealed class RespiratorSystem : EntitySystem
                 continue;
 
             UpdateSaturation(uid, -(float) respirator.UpdateInterval.TotalSeconds, respirator);
+
+            var processSaturationEv = new CanProcessEntitySaturation();
+            RaiseLocalEvent(ref processSaturationEv);
+
+            var saturationAttempt = new OnEntitySaturationAttempt();
+            RaiseLocalEvent(uid, ref saturationAttempt);
+
+            var saturationValid = !processSaturationEv.IgnoreAttempt && saturationAttempt.HasSaturation;
 
             if (!_mobState.IsIncapacitated(uid)) // cannot breathe in crit.
             {
@@ -134,8 +146,29 @@ public sealed class RespiratorSystem : EntitySystem
         foreach (var (organUid, lung, _) in organs)
         {
             // Merge doesn't remove gas from the giver.
-            _atmosSys.Merge(lung.Air, gas);
-            _lungSystem.GasToReagent(organUid, lung);
+
+            if (!_cfg.GetCVar(RPSXCCVars.SurgeryEnabled))
+            {
+                _atmosSys.Merge(lung.Air, gas);
+                _lungSystem.GasToReagent(organUid, lung);
+            }
+            else
+            {
+                var lungEv = new OnEntityInhaleToLungs();
+                RaiseLocalEvent(uid, ref lungEv);
+
+                if (lungEv.DamageLoss > 0)
+                {
+                    var remainderGas = gas.RemoveRatio(1.0f - lungEv.DamageLoss);
+                    var removedGas = gas.RemoveRatio(lungEv.DamageLoss);
+                    _atmosSys.Merge(lung.Air, remainderGas);
+                    _atmosSys.Merge(ev.Gas, removedGas);
+                }
+                else
+                    _atmosSys.Merge(lung.Air, gas);
+
+                _lungSystem.GasToReagent(organUid, uid, lung);
+            }
         }
     }
 
@@ -352,3 +385,6 @@ public record struct InhaleLocationEvent(GasMixture? Gas);
 
 [ByRefEvent]
 public record struct ExhaleLocationEvent(GasMixture? Gas);
+
+[ByRefEvent]
+public record struct OnEntityInhaleToLungs(float DamageLoss = 0f);
