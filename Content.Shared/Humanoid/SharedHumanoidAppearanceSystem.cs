@@ -40,6 +40,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] private readonly ISerializationManager _serManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly ISponsorsManager _sponsors = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!; // ADT-Changeling-Tweak
 
     [ValidatePrototypeId<SpeciesPrototype>]
     public const string DefaultSpecies = "Human";
@@ -146,6 +147,61 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (dirty)
             Dirty(uid, humanoid);
     }
+
+
+    // this was done enough times that it only made sense to do it here
+
+    /// <summary>
+    ///     Clones a humanoid's appearance to a target mob, provided they both have humanoid components.
+    /// </summary>
+    /// <param name="source">Source entity to fetch the original appearance from.</param>
+    /// <param name="target">Target entity to apply the source entity's appearance to.</param>
+    /// <param name="sourceHumanoid">Source entity's humanoid component.</param>
+    /// <param name="targetHumanoid">Target entity's humanoid component.</param>
+
+    // ADT-Changeling-Tweak-Start
+    public void SetAppearance(HumanoidAppearanceComponent sourceHumanoid, HumanoidAppearanceComponent targetHumanoid)
+    {
+
+        targetHumanoid.Species = sourceHumanoid.Species;
+        targetHumanoid.SkinColor = sourceHumanoid.SkinColor;
+        targetHumanoid.EyeColor = sourceHumanoid.EyeColor;
+        targetHumanoid.Age = sourceHumanoid.Age;
+        SetSex(targetHumanoid.Owner, sourceHumanoid.Sex, false, targetHumanoid);
+        targetHumanoid.CustomBaseLayers = new(sourceHumanoid.CustomBaseLayers);
+        targetHumanoid.MarkingSet = new(sourceHumanoid.MarkingSet);
+        SetBarkData(targetHumanoid.Owner, sourceHumanoid.Bark, targetHumanoid);  // ADT Barks
+
+        targetHumanoid.Gender = sourceHumanoid.Gender;
+        if (TryComp<GrammarComponent>(targetHumanoid.Owner, out var grammar))
+        {
+            grammar.Gender = sourceHumanoid.Gender;
+        }
+
+        Dirty(targetHumanoid.Owner, targetHumanoid);
+    }
+    // ADT-Changeling-Tweak-End
+
+    /// <summary>
+    ///     Clones a humanoid's appearance to a target mob, provided they both have humanoid components.
+    /// </summary>
+    /// <param name="source">Source entity to fetch the original appearance from.</param>
+    /// <param name="target">Target entity to apply the source entity's appearance to.</param>
+    /// <param name="sourceHumanoid">Source entity's humanoid component.</param>
+    /// <param name="targetHumanoid">Target entity's humanoid component.</param>
+
+    // ADT-Changeling-Tweak-Start
+    public void CloneAppearance(EntityUid source, EntityUid target, HumanoidAppearanceComponent? sourceHumanoid = null,
+        HumanoidAppearanceComponent? targetHumanoid = null)
+    {
+        if (!Resolve(source, ref sourceHumanoid) || !Resolve(target, ref targetHumanoid))
+        {
+            return;
+        }
+
+        SetAppearance(sourceHumanoid, targetHumanoid);
+    }
+    // ADT-Changeling-Tweak-End
 
     /// <summary>
     ///     Sets the visibility for multiple layers at once on a humanoid's sprite.
