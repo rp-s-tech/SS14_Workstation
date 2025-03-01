@@ -18,7 +18,7 @@
     color: "#5ECDF7"
 
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ChaplainHardsuitHelmet
   categories: [ HideSpawnMenu ]
   name: Chaplain's hardsuit helmet
@@ -142,7 +142,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitN7BaseHelm
 
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitN7BaseHelm
   categories: [ HideSpawnMenu ]
   name: шлем скафандра N7
@@ -193,7 +193,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitN7HeavyHelm
 
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitN7HeavyHelm
   categories: [ HideSpawnMenu ]
   name: шлем N7 "Защитник"

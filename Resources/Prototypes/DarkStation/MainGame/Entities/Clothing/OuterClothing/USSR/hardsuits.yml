@@ -33,7 +33,7 @@
     price: 750
 
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSolderUSSPHead
   categories: [ HideSpawnMenu ]
   name: USSP combat hardsuit helmet

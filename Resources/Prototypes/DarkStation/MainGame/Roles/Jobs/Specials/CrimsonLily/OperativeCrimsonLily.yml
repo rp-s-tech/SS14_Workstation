@@ -113,7 +113,7 @@
       clothingPrototype: ClothingHeadHelmetHardsuitOperativeCrimsonLily
 
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitOperativeCrimsonLily
   categories: [ HideSpawnMenu ]
   name: Crimson Lily Operative spacesuit helmet
