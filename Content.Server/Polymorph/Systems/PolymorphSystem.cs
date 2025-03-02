@@ -128,7 +128,7 @@ public sealed partial class PolymorphSystem : EntitySystem
 
     private void OnPolymorphActionEvent(Entity<PolymorphableComponent> ent, ref PolymorphActionEvent args)
     {
-        if (!_proto.TryIndex(args.ProtoId, out var prototype) || args.Handled)
+        if (!_proto.TryIndex(args.ProtoId, out var prototype) || args.Handled || HasComp<PolymorphedEntityComponent>(ent))
             return;
 
         PolymorphEntity(ent, prototype.Configuration);
