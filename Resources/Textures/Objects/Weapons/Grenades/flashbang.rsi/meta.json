@@ -10,22 +10,18 @@
     {
       "name": "icon"
     },
-    "states": [
-        {
-            "name": "icon"
-        },
-        {
-            "name": "primed",
-            "delays": [
-                [
-                    0.1,
-                    0.1
-                ]
+    {
+        "name": "primed",
+        "delays": [
+            [
+                0.1,
+                0.1
             ]
-        },
-        {
-            "name": "equipped-BELT",
-            "directions": 4
-        }
+        ]
+    },
+    {
+        "name": "equipped-BELT",
+        "directions": 4
+    }
     ]
 }
