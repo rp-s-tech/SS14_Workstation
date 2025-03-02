@@ -22,7 +22,6 @@ using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Chat;
 using Content.Shared.Damage.Events;
-using Content.Shared.ADT.SpeechBarks;
 using Content.Shared._White.Overlays;
 
 namespace Content.Shared.Inventory;
@@ -46,7 +45,6 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, SelfBeforeGunShotEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, SelfBeforeClimbEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, CoefficientQueryEvent>(RelayInventoryEvent);
-        SubscribeLocalEvent<InventoryComponent, TransformSpeakerBarkEvent>(RelayInventoryEvent); // ADT Barks
 
         // by-ref events
         SubscribeLocalEvent<InventoryComponent, GetExplosionResistanceEvent>(RefRelayInventoryEvent);

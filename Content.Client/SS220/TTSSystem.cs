@@ -13,7 +13,6 @@ using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
-using Content.Shared.ADT.CCVar;
 
 namespace Content.Client.SS220.TTS;
 
@@ -264,9 +263,6 @@ public sealed partial class TTSSystem : EntitySystem
 
     private void OnPlayTTS(PlayTTSEvent ev)
     {
-        if (_cfg.GetCVar(ADTCCVars.ReplaceTTSWithBarks) == true)    // ADT Barks
-            return;
-
         var volume = (ev.IsRadio ? _radioVolume : _volume) * ev.VolumeModifier;
         var audioParams = AudioParams.Default.WithVolume(volume);
 

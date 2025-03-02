@@ -7,7 +7,6 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared;
 using Robust.Shared.Configuration;
-using Content.Shared.ADT.CCVar;
 
 namespace Content.Client.Options.UI.Tabs;
 
@@ -35,22 +34,6 @@ public sealed partial class AudioTab : Control
             SliderVolumeTts,
             scale: ContentAudioSystem.TtsMultiplier);
         // Corvax-TTS-End
-
-        // ADT Barks start
-        Control.AddOptionPercentSlider(
-            ADTCCVars.BarksVolume,
-            SliderVolumeBarks,
-            scale: ContentAudioSystem.BarksMultiplier);
-
-        Control.AddOptionDropDown<bool>(
-            ADTCCVars.ReplaceTTSWithBarks,
-            DropDownBarksOrTTS,
-            [
-                new OptionDropDownCVar<bool>.ValueOption(true, Loc.GetString("ui-options-barks-speech")),
-                new OptionDropDownCVar<bool>.ValueOption(false, Loc.GetString("ui-options-tts-speech")),
-            ]);
-
-        // ADT Barks end
 
         Control.AddOptionPercentSlider(
             CVars.MidiVolume,

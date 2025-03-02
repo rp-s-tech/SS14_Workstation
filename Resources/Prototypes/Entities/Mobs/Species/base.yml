@@ -212,7 +212,6 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
-  - type: SpeechBarks
 
 - type: entity
   save: false
