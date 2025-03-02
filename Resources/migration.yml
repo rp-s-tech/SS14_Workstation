@@ -548,9 +548,6 @@ DrinkIrishCarBomb: DrinkIrishSlammer
 ClothingMaskSexyClown: ClothingMaskBlushingClown
 ClothingMaskSexyMime: ClothingMaskBlushingMime
 
-# 2025-01-27
-FoodCondimentPacketFrostoil: FoodCondimentPacketColdsauce
-
 # RPSX-2025-01-11
 SpawnPointSurgeon: null
 PrintedDocumentDecisionToStartTrial: Paper
@@ -566,6 +563,16 @@ VendingMachinePride: VendingMachineTheater
 # RPSX-2025-01-21
 RevolverFabian: WeaponRevolverFabian
 
+# 2025-01-27
+FoodCondimentPacketFrostoil: FoodCondimentPacketColdsauce
+
 # 2025-02-05 # RPSX Revert
 # WeaponSubMachineGunVector: null
 # WeaponSubMachineGunVectorRubber: null
+
+# 2025-02-20
+MagazineBoxAntiMaterielBig: null
+MagazineBoxCaselessRifle10x24: null
+MagazineBoxCaselessRifleBig: null
+MagazinePistolHighCapacityRubber: null
+

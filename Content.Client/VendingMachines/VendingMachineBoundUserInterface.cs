@@ -33,7 +33,7 @@ namespace Content.Client.VendingMachines
 
             if (!_cfg.GetCVar(RPSXCCVars.EconomyEnabled))
             {
-                _menu = this.CreateWindow<VendingMachineMenu>();
+                _menu = this.CreateWindowCenteredLeft<VendingMachineMenu>();
                 _menu.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
 
                 SetupOldVendingMenu((VendingMachineMenu)_menu);

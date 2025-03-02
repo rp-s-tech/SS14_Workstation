@@ -1072,7 +1072,9 @@ namespace Content.Server.Database
         BabyJail = 4,
         /// Results from rejected connections with external API checking tools
         IPChecks = 5,
-        Discord  = 6,
+        /// Results from rejected connections who are authenticated but have no modern hwid associated with them.
+        NoHwid = 6,
+        Discord  = 7
     }
 
     public class ServerBanHit

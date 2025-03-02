@@ -23,7 +23,7 @@ using Robust.Shared.Audio.Systems;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Server.IdentityManagement;
-using Content.Server.DetailExaminable;
+using Content.Shared.DetailExaminable;
 using Content.Shared.Store.Components;
 // using Robust.Shared.Collections; | RPSX - RandomTeleport Refactor
 // using Robust.Shared.Map.Components; | RPSX - RandomTeleport Refactor

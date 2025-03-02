@@ -260,6 +260,12 @@
         "name": "idseniorofficer"
       },
       {
+        "name": "wizard"
+      },
+      {
+        "name": "idwizard"
+      },
+      {
         "name": "gold-inhand-left",
         "directions": 4
       },
