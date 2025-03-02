@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
+using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Presets;
@@ -58,6 +59,8 @@ public sealed partial class ServerApi : IPostInjectInit
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
     [Dependency] private readonly ILocalizationManager _loc = default!;
+    [Dependency] private readonly IBanManager _banManager = default!;
+    [Dependency] private readonly IPlayerLocator _locator = default!;
 
     private string _token = string.Empty;
     private ISawmill _sawmill = default!;
@@ -82,7 +85,7 @@ public sealed partial class ServerApi : IPostInjectInit
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/set_motd", ActionForceMotd);
         RegisterActorHandler(HttpMethod.Patch, "/admin/actions/panic_bunker", ActionPanicPunker);
         RegisterHandler(HttpMethod.Post, "/admin/actions/bwoink/send", HandleBwoinkSend);
-
+        RegisterActorHandler(HttpMethod.Post, "/admin/actions/disban", ActionDisban);
     }
 
     public void Initialize()
@@ -396,6 +399,53 @@ public sealed partial class ServerApi : IPostInjectInit
             await RespondOk(context);
         });
     }
+
+
+    /// <summary>
+    ///     Bans a player via API, simulating an in-game ban command.
+    /// </summary>
+    private async Task ActionDisban(IStatusHandlerContext context, Actor actor)
+    {
+        var body = await ReadJson<DisbanActionBody>(context);
+        if (body == null)
+            return;
+
+        await RunOnMainThread(async () =>
+        {
+            var adminId = new NetUserId(body.SenderUid);
+            var targetId = new NetUserId(body.RecipientUid);
+
+            // Исправляем проблему с типами
+            var located = await _locator.LookupIdByNameOrIdAsync(targetId.UserId.ToString());
+            if (located == null)
+            {
+                await RespondError(context, ErrorCode.PlayerNotFound, HttpStatusCode.UnprocessableContent, "Player not found");
+                return;
+            }
+
+            var targetName = located.Username;
+            var targetHWid = located.LastHWId;
+
+            // Исправляем NoteSeverity
+            var severity = Shared.Database.NoteSeverity.High;
+
+            _banManager.CreateServerBan(
+                targetId,
+                targetName,
+                adminId,
+                null, // IP не используется
+                targetHWid,
+                body.DurationMinutes,
+                severity, // Исправленный NoteSeverity
+                body.Reason
+            );
+
+            _sawmill.Info($"[DISBAN] User {targetName} ({targetId}) banned for {body.DurationMinutes} minutes by {actor.Name} (Discord). Reason: {body.Reason}");
+
+            await RespondOk(context);
+        });
+    }
+
     private async Task HandleBwoinkSend(IStatusHandlerContext context)
     {
         // Чтение JSON-запроса
@@ -747,6 +797,14 @@ public sealed partial class ServerApi : IPostInjectInit
         public required Guid SenderUid { get; init; }
         public required Guid RecipientUid { get; init; }
         public required string Message { get; init; }
+    }
+
+    private sealed class DisbanActionBody
+    {
+        public required Guid SenderUid { get; init; }
+        public required Guid RecipientUid { get; init; }
+        public required string Reason { get; init; }
+        public required uint DurationMinutes { get; init; }
     }
 
 }
