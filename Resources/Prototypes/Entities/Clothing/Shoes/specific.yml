@@ -161,8 +161,6 @@
     sprite: Clothing/Shoes/Specific/wizard.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Specific/wizard.rsi
-  - type: VendingPrice
-    price: 500
 
 - type: entity
   parent: ClothingShoesBase
