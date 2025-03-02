@@ -80,3 +80,5 @@ ent-ClothingMaskItalianMoustache = итальянские усы
     .desc = Изготовлены из волосков настоящих итальянских усов. Придаёт владельцу непреодолимое желание бурно жестикулировать.
 ent-ClothingMaskNinja = маска ниндзя
     .desc = Плотно прилегающая маска с наноусилением, которая служит одновременно воздушным фильтром и воплощением постмодернистской моды.
+ent-ClothingMaskWeldingGas = welding gas mask
+    .desc = A gas mask with built in welding goggles and face shield. Looks like a skull, clearly designed by a nerd.

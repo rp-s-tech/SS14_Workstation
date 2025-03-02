@@ -1,3 +1,4 @@
+
 ent-DrinkShalnayaPulya = { ent-DrinkGlass }
     .desc = { ent-DrinkGlass.desc }
     .suffix = Шальная пуля
