@@ -12,7 +12,6 @@
   femaleFirstNames: names_vulp_first_female
   maleLastNames: names_vulp_last # Corvax-LastnameGender
   femaleLastNames: names_vulp_last # Corvax-LastnameGender
-  sponsorOnly: true
 
 - type: speciesBaseSprites
   id: MobVulpkaninSprites
