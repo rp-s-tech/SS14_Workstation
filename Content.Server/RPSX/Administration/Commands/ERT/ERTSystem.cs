@@ -19,7 +19,7 @@ namespace Content.Server.RPSX.Administration.Commands.ERT;
 public sealed class ERTSystem : EntitySystem
 {
     [Dependency] private readonly ChatSystem _chatSystem = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly SharedMapSystem _mapManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoaderSystem = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
