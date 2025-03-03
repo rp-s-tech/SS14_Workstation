@@ -90,6 +90,7 @@ public abstract class SharedMagicSystem : EntitySystem
 
         if (comp.RequiresClothes)
         {
+            hasReqs = false; // RPSX edit | Polymorph Abuse Fix
             var enumerator = _inventory.GetSlotEnumerator(args.Performer, SlotFlags.OUTERCLOTHING | SlotFlags.HEAD);
             while (enumerator.MoveNext(out var containerSlot))
             {
