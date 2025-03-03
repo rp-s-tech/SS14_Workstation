@@ -1,2 +1,2 @@
-ent-FoodBluespaceTomato = bluespace tomato
-    .desc = These portals are mesmerizing..
+ent-FoodBluespaceTomato = блюспейс томат
+    .desc = Эти порталы завораживают...

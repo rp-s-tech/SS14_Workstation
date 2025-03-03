@@ -1,7 +1,7 @@
-ent-BasePebble = peeble
-    .desc = { ent-BaseItem.desc }
-ent-BaseBlackPebble = black peeble
-    .desc = { ent-BasePebble.desc }
+ent-BasePebble = камень
+    .desc = Просто камень. Что вы ещё от него хотите? Чтобы он вам читал стихи, написал симфонию?
+ent-BaseBlackPebble = базальтовый камень
+    .desc = Базальтовый камень. Что вы ещё от него хотите? Чтобы он вам читал стихи, написал симфонию?
 ent-BlackPebble01 = { ent-BaseBlackPebble }
     .desc = { ent-BaseBlackPebble.desc }
 ent-BlackPebble02 = { ent-BaseBlackPebble }

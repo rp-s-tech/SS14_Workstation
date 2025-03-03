@@ -1,7 +1,7 @@
-cmd-announce-desc = Send an in-game announcement with custom color and sound.
-cmd-announce-help = { $command } <message> [sender] [color] [sound] - Send announcement. Sender defaults to CentCom, color to Gold, sound to announce.ogg. The color should be in a #RRGGBB format.
+cmd-announce-desc = Отправляйте внутриигровое объявление с индивидуальным цветом и звуком.
+cmd-announce-help = { $command } <message> [sender] [color] [sound] - Отправляет объявление. Отправитель по умолчанию - CentCom, цвет - Золотой, звук - announce.ogg. Цвет должен быть в формате #RRGGBB.
 # The default sender for the announcement
-cmd-announce-sender = Central Command
+cmd-announce-sender = Центральное Командование
 # Completion hints
 cmd-announce-arg-message = <message>
 cmd-announce-arg-sender = [sender]
