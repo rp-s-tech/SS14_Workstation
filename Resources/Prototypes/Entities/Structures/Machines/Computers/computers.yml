@@ -740,7 +740,7 @@
     color: "#ff00ff"
     canShuttle: false
     global: true #announce to everyone they're about to fuck shit up
-    sound: /Audio/Announcements/war.ogg
+    sound: /Audio/_RPSX/Announcements/ragesmages.ogg #RPSX edit | Custom sound
   - type: Computer
     board: WizardCommsComputerCircuitboard
   - type: PointLight
