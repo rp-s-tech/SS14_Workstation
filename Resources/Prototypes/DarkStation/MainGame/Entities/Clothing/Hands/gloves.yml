@@ -70,22 +70,6 @@
     sprite: DarkStation/MainGame/Clothing/Hands/Gloves/officer_blue_shield.rsi
 
 - type: entity
-  parent: ClothingHandsBase
-  id: ClothingHandsGlovesIFD
-  name: FD inspector gloves
-  description: These gloves smell like money.
-  components:
-  - type: Sprite
-    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/IFD_gloves.rsi
-  - type: Clothing
-    sprite: DarkStation/MainGame/Clothing/Hands/Gloves/IFD_gloves.rsi
-  - type: Insulated
-  - type: Fiber
-    fiberMaterial: fibers-insulative
-    fiberColor: fibers-black
-  - type: FingerprintMask
-
-- type: entity
   id: ClothingHandsMaxTacGloves
   parent: ClothingHandsGlovesCombat
   name: MAX-TAC gloves

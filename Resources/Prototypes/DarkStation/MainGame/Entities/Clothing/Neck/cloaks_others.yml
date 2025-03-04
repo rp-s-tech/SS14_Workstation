@@ -113,20 +113,3 @@
     containers:
       toggleable-clothing: !type:ContainerSlot { }
 
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckIFD
-  name: FD inspector cloack
-  description: This cape smells like it was taken out of a money bath.
-  components:
-  - type: Sprite
-    sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/IFD_cloaks.rsi
-  - type: Clothing
-    sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/IFD_cloaks.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.6
-        Heat: 0.9

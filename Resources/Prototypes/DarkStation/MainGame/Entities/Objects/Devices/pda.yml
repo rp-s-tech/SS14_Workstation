@@ -84,36 +84,6 @@
     state: pda-blueshield
 
 - type: entity
-  parent: BasePDA
-  id: IFDPDA
-  name: finance department inspector PDA
-  description: Smells like a big wad of money.
-  components:
-  - type: Sprite
-    sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
-    layers:
-      - map: [ "enum.PdaVisualLayers.Base" ]
-        state: "pda-ifd"
-      - state: "light_overlay"
-        map: [ "enum.PdaVisualLayers.Flashlight" ]
-        shader: "unshaded"
-        visible: false
-      - state: "id_overlay"
-        map: [ "enum.PdaVisualLayers.IdLight" ]
-        shader: "unshaded"
-        visible: false
-  - type: Pda
-    id: IFDIDCard
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       pda-ifd
-  - type: Icon
-    sprite: DarkStation/MainGame/Objects/Devices/pda.rsi
-    state: pda-ifd
-
-- type: entity
   parent: ERTLeaderPDA
   id: ERTReconPDA
   name: ERT recon PDA

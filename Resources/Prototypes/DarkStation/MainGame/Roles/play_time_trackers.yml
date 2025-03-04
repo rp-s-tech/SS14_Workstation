@@ -10,17 +10,6 @@
 - type: playTimeTracker
   id: JobCargoLogistician
 
-- type: playTimeTracker
-  id: JobAgentCrimsonLily
-
-- type: playTimeTracker
-  id: JobSpIFD
-
-- type: playTimeTracker
-  id: JobSpawnedAgentCrimsonLily
-
-- type: playTimeTracker
-  id: JobOperativeCrimsonLily
 
 - type: playTimeTracker
   id: JobSpNanoTrasenRepresentative

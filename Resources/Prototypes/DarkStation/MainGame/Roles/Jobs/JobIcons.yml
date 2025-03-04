@@ -6,15 +6,6 @@
     state: Nanotrasen_green
   jobName: JobCentralCommandOfficial
 
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconSpFinDep
-  icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: Nanotrasen_brown
-  jobName: job-name-fin-dep-inspector
-
 - type: jobIcon
   parent: JobIcon
   id: JobIconIAA
@@ -60,14 +51,6 @@
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: BlueShield
   jobName: job-name-blueshield
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconAgentCrimsonLily
-  icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: AgentCrimsonLily
-  jobName: job-name-crimson-lily-agent
 
 - type: jobIcon
   parent: JobIcon

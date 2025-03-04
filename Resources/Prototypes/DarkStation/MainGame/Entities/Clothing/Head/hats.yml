@@ -174,17 +174,6 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBaseButcherable
-  id: ClothingHeadHatCapIFD
-  name: FD inspector beret
-  description: This beret is worn by the true lord of money. At least until it's stolen.
-  components:
-  - type: Sprite
-    sprite: DarkStation/MainGame/Clothing/Head/Hats/Berets/ifd_beret.rsi
-  - type: Clothing
-    sprite: DarkStation/MainGame/Clothing/Head/Hats/Berets/ifd_beret.rsi
-
-- type: entity
   parent: ClothingHeadHatCentcom
   id: ClothingHeadHatSpFinDepOfficial
   name: finance department cap
