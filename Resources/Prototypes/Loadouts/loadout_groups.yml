@@ -1332,7 +1332,7 @@
   - EmergencyNitrogenSyndicate
   - EmergencyOxygenSyndicate
   - LoadoutSpeciesVoxNitrogen
-  - EmergencyOxygenSyndicateMechInjector # Exodus-ThickSyringes
+#  - EmergencyOxygenSyndicateMechInjector # Exodus-ThickSyringes
 
 - type: loadoutGroup
   id: GroupSpeciesBreathTool
