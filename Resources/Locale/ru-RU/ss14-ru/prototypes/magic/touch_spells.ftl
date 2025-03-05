@@ -1,7 +1,7 @@
 
 ent-ActionSmiteNoReq = { ent-ActionSmite }
     .desc = { ent-ActionSmite.desc }
-ent-ActionCluwne = Cluwne's Curse
-    .desc = Turns someone into a Cluwne!
-ent-ActionSlippery = Slippery Slope
-    .desc = Make someone slippery.
+ent-ActionCluwne = Проклятия Клувня
+    .desc = Превращает кого-либо в Клувня!
+ent-ActionSlippery = Скользкая дорожка
+    .desc = Делает кого либо скользким.

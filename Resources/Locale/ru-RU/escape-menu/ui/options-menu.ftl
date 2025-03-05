@@ -2,7 +2,7 @@
 
 ui-options-title = Игровые настройки
 ui-options-tab-accessibility = Доступность
-ui-options-tab-admin = Admin
+ui-options-tab-admin = Админ
 ui-options-tab-graphics = Графика
 ui-options-tab-controls = Управление
 ui-options-tab-audio = Аудио
@@ -263,7 +263,7 @@ ui-options-colorblind-friendly = Режим для дальтоников
 ui-options-reduced-motion = Снижение интенсивности визуальных эффектов
 ui-options-chat-window-opacity = Прозрачность окна чата
 ui-options-screen-shake-intensity = Интенсивность дрожания экрана
-ui-options-speech-bubble-text-opacity = Speech bubble text opacity
-ui-options-speech-bubble-speaker-opacity = Speech bubble speaker opacity
-ui-options-speech-bubble-background-opacity = Speech bubble background opacity
-ui-options-enable-classic-overlay = Revert antag overlay to classic mode
+ui-options-speech-bubble-text-opacity = Непрозрачность текста облака речи
+ui-options-speech-bubble-speaker-opacity = Непрозрачность автора текста облака речи
+ui-options-speech-bubble-background-opacity = Непрозрачность фона облака речи
+ui-options-enable-classic-overlay = Вернуть оверлей антагов в классический режим

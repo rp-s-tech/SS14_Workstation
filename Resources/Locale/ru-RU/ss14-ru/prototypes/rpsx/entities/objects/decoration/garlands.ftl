@@ -1,3 +1,2 @@
-ent-ValentineDayGarlands = garland with hearts
-    .desc = Paper garland filled with holiday spirit! Amur!
-    .suffix = On
+ent-ValentineDayGarlands = гирлянда с сердечками
+    .desc = Бумажная гирлянда наполненная праздничным духом! Амур!

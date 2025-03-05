@@ -170,7 +170,6 @@
   components:
   - type: Contraband
     allowedDepartments: [ Security ]
-    allowedJobs: [ Bartender ]
 
 - type: entity
   id: BaseSecurityLawyerContraband
@@ -179,7 +178,6 @@
   components:
   - type: Contraband
     allowedDepartments: [ Security ]
-    allowedJobs: [ Lawyer ]
 
 - type: entity
   id: BaseJanitorContraband
