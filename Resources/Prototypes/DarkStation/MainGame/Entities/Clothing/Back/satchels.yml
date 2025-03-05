@@ -17,15 +17,6 @@
 #     sprite: DarkStation/MainGame/Clothing/Back/Satchels/blackbagopium.rsi
 
 - type: entity
-  parent: ClothingBackpackSatchel
-  id: ClothingBackpackSatchelIFD
-  name: FD inspector satchel
-  description: A satchel for conveniently storing your finances.
-  components:
-  - type: Sprite
-    sprite: DarkStation/MainGame/Clothing/Back/Satchels/IFD.rsi
-
-- type: entity
   id: ClothingBackpackSatchelBlueShield
   parent: ClothingBackpackSatchel
   name: Blueshield Officer's satchel

@@ -89,16 +89,6 @@
       emergencyLightColor: DarkViolet
       forceEnableEmergencyLights: true
       shuttleTime: 1200
-    crimson:
-      announcement: alert-level-crimson-announcement
-      selectable: false
-      sound:
-        path: /Audio/Misc/crimson.ogg
-        params:
-          volume: -2
-      color: Crimson
-      emergencyLightColor: Crimson
-      shuttleTime: 600
     brown:
       announcement: alert-level-brown-announcement
       selectable: false

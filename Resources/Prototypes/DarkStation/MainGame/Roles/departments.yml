@@ -17,16 +17,6 @@
   - Lawyer
 
 - type: department
-  id: CrimsonLily
-  name: department-CrimsonLily
-  description: department-CrimsonLily-description
-  color: "#990000"
-  roles:
-  - AgentCrimsonLily
-  - SpIFD
-  # - OperativeCrimsonLily
-
-- type: department
   id: SpCentCommon
   name: department-SpCentCommon
   description: department-SpCentCommon-description

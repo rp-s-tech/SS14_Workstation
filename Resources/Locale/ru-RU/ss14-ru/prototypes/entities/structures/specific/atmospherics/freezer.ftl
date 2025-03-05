@@ -1,0 +1,12 @@
+ent-AirSensorFreezerBase = { ent-AirSensor }
+    .suffix = Холодильник
+    .desc = { ent-AirSensor.desc }
+ent-AirSensorFreezer = { ent-AirSensorFreezerBase }
+    .desc = { ent-AirSensorFreezerBase.desc }
+ent-GasVentPumpFreezer = { ent-AirSensorFreezerBase }
+    .desc = { ent-AirSensorFreezerBase.desc }
+ent-GasVentScrubberFreezer = { ent-AirSensorFreezerBase }
+    .desc = { ent-AirSensorFreezerBase.desc }
+ent-AirAlarmFreezer = { ent-AirAlarm }
+    .suffix = Холодильник, авто режим выключен
+    .desc = { ent-AirAlarm.desc }

@@ -55,19 +55,3 @@
     sprite: Clothing/Ears/Headsets/command.rsi
   - type: Clothing
     sprite: Clothing/Ears/Headsets/command.rsi
-
-- type: entity
-  parent: ClothingHeadset
-  id: ClothingHeadsetIFD
-  name: FD inspector headset
-  components:
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyCentCom
-      - EncryptionKeyStationMaster
-      - EncryptionKeyCrimsonLily
-  - type: Sprite
-    sprite: DarkStation/MainGame/Clothing/Ears/Headsets/IFD.rsi
-  - type: Clothing
-    sprite: DarkStation/MainGame/Clothing/Ears/Headsets/IFD.rsi

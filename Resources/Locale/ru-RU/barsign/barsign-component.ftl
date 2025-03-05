@@ -4,7 +4,6 @@ barsign-ui-set-label = Выбрать вывеску:
 
 # Bar signs prototypes
 
-
 ## The Harmbaton
 
 barsign-prototype-name-harmbaton = Хармбатон
@@ -122,7 +121,11 @@ barsign-prototype-description-spacebucks = От них нельзя скрыть
 
 ## EmpBarSign
 
+barsign-prototype-name-maltroach = Пивная Моль
+barsign-prototype-description-maltroach = Чирик!
 barsign-prototype-description-empbarsign = Что-то пошло совсем не так.
+barsign-prototype-name-whiskeyechoes = Виски Эхо
+barsign-prototype-description-whiskeyechoes = Элитный бар для элитных операторов... Подождите, это же станция НТ. Как тут оказалась эта вывеска?
 
 ## SignOff
 

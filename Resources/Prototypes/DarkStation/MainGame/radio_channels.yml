@@ -6,14 +6,6 @@
   color: "#a52626"
   longRange: true
 
-- type: radioChannel
-  id: CrimsonLily
-  name: chat-radio-crimsonlily
-  keycode: 'f'
-  frequency: 7770
-  color: "#990000"
-  longRange: true
-
 # Game Modes
 - type: radioChannel
   id: Undead

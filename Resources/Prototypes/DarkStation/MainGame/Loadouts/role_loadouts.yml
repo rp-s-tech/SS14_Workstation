@@ -43,20 +43,6 @@
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
-  id: JobSpIFD
-  groups:
-  - SpIFDJumpsuit
-  - SpIFDBackpack
-  - SpIFDOuterClothing
-  - SpIFDShoes
-  - SpIFDGloves
-  - SpIFDHead
-  - Glasses
-  - Survival
-  - GroupSpeciesBreathTool
-  - Trinkets
-
-- type: roleLoadout
   id: JobCargoLogistician
   groups:
   - CargoLogisticianJumpsuit
@@ -130,20 +116,6 @@
 #   - GroupSpeciesBreathToolMedical
 #   - Trinkets
 
-#ABL
-- type: roleLoadout
-  id: JobAgentCrimsonLily
-  groups:
-  - ACLJumpsuit
-  - ACLHead
-  - ACLOuterClothing
-  - ACLGlasses
-  - ACLNeck
-  - ACLGloves
-  - ACLBack
-  - ACLShoes
-  - SurvivalSecurity
-  - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
   id: JobSpCCO

@@ -52,3 +52,7 @@ ent-ActionToggleEyes = Открыть/закрыть глаза
     .desc = Закройте глаза, чтобы защитить их, или откройте, чтобы насладиться яркими цветами.
 ent-ActionToggleWagging = action-name-toggle-wagging
     .desc = action-description-toggle-wagging
+ent-FakeMindShieldToggleAction = [color=green]Переключить поддельный "Щит Разума"[/color]
+    .desc = Включить/выключить работу импланта.
+ent-ActionToggleParamedicSiren = Переключить сирену парамедика
+    .desc = Включает или выключает сирену парамедика.
