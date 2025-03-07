@@ -1,17 +1,4 @@
 - type: entity
-  name:  finance department rubber stamp
-  parent: RubberStampBase
-  id: RubberStampFinanceDepACL
-  components:
-  - type: Stamp
-    stampedName: stamp-component-stamped-name-acl
-    stampedColor: "#990000"
-    stampState: "paper_stamp-centcom"
-  - type: Sprite
-    sprite: Objects/Misc/stamps.rsi
-    state: stamp-centcom
-
-- type: entity
   name: magistrate rubber stamp
   parent: RubberStampBase
   id: RubberStampSpMagistration
@@ -23,19 +10,6 @@
   - type: Sprite
     sprite: Objects/Misc/stamps.rsi
     state: stamp-centcom
-
-- type: entity
-  name: FD inspector rubber stamp
-  parent: RubberStampBase
-  id: RubberStampSpIFD
-  components:
-  - type: Stamp
-    stampedName: stamp-component-stamped-name-ifd
-    stampedColor: "#a23e3e"
-    stampState: "paper_stamp-centcom"
-  - type: Sprite
-    sprite: Objects/Misc/stamps.rsi
-    state: stamp-qm
 
 - type: entity
   name: central command representative rubber stamp

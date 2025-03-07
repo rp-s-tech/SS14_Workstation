@@ -429,10 +429,6 @@ namespace Content.Server.Database
         public string Gender { get; set; } = null!;
         public string Species { get; set; } = null!;
         public string Voice { get; set; } = null!; // Corvax-TTS
-        public string BarkProto { get; set; } = null!; // ADT Barks
-        public float BarkPitch { get; set; } = 1f; // ADT Barks
-        public float LowBarkVar { get; set; } = 0.1f; // ADT Barks
-        public float HighBarkVar { get; set; } = 0.5f; // ADT Barks
         [Column(TypeName = "jsonb")] public JsonDocument? Markings { get; set; } = null!;
         public string HairName { get; set; } = null!;
         public string HairColor { get; set; } = null!;
@@ -564,6 +560,12 @@ namespace Content.Server.Database
         /// The corresponding role prototype on the profile.
         /// </summary>
         public string RoleName { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Custom name of the role loadout if it supports it.
+        /// </summary>
+        [MaxLength(256)]
+        public string? EntityName { get; set; }
 
         /// <summary>
         /// Store the saved loadout groups. These may get validated and removed when loaded at runtime.
@@ -1066,7 +1068,9 @@ namespace Content.Server.Database
         BabyJail = 4,
         /// Results from rejected connections with external API checking tools
         IPChecks = 5,
-        Discord  = 6,
+        /// Results from rejected connections who are authenticated but have no modern hwid associated with them.
+        NoHwid = 6,
+        Discord  = 7
     }
 
     public class ServerBanHit

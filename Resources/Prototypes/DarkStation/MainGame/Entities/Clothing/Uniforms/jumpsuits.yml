@@ -180,17 +180,6 @@
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/blueshield.rsi
 
 - type: entity
-  id: ClothingUniformJumpsuitIFD
-  parent: ClothingUniformSkirtBase
-  name: FD inspector jumpsuit
-  description: I am money. I am wealth.
-  components:
-  - type: Sprite
-    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/ifd.rsi
-  - type: Clothing
-    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpsuit/ifd.rsi
-
-- type: entity
   parent: ClothingUniformJumpsuitClown
   id: ClothingUniformJumpsuitHonkomother
   name: Honkomother jumpsuit

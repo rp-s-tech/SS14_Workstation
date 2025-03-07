@@ -1,2 +1,1 @@
-ent-FoodBluespaceTomato = блюспейс томат
-    .desc = Эти порталы завораживают...
+

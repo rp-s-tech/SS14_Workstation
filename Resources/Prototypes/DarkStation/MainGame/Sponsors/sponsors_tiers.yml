@@ -216,7 +216,6 @@
   - MobObserverSponsorSkeleton
   - MobObserverSponsorTerminator
   allowedSpecies:
-  - Vulpkanin
   - Nucleation
 
 ## Роль для частых игроков при текущем онлайне
@@ -288,5 +287,4 @@
   - MobObserverSponsorSkeleton
   - MobObserverSponsorTerminator
   allowedSpecies:
-  - Vulpkanin
   - Nucleation

@@ -1,0 +1,14 @@
+ent-PontificRule = { ent-BaseGameRule }
+    .desc = { ent-BaseGameRule.desc }
+ent-NarsiCult = { ent-BaseGameRule }
+    .desc = { ent-BaseGameRule.desc }
+ent-MindRoleNarsiCult = Narsi Cultist Role
+    .desc = { ent-BaseMindRoleAntag.desc }
+ent-Ratvar = { ent-BaseGameRule }
+    .desc = { ent-BaseGameRule.desc }
+ent-MindRoleRatvar = Ratvar Cultist Role
+    .desc = { ent-BaseMindRoleAntag.desc }
+ent-Vampire = { ent-BaseGameRule }
+    .desc = { ent-BaseGameRule.desc }
+ent-MindRoleVampire = Vampire Role
+    .desc = { ent-BaseMindRoleAntag.desc }

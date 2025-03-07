@@ -59,21 +59,6 @@
 
 - type: entity
   parent: IDCardStandard
-  id: IFDIDCard
-  name: FD inspector ID card
-  components:
-  - type: Sprite
-    sprite: DarkStation/MainGame/Objects/Misc/id_cards/ifd_id.rsi
-    layers:
-    - state: id_card
-    - state: idifd
-  - type: Clothing
-    sprite: DarkStation/MainGame/Objects/Misc/id_cards/ifd_id.rsi
-  - type: PresetIdCard
-    job: JobSpIFD
-
-- type: entity
-  parent: IDCardStandard
   id: ERTReconIDCard
   name: ERT recon ID card
   components:

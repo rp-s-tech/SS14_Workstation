@@ -356,7 +356,6 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
-  - type: SpeechBarks
   - type: TTS
 
 - type: entity

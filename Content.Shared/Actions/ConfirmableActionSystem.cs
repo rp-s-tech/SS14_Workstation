@@ -11,6 +11,7 @@ public sealed class ConfirmableActionSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly EntityManager _entityManager = default!;  //RPSX edit start | Popup spam fix
 
     public override void Initialize()
     {
@@ -63,6 +64,15 @@ public sealed class ConfirmableActionSystem : EntitySystem
     private void Prime(Entity<ConfirmableActionComponent> ent, EntityUid user)
     {
         var (uid, comp) = ent;
+
+        //RPSX edit start | Popup spam fix
+        if (_entityManager.TryGetComponent<InstantActionComponent>(uid, out var action))
+        {
+            if(action.Cooldown.HasValue && _timing.CurTime < action.Cooldown.Value.End)
+                return;
+        }
+        //RPSX edit end
+
         comp.NextConfirm = _timing.CurTime + comp.ConfirmDelay;
         comp.NextUnprime = comp.NextConfirm + comp.PrimeTime;
         Dirty(uid, comp);

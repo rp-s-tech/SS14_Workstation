@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Shared.Administration.Logs;
-using Content.Shared.ADT.SpeechBarks;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -247,6 +246,7 @@ namespace Content.Server.Database
             {
                 var loadout = new RoleLoadout(role.RoleName)
                 {
+                    EntityName = role.EntityName,
                 };
 
                 foreach (var group in role.Groups)
@@ -288,10 +288,7 @@ namespace Content.Server.Database
                 (PreferenceUnavailableMode)profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts,
-                // ADT Barks start
-                new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar)
-                // ADT Barks end
+                loadouts
             );
         }
 
@@ -384,6 +381,7 @@ namespace Content.Server.Database
                 var dz = new ProfileRoleLoadout()
                 {
                     RoleName = role,
+                    EntityName = loadouts.EntityName ?? string.Empty,
                 };
 
                 foreach (var (group, groupLoadouts) in loadouts.SelectedLoadouts)
@@ -406,12 +404,6 @@ namespace Content.Server.Database
 
                 profile.Loadouts.Add(dz);
             }
-            // ADT Barks start
-            profile.BarkProto = humanoid.Bark.Proto;
-            profile.BarkPitch = humanoid.Bark.Pitch;
-            profile.LowBarkVar = humanoid.Bark.MinVar;
-            profile.HighBarkVar = humanoid.Bark.MaxVar;
-            // ADT Barks end
 
             return profile;
         }

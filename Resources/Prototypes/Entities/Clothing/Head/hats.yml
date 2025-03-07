@@ -425,8 +425,6 @@
     sprite: Clothing/Head/Hats/redwizard.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/redwizard.rsi
-  - type: VendingPrice
-    price: 500
 
 - type: entity
   parent: ClothingHeadBase
@@ -542,8 +540,6 @@
     sprite: Clothing/Head/Hats/violetwizard.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/violetwizard.rsi
-  - type: VendingPrice
-    price: 500
 
 - type: entity
   parent: ClothingHeadBase
@@ -587,12 +583,10 @@
     sprite: Clothing/Head/Hats/wizard_fake.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/wizard_fake.rsi
-  - type: VendingPrice
-    price: 500
 
 - type: entity
   abstract: true
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseMagicalContraband ]
   id: ClothingHeadHatWizardBase
   components:
   - type: WizardClothes
@@ -612,8 +606,6 @@
     - ClothMade
     - HamsterWearable
     - WhitelistChameleon
-  - type: VendingPrice
-    price: 500
 
 - type: entity
   parent: ClothingHeadBase

@@ -1,13 +1,4 @@
 - type: entity
-  parent: ClothingBackpackDuffel
-  id: ClothingBackpackDuffelIFD
-  name: FD inspector duffel bag
-  description: A duffel bag for storing large amounts of finances.
-  components:
-  - type: Sprite
-    sprite: DarkStation/MainGame/Clothing/Back/Duffels/IFD.rsi
-
-- type: entity
   id: ClothingBackpackDuffelBlueShield
   parent: ClothingBackpackDuffel
   name: Blueshield Officer's duffel bag

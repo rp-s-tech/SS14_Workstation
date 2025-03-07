@@ -155,6 +155,7 @@
   - type: Vocal
     sounds:
       Unsexed: UnisexSilicon
+    screamAction: null
   - type: UnblockableSpeech
   - type: FootstepModifier
     footstepSoundCollection:
@@ -273,9 +274,6 @@
     intensitySlope: 20
     maxIntensity: 20
     canCreateVacuum: false # its for killing the borg not the station
-  - type: SpeechBarks
-    data:
-      proto: Synth3
   - type: TTS # Corvax-TTS
     voice: TrainingRobot
 
@@ -329,6 +327,8 @@
   - type: MovementAlwaysTouching
   - type: Speech
     speechSounds: SyndieBorg
+    allowedEmotes:
+    - Laugh
   - type: Vocal
     sounds:
       Unsexed: UnisexSiliconSyndicate

@@ -1,4 +1,3 @@
-using Content.Shared.ADT.SpeechBarks;
 using Content.Shared.SS220.TTS;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -98,14 +97,6 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     [DataField]
     public HashSet<HumanoidVisualLayers> HideLayersOnEquip = [HumanoidVisualLayers.Hair];
-
-    // ADT Barks start
-    /// <summary>
-    ///     Current voice. Used for correct cloning.
-    /// </summary>
-    [DataField("bark")]
-    public BarkData Bark = new();
-    // ADT Barks end
 }
 
 [DataDefinition]
