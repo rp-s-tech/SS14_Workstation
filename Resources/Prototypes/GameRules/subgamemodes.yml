@@ -15,6 +15,7 @@
       maxPicks: 10
     maxDifficulty: 2.5
   - type: AntagSelection
+    selectionTime: BeforeJobs # Goobstation
     agentName: thief-round-end-agent-name
     definitions:
     - prefRoles: [ Thief ]
@@ -24,8 +25,8 @@
       allowNonHumans: true
       multiAntagSetting: NotExclusive
       startingGear: ThiefGear
-      components:
-      - type: Pacified
+#      components: # Corvax-MRP
+#      - type: Pacified
       mindRoles:
       - MindRoleThief
       briefing:
