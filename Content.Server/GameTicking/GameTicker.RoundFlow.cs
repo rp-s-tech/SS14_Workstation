@@ -515,7 +515,7 @@ namespace Content.Server.GameTicking
             var textEv = new RoundEndTextAppendEvent();
             RaiseLocalEvent(textEv);
 
-            var roundendedevent = new RoundEndedEvent(RoundId, RoundDuration());
+            var roundendedevent = new RoundEndedEvent(RoundId, RoundDuration()); // RPSX edit | salary fixing
             RaiseLocalEvent(roundendedevent);
 
             var roundEndText = $"{text}\n{textEv.Text}";
