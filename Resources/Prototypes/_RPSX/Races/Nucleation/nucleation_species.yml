@@ -1,0 +1,164 @@
+- type: species
+  id: Nucleation
+  name: Нуклеация
+  roundStart: true
+  prototype: MobNucleation
+  sprites: MobNucleanSprites
+  markingLimits: MobNucleanMarkingLimits
+  dollPrototype: MobNucleanDummy
+  skinColoration: HumanToned
+  sponsorOnly: true
+
+# Отсутствие слоя означает, что
+# у этого человека не может быть ничего, что начиналось бы по кругу.
+# применено к этому слою. Вместо этого он должен
+# может быть определен как "пользовательский базовый слой"
+# в любом из прототипов начальной маркировки моба,
+# или это должно быть добавлено на C#.
+- type: speciesBaseSprites
+  id: MobNucleanSprites
+  sprites:
+    Special: MobNucleanAnyMarking
+    Head: MobNucleanHead
+    Hair: MobNucleanAnyMarking
+    FacialHair: MobNucleanAnyMarking
+    Snout: MobNucleanAnyMarking
+    Chest: MobNucleanTorso
+    Eyes: MobNucleanEyes
+    HeadTop: MobNucleanAnyMarking
+    LArm: MobNucleanLArm
+    RArm: MobNucleanRArm
+    LHand: MobNucleanLHand
+    RHand: MobNucleanRHand
+    LLeg: MobNucleanLLeg
+    RLeg: MobNucleanRLeg
+    LFoot: MobNucleanLFoot
+    RFoot: MobNucleanRFoot
+
+- type: markingPoints
+  id: MobNucleanMarkingLimits
+  points:
+    Special: # the cat ear joke
+      points: 0
+      required: false
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: false
+    Tail: # the cat tail joke
+      points: 0
+      required: false
+    HeadTop:
+      points: 1
+      required: false
+    Chest:
+      points: 1
+      required: false
+    Legs:
+      points: 2
+      required: false
+    Arms:
+      points: 2
+      required: false
+
+- type: humanoidBaseSprite
+  id: MobNucleanEyes
+  baseSprite:
+    sprite: Mobs/Customization/eyes.rsi
+    state: eyes
+
+- type: humanoidBaseSprite
+  id: MobNucleanAnyMarking
+
+- type: humanoidBaseSprite
+  id: MobNucleanMarkingMatchSkin
+  markingsMatchSkin: true
+
+- type: humanoidBaseSprite
+  id: MobNucleanHead
+  baseSprite:
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobNucleanHeadMale
+  baseSprite:
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobNucleanHeadFemale
+  baseSprite:
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: MobNucleanTorso
+  baseSprite:
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobNucleanTorsoMale
+  baseSprite:
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobNucleanTorsoFemale
+  baseSprite:
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: MobNucleanLLeg
+  baseSprite:
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobNucleanLArm
+  baseSprite:
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobNucleanLHand
+  baseSprite:
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobNucleanLFoot
+  baseSprite:
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobNucleanRLeg
+  baseSprite:
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobNucleanRArm
+  baseSprite:
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobNucleanRHand
+  baseSprite:
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobNucleanRFoot
+  baseSprite:
+    sprite: Mobs/Species/Nuclean/parts.rsi
+    state: r_foot

@@ -1,0 +1,23 @@
+<stamina:StaminaUI xmlns="https://spacestation14.io"
+    xmlns:stamina="clr-namespace:Content.Client.RPSX.Damage.UI"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Content.Client.RPSX.Damage.UI.StaminaUI"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Top"
+    Visible="False">
+    <TextureRect Name="StaminaBar"
+        Access="Public"
+        TexturePath="/Textures/_RPSX/Interface/stamina/stamina_bar_back.png"
+        TextureScale="4 4">
+        <TextureRect Name="ProgressBarRect"
+            Margin="16 16 12 8">
+            <ProgressBar Name="ChargeBar"
+                VerticalExpand = "True"
+                HorizontalExpand="True"
+                MinValue="0"
+                MaxValue="1"
+                Page="0"
+                Value="0.5"/>
+        </TextureRect>
+    </TextureRect>
+</stamina:StaminaUI>
