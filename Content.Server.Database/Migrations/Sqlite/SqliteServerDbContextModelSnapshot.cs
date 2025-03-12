@@ -597,6 +597,84 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("connection_log", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.Credit", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("credit_id");
+
+                    b.Property<int>("CreditEnding")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("credit_ending");
+
+                    b.Property<int>("CreditStart")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("credit_start");
+
+                    b.Property<int>("NextPayment")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("next_payment");
+
+                    b.Property<int>("Percent")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("percent");
+
+                    b.Property<int>("ProfileEconomicsId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("profile_economics_id");
+
+                    b.Property<int>("Summ")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("summ");
+
+                    b.HasKey("Id")
+                        .HasName("PK_credit");
+
+                    b.HasIndex("ProfileEconomicsId");
+
+                    b.ToTable("credit", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.Deposit", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("deposit_id");
+
+                    b.Property<int>("DepositEnding")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("deposit_ending");
+
+                    b.Property<int>("DepositStart")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("deposit_start");
+
+                    b.Property<int>("NextPayment")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("next_payment");
+
+                    b.Property<int>("Percent")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("percent");
+
+                    b.Property<int>("ProfileEconomicsId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("profile_economics_id");
+
+                    b.Property<int>("Summ")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("summ");
+
+                    b.HasKey("Id")
+                        .HasName("PK_deposit");
+
+                    b.HasIndex("ProfileEconomicsId");
+
+                    b.ToTable("deposit", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.DiscordUser", b =>
                 {
                     b.Property<int>("ID")
@@ -1739,6 +1817,30 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Server");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.Credit", b =>
+                {
+                    b.HasOne("Content.Server.Database.ProfileEconomics", "ProfileEconomics")
+                        .WithMany("Credits")
+                        .HasForeignKey("ProfileEconomicsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_credit_economics_profile_economics_id");
+
+                    b.Navigation("ProfileEconomics");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.Deposit", b =>
+                {
+                    b.HasOne("Content.Server.Database.ProfileEconomics", "ProfileEconomics")
+                        .WithMany("Deposits")
+                        .HasForeignKey("ProfileEconomicsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_deposit_economics_profile_economics_id");
+
+                    b.Navigation("ProfileEconomics");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Job", b =>
                 {
                     b.HasOne("Content.Server.Database.Profile", "Profile")
@@ -2157,6 +2259,13 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .IsRequired();
 
                     b.Navigation("Traits");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.ProfileEconomics", b =>
+                {
+                    b.Navigation("Credits");
+
+                    b.Navigation("Deposits");
                 });
 
             modelBuilder.Entity("Content.Server.Database.ProfileLoadoutGroup", b =>

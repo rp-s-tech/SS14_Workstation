@@ -633,6 +633,88 @@ namespace Content.Server.Database.Migrations.Postgres
                         });
                 });
 
+            modelBuilder.Entity("Content.Server.Database.Credit", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("credit_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CreditEnding")
+                        .HasColumnType("integer")
+                        .HasColumnName("credit_ending");
+
+                    b.Property<int>("CreditStart")
+                        .HasColumnType("integer")
+                        .HasColumnName("credit_start");
+
+                    b.Property<int>("NextPayment")
+                        .HasColumnType("integer")
+                        .HasColumnName("next_payment");
+
+                    b.Property<int>("Percent")
+                        .HasColumnType("integer")
+                        .HasColumnName("percent");
+
+                    b.Property<int>("ProfileEconomicsId")
+                        .HasColumnType("integer")
+                        .HasColumnName("profile_economics_id");
+
+                    b.Property<int>("Summ")
+                        .HasColumnType("integer")
+                        .HasColumnName("summ");
+
+                    b.HasKey("Id")
+                        .HasName("PK_credit");
+
+                    b.HasIndex("ProfileEconomicsId");
+
+                    b.ToTable("credit", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.Deposit", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("deposit_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DepositEnding")
+                        .HasColumnType("integer")
+                        .HasColumnName("deposit_ending");
+
+                    b.Property<int>("DepositStart")
+                        .HasColumnType("integer")
+                        .HasColumnName("deposit_start");
+
+                    b.Property<int>("NextPayment")
+                        .HasColumnType("integer")
+                        .HasColumnName("next_payment");
+
+                    b.Property<int>("Percent")
+                        .HasColumnType("integer")
+                        .HasColumnName("percent");
+
+                    b.Property<int>("ProfileEconomicsId")
+                        .HasColumnType("integer")
+                        .HasColumnName("profile_economics_id");
+
+                    b.Property<int>("Summ")
+                        .HasColumnType("integer")
+                        .HasColumnName("summ");
+
+                    b.HasKey("Id")
+                        .HasName("PK_deposit");
+
+                    b.HasIndex("ProfileEconomicsId");
+
+                    b.ToTable("deposit", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.DiscordUser", b =>
                 {
                     b.Property<int>("ID")
@@ -1823,6 +1905,30 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Server");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.Credit", b =>
+                {
+                    b.HasOne("Content.Server.Database.ProfileEconomics", "ProfileEconomics")
+                        .WithMany("Credits")
+                        .HasForeignKey("ProfileEconomicsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_credit_economics_profile_economics_id");
+
+                    b.Navigation("ProfileEconomics");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.Deposit", b =>
+                {
+                    b.HasOne("Content.Server.Database.ProfileEconomics", "ProfileEconomics")
+                        .WithMany("Deposits")
+                        .HasForeignKey("ProfileEconomicsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_deposit_economics_profile_economics_id");
+
+                    b.Navigation("ProfileEconomics");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Job", b =>
                 {
                     b.HasOne("Content.Server.Database.Profile", "Profile")
@@ -2241,6 +2347,13 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsRequired();
 
                     b.Navigation("Traits");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.ProfileEconomics", b =>
+                {
+                    b.Navigation("Credits");
+
+                    b.Navigation("Deposits");
                 });
 
             modelBuilder.Entity("Content.Server.Database.ProfileLoadoutGroup", b =>

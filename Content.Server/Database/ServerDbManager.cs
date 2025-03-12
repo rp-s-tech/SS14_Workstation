@@ -11,6 +11,7 @@ using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
+using Content.Shared.RPSX.Bank.Components;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -365,8 +366,8 @@ namespace Content.Server.Database
 
         #region RPSX
 
-        Task<int> GetProfileEconomics(NetUserId userId, int slot);
-        Task SaveProfileEconomics(NetUserId userId, int slot, int balance);
+        Task<BankAccountComponent?> GetProfileEconomics(NetUserId userId, int slot);
+        Task SaveProfileEconomics(NetUserId userId, int slot, BankAccountComponent bankAccount);
         Task<bool>  IsDiscordVerifiedAsync(NetUserId userId);
 
         #endregion
@@ -1052,15 +1053,15 @@ namespace Content.Server.Database
         }
 
         #region RPSX
-        public Task<int> GetProfileEconomics(NetUserId userId, int slot)
+        public Task<BankAccountComponent?> GetProfileEconomics(NetUserId userId, int slot)
         {
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetProfileEconomics(userId, slot));
         }
-        public Task SaveProfileEconomics(NetUserId userId, int slot, int newbal)
+        public Task SaveProfileEconomics(NetUserId userId, int slot, BankAccountComponent bankAccount)
         {
             DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.SaveProfileEconomics(userId, slot, newbal));
+            return RunDbCommand(() => _db.SaveProfileEconomics(userId, slot, bankAccount));
         }
 
         public Task<bool> IsDiscordVerifiedAsync(NetUserId userId)

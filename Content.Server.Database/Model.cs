@@ -340,8 +340,14 @@ namespace Content.Server.Database
                 .IsUnique();
 
             modelBuilder.Entity<ProfileEconomics>()
-                .HasIndex(p => new { ProfileEconomicsProfileId = p.ProfileId })
+                .HasIndex(p => p.ProfileId)
                 .IsUnique();
+
+            modelBuilder.Entity<Deposit>()
+                .HasIndex(p => p.ProfileEconomicsId);
+
+            modelBuilder.Entity<Credit>()
+                .HasIndex(p => p.ProfileEconomicsId);
 
             modelBuilder.Entity<DiscordUser>()
                 .HasIndex(u => u.DiscordId)
@@ -461,6 +467,32 @@ namespace Content.Server.Database
         public Profile Profile { get; set; } = null!;
         public int ProfileId { get; set; }
         public int Balance { get; set; }
+        public List<Credit>? Credits { get; set; } = new();
+        public List<Deposit>? Deposits { get; set; } = new();
+    }
+
+    public class Credit
+    {
+        public int Id { get; set; }
+        public ProfileEconomics ProfileEconomics { get; set; } = null!;
+        public int ProfileEconomicsId { get; set; }
+        public int Percent { get; set; }
+        public int Summ { get; set; }
+        public int CreditStart { get; set; } // Начало кредита
+        public int NextPayment { get; set; } // В сменах
+        public int CreditEnding { get; set; } // Сколько смен пройдет с начала кредита
+    }
+
+    public class Deposit
+    {
+        public int Id { get; set; }
+        public ProfileEconomics ProfileEconomics { get; set; } = null!;
+        public int ProfileEconomicsId { get; set; }
+        public int Percent { get; set; }
+        public int Summ { get; set; }
+        public int DepositStart { get; set; } // Начало депозита
+        public int NextPayment { get; set; } // В сменах
+        public int DepositEnding { get; set; } // Сколько смен пройдет с начала депозита
     }
 
     public class PatronProfilePet

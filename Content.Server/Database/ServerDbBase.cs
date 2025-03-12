@@ -22,6 +22,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.RPSX.Bank.Components;
 
 namespace Content.Server.Database
 {
@@ -1909,66 +1910,91 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         }
 
         #region RPSX
-        public async Task<int> GetProfileEconomics(NetUserId userId, int slot)
+        public async Task<BankAccountComponent?> GetProfileEconomics(NetUserId userId, int slot)
         {
             await using var db = await GetDb();
 
             var profile = db.DbContext.Profile
                 .Include(p => p.Preference)
                 .Where(p => p.Preference.UserId == userId.UserId)
-                .Include(p => p.Jobs)
-                .Include(p => p.Antags)
-                .Include(p => p.Traits)
-                .Include(p => p.PatronProfilePet)
-                .Include(p => p.Items)
-                .Include(p => p.Loadouts)
-                    .ThenInclude(l => l.Groups)
-                    .ThenInclude(group => group.Loadouts)
                 .AsSplitQuery()
                 .SingleOrDefault(h => h.Slot == slot);
 
-            if (profile is null) return 0;
+            if (profile is null) return null;
             var economics = db.DbContext.ProfileEconomics
-                .SingleOrDefault(p => p.Profile == profile);
+                .SingleOrDefault(e => e.Profile == profile);
             if (economics is null)
-                return 0;
-            return economics.Balance;
+                return null;
+            return new BankAccountComponent
+            {
+                Balance = economics.Balance,
+                BankDeposits = economics.Deposits?.Select(d => new BankDeposit
+                {
+                    Percent = d.Percent,
+                    Summ = d.Summ,
+                    DepositStart = d.DepositStart,
+                    NextPayment = d.NextPayment,
+                    DepositEnding = d.DepositEnding
+                }).ToList() ?? new List<BankDeposit>(),
+                BankCredits = economics.Credits?.Select(c => new BankCredit
+                {
+                    Percent = c.Percent,
+                    Summ = c.Summ,
+                    CreditStart = c.CreditStart,
+                    NextPayment = c.NextPayment,
+                    CreditEnding = c.CreditEnding
+                }).ToList() ?? new List<BankCredit>()
+            };
         }
 
-        public async Task SaveProfileEconomics(NetUserId userId, int slot, int newbal)
+        public async Task SaveProfileEconomics(NetUserId userId, int slot, BankAccountComponent bankAccount)
         {
             await using var db = await GetDb();
 
             var profile = db.DbContext.Profile
                 .Include(p => p.Preference)
                 .Where(p => p.Preference.UserId == userId.UserId)
-                .Include(p => p.Jobs)
-                .Include(p => p.Antags)
-                .Include(p => p.Traits)
-                .Include(p => p.PatronProfilePet)
-                .Include(p => p.Items)
-                .Include(p => p.Loadouts)
-                    .ThenInclude(l => l.Groups)
-                    .ThenInclude(group => group.Loadouts)
                 .AsSplitQuery()
                 .SingleOrDefault(h => h.Slot == slot);
 
             if (profile is null) return;
             var economics = db.DbContext.ProfileEconomics
-                .SingleOrDefault(p => p.Profile == profile);
+                .SingleOrDefault(e => e.Profile == profile);
             if (economics is null)
             {
                 economics = new ProfileEconomics
                 {
                     Profile = profile,
                     ProfileId = profile.Id,
-                    Balance = newbal
+                    Balance = bankAccount.Balance,
+                    Credits = new List<Credit>(),
+                    Deposits = new List<Deposit>()
                 };
                 db.DbContext.ProfileEconomics.Add(economics);
                 await db.DbContext.SaveChangesAsync();
                 return;
             }
-            economics.Balance = newbal;
+            economics.Balance = bankAccount.Balance;
+            economics.Deposits = bankAccount.BankDeposits?.Select(c => new Deposit
+            {
+                Percent = c.Percent,
+                Summ = c.Summ,
+                ProfileEconomics = economics,
+                ProfileEconomicsId = economics.Id,
+                DepositStart = c.DepositStart,
+                DepositEnding = c.DepositEnding,
+                NextPayment = c.NextPayment
+            }).ToList() ?? new List<Deposit>();
+            economics.Credits = bankAccount.BankCredits?.Select(c => new Credit
+            {
+                Percent = c.Percent,
+                Summ = c.Summ,
+                ProfileEconomics = economics,
+                ProfileEconomicsId = economics.Id,
+                CreditStart = c.CreditStart,
+                CreditEnding = c.CreditEnding,
+                NextPayment = c.NextPayment
+            }).ToList() ?? new List<Credit>();
             await db.DbContext.SaveChangesAsync();
         }
         public async Task<bool> IsDiscordVerifiedAsync(NetUserId userId)
