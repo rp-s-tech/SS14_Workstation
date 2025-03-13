@@ -8,12 +8,12 @@
   category: cargoproduct-category-name-security
   group: market
 
-- type: cargoProduct
-  id: CratePepperSpray
-  icon:
-    sprite: DarkStation/MainGame/Objects/Tools/groundpepper.rsi
-    state: groundpepper
-  product: CratePepperSprayFilled
-  cost: 450
-  category: cargoproduct-category-name-security
-  group: market
+# - type: cargoProduct
+#   id: CratePepperSpray
+#   icon:
+#     sprite: DarkStation/MainGame/Objects/Tools/groundpepper.rsi
+#     state: groundpepper
+#   product: CratePepperSprayFilled
+#   cost: 450
+#   category: cargoproduct-category-name-security
+#   group: market
