@@ -63881,7 +63881,7 @@ entities:
       - stampedColor: '#C69B17FF'
         stampedName: stamp-component-stamped-name-ce
       content: >-
-        Для корректной работы Вокс-бокса установите воздушную сигнализацию в режим "Паника" на 40 секунд. После, вернитесь к параметру "расширенная фильтрация". Ни в коем случае не устанавливайте в "автоматический режим". 
+        Для корректной работы Вокс-бокса установите воздушную сигнализацию в режим "Паника" на 40 секунд. После, вернитесь к параметру "расширенная фильтрация". Ни в коем случае не устанавливайте в "автоматический режим".
 
 
         Удачной работы.
@@ -77739,25 +77739,25 @@ entities:
     - type: Transform
       pos: -10.5,13.5
       parent: 2
-- proto: VendingMachineCigs
-  entities:
-  - uid: 11389
-    components:
-    - type: Transform
-      pos: -11.5,26.5
-      parent: 2
-  - uid: 11390
-    components:
-    - type: Transform
-      pos: -33.5,0.5
-      parent: 2
-- proto: VendingMachineClothing
-  entities:
-  - uid: 11391
-    components:
-    - type: Transform
-      pos: -7.5,-24.5
-      parent: 2
+# - proto: VendingMachineCigs
+#   entities:
+#   - uid: 11389
+#     components:
+#     - type: Transform
+#       pos: -11.5,26.5
+#       parent: 2
+#   - uid: 11390
+#     components:
+#     - type: Transform
+#       pos: -33.5,0.5
+#       parent: 2
+# - proto: VendingMachineClothing
+#   entities:
+#   - uid: 11391
+#     components:
+#     - type: Transform
+#       pos: -7.5,-24.5
+#       parent: 2
 - proto: VendingMachineCondiments
   entities:
   - uid: 11392
@@ -77801,13 +77801,13 @@ entities:
     - type: Transform
       pos: 16.5,-3.5
       parent: 2
-- proto: VendingMachineGames
-  entities:
-  - uid: 11398
-    components:
-    - type: Transform
-      pos: -36.5,-7.5
-      parent: 2
+# - proto: VendingMachineGames
+#   entities:
+#   - uid: 11398
+#     components:
+#     - type: Transform
+#       pos: -36.5,-7.5
+#       parent: 2
 - proto: VendingMachineGeneDrobe
   entities:
   - uid: 11399
@@ -77961,13 +77961,13 @@ entities:
     - type: Transform
       pos: 19.5,-20.5
       parent: 2
-- proto: VendingMachineTheater
-  entities:
-  - uid: 11422
-    components:
-    - type: Transform
-      pos: -8.5,-24.5
-      parent: 2
+# - proto: VendingMachineTheater
+#   entities:
+#   - uid: 11422
+#     components:
+#     - type: Transform
+#       pos: -8.5,-24.5
+#       parent: 2
 - proto: VendingMachineVendomat
   entities:
   - uid: 11423

@@ -9536,7 +9536,7 @@ entities:
       content: >2+
                                    [head=2] Джордж Оруэлл [/head]
 
-                                                [head=1] 1984  [/head]                                             
+                                                [head=1] 1984  [/head]
 
                                          (краткий пересказ)
         [head=3] Часть первая [/head]
@@ -49747,14 +49747,14 @@ entities:
     - type: Transform
       pos: 11.5,33.5
       parent: 1
-- proto: VendingMachineCigs
-  entities:
-  - uid: 6162
-    components:
-    - type: Transform
-      pos: 59.5,31.5
-      parent: 1
-    - type: Emagged
+# - proto: VendingMachineCigs
+#   entities:
+#   - uid: 6162
+#     components:
+#     - type: Transform
+#       pos: 59.5,31.5
+#       parent: 1
+#     - type: Emagged
 - proto: VendingMachineCoffee
   entities:
   - uid: 6163

@@ -85266,51 +85266,51 @@ entities:
     - type: Transform
       pos: 51.5,-4.5
       parent: 2
-- proto: VendingMachineCigs
-  entities:
-  - uid: 13047
-    components:
-    - type: MetaData
-      name: cigarette machine
-    - type: Transform
-      pos: 24.5,42.5
-      parent: 2
-  - uid: 13048
-    components:
-    - type: MetaData
-      name: cigarette machine
-    - type: Transform
-      pos: 63.5,16.5
-      parent: 2
-  - uid: 13049
-    components:
-    - type: MetaData
-      name: cigarette machine
-    - type: Transform
-      pos: 34.5,43.5
-      parent: 2
-  - uid: 13050
-    components:
-    - type: Transform
-      pos: 32.5,-2.5
-      parent: 2
-  - uid: 13051
-    components:
-    - type: Transform
-      pos: -21.5,-14.5
-      parent: 2
-  - uid: 13052
-    components:
-    - type: Transform
-      pos: 19.5,35.5
-      parent: 2
-- proto: VendingMachineClothing
-  entities:
-  - uid: 13053
-    components:
-    - type: Transform
-      pos: 20.5,7.5
-      parent: 2
+# - proto: VendingMachineCigs
+#   entities:
+#   - uid: 13047
+#     components:
+#     - type: MetaData
+#       name: cigarette machine
+#     - type: Transform
+#       pos: 24.5,42.5
+#       parent: 2
+#   - uid: 13048
+#     components:
+#     - type: MetaData
+#       name: cigarette machine
+#     - type: Transform
+#       pos: 63.5,16.5
+#       parent: 2
+#   - uid: 13049
+#     components:
+#     - type: MetaData
+#       name: cigarette machine
+#     - type: Transform
+#       pos: 34.5,43.5
+#       parent: 2
+#   - uid: 13050
+#     components:
+#     - type: Transform
+#       pos: 32.5,-2.5
+#       parent: 2
+#   - uid: 13051
+#     components:
+#     - type: Transform
+#       pos: -21.5,-14.5
+#       parent: 2
+#   - uid: 13052
+#     components:
+#     - type: Transform
+#       pos: 19.5,35.5
+#       parent: 2
+# - proto: VendingMachineClothing
+#   entities:
+#   - uid: 13053
+#     components:
+#     - type: Transform
+#       pos: 20.5,7.5
+#       parent: 2
 - proto: VendingMachineCoffee
   entities:
   - uid: 13054
@@ -85400,18 +85400,18 @@ entities:
     - type: Transform
       pos: 23.5,-27.5
       parent: 2
-- proto: VendingMachineGames
-  entities:
-  - uid: 13067
-    components:
-    - type: Transform
-      pos: 8.5,5.5
-      parent: 2
-  - uid: 13068
-    components:
-    - type: Transform
-      pos: 54.5,31.5
-      parent: 2
+# - proto: VendingMachineGames
+#   entities:
+#   - uid: 13067
+#     components:
+#     - type: Transform
+#       pos: 8.5,5.5
+#       parent: 2
+#   - uid: 13068
+#     components:
+#     - type: Transform
+#       pos: 54.5,31.5
+#       parent: 2
 - proto: VendingMachineGeneDrobe
   entities:
   - uid: 13069
@@ -85565,13 +85565,13 @@ entities:
     - type: Transform
       pos: 38.5,-27.5
       parent: 2
-- proto: VendingMachineTheater
-  entities:
-  - uid: 13092
-    components:
-    - type: Transform
-      pos: 25.5,8.5
-      parent: 2
+# - proto: VendingMachineTheater
+#   entities:
+#   - uid: 13092
+#     components:
+#     - type: Transform
+#       pos: 25.5,8.5
+#       parent: 2
 - proto: VendingMachineVendomat
   entities:
   - uid: 13093

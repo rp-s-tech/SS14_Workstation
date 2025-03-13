@@ -135029,40 +135029,40 @@ entities:
     - type: Transform
       pos: -31.5,-34.5
       parent: 2
-- proto: VendingMachineCigs
-  entities:
-  - uid: 20066
-    components:
-    - type: Transform
-      pos: 17.5,-30.5
-      parent: 2
-  - uid: 20067
-    components:
-    - type: Transform
-      pos: -12.5,17.5
-      parent: 2
-  - uid: 20068
-    components:
-    - type: Transform
-      pos: 47.5,-15.5
-      parent: 2
-  - uid: 20069
-    components:
-    - type: Transform
-      pos: 8.5,-62.5
-      parent: 2
-  - uid: 20070
-    components:
-    - type: Transform
-      pos: -12.5,-36.5
-      parent: 2
-- proto: VendingMachineClothing
-  entities:
-  - uid: 20071
-    components:
-    - type: Transform
-      pos: 15.5,3.5
-      parent: 2
+# - proto: VendingMachineCigs
+#   entities:
+#   - uid: 20066
+#     components:
+#     - type: Transform
+#       pos: 17.5,-30.5
+#       parent: 2
+#   - uid: 20067
+#     components:
+#     - type: Transform
+#       pos: -12.5,17.5
+#       parent: 2
+#   - uid: 20068
+#     components:
+#     - type: Transform
+#       pos: 47.5,-15.5
+#       parent: 2
+#   - uid: 20069
+#     components:
+#     - type: Transform
+#       pos: 8.5,-62.5
+#       parent: 2
+#   - uid: 20070
+#     components:
+#     - type: Transform
+#       pos: -12.5,-36.5
+#       parent: 2
+# - proto: VendingMachineClothing
+#   entities:
+#   - uid: 20071
+#     components:
+#     - type: Transform
+#       pos: 15.5,3.5
+#       parent: 2
 - proto: VendingMachineCoffee
   entities:
   - uid: 20072
@@ -135129,13 +135129,13 @@ entities:
     - type: Transform
       pos: -9.5,-14.5
       parent: 2
-- proto: VendingMachineGames
-  entities:
-  - uid: 20082
-    components:
-    - type: Transform
-      pos: 21.5,-46.5
-      parent: 2
+# - proto: VendingMachineGames
+#   entities:
+#   - uid: 20082
+#     components:
+#     - type: Transform
+#       pos: 21.5,-46.5
+#       parent: 2
 - proto: VendingMachineGeneDrobe
   entities:
   - uid: 20083

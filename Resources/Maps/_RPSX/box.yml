@@ -133130,7 +133130,7 @@ entities:
 
         Дата: 09/02/3025
 
-        Заявитель: Антон Болдескул 
+        Заявитель: Антон Болдескул
 
         Должность: Инженер
 
@@ -159858,70 +159858,70 @@ entities:
     - type: Transform
       pos: 20.5,-16.5
       parent: 2
-- proto: VendingMachineCigs
-  entities:
-  - uid: 24221
-    components:
-    - type: Transform
-      pos: -13.5,-12.5
-      parent: 2
-  - uid: 24222
-    components:
-    - type: Transform
-      pos: 68.5,-47.5
-      parent: 2
-  - uid: 24223
-    components:
-    - type: Transform
-      pos: 16.5,39.5
-      parent: 2
-  - uid: 24224
-    components:
-    - type: Transform
-      pos: 5.5,-12.5
-      parent: 2
-  - uid: 24225
-    components:
-    - type: Transform
-      pos: -38.5,5.5
-      parent: 2
-  - uid: 24226
-    components:
-    - type: Transform
-      pos: -55.5,-0.5
-      parent: 2
-  - uid: 24227
-    components:
-    - type: Transform
-      pos: -54.5,-8.5
-      parent: 2
-  - uid: 24228
-    components:
-    - type: Transform
-      pos: -18.5,-9.5
-      parent: 2
-  - uid: 24229
-    components:
-    - type: Transform
-      pos: -37.5,-4.5
-      parent: 2
-  - uid: 24230
-    components:
-    - type: Transform
-      pos: 53.5,-37.5
-      parent: 2
-- proto: VendingMachineClothing
-  entities:
-  - uid: 24231
-    components:
-    - type: Transform
-      pos: 21.5,15.5
-      parent: 2
-  - uid: 24232
-    components:
-    - type: Transform
-      pos: -38.5,-4.5
-      parent: 2
+# - proto: VendingMachineCigs
+#   entities:
+#   - uid: 24221
+#     components:
+#     - type: Transform
+#       pos: -13.5,-12.5
+#       parent: 2
+#   - uid: 24222
+#     components:
+#     - type: Transform
+#       pos: 68.5,-47.5
+#       parent: 2
+#   - uid: 24223
+#     components:
+#     - type: Transform
+#       pos: 16.5,39.5
+#       parent: 2
+#   - uid: 24224
+#     components:
+#     - type: Transform
+#       pos: 5.5,-12.5
+#       parent: 2
+#   - uid: 24225
+#     components:
+#     - type: Transform
+#       pos: -38.5,5.5
+#       parent: 2
+#   - uid: 24226
+#     components:
+#     - type: Transform
+#       pos: -55.5,-0.5
+#       parent: 2
+#   - uid: 24227
+#     components:
+#     - type: Transform
+#       pos: -54.5,-8.5
+#       parent: 2
+#   - uid: 24228
+#     components:
+#     - type: Transform
+#       pos: -18.5,-9.5
+#       parent: 2
+#   - uid: 24229
+#     components:
+#     - type: Transform
+#       pos: -37.5,-4.5
+#       parent: 2
+#   - uid: 24230
+#     components:
+#     - type: Transform
+#       pos: 53.5,-37.5
+#       parent: 2
+# - proto: VendingMachineClothing
+#   entities:
+#   - uid: 24231
+#     components:
+#     - type: Transform
+#       pos: 21.5,15.5
+#       parent: 2
+#   - uid: 24232
+#     components:
+#     - type: Transform
+#       pos: -38.5,-4.5
+#       parent: 2
 - proto: VendingMachineCoffee
   entities:
   - uid: 24233
@@ -160027,13 +160027,13 @@ entities:
     - type: Transform
       pos: 6.5,-59.5
       parent: 2
-- proto: VendingMachineGames
-  entities:
-  - uid: 24250
-    components:
-    - type: Transform
-      pos: 53.5,2.5
-      parent: 2
+# - proto: VendingMachineGames
+#   entities:
+#   - uid: 24250
+#     components:
+#     - type: Transform
+#       pos: 53.5,2.5
+#       parent: 2
 - proto: VendingMachineGeneDrobe
   entities:
   - uid: 24251
@@ -160236,13 +160236,13 @@ entities:
     - type: Transform
       pos: 8.5,-77.5
       parent: 2
-- proto: VendingMachineTheater
-  entities:
-  - uid: 24283
-    components:
-    - type: Transform
-      pos: 22.5,6.5
-      parent: 2
+# - proto: VendingMachineTheater
+#   entities:
+#   - uid: 24283
+#     components:
+#     - type: Transform
+#       pos: 22.5,6.5
+#       parent: 2
 - proto: VendingMachineVendomat
   entities:
   - uid: 24284
