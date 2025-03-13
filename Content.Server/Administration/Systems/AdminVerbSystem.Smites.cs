@@ -892,6 +892,7 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", superslipName, Loc.GetString("admin-smite-super-slip-description"))
         };
         args.Verbs.Add(superslip);
+<<<<<<< HEAD
 
         var omniaccentName = Loc.GetString("admin-smite-omni-accent-name").ToLowerInvariant();
         Verb omniaccent = new()
@@ -955,5 +956,7 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(infectedvulpkanin);
         // RPSX edit end
+=======
+>>>>>>> parent of 9044173f15 (Вульпизация ч.1)
     }
 }
