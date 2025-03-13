@@ -19,7 +19,6 @@
   components:
   - type: NarsiRule
   - type: AntagSelection
-    selectionTime: BeforeJobs # Goobstation
     definitions:
     - prefRoles: [ NarsiCultist ]
       min: 3
@@ -69,11 +68,10 @@
   components:
   - type: RatvarRule
   - type: AntagSelection
-    selectionTime: BeforeJobs # Goobstation
     definitions:
     - prefRoles: [ RatvarRighteous ]
       max: 3
-      playerRatio: 10
+      playerRatio: 15
       briefing:
         text: ratvar-righteous-briefing
         color: CornflowerBlue
@@ -115,7 +113,6 @@
   components:
   - type: VampireRule
   - type: AntagSelection
-    selectionTime: BeforeJobs # Goobstation
     definitions:
     - prefRoles: [ Vampire ]
       max: 2
