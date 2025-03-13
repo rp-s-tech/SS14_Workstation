@@ -66,15 +66,15 @@
   category: cargoproduct-category-name-service
   group: market
 
-# - type: cargoProduct
-#   id: CrateVendingMachineRestockEngineering
-#   icon:
-#     sprite: Objects/Specific/Service/vending_machine_restock.rsi
-#     state: base
-#   product: CrateVendingMachineRestockEngineeringFilled
-#   cost: 3200
-#   category: cargoproduct-category-name-engineering
-#   group: market
+- type: cargoProduct
+  id: CrateVendingMachineRestockEngineering
+  icon:
+    sprite: Objects/Specific/Service/vending_machine_restock.rsi
+    state: base
+  product: CrateVendingMachineRestockEngineeringFilled
+  cost: 3200
+  category: cargoproduct-category-name-engineering
+  group: market
 
 # - type: cargoProduct
 #   id: CrateVendingMachineRestockGames
