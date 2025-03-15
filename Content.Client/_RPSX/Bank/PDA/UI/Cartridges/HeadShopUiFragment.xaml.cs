@@ -9,6 +9,9 @@ using Content.Shared.RPSX.Bank.PDA.Components;
 using Content.Client.Cargo.UI;
 using System.Linq;
 using Content.Shared.Cargo.BUI;
+using Content.Shared.RPSX.Bank.PDA;
+using Robust.Shared.Utility;
+using Content.Shared.Cargo.Events;
 
 namespace Content.Client.RPSX.Bank.PDA.UI.Cartridges;
 
@@ -16,22 +19,82 @@ namespace Content.Client.RPSX.Bank.PDA.UI.Cartridges;
 public sealed partial class HeadShopUiFragment : BoxContainer
 {
     private EntityUid _owner;
+    private CargoConsoleOrderMenu _orderMenu;
+    private string _userName = string.Empty;
+    private int _orderCapacity;
+    private BoundUserInterface? _boundUserInterface;
 
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
-    private readonly SpriteSystem _spriteSystem = default!;
+    private readonly SpriteSystem _spriteSystem;
 
     public event Action<ButtonEventArgs>? OnItemSelected;
 
     private readonly List<string> _categoryStrings = new();
     private string? _category;
+    private CargoProductPrototype? _product;
+
     public HeadShopUiFragment()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
         _spriteSystem = _entityManager.System<SpriteSystem>();
+
         SearchBar.OnTextChanged += OnSearchBarTextChanged;
         Categories.OnItemSelected += OnCategoryItemSelected;
+
+        var description = new FormattedMessage();
+        _orderMenu = new CargoConsoleOrderMenu();
+
+        OnItemSelected += (args) =>
+        {
+            if (args.Button.Parent is not CargoProductRow row)
+                return;
+
+            description.Clear();
+            description.PushColor(Color.White); // Rich text default color is grey
+            if (row.MainButton.ToolTip != null)
+                description.AddText(row.MainButton.ToolTip);
+
+            _orderMenu.Description.SetMessage(description);
+            _product = row.Product;
+            _orderMenu.ProductName.Text = row.ProductName.Text;
+            _orderMenu.PointCost.Text = row.PointCost.Text;
+            _orderMenu.Requester.Text = _userName;
+            _orderMenu.Reason.Text = "";
+            _orderMenu.Amount.Value = 1;
+
+            _orderMenu.OpenCentered();
+        };
+        _orderMenu.SubmitButton.OnPressed += (_) =>
+        {
+            if (_boundUserInterface != null && AddOrder(_boundUserInterface))
+            {
+                _orderMenu.Close();
+            }
+        };
+    }
+
+    public void GetBUI(BoundUserInterface userInterface)
+    {
+        _boundUserInterface = userInterface;
+    }
+
+    private bool AddOrder(BoundUserInterface userInterface)
+    {
+        var orderAmt = _orderMenu?.Amount.Value ?? 0;
+        if (orderAmt < 1 || orderAmt > _orderCapacity)
+        {
+            return false;
+        }
+
+        userInterface.SendMessage(new CargoConsoleAddOrderMessage(
+            _orderMenu?.Requester.Text ?? "",
+            _orderMenu?.Reason.Text ?? "",
+            _product?.ID ?? "",
+            orderAmt));
+
+        return true;
     }
 
     private void OnCategoryItemSelected(OptionButton.ItemSelectedEventArgs args)
@@ -51,11 +114,13 @@ public sealed partial class HeadShopUiFragment : BoxContainer
         Categories.SelectId(id);
     }
 
-    public void UpdateState(CargoConsoleInterfaceState state, EntityUid owner)
+    public void UpdateState(HeadShopCartridgeInterfaceState state)
     {
-        _owner = owner;
+        _userName = state.OwnerName;
+        _owner = _entityManager.GetEntity(state.Owner);
+        _orderCapacity = state.Capacity;
         Populate();
-        UpdateBankData(state.Name, state.Balance);
+        UpdateBankData(state.StationName, state.Balance);
     }
 
     public void Populate()
@@ -74,7 +139,6 @@ public sealed partial class HeadShopUiFragment : BoxContainer
             {
                 if (!allowedGroups?.Contains(cargoPrototype.Group) ?? false)
                     continue;
-
                 yield return cargoPrototype;
             }
         }

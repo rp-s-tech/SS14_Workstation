@@ -119,20 +119,6 @@ namespace Content.Server.Cargo.Systems
                     var station = _station.GetOwningStation(uid);
                     UpdateOrderState(uid, station);
                 }
-                // RPSX Start
-                if (_cfg.GetCVar(RPSXCCVars.EconomyEnabled))
-                {
-                    var cartridgequery = EntityQueryEnumerator<CartridgeLoaderComponent>();
-                    while (cartridgequery.MoveNext(out var uid, out var comp1))
-                    {
-                        if (comp1.ActiveProgram == null || !TryComp<HeadShopCartridgeComponent>(comp1.ActiveProgram.Value, out var headShop))
-                            continue;
-                        if (!_uiSystem.IsUiOpen(uid, comp1.UiKey)) continue;
-                        var station = _station.GetOwningStation(uid);
-                        UpdateOrderState(uid, station);
-                    }
-                }
-                // RPSX End
             }
         }
 
@@ -372,16 +358,6 @@ namespace Content.Server.Cargo.Systems
             if (_uiSystem.HasUi(consoleUid, CargoConsoleUiKey.Orders))
             {
                 _uiSystem.SetUiState(consoleUid, CargoConsoleUiKey.Orders, new CargoConsoleInterfaceState(
-                    MetaData(station.Value).EntityName,
-                    GetOutstandingOrderCount(orderDatabase),
-                    orderDatabase.Capacity,
-                    bankAccount.Balance,
-                    orderDatabase.Orders
-                ));
-            }
-            else if (TryComp<CartridgeLoaderComponent>(consoleUid, out var cartridgeLoader) && _uiSystem.HasUi(consoleUid, cartridgeLoader.UiKey))
-            {
-                _uiSystem.SetUiState(consoleUid, cartridgeLoader.UiKey, new CargoConsoleInterfaceState(
                     MetaData(station.Value).EntityName,
                     GetOutstandingOrderCount(orderDatabase),
                     orderDatabase.Capacity,
