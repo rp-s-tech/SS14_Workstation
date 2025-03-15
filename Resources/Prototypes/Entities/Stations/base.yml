@@ -96,7 +96,7 @@
   abstract: true
   components:
     - type: StationCentcomm
-      map: "/Maps/RPSXcentcomm.yml" # RPSX mapping
+      map: /Maps/_RPSX/centcomm.yml # RPSX mapping
 
 - type: entity
   id: BaseStationEvacuation
