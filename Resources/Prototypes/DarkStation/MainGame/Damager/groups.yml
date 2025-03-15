@@ -8,13 +8,13 @@
 - type: damageType
   id: Fel
   name: damage-type-fel
-  armorCoefficientPrice: 0
-  armorFlatPrice: 0
+  armorCoefficientPrice: 1
+  armorFlatPrice: 1
 
 #Урон святостью (наносится нежити)
 - type: damageType
   id: Holiness
   name: damage-type-holiness
-  armorCoefficientPrice: 0
-  armorFlatPrice: 0
+  armorCoefficientPrice: 1
+  armorFlatPrice: 1
   shouldShowInAnalyzer: false
