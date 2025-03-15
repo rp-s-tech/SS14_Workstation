@@ -7,11 +7,15 @@ using Content.Shared.Cargo.BUI;
 using Content.Shared.Cargo.Components;
 using Content.Shared.Cargo.Events;
 using Content.Shared.Cargo.Prototypes;
+using Content.Shared.CartridgeLoader;
+using Content.Shared.RPSX.CCVars;
 using Content.Shared.Database;
 using Content.Shared.Emag.Systems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Paper;
+using Content.Shared.RPSX.Bank.PDA.Components;
+using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -22,6 +26,7 @@ namespace Content.Server.Cargo.Systems
     {
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
         [Dependency] private readonly EmagSystem _emag = default!;
+        [Dependency] private readonly IConfigurationManager _cfg = default!;
 
         /// <summary>
         /// How much time to wait (in seconds) before increasing bank accounts balance.
@@ -114,6 +119,20 @@ namespace Content.Server.Cargo.Systems
                     var station = _station.GetOwningStation(uid);
                     UpdateOrderState(uid, station);
                 }
+                // RPSX Start
+                if (_cfg.GetCVar(RPSXCCVars.EconomyEnabled))
+                {
+                    var cartridgequery = EntityQueryEnumerator<CartridgeLoaderComponent>();
+                    while (cartridgequery.MoveNext(out var uid, out var comp1))
+                    {
+                        if (comp1.ActiveProgram == null || !TryComp<HeadShopCartridgeComponent>(comp1.ActiveProgram.Value, out var headShop))
+                            continue;
+                        if (!_uiSystem.IsUiOpen(uid, comp1.UiKey)) continue;
+                        var station = _station.GetOwningStation(uid);
+                        UpdateOrderState(uid, station);
+                    }
+                }
+                // RPSX End
             }
         }
 
@@ -353,6 +372,16 @@ namespace Content.Server.Cargo.Systems
             if (_uiSystem.HasUi(consoleUid, CargoConsoleUiKey.Orders))
             {
                 _uiSystem.SetUiState(consoleUid, CargoConsoleUiKey.Orders, new CargoConsoleInterfaceState(
+                    MetaData(station.Value).EntityName,
+                    GetOutstandingOrderCount(orderDatabase),
+                    orderDatabase.Capacity,
+                    bankAccount.Balance,
+                    orderDatabase.Orders
+                ));
+            }
+            else if (TryComp<CartridgeLoaderComponent>(consoleUid, out var cartridgeLoader) && _uiSystem.HasUi(consoleUid, cartridgeLoader.UiKey))
+            {
+                _uiSystem.SetUiState(consoleUid, cartridgeLoader.UiKey, new CargoConsoleInterfaceState(
                     MetaData(station.Value).EntityName,
                     GetOutstandingOrderCount(orderDatabase),
                     orderDatabase.Capacity,
