@@ -9,7 +9,7 @@
                                HorizontalExpand="True"
                                VerticalExpand="True">
     <PanelContainer StyleClasses="BackgroundDark"></PanelContainer>
-    <BoxContainer Name="Bying" Orientation="Vertical" Margin="5 0 5 0">
+    <BoxContainer Name="Bying" Orientation="Vertical" Margin="5 0 5 0" VerticalExpand="True">
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc 'cargo-console-menu-account-name-label'}"
                 StyleClasses="LabelKeyText" />
@@ -38,7 +38,7 @@
         </BoxContainer>
         <ScrollContainer HorizontalExpand="True"
                         VerticalExpand="True"
-                        SizeFlagsStretchRatio="6">
+                        HScrollEnabled="True">
             <BoxContainer Name="Products"
                         Orientation="Vertical"
                         HorizontalExpand="True"
@@ -46,23 +46,5 @@
                 <!-- Products get added here by code -->
             </BoxContainer>
         </ScrollContainer>
-    </BoxContainer>
-    <BoxContainer Name="Basket" Orientation="Vertical" Visible="False">
-        <ScrollContainer HorizontalExpand="True"
-                        VerticalExpand="True"
-                        SizeFlagsStretchRatio="6">
-            <BoxContainer Name="BuyedProducts"
-                        Orientation="Vertical"
-                        HorizontalExpand="True"
-                        VerticalExpand="True">
-                <!-- Products get added here by code -->
-            </BoxContainer>
-        </ScrollContainer>
-        <Button Name="SubmitButton"
-                Access="Public"
-                Disabled="True"
-                HorizontalAlignment="Right"
-                Text="{Loc 'head-pda-order-menu-submit-button'}"
-                TextAlign="Center" />
     </BoxContainer>
 </cartridges:HeadShopUiFragment>

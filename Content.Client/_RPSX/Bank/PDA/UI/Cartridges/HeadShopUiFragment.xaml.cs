@@ -8,7 +8,6 @@ using Content.Shared.Cargo.Prototypes;
 using Content.Shared.RPSX.Bank.PDA.Components;
 using Content.Client.Cargo.UI;
 using System.Linq;
-using Content.Shared.Cargo.BUI;
 using Content.Shared.RPSX.Bank.PDA;
 using Robust.Shared.Utility;
 using Content.Shared.Cargo.Events;
@@ -146,6 +145,7 @@ public sealed partial class HeadShopUiFragment : BoxContainer
     }
     public void PopulateProducts()
     {
+        Products.DisposeAllChildren();
         Products.RemoveAllChildren();
         var products = ProductPrototypes.ToList();
         products.Sort((x, y) =>
