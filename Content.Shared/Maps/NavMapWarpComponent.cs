@@ -7,7 +7,7 @@ namespace Content.Shared.Maps;
 /// This enables an entity to teleport with any navMap by pressing a key over the map screen
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class NavMapWarpComponent : Component
+public sealed partial class NavMapWarpComponent : Component // RPSX | Navmap warp
 {
     /// <summary>
     /// A random sound from this list plays on the client of the warping mob

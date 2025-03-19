@@ -103,7 +103,7 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 30
   # Corvax-End
-  - type: NavMapWarp
+  - type: NavMapWarp #RPSX | Navmap warp
     sounds:
       collection: StaticShort
 

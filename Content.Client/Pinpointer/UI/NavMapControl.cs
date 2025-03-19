@@ -28,7 +28,7 @@ namespace Content.Client.Pinpointer.UI;
 /// Displays the nav map data of the specified grid.
 /// </summary>
 [UsedImplicitly, Virtual]
-public partial class NavMapControl : MapGridControl
+public partial class NavMapControl : MapGridControl // RPSX | Navmap warp
 {
     [Dependency] private IResourceCache _cache = default!;
     [Dependency] private readonly ISharedPlayerManager? _player = default;

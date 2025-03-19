@@ -242,7 +242,7 @@
   license: "CC0-1.0"
   source: https://freesound.org/people/Vrymaa/sounds/785128/
 
-- files: [static1.ogg, static2.ogg, static3.ogg]
+- files: [static1.ogg, static2.ogg, static3.ogg] #RPSX | Navmap warp
   copyright: Errant (github username Errant-4)
   license: CC-BY-SA-3.0
   source: https://github.com/space-wizards/space-station-14/pull/31653

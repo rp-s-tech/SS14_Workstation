@@ -1,4 +1,4 @@
-- type: soundCollection
+- type: soundCollection #RPSX | Navmap warp
   id: StaticShort
   files:
     - /Audio/Effects/static1.ogg

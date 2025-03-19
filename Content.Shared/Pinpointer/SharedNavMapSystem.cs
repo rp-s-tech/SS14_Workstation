@@ -15,7 +15,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Pinpointer;
 
-public abstract class SharedNavMapSystem : EntitySystem
+public abstract class SharedNavMapSystem : EntitySystem // RPSX | Navmap warp
 {
     public const int Categories = 3;
     public const int Directions = 4; // Not directly tied to number of atmos directions
