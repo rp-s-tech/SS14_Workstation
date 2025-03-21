@@ -1,6 +1,6 @@
 <PanelContainer xmlns="https://spacestation14.io"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                x:Class="Content.Client.RPSX.Bank.PDA.UI.Cartridges.HeadShopUiFragment"
+                x:Class="Content.Client.RPSX.Bank.PDA.UI.Cartridges.ShopProductRow"
                 HorizontalExpand="True">
     <Button Name="MainButton"
             ToolTip=""

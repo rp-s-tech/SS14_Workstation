@@ -5,7 +5,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Content.Shared.RPSX.Bank.Prototypes;
 
-namespace Content.Client.Cargo.UI
+namespace Content.Client.RPSX.Bank.PDA.UI.Cartridges
 {
     [GenerateTypedNameReferences]
     public sealed partial class ShopProductRow : PanelContainer
