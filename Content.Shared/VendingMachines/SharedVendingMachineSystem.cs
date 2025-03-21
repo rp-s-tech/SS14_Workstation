@@ -16,6 +16,9 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Network;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Player;
+using Robust.Shared.Configuration;
+using Content.Shared.RPSX.CCVars;
 
 namespace Content.Shared.VendingMachines;
 
@@ -35,6 +38,8 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
     [Dependency] protected readonly SharedUserInterfaceSystem UISystem = default!;
     [Dependency] protected readonly IRobustRandom Randomizer = default!;
     [Dependency] private readonly EmagSystem _emag = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly IBankBridge _bankBridge = default!;
 
     public override void Initialize()
     {
@@ -211,6 +216,13 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
             return;
         }
 
+        if (HandleVendingPrice(uid, user, entry))
+        {
+            Deny((uid, vendComponent));
+            return;
+        }
+
+
         if (entry.Amount <= 0)
         {
             Popup.PopupClient(Loc.GetString("vending-machine-component-try-eject-out-of-stock"), uid);
@@ -246,6 +258,23 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
         TryUpdateVisualState(entity);
         Dirty(entity);
     }
+
+    private bool HandleVendingPrice(EntityUid uid, EntityUid? sender, VendingMachineInventoryEntry entry)
+    {
+        if (!_cfg.GetCVar(RPSXCCVars.EconomyEnabled))
+            return false;
+
+        if (sender == null || entry.Price == 0 || !TryComp<ActorComponent>(sender, out var actor))
+            return false;
+
+        var transaction = _bankBridge.CreateBuyTransaction(uid, entry.Price);
+        if (_bankBridge.TryExecuteTransaction(sender.Value, actor.PlayerSession.UserId, transaction))
+            return false;
+
+        Popup.PopupEntity(Loc.GetString("vending-machine-component-no-money"), uid);
+        return true;
+    }
+
 
     protected virtual void UpdateUI(Entity<VendingMachineComponent?> entity) { }
 

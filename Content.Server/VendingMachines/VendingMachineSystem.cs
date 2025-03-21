@@ -34,11 +34,6 @@ namespace Content.Server.VendingMachines
         [Dependency] private readonly PricingSystem _pricing = default!;
         [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
-        [Dependency] private readonly SpeakOnUIClosedSystem _speakOnUIClosed = default!;
-        [Dependency] private readonly SharedPointLightSystem _light = default!;
-        [Dependency] private readonly EmagSystem _emag = default!;
-        [Dependency] private readonly IBankBridge _bankBridge = default!;
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
 
         private const float WallVendEjectDistanceFromWall = 1f;
 
@@ -316,22 +311,6 @@ namespace Content.Server.VendingMachines
                 args.Disabled = true;
                 component.NextEmpEject = _timing.CurTime;
             }
-        }
-
-        private bool HandleVendingPrice(EntityUid uid, EntityUid? sender, VendingMachineInventoryEntry entry)
-        {
-            if (!_cfg.GetCVar(RPSXCCVars.EconomyEnabled))
-                return false;
-
-            if (sender == null || entry.Price == 0 || !TryComp<ActorComponent>(sender, out var actor))
-                return false;
-
-            var transaction = _bankBridge.CreateBuyTransaction(uid, entry.Price);
-            if (_bankBridge.TryExecuteTransaction(sender.Value, actor.PlayerSession.UserId, transaction))
-                return false;
-
-            Popup.PopupEntity(Loc.GetString("vending-machine-component-no-money"), uid);
-            return true;
         }
     }
 }
