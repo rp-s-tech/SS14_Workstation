@@ -135,6 +135,7 @@ public sealed partial class NPCCombatSystem
             if (comp.LOSAccumulator < 0f)
             {
                 comp.LOSAccumulator += UnoccludedCooldown;
+
                 // For consistency with NPC steering.
                 comp.TargetInLOS = IsEnemyInLOS(uid, comp.Target, distance + 0.1f); // Exodus-TurretsImprovement
             }
