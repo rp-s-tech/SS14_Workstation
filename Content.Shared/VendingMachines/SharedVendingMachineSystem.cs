@@ -19,22 +19,23 @@ using Robust.Shared.Timing;
 using Robust.Shared.Player;
 using Robust.Shared.Configuration;
 using Content.Shared.RPSX.CCVars;
+using Content.Shared.RPSX.Bridges;
 
 namespace Content.Shared.VendingMachines;
 
 public abstract partial class SharedVendingMachineSystem : EntitySystem
 {
     [Dependency] protected readonly IGameTiming Timing = default!;
-    [Dependency] private   readonly INetManager _net = default!;
+    [Dependency] private readonly INetManager _net = default!;
     [Dependency] protected readonly IPrototypeManager PrototypeManager = default!;
-    [Dependency] private   readonly AccessReaderSystem _accessReader = default!;
-    [Dependency] private   readonly SharedAppearanceSystem _appearanceSystem = default!;
+    [Dependency] private readonly AccessReaderSystem _accessReader = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
-    [Dependency] private   readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] protected readonly SharedPointLightSystem Light = default!;
-    [Dependency] private   readonly SharedPowerReceiverSystem _receiver = default!;
+    [Dependency] private readonly SharedPowerReceiverSystem _receiver = default!;
     [Dependency] protected readonly SharedPopupSystem Popup = default!;
-    [Dependency] private   readonly SharedSpeakOnUIClosedSystem _speakOn = default!;
+    [Dependency] private readonly SharedSpeakOnUIClosedSystem _speakOn = default!;
     [Dependency] protected readonly SharedUserInterfaceSystem UISystem = default!;
     [Dependency] protected readonly IRobustRandom Randomizer = default!;
     [Dependency] private readonly EmagSystem _emag = default!;

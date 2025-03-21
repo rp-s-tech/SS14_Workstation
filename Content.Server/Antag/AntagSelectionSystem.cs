@@ -110,6 +110,8 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
                     GameTicker.PlayerJoinGame(session);
                 }
             }
+            var ev = new AntagSelectionEnd();
+            RaiseLocalEvent(uid, ref ev);
         }
 
         // If IntraPlayerSpawn is selected, delayed rules should choose at this point too.
@@ -120,10 +122,9 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
                 continue;
 
             ChooseAntags((uid, comp), pool);
+            var ev = new AntagSelectionEnd();
+            RaiseLocalEvent(uid, ref ev);
         }
-
-        var ev = new AntagSelectionEnd(comp.SelectedSessions, AntagSelectionTime.PrePlayerSpawn);
-        RaiseLocalEvent(uid, ref ev);
     }
 
     private void OnJobsAssigned(RulePlayerJobsAssignedEvent args)
@@ -137,7 +138,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             ChooseAntags((uid, comp), args.Players);
             AssignPreSelectedSessions((uid, comp));
 
-            var ev = new AntagSelectionEnd(comp.SelectedSessions, AntagSelectionTime.PostPlayerSpawn);
+            var ev = new AntagSelectionEnd();
             RaiseLocalEvent(uid, ref ev);
         }
     }
@@ -618,4 +619,4 @@ public readonly record struct AfterAntagEntitySelectedEvent(ICommonSession? Sess
 
 
 [ByRefEvent]
-public readonly record struct AntagSelectionEnd(IEnumerable<ICommonSession>? Sessions, AntagSelectionTime selectionTime);
+public readonly record struct AntagSelectionEnd;
