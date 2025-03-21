@@ -1,0 +1,12 @@
+# Medical
+
+- type: storeProduct
+  id: Brutepack
+  description: shop-desc-brutepack
+  icon:
+    sprite: Objects/Specific/Medical/medical.rsi
+    state: brutepack
+  product: Brutepack10
+  cost: 6000
+  category: cargoproduct-category-name-medical
+

@@ -1,0 +1,35 @@
+- type: entity
+  parent: BaseItem
+  id: HeadShopCartridge
+  name: head shop cartridge
+  description: A program that allows heads to order something from cargo
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/cartridge.rsi
+    state: cart-y
+  - type: Cartridge
+    programName: head-pda-shop-cartridge
+    icon:
+      sprite: Interface/Misc/program_icons.rsi
+      state: crew_manifest
+  - type: HeadShopCartridge
+  - type: UIFragment
+    ui: !type:HeadShopUi
+
+- type: entity
+  parent: BaseItem
+  id: ShopCartridge
+  name: shop cartridge
+  description: A program that allows any crewman to order something from cargo
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/cartridge.rsi
+    state: cart-y
+  - type: Cartridge
+    programName: pda-shop-cartridge
+    icon:
+      sprite: Interface/Misc/program_icons.rsi
+      state: crew_manifest
+  - type: ShopCartridge
+  - type: UIFragment
+    ui: !type:ShopUi

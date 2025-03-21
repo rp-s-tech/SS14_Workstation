@@ -5,29 +5,21 @@ using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 using Content.Shared.Cargo.Prototypes;
-using Content.Shared.RPSX.Bank.PDA.Components;
 using Content.Client.Cargo.UI;
 using System.Linq;
 using Content.Shared.RPSX.Bank.PDA;
-using Robust.Shared.Utility;
-using Content.Shared.Cargo.Events;
-using Content.Shared.CartridgeLoader;
+using Content.Shared.RPSX.Bank.Prototypes;
 
 namespace Content.Client.RPSX.Bank.PDA.UI.Cartridges;
 
 [GenerateTypedNameReferences]
-public sealed partial class HeadShopUiFragment : BoxContainer
+public sealed partial class ShopUiFragment : BoxContainer
 {
     private EntityUid _owner;
-    private EntityUid _loaderUid;
-    private CargoConsoleOrderMenu _orderMenu;
     private string _userName = string.Empty;
-    private int _orderCapacity;
 
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
-
-    private readonly UserInterfaceSystem _userInterfaceSystem;
     private readonly SpriteSystem _spriteSystem;
 
     public event Action<ButtonEventArgs>? OnItemSelected;
@@ -36,66 +28,59 @@ public sealed partial class HeadShopUiFragment : BoxContainer
     private string? _category;
     private CargoProductPrototype? _product;
 
-    public HeadShopUiFragment()
+    public ShopUiFragment()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
-
-        _userInterfaceSystem = _entityManager.System<UserInterfaceSystem>();
         _spriteSystem = _entityManager.System<SpriteSystem>();
 
         SearchBar.OnTextChanged += OnSearchBarTextChanged;
         Categories.OnItemSelected += OnCategoryItemSelected;
 
-        var description = new FormattedMessage();
-        _orderMenu = new CargoConsoleOrderMenu();
+        AddToBasket.ToggleMode = true;
 
         OnItemSelected += (args) =>
         {
-            if (args.Button.Parent is not CargoProductRow row)
-                return;
-
-            description.Clear();
-            description.PushColor(Color.White); // Rich text default color is grey
-            if (row.MainButton.ToolTip != null)
-                description.AddText(row.MainButton.ToolTip);
-
-            _orderMenu.Description.SetMessage(description);
-            _product = row.Product;
-            _orderMenu.ProductName.Text = row.ProductName.Text;
-            _orderMenu.PointCost.Text = row.PointCost.Text;
-            _orderMenu.Requester.Text = _userName;
-            _orderMenu.Reason.Text = "";
-            _orderMenu.Amount.Value = 1;
-            _orderMenu.SubmitButton.Text = Loc.GetString("head-pda-order-menu-submit-button");
-
-            _orderMenu.OpenCentered();
-        };
-        _orderMenu.SubmitButton.OnPressed += (_) =>
-        {
-            if (AddOrder())
+            if (args.Button.Parent is CargoProductRow row)
             {
-                _orderMenu.Close();
+
+                foreach (var product in Products.Children)
+                {
+                    var button = product.Children.Where(c => c is Button && c != args.Button).FirstOrDefault();
+                    if (button is Button btn)
+                        btn.Pressed = false;
+                }
+
+                if (args.Button.Pressed)
+                    AddToBasket.Disabled = false;
+            }
+            else if (args.Button == AddToBasket)
+            {
+                Logger.Info("OOOOOOH, MY GOD!");
+            }
+            else if (args.Button == Basket)
+            {
+                Logger.Info("OPEN MY BASKET!");
             }
         };
     }
 
-    private bool AddOrder()
+    /*private bool AddOrder(BoundUserInterface userInterface)
     {
         var orderAmt = _orderMenu?.Amount.Value ?? 0;
-        if (orderAmt < 1 || orderAmt > _orderCapacity || !_entityManager.TryGetComponent<CartridgeLoaderComponent>(_loaderUid, out var component) || component == null)
+        if (orderAmt < 1 || orderAmt > _orderCapacity)
         {
             return false;
         }
 
-        _userInterfaceSystem.ClientSendUiMessage(_loaderUid, component.UiKey, new CargoConsoleAddOrderMessage(
+        userInterface.SendMessage(new CargoConsoleAddOrderMessage(
             _orderMenu?.Requester.Text ?? "",
             _orderMenu?.Reason.Text ?? "",
             _product?.ID ?? "",
             orderAmt));
 
         return true;
-    }
+    }*/
 
     private void OnCategoryItemSelected(OptionButton.ItemSelectedEventArgs args)
     {
@@ -114,12 +99,10 @@ public sealed partial class HeadShopUiFragment : BoxContainer
         Categories.SelectId(id);
     }
 
-    public void UpdateState(HeadShopCartridgeInterfaceState state)
+    public void UpdateState(ShopCartridgeInterfaceState state)
     {
         _userName = state.OwnerName;
         _owner = _entityManager.GetEntity(state.Owner);
-        _orderCapacity = state.Capacity;
-        _loaderUid = _entityManager.GetEntity(state.LoaderUid);
         Populate();
         UpdateBankData(state.StationName, state.Balance);
     }
@@ -130,21 +113,17 @@ public sealed partial class HeadShopUiFragment : BoxContainer
         PopulateCategories();
     }
 
-    public IEnumerable<CargoProductPrototype> ProductPrototypes
+    public IEnumerable<StoreProductPrototype> ProductPrototypes
     {
         get
         {
-            var allowedGroups = _entityManager.GetComponentOrNull<HeadShopCartridgeComponent>(_owner)?.AllowedGroups;
-
-            foreach (var cargoPrototype in _protoManager.EnumeratePrototypes<CargoProductPrototype>())
+            foreach (var cargoPrototype in _protoManager.EnumeratePrototypes<StoreProductPrototype>())
             {
-                if (!allowedGroups?.Contains(cargoPrototype.Group) ?? false)
-                    continue;
                 yield return cargoPrototype;
             }
         }
-
     }
+
     public void PopulateProducts()
     {
         Products.DisposeAllChildren();
@@ -164,7 +143,7 @@ public sealed partial class HeadShopUiFragment : BoxContainer
                 search.Length != 0 && prototype.Description.ToLowerInvariant().Contains(search) ||
                 search.Length == 0 && _category != null && Loc.GetString(prototype.Category).Equals(_category))
             {
-                var button = new CargoProductRow
+                var button = new ShopProductRow
                 {
                     Product = prototype,
                     ProductName = { Text = prototype.Name },

@@ -4,7 +4,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
 
-namespace Content.Server.RPSX.Roles.Salary;
+namespace Content.Shared.RPSX.Bank.Prototypes;
 
 [Serializable]
 [Prototype("storeProduct")]
@@ -18,9 +18,9 @@ public sealed class StoreProductPrototype : IPrototype
     [AbstractDataField]
     public bool Abstract { get; private set; }
 
-    [DataField("name")] private string _name = string.Empty;
+    [DataField("name")] private LocId _name = string.Empty;
 
-    [DataField("description")] private string _description = string.Empty;
+    [DataField("description")] private LocId _description = string.Empty;
 
     [ViewVariables]
     [IdDataField]
@@ -34,7 +34,7 @@ public sealed class StoreProductPrototype : IPrototype
     {
         get
         {
-            if (_name.Trim().Length != 0)
+            if (Loc.GetString(_name).Trim().Length != 0)
                 return _name;
 
             if (IoCManager.Resolve<IPrototypeManager>().TryIndex(Product, out EntityPrototype? prototype))
@@ -54,7 +54,7 @@ public sealed class StoreProductPrototype : IPrototype
     {
         get
         {
-            if (_description.Trim().Length != 0)
+            if (Loc.GetString(_description).Trim().Length != 0)
                 return _description;
 
             if (IoCManager.Resolve<IPrototypeManager>().TryIndex(Product, out EntityPrototype? prototype))

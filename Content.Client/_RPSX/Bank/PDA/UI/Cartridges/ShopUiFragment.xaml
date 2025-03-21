@@ -1,11 +1,11 @@
-<cartridges:HeadShopUiFragment xmlns="https://spacestation14.io"
-                               xmlns:cartridges="clr-namespace:Content.Client.RPSX.Bank.PDA.UI.Cartridges"
-                               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                               x:Class="Content.Client.RPSX.Bank.PDA.UI.Cartridges.HeadShopUiFragment"
-                               Margin="1 0 2 0"
-                               Orientation="Vertical"
-                               HorizontalExpand="True"
-                               VerticalExpand="True">
+<cartridges:ShopUiFragment xmlns="https://spacestation14.io"
+                           xmlns:cartridges="clr-namespace:Content.Client.RPSX.Bank.PDA.UI.Cartridges"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                           x:Class="Content.Client.RPSX.Bank.PDA.UI.Cartridges.ShopUiFragment"
+                           Margin="1 0 2 0"
+                           Orientation="Vertical"
+                           HorizontalExpand="True"
+                           VerticalExpand="True">
     <PanelContainer StyleClasses="BackgroundDark"></PanelContainer>
     <BoxContainer Name="Bying" Orientation="Vertical" Margin="5 0 5 0" VerticalExpand="True">
         <BoxContainer Orientation="Horizontal">
@@ -44,5 +44,18 @@
                 <!-- Products get added here by code -->
             </BoxContainer>
         </ScrollContainer>
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+            <Button Name="Basket"
+                    Text="{Loc 'pda-shop-cartridge-basket'}"
+                    MinWidth="64"
+                    HorizontalAlignment="Left"
+                    HorizontalExpand="True"/>
+            <Button Name="AddToBasket"
+                    Text="{Loc 'pda-shop-cartridge-add-to-basket'}"
+                    MinWidth="64"
+                    HorizontalAlignment="Right"
+                    HorizontalExpand="True"
+                    Disabled="True"/>
+        </BoxContainer>
     </BoxContainer>
-</cartridges:HeadShopUiFragment>
+</cartridges:ShopUiFragment>

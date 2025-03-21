@@ -3,19 +3,17 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.RPSX.Bank.PDA;
 
 [NetSerializable, Serializable]
-public sealed class HeadShopCartridgeInterfaceState : BoundUserInterfaceState
+public sealed class ShopCartridgeInterfaceState : BoundUserInterfaceState
 {
     public string OwnerName;
-    public int Capacity;
     public int Balance;
     public NetEntity Owner;
     public string StationName;
     public NetEntity LoaderUid;
 
-    public HeadShopCartridgeInterfaceState(string ownerName, int capacity, int balance, NetEntity owner, string stationName, NetEntity loaderUid)
+    public ShopCartridgeInterfaceState(string ownerName, int balance, NetEntity owner, string stationName, NetEntity loaderUid)
     {
         OwnerName = ownerName;
-        Capacity = capacity;
         Balance = balance;
         Owner = owner;
         StationName = stationName;
