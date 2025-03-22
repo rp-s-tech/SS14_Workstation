@@ -9,3 +9,15 @@
   values:
     prefix: names-first-female-dataset-
     count: 771
+
+- type: localizedDataset
+  id: NamesHumanLastFemale
+  values:
+    prefix: names-last-female-dataset-
+    count: 249
+
+- type: localizedDataset
+  id: NamesHumanLastMale
+  values:
+    prefix: names-last-male-dataset-
+    count: 470
