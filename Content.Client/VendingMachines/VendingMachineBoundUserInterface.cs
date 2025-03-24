@@ -61,7 +61,8 @@ namespace Content.Client.VendingMachines
             if (_cfg.GetCVar(RPSXCCVars.EconomyEnabled))
             {
                 var menu = (EconomyVendingMachineMenu)_menu;
-                menu.Populate(_cachedInventory, out _cachedFilteredIndex);
+                menu.Populate(_cachedInventory, out _cachedFilteredIndex, menu.SearchBar.Text);
+                menu.UpdateSelectedProduct();
             }
             else
             {
@@ -88,7 +89,8 @@ namespace Content.Client.VendingMachines
             menu.OnSearchChanged += OnSearchChanged;
             menu.OnBuyButtonPressed += OnBuyButtonPressed;
             menu.OnSelectedItemRequestUpdate += OnSelectedItemRequestUpdate;
-            menu.Populate(_cachedInventory, out _cachedFilteredIndex);
+            menu.Populate(_cachedInventory, out _cachedFilteredIndex, menu.SearchBar.Text);
+            menu.UpdateSelectedProduct();
         }
 
         private void OnSelectedItemRequestUpdate(int index)
@@ -113,6 +115,12 @@ namespace Content.Client.VendingMachines
                 var menu = (VendingMachineMenu)_menu;
                 menu.UpdateAmounts(_cachedInventory, enabled);
             }
+            else
+            {
+                var menu = (EconomyVendingMachineMenu)_menu;
+                menu.Populate(_cachedInventory, out _cachedFilteredIndex, menu.SearchBar.Text);
+                menu.UpdateSelectedProduct();
+            }
         }
 
         private void OnItemSelected(GUIBoundKeyEventArgs args, ListData data)
@@ -133,22 +141,7 @@ namespace Content.Client.VendingMachines
 
             SendPredictedMessage(new VendingMachineEjectMessage(selectedItem.Type, selectedItem.ID));
         }
-        /*
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-            if (!disposing)
-                return;
 
-            if (_menu == null)
-                return;
-
-            _menu.OnItemSelected -= OnItemSelected;
-            _menu.OnClose -= Close;
-            _menu.Dispose();
-        }
-
-        */
         protected override void UpdateState(BoundUserInterfaceState state)
         {
             base.UpdateState(state);
@@ -175,15 +168,9 @@ namespace Content.Client.VendingMachines
             if (selectedItem == null)
                 return;
 
-            switch (_menu)
-            {
-                case EconomyVendingMachineMenu economyMenu:
-                    economyMenu.SetSelectedProductState(selectedItem, args.ItemIndex);
-                    break;
-                case VendingMachineMenu:
-                    SendMessage(new VendingMachineEjectMessage(selectedItem.Type, selectedItem.ID));
-                    break;
-            }
+            if (_menu is not EconomyVendingMachineMenu menu) return;
+
+            menu.SetSelectedProductState(selectedItem, args.ItemIndex);
         }
 
         private void OnBuyButtonPressed(int index)
@@ -192,7 +179,7 @@ namespace Content.Client.VendingMachines
             if (selectedItem == null)
                 return;
 
-            SendMessage(new VendingMachineEjectMessage(selectedItem.Type, selectedItem.ID));
+            SendPredictedMessage(new VendingMachineEjectMessage(selectedItem.Type, selectedItem.ID));
             Refresh();
         }
 
@@ -234,6 +221,7 @@ namespace Content.Client.VendingMachines
                     return;
                 case EconomyVendingMachineMenu economyMenu:
                     economyMenu.Populate(_cachedInventory, out _cachedFilteredIndex, filter);
+                    economyMenu.UpdateSelectedProduct();
                     break;
                 case VendingMachineMenu menu:
                     var enabled = EntMan.TryGetComponent(Owner, out VendingMachineComponent? bendy) && !bendy.Ejecting;
