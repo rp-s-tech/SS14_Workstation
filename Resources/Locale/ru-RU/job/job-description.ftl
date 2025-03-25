@@ -39,6 +39,7 @@ job-description-qm = Руководите отделом снабжения ст
 job-description-rd = Руководите научным отделом, открывайте новые технологии, получайте и исследуйте артефакты, и проводите эксперименты.
 job-description-research-assistant = Изучите основные принципы исследования различных артефактов и аномалий, и основы робототехники.
 job-description-reporter = Развлекайте и информируйте экипаж своей журналистской деятельностью посредством камер, радио, и новостей. Эта должность доступна на станциях Bagel, Core, Cog, Train, Oasis, Avrite и Delta.job-description-reporter = Развлекайте и информируйте экипаж своей журналистской деятельностью посредством камер, радио, и новостей. Эта должность доступна на станциях Bagel, Convex, Core, Train и Oasis.
+job-description-salvagespec = Use the salvage magnet to draw in detatched scraps & asteroids to loot and enrich the station, build a salvage ship and then travel to new planets, while fighting off any space fauna along the way.
 job-description-scientist = Исследуйте инопланетные артефакты, открывайте новые технологии, заменяйте оборудование станции новыми и усиленными его версиями, повышайте общую эффективность работы.
 job-description-security = Ловите преступников и врагов станции, следите за соблюдением закона и за тем, чтобы станция не погрузилась в беспорядки.
 job-description-serviceworker = Изучите основы барменского искусства, кулинарии, и выращивания растений.

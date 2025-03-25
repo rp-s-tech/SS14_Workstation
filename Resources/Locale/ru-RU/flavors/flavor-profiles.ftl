@@ -271,6 +271,17 @@ flavor-complex-irish-car-bomb = как шипучая пенка колы
 ### This is exactly what pilk tastes like. I'm not even joking. I might've been a little drunk though
 
 flavor-complex-white-gilgamesh = как слегка газированные сливки
+flavor-complex-caipirinha = like Brazil
+flavor-complex-daiquiri = like rum, lime and sugar
+flavor-complex-deathintheafternoon = like anise and champagne
+flavor-complex-empress75 = like tyrian purple
+flavor-complex-espressomartini = like vodka and coffee
+flavor-complex-mayojito = like stomach turmoil
+flavor-complex-mimeosa = like silence and oranges
+flavor-complex-mimosa = like an early brunch
+flavor-complex-moscowmule = like vodka and ginger ale
+flavor-complex-thesunalsorises = like an absinthe daiquiri
+flavor-complex-whiskeysour = like whiskey and egg
 flavor-complex-antifreeze = как тепло
 flavor-complex-zombiecocktail = как поедание мозгов
 flavor-complex-absinthe = как анис

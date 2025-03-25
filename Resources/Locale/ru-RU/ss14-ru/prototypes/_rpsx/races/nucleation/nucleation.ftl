@@ -1,0 +1,12 @@
+ent-MobNucleation = Urist McNucleation
+    .desc = { ent-BaseMobNucleation.desc }
+ent-BaseMobNucleation = Urist McNucleation
+    .desc = { ent-BaseMobSpeciesOrganicNoAlerts.desc }
+ent-MobNucleanDummy = { ent-BaseSpeciesDummy }
+    .desc = { ent-BaseSpeciesDummy.desc }
+ent-BaseMobNoAlerts = { "" }
+    .desc = { "" }
+ent-BaseMobSpeciesNoAlerts = { ent-BaseMobNoAlerts }
+    .desc = { ent-BaseMobNoAlerts.desc }
+ent-BaseMobSpeciesOrganicNoAlerts = { ent-MobBloodstream }
+    .desc = { ent-MobBloodstream.desc }
