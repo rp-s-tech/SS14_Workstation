@@ -1,3 +1,5 @@
+
+
 ent-SmallBlackRockSolid17 = { ent-SmallBlackBaseRock }
     .desc = { ent-SmallBlackBaseRock.desc }
 ent-SmallBlackRockSolid18 = { ent-SmallBlackBaseRock }
@@ -26,3 +28,4 @@ ent-SmallBlackRockSolid29 = { ent-SmallBlackBaseRock }
     .desc = { ent-SmallBlackBaseRock.desc }
 ent-SmallBlackRockSolid30 = { ent-SmallBlackBaseRock }
     .desc = { ent-SmallBlackBaseRock.desc }
+
