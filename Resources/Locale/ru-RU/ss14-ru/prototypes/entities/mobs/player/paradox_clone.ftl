@@ -1,6 +1,6 @@
-ent-MobParadox = space-time paradox
-    .desc = A big ball of wibbly wobbly, timey wimey stuff.
+ent-MobParadox = парадокс пространства-времени
+    .desc = Огромный сгусток хаоса, в котором смешиваются время и пространство.
 ent-MobParadoxTimed = { ent-MobParadox }
     .desc = { ent-MobParadox.desc }
-ent-ParadoxCloneDummy = Paradox Clone
+ent-ParadoxCloneDummy = Парадокс-клон
     .desc = { "" }
