@@ -25,4 +25,12 @@
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\XamlIL.targets" />
+  <ItemGroup>
+    <EmbeddedResource Remove="_rpsx\bank\pda\ui\cartridges\BuyedProductRow.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Update="_RPSX\Bank\PDA\UI\Cartridges\BuyedProductRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AdditionalFiles>
+  </ItemGroup>
 </Project>

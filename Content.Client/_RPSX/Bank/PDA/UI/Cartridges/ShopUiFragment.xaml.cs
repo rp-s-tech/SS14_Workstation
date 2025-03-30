@@ -9,13 +9,13 @@ using Content.Client.Cargo.UI;
 using System.Linq;
 using Content.Shared.RPSX.Bank.PDA;
 using Content.Shared.RPSX.Bank.Prototypes;
+using Robust.Shared.Toolshed.TypeParsers;
 
 namespace Content.Client.RPSX.Bank.PDA.UI.Cartridges;
 
 [GenerateTypedNameReferences]
 public sealed partial class ShopUiFragment : BoxContainer
 {
-    private EntityUid _owner;
     private string _userName = string.Empty;
 
     [Dependency] private readonly IEntityManager _entityManager = default!;
@@ -26,7 +26,8 @@ public sealed partial class ShopUiFragment : BoxContainer
 
     private readonly List<string> _categoryStrings = new();
     private string? _category;
-    private CargoProductPrototype? _product;
+    private Dictionary<StoreProductPrototype, int> _buyedProducts = new();
+    private StoreProductPrototype? _selectedProduct;
 
     public ShopUiFragment()
     {
@@ -37,30 +38,42 @@ public sealed partial class ShopUiFragment : BoxContainer
         SearchBar.OnTextChanged += OnSearchBarTextChanged;
         Categories.OnItemSelected += OnCategoryItemSelected;
 
-        AddToBasket.ToggleMode = true;
-
         OnItemSelected += (args) =>
         {
-            if (args.Button.Parent is CargoProductRow row)
+            if (args.Button.Parent is ShopProductRow row)
             {
-
-                foreach (var product in Products.Children)
-                {
-                    var button = product.Children.Where(c => c is Button && c != args.Button).FirstOrDefault();
-                    if (button is Button btn)
-                        btn.Pressed = false;
-                }
-
+                if (row.Product == null) return;
+                DisableButtons(args.Button);
+                args.Button.Pressed = !args.Button.Pressed;
                 if (args.Button.Pressed)
+                {
                     AddToBasket.Disabled = false;
+                    _selectedProduct = row.Product;
+                }
+                else
+                {
+                    AddToBasket.Disabled = true;
+                    _selectedProduct = null;
+                }
             }
             else if (args.Button == AddToBasket)
             {
-                Logger.Info("OOOOOOH, MY GOD!");
+                if (_selectedProduct == null) return;
+                DisableButtons();
+                if (Int32.TryParse(Count.Text, out int count))
+                {
+                    AddToBasket.Disabled = true;
+                    if (_buyedProducts.ContainsKey(_selectedProduct))
+                        UpdateProductInBasket(_selectedProduct, count);
+                    else
+                        AddProductToBasket(_selectedProduct, count);
+                }
+                Count.SetText(String.Empty);
             }
             else if (args.Button == Basket)
             {
-                Logger.Info("OPEN MY BASKET!");
+                MainWindow.Visible = !MainWindow.Visible;
+                BasketWindow.Visible = !BasketWindow.Visible;
             }
         };
     }
@@ -88,6 +101,26 @@ public sealed partial class ShopUiFragment : BoxContainer
         PopulateProducts();
     }
 
+    private void DisableButtons(BaseButton without)
+    {
+        foreach (var product in Products.Children)
+        {
+            var button = product.Children.Where(c => c is Button && c != without).FirstOrDefault();
+            if (button is Button btn)
+                btn.Pressed = false;
+        }
+    }
+
+    private void DisableButtons()
+    {
+        foreach (var product in Products.Children)
+        {
+            var button = product.Children.Where(c => c is Button).FirstOrDefault();
+            if (button is Button btn)
+                btn.Pressed = false;
+        }
+    }
+
     private void OnSearchBarTextChanged(LineEdit.LineEditEventArgs args)
     {
         PopulateProducts();
@@ -102,7 +135,6 @@ public sealed partial class ShopUiFragment : BoxContainer
     public void UpdateState(ShopCartridgeInterfaceState state)
     {
         _userName = state.OwnerName;
-        _owner = _entityManager.GetEntity(state.Owner);
         Populate();
         UpdateBankData(state.StationName, state.Balance);
     }
@@ -158,6 +190,37 @@ public sealed partial class ShopUiFragment : BoxContainer
                 Products.AddChild(button);
             }
         }
+    }
+
+    public void AddProductToBasket(StoreProductPrototype product, int count)
+    {
+        _buyedProducts.Add(product, count);
+        var newProduct = new BuyedProductRow
+        {
+            Product = product,
+            ProductName = { Text = product.Name },
+            PointCost = { Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", (product.Cost * count).ToString())) },
+            Icon = { Texture = _spriteSystem.Frame0(product.Icon) },
+            CountEdit = { Text = count.ToString() }
+        };
+        newProduct.CountEdit.OnTextChanged += args =>
+        {
+            if (Int32.TryParse(args.Text, out int count))
+            {
+                if (args.Control.Parent == null || args.Control.Parent.Parent is not BuyedProductRow row || row.Product == null) return;
+                _buyedProducts[row.Product] = count;
+            }
+        };
+        BuyedProducts.AddChild(newProduct);
+    }
+
+    public void UpdateProductInBasket(StoreProductPrototype product, int count)
+    {
+        var previousCount = _buyedProducts[product];
+        _buyedProducts[product] += count;
+        var buyedProduct = BuyedProducts.Children.Where(c => c is BuyedProductRow row && row.Product == product).FirstOrDefault();
+        if (buyedProduct is not BuyedProductRow buyedProductRow) return;
+        buyedProductRow.CountEdit.Text = (count + previousCount).ToString();
     }
 
     public void PopulateCategories()

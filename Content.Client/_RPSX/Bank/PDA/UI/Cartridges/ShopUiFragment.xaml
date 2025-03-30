@@ -7,7 +7,7 @@
                            HorizontalExpand="True"
                            VerticalExpand="True">
     <PanelContainer StyleClasses="BackgroundDark"></PanelContainer>
-    <BoxContainer Name="Bying" Orientation="Vertical" Margin="5 0 5 0" VerticalExpand="True">
+    <BoxContainer Orientation="Vertical" Margin="5 0 5 0" VerticalExpand="True">
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc 'cargo-console-menu-account-name-label'}"
                 StyleClasses="LabelKeyText" />
@@ -20,42 +20,62 @@
             <Label Name="PointsLabel"
                 Text="$0" />
         </BoxContainer>
-        <BoxContainer Orientation="Horizontal">
-            <Label Text="{Loc 'cargo-console-menu-order-capacity-label'}"
-                StyleClasses="LabelKeyText" />
-            <Label Name="ShuttleCapacityLabel"
-                Text="0/20" />
-        </BoxContainer>
-        <BoxContainer Orientation="Horizontal">
-            <OptionButton Name="Categories"
-                        Prefix="{Loc 'cargo-console-menu-categories-label'}"
+        <BoxContainer Name="MainWindow" Orientation="Vertical" VerticalExpand="True">
+            <BoxContainer Orientation="Horizontal">
+                <OptionButton Name="Categories"
+                            Prefix="{Loc 'cargo-console-menu-categories-label'}"
+                            HorizontalExpand="True" />
+                <LineEdit Name="SearchBar"
+                        PlaceHolder="{Loc 'cargo-console-menu-search-bar-placeholder'}"
                         HorizontalExpand="True" />
-            <LineEdit Name="SearchBar"
-                    PlaceHolder="{Loc 'cargo-console-menu-search-bar-placeholder'}"
-                    HorizontalExpand="True" />
-        </BoxContainer>
-        <ScrollContainer HorizontalExpand="True"
-                        VerticalExpand="True"
-                        HScrollEnabled="True">
-            <BoxContainer Name="Products"
-                        Orientation="Vertical"
-                        HorizontalExpand="True"
-                        VerticalExpand="True">
-                <!-- Products get added here by code -->
             </BoxContainer>
-        </ScrollContainer>
-        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
-            <Button Name="Basket"
-                    Text="{Loc 'pda-shop-cartridge-basket'}"
-                    MinWidth="64"
-                    HorizontalAlignment="Left"
-                    HorizontalExpand="True"/>
-            <Button Name="AddToBasket"
-                    Text="{Loc 'pda-shop-cartridge-add-to-basket'}"
-                    MinWidth="64"
-                    HorizontalAlignment="Right"
-                    HorizontalExpand="True"
-                    Disabled="True"/>
+            <ScrollContainer HorizontalExpand="True"
+                            VerticalExpand="True"
+                            HScrollEnabled="True">
+                <BoxContainer Name="Products"
+                            Orientation="Vertical"
+                            HorizontalExpand="True"
+                            VerticalExpand="True">
+                    <!-- Products get added here by code -->
+                </BoxContainer>
+            </ScrollContainer>
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                <Button Name="Basket"
+                        Text="{Loc 'pda-shop-cartridge-basket'}"
+                        MinWidth="64"
+                        HorizontalAlignment="Left"
+                        HorizontalExpand="True"/>
+                <LineEdit Name="Count"
+                          PlaceHolder="{Loc 'pda-shop-cartridge-count-placeholder'}"
+                          HorizontalExpand="True"
+                          MinWidth="64"
+                          HorizontalAlignment="Right"/>
+                <Button Name="AddToBasket"
+                        Text="{Loc 'pda-shop-cartridge-add-to-basket'}"
+                        MinWidth="64"
+                        HorizontalAlignment="Right"
+                        HorizontalExpand="True"
+                        Disabled="True"/>
+            </BoxContainer>
+        </BoxContainer>
+        <BoxContainer Name="BasketWindow" Orientation="Vertical" VerticalExpand="True" Visible="False">
+            <ScrollContainer HorizontalExpand="True"
+                            VerticalExpand="True"
+                            HScrollEnabled="True">
+                <BoxContainer Name="BuyedProducts"
+                            Orientation="Vertical"
+                            HorizontalExpand="True"
+                            VerticalExpand="True">
+                    <!-- Products get added here by code -->
+                </BoxContainer>
+            </ScrollContainer>
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                <Button Name="Main"
+                        Text="{Loc 'pda-shop-cartridge-main'}"
+                        MinWidth="64"
+                        HorizontalAlignment="Left"
+                        HorizontalExpand="True"/>
+            </BoxContainer>
         </BoxContainer>
     </BoxContainer>
 </cartridges:ShopUiFragment>

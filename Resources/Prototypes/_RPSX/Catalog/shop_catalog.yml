@@ -6,7 +6,16 @@
   icon:
     sprite: Objects/Specific/Medical/medical.rsi
     state: brutepack
-  product: Brutepack10
-  cost: 6000
+  product: Brutepack
+  cost: 500
   category: cargoproduct-category-name-medical
 
+- type: storeProduct
+  id: Ointment
+  description: shop-desc-ointment
+  icon:
+    sprite: Objects/Specific/Medical/medical.rsi
+    state: ointment
+  product: Ointment
+  cost: 500
+  category: cargoproduct-category-name-medical
