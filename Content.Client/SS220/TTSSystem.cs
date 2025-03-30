@@ -223,8 +223,6 @@ public sealed partial class TTSSystem : EntitySystem
         if (volume < -32f)
             volume = -32f;
 
-        _sawmill.Debug($"[TTS] PlayTTS: radio={ev.IsRadio}, gain={gain}, mult={multiplier}, clampedGain={finalGain}, finalVol={volume}");
-
         var param = AudioParams.Default.WithVolume(volume);
         PlayTTSBytes(ev.Data, sourceEntity, param, ev.IsRadio);
     }
