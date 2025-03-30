@@ -319,6 +319,7 @@ flavor-complex-sui-dream = как изображение Альп
 flavor-complex-toxins-special = как космические исследования
 flavor-complex-vodka-martini = как шпионский фильм из России
 flavor-complex-vodka-tonic = освежающе горько
+flavor-complex-bacchus-blessing = like a wall of bricks
 flavor-complex-pilk = как сладкое молоко
 
 # Medicine/chemical-specific flavors.

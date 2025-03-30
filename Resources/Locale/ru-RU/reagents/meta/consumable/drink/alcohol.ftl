@@ -214,5 +214,7 @@ reagent-name-whiskey-sour = кислый виски
 reagent-desc-whiskey-sour = В чём секретный ингредиент? Яйца. Это яйца.
 reagent-name-rubberneck = раббернек
 reagent-desc-rubberneck = Популярный напиток среди тех, кто придерживается полностью синтетической диеты.
+reagent-name-bacchus-blessing = bacchus' blessing
+reagent-desc-bacchus-blessing = You didn't think it was possible for a liquid to be so utterly revolting. Are you sure about this...?
 reagent-name-zombiecocktail = зомби-коктейль
 reagent-desc-zombiecocktail = Он проникает в вашу голову. Вашу го-о-олову.
