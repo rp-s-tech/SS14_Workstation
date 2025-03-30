@@ -77,6 +77,5 @@ namespace Content.Shared.Humanoid
         }
         // Corvax-LastnameGender-End
             //return _random.Pick(_prototypeManager.Index(speciesProto.LastNames));
-        }
     }
 }
