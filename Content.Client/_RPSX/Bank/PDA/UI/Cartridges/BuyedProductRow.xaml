@@ -1,0 +1,27 @@
+<PanelContainer xmlns="https://spacestation14.io"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                x:Class="Content.Client.RPSX.Bank.PDA.UI.Cartridges.BuyedProductRow"
+                HorizontalExpand="True">
+    <BoxContainer Orientation="Horizontal"
+                  HorizontalExpand="True">
+        <TextureRect Name="Icon"
+                     Access="Public"
+                     MinSize="32 32"
+                     RectClipContent="True" />
+        <Label Name="ProductName"
+               Access="Public"
+               HorizontalExpand="True" />
+        <PanelContainer StyleClasses="BackgroundDark">
+            <Label Name="PointCost"
+                   Access="Public"
+                   MinSize="52 32"
+                   Align="Right" />
+        </PanelContainer>
+        <LineEdit Name="CountEdit"
+                  PlaceHolder="{Loc 'pda-shop-cartridge-count-placeholder'}"
+                  Access="Public"
+                  HorizontalExpand="True"
+                  MinWidth="32"
+                  HorizontalAlignment="Right"/>     
+    </BoxContainer>
+</PanelContainer>
