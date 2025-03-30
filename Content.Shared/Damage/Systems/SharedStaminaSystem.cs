@@ -1,6 +1,8 @@
 // Exodus - Stamina Refactor
 // Exodus - Stamian Refactor | Remove unnecessary usings
 using Content.Shared.Administration.Logs;
+using Content.Shared.Alert;
+using Content.Shared.CCVar;
 using Content.Shared.CombatMode;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Events;
@@ -14,6 +16,7 @@ using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
@@ -30,8 +33,11 @@ public abstract partial class SharedStaminaSystem : EntitySystem
     [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
     [Dependency] private readonly SharedStunSystem _stunSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
 
     // Exodus - Stamina Refactor | Move stamina crit buffer to stamina component
+
+    //public float UniversalStaminaDamageModifier { get; private set; } = 1f;
 
     public override void Initialize()
     {
@@ -50,6 +56,8 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         SubscribeLocalEvent<StaminaDamageOnCollideComponent, ThrowDoHitEvent>(OnThrowHit);
 
         SubscribeLocalEvent<StaminaDamageOnHitComponent, MeleeHitEvent>(OnMeleeHit);
+
+        // Subs.CVar(_config, CCVars.PlaytestStaminaDamageModifier, value => UniversalStaminaDamageModifier = value, true);
 
         SubscribeLocalEvent<StaminaComponent, StaminaDamageModifyEvent>(OnStaminaDamage);  // Exodus - Stamina Refactor
         SubscribeLocalEvent<StaminaComponent, RefreshDecayEvent>(OnRefreshDecay);  // Exodus - Stamina Refactor
@@ -210,6 +218,8 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         RaiseLocalEvent(uid, ref ev);
         if (ev.Cancelled)
             return;
+
+        // value = UniversalStaminaDamageModifier * value;
 
         // Exdodus - Stamina Refeactor | Sepatate functions
         component.StaminaDamage += value;
