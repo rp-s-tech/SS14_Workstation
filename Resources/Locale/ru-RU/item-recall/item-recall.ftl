@@ -7,4 +7,3 @@ item-recall-item-summon-self = { CAPITALIZE(THE($item)) } появляется �
 item-recall-item-summon-others = { CAPITALIZE(THE($item)) } появляется в руке { THE($name) }!
 item-recall-item-disappear = { CAPITALIZE(THE($item)) } исчезает!
 item-recall-item-unmark = Вы чувствуете, что ваша связь с { THE($item) } разорвана.
-

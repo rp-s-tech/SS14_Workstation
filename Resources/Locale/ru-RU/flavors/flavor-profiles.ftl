@@ -264,13 +264,24 @@ flavor-complex-irish-bool = как кофеин и Ирландия
 flavor-complex-xeno-basher = как уничтожение жуков
 flavor-complex-budget-insuls-drink = как взлом шлюза
 flavor-complex-watermelon-wakeup = как сладкое пробуждение
-flavor-complex-irish-slammer = like a spiked cola float
+flavor-complex-irish-slammer = как алкогольный кола-флоат
 flavor-complex-rubberneck = как синтетика
 flavor-complex-irish-car-bomb = как шипучая пенка колы
 
 ### This is exactly what pilk tastes like. I'm not even joking. I might've been a little drunk though
 
 flavor-complex-white-gilgamesh = как слегка газированные сливки
+flavor-complex-caipirinha = как Бразилия
+flavor-complex-daiquiri = как ром, лайм и сахар
+flavor-complex-deathintheafternoon = как анис и шампанское
+flavor-complex-empress75 = как тирский пурпур
+flavor-complex-espressomartini = как водка и кофе
+flavor-complex-mayojito = как желудочные мучения
+flavor-complex-mimeosa = как тишина и апельсины
+flavor-complex-mimosa = как ранний бранч
+flavor-complex-moscowmule = как водка и имбирный эль
+flavor-complex-thesunalsorises = как абсентный дайкири
+flavor-complex-whiskeysour = как виски и яйцо
 flavor-complex-antifreeze = как тепло
 flavor-complex-zombiecocktail = как поедание мозгов
 flavor-complex-absinthe = как анис
