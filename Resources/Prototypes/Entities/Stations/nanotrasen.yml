@@ -25,6 +25,7 @@
     - BaseStationSiliconLawCrewsimov
     - BaseStationAllEventsEligible
     - BaseStationNanotrasen
+    - BaseStationDeliveries
     - BaseStationCrewMembersSalary # RPSX edit | salary fixing
     - BaseCCOConsoleTargetStation # RPSX edit | salary fixing
   categories: [ HideSpawnMenu ]

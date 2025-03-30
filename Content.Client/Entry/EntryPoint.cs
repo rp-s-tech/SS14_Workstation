@@ -75,9 +75,16 @@ namespace Content.Client.Entry
         [Dependency] private readonly TitleWindowManager _titleWindowManager = default!;
         [Dependency] private readonly ISponsorsManager _sponsorsManager = default!;
 
+        private readonly RPSXRegisterIgnore _rpsxRegisterIgnore = new();
+
         public override void Init()
         {
             ClientContentIoC.Register();
+
+            var res = IoCManager.Resolve<IResourceManager>();
+            var factory = IoCManager.Resolve<IComponentFactory>();
+            var prototypes = IoCManager.Resolve<IPrototypeManager>();
+            _rpsxRegisterIgnore.RegisterIgnore(prototypes, factory, res);
 
             foreach (var callback in TestingCallbacks)
             {

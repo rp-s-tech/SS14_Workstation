@@ -455,6 +455,11 @@ public enum LogType
     /// </summary>
     AdminCommands = 98,
 
+    /// <summary>
+    /// A player was selected or assigned antag status
+    /// </summary>
+    AntagSelection = 99,
+
     ///<summary>
     /// RPSX Economics log. Using ATM
     ///</summary>
