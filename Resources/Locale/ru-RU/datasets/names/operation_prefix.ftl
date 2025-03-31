@@ -99,3 +99,4 @@ names-operation-prefix-dataset-98 = Мокрый
 names-operation-prefix-dataset-99 = Белый
 names-operation-prefix-dataset-100 = Дикий
 names-operation-prefix-dataset-101 = Зимний
+names-operation-prefix-dataset-102 = Жёлтый
