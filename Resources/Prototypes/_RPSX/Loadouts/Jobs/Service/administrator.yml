@@ -1,0 +1,79 @@
+# Head
+- type: loadout
+  id: BrownFlatcap
+  equipment:
+    head: ClothingHeadHatBrownFlatcap
+
+- type: loadout
+  id: GreyFlatcap
+  equipment:
+    head: ClothingHeadHatGreyFlatcap
+
+- type: loadout
+  id: AdministratorBeret
+  equipment:
+    head: ClothingHeadHatBeretAdministrator
+
+- type: loadout
+  id: GreenFlatcap
+  equipment:
+    head: ClothingHeadHatFlatAdministrator
+
+# Jumpsuit
+- type: loadout
+  id: JumpsuitAdministrator
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAdministrator
+
+- type: loadout
+  id: JumpskirtAdministrator
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtAdministrator
+
+# Gloves
+- type: loadout
+  id: GlovesWhite
+  equipment:
+    gloves: ClothingHandsGlovesColorWhite
+
+- type: loadout
+  id: GlovesGray
+  equipment:
+    gloves: ClothingHandsGlovesColorGray
+
+- type: loadout
+  id: GlovesBlack
+  equipment:
+    gloves: ClothingHandsGlovesColorBlack
+
+# OuterClothing
+- type: loadout
+  id: CoatGentle
+  equipment:
+    outerClothing: ClothingOuterCoatGentle
+
+- type: loadout
+  id: DiscoAssBlazer
+  equipment:
+    outerClothing: ClothingOuterDiscoAssBlazer
+
+- type: loadout
+  id: CoatAdministrator
+  equipment:
+    outerClothing: ClothingOuterCoatAdministrator
+
+# Shoes
+- type: loadout
+  id: ShoesBootsLaceup
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+
+- type: loadout
+  id: ShoesGreenLizardskin
+  equipment:
+    shoes: ClothingShoesGreenLizardskin
+
+- type: loadout
+  id: ShoesBrownLeatherAdministrator
+  equipment:
+    shoes: ClothingShoesBrownLeatherAdministrator

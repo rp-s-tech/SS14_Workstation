@@ -1,0 +1,29 @@
+- type: entity
+  parent: BriefcaseBase
+  id: BriefcaseAdministratorBlack
+  name: black briefcase
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Storage/Briefcases/briefcase_black.rsi
+    state: icon
+  - type: Item
+    sprite: _RPSX/Objects/Storage/Briefcases/briefcase_black.rsi
+    size: Large
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,3,1
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: StorageFill
+    contents:
+      - id: SpaceCash5000
+      - id: PaperOffice
+        amount: 4
+      - id: RubberStampApproved
+      - id: RubberStampDenied
+  - type: Appearance

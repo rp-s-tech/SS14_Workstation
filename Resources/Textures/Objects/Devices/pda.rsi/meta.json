@@ -32,10 +32,13 @@
       "name": "light_overlay"
     },
     {
-        "name": "light_overlay_wide"
+      "name": "light_overlay_wide"
     },
     {
       "name": "pda"
+    },
+    {
+      "name": "pda-administrator"
     },
     {
       "name": "pda-atmos"
@@ -290,3 +293,4 @@
     }
   ]
 }
+

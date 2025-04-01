@@ -4,9 +4,23 @@
   description: job-description-logistician
   playTimeTracker: JobCargoLogistician
   requirements:
-  - !type:RoleTimeRequirement
-    role: JobSalvageSpecialist
-    time: 18000
+    - !type:RoleTimeRequirement
+      role: JobCargoTechnician
+      time: 43200 #12 hrs
+    - !type:RoleTimeRequirement
+      role: JobSalvageSpecialist
+      time: 21600 #6 hrs
+    - !type:DepartmentTimeRequirement
+      department: Cargo
+      time: 108000 #30 hrs
+    - !type:RoleTimeRequirement
+      role: JobSalvageSpecialist
+      time: 21600 #6 hrs
+    - !type:RoleTimeRequirement
+      role: JobQuartermaster
+      time: 43200 #12 hrs
+    - !type:OverallPlaytimeRequirement
+      time: 252000 #70 hrs
   weight: 10
   startingGear: CargoLogisticianGear
   icon: "JobIconCargoLogistician"
@@ -83,5 +97,4 @@
     containers:
       key_slots:
       - EncryptionKeyCargo
-      - EncryptionKeyCommand
       - EncryptionKeyCommon
