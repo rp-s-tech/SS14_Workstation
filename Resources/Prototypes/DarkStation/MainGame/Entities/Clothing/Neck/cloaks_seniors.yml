@@ -1,47 +1,11 @@
 ﻿- type: entity
   parent: ClothingNeckBase
-  id: ClothingNeckCloakGoliathCloakSeniorEngineer
-  name: senior engineer cloack
-  description: Senior engineer cloak made from the hide of resilient fauna from a distant planet, though its protective value has faded with its age.
-  components:
-  - type: Sprite
-    sprite: Clothing/Neck/Cloaks/enggoliath.rsi
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot { }
-
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckCloakGoliathCloakSeniorPhysican
-  name: senior physican cloack
-  description: Senior physicancloak made from the hide of resilient fauna from a distant planet, though its protective value has faded with its age.
-  components:
-  - type: Sprite
-    sprite: Clothing/Neck/Cloaks/medgoliath.rsi
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot { }
-
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckCloakGoliathCloakSeniorResearcher
+  id: ClothingNeckCloakResearch
   name: scientific cloack
   description: A cloak made from the hide of a hardy fauna from a distant planet.... OH, COME ON!?
   components:
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/rndgoliath.rsi
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot { }
-
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckCloakSeniorResearcher
-  name: senior researcher cloack
-  description: Senior researcher cloak made from the hide of resilient fauna from a distant planet, though its protective value has faded with its age.
-  components:
-  - type: Sprite
-    sprite: DarkStation/MainGame/Clothing/Neck/Cloaks/rdsenior.rsi
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot { }

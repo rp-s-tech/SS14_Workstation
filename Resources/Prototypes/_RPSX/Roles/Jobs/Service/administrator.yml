@@ -1,0 +1,37 @@
+- type: job
+  id: Administrator
+  name: job-name-administrator
+  description: job-description-administrator
+  playTimeTracker: JobAdministrator
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 144000 # 40 hours
+    - !type:RoleTimeRequirement
+      role: JobHeadOfPersonnel
+      time: 43200 #12 hrs
+  startingGear: AdministratorGear
+  icon: "JobIconAdministrator"
+  supervisors: job-supervisors-hop
+  canBeAntag: false
+  access:
+  - Bar
+  - Service
+  - Maintenance
+  - Janitor
+  - Theatre
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: AdministratorGear
+  equipment:
+    id: AdministratorPDA
+    belt: BoxFolderClipboard
+    ears: ClothingHeadsetService
+  inhand:
+    - BriefcaseAdministratorBlack

@@ -1,0 +1,23 @@
+- type: entity
+  parent: BasePDA
+  id: AdministratorPDA
+  name: Administrator PDA
+  description: Smells like control and rice.
+  components:
+  - type: Pda
+    id: AdministratorIDCard
+    penSlot:
+      startingItem: LuxuryPen
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-administrator
+  - type: Icon
+    state: pda-administrator
+  - type: PdaBorderColor
+    borderColor: "#333333"

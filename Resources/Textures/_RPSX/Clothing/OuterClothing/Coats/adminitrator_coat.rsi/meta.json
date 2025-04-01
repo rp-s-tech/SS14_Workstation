@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "license": "RSX-eXtended",
+  "copyright": "by roisi165, (discord:700313344330170389)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "equipped-OUTERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-vox",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    }
+  ]
+}

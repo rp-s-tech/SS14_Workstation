@@ -759,6 +759,10 @@
     layers:
     - state: default
     - state: idseniorengineer
+# RPSX-Seniors-Return-Start
+  - type: PresetIdCard
+    job: SeniorEngineer
+# RPSX-Seniors-Return-End
 
 - type: entity
   parent: ResearchIDCard
@@ -769,6 +773,10 @@
     layers:
     - state: default
     - state: idseniorresearcher
+# RPSX-Seniors-Return-Start
+  - type: PresetIdCard
+    job: SeniorResearcher
+# RPSX-Seniors-Return-End
 
 - type: entity
   parent: MedicalIDCard
@@ -779,6 +787,10 @@
     layers:
     - state: default
     - state: idseniorphysician
+# RPSX-Seniors-Return-Start
+  - type: PresetIdCard
+    job: SeniorPhysician
+# RPSX-Seniors-Return-End
 
 - type: entity
   parent: SecurityIDCard
@@ -789,6 +801,10 @@
     layers:
     - state: default
     - state: idseniorofficer
+# RPSX-Seniors-Return-Start
+  - type: PresetIdCard
+    job: SeniorOfficer
+# RPSX-Seniors-Return-End
 
 - type: entity
   parent: IDCardStandard

@@ -32,6 +32,7 @@
   - Visitor
   - Zookeeper
   - ServiceWorker
+  - Administrator # RPSX-Seniors-Return
 
 - type: department
   id: CentralCommand

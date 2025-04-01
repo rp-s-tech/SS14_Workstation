@@ -1,4 +1,4 @@
-﻿# Senior Officer
+# Senior Officer
 - type: loadoutGroup
   id: SeniorOfficerJumpsuit
   name: loadout-group-senior-officer-jumpsuit
@@ -146,27 +146,6 @@
   minLimit: 0
   loadouts:
     - BlueShieldOfficerGloves
-
-# Logistic
-- type: loadoutGroup
-  id: CargoLogisticianJumpsuit
-  name: loadout-group-default-jumpsuit
-  loadouts:
-    - CargoLogisticianJumpsuit
-    - CargoLogisticianJumpskirt
-
-- type: loadoutGroup
-  id: CargoLogisticianHead
-  name: loadout-group-default-head
-  loadouts:
-    - CargoLogisticianHead
-
-- type: loadoutGroup
-  id: CargoLogisticianNeck
-  name: loadout-group-default-neck
-  minLimit: 0
-  loadouts:
-    - CargoLogisticianNeck
 
 # NTR
 - type: loadoutGroup

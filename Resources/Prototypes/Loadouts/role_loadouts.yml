@@ -273,7 +273,7 @@
   - StationEngineerBackpack
   - StationEngineerOuterClothing
   - StationEngineerShoes
-  - StationEngineerID
+#  - StationEngineerID # RPSX-Seniors-Return
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
@@ -318,7 +318,7 @@
   - ScientistOuterClothing
   - ScientistGloves
   - ScientistShoes
-  - ScientistPDA
+  # - ScientistPDA # RPSX-Seniors-Return
   - Glasses
   - Survival
   - Trinkets
@@ -373,7 +373,7 @@
   - SecurityBackpack
   - SecurityOuterClothing
   - SecurityShoes
-  - SecurityPDA
+# - SecurityPDA # RPSX-Seniors-Return
   - SecurityBelt
   - SurvivalSecurity
   - Trinkets
@@ -432,7 +432,7 @@
   - MedicalBackpack
   - MedicalDoctorOuterClothing
   - MedicalShoes
-  - MedicalDoctorPDA
+#  - MedicalDoctorPDA # RPSX-Seniors-Return
   - Glasses
   - SurvivalMedical
   - Trinkets
