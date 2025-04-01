@@ -263,6 +263,17 @@
         "name": "pda-engineer-scp"
     },
 	{
+      "name": "pda-pocc",
+      "delays": [
+        [
+          1.2,
+          1.2,
+          1.2,
+          1.2
+        ]
+      ]
+    },
+	{
       "name": "pda-wizard",
       "delays": [
         [
