@@ -39,7 +39,7 @@
 - type: startingGear
   id: ChiefEngineerGear
   equipment:
-    id: StationEngineer
+    id: CEPDA
     eyes: ClothingEyesGlassesMeson
     ears: ClothingHeadsetCE
     belt: ClothingBeltUtilityEngineering
