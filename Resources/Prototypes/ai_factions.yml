@@ -53,6 +53,7 @@
   - Vampire
   - NarsiCult
   - Ratvar
+  - Dragon
 
 - type: npcFaction
   id: SimpleHostile
@@ -69,6 +70,7 @@
   - Vampire
   - NarsiCult
   - Ratvar
+  - Dragon
 
 - type: npcFaction
   id: SimpleNeutral
@@ -104,6 +106,7 @@
   - Vampire
   - NarsiCult
   - Ratvar
+  - Dragon
 
 - type: npcFaction
   id: Zombie
@@ -121,6 +124,7 @@
   - Vampire
   - NarsiCult
   - Ratvar
+  - Dragon
 
 - type: npcFaction
   id: Revolutionary

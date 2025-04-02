@@ -1,0 +1,15 @@
+- type: entity
+  id: ClothingBeltSeniorEngineerFilled
+  parent: ClothingBeltUtility
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: PowerDrill
+      - id: WelderIndustrialAdvanced
+      - id: Wirecutter
+      - id: Crowbar
+      - id: Multitool
+      - id: HolofanProjector
+      - id: GasAnalyzer
+      - id: trayScanner

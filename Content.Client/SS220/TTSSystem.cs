@@ -1,4 +1,5 @@
-﻿// © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+﻿// Refactored TTS from SS220 to RPSX
+// © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
 
 using Content.Shared.CCVar;
 using Content.Shared.SS220.TTS;
@@ -16,46 +17,46 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.SS220.TTS;
 
-/// <summary>
-/// Plays TTS audio in world
-/// </summary>
-// ReSharper disable once InconsistentNaming
 public sealed partial class TTSSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IDependencyCollection _dependencyCollection = default!;
+    [Dependency] private readonly IDependencyCollection _dep = default!;
 
     private ISawmill _sawmill = default!;
 
     private static readonly MemoryContentRoot ContentRoot = new();
     private static readonly ResPath Prefix = ResPath.Root / "TTS";
-    private static bool _rootSetUp = false;
+    private static readonly AudioResource EmptyAudioResource = new();
+    private static bool _rootInitialized = false;
 
-    private float _volume = 0.0f;
-    private float _radioVolume = 0.0f;
+    private float _volume = 1f;
+    private float _radioVolume = 1f;
     private int _fileIdx = 0;
 
     private const int MaxQueuedPerEntity = 20;
     private const int MaxEntitiesQueued = 30;
     private readonly Dictionary<EntityUid, Queue<PlayRequest>> _playQueues = new();
     private readonly Dictionary<EntityUid, EntityUid?> _playingStreams = new();
-    private static readonly AudioResource EmptyAudioResource = new();
 
-    private EntityUid _fakeRecipient = new();
+    private EntityUid _fallbackEntity = EntityUid.Invalid;
+
+    private const float TtsMultiplier = 4f;
+    private const float TtsRadioMultiplier = 4f;
 
     public override void Initialize()
     {
         _sawmill = Logger.GetSawmill("tts");
-        if (!_rootSetUp)
+
+        if (!_rootInitialized)
         {
             _resourceCache.AddRoot(Prefix, ContentRoot);
-            _rootSetUp = true;
+            _rootInitialized = true;
         }
 
-        _cfg.OnValueChanged(TTSVars.TTSVolume, OnTtsVolumeChanged, true);
-        _cfg.OnValueChanged(TTSVars.TTSRadioVolume, OnTtsRadioVolumeChanged, true);
+        _cfg.OnValueChanged(TTSVars.TTSVolume, v => _volume = v, true);
+        _cfg.OnValueChanged(TTSVars.TTSRadioVolume, v => _radioVolume = v, true);
 
         SubscribeNetworkEvent<PlayTTSEvent>(OnPlayTTS);
         SubscribeNetworkEvent<TtsQueueResetMessage>(OnQueueResetRequest);
@@ -66,8 +67,9 @@ public sealed partial class TTSSystem : EntitySystem
     public override void Shutdown()
     {
         base.Shutdown();
-        _cfg.UnsubValueChanged(TTSVars.TTSVolume, OnTtsVolumeChanged);
-        _cfg.UnsubValueChanged(TTSVars.TTSRadioVolume, OnTtsRadioVolumeChanged);
+
+        _cfg.UnsubValueChanged(TTSVars.TTSVolume, v => _volume = v);
+        _cfg.UnsubValueChanged(TTSVars.TTSRadioVolume, v => _radioVolume = v);
 
         // clear virtual files
         ContentRoot.Clear();
@@ -81,27 +83,17 @@ public sealed partial class TTSSystem : EntitySystem
         RaiseNetworkEvent(new RequestPreviewTTSEvent(voiceId));
     }
 
-    private void OnTtsVolumeChanged(float volume)
-    {
-        _volume = volume;
-    }
-
-    private void OnTtsRadioVolumeChanged(float volume)
-    {
-        _radioVolume = volume;
-    }
-
-    private void OnQueueResetRequest(TtsQueueResetMessage ev)
+    private void OnQueueResetRequest(TtsQueueResetMessage _)
     {
         ResetQueuesAndEndStreams();
-        _sawmill.Debug("TTS queue was cleared by request from the server.");
+        _sawmill.Debug("TTS queue reset by server request.");
     }
 
     public void ResetQueuesAndEndStreams()
     {
-        foreach (var key in _playingStreams.Keys)
+        foreach (var (uid, stream) in _playingStreams)
         {
-            _playingStreams[key] = _audio.Stop(_playingStreams[key]);
+            _playingStreams[uid] = _audio.Stop(stream);
         }
 
         _playingStreams.Clear();
@@ -109,153 +101,100 @@ public sealed partial class TTSSystem : EntitySystem
         ContentRoot.Clear();
     }
 
-    private void RemoveFileCursed(ResPath resPath)
-    {
-        ContentRoot.RemoveFile(resPath);
-
-        // Push old audio out of the cache to save memory. It is cursed, but should work.
-        _resourceCache.CacheResource(Prefix / resPath, EmptyAudioResource);
-    }
-
-    // Process sound queues on frame update
     public override void FrameUpdate(float frameTime)
     {
-        var streamsToRemove = new List<EntityUid>();
+        var finished = new List<EntityUid>();
 
-        foreach (var (uid, stream) in _playingStreams)
+        foreach (var (uid, ent) in _playingStreams)
         {
-            if (!TryComp(stream, out AudioComponent? _))
-            {
-                streamsToRemove.Add(uid);
-            }
+            if (!EntityManager.TryGetComponent<AudioComponent>(ent, out _))
+                finished.Add(uid);
         }
 
-        foreach (var uid in streamsToRemove)
-        {
+        foreach (var uid in finished)
             _playingStreams.Remove(uid);
-        }
 
-        var queueUidsToRemove = new List<EntityUid>();
+        var removeQueue = new List<EntityUid>();
 
         foreach (var (uid, queue) in _playQueues)
         {
             if (_playingStreams.ContainsKey(uid))
                 continue;
 
-            if (!queue.TryDequeue(out var request))
+            if (!queue.TryDequeue(out var req))
                 continue;
 
             if (queue.Count == 0)
-                queueUidsToRemove.Add(uid);
+                removeQueue.Add(uid);
 
-            ResPath? tempFilePath = null;
-            SoundPathSpecifier soundPath;
-            if (request is PlayRequestById requestById)
+            ResPath? localFile = null;
+            SoundPathSpecifier spec;
+
+            switch (req)
             {
-                tempFilePath = new ResPath($"{requestById.FileIdx}.wav");
-                soundPath = new SoundPathSpecifier(Prefix / tempFilePath.Value, requestById.Params);
+                case PlayRequestById rid:
+                    localFile = new ResPath($"{rid.FileIdx}.wav");
+                    spec = new SoundPathSpecifier(Prefix / localFile.Value, rid.Params);
+                    break;
+
+                case PlayRequestByPath rpath:
+                    spec = new SoundPathSpecifier(rpath.Path, rpath.Params);
+                    break;
+
+                default:
+                    continue;
             }
-            else if (request is PlayRequestByPath requestByPath)
+
+            (EntityUid entity, AudioComponent comp)? stream;
+            if (req.PlayGlobal)
             {
-                soundPath = new SoundPathSpecifier(requestByPath.Path, requestByPath.Params);
+                stream = _audio.PlayGlobal(spec, Filter.Local(), false);
             }
             else
-                continue;
-
-            (EntityUid Entity, AudioComponent Component)? stream;
-            if (request.PlayGlobal)
-                stream = _audio.PlayGlobal(soundPath, Filter.Local(), false);
-            else
-                stream = _audio.PlayEntity(soundPath, _fakeRecipient, uid);
-
-            if (stream.HasValue && stream.Value.Component is not null)
             {
-                _playingStreams.Add(uid, stream.Value.Entity);
+                stream = _audio.PlayEntity(spec, _fallbackEntity, uid);
             }
 
-            if (tempFilePath.HasValue)
-            {
-                RemoveFileCursed(Prefix / tempFilePath.Value);
+            if (stream is { comp: not null })
+                _playingStreams[uid] = stream.Value.entity;
 
-                if (_resourceCache.TryGetResource<AudioResource>(Prefix / tempFilePath.Value, out _))
-                {
-                    _sawmill.Debug("File is still in cache!");
-                }
-                _resourceCache.ReloadResource<AudioResource>(Prefix / tempFilePath.Value);
-                if (_resourceCache.TryGetResource<AudioResource>(Prefix / tempFilePath.Value, out _))
-                {
-                    _sawmill.Debug("File is still in cache, event after reloading!");
-                }
-            }
+            if (localFile != null)
+                RemoveFile(Prefix / localFile.Value);
         }
 
-        foreach (var queueUid in queueUidsToRemove)
-        {
-            _playQueues.Remove(queueUid);
-        }
+        foreach (var uid in removeQueue)
+            _playQueues.Remove(uid);
     }
 
-    public void TryQueueRequest(EntityUid entity, PlayRequest request)
+    private void RemoveFile(ResPath path)
     {
-        if (!_playQueues.TryGetValue(entity, out var queue))
-        {
-            if (_playQueues.Count >= MaxEntitiesQueued)
-                return;
-
-            queue = new();
-            _playQueues.Add(entity, queue);
-        }
-
-        if (queue.Count >= MaxQueuedPerEntity)
-            return;
-
-        queue.Enqueue(request);
+        ContentRoot.RemoveFile(path);
+        _resourceCache.CacheResource(path, EmptyAudioResource);
     }
 
-    public void TryQueuePlayById(EntityUid entity, int fileIdx, AudioParams audioParams, bool globally = false)
+    private void PlayTTSBytes(byte[] data, EntityUid? sourceUid, AudioParams? audioParams, bool globally = false)
     {
-        var request = new PlayRequestById(fileIdx, audioParams, globally);
-        TryQueueRequest(entity, request);
-    }
-
-    private void PlaySoundQueued(EntityUid entity, ResPath sound, AudioParams? audioParams = null, bool globally = false)
-    {
-        var request = new PlayRequestByPath(sound, audioParams, globally);
-        TryQueueRequest(entity, request);
-    }
-
-    private void PlayTTSBytes(byte[] data, EntityUid? sourceUid = null, AudioParams? audioParams = null, bool globally = false)
-    {
-        _sawmill.Debug($"Play TTS audio {data.Length} bytes from {sourceUid} entity");
         if (data.Length == 0)
             return;
 
-        var finalParams = audioParams ?? AudioParams.Default;
+        var param = audioParams ?? AudioParams.Default;
 
         var filePath = new ResPath($"{_fileIdx}.wav");
         ContentRoot.AddOrUpdateFile(filePath, data);
 
-        // Cache does a funny.
-        // If we have disconnected and reconnected, the Idx will be reset
-        // So it will go over old filenames, and, dispite them being removed, they will still remain in cache
-        // and will be played instead of our new audio files.
-        // To prevent that we cache a file manually, to write a new file over an old file in cache.
-        // There is no way to go around the cache as of 12.10.2023
-        // -TheArturZh
         var res = new AudioResource();
-        res.Load(_dependencyCollection, Prefix / filePath);
+        res.Load(_dep, Prefix / filePath);
         _resourceCache.CacheResource(Prefix / filePath, res);
 
         if (sourceUid == null)
         {
-            var soundPath = new SoundPathSpecifier(Prefix / filePath, finalParams);
-            _audio.PlayGlobal(soundPath, Filter.Local(), false);
-            RemoveFileCursed(Prefix / filePath);
+            var spec = new SoundPathSpecifier(Prefix / filePath, param);
+            _audio.PlayGlobal(spec, Filter.Local(), false);
+            RemoveFile(Prefix / filePath);
         }
-        else
+        else if (sourceUid.Value.IsValid())
         {
-            if (sourceUid.HasValue && sourceUid.Value.IsValid())
-                TryQueuePlayById(sourceUid.Value, _fileIdx, finalParams, globally);
+            TryQueuePlayById(sourceUid.Value, _fileIdx, param, globally);
         }
 
         _fileIdx++;
@@ -263,43 +202,78 @@ public sealed partial class TTSSystem : EntitySystem
 
     private void OnPlayTTS(PlayTTSEvent ev)
     {
-        var volume = (ev.IsRadio ? _radioVolume : _volume) * ev.VolumeModifier;
-        var audioParams = AudioParams.Default.WithVolume(volume);
+        var sourceEntity = GetEntity(ev.SourceUid);
 
-        PlayTTSBytes(ev.Data, GetEntity(ev.SourceUid), audioParams);
+        if (ev.IsRadio && sourceEntity == _fallbackEntity)
+        {
+            return;
+        }
+
+        var gain = ev.IsRadio ? _radioVolume : _volume;
+        var multiplier = ev.IsRadio ? TtsRadioMultiplier : TtsMultiplier;
+
+        var finalGain = Math.Clamp(gain * multiplier, 0f, 1f);
+
+        if (finalGain <= 0.001f)
+        {
+            return;
+        }
+
+        var volume = SharedAudioSystem.GainToVolume(finalGain);
+        if (volume < -32f)
+            volume = -32f;
+
+        var param = AudioParams.Default.WithVolume(volume);
+        PlayTTSBytes(ev.Data, sourceEntity, param, ev.IsRadio);
     }
 
-    // Play requests //
+
+    public void TryQueueRequest(EntityUid uid, PlayRequest req)
+    {
+        if (!_playQueues.TryGetValue(uid, out var queue))
+        {
+            if (_playQueues.Count >= MaxEntitiesQueued)
+                return;
+            queue = new();
+            _playQueues[uid] = queue;
+        }
+
+        if (queue.Count < MaxQueuedPerEntity)
+            queue.Enqueue(req);
+    }
+
+    public void TryQueuePlayById(EntityUid uid, int fileIdx, AudioParams param, bool globally = false)
+    {
+        TryQueueRequest(uid, new PlayRequestById(fileIdx, param, globally));
+    }
+
+    public void PlaySoundQueued(EntityUid uid, ResPath path, AudioParams? prms = null, bool globally = false)
+    {
+        TryQueueRequest(uid, new PlayRequestByPath(path, prms, globally));
+    }
+
+    // Requests
     public abstract class PlayRequest
     {
-        public readonly AudioParams Params = AudioParams.Default;
-        public readonly bool PlayGlobal = false;
+        public readonly AudioParams Params;
+        public readonly bool PlayGlobal;
 
-        public PlayRequest(AudioParams? audioParams = null, bool playGlobal = false)
+        protected PlayRequest(AudioParams? audioParams = null, bool global = false)
         {
-            PlayGlobal = playGlobal;
-            if (audioParams.HasValue)
-                Params = audioParams.Value;
+            Params = audioParams ?? AudioParams.Default;
+            PlayGlobal = global;
         }
     }
 
     public sealed class PlayRequestByPath : PlayRequest
     {
         public readonly ResPath Path;
-
-        public PlayRequestByPath(ResPath path, AudioParams? audioParams = null, bool playGlobal = false) : base(audioParams, playGlobal)
-        {
-            Path = path;
-        }
+        public PlayRequestByPath(ResPath p, AudioParams? prms = null, bool g = false) : base(prms, g) => Path = p;
     }
 
     public sealed class PlayRequestById : PlayRequest
     {
-        public readonly int FileIdx = 0;
-
-        public PlayRequestById(int fileIdx, AudioParams? audioParams = null, bool playGlobal = false) : base(audioParams, playGlobal)
-        {
-            FileIdx = fileIdx;
-        }
+        public readonly int FileIdx;
+        public PlayRequestById(int idx, AudioParams? prms = null, bool g = false) : base(prms, g) => FileIdx = idx;
     }
 }

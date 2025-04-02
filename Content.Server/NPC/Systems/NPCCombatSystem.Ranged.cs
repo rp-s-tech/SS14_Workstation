@@ -135,8 +135,10 @@ public sealed partial class NPCCombatSystem
             if (comp.LOSAccumulator < 0f)
             {
                 comp.LOSAccumulator += UnoccludedCooldown;
+
                 // For consistency with NPC steering.
-                comp.TargetInLOS = IsEnemyInLOS(uid, comp.Target, distance + 0.1f); // Exodus-TurretsImprovement
+                var collisionGroup = comp.UseOpaqueForLOSChecks ? CollisionGroup.Opaque : (CollisionGroup.Impassable | CollisionGroup.InteractImpassable);
+                comp.TargetInLOS = IsEnemyInLOS(uid, comp.Target, distance + 0.1f, collisionGroup); // Exodus-TurretsImprovement
             }
 
             if (!comp.TargetInLOS)
@@ -210,12 +212,12 @@ public sealed partial class NPCCombatSystem
     }
 
     // Exodus-TurretsImprovement-Start
-    public bool IsEnemyInLOS(EntityUid uid, EntityUid target, float distance)
+    public bool IsEnemyInLOS(EntityUid uid, EntityUid target, float range, CollisionGroup collisionGroup)
     {
         return
-            _interaction.InRangeUnobstructed(uid, target, distance) &&
-            _interaction.InRangeUnobstructed(uid, target, distance, CollisionGroup.BulletImpassable,
-                (ent) => !_faction.IsEntityFriendly(uid, ent));
+            _interaction.InRangeUnobstructed(uid, target, range) &&
+            _interaction.InRangeUnobstructed(uid, target, range, collisionGroup,
+            (ent) => !_faction.IsEntityFriendly(uid, ent));
     }
     // Exodus-TurretsImprovement-End
 }

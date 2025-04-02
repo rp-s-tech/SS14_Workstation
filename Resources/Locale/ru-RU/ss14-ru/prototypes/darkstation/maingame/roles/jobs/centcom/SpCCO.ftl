@@ -6,3 +6,4 @@ ent-ClothingBackpackCentComm = рюкзак Центком
     .desc = Сумка для истинного бюрократа.
 ent-ClothingBackpackDuffelCentComm = вещмешок Центком
     .desc = Сумка для истинного бюрократа.
+

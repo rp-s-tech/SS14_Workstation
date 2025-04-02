@@ -1,0 +1,44 @@
+- type: job
+  id: SeniorPhysician
+  name: job-name-senior-physician
+  description: job-description-senior-physician
+  playTimeTracker: JobSeniorPhysician
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobChemist
+      time: 21600 #6 hrs
+    - !type:RoleTimeRequirement
+      role: JobMedicalDoctor
+      time: 43200 #12 hrs
+    - !type:RoleTimeRequirement
+      role: JobParamedic
+      time: 43200 #12 hrs
+    - !type:RoleTimeRequirement
+      role: JobChiefMedicalOfficer
+      time: 43200 #12 hrs
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 108000 #30 hours
+    - !type:OverallPlaytimeRequirement
+      time: 252000 #70 hrs
+  startingGear: SeniorPhysicianGear
+  icon: "JobIconSeniorPhysician"
+  supervisors: job-supervisors-cmo
+  canBeAntag: false
+  access:
+  - Medical
+  - Maintenance
+  - Chemistry
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: SeniorPhysicianGear
+  equipment:
+    id: SeniorPhysicianPDA
+    ears: ClothingHeadsetMedical
+    belt: ClothingBeltMedicalFilled
+  storage:
+    back:
+    - DefibrillatorCompact

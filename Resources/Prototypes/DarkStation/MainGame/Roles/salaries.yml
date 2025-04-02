@@ -17,16 +17,13 @@
     Boxer: 300
     Zookeeper: 300
     Reporter: 350
-
     ServiceWorker: 400
-
     Bartender: 500
     Botanist: 500
-
     Chaplain: 700
     Chef: 700
-
     Janitor: 1000
+    Administrator: 1200
 
     #Command
     BlueShieldOfficer: 1500
@@ -42,11 +39,9 @@
 
     #Medical
     MedicalIntern: 500
-
     MedicalDoctor: 750
     Paramedic: 750
     Psychologist: 750
-
     Chemist: 1100
     SeniorPhysician: 1500
     Surger: 1500

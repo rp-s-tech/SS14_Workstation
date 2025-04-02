@@ -16,9 +16,9 @@
                 <ItemList Name="VendingContents"
                           SizeFlagsStretchRatio="8"
                           VerticalExpand="True"
+                          HorizontalExpand="True"
                           SelectMode="Single"
                           Margin="0 0 4 0"
-                          MaxWidth="180"
                           MinWidth="180" />
 
                 <BoxContainer Orientation="Vertical"

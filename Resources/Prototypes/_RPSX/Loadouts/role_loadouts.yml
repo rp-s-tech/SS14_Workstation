@@ -1,0 +1,64 @@
+# Medical
+- type: roleLoadout
+  id: JobSeniorPhysician
+  groups:
+  - GroupTankHarness
+  - SeniorPhysicianHead
+  - SeniorPhysicianMask
+  - SeniorPhysicianJumpsuit
+  - SeniorPhysicianNeck
+  - SeniorPhysicianGloves
+  - SeniorPhysicianBackpack
+  - SeniorPhysicianOuterClothing
+  - SeniorPhysicianShoes
+  - Glasses
+  - SurvivalMedical
+  - Trinkets
+  - GroupSpeciesBreathToolMedical
+
+# Engineering
+- type: roleLoadout
+  id: JobSeniorEngineer
+  groups:
+  - GroupTankHarness
+  - SeniorEngineerHead
+  - SeniorEngineerJumpsuit
+  - SeniorEngineerBackpack
+  - SeniorEngineerOuterClothing
+  - SeniorEngineerShoes
+  - SurvivalExtended
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+# Science
+- type: roleLoadout
+  id: JobSeniorResearcher
+  groups:
+  - GroupTankHarness
+  - SeniorResearcherHead
+  - SeniorResearcherNeck
+  - SeniorResearcherJumpsuit
+  - SeniorResearcherBackpack
+  - SeniorResearcherOuterClothing
+  - SeniorResearcherGloves
+  - SeniorResearcherShoes
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+# Service
+- type: roleLoadout
+  id: JobAdministrator
+  groups:
+  - GroupTankHarness
+  - AdministratorHead
+  - AdministratorJumpsuit
+  - AdministratorBackpack
+  - AdministratorOuterClothing
+  - AdministratorGloves
+  - AdministratorShoes
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool

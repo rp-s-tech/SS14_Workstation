@@ -1,0 +1,21 @@
+- type: entity
+  parent: [ ClothingHeadBase ]
+  id: ClothingHeadHatBeretAdministrator
+  name: administrator beret
+  description: Beret that shows close relationships and love... For money and authority.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Clothing/Head/Hats/administrator_beret.rsi
+  - type: Clothing
+    sprite: _RPSX/Clothing/Head/Hats/administrator_beret.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatFlatAdministrator
+  name: green flatcap
+  description: Fashionable for both the working class and old man Jenkins.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Clothing/Head/Hats/administrator_flatcap.rsi
+  - type: Clothing
+    sprite: _RPSX/Clothing/Head/Hats/administrator_flatcap.rsi

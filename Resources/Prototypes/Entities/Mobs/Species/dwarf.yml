@@ -13,7 +13,7 @@
     critThreshold: 120
   # Exodus-Stamina-End
   - type: Icon
-    sprite: Mobs/Species/Slime/parts.rsi # It was like this beforehand, no idea why.
+    sprite: Mobs/Species/Human/parts.rsi
     state: full
   - type: Respirator
     damage:
@@ -57,7 +57,7 @@
   - type: Speech
     speechSounds: Bass
   - type: HumanoidAppearance
-    species: Human
+    species: Dwarf
     hideLayersOnEquip:
     - Hair
     - Snout

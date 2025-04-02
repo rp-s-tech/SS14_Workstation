@@ -90,13 +90,6 @@
   id: xrenoid
 
 - type: ttsVoice
-  name: ntts-speaker-valtos
-  description: ntts-speaker-valtos-description
-  sex: Female
-  speaker: valtos
-  id: valtos
-
-- type: ttsVoice
   name: ntts-speaker-briman
   description: ntts-speaker-briman-description
   sex: Male

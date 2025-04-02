@@ -1,0 +1,10 @@
+﻿- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesBrownLeatherAdministrator
+  name: brown leather shoes
+  description: They may have lost some of their lustre over the years, but these brown leather shoes fit you perfectly.
+  components:
+    - type: Sprite
+      sprite: _RPSX/Clothing/Shoes/Specific/leather_administrator.rsi
+    - type: Clothing
+      sprite: _RPSX/Clothing/Shoes/Specific/leather_administrator.rsi
