@@ -1,0 +1,10 @@
+- type: entity
+  id: ClothingUniformJumpskirtAdministrator
+  parent: ClothingUniformSkirtBase
+  name: administrator jumpskirt
+  description: Someone who wears this means business.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Clothing/Uniforms/Jumpskirt/adminitrator.rsi
+  - type: Clothing
+    sprite: _RPSX/Clothing/Uniforms/Jumpskirt/adminitrator.rsi

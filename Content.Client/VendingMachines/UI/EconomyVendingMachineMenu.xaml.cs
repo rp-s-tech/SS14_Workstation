@@ -133,6 +133,7 @@ namespace Content.Client.VendingMachines.UI
                 vendingItem.Icon = icon;
                 filteredInventory.Add(i);
             }
+            SetSizeAfterUpdate(longestEntry.Length);
         }
 
         private (string, Texture?) GetItemNameAndIcon(string id, SpriteSystem spriteSystem)
@@ -151,6 +152,16 @@ namespace Content.Client.VendingMachines.UI
             {
                 OnSelectedItemRequestUpdate?.Invoke(_selectedItemIndex);
             }
+        }
+        private void SetSizeAfterUpdate(int longestEntryLength)
+        {
+            longestEntryLength = longestEntryLength * 12 - 50;
+            if (longestEntryLength < 250)
+                VendingContents.SetWidth = 250;
+            else if (longestEntryLength > 400)
+                VendingContents.SetWidth = 400;
+            else
+                VendingContents.SetWidth = longestEntryLength;
         }
     }
 }

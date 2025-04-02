@@ -1,0 +1,23 @@
+﻿- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakSeniorPhysican
+  name: senior physican cloack
+  description: Senior physicancloak made from the hide of resilient fauna from a distant planet, though its protective value has faded with its age.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Clothing/Neck/Cloaks/senior_physican.rsi
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot { }
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakSeniorResearcher
+  name: senior researcher cloack
+  description: Senior researcher cloak made from the hide of resilient fauna from a distant planet, though its protective value has faded with its age.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Clothing/Neck/Cloaks/senior_researcher.rsi
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot { }

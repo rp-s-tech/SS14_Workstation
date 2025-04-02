@@ -1,0 +1,28 @@
+# Head
+- type: loadout
+  id: ScientificBeret
+  equipment:
+    head: ClothingHeadHatBeretRND
+
+# Jumpsuit
+- type: loadout
+  id: SeniorResearcherJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSeniorResearcher
+
+- type: loadout
+  id: SeniorResearcherJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSeniorResearcher
+
+# Neck
+- type: loadout
+  id: SeniorResearcherCloak
+  equipment:
+    neck: ClothingNeckCloakSeniorResearcher
+
+# OuterClothing
+- type: loadout
+  id: SeniorResearcherLabCoat
+  equipment:
+    outerClothing: ClothingOuterCoatLabSeniorResearcher

@@ -25,6 +25,7 @@
   equipment:
     ears: ClothingHeadsetMedical
     belt: ClothingBeltMedicalFilled
+    id: MedicalPDA
   #storage:
     #back:
     #- Stuff

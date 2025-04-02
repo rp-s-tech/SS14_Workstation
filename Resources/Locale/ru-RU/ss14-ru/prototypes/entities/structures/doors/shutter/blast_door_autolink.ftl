@@ -40,4 +40,3 @@ ent-BlastDoorWindows = { ent-BlastDoor }
 ent-BlastDoorWindowsOpen = { ent-BlastDoorOpen }
     .suffix = Открытый, Автолинк, Окна
     .desc = { ent-BlastDoorOpen.desc }
-

@@ -411,7 +411,7 @@
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: SeniorPhysician
-  allowSelection: false
+  jobName: job-name-senior-physician
 
 - type: jobIcon
   parent: JobIcon
@@ -419,7 +419,7 @@
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: SeniorOfficer
-  allowSelection: false
+  jobName: job-name-senior-officer
 
 - type: jobIcon
   parent: JobIcon
@@ -427,7 +427,7 @@
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: SeniorEngineer
-  allowSelection: false
+  jobName: job-name-senior-engineer
 
 - type: jobIcon
   parent: JobIcon
@@ -435,7 +435,7 @@
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: SeniorResearcher
-  allowSelection: false
+  jobName: job-name-senior-researcher
 
 - type: jobIcon
   parent: JobIcon

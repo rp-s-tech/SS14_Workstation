@@ -51,12 +51,10 @@ public sealed class GerasSystem : SharedGerasSystem
             return;
 
         //RPSX start | CloneVoiceFix
-        if (EntityManager.TryGetComponent<TTSComponent>(uid, out var originalTTS))
+        if (EntityManager.TryGetComponent<TTSComponent>(uid, out var originalTTS) &&
+            EntityManager.TryGetComponent<TTSComponent>(ent.Value, out var gerasTTS))
         {
-            if (EntityManager.TryGetComponent<TTSComponent>(ent.Value, out var polymorphTTS))
-            {
-                polymorphTTS.VoicePrototypeId = originalTTS.VoicePrototypeId;
-            }
+            gerasTTS.VoicePrototypeId = originalTTS.VoicePrototypeId;
         }
         //RPSX end | CloneVoiceFix
 

@@ -1,5 +1,6 @@
 using Content.Server.Entry;
 using Content.Server.RPSX.Bridges;
+using Content.Shared.RPSX.Bridges;
 using Content.Shared.RPSX.Patron;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;

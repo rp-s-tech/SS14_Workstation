@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatAdministrator
+  name: administrator coat
+  description: Pretty warm coat, which quietly helps working in all conditions (concerns working in the service department).
+  components:
+  - type: Sprite
+    sprite: _RPSX/Clothing/OuterClothing/Coats/adminitrator_coat.rsi
+  - type: Clothing
+    sprite: _RPSX/Clothing/OuterClothing/Coats/adminitrator_coat.rsi

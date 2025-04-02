@@ -1,0 +1,11 @@
+- type: entity
+  parent: PassengerIDCard
+  id: AdministratorIDCard
+  name: administrator ID card
+  components:
+  - type: PresetIdCard
+    job: Administrator
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idadministrator
