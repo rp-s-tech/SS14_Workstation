@@ -75,6 +75,11 @@
                         MinWidth="64"
                         HorizontalAlignment="Left"
                         HorizontalExpand="True"/>
+                <Button Name="BuyBasket"
+                        Text="{Loc 'pda-shop-cartridge-buy'}"
+                        MinWidth="64"
+                        HorizontalAlignment="Right"
+                        HorizontalExpand="True"/>
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>
