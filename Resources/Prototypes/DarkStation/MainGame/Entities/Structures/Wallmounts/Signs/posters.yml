@@ -69,24 +69,6 @@
 
 - type: entity
   parent: PosterLegitDSds
-  id: PosterLegitDSSingularity
-  name: singularity
-  description: The singularity absorbs light and form, visualizing the mystical power of the cosmos.
-  components:
-  - type: Sprite
-    state: posterDS5
-
-- type: entity
-  parent: PosterLegitDSds
-  id: PosterLegitDSTesla
-  name: tesla's energy
-  description: Sparks live and dance around, and you run my friend!
-  components:
-  - type: Sprite
-    state: posterDS6
-
-- type: entity
-  parent: PosterLegitDSds
   id: PosterLegitDSAnalysisUnknown
   name: diagnosis of the Unknown
   description: An in-depth analysis of an unknown body found within Redspace.

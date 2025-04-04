@@ -212,6 +212,7 @@
   - SimpleHostileNanoTrasen
   - Ratvar
   - Desecrate
+  - Xeno
 
 - type: npcFaction
   id: Ratvar
