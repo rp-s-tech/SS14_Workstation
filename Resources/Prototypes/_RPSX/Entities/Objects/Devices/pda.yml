@@ -34,4 +34,4 @@
       shader: "unshaded"
       visible: false
   - type: PdaBorderColor
-    borderColor: "#333333"
+    borderColor: "#78935d"
