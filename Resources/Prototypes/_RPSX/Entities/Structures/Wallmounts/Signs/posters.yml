@@ -1,0 +1,21 @@
+﻿
+- type: entity
+  parent: PosterBase
+  id: PosterLegitRPSXTesla
+  name: tesla's energy
+  description: Sparks live and dance around, and you run my friend!
+  components:
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _RPSX/MainGame/Structures/Wallmounts/posters.rsi
+    state: posterPRSX1
+    snapCardinals: true
+
+- type: entity
+  parent: PosterLegitPRSXTesla
+  id: PosterLegitRPSXSingularity
+  name: singularity
+  description: The singularity absorbs light and form, visualizing the mystical power of the cosmos.
+  components:
+  - type: Sprite
+    state: posterPRSX2
