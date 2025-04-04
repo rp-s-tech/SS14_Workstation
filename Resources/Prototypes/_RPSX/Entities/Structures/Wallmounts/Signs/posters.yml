@@ -12,7 +12,7 @@
     snapCardinals: true
 
 - type: entity
-  parent: PosterLegitPRSXTesla
+  parent: PosterLegitRPSXTesla
   id: PosterLegitRPSXSingularity
   name: singularity
   description: The singularity absorbs light and form, visualizing the mystical power of the cosmos.
