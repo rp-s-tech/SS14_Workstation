@@ -2,7 +2,7 @@
   id: RPSXAmber
   mapName: 'Amber'
   mapPath: /Maps/_RPSX/amber.yml
-  minPlayers: 7
+  minPlayers: 0
   maxPlayers: 60
   stations:
     Amber:
