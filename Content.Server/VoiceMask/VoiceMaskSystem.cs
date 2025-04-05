@@ -94,7 +94,6 @@ public sealed partial class VoiceMaskSystem : EntitySystem
             _uiSystem.SetUiState(entity.Owner, VoiceMaskUIKey.Key, new VoiceMaskBuiState(GetCurrentVoiceName(entity), entity.Comp.VoiceId, entity.Comp.VoiceMaskSpeechVerb));
     }
     #endregion
-
     #region Helper functions
     private string GetCurrentVoiceName(Entity<VoiceMaskComponent> entity)
     {
