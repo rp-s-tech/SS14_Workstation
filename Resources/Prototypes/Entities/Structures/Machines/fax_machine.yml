@@ -116,3 +116,5 @@
       receiveStationGoal: true
     - type: StealTarget
       stealGroup: FaxMachineCaptain
+    - type: WarpPoint
+      location: Факс Капитана
