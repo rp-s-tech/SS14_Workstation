@@ -116,5 +116,7 @@
       receiveStationGoal: true
     - type: StealTarget
       stealGroup: FaxMachineCaptain
+    # RPSX-Captain-Fax-WarpPoint-Start
     - type: WarpPoint
       location: Факс Капитана
+    # RPSX-Captain-Fax-WarpPoint-End
