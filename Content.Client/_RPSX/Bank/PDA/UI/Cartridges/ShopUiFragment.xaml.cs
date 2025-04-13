@@ -8,25 +8,27 @@ using System.Linq;
 using Content.Shared.RPSX.Bank.PDA;
 using Content.Shared.RPSX.Bank.Prototypes;
 using Content.Shared.CartridgeLoader;
+using Content.Shared.StationRecords;
 
 namespace Content.Client.RPSX.Bank.PDA.UI.Cartridges;
 
 [GenerateTypedNameReferences]
 public sealed partial class ShopUiFragment : BoxContainer
 {
-    private string _userName = string.Empty;
-    private EntityUid _loaderUid;
+    private NetEntity _loaderUid;
+    private GeneralStationRecord _record = new();
+    private Dictionary<StoreProductPrototype, int> _basket = new();
 
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     private readonly SpriteSystem _spriteSystem;
-    private readonly UserInterfaceSystem _userInterfaceSystem;
 
     public event Action<ButtonEventArgs>? OnItemSelected;
+    public event Action<(NetEntity, StoreProductPrototype, int)>? OnBasketUpdated;
+    public event Action<(NetEntity, GeneralStationRecord)>? OnBasketBuyed;
 
     private readonly List<string> _categoryStrings = new();
     private string? _category;
-    private Dictionary<StoreProductPrototype, int> _buyedProducts = new();
     private StoreProductPrototype? _selectedProduct;
 
     public ShopUiFragment()
@@ -34,7 +36,6 @@ public sealed partial class ShopUiFragment : BoxContainer
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
         _spriteSystem = _entityManager.System<SpriteSystem>();
-        _userInterfaceSystem = _entityManager.System<UserInterfaceSystem>();
 
         SearchBar.OnTextChanged += OnSearchBarTextChanged;
         Categories.OnItemSelected += OnCategoryItemSelected;
@@ -69,50 +70,18 @@ public sealed partial class ShopUiFragment : BoxContainer
             if (int.TryParse(Count.Text, out int count))
             {
                 AddToBasket.Disabled = true;
-                if (_buyedProducts.ContainsKey(_selectedProduct))
-                    _buyedProducts[_selectedProduct] = count;
-                else
-                    _buyedProducts.Add(_selectedProduct, count);
-
-                PopulateBuyedProducts();
+                OnBasketUpdated?.Invoke((_loaderUid, _selectedProduct, count));
             }
             Count.SetText(string.Empty);
         };
-        BuyBasket.OnButtonDown += BuyEverything;
-    }
-
-    /*private bool AddOrder(BoundUserInterface userInterface)
-    {
-        var orderAmt = _orderMenu?.Amount.Value ?? 0;
-        if (orderAmt < 1 || orderAmt > _orderCapacity)
-        {
-            return false;
-        }
-
-        userInterface.SendMessage(new CargoConsoleAddOrderMessage(
-            _orderMenu?.Requester.Text ?? "",
-            _orderMenu?.Reason.Text ?? "",
-            _product?.ID ?? "",
-            orderAmt));
-
-        return true;
-    }*/
-
-    private void BuyEverything(ButtonEventArgs args)
-    {
-        if (!_entityManager.TryGetComponent<CartridgeLoaderComponent>(_loaderUid, out var component) || component == null) return;
-
-        _userInterfaceSystem.ClientSendUiMessage(_loaderUid, component.UiKey, new ShopBuyMessage(
-            _userName ?? "",
-            _buyedProducts));
-
-        _buyedProducts.Clear();
+        BuyBasket.OnButtonDown += (args) => OnBasketBuyed?.Invoke((_loaderUid, _record));
     }
 
     private void ChangeWindows(ButtonEventArgs args)
     {
         MainWindow.Visible = !MainWindow.Visible;
         BasketWindow.Visible = !BasketWindow.Visible;
+        Populate();
     }
 
     private void OnCategoryItemSelected(OptionButton.ItemSelectedEventArgs args)
@@ -154,16 +123,18 @@ public sealed partial class ShopUiFragment : BoxContainer
 
     public void UpdateState(ShopCartridgeInterfaceState state)
     {
-        _userName = state.OwnerName;
-        _loaderUid = _entityManager.GetEntity(state.LoaderUid);
+        _basket = state.Basket;
+        _record = state.Record;
+        _loaderUid = state.LoaderUid;
         Populate();
-        UpdateBankData(state.StationName, state.Balance);
+        UpdateBankData(state.Record.Name, state.Balance);
     }
 
     public void Populate()
     {
         PopulateProducts();
         PopulateCategories();
+        PopulateBuyedProducts();
     }
 
     public IEnumerable<StoreProductPrototype> ProductPrototypes
@@ -217,7 +188,7 @@ public sealed partial class ShopUiFragment : BoxContainer
     {
         BuyedProducts.DisposeAllChildren();
         BuyedProducts.RemoveAllChildren();
-        foreach ((StoreProductPrototype product, int count) in _buyedProducts)
+        foreach ((StoreProductPrototype product, int count) in _basket)
         {
             if (count == 0) continue;
             var newProduct = new BuyedProductRow
@@ -233,7 +204,7 @@ public sealed partial class ShopUiFragment : BoxContainer
                 if (int.TryParse(args.Text, out int count))
                 {
                     if (args.Control.Parent == null || args.Control.Parent.Parent is not BuyedProductRow row || row.Product == null) return;
-                    _buyedProducts[row.Product] = count;
+                    OnBasketUpdated?.Invoke((_loaderUid, product, count));
                 }
             };
             BuyedProducts.AddChild(newProduct);

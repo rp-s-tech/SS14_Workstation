@@ -6,6 +6,7 @@ using Content.Shared.Delivery;
 using Content.Shared.FingerprintReader;
 using Content.Shared.Labels.EntitySystems;
 using Content.Shared.StationRecords;
+using Content.Shared.Tag;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 
@@ -25,6 +26,7 @@ public sealed partial class DeliverySystem : SharedDeliverySystem
     [Dependency] private readonly FingerprintReaderSystem _fingerprintReader = default!;
     [Dependency] private readonly SharedLabelSystem _label = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly TagSystem _tagSystem = default!;
 
     public override void Initialize()
     {
@@ -37,6 +39,7 @@ public sealed partial class DeliverySystem : SharedDeliverySystem
 
     private void OnMapInit(Entity<DeliveryComponent> ent, ref MapInitEvent args)
     {
+        if (_tagSystem.HasTag(ent, "EconomicsDelivery")) return;
         _container.EnsureContainer<Container>(ent, ent.Comp.Container);
 
         var stationId = _station.GetStationInMap(Transform(ent).MapID);

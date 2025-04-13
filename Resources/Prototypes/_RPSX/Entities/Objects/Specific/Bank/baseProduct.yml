@@ -1,0 +1,38 @@
+- type: entity
+  parent: BaseDelivery
+  id: ShopDelivery
+  name: package
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Cargo/mail_large.rsi
+    scale: 0.85,0.85
+    layers:
+    - state: icon
+      map: [ "enum.DeliveryVisualLayers.Icon" ]
+    - state: trash
+      map: [ "enum.DeliveryVisualLayers.Trash" ]
+      visible: false
+    - state: postmark
+    - map: [ "enum.DeliveryVisualLayers.JobStamp" ]
+      scale: 0.6, 0.6
+      offset: -0.23, -0.23
+    - state: fragile
+      map: [ "enum.DeliveryVisualLayers.FragileStamp" ]
+      visible: false
+    - state: locked
+      map: [ "enum.DeliveryVisualLayers.Lock" ]
+    - state: priority
+      map: [ "enum.DeliveryVisualLayers.PriorityTape" ]
+      visible: false
+      shader: unshaded
+    - state: broken
+      map: [ "enum.DeliveryVisualLayers.Breakage" ]
+      visible: false
+  - type: MultiHandedItem
+  - type: Item
+    size: Huge
+  - type: Delivery
+    spesoReward: 1000
+  - type: Tag
+    tags:
+    - EconomicsDelivery
