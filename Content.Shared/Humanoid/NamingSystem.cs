@@ -60,19 +60,19 @@ namespace Content.Shared.Humanoid
         }
 
         // Corvax-LastnameGender-Start: Added custom gender split logic
-        public string GetLastName(SpeciesPrototype speciesProto, Gender? gender = null)
+                public string GetLastName(SpeciesPrototype speciesProto, Gender? gender = null)
         {
             switch (gender)
             {
                 case Gender.Male:
-                    return _random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.MaleLastNames).Values);
+                    return _random.Pick(_prototypeManager.Index(speciesProto.MaleLastNames));
                 case Gender.Female:
-                    return _random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.FemaleLastNames).Values);
+                    return _random.Pick(_prototypeManager.Index(speciesProto.FemaleLastNames));
                 default:
                     if (_random.Prob(0.5f))
-                        return _random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.MaleLastNames).Values);
+                        return _random.Pick(_prototypeManager.Index(speciesProto.MaleLastNames));
                     else
-                        return _random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.FemaleLastNames).Values);
+                        return _random.Pick(_prototypeManager.Index(speciesProto.FemaleLastNames));
             }
         }
         // Corvax-LastnameGender-End

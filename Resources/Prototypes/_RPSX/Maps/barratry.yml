@@ -2,7 +2,7 @@
   id: RPSXBarratry
   mapName: 'Barratry'
   mapPath: /Maps/_RPSX/barratry.yml
-  minPlayers: 30
+  minPlayers: 15
   maxPlayers: 60
   stations:
     Barratry:

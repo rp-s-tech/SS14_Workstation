@@ -1,0 +1,17 @@
+{
+    "version": 1,
+     "license": "RSX-eXtended",
+    "copyright": "by Ynotka DS",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "posterPRSX1"
+      },
+      {
+        "name": "posterPRSX2"
+      }
+    ]
+  }

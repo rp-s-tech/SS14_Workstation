@@ -105,6 +105,9 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 30
   # Corvax-End
+  - type: NavMapWarp #RPSX | Navmap warp
+    sounds:
+      collection: StaticShort
 
 - type: entity
   id: ActionAGhostShowSolar
