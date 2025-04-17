@@ -2,7 +2,7 @@
   id: RPSXPacked
   mapName: 'Packed'
   mapPath: /Maps/_RPSX/packed.yml
-  minPlayers: 7
+  minPlayers: 0
   maxPlayers: 35
   stations:
     Packed:
