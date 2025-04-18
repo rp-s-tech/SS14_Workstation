@@ -135,6 +135,7 @@
   equipment:
     back: ClothingBackpackSatchelHolding
     id: AdminPDA
+    eyes: ClothingEyesAghostOmniHud # RPSX-Aghost-OmniHUD
   storage:
     back:
     - GasAnalyzer

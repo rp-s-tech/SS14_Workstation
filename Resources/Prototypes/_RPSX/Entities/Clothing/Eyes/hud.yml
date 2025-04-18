@@ -1,0 +1,43 @@
+- type: entity
+  parent: [ClothingEyesBase]
+  id: ClothingEyesAghostOmniHud
+  name: Omnihud
+  description: A visor that scans a huge amount of information about the environment.
+  suffix: Admeme
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Hud/medsecengi.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Hud/medsecengi.rsi
+  - type: ItemToggle
+    parent: true
+    onUse: false
+  - type: ToggleClothing
+    action: ActionToggleAghostOmniHud
+    disableOnUnequip: true
+    mustEquip: true
+  - type: ComponentToggler
+    parent: false
+    components:
+    - type: ShowHealthBars
+      damageContainers:
+      - Biological
+      - Inorganic
+      - Silicon
+    - type: ShowHealthIcons
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+    - type: ShowSyndicateIcons
+    - type: ShowHungerIcons
+    - type: ShowThirstIcons
+
+- type: entity
+  id: ActionToggleAghostOmniHud
+  name: Toggle AghostOmniHUD
+  description: Toggles AghostHUD on and off.
+  components:
+  - type: InstantAction
+    itemIconStyle: BigItem
+    event: !type:ToggleActionEvent
+
