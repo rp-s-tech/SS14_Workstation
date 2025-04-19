@@ -1,12 +1,12 @@
 stethoscope-verb = Прослушать стетоскопом
-stethoscope-nothing = You don't hear anything.
+stethoscope-nothing = Вы ничего не слышите.
 stethoscope-dead = Вы не слышите ничего.
-stethoscope-raggedy = You hear raggedy breathing.
+stethoscope-raggedy = Вы слышите хриплое, неровное дыхание.
 stethoscope-normal = Вы слышите нормальное дыхание.
 stethoscope-hyper = Вы слышите гипервентиляцию.
 stethoscope-irregular = Вы слышите гипервентиляцию с нарушениями ритма.
-stethoscope-delta-steady = It's steady.
-stethoscope-delta-improving = It's improving.
-stethoscope-delta-worsening = It's getting worse.
+stethoscope-delta-steady = состояние стабильное.
+stethoscope-delta-improving = состояние улучшается.
+stethoscope-delta-worsening = состояние ухудшается.
 stethoscope-combined-status = { $absolute } { $delta }
 stethoscope-fucked = Вы слышите судорожное, затруднённое дыхание, чередующееся с короткими вздохами.

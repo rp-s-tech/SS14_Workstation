@@ -13,11 +13,11 @@ air-alarm-ui-window-mode-label = Режим
 air-alarm-ui-window-auto-mode-label = Авто-режим
 -air-alarm-state-name =
     { $state ->
-        [normal] Normal
-        [warning] Warning
-        [danger] Danger
-        [emagged] Emagged
-       *[invalid] Invalid
+        [normal] Нормально
+        [warning] Внимание
+        [danger] Опасность
+        [emagged] Взломан
+       *[invalid] Недействительный
     }
 air-alarm-ui-window-listing-title = {$address} : {-air-alarm-state-name(state:$state)}
 air-alarm-ui-window-pressure = { $pressure } кПа

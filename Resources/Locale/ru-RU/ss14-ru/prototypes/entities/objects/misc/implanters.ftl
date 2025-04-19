@@ -64,5 +64,5 @@ ent-RadioImplanterCentcomm = { ent-BaseImplantOnlyImplanter }
     .suffix = радио Центкома
     .desc = { ent-BaseImplantOnlyImplanter.desc }
 ent-DeathRattleImplanterCentcomm = { ent-BaseImplantOnlyImplanter }
-    .suffix = centcomm death rattle
+    .suffix = Центком: смертельный хрип
     .desc = { ent-BaseImplantOnlyImplanter.desc }
