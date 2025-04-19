@@ -4,6 +4,7 @@ using Content.Server.Actions;
 using Content.Server.Popups;
 using Content.Shared.Exodus.Geras;
 using Content.Shared.SS220.TTS; //RPSX | CloneVoiceFix
+using Content.Shared.Cloning;
 using Robust.Shared.Player;
 
 namespace Content.Server.Exodus.Geras;
@@ -14,6 +15,8 @@ public sealed class GerasSystem : SharedGerasSystem
     [Dependency] private readonly PolymorphSystem _polymorphSystem = default!;
     [Dependency] private readonly ActionsSystem _actionsSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
+    [Dependency] private readonly EntityManager _entityManager = default!; // RPSX edit | GerasCloningBreakingfix
+
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -39,18 +42,19 @@ public sealed class GerasSystem : SharedGerasSystem
         if (HasComp<ZombieComponent>(uid))
             return; // i hate zomber.
 
+        if(_entityManager.HasComponent<CloningPodComponent>(Transform(uid).ParentUid)) // RPSX edit | GerasCloningBreakingfix
+            return;
+
         var ent = _polymorphSystem.PolymorphEntity(uid, component.GerasPolymorphId);
 
         if (!ent.HasValue)
             return;
 
         //RPSX start | CloneVoiceFix
-        if (EntityManager.TryGetComponent<TTSComponent>(uid, out var originalTTS))
+        if (EntityManager.TryGetComponent<TTSComponent>(uid, out var originalTTS) &&
+            EntityManager.TryGetComponent<TTSComponent>(ent.Value, out var gerasTTS))
         {
-            if (EntityManager.TryGetComponent<TTSComponent>(ent.Value, out var polymorphTTS))
-            {
-                polymorphTTS.VoicePrototypeId = originalTTS.VoicePrototypeId;
-            }
+            gerasTTS.VoicePrototypeId = originalTTS.VoicePrototypeId;
         }
         //RPSX end | CloneVoiceFix
 

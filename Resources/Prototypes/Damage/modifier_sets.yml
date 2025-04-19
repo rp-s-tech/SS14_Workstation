@@ -161,7 +161,6 @@
     Piercing: 1.2
     Cold: 1.5
     Poison: 0.8
-    Cellular: 0.2
 
 - type: damageModifierSet
   id: Infernal
@@ -253,6 +252,7 @@
     Bloodloss: 0.0 # no double dipping
     Cellular: 0.0
     Caustic: 0.0
+    Fel: 0.0 # RPSX edit
 
 - type: damageModifierSet
   id: SlimePet # Very survivable slimes

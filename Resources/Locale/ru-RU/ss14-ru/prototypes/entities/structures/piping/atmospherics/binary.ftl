@@ -20,3 +20,4 @@ ent-HeatExchanger = радиатор
     .desc = Переносит тепло между трубой и окружающей средой.
 ent-HeatExchangerBend = угловой радиатор
     .desc = { ent-HeatExchanger.desc }
+    .suffix = Угол

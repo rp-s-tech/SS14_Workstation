@@ -1,7 +1,6 @@
 - type: entity
   id: PontificRule
   parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
   components:
   - type: PontificRule
   - type: AntagSelection
@@ -9,21 +8,25 @@
     definitions:
     - prefRoles: [ Pontific ]
       max: 1
-      playerRatio: 10
+      playerRatio: 15
       allowNonHumans: true
 
 - type: entity
   id: NarsiCult
   parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
   components:
   - type: NarsiRule
   - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ NarsiCultist ]
       min: 3
       max: 3
       playerRatio: 10
+      blacklist:
+        components:
+        - AntagImmune
+      lateJoinAdditional: true
       briefing:
         text: narsi-cultist-briefing
         color: CornflowerBlue
@@ -46,15 +49,12 @@
         - NarsiCultAccess
       mindRoles:
       - MindRoleNarsiCult
-      blacklist:
-        components:
-        - Chaplain
 
 - type: entity
   parent: BaseMindRoleAntag
   id: MindRoleNarsiCult
   name: Narsi Cultist Role
-#  description: mind-role-thief-description
+  #  description: mind-role-thief-description
   components:
   - type: MindRole
     antagPrototype: NarsiCultist
@@ -64,14 +64,18 @@
 - type: entity
   id: Ratvar
   parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
   components:
   - type: RatvarRule
   - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ RatvarRighteous ]
       max: 3
-      playerRatio: 15
+      playerRatio: 10
+      blacklist:
+        components:
+        - AntagImmune
+      lateJoinAdditional: true
       briefing:
         text: ratvar-righteous-briefing
         color: CornflowerBlue
@@ -91,15 +95,12 @@
       - type: IntrinsicRadioReceiver
       mindRoles:
       - MindRoleRatvar
-      blacklist:
-        components:
-        - Chaplain
 
 - type: entity
   parent: BaseMindRoleAntag
   id: MindRoleRatvar
   name: Ratvar Cultist Role
-#  description: mind-role-thief-description
+  #  description: mind-role-thief-description
   components:
   - type: MindRole
     antagPrototype: RatvarRighteous
@@ -109,17 +110,18 @@
 - type: entity
   id: Vampire
   parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
   components:
   - type: VampireRule
   - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ Vampire ]
       max: 2
       playerRation: 20
       blacklist:
         components:
-        - Chaplain
+        - AntagImmune
+      lateJoinAdditional: true
       briefing:
         text: vampire-briefing
         color: Plum
@@ -133,7 +135,7 @@
   parent: BaseMindRoleAntag
   id: MindRoleVampire
   name: Vampire Role
-#  description: mind-role-thief-description
+  #  description: mind-role-thief-description
   components:
   - type: MindRole
     antagPrototype: Vampire

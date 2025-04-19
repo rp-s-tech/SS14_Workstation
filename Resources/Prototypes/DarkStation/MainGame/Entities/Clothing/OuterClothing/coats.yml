@@ -137,17 +137,6 @@
 
 - type: entity
   parent: ClothingOuterStorageBase
-  id: ClothingOuterCoatIFD
-  name: FD inspector bomber coat
-  description: The cozy and warm clothing of the guardian of monetary order.
-  components:
-  - type: Sprite
-    sprite: DarkStation/MainGame/Clothing/OuterClothing/Coats/ifd.rsi
-  - type: Clothing
-    sprite: DarkStation/MainGame/Clothing/OuterClothing/Coats/ifd.rsi
-
-- type: entity
-  parent: ClothingOuterStorageBase
   id: ClothingOuterCoatSpFinDepFormal
   name: finance department coat
   description: The best garment for both protection and display of power.

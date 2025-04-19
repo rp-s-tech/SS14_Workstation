@@ -49,7 +49,7 @@
     slots: OUTERCLOTHING
 
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitRnd
   name: scientist's hardsuit helmet
   description: Pretty strong.

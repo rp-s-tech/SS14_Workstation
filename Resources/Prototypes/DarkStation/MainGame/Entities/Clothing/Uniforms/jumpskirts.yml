@@ -30,14 +30,3 @@
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/blueshield.rsi
   - type: Clothing
     sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/blueshield.rsi
-
-- type: entity
-  id: ClothingUniformJumpskirtIFD
-  parent: ClothingUniformSkirtBase
-  name: FD inspector jumpskirt
-  description: I am money. I am wealth.
-  components:
-  - type: Sprite
-    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/ifd.rsi
-  - type: Clothing
-    sprite: DarkStation/MainGame/Clothing/Uniforms/Jumpskirt/ifd.rsi

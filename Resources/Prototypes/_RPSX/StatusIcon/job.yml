@@ -1,0 +1,7 @@
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconAdministrator
+  icon:
+    sprite: /Textures/_RPSX/Interface/Misc/job_icons.rsi
+    state: Administrator
+  jobName: job-name-administrator

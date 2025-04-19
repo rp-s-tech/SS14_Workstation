@@ -96,7 +96,7 @@
   abstract: true
   components:
     - type: StationCentcomm
-      map: "/Maps/RPSX/140225/centcomm.yml" # RPSX mapping
+      map: /Maps/_RPSX/centcomm.yml # RPSX mapping
 
 - type: entity
   id: BaseStationEvacuation
@@ -135,6 +135,12 @@
   abstract: true
   components:
     - type: StationNews
+
+- type: entity
+  id: BaseStationDeliveries
+  abstract: true
+  components:
+  - type: CargoDeliveryData
 
 - type: entity
   id: BaseStationAllEventsEligible

@@ -34,7 +34,7 @@
     node: ClothingOuterHardsuitSalvageMaximal
 
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSalvageMaximal
   name: salvager maxim helmet
   description: A predication of decay washes over your mind.

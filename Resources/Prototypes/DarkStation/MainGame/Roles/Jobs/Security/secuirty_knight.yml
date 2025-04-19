@@ -6,7 +6,10 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 28800 # 8h
+    time: 43200 #12 hrs
+  - !type:RoleTimeRequirement
+    role: JobSecurityOfficer
+    time: 28800 #8 hrs
   startingGear: SecurityKnightGear
   icon: "JobIconKnightofStardust"
   requireAdminNotify: true

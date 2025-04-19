@@ -33,7 +33,7 @@ namespace Content.Client.VendingMachines
 
             if (!_cfg.GetCVar(RPSXCCVars.EconomyEnabled))
             {
-                _menu = this.CreateWindow<VendingMachineMenu>();
+                _menu = this.CreateWindowCenteredLeft<VendingMachineMenu>();
                 _menu.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
 
                 SetupOldVendingMenu((VendingMachineMenu)_menu);
@@ -52,6 +52,8 @@ namespace Content.Client.VendingMachines
 
         public void Refresh()
         {
+            var enabled = EntMan.TryGetComponent(Owner, out VendingMachineComponent? bendy) && !bendy.Ejecting;
+
             var system = EntMan.System<VendingMachineSystem>();
             _cachedInventory = system.GetAllInventory(Owner);
             if (_menu == null) return;
@@ -59,22 +61,24 @@ namespace Content.Client.VendingMachines
             if (_cfg.GetCVar(RPSXCCVars.EconomyEnabled))
             {
                 var menu = (EconomyVendingMachineMenu)_menu;
-                menu.Populate(_cachedInventory, out _cachedFilteredIndex);
+                menu.Populate(_cachedInventory, out _cachedFilteredIndex, menu.SearchBar.Text);
+                menu.UpdateSelectedProduct();
             }
             else
             {
                 var menu = (VendingMachineMenu)_menu;
-                menu.Populate(_cachedInventory);
+                menu.Populate(_cachedInventory, enabled);
             }
         }
 
 
         private void SetupOldVendingMenu(VendingMachineMenu menu)
         {
+            var enabled = EntMan.TryGetComponent(Owner, out VendingMachineComponent? bendy) && !bendy.Ejecting;
             var system = EntMan.System<VendingMachineSystem>();
             _cachedInventory = system.GetAllInventory(Owner);
             menu.OnItemSelected += OnItemSelected;
-            menu.Populate(_cachedInventory);
+            menu.Populate(_cachedInventory, enabled);
         }
 
         private void SetupNewVendingMenu(EconomyVendingMachineMenu menu)
@@ -85,7 +89,8 @@ namespace Content.Client.VendingMachines
             menu.OnSearchChanged += OnSearchChanged;
             menu.OnBuyButtonPressed += OnBuyButtonPressed;
             menu.OnSelectedItemRequestUpdate += OnSelectedItemRequestUpdate;
-            menu.Populate(_cachedInventory, out _cachedFilteredIndex);
+            menu.Populate(_cachedInventory, out _cachedFilteredIndex, menu.SearchBar.Text);
+            menu.UpdateSelectedProduct();
         }
 
         private void OnSelectedItemRequestUpdate(int index)
@@ -94,6 +99,27 @@ namespace Content.Client.VendingMachines
             if (selected != null && _menu is EconomyVendingMachineMenu economyMenu)
             {
                 economyMenu.SetSelectedProductState(selected, index);
+            }
+        }
+
+        public void UpdateAmounts()
+        {
+            var enabled = EntMan.TryGetComponent(Owner, out VendingMachineComponent? bendy) && !bendy.Ejecting;
+
+            var system = EntMan.System<VendingMachineSystem>();
+            _cachedInventory = system.GetAllInventory(Owner);
+            if (_menu == null) return;
+
+            if (!_cfg.GetCVar(RPSXCCVars.EconomyEnabled))
+            {
+                var menu = (VendingMachineMenu)_menu;
+                menu.UpdateAmounts(_cachedInventory, enabled);
+            }
+            else
+            {
+                var menu = (EconomyVendingMachineMenu)_menu;
+                menu.Populate(_cachedInventory, out _cachedFilteredIndex, menu.SearchBar.Text);
+                menu.UpdateSelectedProduct();
             }
         }
 
@@ -113,24 +139,9 @@ namespace Content.Client.VendingMachines
             if (selectedItem == null)
                 return;
 
-            SendMessage(new VendingMachineEjectMessage(selectedItem.Type, selectedItem.ID));
-        }
-        /*
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-            if (!disposing)
-                return;
-
-            if (_menu == null)
-                return;
-
-            _menu.OnItemSelected -= OnItemSelected;
-            _menu.OnClose -= Close;
-            _menu.Dispose();
+            SendPredictedMessage(new VendingMachineEjectMessage(selectedItem.Type, selectedItem.ID));
         }
 
-        */
         protected override void UpdateState(BoundUserInterfaceState state)
         {
             base.UpdateState(state);
@@ -145,7 +156,8 @@ namespace Content.Client.VendingMachines
                     economyMenu.UpdateSelectedProduct();
                     break;
                 case VendingMachineMenu menu:
-                    menu.Populate(_cachedInventory);
+                    var enabled = EntMan.TryGetComponent(Owner, out VendingMachineComponent? bendy) && !bendy.Ejecting;
+                    menu.Populate(_cachedInventory, enabled);
                     break;
             }
         }
@@ -156,15 +168,9 @@ namespace Content.Client.VendingMachines
             if (selectedItem == null)
                 return;
 
-            switch (_menu)
-            {
-                case EconomyVendingMachineMenu economyMenu:
-                    economyMenu.SetSelectedProductState(selectedItem, args.ItemIndex);
-                    break;
-                case VendingMachineMenu:
-                    SendMessage(new VendingMachineEjectMessage(selectedItem.Type, selectedItem.ID));
-                    break;
-            }
+            if (_menu is not EconomyVendingMachineMenu menu) return;
+
+            menu.SetSelectedProductState(selectedItem, args.ItemIndex);
         }
 
         private void OnBuyButtonPressed(int index)
@@ -173,7 +179,7 @@ namespace Content.Client.VendingMachines
             if (selectedItem == null)
                 return;
 
-            SendMessage(new VendingMachineEjectMessage(selectedItem.Type, selectedItem.ID));
+            SendPredictedMessage(new VendingMachineEjectMessage(selectedItem.Type, selectedItem.ID));
             Refresh();
         }
 
@@ -215,9 +221,11 @@ namespace Content.Client.VendingMachines
                     return;
                 case EconomyVendingMachineMenu economyMenu:
                     economyMenu.Populate(_cachedInventory, out _cachedFilteredIndex, filter);
+                    economyMenu.UpdateSelectedProduct();
                     break;
                 case VendingMachineMenu menu:
-                    menu.Populate(_cachedInventory);
+                    var enabled = EntMan.TryGetComponent(Owner, out VendingMachineComponent? bendy) && !bendy.Ejecting;
+                    menu.Populate(_cachedInventory, enabled);
                     break;
             }
         }

@@ -41,6 +41,9 @@
         "name": "gold"
       },
       {
+        "name": "idadministrator"
+      },
+      {
         "name": "idpassenger"
       },
       {
@@ -258,6 +261,12 @@
       },
       {
         "name": "idseniorofficer"
+      },
+      {
+        "name": "wizard"
+      },
+      {
+        "name": "idwizard"
       },
       {
         "name": "gold-inhand-left",

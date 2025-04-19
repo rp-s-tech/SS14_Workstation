@@ -3,7 +3,7 @@
   name: chat-emote-name-howl
   category: Vocal
   available: false
-  icon: RPSX/Interface/Actions/emotes.rsi/howl.png
+  icon: _RPSX/Interface/Actions/emotes.rsi/howl.png
   whitelist:
     components:
     - Vocal
@@ -30,7 +30,7 @@
   name: chat-emote-name-growl
   category: Vocal
   available: false
-  icon: RPSX/Interface/Actions/emotes.rsi/growl.png
+  icon: _RPSX/Interface/Actions/emotes.rsi/growl.png
   whitelist:
     components:
     - Vocal

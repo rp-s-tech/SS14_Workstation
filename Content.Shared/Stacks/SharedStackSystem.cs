@@ -114,6 +114,7 @@ namespace Content.Shared.Stacks
             var attemptEv = new StacksMergeAttemptEvent(GetNetEntity(donor), GetNetEntity(recipient));
             RaiseLocalEvent(donor, attemptEv);
             RaiseLocalEvent(recipient, attemptEv);
+            if (attemptEv.Cancelled) return false;
 
             if (!Resolve(recipient, ref recipientStack, false) || !Resolve(donor, ref donorStack, false))
                 return false;
@@ -267,7 +268,7 @@ namespace Content.Shared.Stacks
         public int GetMaxCount(string entityId)
         {
             var entProto = _prototype.Index<EntityPrototype>(entityId);
-            entProto.TryGetComponent<StackComponent>(out var stackComp);
+            entProto.TryGetComponent<StackComponent>(out var stackComp, EntityManager.ComponentFactory);
             return GetMaxCount(stackComp);
         }
 

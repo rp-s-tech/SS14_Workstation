@@ -264,13 +264,24 @@ flavor-complex-irish-bool = как кофеин и Ирландия
 flavor-complex-xeno-basher = как уничтожение жуков
 flavor-complex-budget-insuls-drink = как взлом шлюза
 flavor-complex-watermelon-wakeup = как сладкое пробуждение
-flavor-complex-irish-slammer = like a spiked cola float
+flavor-complex-irish-slammer = как алкогольный кола-флоат
 flavor-complex-rubberneck = как синтетика
 flavor-complex-irish-car-bomb = как шипучая пенка колы
 
 ### This is exactly what pilk tastes like. I'm not even joking. I might've been a little drunk though
 
 flavor-complex-white-gilgamesh = как слегка газированные сливки
+flavor-complex-caipirinha = как Бразилия
+flavor-complex-daiquiri = как ром, лайм и сахар
+flavor-complex-deathintheafternoon = как анис и шампанское
+flavor-complex-empress75 = как тирский пурпур
+flavor-complex-espressomartini = как водка и кофе
+flavor-complex-mayojito = как желудочные мучения
+flavor-complex-mimeosa = как тишина и апельсины
+flavor-complex-mimosa = как ранний бранч
+flavor-complex-moscowmule = как водка и имбирный эль
+flavor-complex-thesunalsorises = как абсентный дайкири
+flavor-complex-whiskeysour = как виски и яйцо
 flavor-complex-antifreeze = как тепло
 flavor-complex-zombiecocktail = как поедание мозгов
 flavor-complex-absinthe = как анис
@@ -296,7 +307,7 @@ flavor-complex-hippies-delight = как если бы твое артериал�
 flavor-complex-hooch = как если бы это было вкусно, если бы ты был дизельным двигателем
 flavor-complex-manhattan = как смотреть из окна пятизвездочного отеля
 flavor-complex-manhattan-project = как "Я стал Смертью, разрушителем миров"
-flavor-complex-margarita = как очень сильный похмелье
+flavor-complex-margarita = как очень сильное похмелье
 flavor-complex-martini = как шпионский фильм
 flavor-complex-mojito = как попасть в тень после жаркого солнца
 flavor-complex-neurotoxin = как подземная испытательная лаборатория
@@ -308,10 +319,10 @@ flavor-complex-sui-dream = как изображение Альп
 flavor-complex-toxins-special = как космические исследования
 flavor-complex-vodka-martini = как шпионский фильм из России
 flavor-complex-vodka-tonic = освежающе горько
+flavor-complex-bacchus-blessing = как стена из кирпичей
 flavor-complex-pilk = как сладкое молоко
 
 # Medicine/chemical-specific flavors.
-
 
 ## Generic flavors.
 

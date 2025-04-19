@@ -1,0 +1,26 @@
+- type: gameMapPool
+  id: DefaultRPSXMapPool
+  maps:
+  - Bagel
+  - Cog
+  - Core
+  - Fland
+  - Gate
+  - Loop
+  - Marathon
+  - Meta
+  - Oasis
+  - Omega
+  - CorvaxSplit
+  # RPSX
+  - RPSXAmber
+  - RPSXAspid
+  - RPSXBarratry
+  - RPSXBox
+  - RPSXCluster
+  - RPSXDelta
+  - RPSXElkridge
+  - RPSXSaltern
+  - RPSXSilly
+  - RPSXTrain
+  - RPSXPacked

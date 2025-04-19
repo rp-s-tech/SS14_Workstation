@@ -259,7 +259,7 @@
     - Diagonal
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+    key: walls # Corvax-Resprite
     base: state
   - type: Icon
     sprite: Structures/Windows/window_diagonal.rsi

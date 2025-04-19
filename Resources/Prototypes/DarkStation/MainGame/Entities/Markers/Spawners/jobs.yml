@@ -11,30 +11,6 @@
       - state: pilot
 
 - type: entity
-  id: SpawnPointAgentCrimsonLily
-  parent: SpawnPointJobBase
-  name: Crimson Lily Agent
-  components:
-  - type: SpawnPoint
-    job_id: AgentCrimsonLily
-  - type: Sprite
-    layers:
-    - state: green
-    - state: dark_AgentCrimsonLily
-
-- type: entity
-  id: SpawnPointSpCCO
-  parent: SpawnPointJobBase
-  name: Centcom Operator
-  components:
-    - type: SpawnPoint
-      job_id: SpCCO
-    - type: Sprite
-      layers:
-        - state: green
-        - state: dark_NanoTrasenOperator
-
-- type: entity
   id: SpawnPointSpNanoTrasenRepresentative
   parent: SpawnPointJobBase
   name: NanoTrasen Representative
@@ -57,30 +33,6 @@
       layers:
         - state: green
         - state: dark_Blueshield
-
-- type: entity
-  id: SpawnPointSpIFD
-  parent: SpawnPointJobBase
-  name: Inspector FD
-  components:
-  - type: SpawnPoint
-    job_id: SpIFD
-  - type: Sprite
-    layers:
-    - state: green
-    - state: dark_FinDepAgent
-
-- type: entity
-  id: SpawnPointOperativeCrimsonLily
-  parent: SpawnPointJobBase
-  name: Сrimson Lily operative
-  components:
-  - type: SpawnPoint
-    job_id: OperativeCrimsonLily
-  - type: Sprite
-    layers:
-      - state: green
-      - state: dark_OperativeCrimsonLily
 
 - type: entity
   id: SpawnPointStardustKnight

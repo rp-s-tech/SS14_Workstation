@@ -39,4 +39,3 @@ ent-BoxAgentCrimsonLily = бюрократический набор АБЛ
     .suffix = АБЛ
 ent-EncryptionKeyCrimsonLily = ключ шифрования багровой лилии
     .desc = Ключ шифрования, используемый деловыми ребятами.
-

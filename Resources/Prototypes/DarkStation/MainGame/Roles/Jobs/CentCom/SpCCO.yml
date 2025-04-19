@@ -71,3 +71,15 @@
     sprite: DarkStation/MainGame/Clothing/Back/Duffels/centcommduffle.rsi
   - type: Clothing
     sprite: DarkStation/MainGame/Clothing/Back/Duffels/centcommduffle.rsi
+
+- type: entity
+  id: SpawnPointSpCCO
+  parent: SpawnPointJobBase
+  name: Centcom Operator
+  components:
+    - type: SpawnPoint
+      job_id: SpCCO
+    - type: Sprite
+      layers:
+        - state: green
+        - state: dark_NanoTrasenOperator
