@@ -12,7 +12,7 @@
   canBeAntag: false
   alwaysUseSpawner: true
   whitelisted: true
-  sponsorIgnoreWhitelist: false
+  sponsorIgnore: false
   accessGroups:
   - AllAccessCentCom
   special:
