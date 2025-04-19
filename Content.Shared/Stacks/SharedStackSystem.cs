@@ -114,6 +114,7 @@ namespace Content.Shared.Stacks
             var attemptEv = new StacksMergeAttemptEvent(GetNetEntity(donor), GetNetEntity(recipient));
             RaiseLocalEvent(donor, attemptEv);
             RaiseLocalEvent(recipient, attemptEv);
+            if (attemptEv.Cancelled) return false;
 
             if (!Resolve(recipient, ref recipientStack, false) || !Resolve(donor, ref donorStack, false))
                 return false;
