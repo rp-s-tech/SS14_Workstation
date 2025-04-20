@@ -43,6 +43,9 @@
     tags:
     - CaptainSabre
   - type: DisarmMalus
+  - type: SurgeryTool
+    sound: /Audio/Effects/gib1.ogg
+  - type: SurgerySaw
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-inanimate
     weight: 0.0002 # 5,000 times less likely than 1 regular animal
@@ -69,6 +72,9 @@
   - type: Item
     sprite: Objects/Weapons/Melee/katana.rsi
   - type: DisarmMalus
+  - type: SurgeryTool
+    sound: /Audio/Effects/gib1.ogg
+  - type: SurgerySaw
 
 - type: entity
   name: energy katana
@@ -119,6 +125,9 @@
   - type: Item
     sprite: Objects/Weapons/Melee/machete.rsi
   - type: DisarmMalus
+  - type: SurgeryTool
+    sound: /Audio/Effects/gib1.ogg
+  - type: SurgerySaw
 
 - type: entity
   name: claymore
@@ -141,6 +150,9 @@
     slots:
     - back
   - type: DisarmMalus
+  - type: SurgeryTool
+    sound: /Audio/Effects/gib1.ogg
+  - type: SurgerySaw
 
 - type: entity
   name: cutlass

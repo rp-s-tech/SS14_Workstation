@@ -466,6 +466,8 @@ public sealed partial class ExplosionSystem
                 // TODO EXPLOSIONS turn explosions into entities, and pass the the entity in as the damage origin.
                 _damageableSystem.TryChangeDamage(entity, damage * _damageableSystem.UniversalExplosionDamageModifier, ignoreResistances: true);
 
+                var explosionEv = new ExplosionHitEvent(damage); // RPSX Surgery
+                RaiseLocalEvent(uid, ref explosionEv); // RPSX Surgery
             }
         }
 

@@ -17,6 +17,7 @@ using Content.Shared.Temperature;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using System.Linq;
+using Content.Shared.Body.Components;
 
 namespace Content.Server.Nutrition.EntitySystems
 {
@@ -33,6 +34,8 @@ namespace Content.Server.Nutrition.EntitySystems
         [Dependency] private readonly SharedContainerSystem _container = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly ForensicsSystem _forensics = default!;
+        [Dependency] private readonly LungSystem _lungSystem = default!;
+        [Dependency] private readonly BodySystem _bodySystem = default!;
 
         private const float UpdateTimer = 3f;
 
@@ -151,6 +154,31 @@ namespace Content.Server.Nutrition.EntitySystems
 
                 _reactiveSystem.DoEntityReaction(containerManager.Owner, inhaledSolution, ReactionMethod.Ingestion);
                 _bloodstreamSystem.TryAddToChemicals(containerManager.Owner, inhaledSolution, bloodstream);
+
+                if (TryComp<BodyComponent>(containerManager.Owner, out var body))
+                {
+                    var owner = containerManager.Owner;
+                    var lungs = _bodySystem.GetBodyOrganEntityComps<LungComponent>(owner);
+                    var numLungs = lungs.Count;
+
+                    foreach (var lung in lungs)
+                    {
+                        //go through solution, check if it does any lung damage
+                        foreach (var reagent in inhaledSolution.Contents)
+                        {
+                            var lungEv = new OnEntityInhaleToLungs();
+                            RaiseLocalEvent(owner, ref lungEv);
+
+                            if (lungEv.DamageLoss > 1.0f)
+                                lungEv.DamageLoss = 1.0f;
+
+                            var amount = (float)reagent.Quantity / numLungs * (1.0f - lungEv.DamageLoss);
+
+                            var smokeEv = new OnEntitySmoke(amount);
+                            RaiseLocalEvent(owner, ref smokeEv);
+                        }
+                    }
+                }
             }
 
             _timer -= UpdateTimer;
@@ -163,4 +191,7 @@ namespace Content.Server.Nutrition.EntitySystems
     public sealed class SmokableSolutionEmptyEvent : EntityEventArgs
     {
     }
+
+    [ByRefEvent]
+    public record struct OnEntitySmoke(float Amount);
 }

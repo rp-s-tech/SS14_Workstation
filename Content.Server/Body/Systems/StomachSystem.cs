@@ -1,9 +1,11 @@
 using Content.Server.Body.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Body.Organ;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Robust.Shared.Timing;
+using Content.Server.Body.Events;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Body.Systems
@@ -52,23 +54,27 @@ namespace Content.Server.Body.Systems
                 var transferSolution = new Solution();
 
                 var queue = new RemQueue<StomachComponent.ReagentDelta>();
+                // RPSX Surgery Start
                 foreach (var delta in stomach.ReagentDeltas)
                 {
                     delta.Increment(stomach.UpdateInterval);
-                    if (delta.Lifetime > stomach.DigestionDelay)
+
+                    if (delta.Lifetime <= stomach.DigestionDelay)
+                        continue;
+
+                    if (stomachSolution.TryGetReagent(delta.ReagentQuantity.Reagent, out var reagent))
                     {
-                        if (stomachSolution.TryGetReagent(delta.ReagentQuantity.Reagent, out var reagent))
-                        {
-                            if (reagent.Quantity > delta.ReagentQuantity.Quantity)
-                                reagent = new(reagent.Reagent, delta.ReagentQuantity.Quantity);
+                        if (reagent.Quantity > delta.ReagentQuantity.Quantity)
+                            reagent = new ReagentQuantity(reagent.Reagent, delta.ReagentQuantity.Quantity);
 
-                            stomachSolution.RemoveReagent(reagent);
-                            transferSolution.AddReagent(reagent);
-                        }
-
-                        queue.Add(delta);
+                        stomachSolution.RemoveReagent(reagent);
+                        transferSolution.AddReagent(reagent);
+                        var ev = new OnEntityStomachUpdated(delta.ReagentQuantity);
+                        RaiseLocalEvent(uid, ref ev);
                     }
+                    queue.Add(delta);
                 }
+                // RPSX Surgery End
 
                 foreach (var item in queue)
                 {

@@ -1,7 +1,7 @@
 - type: entity
   save: false
   name: Urist McFluff
-  parent: BaseMobSpeciesOrganic
+  parent: [BaseMobSpeciesOrganic, BaseMothSurgery]
   id: BaseMobMoth
   abstract: true
   components:
@@ -11,17 +11,12 @@
     - HeadTop
   - type: Hunger
   - type: Thirst
-  # Exodus-MothLore-Start | Stamina
-  - type: Stamina
-    baseDecay: 13
-  - type: StaminaArmor
-    coefficient: 1.1
-  # Exodus-Stamina-End
   - type: Icon
     sprite: Mobs/Species/Moth/parts.rsi
     state: full
   - type: Body
     prototype: Moth
+    species: moth
     requiredLegs: 2
   - type: Damageable
     damageContainer: Biological
@@ -45,8 +40,6 @@
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
         color: "#808A51"
-      Burn:
-        sprite: Mobs/Effects/burn_damage.rsi
   - type: MothAccent
   - type: Vocal
     sounds:
@@ -68,15 +61,10 @@
     specificHeat: 46
     coldDamage:
       types:
-        Cold : 0.05 #per second, scales with temperature & other constants
+        Cold: 0.05 #per second, scales with temperature & other constants
     heatDamage:
       types:
         Heat : 3 #per second, scales with temperature & other constants
-  - type: TemperatureSpeed
-    thresholds:
-      289: 0.8
-      275: 0.6
-      250: 0.4
   - type: Sprite # sprite again because we want different layer ordering
     noRot: true
     drawdepth: Mobs
@@ -89,8 +77,6 @@
       - map: [ "enum.HumanoidVisualLayers.LArm" ]
       - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-      - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
-      - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
       - map: [ "jumpsuit" ]
       - map: [ "enum.HumanoidVisualLayers.LHand" ]
       - map: [ "enum.HumanoidVisualLayers.RHand" ]
@@ -104,13 +90,13 @@
       - map: [ "gloves" ]
       - map: [ "shoes" ]
       - map: [ "ears" ]
+      - map: [ "outerClothing" ]
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "id" ]
-      - map: [ "outerClothing" ]
-      - map: [ "enum.HumanoidVisualLayers.Tail" ] #in the utopian future we should probably have a wings enum inserted here so everyhting doesn't break
-      - map: [ "back" ]
+      - map: [ "enum.HumanoidVisualLayers.Wings" ] #in the utopian future we should probably have a wings enum inserted here so everyhting doesn't break
       - map: [ "neck" ]
+      - map: [ "back" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
@@ -124,7 +110,6 @@
         state: "creampie_moth"
         visible: false
   - type: Inventory
-    speciesId: moth 
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -141,7 +126,6 @@
   - type: HumanoidAppearance
     species: Moth
   - type: Inventory
-    speciesId: moth 
     femaleDisplacements:
       jumpsuit:
         sizeMaps:

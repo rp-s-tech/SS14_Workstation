@@ -7,6 +7,10 @@
       part: HeadSlime
       connections:
       - torso
+      organs:
+        eyes:
+          type: Eye
+          internal: false
     torso:
       part: TorsoSlime
       connections:
@@ -15,8 +19,12 @@
       - right leg
       - left leg
       organs:
-        core: SentientSlimeCore
-        lungs: OrganSlimeLungs
+        core:
+          organ: SentientSlimeCore
+          type: Brain
+        lungs:
+          organ: OrganSlimeLungs
+          type: Lung
     right arm:
       part: RightArmSlime
       connections:

@@ -14,8 +14,10 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
     public bool? ScanMode;
     public bool? Bleeding;
     public bool? Unrevivable;
+    public Dictionary<string, string> OrganConditions;
+    public bool Sedated;
 
-    public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable)
+    public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable, Dictionary<string, string> organConditions, bool sedated)
     {
         TargetEntity = targetEntity;
         Temperature = temperature;
@@ -23,6 +25,8 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
         ScanMode = scanMode;
         Bleeding = bleeding;
         Unrevivable = unrevivable;
+        OrganConditions = organConditions;
+        Sedated = sedated;
     }
 }
 

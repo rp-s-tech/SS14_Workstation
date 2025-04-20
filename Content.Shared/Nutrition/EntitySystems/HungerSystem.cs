@@ -109,6 +109,7 @@ public sealed class HungerSystem : EntitySystem
 
         SetAuthoritativeHungerValue((uid, component), amount);
         UpdateCurrentThreshold(uid, component);
+        UpdateOverfedStrain(uid, component);
     }
 
     /// <summary>
@@ -123,6 +124,14 @@ public sealed class HungerSystem : EntitySystem
         entity.Comp.LastAuthoritativeHungerChangeTime = _timing.CurTime;
         entity.Comp.LastAuthoritativeHungerValue = ClampHungerWithinThresholds(entity.Comp, value);
         DirtyField(entity.Owner, entity.Comp, nameof(HungerComponent.LastAuthoritativeHungerChangeTime));
+    }
+
+    private void UpdateOverfedStrain(EntityUid uid, HungerComponent? component = null)
+    {
+        if (!Resolve(uid, ref component))
+            return;
+
+        component.OverfedStrain = component.CurrentThreshold == HungerThreshold.Overfed ? GetHunger(component) : 0f;
     }
 
     private void UpdateCurrentThreshold(EntityUid uid, HungerComponent? component = null)

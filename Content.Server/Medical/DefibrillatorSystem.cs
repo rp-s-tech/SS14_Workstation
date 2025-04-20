@@ -23,6 +23,7 @@ using Content.Shared.Timing;
 using Content.Shared.Toggleable;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
+using Content.Shared.Body.Events;
 
 namespace Content.Server.Medical;
 
@@ -227,6 +228,11 @@ public sealed class DefibrillatorSystem : EntitySystem
                     InGameICChatType.Speak, true);
             }
         }
+
+        // RPSX Surgery Start
+        var pumpEv = new SurgeryRequestPump();
+        RaiseLocalEvent(target, ref pumpEv);
+        // RPSX Surgery End
 
         var sound = dead || session == null
             ? component.FailureSound

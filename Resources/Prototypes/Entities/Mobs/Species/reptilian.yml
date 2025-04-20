@@ -1,7 +1,7 @@
 - type: entity
   save: false
   name: Urisst' Mzhand
-  parent: BaseMobSpeciesOrganic
+  parent: [ BaseMobSpeciesOrganic, BaseReptilianSurgery ]
   id: BaseMobReptilian
   abstract: true
   components:
@@ -11,9 +11,7 @@
     - Snout
     - HeadTop
     - HeadSide
-    undergarmentBottom: UndergarmentBottomBoxersReptilian
   - type: Hunger
-    baseDecayRate: 0.0333333333 # Exodus-ReptilianLore
   - type: Puller
     needsHands: false
   - type: Thirst
@@ -22,6 +20,7 @@
     state: full
   - type: Body
     prototype: Reptilian
+    species: reptilian
     requiredLegs: 2
   - type: Butcherable
     butcheringType: Spike
@@ -32,7 +31,6 @@
   - type: Speech
     speechSounds: Lizard
     speechVerb: Reptilian
-    allowedEmotes: ['Thump', 'Growl', 'Rumble', 'Sneeze'] # Exodus-EmotesSounds | Add growl and rumble
   - type: TypingIndicator
     proto: lizard
   - type: Vocal
@@ -40,8 +38,6 @@
       Male: MaleReptilian
       Female: FemaleReptilian
       Unsexed: MaleReptilian
-  - type: BodyEmotes
-    soundsId: ReptilianBodyEmotes
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
@@ -55,104 +51,25 @@
         Slash: 5
   - type: Temperature
     heatDamageThreshold: 400
-    coldDamageThreshold: 273 # Exodus-ReptilianLore
+    coldDamageThreshold: 285
     currentTemperature: 310.15
     specificHeat: 42
     coldDamage:
       types:
-        Cold : 0.1 #per second, scales with temperature & other constants
+        Cold: 0.1 #per second, scales with temperature & other constants
     heatDamage:
       types:
-        Heat : 1.5 #per second, scales with temperature & other constants
-  - type: TemperatureSpeed
-    thresholds:
-      301: 0.8
-      295: 0.6
-      285: 0.4
+        Heat: 1.5 #per second, scales with temperature & other constants
   - type: Wagging
-  # Exodus-ThickSyringes-Start
-  # Exodus-ReptilianLore-Start | Zessul Blood heals reptilians better
-  - type: Bloodstream
-    bloodReagent: ZessulBlood
-  - type: PassiveDamage
-    allowedStates:
-    - Alive
-    damageCap: 30
-    damage:
-      types:
-        Heat: -0.4
-      groups:
-        Brute: -0.4
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      120: Critical
-      200: Dead
-  # Exodus-ReptilianLore | Drawsiness
-  - type: PassiveEffects
-    effects:
-    - !type:Emote
-      conditions:
-        - !type:Temperature
-          max: 283
-      emote: Yawn
-      showInChat: true
-      probability: 0.2
-    - !type:GenericStatusEffect
-      conditions:
-        - !type:Temperature
-          max: 283
-      key: Drowsiness
-      component: Drowsiness
-      time: 4
-      type: Add
-      refresh: false
-  # Exodus-ReptilianLore-End
-  - type: InjectableSolution
-    solution: chemicals
-    whitelist:
-      tags:
-        - ThickSyringe
-  - type: Tag
-    tags:
-      - ThickSkin
-      - CanPilot
-      - FootstepSound
-      - DoorBumpOpener
-      - AnomalyHost
-  # Exodus-ThickSyringes-End
-  # Exodus-ReptilianLore-Start | Stamina Armor
-  - type: Stamina
-    baseDecay: 7
-  - type: StaminaArmor
-    coefficient: 0.8
-  # Exodus-StaminaArmor-End
   - type: Inventory
     speciesId: reptilian
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Corvax/Mobs/Species/displacement.rsi # Corvax-Digitigrade
+            sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-    # Corvax-Digitigrade-Start
-      shoes:
-        sizeMaps:
-          32:
-            sprite: Corvax/Mobs/Species/displacement.rsi
-            state: shoes
-    displacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: Corvax/Mobs/Species/displacement.rsi
-            state: jumpsuit
-      shoes:
-        sizeMaps:
-          32:
-            sprite: Corvax/Mobs/Species/displacement.rsi
-            state: shoes
-    # Corvax-Displacements-End
+
 
 - type: entity
   parent: BaseSpeciesDummy
@@ -166,32 +83,13 @@
     - Snout
     - HeadTop
     - HeadSide
-    undergarmentBottom: UndergarmentBottomBoxersReptilian
   - type: Inventory
     speciesId: reptilian
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Corvax/Mobs/Species/displacement.rsi # Corvax-Digitigrade
+            sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-    # Corvax-Digitigrade-Start
-      shoes:
-        sizeMaps:
-          32:
-            sprite: Corvax/Mobs/Species/displacement.rsi
-            state: shoes
-    displacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: Corvax/Mobs/Species/displacement.rsi
-            state: jumpsuit
-      shoes:
-        sizeMaps:
-          32:
-            sprite: Corvax/Mobs/Species/displacement.rsi
-            state: shoes
-    # Corvax-Digitigrade-End
 
 #Weh

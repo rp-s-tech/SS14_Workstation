@@ -8,6 +8,8 @@
       tags:
       - ClothMade
       - Paper
+  - type: DStomach
+    organKey: stomach
   - type: SolutionContainerManager
     solutions:
       stomach:
@@ -27,3 +29,5 @@
   - type: Tag
     tags:
     - Stomach
+  - type: StaticPrice
+    price: 500

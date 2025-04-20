@@ -18,6 +18,11 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
+using System.Linq;
+using Content.Server.Body.Systems;
+using Content.Server.Medical.Events;
+using Content.Shared.Body.Components;
+using Content.Server.RPSX.Surgery.Components;
 
 namespace Content.Server.Medical;
 
@@ -32,6 +37,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
+    [Dependency] private readonly BodySystem _bodySystem = default!;
 
     public override void Initialize()
     {
@@ -210,13 +216,32 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         if (TryComp<UnrevivableComponent>(target, out var unrevivableComp) && unrevivableComp.Analyzable)
             unrevivable = true;
 
+        TryComp<SurgeryComponent>(target, out var surgery);
+
+        var organFunctionConditions = GetOrgans(target);
+
         _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(
             GetNetEntity(target),
             bodyTemperature,
             bloodAmount,
             scanMode,
             bleeding,
-            unrevivable
+            unrevivable,
+            organFunctionConditions,
+            surgery?.Sedated ?? false
         ));
+    }
+
+    public Dictionary<string, string> GetOrgans(EntityUid uid)
+    {
+        var organs = new Dictionary<string, string>();
+
+        if (!TryComp<BodyComponent>(uid, out var body))
+            return organs;
+
+        var ev = new GetOrgansState(organs);
+        RaiseLocalEvent(uid, ref ev);
+
+        return organs.OrderBy(d => d.Value).ToDictionary();
     }
 }

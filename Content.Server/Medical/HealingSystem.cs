@@ -56,12 +56,12 @@ public sealed class HealingSystem : EntitySystem
         if (args.Handled || args.Cancelled)
             return;
 
-        if (healing.DamageContainers is not null &&
-            entity.Comp.DamageContainerID is not null &&
-            !healing.DamageContainers.Contains(entity.Comp.DamageContainerID))
-        {
-            return;
-        }
+        // if (healing.DamageContainers is not null &&
+        //     entity.Comp.DamageContainerID is not null &&
+        //     !healing.DamageContainers.Contains(entity.Comp.DamageContainerID))
+        // {
+        //     return;
+        // }
 
         // Heal some bloodloss damage.
         if (healing.BloodlossModifier != 0)
@@ -85,8 +85,8 @@ public sealed class HealingSystem : EntitySystem
 
         var healed = _damageable.TryChangeDamage(entity.Owner, healing.Damage * _damageable.UniversalTopicalsHealModifier, true, origin: args.Args.User);
 
-        if (healed == null && healing.BloodlossModifier != 0)
-            return;
+        // if (healed == null && healing.BloodlossModifier != 0)
+        //     return;
 
         var total = healed?.GetTotal() ?? FixedPoint2.Zero;
 
@@ -122,6 +122,11 @@ public sealed class HealingSystem : EntitySystem
         if (!args.Repeat && !dontRepeat)
             _popupSystem.PopupEntity(Loc.GetString("medical-item-finished-using", ("item", args.Used)), entity.Owner, args.User);
         args.Handled = true;
+
+        // RPSX Surgery Start
+        var ev = new EntityHealedEvent(total);
+        RaiseLocalEvent(entity.Owner, ref ev);
+        // RPSX Surgery End
     }
 
     private bool HasDamage(Entity<DamageableComponent> ent, HealingComponent healing)

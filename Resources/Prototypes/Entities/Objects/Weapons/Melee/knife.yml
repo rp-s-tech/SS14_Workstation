@@ -47,6 +47,9 @@
     guides:
     - Chef
     - FoodRecipes
+  - type: SurgeryTool
+    sound: /Audio/Effects/Fluids/blood1.ogg
+  - type: SurgeryIncisor
 
 - type: entity
   name: butcher's cleaver
@@ -74,6 +77,9 @@
     guides:
     - Chef
     - FoodRecipes
+  - type: SurgeryTool
+    sound: /Audio/Effects/Fluids/blood1.ogg
+  - type: SurgeryIncisor
 
 - type: entity
   name: combat knife
@@ -126,6 +132,9 @@
     storedSprite:
       state: storage
       sprite: Objects/Weapons/Melee/survival_knife.rsi
+  - type: SurgeryTool
+    sound: /Audio/Effects/Fluids/blood1.ogg
+  - type: SurgeryIncisor
 
 - type: entity
   name: kukri knife

@@ -6,6 +6,7 @@
   - type: Sprite
     sprite: Mobs/Species/Human/organs.rsi
   - type: Organ
+    species: human
   - type: Food
   - type: Extractable
     grindableSolutionName: organ
@@ -26,6 +27,8 @@
   - type: Tag
     tags:
       - Meat
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   id: BaseHumanOrgan
@@ -43,6 +46,8 @@
   - type: Sprite
     state: brain
   - type: Organ
+    organType: Brain
+    species: universal #lets allow brain transfer to be a little easier
   - type: Input
     context: "ghost"
   - type: Brain
@@ -74,6 +79,8 @@
   - type: Item
     size: Small
     heldPrefix: brain
+  - type: StaticPrice
+    price: 800
 
 - type: entity
   id: OrganHumanEyes
@@ -91,6 +98,12 @@
   - type: Tag
     tags:
     - Eyes
+  - type: Organ
+    organType: Eye
+    species: universal
+  - type: EyeSight
+  - type: StaticPrice
+    price: 200
 
 - type: entity
   id: OrganHumanTongue
@@ -100,6 +113,9 @@
   components:
   - type: Sprite
     state: tongue
+  - type: Organ
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   id: OrganHumanAppendix
@@ -111,6 +127,9 @@
     - state: appendix
     - state: appendix-inflamed
       visible: false
+  - type: Organ
+  - type: StaticPrice
+    price: 50
 
 - type: entity
   id: OrganHumanEars
@@ -120,6 +139,9 @@
   components:
   - type: Sprite
     state: ears
+  - type: Organ
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   id: OrganHumanLungs
@@ -135,6 +157,11 @@
     size: Small
     heldPrefix: lungs
   - type: Lung
+  - type: Organ
+    organType: Lung
+    species: universal
+  - type: DLungs
+    organKey: lungs
   - type: Metabolizer
     removeEmpty: true
     solutionOnBody: false
@@ -160,10 +187,12 @@
   - type: Tag
     tags:
     - Lungs
+  - type: StaticPrice
+    price: 700
 
 - type: entity
   id: OrganHumanHeart
-  parent: BaseHumanOrgan
+  parent: [BaseHumanOrgan, BaseHeart]
   name: heart
   description: "I feel bad for the heartless bastard who lost this."
   components:
@@ -182,9 +211,12 @@
   - type: Item
     size: Small
     heldPrefix: heart
+  - type: StaticPrice
+    price: 800
   - type: Tag
     tags:
     - Heart
+    - Meat
 
 - type: entity
   id: OrganHumanStomach
@@ -207,6 +239,10 @@
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
   - type: Stomach
+  - type: Organ
+    organType: Stomach
+  - type: DStomach
+    organKey: stomach
   # The stomach metabolizes stuff like foods and drinks.
   # TODO: Have it work off of the ent's solution container, and move this
   # to intestines instead.
@@ -229,6 +265,13 @@
   components:
   - type: Sprite
     state: liver
+  - type: Organ
+    organType: Liver
+    species: universal
+  - type: ToxinFilter
+    organKey: liver
+    embedded: true
+    maxDamageThreshold: 500
   - type: Item
     size: Small
     heldPrefix: liver
@@ -241,6 +284,8 @@
   - type: Tag
     tags:
     - Liver
+  - type: StaticPrice
+    price: 550
 
 - type: entity
   id: OrganHumanKidneys
@@ -252,6 +297,13 @@
     layers:
       - state: kidney-l
       - state: kidney-r
+  - type: Organ
+    organType: Kidney
+    species: universal
+  - type: ToxinRemover
+    organKey: kidney
+    embedded: true
+    maxDamageThreshold: 600
   - type: Item
     size: Small
     heldPrefix: kidneys
@@ -263,3 +315,5 @@
   - type: Tag
     tags:
     - Kidneys
+  - type: StaticPrice
+    price: 700

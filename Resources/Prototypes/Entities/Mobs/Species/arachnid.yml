@@ -1,7 +1,7 @@
 - type: entity
   save: false
   name: Urist McWebs
-  parent: BaseMobSpeciesOrganic
+  parent: [ BaseMobSpeciesOrganic, BaseHumanSurgery ]
   id: BaseMobArachnid
   abstract: true
   components:
@@ -23,7 +23,6 @@
     - FootstepSound
     - DoorBumpOpener
     - SpiderCraft
-    - AnomalyHost
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -58,8 +57,6 @@
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
         color: "#162581"
-      Burn:
-        sprite: Mobs/Effects/burn_damage.rsi
   - type: Speech
     speechVerb: Arachnid
     speechSounds: Arachnid
@@ -81,8 +78,6 @@
       - map: [ "enum.HumanoidVisualLayers.LArm" ]
       - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-      - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
-      - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
       - map: ["jumpsuit"]
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
@@ -95,7 +90,7 @@
       - map: [ "belt" ]
       - map: [ "id" ]
       - map: [ "outerClothing" ]
-      - map: [ "enum.HumanoidVisualLayers.Tail" ] # Mentioned in moth code: This needs renaming lol.
+      - map: [ "enum.HumanoidVisualLayers.Paws" ] # Mentioned in moth code: This needs renaming lol.
       - map: [ "back" ]
       - map: [ "neck" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
@@ -117,7 +112,6 @@
         visible: false
   - type: Inventory
     templateId: arachnid
-    speciesId: arachnid
 
 
 - type: entity
@@ -127,8 +121,6 @@
   components:
   - type: HumanoidAppearance
     species: Arachnid
-  - type: Inventory
-    speciesId: arachnid 
 
 
 #>88w88<

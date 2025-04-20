@@ -1,4 +1,5 @@
-﻿using Content.Shared.Damage;
+﻿using Content.Shared.Body.Part;
+using Content.Shared.Damage;
 using Content.Shared.Inventory;
 using Robust.Shared.GameStates;
 using Robust.Shared.Utility;
@@ -29,6 +30,12 @@ public sealed partial class ArmorComponent : Component
     /// </summary>
     [DataField]
     public bool ShowArmorOnExamine = true;
+
+    // RPSX Surgery Start
+    [DataField]
+    [Access(Other = AccessPermissions.ReadExecute)]
+    public Dictionary<BodyPartType, float> SecurePartTypes = [];
+    // RPSX Surgery End
 }
 
 /// <summary>

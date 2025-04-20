@@ -61,6 +61,14 @@ public sealed partial class HungerComponent : Component
     [AutoNetworkedField]
     public HungerThreshold CurrentThreshold;
 
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float OverfedStrain
+    {
+        get => _overfedStrain;
+        set => _overfedStrain = value;
+    }
+    private float _overfedStrain = 0f;
+
     /// <summary>
     /// A dictionary relating HungerThreshold to the amount of <see cref="HungerSystem.GetHunger">current hunger</see> needed for each one
     /// </summary>
@@ -84,7 +92,8 @@ public sealed partial class HungerComponent : Component
     {
         { HungerThreshold.Peckish, "Peckish" },
         { HungerThreshold.Starving, "Starving" },
-        { HungerThreshold.Dead, "Starving" }
+        { HungerThreshold.Dead, "Starving" },
+        { HungerThreshold.Overfed, "Overfed" }
     };
 
     [DataField]

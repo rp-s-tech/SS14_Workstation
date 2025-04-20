@@ -1,6 +1,6 @@
 - type: entity
   name: Urist McSlime
-  parent: BaseMobSpeciesOrganic
+  parent: [ BaseMobSpeciesOrganic, BaseSlimeSurgery ]
   id: BaseMobSlimePerson
   abstract: true
   components:
@@ -11,12 +11,11 @@
     state: full
   - type: Body
     prototype: Slime
+    species: slime
     requiredLegs: 2
-  - type: Geras # Exodus-Geras
   # they like eat it idk lol
   - type: Storage
     clickInsert: false
-    openOnActivate: false
     grid:
     - 0,0,1,2
     maxItemSize: Large
@@ -30,10 +29,14 @@
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
+      enum.VoiceMaskUIKey.Key:
+        type: VoiceMaskBoundUserInterface
       enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.SurgeryUiKey.Key:
+        type: SurgeryBoundUserInterface
   # to prevent bag open/honk spam
   - type: UseDelay
     delay: 0.5
@@ -43,6 +46,15 @@
     speechVerb: Slime
     speechSounds: Slime
     allowedEmotes: ['Squish']
+  - type: ToxinRemover
+    organKey: kidney
+    embedded: true
+    maxDamageThreshold: 600
+  - type: ToxinFilter
+    organKey: liver
+    embedded: true
+    maxDamageThreshold: 500
+  - type: EyeSight
   - type: TypingIndicator
     proto: slime
   - type: Vocal
@@ -67,8 +79,6 @@
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
         color: "#2cf274"
-      Burn:
-        sprite: Mobs/Effects/burn_damage.rsi
   - type: Bloodstream
     bloodReagent: Slime # TODO Color slime blood based on their slime color or smth
   - type: Barotrauma

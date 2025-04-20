@@ -4,6 +4,9 @@
   name: ruminant stomach
   categories: [ HideSpawnMenu ]
   components:
+  - type: Organ
+    organType: Stomach
+    species: animal
   - type: SolutionContainerManager
     solutions:
       stomach:

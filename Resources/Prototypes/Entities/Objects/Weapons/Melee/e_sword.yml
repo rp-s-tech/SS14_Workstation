@@ -71,6 +71,10 @@
   - type: Reflect
   - type: IgnitionSource
     temperature: 700
+  - type: SurgeryTool
+    sound: /Audio/Weapons/eblade1.ogg
+  - type: SurgerySaw
+  - type: SurgeryCauterizer
 
 - type: entity
   name: energy sword
@@ -222,6 +226,10 @@
   - type: Tag
     tags:
     - Write
+  - type: SurgeryTool
+    sound: /Audio/Weapons/eblade1.ogg
+  - type: SurgeryCauterizer
+  - type: SurgeryIncisor
 
 - type: entity
   parent: [BaseItem, BaseSyndicateContraband]

@@ -165,6 +165,8 @@
         Piercing: 0.95
         Heat: 0.90
         Radiation: 0.25
+      securePartTypes:
+        Head: 0.6
   - type: GroupExamine
   - type: IngestionBlocker
   - type: Tag
@@ -181,7 +183,7 @@
 - type: entity
   abstract: true
   # No parent since it isn't an item
-  # must parent both this and the desired helmet base when using 
+  # must parent both this and the desired helmet base when using
   id: ClothingHeadSuitWithLightBase
   name: base hardsuit helmet with light
   categories: [ HideSpawnMenu ]
