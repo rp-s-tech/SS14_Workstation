@@ -25,7 +25,6 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using System.Text;
 
 namespace Content.Client.HealthAnalyzer.UI
 {
@@ -46,16 +45,6 @@ namespace Content.Client.HealthAnalyzer.UI
             _spriteSystem = _entityManager.System<SpriteSystem>();
             _prototypes = dependencies.Resolve<IPrototypeManager>();
             _cache = dependencies.Resolve<IResourceCache>();
-
-            SetupSplitContainer();
-        }
-
-        private void SetupSplitContainer()
-        {
-            SplitContainer.ResizeMode = SplitContainer.SplitResizeMode.RespectChildrenMinSize;
-            SplitContainer.SplitWidth = 2;
-            SplitContainer.SplitEdgeSeparation = 1f;
-            SplitContainer.StretchDirection = SplitContainer.SplitStretchDirection.TopLeft;
         }
 
         public void Populate(HealthAnalyzerScannedUserMessage msg)
@@ -154,7 +143,6 @@ namespace Content.Client.HealthAnalyzer.UI
             IReadOnlyDictionary<string, FixedPoint2> damagePerType = damageable.Damage.DamageDict;
 
             DrawDiagnosticGroups(damageSortedGroups, damagePerType);
-            DrawOrgansState(msg.OrganConditions);
         }
 
         private static string GetStatus(MobState mobState)
@@ -166,18 +154,6 @@ namespace Content.Client.HealthAnalyzer.UI
                 MobState.Dead => Loc.GetString("health-analyzer-window-entity-dead-text"),
                 _ => Loc.GetString("health-analyzer-window-entity-unknown-text"),
             };
-        }
-
-        private void DrawOrgansState(Dictionary<string, string> organs)
-        {
-            var organsState = new StringBuilder("Состояние органов: \n");
-
-            foreach (var organ in organs)
-            {
-                organsState.Append($"\n{organ.Key}: {organ.Value}\n");
-            }
-
-            OrganStatus.SetMessage(FormattedMessage.FromMarkup(organsState.ToString()));
         }
 
         private void DrawDiagnosticGroups(
