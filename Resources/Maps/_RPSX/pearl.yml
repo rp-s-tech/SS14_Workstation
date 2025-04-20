@@ -132659,7 +132659,6 @@ entities:
     - type: Transform
       parent: 12723
     - type: PAI
-      lastUser: invalid
     - type: Physics
       canCollide: False
     - type: GhostRole

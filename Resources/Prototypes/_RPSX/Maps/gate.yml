@@ -1,7 +1,7 @@
 - type: gameMap
   id: RPSXGate
   mapName: 'Gate Station'
-  mapPath: /Maps/gate.yml
+  mapPath: /Maps/_RPSX/gate.yml
   minPlayers: 35
   stations:
     Gate:
