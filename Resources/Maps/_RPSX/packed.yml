@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 250.0.0
-  forkId: workstation
-  forkVersion: hotfix_c3c64718749c2522c8bb6f5f673d87df6b0c16be
-  time: 04/04/2025 16:21:59
-  entityCount: 15550
+  engineVersion: 251.0.0
+  forkId: workstation_dev
+  forkVersion: upstream_d642bc45115bfba9bbc5b5570c4129e3e7ffc31e
+  time: 04/20/2025 14:42:37
+  entityCount: 15540
 maps:
 - 1
 grids:
@@ -5927,6 +5927,18 @@ entities:
             1786: 26,-8
             1787: 30,-11
         - node:
+            color: '#FF00009E'
+            id: WarnBox
+          decals:
+            5447: 92,33
+            5449: 96,33
+            5450: 92,27
+            5452: 96,27
+            5453: 86,32
+            5454: 86,32
+            5455: 84,32
+            5456: 84,32
+        - node:
             color: '#52B4E996'
             id: WarnCornerGreyscaleNE
           decals:
@@ -5951,7 +5963,6 @@ entities:
             id: WarnCornerNE
           decals:
             2249: 57,-14
-            3101: 92,27
             4516: 3,-30
         - node:
             color: '#FFFFFFFF'
@@ -5960,14 +5971,12 @@ entities:
             2248: 54,-14
             2580: 36,-44
             3098: 82,29
-            3102: 96,27
             4517: 2,-30
         - node:
             color: '#FFFFFFFF'
             id: WarnCornerSE
           decals:
             2246: 57,-16
-            3104: 92,33
             4518: 3,-33
         - node:
             color: '#FFFFFFFF'
@@ -5975,7 +5984,6 @@ entities:
           decals:
             2247: 54,-16
             3097: 82,31
-            3103: 96,33
             4519: 2,-33
         - node:
             color: '#334E6DC8'
@@ -5983,20 +5991,41 @@ entities:
           decals:
             3116: 67,22
         - node:
+            color: '#FF00009E'
+            id: WarnCornerSmallGreyscaleNE
+          decals:
+            5466: 95,32
+        - node:
             color: '#FFFFFFFF'
             id: WarnCornerSmallGreyscaleNE
           decals:
             1890: 9,-7
+        - node:
+            color: '#FF00009E'
+            id: WarnCornerSmallGreyscaleNW
+          decals:
+            5462: 93,32
         - node:
             color: '#334E6DC8'
             id: WarnCornerSmallGreyscaleSE
           decals:
             3115: 67,24
         - node:
+            color: '#FF00009E'
+            id: WarnCornerSmallGreyscaleSE
+          decals:
+            5460: 91,28
+            5461: 95,28
+        - node:
             color: '#FFFFFFFF'
             id: WarnCornerSmallGreyscaleSE
           decals:
             1891: 9,-8
+        - node:
+            color: '#FF00009E'
+            id: WarnCornerSmallGreyscaleSW
+          decals:
+            5469: 93,28
         - node:
             color: '#FFFFFFFF'
             id: WarnCornerSmallNE
@@ -6141,6 +6170,12 @@ entities:
           decals:
             3767: 53,-7
         - node:
+            color: '#FF00009E'
+            id: WarnLineGreyscaleE
+          decals:
+            5458: 95,27
+            5459: 95,33
+        - node:
             color: '#FFFFFFFF'
             id: WarnLineGreyscaleE
           decals:
@@ -6173,6 +6208,16 @@ entities:
             id: WarnLineGreyscaleN
           decals:
             4552: 54,11
+        - node:
+            color: '#FF00009E'
+            id: WarnLineGreyscaleN
+          decals:
+            5463: 92,32
+            5464: 96,32
+            5470: 84,31
+            5471: 86,31
+            5472: 86,31
+            5473: 84,31
         - node:
             color: '#FFFFFFFF'
             id: WarnLineGreyscaleN
@@ -6222,6 +6267,12 @@ entities:
           decals:
             3768: 50,-9
         - node:
+            color: '#FF00009E'
+            id: WarnLineGreyscaleS
+          decals:
+            5457: 92,28
+            5467: 96,28
+        - node:
             color: '#FFFFFFFF'
             id: WarnLineGreyscaleS
           decals:
@@ -6260,6 +6311,12 @@ entities:
           decals:
             3766: 55,-7
         - node:
+            color: '#FF00009E'
+            id: WarnLineGreyscaleW
+          decals:
+            5465: 93,33
+            5468: 93,27
+        - node:
             color: '#FFFFFFFF'
             id: WarnLineGreyscaleW
           decals:
@@ -6294,8 +6351,6 @@ entities:
             2600: 49,-12
             2601: 50,-12
             2732: -6,-20
-            3099: 84,32
-            3100: 86,32
             4534: 49,10
             4535: 50,10
             4536: 51,10
@@ -45585,6 +45640,22 @@ entities:
     - type: Transform
       pos: 45.5,22.5
       parent: 2
+    - type: Storage
+      storedItems:
+        6001:
+          position: 0,0
+          _rotation: East
+        6002:
+          position: 2,0
+          _rotation: South
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 6001
+          - 6002
 - proto: DresserQuarterMasterFilled
   entities:
   - uid: 6875
@@ -48977,6 +49048,9 @@ entities:
     - type: Transform
       pos: -0.0010213852,-26.399889
       parent: 2
+    - type: CollisionWake
+      enabled: False
+    - type: Conveyed
 - proto: FoodFrozenSundae
   entities:
   - uid: 7346
@@ -49052,6 +49126,9 @@ entities:
     - type: Transform
       pos: -0.9697714,-25.884264
       parent: 2
+    - type: CollisionWake
+      enabled: False
+    - type: Conveyed
 - proto: FoodPoppy
   entities:
   - uid: 7364
@@ -49087,6 +49164,9 @@ entities:
     - type: Transform
       pos: -1.0166464,-26.540514
       parent: 2
+    - type: CollisionWake
+      enabled: False
+    - type: Conveyed
   - uid: 7369
     components:
     - type: Transform
@@ -86015,6 +86095,7 @@ entities:
     - type: Transform
       pos: 0.13960361,-25.931139
       parent: 2
+    - type: Conveyed
   - uid: 13028
     components:
     - type: Transform
@@ -97710,46 +97791,50 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 31.5,37.5
       parent: 2
+- proto: WeaponEnergyTurretStation
+  entities:
+  - uid: 15292
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 86.5,32.5
+      parent: 2
+  - uid: 15293
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 92.5,27.5
+      parent: 2
+  - uid: 15294
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 96.5,33.5
+      parent: 2
+  - uid: 15295
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 96.5,27.5
+      parent: 2
+  - uid: 15296
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 92.5,33.5
+      parent: 2
+  - uid: 15297
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 84.5,32.5
+      parent: 2
 - proto: WeaponSubMachineGunWt550
   entities:
   - uid: 15291
     components:
     - type: Transform
       pos: 45.454727,23.618372
-      parent: 2
-- proto: WeaponTurretHostile
-  entities:
-  - uid: 15292
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 86.5,32.5
-      parent: 2
-  - uid: 15293
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 84.5,32.5
-      parent: 2
-  - uid: 15294
-    components:
-    - type: Transform
-      pos: 96.5,33.5
-      parent: 2
-  - uid: 15295
-    components:
-    - type: Transform
-      pos: 96.5,27.5
-      parent: 2
-  - uid: 15296
-    components:
-    - type: Transform
-      pos: 92.5,27.5
-      parent: 2
-  - uid: 15297
-    components:
-    - type: Transform
-      pos: 92.5,33.5
       parent: 2
 - proto: WeedSpray
   entities:
@@ -98036,64 +98121,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 21.5,22.5
-      parent: 2
-- proto: WindoorSecureCentralCommandLocked
-  entities:
-  - uid: 15343
-    components:
-    - type: Transform
-      pos: 92.5,33.5
-      parent: 2
-  - uid: 15344
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 96.5,27.5
-      parent: 2
-  - uid: 15345
-    components:
-    - type: Transform
-      pos: 96.5,33.5
-      parent: 2
-  - uid: 15346
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 96.5,33.5
-      parent: 2
-  - uid: 15347
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 92.5,33.5
-      parent: 2
-  - uid: 15348
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 96.5,27.5
-      parent: 2
-  - uid: 15349
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 92.5,27.5
-      parent: 2
-  - uid: 15350
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 92.5,27.5
-      parent: 2
-  - uid: 15351
-    components:
-    - type: Transform
-      pos: 84.5,32.5
-      parent: 2
-  - uid: 15352
-    components:
-    - type: Transform
-      pos: 86.5,32.5
       parent: 2
 - proto: WindoorSecureChemistryLocked
   entities:
