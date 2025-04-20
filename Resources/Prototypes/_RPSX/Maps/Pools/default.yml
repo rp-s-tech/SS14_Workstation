@@ -13,14 +13,18 @@
   - Omega
   - CorvaxSplit
   # RPSX
+  #- RPSXAstra
   - RPSXAmber
   - RPSXAspid
   - RPSXBarratry
-  - RPSXBox
+  #- RPSXBox
   - RPSXCluster
-  - RPSXDelta
-  - RPSXElkridge
+  #- RPSXDelta
+  #- RPSXElkridge
   - RPSXSaltern
-  - RPSXSilly
-  - RPSXTrain
+  #- RPSXSilly
+  #- RPSXTrain
   - RPSXPacked
+  - RPSXPearl
+  - RPSXGate
+  #- RPSXBagel
