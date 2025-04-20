@@ -45640,22 +45640,6 @@ entities:
     - type: Transform
       pos: 45.5,22.5
       parent: 2
-    - type: Storage
-      storedItems:
-        6001:
-          position: 0,0
-          _rotation: East
-        6002:
-          position: 2,0
-          _rotation: South
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 6001
-          - 6002
 - proto: DresserQuarterMasterFilled
   entities:
   - uid: 6875
