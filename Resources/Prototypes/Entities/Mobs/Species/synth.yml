@@ -12,7 +12,6 @@
       state: full
     - type: Body
       prototype: Synth
-      species: universal
       requiredLegs: 2
     - type: Hunger
     - type: Thirst
@@ -40,7 +39,6 @@
       state: full
     - type: Body
       prototype: SynthBrain
-      species: universal
       requiredLegs: 2
     - type: Hunger
     - type: Thirst

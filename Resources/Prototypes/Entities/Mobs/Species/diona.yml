@@ -16,7 +16,6 @@
     state: full
   - type: Body
     prototype: Diona
-    species: diona
     requiredLegs: 2
   - type: Damageable
     damageContainer: Biological
@@ -26,13 +25,15 @@
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
         color: "#cd7314"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
   - type: Butcherable
     butcheringType: Spike
     spawned:
     - id: FoodMeatPlant
       amount: 5
   - type: Bloodstream
-    bloodReagent: Water
+    bloodReagent: Sap
   - type: Reactive
     groups:
       Flammable: [ Touch ]
@@ -85,6 +86,7 @@
           - MobLayer
   - type: Speech
     speechVerb: Plant
+    allowedEmotes: ['Chirp']
   - type: Vocal
     sounds:
       Male: UnisexDiona
@@ -100,6 +102,7 @@
     actionPrototype: DionaGibAction
     allowedStates:
     - Dead
+  - type: NoSlip # Exodus-MRP
   - type: Inventory
     templateId: diona
     femaleDisplacements:

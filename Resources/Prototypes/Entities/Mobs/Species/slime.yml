@@ -11,11 +11,12 @@
     state: full
   - type: Body
     prototype: Slime
-    species: slime
     requiredLegs: 2
   # they like eat it idk lol
+  - type: Geras # Exodus-Geras
   - type: Storage
     clickInsert: false
+    openOnActivate: false
     grid:
     - 0,0,1,2
     maxItemSize: Large
@@ -29,8 +30,6 @@
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
-      enum.VoiceMaskUIKey.Key:
-        type: VoiceMaskBoundUserInterface
       enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
@@ -79,6 +78,8 @@
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
         color: "#2cf274"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
   - type: Bloodstream
     bloodReagent: Slime # TODO Color slime blood based on their slime color or smth
   - type: Barotrauma
