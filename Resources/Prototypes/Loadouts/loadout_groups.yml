@@ -840,7 +840,7 @@
   name: loadout-group-research-director-head
   minLimit: 0
   loadouts:
-  - ResearchDirectorBeret
+  - ScientificBeret
 
 - type: loadoutGroup
   id: ResearchDirectorNeck
