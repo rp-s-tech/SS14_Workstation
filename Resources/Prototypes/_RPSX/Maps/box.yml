@@ -2,7 +2,7 @@
   id: RPSXBox
   mapName: 'Box Station'
   mapPath: /Maps/_RPSX/box.yml
-  minPlayers: 10
+  minPlayers: 15
   stations:
     Boxstation:
       stationProto: StandardNanotrasenStation
