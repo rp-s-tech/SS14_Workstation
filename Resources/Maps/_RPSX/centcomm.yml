@@ -61186,15 +61186,6 @@ entities:
     - type: Transform
       pos: 33.540855,62.66536
       parent: 2
-- proto: PlushJidor
-  entities:
-  - uid: 7247
-    components:
-    - type: MetaData
-      desc: Тихо спиздил и ушел - называется нашел. С картами также.
-    - type: Transform
-      pos: 44.502117,60.85553
-      parent: 2
 - proto: POCCPDA
   entities:
   - uid: 3247

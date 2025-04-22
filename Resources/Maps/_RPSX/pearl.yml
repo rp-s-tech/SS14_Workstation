@@ -117701,13 +117701,6 @@ entities:
     - type: Transform
       pos: 0.5,57.5
       parent: 2
-- proto: PlushAsler
-  entities:
-  - uid: 11717
-    components:
-    - type: Transform
-      pos: 90.57276,-33.671448
-      parent: 2
 - proto: PlushieCarp
   entities:
   - uid: 11794
@@ -117772,23 +117765,6 @@ entities:
     - type: Transform
       pos: 57.474316,-8.394966
       parent: 2
-- proto: PlushJidor
-  entities:
-  - uid: 12723
-    components:
-    - type: MetaData
-      name: почти рыба, но моль
-    - type: Transform
-      pos: 90.07493,17.58844
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        stash: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 12724
-    - type: Physics
-      bodyType: Static
 - proto: PortableGeneratorJrPacman
   entities:
   - uid: 11800
