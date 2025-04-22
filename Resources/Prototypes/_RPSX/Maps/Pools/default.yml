@@ -13,7 +13,7 @@
   - Omega
   - CorvaxSplit
   # RPSX
-  #- RPSXAstra
+  - RPSXAstra
   - RPSXAmber
   - RPSXAspid
   - RPSXBarratry
@@ -27,4 +27,4 @@
   - RPSXPacked
   - RPSXPearl
   - RPSXGate
-  #- RPSXBagel
+  - RPSXBagel
