@@ -22,7 +22,7 @@
 
 <Box>
   <GuideEntityEmbed Entity="ClothingEyesGlassesSunglasses" Caption="Солнцезащитные очки"/>
-  <GuideEntityEmbed Entity="ClothingEyesGlassesSecurity" Caption="Очки охраны"/>
+  <GuideEntityEmbed Entity="ClothingEyesGlassesSecurity" Caption="Очки службы безопасности"/>
   <GuideEntityEmbed Entity="ClothingHeadHatWelding" Caption="Сварочная маска"/>
 </Box>
 

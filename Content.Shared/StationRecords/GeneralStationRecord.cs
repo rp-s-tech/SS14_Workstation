@@ -77,9 +77,6 @@ public sealed record GeneralStationRecord
     public CrewSalaryEntry? Salary;
 
     [ViewVariables]
-    public List<BankTransaction> BankTransactions = new();
-
-    [ViewVariables]
     public NetUserId? NetUserId;
 
     [ViewVariables]

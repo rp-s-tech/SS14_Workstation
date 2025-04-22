@@ -11,7 +11,7 @@
   supervisors: job-supervisors-centcom
   canBeAntag: false
   whitelisted: false
-  sponsorIgnoreWhitelist: false
+  sponsorIgnore: false
   requirements:
     - !type:RoleTimeRequirement
       role: JobSpCCO

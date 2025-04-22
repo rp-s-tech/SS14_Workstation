@@ -49,7 +49,7 @@ public sealed class SponsorsManager : ISponsorsManager
     public bool IsJobAvailable(NetUserId userId, JobPrototype job)
     {
         var isWhiteListEnabled = _cfg.GetCVar(CCVars.GameRoleWhitelist);
-        if (isWhiteListEnabled && job is { Whitelisted: true, SponsorIgnoreWhitelist: false })
+        if (isWhiteListEnabled && job is { SponsorIgnore: false })
             return false;
 
         return TryGetSponsorTier(userId, out var sponsorTier) && sponsorTier.RoleTimeByPass;
