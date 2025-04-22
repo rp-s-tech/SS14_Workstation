@@ -207,6 +207,7 @@
     - Instruments
     - Equipment
     - FauxTiles
+    - EnergyCoresCPUs
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
@@ -264,6 +265,7 @@
     - CameraBoards
     - MechBoards
     - ShuttleBoards
+    - EnergyCoresCircuit
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityBoards

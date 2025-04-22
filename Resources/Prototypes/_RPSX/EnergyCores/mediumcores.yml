@@ -28,8 +28,8 @@
 - type: entity
   parent: [BaseMediumCore, BaseRNDCore]
   id: RnDMediumCore
-  description: Ядро для средних шаттлов, которое может изготовить каждая космическая станция типа "14", при имении ресурсов.
-  name: Среднее ядро шаттла РнД.
+  description: Core for medium objects, which can be created at every type "14" station. Uses N2O.
+  name: medium R&D energy core
   components:
   - type: EnergyCore
     damage:
@@ -50,8 +50,8 @@
 - type: entity
   parent: [BaseMediumCore, BaseNTCore]
   id: NTMediumCore
-  description: Ядро для средних шаттлов, создающиеся на передовых производствах НаноТрейзен. Сложнее в исполнении, чем ядра РнД, используют при работе БС энергию.
-  name: Среднее ядро шаттла НаноТрейзен.
+  description: Core for medium objects, which is created at NanoTrasen's top factories. Uses frezon.
+  name: medium NanoTrasen energy core
   components:
   - type: EnergyCore
     damage:
@@ -72,8 +72,8 @@
 - type: entity
   parent: [BaseMediumCore, BaseSYNCore]
   id: SyndicateMediumCore
-  description: Ядро для средних шаттлов, изготвливаемое на теневых производствах корпораций Синдиката. Используют в работе редспейс.
-  name: Среднее ядро шаттла Синдиката.
+  description: Core for medium objects, manufactured in the shadow factories of the Syndicate corporations. Uses ammonia
+  name: medium Syndicate energy core
   components:
   - type: EnergyCore
     damage:
@@ -94,8 +94,8 @@
 - type: entity
   parent: [BaseMediumCore, BaseHMCore]
   id: HandMadeMediumCore
-  description: Ядро для средних шаттлов, изготовленное из первого, что попалось под руку. Ненадежно, но просто в создании.
-  name: Среднее самодельное ядро шаттла.
+  description: Core for medium objects, whitch is made from the first thing that came to hand. Uses cold plasma.
+  name: medium handmade energy core
   components:
   - type: EnergyCore
     damage:
