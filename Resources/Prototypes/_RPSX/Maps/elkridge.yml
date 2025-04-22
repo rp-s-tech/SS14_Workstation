@@ -2,7 +2,7 @@
   id: RPSXElkridge
   mapName: 'Elkridge Depot'
   mapPath: /Maps/_RPSX/elkridge.yml
-  minPlayers: 7
+  minPlayers: 0
   maxPlayers: 35
   stations:
     Elkridge:

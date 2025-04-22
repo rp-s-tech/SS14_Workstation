@@ -37,8 +37,9 @@
       state: ertreconeva
     - type: RandomMetadata
       nameSegments:
-        - NamesFirstMilitaryMiddle
-        - names_last_recon
+      - NamesMilitaryFirst
+      - NamesReconLast
+      nameFormat: name-format-ert
     - type: RandomHumanoidSpawner
       settings: ERTRecon
 
@@ -74,8 +75,9 @@
       prototypes: [ ERTReconGearEVA ]
     - type: RandomMetadata
       nameSegments:
-        - NamesFirstMilitaryMiddle
-        - NamesLastRecon
+      - NamesMilitaryFirst
+      - NamesReconLast
+      nameFormat: name-format-ert
     - type: ErtScout
 
 

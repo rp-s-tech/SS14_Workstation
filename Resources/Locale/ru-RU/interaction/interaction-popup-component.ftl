@@ -89,5 +89,5 @@ fence-rattle-success = *бдзынь*
 hugging-success-generic-target = { CAPITALIZE($user) } обнимает вас.
 petting-success-tesla = Вы гладите { $target }, попутно нарушая законы природы и физики.
 petting-failure-tesla = Вы тянетесь погладить { $target }, но разряд заставляет вас отдёрнуть руку.
-petting-success-mail-teleporter = Вы гладите { THE($target) } по его преданному, холодному { POSS-ADJ($target) } корпусу.
-petting-failure-mail-teleporter = Вы тянетесь, чтобы погладить { THE($target) }, но { SUBJECT($target) } { CONJUGATE-BE($target) } слишком занят сортировкой почты!!
+petting-success-mail-teleporter = Вы гладите { $target } по его преданному, холодному { POSS-ADJ($target) } корпусу.
+petting-failure-mail-teleporter = Вы тянетесь, чтобы погладить { $target }, но { SUBJECT($target) } { CONJUGATE-BE($target) } слишком занят сортировкой почты!!
