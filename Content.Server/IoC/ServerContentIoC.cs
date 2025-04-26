@@ -34,6 +34,8 @@ using Content.Server.RPSX.Sponsors; //RPSX
 using Content.Server.RPSX.Bridges; //RPSX
 using Content.Server.RPSX.Discord; //RPSX
 using Content.Server.SS220.TTS;
+using Content.Shared.RPSX.Bank.Systems;
+using Content.Server.RPSX.Bank;
 
 namespace Content.Server.IoC
 {
@@ -87,6 +89,7 @@ namespace Content.Server.IoC
             IoCManager.Register<ISponsorsManager, SponsorsManager>();
             IoCManager.Register<IDiscordAuthManager, DiscordAuthManager>();
             IoCManager.Register<TTSManager>();
+            IoCManager.Register<IBankManager, ServerBankManager>();
         }
     }
 }
