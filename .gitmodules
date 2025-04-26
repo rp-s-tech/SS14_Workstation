@@ -4,5 +4,5 @@
 	branch = master
 [submodule "RPSX"]
 	path = RPSX
-	url = ssh://git@git.rp-s.tech:2222/rps/ss14/private/rpsx.git
+	url = git@github.com:rp-s-tech/SS14_Workstation_Private.git
     update = none
