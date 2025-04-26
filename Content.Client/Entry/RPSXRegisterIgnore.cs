@@ -1,4 +1,3 @@
-using Content.Shared.RPSX.Bridges;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 
@@ -13,12 +12,5 @@ public sealed class RPSXRegisterIgnore
 
         if (useSecrets)
             return;
-
-        RegisterIoC();
-    }
-
-    public void RegisterIoC()
-    {
-        IoCManager.RegisterInstance<IBankBridge>(new StubBankBridge());
     }
 }
