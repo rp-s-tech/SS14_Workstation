@@ -523,7 +523,6 @@
 
 # medical modules
 
-
 - type: entity
   id: BorgModuleTreatment
   parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
@@ -541,7 +540,7 @@
     - Gauze10Lingering
     - Bloodpack10Lingering
     - Syringe
-    - DrinkGlass
+    - DrinkGlass                #добавлены 2 стакана, RPSX
     - DrinkGlass
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: treatment-module }
