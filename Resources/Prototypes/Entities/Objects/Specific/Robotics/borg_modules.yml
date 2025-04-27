@@ -546,7 +546,7 @@
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: treatment-module }
 
-# RPSX med borg update(delet diagnostic module)
+# RPSX med borg update(delete diagnostic module)
 
 - type: entity
   id: BorgModuleDefibrillator    
