@@ -1,6 +1,6 @@
 -----------------------------------------------
-**RPS-eXtended Project License Agreement**  
-**Last Updated: December 18, 2024**  
+RPS-eXtended Project License Agreement  
+Last Updated: December 18, 2024  
 -----------------------------------------------
 
 ### 1. General Provisions  
