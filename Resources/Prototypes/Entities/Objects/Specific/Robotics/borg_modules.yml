@@ -244,7 +244,7 @@
       - state: base-part-inhand-right
       - state: base-stripes-inhand-right
         color: "#7B0F12"
-      
+
 
 - type: entity
   id: BaseBorgModuleSyndicateAssault
@@ -540,13 +540,13 @@
     - Gauze10Lingering
     - Bloodpack10Lingering
     - Syringe
-    - DrinkGlass                #добавлены 2 стакана, RPSX
-    - DrinkGlass
+    - DrinkGlass                # RPSX med borg update
+    - DrinkGlass                # RPSX med borg update
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: treatment-module }
 
 - type: entity
-  id: BorgModuleDefibrillator    # совмещёно с модулем обследования, изменено RPSX
+  id: BorgModuleDefibrillator
   parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
   name: defibrillator cyborg module
   components:
@@ -556,9 +556,9 @@
     - state: icon-defib
   - type: ItemBorgModule
     items:
-    - DefibrillatorOneHandedUnpowered
-    - HandheldHealthAnalyzerUnpowered
-    - ClothingNeckStethoscope
+    - DefibrillatorOneHandedUnpowered  #
+    - HandheldHealthAnalyzerUnpowered  # RPSX med borg update
+    - ClothingNeckStethoscope          #
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: defib-module }
 
@@ -828,4 +828,4 @@
         - state: base-part-inhand-right
         - state: base-stripes-inhand-right
           color: "#7B0F12"
-          
+

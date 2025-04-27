@@ -153,7 +153,7 @@
 
   defaultModules:
   - BorgModuleTreatment
-  - BorgModuleDefibrillator  #добавлено для RPSX
+  - BorgModuleDefibrillator  # RPSX med borg update
 
   radioChannels:
   - Science
