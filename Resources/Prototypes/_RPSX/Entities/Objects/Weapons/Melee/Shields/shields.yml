@@ -1,8 +1,8 @@
 - type: entity
-  name: Красный деревянный щит
+  name: Red wood shield
   parent: BaseShield
   id: RedWoodenBuckler
-  description: Красный щит, как у настоящих викингов
+  description: Red shield, like a real Viking
   components:
     - type: Sprite
       sprite: _RPSX/Objects/Weapons/Melee/shields.rsi
