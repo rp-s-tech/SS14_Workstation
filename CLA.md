@@ -1,4 +1,5 @@
 Preamble
+
 Upon receipt of a copy of the license object by any means, any person can use it if he 
 accepts and agrees to all the terms of this license. Violation of the license terms grants us 
 (the Licensor) the right to apply methods of legal and technological protection using the 
