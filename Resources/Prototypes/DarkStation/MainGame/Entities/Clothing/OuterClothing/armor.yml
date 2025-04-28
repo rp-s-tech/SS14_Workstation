@@ -67,15 +67,15 @@
     sprintModifier: 0.5
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic               #RPSX Armor BS updated
   id: ClothingOuterArmorBlueShield
   name: Blueshield Officer's armor vest
   description: Reinforced kevlar body armor that extends the life of the BSO for the few moments it takes to berate a haplessly dead commanding officer.
   components:
   - type: Sprite
-    sprite: DarkStation/MainGame/Clothing/Armor/blueshield.rsi
+    sprite: _RPSX/Clothing/OuterClothing/Armor/armor_blue_shield.rsi
   - type: Clothing
-    sprite: DarkStation/MainGame/Clothing/Armor/blueshield.rsi
+    sprite: _RPSX/Clothing/OuterClothing/Armor/armor_blue_shield.rsi
   - type: Armor
     modifiers:
       coefficients:
