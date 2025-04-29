@@ -3,6 +3,8 @@ using Content.Shared.RPSX.Patron;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
+using System.Linq;
+using Content.Shared.RPSX.Sponsors;
 
 namespace Content.Shared.Preferences.Loadouts.Effects;
 
@@ -42,9 +44,23 @@ public sealed partial class SponsorLoadoutEffect : LoadoutEffect
 
         if (net.IsClient)
         {
-            return sponsorsManager.TryGetSponsorTier(out var clientSponsor) ? clientSponsor.AllowedLoadouts : [];
+            var clientList = new List<string>();
+            if (sponsorsManager.TryGetAdditionalSponsorTier(out var clientAdditionalSponsor))
+                clientList.AddRange(clientAdditionalSponsor.AllowedLoadouts.Where(item => !clientList.Contains(item)));
+
+            if (sponsorsManager.TryGetSponsorTier(out var clientSponsor))
+                clientList.AddRange(clientSponsor.AllowedLoadouts.Where(item => !clientList.Contains(item)));
+
+            return clientList;
         }
 
-        return !sponsorsManager.TryGetSponsorTier(session.UserId, out var serverSponsor) ? [] : serverSponsor.AllowedLoadouts;
+        var serverList = new List<string>();
+        if (sponsorsManager.TryGetAdditionalSponsorTier(session.UserId, out var serverAsdditionalSponsor))
+            serverList.AddRange(serverAsdditionalSponsor.AllowedLoadouts.Where(item => !serverList.Contains(item)));
+
+        if (sponsorsManager.TryGetSponsorTier(session.UserId, out var serverSponsor))
+            serverList.AddRange(serverSponsor.AllowedLoadouts.Where(item => !serverList.Contains(item)));
+
+        return serverList;
     }
 }

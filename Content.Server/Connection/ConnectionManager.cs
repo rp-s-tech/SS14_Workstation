@@ -324,7 +324,7 @@ namespace Content.Server.Connection
                     return (ConnectionDenyReason.Discord, "Вы не верифицированы через Discord!", null);
                 }
             }
-            
+
             // Checks for whitelist IF it's enabled AND the user isn't an admin. Admins are always allowed.
             if (_cfg.GetCVar(CCVars.WhitelistEnabled) && adminData is null)
             {
@@ -368,7 +368,8 @@ namespace Content.Server.Connection
 
         private async Task<bool> HavePriorityJoin(NetUserId userId)
         {
-            var hasPriorityJoin = _sponsorsManager.TryGetSponsorTier(userId, out var tier) && tier.HavePriorityJoin;
+            var hasPriorityJoin = _sponsorsManager.TryGetSponsorTier(userId, out var tier) && tier.HavePriorityJoin
+                || _sponsorsManager.TryGetAdditionalSponsorTier(userId, out var additionalTier) && additionalTier.HavePriorityJoin;
             if (hasPriorityJoin)
                 return true;
 

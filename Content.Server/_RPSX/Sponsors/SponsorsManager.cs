@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using Content.Server.Database;
 using Content.Shared.CCVar;
 using Content.Shared.Roles;
 using Content.Shared.RPSX.Patron;
@@ -20,6 +21,8 @@ public sealed class SponsorsManager : ISponsorsManager
     [Dependency] private readonly IServerNetManager _netMgr = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly IServerDbManager _serverDbManager = default!;
+    [Dependency] private readonly IEntityManager _entMan = default!;
 
     private readonly HttpClient _httpClient = new();
 
@@ -27,6 +30,7 @@ public sealed class SponsorsManager : ISponsorsManager
     private string _apiUrl = string.Empty;
 
     private readonly Dictionary<NetUserId, string> _cachedSponsors = new();
+    private readonly Dictionary<NetUserId, string> _cachedAdditionalSponsors = new();
 
     public void Initialize()
     {
@@ -34,6 +38,7 @@ public sealed class SponsorsManager : ISponsorsManager
         _cfg.OnValueChanged(RPSXCCVars.SponsorsApiUrl, s => _apiUrl = s, true);
 
         _netMgr.RegisterNetMessage<MsgSponsorInfo>();
+        _netMgr.RegisterNetMessage<MsgAdditionalSponsorInfo>();
 
         _netMgr.Connecting += OnConnecting;
         _netMgr.Connected += OnConnected;
@@ -44,6 +49,12 @@ public sealed class SponsorsManager : ISponsorsManager
     {
         sponsorTier = null;
         return _cachedSponsors.TryGetValue(userId, out var tierId) && _prototype.TryIndex(tierId, out sponsorTier);
+    }
+
+    public bool TryGetAdditionalSponsorTier(NetUserId userId, [NotNullWhen(true)] out SponsorTier? sponsorTier)
+    {
+        sponsorTier = null;
+        return _cachedAdditionalSponsors.TryGetValue(userId, out var tierId) && _prototype.TryIndex(tierId, out sponsorTier);
     }
 
     public bool IsJobAvailable(NetUserId userId, JobPrototype job)
@@ -63,33 +74,42 @@ public sealed class SponsorsManager : ISponsorsManager
     private async Task OnConnecting(NetConnectingArgs e)
     {
         var info = await LoadSponsorInfo(e.UserId);
+        var additionalInfo = await _serverDbManager.GetAdditionalSponsorTier(e.UserId);
         if (info?.TierId == null)
         {
             _cachedSponsors.Remove(e.UserId); // Remove from cache if sponsor expired
-            return;
         }
-
-        DebugTools.Assert(!_cachedSponsors.ContainsKey(e.UserId), "Cached data was found on client connect");
-
-        _cachedSponsors[e.UserId] = info.TierId;
+        else
+        {
+            DebugTools.Assert(!_cachedSponsors.ContainsKey(e.UserId), "Cached data was found on client connect");
+            _cachedSponsors[e.UserId] = info.TierId;
+        }
+        if (additionalInfo == null)
+        {
+            _cachedAdditionalSponsors.Remove(e.UserId);
+        }
+        else
+        {
+            DebugTools.Assert(!_cachedAdditionalSponsors.ContainsKey(e.UserId), "Cached data was found on client connect");
+            _cachedAdditionalSponsors[e.UserId] = additionalInfo;
+        }
     }
 
-    private void OnConnected(object? sender, NetChannelArgs e)
+    private async void OnConnected(object? sender, NetChannelArgs e)
     {
         var tierId = _cachedSponsors.TryGetValue(e.Channel.UserId, out var sponsor) ? sponsor : null;
-        if (sponsor is not null)
-            Logger.Info(sponsor);
-        else
-            Logger.Info("failed to get sponsor tier");
-
-
         var msg = new MsgSponsorInfo { TierId = tierId };
         _netMgr.ServerSendMessage(msg, e.Channel);
+
+        var tier = _cachedAdditionalSponsors.TryGetValue(e.Channel.UserId, out var additionalSponsor) ? additionalSponsor : null;
+        var amsg = new MsgAdditionalSponsorInfo { TierId = tier };
+        _netMgr.ServerSendMessage(amsg, e.Channel);
     }
 
     private void OnDisconnect(object? sender, NetDisconnectedArgs e)
     {
         _cachedSponsors.Remove(e.Channel.UserId);
+        _cachedAdditionalSponsors.Remove(e.Channel.UserId);
     }
 
     private async Task<SponsorInfo?> LoadSponsorInfo(NetUserId userId)
@@ -119,55 +139,15 @@ public sealed class SponsorsManager : ISponsorsManager
         return null;
     }
 
-    public async void AddSponsor(NetUserId userId, string tier)
+    public async void AddSponsor(NetUserId userId, SponsorTier tier, int days)
     {
-        if (string.IsNullOrEmpty(_apiUrl))
-            return;
-
-        var url = $"{_apiUrl}/sponsors/add";
-
-        var postData = new List<KeyValuePair<string, string>>();
-        postData.Add(new KeyValuePair<string, string>("userId", userId.ToString()));
-        postData.Add(new KeyValuePair<string, string>("tier", tier));
-
-        var content = new FormUrlEncodedContent(postData);
-        var response = await _httpClient.PostAsync(url, content);
-        switch (response.StatusCode)
-        {
-            case HttpStatusCode.OK:
-                _sawmill.Info("Sponsor Added {userId} {tier}", userId, tier);
-                break;
-            default:
-                _sawmill.Error(
-                    "Failed to add player sponsor: [{StatusCode}] {Response}",
-                    response.StatusCode
-                );
-                break;
-        }
+        await _serverDbManager.ChangeAdditionalSponsorTier(userId, tier, days);
+        _sawmill.Info("Sponsor Added {userId} {tier} for {days}", userId, tier.ID, days);
     }
 
     public async void RemoveSponsor(NetUserId userId)
     {
-        if (string.IsNullOrEmpty(_apiUrl))
-            return;
-
-        var url = $"{_apiUrl}/sponsors/remove";
-        var postData = new List<KeyValuePair<string, string>>();
-        postData.Add(new KeyValuePair<string, string>("userId", userId.ToString()));
-
-        var content = new FormUrlEncodedContent(postData);
-        var response = await _httpClient.PostAsync(url, content);
-        switch (response.StatusCode)
-        {
-            case HttpStatusCode.OK:
-                _sawmill.Info("Sponsor Removed {userId}", userId);
-                break;
-            default:
-                _sawmill.Error(
-                    "Failed to remove player sponsor: [{StatusCode}] {Response}",
-                    response.StatusCode
-                );
-                break;
-        }
+        await _serverDbManager.ChangeAdditionalSponsorTier(userId);
+        _sawmill.Info("Sponsor Removed {userId}", userId);
     }
 }

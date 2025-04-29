@@ -91,7 +91,14 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         var profile = export.Profile;
         var collection = IoCManager.Instance;
-        var sponsorPrototypes = _sponsors.TryGetSponsorTier(session.UserId, out var tier) ? tier.AllowedMarkings : [];
+        // RPSX Sponsors
+        var sponsorPrototypes = new List<string>();
+        if (_sponsors.TryGetSponsorTier(session.UserId, out var tier))
+            sponsorPrototypes.AddRange(tier.AllowedLoadouts.Where(item => !sponsorPrototypes.Contains(item)));
+
+        if (_sponsors.TryGetAdditionalSponsorTier(session.UserId, out var additionalTier))
+            sponsorPrototypes.AddRange(additionalTier.AllowedLoadouts.Where(item => !sponsorPrototypes.Contains(item)));
+        // RPSX Sponsors
         profile.EnsureValid(session, collection!, sponsorPrototypes.ToArray());
         return profile;
     }
@@ -236,7 +243,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         ref bool dirty)
     {
 #if DEBUG
-        if (source is {} s)
+        if (source is { } s)
         {
             DebugTools.AssertNotEqual(s, SlotFlags.NONE);
             // Check that only a single bit in the bitflag is set
@@ -247,7 +254,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         if (visible)
         {
-            if (source is not {} slot)
+            if (source is not { } slot)
             {
                 dirty |= ent.Comp.PermanentlyHidden.Remove(layer);
             }
