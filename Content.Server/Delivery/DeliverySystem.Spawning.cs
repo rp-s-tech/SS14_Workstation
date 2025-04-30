@@ -118,7 +118,7 @@ public sealed partial class DeliverySystem
         return validSpawners;
     }
 
-    private void AddDeliveriesToSpawner(Entity<DeliverySpawnerComponent> ent, int amount)
+    public void AddDeliveriesToSpawner(Entity<DeliverySpawnerComponent> ent, int amount)
     {
         ent.Comp.ContainedDeliveryAmount += Math.Clamp(amount, 0, ent.Comp.MaxContainedDeliveryAmount - ent.Comp.ContainedDeliveryAmount);
         _audio.PlayPvs(ent.Comp.SpawnSound, ent.Owner);
