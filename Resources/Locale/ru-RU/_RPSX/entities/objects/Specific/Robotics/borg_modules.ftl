@@ -1,4 +1,4 @@
-ent-DisablerBorgModuled = нелетальный модуль киборга
+ent-BorgModuleDisabler = нелетальный модуль киборга
 
 ent-BorgModuleLaser = лазерный модуль киборга
 

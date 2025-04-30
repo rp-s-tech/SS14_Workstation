@@ -29,7 +29,7 @@
 - type: entity
   id: BorgModuleDisabler
   parent: [ BaseBorgModuleService, BaseProviderBorgModule ]
-  name: service cyborg module
+  name: non-lethal borg module
   components:
   - type: Sprite
     sprite: _RPSX/Objects/Specific/Robotics/borgmodule.rsi
