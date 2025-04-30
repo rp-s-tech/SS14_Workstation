@@ -1,0 +1,60 @@
+# This is RPSX copy dark_borg_modules.yml (DarkStation\MainGame\Entities\Objects\Specific\Robotics)
+
+- type: entity
+  id: BaseBorgModuleSec
+  parent: BaseBorgModule
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - BorgModuleSecurity
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-icon-inhand-left
+        color: "#EBD8B7"
+      - state: base-module-inhand-left
+        color: "#613D1D"
+      - state: base-stripes-inhand-left
+        color: "#593718"
+      right:
+      - state: base-icon-inhand-right
+        color: "#EBD8B7"
+      - state: base-module-inhand-right
+        color: "#613D1D"
+      - state: base-stripes-inhand-right
+        color: "#593718"
+
+# security modules
+- type: entity
+  id: BorgModuleDisabler
+  parent: [ BaseBorgModuleService, BaseProviderBorgModule ]
+  name: service cyborg module
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Specific/Robotics/borgmodule.rsi
+    layers:
+    - state: security
+    - state: icon-non-letal
+  - type: ItemBorgModule
+    items:
+    - StunbatonBorg
+    - WeaponDisablerBorg
+  - type: BorgModuleIcon
+    icon: { sprite: _RPSX/Interface/Actions/actions_borg.rsi, state: non-lethal-module }
+
+- type: entity
+  id: BorgModuleLaser
+  parent: [ BaseBorgModuleService, BaseProviderBorgModule ]
+  name: laser borg modules
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Specific/Robotics/borgmodule.rsi
+    layers:
+    - state: security
+    - state: icon-lazer
+  - type: ItemBorgModule
+    items:
+    - WeaponAdvancedLaser
+  - type: BorgModuleIcon
+    icon: { sprite: _RPSX/Interface/Actions/actions_borg.rsi, state: weapon-module }
