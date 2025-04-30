@@ -17,6 +17,35 @@ namespace Content.Server.Database.Migrations.Sqlite
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
 
+            modelBuilder.Entity("Content.Server.Database.AdditionalSponsorData", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("id");
+
+                    b.Property<DateTime?>("DateOfEnd")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("date_of_end");
+
+                    b.Property<Guid>("PlayerUserId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("userID");
+
+                    b.Property<string>("SponsorTier")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("sponsorTier");
+
+                    b.HasKey("ID")
+                        .HasName("PK_rpsx_additional_sponsor_data");
+
+                    b.HasIndex("PlayerUserId")
+                        .IsUnique();
+
+                    b.ToTable("rpsx_additional_sponsor_data", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.Admin", b =>
                 {
                     b.Property<Guid>("UserId")

@@ -12,6 +12,7 @@ using Content.Shared.Database;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.RPSX.Bank.Components;
+using Content.Shared.RPSX.Sponsors;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -366,9 +367,11 @@ namespace Content.Server.Database
 
         #region RPSX
 
+        Task<string?> GetAdditionalSponsorTier(NetUserId userId);
+        Task ChangeAdditionalSponsorTier(NetUserId userId, SponsorTier? tier = null, int days = 0);
         Task<BankAccountComponent?> GetProfileEconomics(NetUserId userId, int slot);
         Task SaveProfileEconomics(NetUserId userId, int slot, BankAccountComponent bank);
-        Task<bool>  IsDiscordVerifiedAsync(NetUserId userId);
+        Task<bool> IsDiscordVerifiedAsync(NetUserId userId);
 
         #endregion
     }
@@ -1053,6 +1056,17 @@ namespace Content.Server.Database
         }
 
         #region RPSX
+
+        public Task<string?> GetAdditionalSponsorTier(NetUserId userId)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetAdditionalSponsorTier(userId));
+        }
+        public Task ChangeAdditionalSponsorTier(NetUserId userId, SponsorTier? tier = null, int days = 0)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.ChangeAdditionalSponsorTier(userId, tier, days));
+        }
         public Task<BankAccountComponent?> GetProfileEconomics(NetUserId userId, int slot)
         {
             DbReadOpsMetric.Inc();

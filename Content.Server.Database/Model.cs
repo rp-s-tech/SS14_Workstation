@@ -47,12 +47,13 @@ namespace Content.Server.Database
         public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
         public DbSet<IPIntelCache> IPIntelCache { get; set; } = null!;
 
-        public DbSet<PatronProfilePet> PatronProfilePets {get; set;} = null!;
+        public DbSet<PatronProfilePet> PatronProfilePets { get; set; } = null!;
 
-        public DbSet<PatronProfileItem> PatronProfileItem {get; set;} = null!;
+        public DbSet<PatronProfileItem> PatronProfileItem { get; set; } = null!;
 
-        public DbSet<ProfileEconomics> ProfileEconomics {get; set; } = null!;
+        public DbSet<ProfileEconomics> ProfileEconomics { get; set; } = null!;
         public DbSet<DiscordUser> DiscordUsers { get; set; } = null!;
+        public DbSet<AdditionalSponsorData> AdditionalSponsorDatas { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -347,6 +348,10 @@ namespace Content.Server.Database
                 .HasIndex(u => u.DiscordId)
                 .IsUnique();
 
+            modelBuilder.Entity<AdditionalSponsorData>()
+                .HasIndex(u => u.PlayerUserId)
+                .IsUnique();
+
             modelBuilder.Entity<RoleWhitelist>()
                 .HasOne(w => w.Player)
                 .WithMany(p => p.JobWhitelists)
@@ -503,6 +508,26 @@ namespace Content.Server.Database
         [Required]
         [Column("verify")]
         public int Verify { get; set; } = 0;
+    }
+
+    [Table("rpsx_additional_sponsor_data")]
+    public class AdditionalSponsorData
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("id")]
+        public int ID { get; set; }
+
+        [Required]
+        [Column("userID")]
+        public Guid PlayerUserId { get; set; }
+
+        [Required]
+        [Column("sponsorTier")]
+        public string SponsorTier { get; set; } = string.Empty;
+
+        [Column("date_of_end")]
+        public DateTime? DateOfEnd { get; set; }
     }
 
     #endregion

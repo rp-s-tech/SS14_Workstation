@@ -1910,6 +1910,62 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         }
 
         #region RPSX
+
+        public async Task<string?> GetAdditionalSponsorTier(NetUserId userId)
+        {
+            await using var db = await GetDb();
+
+            var sponsor = db.DbContext.AdditionalSponsorDatas
+                .SingleOrDefault(p => p.PlayerUserId == userId.UserId) ?? null;
+            if (sponsor == null) return null;
+            if (sponsor.DateOfEnd == null) return sponsor.SponsorTier;
+            if (sponsor.DateOfEnd < DateTime.Now)
+            {
+                await ChangeAdditionalSponsorTier(userId);
+                return null;
+            }
+            return sponsor.SponsorTier;
+        }
+
+        public async Task ChangeAdditionalSponsorTier(NetUserId userId, SponsorTier? tier = null, int days = 0)
+        {
+            await using var db = await GetDb();
+
+            var sponsor = db.DbContext.AdditionalSponsorDatas
+                .SingleOrDefault(p => p.PlayerUserId == userId.UserId) ?? null;
+
+            if (tier == null)
+            {
+                if (sponsor == null)
+                {
+                    _opsLog.Info($"Player {userId} doesn't have tier {tier}");
+                    return;
+                }
+                db.DbContext.AdditionalSponsorDatas.Remove(sponsor);
+                await db.DbContext.SaveChangesAsync();
+                return;
+            }
+            else
+            {
+                if (sponsor == null)
+                {
+                    sponsor = new AdditionalSponsorData
+                    {
+                        PlayerUserId = userId.UserId,
+                        DateOfEnd = days > 0 ? DateTime.Now.AddDays(days) : null,
+                        SponsorTier = tier.ID
+                    };
+                    db.DbContext.AdditionalSponsorDatas.Add(sponsor);
+                    await db.DbContext.SaveChangesAsync();
+                    return;
+                }
+                sponsor.SponsorTier = tier.ID;
+                sponsor.DateOfEnd = days > 0 ? DateTime.Now.AddDays(days) : null;
+                await db.DbContext.SaveChangesAsync();
+                return;
+            }
+        }
+
         public async Task<BankAccountComponent?> GetProfileEconomics(NetUserId userId, int slot)
         {
             await using var db = await GetDb();
@@ -1917,14 +1973,15 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             var profile = db.DbContext.Profile
                 .Include(p => p.Preference)
                 .Where(p => p.Preference.UserId == userId.UserId)
-                .SingleOrDefault(h => h.Slot == slot);
+                .SingleOrDefault(h => h.Slot == slot) ?? null;
 
             if (profile is null) return null;
             var economics = db.DbContext.ProfileEconomics
-                .SingleOrDefault(e => e.Profile == profile);
+                .SingleOrDefault(e => e.Profile == profile) ?? null;
             if (economics is null)
                 return null;
-            var bankAccount = new BankAccountComponent {
+            var bankAccount = new BankAccountComponent
+            {
                 Balance = economics.Balance
             };
             return bankAccount;
