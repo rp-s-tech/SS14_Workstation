@@ -160,6 +160,7 @@ loadout-group-security-belt = Офицер СБ, пояс
 loadout-group-security-outerclothing = Офицер СБ, верхняя одежда
 loadout-group-security-shoes = Офицер СБ, обувь
 loadout-group-security-id = Офицер СБ, ID
+loadout-group-medical-glasses = Medical glasses
 Detective-loadout = Снаряжение детектива
 loadout-group-detective-head = Детектив, голова
 loadout-group-detective-neck = Детектив, шея
