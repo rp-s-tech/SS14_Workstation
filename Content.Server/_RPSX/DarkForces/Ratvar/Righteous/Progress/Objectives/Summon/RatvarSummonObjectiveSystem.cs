@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Content.Server.Warps;
+using Content.Shared.Warps;
 using Content.Shared.Ninja.Components;
 using Content.Shared.Objectives.Components;
 using Robust.Shared.GameObjects;

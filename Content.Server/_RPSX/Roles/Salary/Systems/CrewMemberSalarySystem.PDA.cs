@@ -1,4 +1,4 @@
-using Content.Server.PDA.Ringer;
+using Content.Shared.PDA.Ringer;
 using Content.Shared.RPSX.Bank.PDA.Components;
 using Content.Shared.CartridgeLoader;
 using Robust.Shared.Containers;

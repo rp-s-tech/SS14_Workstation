@@ -221,10 +221,10 @@ public abstract partial class SharedStaminaSystem : EntitySystem
             return;
 
         // Allow stamina resistance to be applied.
-        // if (!ignoreResist)
-        // {
-        //     value = ev.Value;
-        // }
+        if (!ignoreResist)
+        {
+            value = ev.Value;
+        }
 
         // value = UniversalStaminaDamageModifier * value;
 
