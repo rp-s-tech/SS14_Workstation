@@ -121,10 +121,9 @@ public sealed class BodyPrototypeSerializer : ITypeReader<BodyPrototype, Mapping
         if (node.TryGet("rootOverride", out var rootOverrideSet))
             rootOverride = bool.Parse(node.Get<ValueDataNode>("rootOverride").Value);
 
-        foreach (var (keyNode, valueNode) in slotNodes)
+        foreach (var (slotId, valueNode) in slotNodes)
         {
-            var slotId = ((ValueDataNode) keyNode).Value;
-            var slot = ((MappingDataNode) valueNode);
+            var slot = (MappingDataNode)valueNode;
 
             string? part = null;
             if (slot.TryGet<ValueDataNode>("part", out var value))
@@ -148,7 +147,7 @@ public sealed class BodyPrototypeSerializer : ITypeReader<BodyPrototype, Mapping
             {
                 foreach (var (organKeyNode, organValueNode) in slotOrgansNode)
                 {
-                    var organSlot = ((MappingDataNode) organValueNode);
+                    var organSlot = (MappingDataNode)organValueNode;
 
                     string? organ = null;
                     if (organSlot.TryGet<ValueDataNode>("organ", out var organValue))
@@ -167,7 +166,7 @@ public sealed class BodyPrototypeSerializer : ITypeReader<BodyPrototype, Mapping
                     {
                         internalOrgan = bool.Parse(internalOrganValue.Value);
                     }
-                    organs.Add(((ValueDataNode) organKeyNode).Value, new OrganPrototypeSlot(organ, organSlotType, internalOrgan));
+                    organs.Add(organKeyNode, new OrganPrototypeSlot(organ, organSlotType, internalOrgan));
                 }
             }
 
