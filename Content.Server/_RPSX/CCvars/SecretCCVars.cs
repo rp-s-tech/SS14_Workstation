@@ -18,4 +18,13 @@ public sealed class RPSXCCVars : CVars
     public static readonly CVarDef<int> RatvarMaxRighteousCount =
         CVarDef.Create("ratvar.max_righteous_count", 6);
 
+    public static readonly CVarDef<bool> IsHeartAttackEnabled =
+        CVarDef.Create("surgery.heart_attack_enabled", false);
+
+    public static readonly CVarDef<bool> IsHeartStrainEnabled =
+        CVarDef.Create("surgery.heart_strain_enabled", false);
+
+    public static readonly CVarDef<bool> IsSeveredLimbEnabled =
+        CVarDef.Create("surgery.severed_limb_enabled", true);
+
 }
