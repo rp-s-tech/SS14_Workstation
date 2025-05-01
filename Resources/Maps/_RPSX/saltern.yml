@@ -1,6 +1,17 @@
 meta:
-  format: 6
-  postmapinit: false
+  format: 7
+  category: Map
+  engineVersion: 251.0.0
+  forkId: workstation_dev
+  forkVersion: upstream_d642bc45115bfba9bbc5b5570c4129e3e7ffc31e
+  time: 04/20/2025 14:44:40
+  entityCount: 12766
+maps:
+- 1
+grids:
+- 2
+orphans: []
+nullspace: []
 tilemap:
   0: Space
   7: FloorAsteroidSand
@@ -77,7 +88,6 @@ entities:
     - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
-    - type: LoadedMap
   - uid: 2
     components:
     - type: MetaData
@@ -9821,7 +9831,7 @@ entities:
       pos: 0.5,20.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -70309.734
+      secondsUntilStateChange: -70365.38
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9990,7 +10000,7 @@ entities:
       pos: -9.5,-33.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -108010.47
+      secondsUntilStateChange: -108066.12
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -33910,6 +33920,36 @@ entities:
     components:
     - type: Transform
       pos: 16.5,1.5
+      parent: 2
+- proto: ChemistryBottleMuteToxin
+  entities:
+  - uid: 8723
+    components:
+    - type: MetaData
+      name: бутыль
+    - type: Transform
+      pos: 17.289293,-21.103563
+      parent: 2
+- proto: ChemistryBottleRobustHarvest
+  entities:
+  - uid: 9791
+    components:
+    - type: Transform
+      pos: -18.17524,-5.4275656
+      parent: 2
+  - uid: 9792
+    components:
+    - type: Transform
+      pos: -18.284615,-5.5525656
+      parent: 2
+- proto: ChemistryBottleToxin
+  entities:
+  - uid: 10671
+    components:
+    - type: MetaData
+      name: бутыль
+    - type: Transform
+      pos: 17.242418,-20.697313
       parent: 2
 - proto: ChemistryHotplate
   entities:
@@ -58683,7 +58723,7 @@ entities:
       pos: 12.5,-40.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -108961.01
+      secondsUntilStateChange: -109016.66
       state: Opening
 - proto: HospitalCurtainsOpen
   entities:
@@ -60990,15 +61030,6 @@ entities:
     components:
     - type: Transform
       pos: -3.6433892,-29.81465
-      parent: 2
-- proto: MuteToxinChemistryBottle
-  entities:
-  - uid: 8723
-    components:
-    - type: MetaData
-      name: бутыль
-    - type: Transform
-      pos: 17.289293,-21.103563
       parent: 2
 - proto: MysteryFigureBox
   entities:
@@ -67516,18 +67547,6 @@ entities:
     - type: Transform
       pos: -34.377525,33.768944
       parent: 2
-- proto: RobustHarvestChemistryBottle
-  entities:
-  - uid: 9791
-    components:
-    - type: Transform
-      pos: -18.17524,-5.4275656
-      parent: 2
-  - uid: 9792
-    components:
-    - type: Transform
-      pos: -18.284615,-5.5525656
-      parent: 2
 - proto: RubberStampApproved
   entities:
   - uid: 9793
@@ -73376,15 +73395,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 16.532408,14.452186
-      parent: 2
-- proto: ToxinChemistryBottle
-  entities:
-  - uid: 10671
-    components:
-    - type: MetaData
-      name: бутыль
-    - type: Transform
-      pos: 17.242418,-20.697313
       parent: 2
 - proto: ToyAi
   entities:
@@ -83569,6 +83579,32 @@ entities:
     - type: Transform
       pos: -13.449167,21.684664
       parent: 2
+- proto: WeaponEnergyTurretStation
+  entities:
+  - uid: 12582
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -31.5,36.5
+      parent: 2
+  - uid: 12583
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -38.5,41.5
+      parent: 2
+  - uid: 12584
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -39.5,36.5
+      parent: 2
+  - uid: 12585
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -32.5,41.5
+      parent: 2
 - proto: WeaponLaserCarbinePractice
   entities:
   - uid: 12571
@@ -83636,28 +83672,6 @@ entities:
     components:
     - type: Transform
       pos: -8.68019,20.742504
-      parent: 2
-- proto: WeaponTurretHostile
-  entities:
-  - uid: 12582
-    components:
-    - type: Transform
-      pos: -32.5,41.5
-      parent: 2
-  - uid: 12583
-    components:
-    - type: Transform
-      pos: -39.5,36.5
-      parent: 2
-  - uid: 12584
-    components:
-    - type: Transform
-      pos: -31.5,36.5
-      parent: 2
-  - uid: 12585
-    components:
-    - type: Transform
-      pos: -38.5,41.5
       parent: 2
 - proto: WeaponWaterBlaster
   entities:
@@ -83878,7 +83892,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -121311.85
+      secondsUntilStateChange: -121367.5
       state: Opening
   - uid: 12620
     components:

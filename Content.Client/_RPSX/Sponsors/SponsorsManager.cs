@@ -17,11 +17,21 @@ public sealed class SponsorsManager : ISponsorsManager
 
     private SponsorTier? _tier;
 
+    private SponsorTier? _dopTier;
+
     public void Initialize()
     {
         _netMgr.RegisterNetMessage<MsgSponsorInfo>(msg =>
             {
                 if (msg.TierId == null || !_prototype.TryIndex(msg.TierId, out _tier))
+                {
+                    _tier = null;
+                }
+            }
+        );
+        _netMgr.RegisterNetMessage<MsgAdditionalSponsorInfo>(msg =>
+            {
+                if (msg.TierId == null || !_prototype.TryIndex(msg.TierId, out _dopTier))
                 {
                     _tier = null;
                 }
@@ -35,10 +45,16 @@ public sealed class SponsorsManager : ISponsorsManager
         return _tier != null;
     }
 
+    public bool TryGetAdditionalSponsorTier([NotNullWhen(true)] out SponsorTier? sponsor)
+    {
+        sponsor = _dopTier;
+        return _dopTier != null;
+    }
+
     public bool IsJobAvailable(JobPrototype job)
     {
         var isWhiteListEnabled = _cfg.GetCVar(CCVars.GameRoleWhitelist);
-        if (isWhiteListEnabled && job is { Whitelisted: true, SponsorIgnoreWhitelist: false })
+        if (isWhiteListEnabled && job is { SponsorIgnore: false })
             return false;
 
         return _tier?.RoleTimeByPass == true;

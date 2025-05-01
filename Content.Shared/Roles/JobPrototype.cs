@@ -149,7 +149,7 @@ namespace Content.Shared.Roles
         public List<ProtoId<GuideEntryPrototype>>? Guides;
 
         [DataField]
-        public bool SponsorIgnoreWhitelist = true;
+        public bool SponsorIgnore = true;
 
         [DataField]
         public bool AlwaysUseSpawner;

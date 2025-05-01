@@ -2,8 +2,8 @@
   id: BaseEnergyBuildComp
   parent: BaseItem
   categories: [ HideSpawnMenu ]
-  name: Базовая составляющая Энергоядра
-  description: Кругленькая красивенькая, но очень функциональная и хрупкая вещица. Является "центральным процессором" Энергоядра.
+  name: base energy core component
+  description: A round, pretty, but very functional and fragile thing. It is the "central processor" of the Energy Core.
   components:
     - type: Sprite
       sprite: _RPSX/EnergyCores/mini_core-RnD.rsi
@@ -21,7 +21,7 @@
 - type: entity
   parent: BaseEnergyBuildComp
   id: RnDEnergyCoreCPU
-  name: Центральный процессор ядра РнД
+  name: CPU of R&D core
   components:
     - type: Sprite
       sprite: _RPSX/EnergyCores/mini_core-RnD.rsi
@@ -30,7 +30,7 @@
 - type: entity
   parent: RnDEnergyCoreCPU
   id: RNDECCPU1
-  name: ЦПУ РНД
+  name: CPU of R&D core
   suffix: Single
   components:
   - type: Sprite
@@ -41,7 +41,7 @@
 - type: entity
   id: SyndicateEnergyCoreCPU
   parent: BaseEnergyBuildComp
-  name: Центральный процессор ядра Синдиката
+  name: CPU of Syndicate core
   components:
     - type: Sprite
       sprite: _RPSX/EnergyCores/mini_core-redspace.rsi
@@ -50,7 +50,7 @@
 - type: entity
   parent: SyndicateEnergyCoreCPU
   id: SYNECCPU1
-  name: ЦПУ Синдиката
+  name: CPU of Syndicate core
   suffix: Single
   components:
   - type: Sprite
@@ -61,7 +61,7 @@
 - type: entity
   id: NanoTrasenEnergyCoreCPU
   parent: BaseEnergyBuildComp
-  name: Центральный процессор ядра НаноТрейзен
+  name: CPU of NT core
   components:
     - type: Sprite
       sprite: _RPSX/EnergyCores/mini_core-blue.rsi
@@ -70,7 +70,7 @@
 - type: entity
   parent: NanoTrasenEnergyCoreCPU
   id: NTECCPU1
-  name: ЦПУ НаноТрейзен
+  name: CPU of NT core
   suffix: Single
   components:
   - type: Sprite
@@ -81,7 +81,7 @@
 - type: entity
   id: HandMadeEnergyCoreCPU
   parent: BaseEnergyBuildComp
-  name: Центральный процессор самодельного ядра
+  name: CPU of hand made core
   components:
     - type: Sprite
       sprite: _RPSX/EnergyCores/mini_core-yellow.rsi
@@ -90,7 +90,7 @@
 - type: entity
   parent: HandMadeEnergyCoreCPU
   id: HMECCPU1
-  name: Самодельный ЦПУ
+  name: CPU of hand made core
   suffix: Single
   components:
   - type: Sprite

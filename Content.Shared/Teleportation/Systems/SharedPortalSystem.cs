@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Shared.Ghost;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
@@ -111,7 +111,7 @@ public abstract class SharedPortalSystem : EntitySystem
 
         if (TryComp<LinkedEntityComponent>(uid, out var link))
         {
-            if (!link.LinkedEntities.Any())
+            if (link.LinkedEntities.Count == 0)
                 return;
 
             // client can't predict outside of simple portal-to-portal interactions due to randomness involved
@@ -158,7 +158,7 @@ public abstract class SharedPortalSystem : EntitySystem
 
     private void OnEndCollide(EntityUid uid, PortalComponent component, ref EndCollideEvent args)
     {
-        if (!ShouldCollide(args.OurFixtureId, args.OtherFixtureId,args.OurFixture, args.OtherFixture))
+        if (!ShouldCollide(args.OurFixtureId, args.OtherFixtureId, args.OurFixture, args.OtherFixture))
             return;
 
         var subject = args.OtherEntity;
@@ -170,14 +170,14 @@ public abstract class SharedPortalSystem : EntitySystem
         }
     }
 
-    private void TeleportEntity(EntityUid portal, EntityUid subject, EntityCoordinates target, EntityUid? targetEntity=null, bool playSound=true,
+    private void TeleportEntity(EntityUid portal, EntityUid subject, EntityCoordinates target, EntityUid? targetEntity = null, bool playSound = true,
         PortalComponent? portalComponent = null)
     {
         if (!Resolve(portal, ref portalComponent))
             return;
 
         var ourCoords = Transform(portal).Coordinates;
-        var onSameMap = ourCoords.GetMapId(EntityManager) == target.GetMapId(EntityManager);
+        var onSameMap = _transform.GetMapId(ourCoords) == _transform.GetMapId(target);
         var distanceInvalid = portalComponent.MaxTeleportRadius != null
                               && ourCoords.TryDistance(EntityManager, target, out var distance)
                               && distance > portalComponent.MaxTeleportRadius;
@@ -224,7 +224,26 @@ public abstract class SharedPortalSystem : EntitySystem
         _audio.PlayPredicted(arrivalSound, subject, subject);
     }
 
+    // private void TeleportRandomly(EntityUid portal, EntityUid subject, PortalComponent? component = null)
+    // {
+    //     if (!Resolve(portal, ref component))
+    //         return;
 
+    //     var xform = Transform(portal);
+    //     var coords = xform.Coordinates;
+    //     var newCoords = coords.Offset(_random.NextVector2(component.MaxRandomRadius));
+    //     for (var i = 0; i < MaxRandomTeleportAttempts; i++)
+    //     {
+    //         var randVector = _random.NextVector2(component.MaxRandomRadius);
+    //         newCoords = coords.Offset(randVector);
+    //         if (!_lookup.AnyEntitiesIntersecting(_transform.ToMapCoordinates(newCoords), LookupFlags.Static))
+    //         {
+    //             break;
+    //         }
+    //     }
+
+    //     TeleportEntity(portal, subject, newCoords);
+    // }
 
     protected virtual void LogTeleport(EntityUid portal, EntityUid subject, EntityCoordinates source,
         EntityCoordinates target)

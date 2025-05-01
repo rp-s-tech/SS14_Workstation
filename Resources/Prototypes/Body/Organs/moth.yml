@@ -8,6 +8,7 @@
       tags:
       - ClothMade
       - Paper
+      - Pill
   - type: DStomach
     organKey: stomach
   - type: SolutionContainerManager

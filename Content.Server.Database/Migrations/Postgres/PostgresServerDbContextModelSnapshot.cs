@@ -25,6 +25,37 @@ namespace Content.Server.Database.Migrations.Postgres
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("Content.Server.Database.AdditionalSponsorData", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<DateTime?>("DateOfEnd")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("date_of_end");
+
+                    b.Property<Guid>("PlayerUserId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("userID");
+
+                    b.Property<string>("SponsorTier")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("sponsorTier");
+
+                    b.HasKey("ID")
+                        .HasName("PK_rpsx_additional_sponsor_data");
+
+                    b.HasIndex("PlayerUserId")
+                        .IsUnique();
+
+                    b.ToTable("rpsx_additional_sponsor_data", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.Admin", b =>
                 {
                     b.Property<Guid>("UserId")

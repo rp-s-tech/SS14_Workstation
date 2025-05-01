@@ -106,7 +106,13 @@ namespace Content.Server.Preferences.Managers
             var session = _playerManager.GetSessionById(userId);
 
             // RPSX Sponsors
-            var allowedMarkings = _sponsors.TryGetSponsorTier(userId, out var tier) ? tier.AllowedMarkings : [];
+            var allowedMarkings = new List<string>();
+            if (_sponsors.TryGetSponsorTier(userId, out var tier))
+                allowedMarkings.AddRange(tier.AllowedLoadouts.Where(item => !allowedMarkings.Contains(item)));
+
+            if (_sponsors.TryGetAdditionalSponsorTier(userId, out var additionalTier))
+                allowedMarkings.AddRange(additionalTier.AllowedLoadouts.Where(item => !allowedMarkings.Contains(item)));
+
             profile.EnsureValid(session, _dependencies, allowedMarkings.ToArray());
             // RPSX Sponsors
 
@@ -297,7 +303,14 @@ namespace Content.Server.Preferences.Managers
             // Clean up preferences in case of changes to the game,
             // such as removed jobs still being selected.
 
-            var sponsorPrototypes = _sponsors.TryGetSponsorTier(session.UserId, out var tier) ? tier.AllowedMarkings : []; // RPSX Sponsors
+            // RPSX Sponsors
+            var sponsorPrototypes = new List<string>();
+            if (_sponsors.TryGetSponsorTier(session.UserId, out var tier))
+                sponsorPrototypes.AddRange(tier.AllowedLoadouts.Where(item => !sponsorPrototypes.Contains(item)));
+
+            if (_sponsors.TryGetAdditionalSponsorTier(session.UserId, out var additionalTier))
+                sponsorPrototypes.AddRange(additionalTier.AllowedLoadouts.Where(item => !sponsorPrototypes.Contains(item)));
+            // RPSX Sponsors
             return new PlayerPreferences(prefs.Characters.Select(p =>
             {
                 return new KeyValuePair<int, ICharacterProfile>(p.Key, p.Value.Validated(session, collection, sponsorPrototypes.ToArray()));

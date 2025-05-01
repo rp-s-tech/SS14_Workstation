@@ -1,136 +1,136 @@
-- type: entity
-  parent: PlushieLizard
-  id: PlushLokilife
-  name: Lokilife
-  components:
-  - type: Sprite
-    sprite: Exodus/Objects/Fun/toys.rsi
-    state: plush_lokilife
-  - type: MeleeWeapon
-    wideAnimationRotation: -135
-    damage:
-      types:
-        Heat: 8
-    soundHit:
-      collection: MetalThud
-  - type: Extractable
-    juiceSolution:
-      reagents:
-        - ReagentId: Chlorine
-          Quantity: 3
-        - ReagentId: Fluorine
-          Quantity: 9
-  - type: DamageOnInteract
-    damage:
-      types:
-        Holy: 10
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 22
-        canReact: false
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 10
-        - ReagentId: Chlorine
-          Quantity: 3
-        - ReagentId: Fluorine
-          Quantity: 9
+# - type: entity
+#   parent: PlushieLizard
+#   id: PlushLokilife
+#   name: Lokilife
+#   components:
+#   - type: Sprite
+#     sprite: Exodus/Objects/Fun/toys.rsi
+#     state: plush_lokilife
+#   - type: MeleeWeapon
+#     wideAnimationRotation: -135
+#     damage:
+#       types:
+#         Heat: 8
+#     soundHit:
+#       collection: MetalThud
+#   - type: Extractable
+#     juiceSolution:
+#       reagents:
+#         - ReagentId: Chlorine
+#           Quantity: 3
+#         - ReagentId: Fluorine
+#           Quantity: 9
+#   - type: DamageOnInteract
+#     damage:
+#       types:
+#         Holy: 10
+#   - type: SolutionContainerManager
+#     solutions:
+#       food:
+#         maxVol: 22
+#         canReact: false
+#         reagents:
+#         - ReagentId: Fiber
+#           Quantity: 10
+#         - ReagentId: Chlorine
+#           Quantity: 3
+#         - ReagentId: Fluorine
+#           Quantity: 9
 
-- type: entity
-  parent: PlushieMoth
-  id: PlushFragoler
-  name: Fragoler
-  components:
-  - type: Sprite
-    sprite: Exodus/Objects/Fun/toys.rsi
-    state: plush_fragoler
-  - type: PointLight
-    enabled: true
-    radius: 12
-    energy: 0.55
-    color: "#fcc860"
+# - type: entity
+#   parent: PlushieMoth
+#   id: PlushFragoler
+#   name: Fragoler
+#   components:
+#   - type: Sprite
+#     sprite: Exodus/Objects/Fun/toys.rsi
+#     state: plush_fragoler
+#   - type: PointLight
+#     enabled: true
+#     radius: 12
+#     energy: 0.55
+#     color: "#fcc860"
 
-- type: entity
-  parent: BasePlushie
-  id: PlushAsler
-  name: Askolot
-  components:
-  - type: Sprite
-    sprite: Exodus/Objects/Fun/toys.rsi
-    state: plush_asler
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Amatoxin
-        Quantity: 20
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 10
-        - ReagentId: Amatoxin
-          Quantity: 10
+# - type: entity
+#   parent: BasePlushie
+#   id: PlushAsler
+#   name: Askolot
+#   components:
+#   - type: Sprite
+#     sprite: Exodus/Objects/Fun/toys.rsi
+#     state: plush_asler
+#   - type: Extractable
+#     juiceSolution:
+#       reagents:
+#       - ReagentId: Amatoxin
+#         Quantity: 20
+#   - type: SolutionContainerManager
+#     solutions:
+#       food:
+#         maxVol: 20
+#         reagents:
+#         - ReagentId: Fiber
+#           Quantity: 10
+#         - ReagentId: Amatoxin
+#           Quantity: 10
 
-- type: entity
-  parent: BasePlushie
-  id: Plushloxmat
-  name: Loxmat
-  components:
-  - type: Sprite
-    sprite: Exodus/Objects/Fun/toys.rsi
-    state: plush_loxmat
-    scale: 0.75, 0.75
+# - type: entity
+#   parent: BasePlushie
+#   id: Plushloxmat
+#   name: Loxmat
+#   components:
+#   - type: Sprite
+#     sprite: Exodus/Objects/Fun/toys.rsi
+#     state: plush_loxmat
+#     scale: 0.75, 0.75
 
-- type: entity
-  parent: BasePlushie
-  id: PlushAtima
-  name: Atima
-  components:
-  - type: Sprite
-    sprite: Exodus/Objects/Fun/toys.rsi
-    state: plush_atima
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Omnizine
-        Quantity: 20
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 10
-        - ReagentId: Omnizine
-          Quantity: 10
+# - type: entity
+#   parent: BasePlushie
+#   id: PlushAtima
+#   name: Atima
+#   components:
+#   - type: Sprite
+#     sprite: Exodus/Objects/Fun/toys.rsi
+#     state: plush_atima
+#   - type: Extractable
+#     juiceSolution:
+#       reagents:
+#       - ReagentId: Omnizine
+#         Quantity: 20
+#   - type: SolutionContainerManager
+#     solutions:
+#       food:
+#         maxVol: 20
+#         reagents:
+#         - ReagentId: Fiber
+#           Quantity: 10
+#         - ReagentId: Omnizine
+#           Quantity: 10
 
-- type: entity
-  parent: PlushieMoth
-  id: PlushJidor
-  name: Jidor
-  components:
-  - type: Sprite
-    sprite: Exodus/Objects/Fun/toys.rsi
-    state: plush_jidor
-  - type: MeleeWeapon
-    wideAnimationRotation: -135
-    damage:
-      types:
-        Blunt: 5
-    soundHit:
-      path: /Audio/Weapons/egloves.ogg
+# - type: entity
+#   parent: PlushieMoth
+#   id: PlushJidor
+#   name: Jidor
+#   components:
+#   - type: Sprite
+#     sprite: Exodus/Objects/Fun/toys.rsi
+#     state: plush_jidor
+#   - type: MeleeWeapon
+#     wideAnimationRotation: -135
+#     damage:
+#       types:
+#         Blunt: 5
+#     soundHit:
+#       path: /Audio/Weapons/egloves.ogg
 
-- type: entity
-  parent: BasePlushie
-  id: PlushieHeart
-  name: plush heart
-  description: Allows you to give your hand and heart. Hand is not included in the set.
-  components:
-  - type: Item
-    size: Normal
-  - type: Sprite
-    sprite: Exodus/Objects/Fun/toys.rsi
-    state: plush_heart
+# - type: entity
+#   parent: BasePlushie
+#   id: PlushieHeart
+#   name: plush heart
+#   description: Allows you to give your hand and heart. Hand is not included in the set.
+#   components:
+#   - type: Item
+#     size: Normal
+#   - type: Sprite
+#     sprite: Exodus/Objects/Fun/toys.rsi
+#     state: plush_heart

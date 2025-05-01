@@ -114,7 +114,6 @@ namespace Content.Server.Body.Commands
                     return;
                 }
             }
-
             shell.WriteLine($"Attached part {_entManager.ToPrettyString(partUid.Value)} to {_entManager.ToPrettyString(bodyId)}");
         }
     }

@@ -25,6 +25,7 @@
   - Dragon
   - AllHostile
   - Wizard
+  - Xenoborg
   - SimpleHostileNanoTrasen
   - Vampire
   - NarsiCult
@@ -64,13 +65,15 @@
   - PetsNT
   - Zombie
   - Revolutionary
+  - Dragon
+  - Xeno
   - AllHostile
   - Wizard
   - SimpleHostileNanoTrasen
   - Vampire
   - NarsiCult
   - Ratvar
-  - Dragon
+  - Xenoborg
 
 - type: npcFaction
   id: SimpleNeutral
@@ -86,6 +89,7 @@
   - Dragon
   - AllHostile
   - Wizard
+  - Xenoborg
   - SimpleHostileNanoTrasen
   - Vampire
   - NarsiCult
@@ -107,6 +111,7 @@
   - NarsiCult
   - Ratvar
   - Dragon
+  - Xenoborg
 
 - type: npcFaction
   id: Zombie
@@ -125,6 +130,7 @@
   - NarsiCult
   - Ratvar
   - Dragon
+  - Xenoborg
 
 - type: npcFaction
   id: Revolutionary
@@ -135,6 +141,7 @@
   - Dragon
   - AllHostile
   - Wizard
+  - Xenoborg
   - SimpleHostileNanoTrasen
   - Vampire
   - NarsiCult
@@ -155,6 +162,7 @@
   - Zombie
   - Revolutionary
   - Wizard
+  - Xenoborg
   - SimpleHostileNanoTrasen
   - Vampire
   - NarsiCult
@@ -174,6 +182,25 @@
   - Xeno
   - Zombie
   - Revolutionary
+  - AllHostile
+  - Xenoborg
+  - SimpleHostileNanoTrasen
+  - Vampire
+  - NarsiCult
+  - Ratvar
+
+- type: npcFaction
+  id: Xenoborg
+  hostile:
+  # they have brains
+  - NanoTrasen
+  - Syndicate
+  - Zombie
+  - Revolutionary
+  - Wizard
+  - Xeno # rivalry
+  # cause they are hostile to them
+  - SimpleHostile
   - AllHostile
   - SimpleHostileNanoTrasen
   - Vampire
@@ -197,6 +224,7 @@
   - Ratvar
   - Desecrate
   - NarsiCult
+  - Xenoborg
 
 - type: npcFaction
   id: NarsiCult
@@ -213,6 +241,7 @@
   - Ratvar
   - Desecrate
   - Xeno
+  - Xenoborg
 
 - type: npcFaction
   id: Ratvar
@@ -228,6 +257,7 @@
   - SimpleHostileNanoTrasen
   - NarsiCult
   - Desecrate
+  - Xenoborg
 
 - type: npcFaction
   id: Vampire
@@ -244,6 +274,7 @@
   - Dragon
   - Ratvar
   - NarsiCult
+  - Xenoborg
 
 - type: npcFaction
   id: Desecrate
@@ -260,3 +291,4 @@
   - Dragon
   - Ratvar
   - NarsiCult
+  - Xenoborg

@@ -7,7 +7,7 @@ namespace Content.Shared.RPSX.CCVars;
 public sealed partial class RPSXCCVars : CVars
 {
     public static readonly CVarDef<bool> EconomyEnabled =
-        CVarDef.Create("economy.enabled", false, CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("economy.enabled", true, CVar.REPLICATED | CVar.SERVER);
 
     public static readonly CVarDef<int> EconomyAntagBaseSalary =
         CVarDef.Create("economy.antag_base_salary", 300, CVar.SERVER);

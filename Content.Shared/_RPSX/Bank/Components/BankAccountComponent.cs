@@ -1,8 +1,14 @@
-﻿namespace Content.Shared.RPSX.Bank.Components;
+﻿using Content.Shared.RPSX.Bank.Transactions;
+using Robust.Shared.GameStates;
 
-[RegisterComponent]
+namespace Content.Shared.RPSX.Bank.Components;
+
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class BankAccountComponent : Component
 {
-    [DataField]
+    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public int Balance;
+
+    [ViewVariables, AutoNetworkedField]
+    public List<BankTransaction> BankTransactions = new();
 }

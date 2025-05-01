@@ -22,29 +22,29 @@
     - type: Paper
       content: doc-text-printer-report-on-elimination-of-violations
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentReporDepartment
-#  name: Report on the work of the department
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-report-department
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentReporDepartment
+  name: Report on the work of the department
+  components:
+    - type: Paper
+      content: doc-text-printer-report-department
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentReportEmployeePerformance
-#  name: Report on employee performance
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-report-employee-performance
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentReportEmployeePerformance
+  name: Report on employee performance
+  components:
+    - type: Paper
+      content: doc-text-printer-report-employee-performance
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentReportOnTheChaptersMeeting
-#  name: Report on chapter meeting
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-report-on-the-chapters-meeting
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentReportOnTheChaptersMeeting
+  name: Report on chapter meeting
+  components:
+    - type: Paper
+      content: doc-text-printer-report-on-the-chapters-meeting
 
 - type: entity
   parent: PrintedDocument
@@ -78,13 +78,13 @@
     - type: Paper
       content: doc-text-printer-experiment-report
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentDisposalReport
-#  name: Disposal report
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-disposal-report
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDisposalReport
+  name: Disposal report
+  components:
+    - type: Paper
+      content: doc-text-printer-disposal-report
 
 - type: entity
   parent: PrintedDocument
@@ -118,21 +118,21 @@
     - type: Paper
       content: doc-text-printer-application-access
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentApplicationEquipment
-#  name: Statement for equipment
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-application-equipment
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentApplicationEquipment
+  name: Statement for equipment
+  components:
+    - type: Paper
+      content: doc-text-printer-application-equipment
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentAppeal
-#  name: Appeal
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-appeal
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentAppeal
+  name: Appeal
+  components:
+    - type: Paper
+      content: doc-text-printer-appeal
 
 - type: entity
   parent: PrintedDocument
@@ -158,13 +158,13 @@
     - type: Paper
       content: doc-text-printer-request-call-members-central-committee-dso
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentRequestRequestToEstablishThreatLevel
-#  name: Request to establish threat level
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-request-to-establish-threat-level
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestRequestToEstablishThreatLevel
+  name: Request to establish threat level
+  components:
+    - type: Paper
+      content: doc-text-printer-request-to-establish-threat-level
 
 - type: entity
   parent: PrintedDocument
@@ -174,13 +174,13 @@
     - type: Paper
       content: doc-text-printer-request-change-salary
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentRequestForNonlistedEmployment
-#  name: Request for non-listed employment
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-request-for-non-listed-employment
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestForNonlistedEmployment
+  name: Request for non-listed employment
+  components:
+    - type: Paper
+      content: doc-text-printer-request-for-non-listed-employment
 
 - type: entity
   parent: PrintedDocument
@@ -214,13 +214,13 @@
     - type: Paper
       content: doc-text-printer-request-construction-work
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentRequestModernization
-#  name: Request for modernization
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-request-modernization
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestModernization
+  name: Request for modernization
+  components:
+    - type: Paper
+      content: doc-text-printer-request-modernization
 
 - type: entity
   parent: PrintedDocument
@@ -230,29 +230,29 @@
     - type: Paper
       content: doc-text-printer-complaint-violation-labor-rules
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentComplaintOffense
-#  name: Complaint about an offense
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-complaint-offense
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentComplaintOffense
+  name: Complaint about an offense
+  components:
+    - type: Paper
+      content: doc-text-printer-complaint-offense
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentPermissionEquipment
-#  name: Authorization to use equipment
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-permission-equipment
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPermissionEquipment
+  name: Authorization to use equipment
+  components:
+    - type: Paper
+      content: doc-text-printer-permission-equipment
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentPermissionToTravelInCaseOfThreat
-#  name: Permission to travel in case of threat
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-permission-to-travel-in-case-of-threat
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPermissionToTravelInCaseOfThreat
+  name: Permission to travel in case of threat
+  components:
+    - type: Paper
+      content: doc-text-printer-permission-to-travel-in-case-of-threat
 
 - type: entity
   parent: PrintedDocument
@@ -278,37 +278,37 @@
     - type: Paper
       content: doc-text-printer-prescription-drug-authorization
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentPermissionDisposeBody
-#  name: Authorization to dispose of the body
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-permission-dispose-body
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPermissionDisposeBody
+  name: Authorization to dispose of the body
+  components:
+    - type: Paper
+      content: doc-text-printer-permission-dispose-body
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentConstructionPermit
-#  name: Building permit
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-construction-permit
-#
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentPermissionToExtendMarriage
-#  name: Permission to extend marriage
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-permission-to-extend-marriage
-#
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentOrderDismissal
-#  name: Dismissal order
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-order-dismissal
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentConstructionPermit
+  name: Building permit
+  components:
+    - type: Paper
+      content: doc-text-printer-construction-permit
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPermissionToExtendMarriage
+  name: Permission to extend marriage
+  components:
+    - type: Paper
+      content: doc-text-printer-permission-to-extend-marriage
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderDismissal
+  name: Dismissal order
+  components:
+    - type: Paper
+      content: doc-text-printer-order-dismissal
 
 - type: entity
   parent: PrintedDocument
@@ -390,13 +390,13 @@
     - type: Paper
       content: doc-text-printer-certificate
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentCertificateAdvancedTraining
-#  name: Certificate of advanced training
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-certificate-advanced-training
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentCertificateAdvancedTraining
+  name: Certificate of advanced training
+  components:
+    - type: Paper
+      content: doc-text-printer-certificate-advanced-training
 
 - type: entity
   parent: PrintedDocument
@@ -446,13 +446,13 @@
     - type: Paper
       content: doc-text-printer-sentence
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentJudgment
-#  name: Judgment
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-judgment
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentJudgment
+  name: Judgment
+  components:
+    - type: Paper
+      content: doc-text-printer-judgment
 
 - type: entity
   parent: PrintedDocument
@@ -462,13 +462,13 @@
     - type: Paper
       content: doc-text-printer-statement-health
 
-#- type: entity
-#  parent: PrintedDocument
-#  id: PrintedDocumentDecisionToStartTrial
-#  name: Decision to start a trial
-#  components:
-#    - type: Paper
-#      content: doc-text-printer-decision-to-start-trial
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDecisionToStartTrial
+  name: Decision to start a trial
+  components:
+    - type: Paper
+      content: doc-text-printer-decision-to-start-trial
 
 - type: entity
   parent: PrintedDocument

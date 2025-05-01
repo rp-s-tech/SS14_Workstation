@@ -1,10 +1,10 @@
 using Content.Server.Entry;
 using Content.Server.RPSX.Bridges;
-using Content.Shared.RPSX.Bridges;
 using Content.Shared.RPSX.Patron;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Content.Server.RPSX.Sponsors;
+using Content.Server.RPSX.Bank.Systems;
 
 namespace Content.Server.RPSX.Entry;
 
@@ -35,16 +35,13 @@ public sealed class RPSXRegisterIgnore
 
     private void RegisterIoC(bool useSecrets)
     {
-        if (useSecrets)
-            return;
-
         IoCManager.RegisterInstance<IAntagBridge>(new StubAntagBridge());
         IoCManager.RegisterInstance<IVampireBridge>(new StubVampireBridge());
         IoCManager.RegisterInstance<ISaintedBridge>(new StubSaintedBridge());
         IoCManager.RegisterInstance<IDiseasesBridge>(new StubDiseasesBridge());
-        IoCManager.RegisterInstance<IStatusResponseProvider>(new StubStatusResponseProvider());
-        IoCManager.RegisterInstance<ISalaryBridge>(new StubSalaryBridge());
-        IoCManager.RegisterInstance<IBankBridge>(new StubBankBridge());
 
+        if (useSecrets)
+            return;
+        IoCManager.RegisterInstance<IStatusResponseProvider>(new StubStatusResponseProvider());
     }
 }

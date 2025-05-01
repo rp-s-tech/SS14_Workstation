@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Server.Access.Systems;
 using Content.Server.Forensics;
 using Content.Server.RPSX.Bridges;
+using Content.Server.RPSX.Roles.Salary.Systems;
 using Content.Shared.Access.Components;
 using Content.Shared.Forensics.Components;
 using Content.Shared.GameTicking;
@@ -43,7 +44,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IdCardSystem _idCard = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ISalaryBridge _salaryBridge = default!;
+    [Dependency] private readonly CrewMemberSalarySystem _salarySystem = default!;
 
     public override void Initialize()
     {
@@ -158,7 +159,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
         }
         TryComp<ActorComponent>(player, out var actorComponent);
 
-        var crewMemberSalary = _salaryBridge.GetCrewMemberSalary(station, jobId);
+        var crewMemberSalary = _salarySystem.GetCrewMemberSalary(station, jobId);
         var record = new GeneralStationRecord()
         {
             Name = name,

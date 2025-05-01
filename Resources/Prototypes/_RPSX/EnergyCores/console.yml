@@ -12,8 +12,8 @@
 - type: entity
   parent: BaseComputerCircuitboard
   id: EnergyCoreCircuitboard
-  name: Плата консоли контроля ядра
-  description: Консольная плата для консоли контроля энергоядра
+  name: energy core console circuit board
+  description: Circuit board for energy core control console.
   components:
     - type: Sprite
       state: cpu_engineering
@@ -28,8 +28,8 @@
 - type: entity
   parent: BaseComputer
   id: ComputerEnergyCoreControl
-  name: Консоль контроля энергоядра
-  description: Консоль для контроля и мониторинга работы энергоядра
+  name: energy core control console
+  description: Console of energy core control and monitoring.
   components:
   - type: Sprite
     sprite: _RPSX/EnergyCores/computers.rsi
@@ -83,6 +83,16 @@
   - EnergyCoreHM
   - EnergyCoreRnD
 
+- type: latheRecipePack
+  id: EnergyCoresCPUs
+  recipes:
+  - EnergyCoreHM
+  - EnergyCoreRnD
+
+- type: latheRecipePack
+  id: EnergyCoresCircuit
+  recipes:
+  - EnergyCoreCircuitboard
 
 - type: guideEntry
   id: EnergyCoresGuide

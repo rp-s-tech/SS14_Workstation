@@ -86,16 +86,14 @@ public sealed partial class EnergyCoreSystem : EntitySystem
                 core.TimeOfLife = 1000;
             portableNode.Air.Clear();
             if (environment != null && core.Working && core.Size == 2)
-                _atmosphereSystem.AddHeat(environment, 4000);
+                _atmosphereSystem.AddHeat(environment, 300);
             else if (environment != null && core.Working && core.Size == 3)
-                _atmosphereSystem.AddHeat(environment, 8000);
-            //Pump(environment, portableNode, component); // попросили убрать для хардкорности ситуации
+                _atmosphereSystem.AddHeat(environment, 600);
         }
         if (core.TimeOfLife > 0 && core.ForceDisabled)
             core.ForceDisabled = false;
         if (environment != null && environment.Temperature >= 750)
             OverHeating(core);
-
     }
 
 
@@ -104,11 +102,11 @@ public sealed partial class EnergyCoreSystem : EntitySystem
         if (tile.Temperature > target.FilterTemperature) return false;
         return _scrubberSystem.Scrub(timeDelta, target.TransferRate * _atmosphereSystem.PumpSpeedup(), ScrubberPumpDirection.Scrubbing, target.FilterGases, tile, scrubber.Air);
     }
-    private void Pump(GasMixture? enviroment, PipeNode pipe, HeatFreezingCoreComponent target)
-    {
-        if (enviroment == null || pipe == null) return;
-        _atmosphereSystem.Merge(enviroment, pipe.Air.Remove(target.TransferRate * _atmosphereSystem.PumpSpeedup()));
-    }
+    // private void Pump(GasMixture? enviroment, PipeNode pipe, HeatFreezingCoreComponent target)
+    // {
+    //     if (enviroment == null || pipe == null) return;
+    //     _atmosphereSystem.Merge(enviroment, pipe.Air.Remove(target.TransferRate * _atmosphereSystem.PumpSpeedup()));
+    // }
 
     public override void Update(float frameTime)
     {
@@ -131,7 +129,6 @@ public sealed partial class EnergyCoreSystem : EntitySystem
     }
     private void Absorb(EnergyCoreComponent component, PipeNode air)
     {
-        if (!TryComp(component.Owner, out HeatFreezingCoreComponent? heatfreeze)) return;
         if (component.Overheat && component.TimeOfLife > 0)
         {
             ForceTurnOff(component);

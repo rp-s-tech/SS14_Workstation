@@ -1,4 +1,6 @@
-﻿namespace Content.Server.RPSX.Bridges;
+﻿using Content.Server.RPSX.DarkForces.Saint.Saintable;
+
+namespace Content.Server.RPSX.Bridges;
 
 public interface ISaintedBridge
 {
@@ -7,5 +9,10 @@ public interface ISaintedBridge
 
 public sealed class StubSaintedBridge : ISaintedBridge
 {
-    public bool TryMakeSainted(EntityUid user, EntityUid uid) => false;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
+
+    public bool TryMakeSainted(EntityUid user, EntityUid uid)
+    {
+        return _entityManager.System<SaintedSystem>().TryMakeSainted(user, uid);
+    }
 }
