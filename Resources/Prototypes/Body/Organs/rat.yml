@@ -1,12 +1,18 @@
 - type: entity
   id: OrganRatLungs
-  parent: OrganHumanLungs
+  parent: OrganAnimalLungs
   suffix: "rat"
   components:
   - type: Metabolizer
     metabolizerTypes: [ Rat ]
   - type: Organ
     species: animal
+  - type: DLungs
+    organKey: lungs
+    damageGases:
+    - Tritium
+    - Plasma
+    - Frezon
   - type: Tag
     tags:
     - Lungs
