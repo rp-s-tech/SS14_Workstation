@@ -3,54 +3,54 @@
   parent: OrganHumanHeart
   name: dwarf heart
   components:
-  - type: Metabolizer
-    metabolizerTypes: [Dwarf]
-  - type: Tag
-    tags:
-    - Heart
+    - type: Metabolizer
+      metabolizerTypes: [ Dwarf ]
+    - type: Tag
+      tags:
+      - Heart
 
 - type: entity
   id: OrganDwarfLiver
   parent: OrganHumanLiver
   name: dwarf liver
   components:
-  - type: Organ
-    organType: Liver
-  - type: ToxinFilter
-    organKey: liver
-    embedded: true
-    maxDamageThreshold: 500
-  - type: Metabolizer
-    metabolizerTypes: [Dwarf]
-  - type: Tag
-    tags:
-    - Liver
+    - type: Organ
+      organType: Liver
+    - type: ToxinFilter
+      organKey: liver
+      embedded: true
+      maxDamageThreshold: 500
+    - type: Metabolizer
+      metabolizerTypes: [ Dwarf ]
+    - type: Tag
+      tags:
+      - Liver
 
 - type: entity
   id: OrganDwarfStomach
   parent: OrganHumanStomach
   name: dwarf stomach
   components:
-  - type: Sprite
-    state: stomach
-  - type: Organ
-    organType: Stomach
-  - type: DStomach
-    organKey: stomach
-  - type: SolutionContainerManager
-    solutions:
-      stomach:
-        maxVol: 75
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
-  - type: Stomach
-  - type: Metabolizer
-    # mm very yummy
-    maxReagents: 5
-    metabolizerTypes: [Dwarf]
-  - type: Tag
-    tags:
-    - Stomach
+    - type: Sprite
+      state: stomach
+    - type: Organ
+      organType: Stomach
+    - type: SolutionContainerManager
+      solutions:
+        stomach:
+          maxVol: 75
+        food:
+          maxVol: 5
+          reagents:
+            - ReagentId: UncookedAnimalProteins
+              Quantity: 5
+    - type: Stomach
+    - type: DStomach
+      organKey: stomach
+    - type: Metabolizer
+      # mm very yummy
+      maxReagents: 5
+      metabolizerTypes: [ Dwarf ]
+    - type: Tag
+      tags:
+      - Stomach

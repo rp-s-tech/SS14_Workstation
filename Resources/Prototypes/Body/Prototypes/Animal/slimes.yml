@@ -1,6 +1,7 @@
 ﻿- type: body
   id: Slimes
   name: "slimes"
+  species: slime
   root: torso
   slots:
     torso:

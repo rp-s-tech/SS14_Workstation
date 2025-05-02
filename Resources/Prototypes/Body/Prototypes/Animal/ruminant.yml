@@ -2,6 +2,7 @@
   id: AnimalRuminant
   name: "ruminant"
   root: torso
+  species: animal
   slots:
     torso:
       part: TorsoAnimal

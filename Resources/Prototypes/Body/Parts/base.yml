@@ -2,13 +2,15 @@
 # TODO BODY: Part damage
 - type: entity
   id: BasePart
-  parent: [BaseItem, BaseSurgeryWoundable]
+  parent: [ BaseItem, BaseSurgeryWoundable]
   name: "body part"
   abstract: true
   components:
   - type: Damageable
     damageContainer: Biological
   - type: BodyPart
+  - type: SurgeryBodyPart
+    species: universal
   - type: Gibbable
   - type: ContainerContainer
     containers:

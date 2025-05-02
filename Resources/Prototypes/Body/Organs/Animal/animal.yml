@@ -31,7 +31,6 @@
   components:
   - type: Gibbable
 
-
 - type: entity
   id: OrganAnimalBrain
   parent: BaseHumanOrgan

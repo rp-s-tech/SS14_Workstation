@@ -2,6 +2,7 @@
   id: Human
   name: "human"
   root: torso
+  species: human
   slots:
     head:
       part: HeadHuman

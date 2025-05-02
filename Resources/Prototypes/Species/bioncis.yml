@@ -1,0 +1,23 @@
+﻿- type: humanoidBaseSprite
+  id: MobDrillBionicLArm
+  baseSprite:
+    sprite: DarkStation/MainGame/Mobs/Species/Bionic/Parts/drill_arm.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobDrillBionicRArm
+  baseSprite:
+    sprite: DarkStation/MainGame/Mobs/Species/Bionic/Parts/drill_arm.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobPowerLLeg
+  baseSprite:
+    sprite: DarkStation/MainGame/Mobs/Species/Bionic/Parts/power_leg.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobPowerRLeg
+  baseSprite:
+    sprite: DarkStation/MainGame/Mobs/Species/Bionic/Parts/power_leg.rsi
+    state: r_leg

@@ -2,6 +2,7 @@
   id: Vox
   name: "vox"
   root: torso
+  species: vox
   slots:
     head:
       part: HeadVox
