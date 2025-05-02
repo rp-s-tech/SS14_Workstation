@@ -9,21 +9,36 @@
       connections:
       - torso
       organs:
-        brain: OrganNucleanBrain
-        eyes: OrganNucleanEyes
+        brain:
+          organ: OrganNucleanBrain
+          type: Brain
+        eyes:
+          organ: OrganNucleanEyes
+          type: Eye
+          internal: false
     torso:
-      part: TorsoNuclean
+      part: TorsoHuman
       connections:
       - right arm
       - left arm
       - right leg
       - left leg
       organs:
-        lungs: OrganNucleanLungs
-        stomach: OrganNucleanStomach
-        liver: OrganNucleanLiver
-        kidneys: OrganNucleanKidneys
-        heart: OrganNucleanHeart
+        heart:
+          organ: OrganNucleanHeart
+          type: Heart
+        lungs:
+          organ: OrganNucleanLungs
+          type: Lung
+        stomach:
+          organ: OrganNucleanStomach
+          type: Stomach
+        liver:
+          organ: OrganNucleanLiver
+          type: Liver
+        kidneys:
+          organ: OrganNucleanKidneys
+          type: Kidney
     right arm:
       part: RightArmNuclean
       connections:
@@ -38,8 +53,16 @@
       part: LeftHandNuclean
     right leg:
       part: RightLegNuclean
+      connections:
+      - right foot
     left leg:
       part: LeftLegNuclean
+      connections:
+      - left foot
+    right foot:
+      part: RightFootNuclean
+    left foot:
+      part: LeftFootNuclean
 
 #Органы Нуклеаций
 - type: metabolizerType

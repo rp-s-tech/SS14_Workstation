@@ -58,8 +58,8 @@ public sealed record BodyPrototypeSlot
 [DataRecord]
 public sealed record OrganPrototypeSlot
 {
-    [DataField("organ")]
-    public readonly EntProtoId? Organ;
+    [DataField("organ", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    public readonly string? Organ;
 
     [DataField("type")]
     public readonly OrganType SlotType = new();
@@ -67,7 +67,7 @@ public sealed record OrganPrototypeSlot
     [DataField("internal")]
     public readonly bool Internal = true;
 
-    public OrganPrototypeSlot(EntProtoId? organ, OrganType slotType, bool internalOrgan)
+    public OrganPrototypeSlot(string? organ, OrganType slotType, bool internalOrgan)
     {
         Organ = organ;
         SlotType = slotType;
@@ -80,3 +80,4 @@ public sealed record OrganPrototypeSlot
         internalOrgan = Internal;
     }
 }
+

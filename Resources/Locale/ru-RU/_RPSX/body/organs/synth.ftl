@@ -14,5 +14,5 @@ ent-OrganSynthStomach = синтетический желудок
     .desc = { ent-OrganHumanStomach.desc }
 ent-OrganSynthLiver = синтетическая печень
     .desc = { ent-OrganHumanLiver.desc }
-ent-OrganHumanKidneys = синтетические почки
+ent-OrganSynthKidneys = синтетические почки
     .desc = { ent-OrganHumanKidneys.desc }

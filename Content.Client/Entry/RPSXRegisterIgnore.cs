@@ -1,5 +1,6 @@
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
+using Content.Client.RPSX.Bridges;
 
 namespace Content.Client.Entry;
 
@@ -12,5 +13,7 @@ public sealed class RPSXRegisterIgnore
 
         if (useSecrets)
             return;
+
+        IoCManager.RegisterInstance<ITargetDollWidgetBridge>(new StubTargetDollWidgetBridge());
     }
 }
