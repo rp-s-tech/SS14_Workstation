@@ -25,6 +25,7 @@
     - type: Item
       size: Huge
     - type: Unremoveable
+    - type: NarsiCultGhostAxe
 
 - type: entity
   name: Кровавый меч

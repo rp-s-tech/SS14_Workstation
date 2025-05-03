@@ -29,6 +29,9 @@ public sealed class NarsiAbilityPrototype : IPrototype
     [DataField("actionId", required: true, serverOnly: true)]
     public EntProtoId ActionId;
 
+    [DataField("revertActionId", required: false, serverOnly: true)]
+    public EntProtoId? RevertActionId;
+
     [DataField("icon", required: true, serverOnly: true)]
     public SpriteSpecifier Icon = default!;
 

@@ -126,14 +126,15 @@ public sealed class NarsiCreatureEggSystem : EntitySystem
             return;
         }
 
-        var index = component.CreatureSteps.IndexOf(component.CurrentStep);
-        if (index + 1 >= component.CreatureSteps.Count)
-        {
-            CreateCreature(egg);
-            return;
-        }
+        // ЭТО НАЗЫВАЕТСЯ АБУЗ!!!
+        // var index = component.CreatureSteps.IndexOf(component.CurrentStep);
+        // if (index + 1 >= component.CreatureSteps.Count)
+        // {
+        //     CreateCreature(egg);
+        //     return;
+        // }
 
-        SetCreatureStep(egg, component.CreatureSteps[index + 1]);
+        // SetCreatureStep(egg, component.CreatureSteps[index + 1]);
     }
 
     private void SetCreatureStep(Entity<NarsiCreatureEggComponent> egg, CreatureStep newStep)

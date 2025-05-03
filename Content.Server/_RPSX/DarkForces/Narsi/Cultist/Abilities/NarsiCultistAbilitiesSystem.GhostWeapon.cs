@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
-using Content.Shared.Damage;
-using Content.Shared.FixedPoint;
-using Content.Shared.Hands.EntitySystems;
+﻿using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.RPSX.DarkForces.Narsi.Abilities.Events;
 using Content.Shared.RPSX.DarkForces.Narsi.Roles;
-using Content.Shared.Weapons.Melee;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
+using System.Linq;
 using Robust.Shared.Spawners;
+using Content.Shared.Hands.Components;
+using Microsoft.CodeAnalysis;
 
 namespace Content.Server.RPSX.DarkForces.Narsi.Cultist.Abilities;
 
@@ -18,6 +15,7 @@ public sealed partial class NarsiCultistAbilitiesSystem
     private void InitializeGhostWeapon()
     {
         SubscribeLocalEvent<NarsiCultistComponent, NarsiCultistGhostWeaponEvent>(OnGhostWeaponEvent);
+        SubscribeLocalEvent<NarsiCultistComponent, NarsiCultistGhostWeaponRevertEvent>(OnGhostWeaponRevertedEvent);
     }
 
     private void OnGhostWeaponEvent(EntityUid uid, NarsiCultistComponent component, NarsiCultistGhostWeaponEvent args)
@@ -47,6 +45,26 @@ public sealed partial class NarsiCultistAbilitiesSystem
 
         OnCultistAbility(uid, args);
 
+        args.Handled = true;
+    }
+
+    private void OnGhostWeaponRevertedEvent(EntityUid uid, NarsiCultistComponent component, NarsiCultistGhostWeaponRevertEvent args)
+    {
+        if (args.Handled) return;
+
+        if (!TryComp<HandsComponent>(uid, out var handsComponent)) return;
+
+        foreach (var hand in handsComponent.Hands)
+        {
+            if (hand.Value.HeldEntity is EntityUid entity && HasComp<NarsiCultGhostAxeComponent>(entity))
+            {
+                QueueDel(entity);
+                Dirty(uid, handsComponent);
+            }
+        }
+
+        var action = _actionsSystem.GetActions(uid).ToList().Where(c => MetaData(c.Id).EntityPrototype?.ID == "NarsiCultistGhostAxeRevert").First().Id;
+        _actionsSystem.RemoveAction(action);
         args.Handled = true;
     }
 }

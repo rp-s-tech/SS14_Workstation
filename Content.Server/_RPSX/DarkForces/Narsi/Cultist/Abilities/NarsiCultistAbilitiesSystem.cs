@@ -91,7 +91,10 @@ public sealed partial class NarsiCultistAbilitiesSystem : EntitySystem
         var prototype = _prototypeManager.Index<NarsiAbilityPrototype>(id);
 
         EntityUid? actionUid = null;
+        EntityUid? revertActionUid = null;
         if (!_actionsSystem.AddAction(uid, ref actionUid, prototype.ActionId, uid))
+            return false;
+        if (prototype.RevertActionId.HasValue && !_actionsSystem.AddAction(uid, ref revertActionUid, prototype.RevertActionId.Value, uid))
             return false;
 
         cultistComponent.Abilities[id] = actionUid;

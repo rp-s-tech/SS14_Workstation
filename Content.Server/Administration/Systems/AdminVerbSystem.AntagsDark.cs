@@ -53,7 +53,7 @@ public sealed partial class AdminVerbSystem
         {
             Text = "Сделать праведником Ратвара",
             Category = VerbCategory.Antag,
-            //Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/Misc/job_icons.rsi/HeadRevolutionary.png")),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/Misc/job_icons.rsi/HeadRevolutionary.png")),
             Act = () => _antagBridge.ForceMakeRatvarRighteous(player),
             Impact = LogImpact.High,
             Message = "Делает цель праведником ратвара, режим при этом не включается",

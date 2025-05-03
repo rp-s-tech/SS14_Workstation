@@ -1,5 +1,4 @@
-﻿using System;
-using Content.Server.RPSX.DarkForces.Desecrated.Pontific.Bonus;
+﻿using Content.Server.RPSX.DarkForces.Desecrated.Pontific.Bonus;
 using Content.Server.RPSX.DarkForces.Desecrated.Pontific.DarkAltar;
 using Content.Server.RPSX.DarkForces.Desecrated.Pontific.Prayer;
 using Content.Server.RPSX.CCvars;
@@ -13,11 +12,8 @@ using Content.Shared.RPSX.DarkForces.Desecrated;
 using Content.Shared.RPSX.Hunter.Desecrated.Pontific;
 using Robust.Server.Audio;
 using Robust.Shared.Configuration;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Server.RPSX.DarkForces.Desecrated.Pontific;
 
@@ -172,6 +168,8 @@ public sealed partial class PontificSystem
     {
         if (args.Handled || !CanUseAbility(uid, component, args))
             return;
+
+        if (HasComp<DesecratedMarkerComponent>(args.Target)) return;
 
         _beam.TryCreateBeam(uid, args.Target, "PontificLightning");
         UpdateFelCount(uid, component, args);
