@@ -11,7 +11,7 @@
   name: Латунь
   icon: { sprite: Objects/Materials/Sheets/metal.rsi, state: brass }
   spawn: SheetBrassPlasteel1R
-  maxCount: 30
+  maxCount: 50
   itemSize: 1
 
 - type: entity

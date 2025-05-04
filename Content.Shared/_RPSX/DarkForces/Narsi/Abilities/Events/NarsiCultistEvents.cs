@@ -46,6 +46,10 @@ public sealed partial class NarsiCultistTeleportEvent : NarsiCultistBaseInstantE
 public sealed partial class NarsiCultistGhostWeaponEvent : NarsiCultistBaseInstantEvent
 {
 }
+
+public sealed partial class NarsiCultistGhostWeaponRevertEvent : NarsiCultistBaseInstantEvent
+{
+}
 /*
  * Target
  */

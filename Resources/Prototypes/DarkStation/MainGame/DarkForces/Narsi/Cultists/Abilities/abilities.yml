@@ -124,6 +124,7 @@
   level3Description: "Топор наносит 20 урона\nТопор исчезнет через 60 секунд"
   requiredBloodScore: 15
   actionId: NarsiCultistGhostAxeAction
+  revertActionId: NarsiCultistGhostAxeRevert
   icon:
     sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi/
     state: ghostaxe
