@@ -14,6 +14,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.Actions;
 
 namespace Content.Server.RPSX.DarkForces.Narsi.Buildings.Altar;
 
@@ -28,6 +29,7 @@ public sealed partial class NarsiAltarSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedActionsSystem _action = default!;
 
     public override void Initialize()
     {

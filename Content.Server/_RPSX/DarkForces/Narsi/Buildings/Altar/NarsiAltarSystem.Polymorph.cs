@@ -18,6 +18,7 @@ public sealed partial class NarsiAltarSystem
             return;
 
         var polymorphComponent = EnsureComp<NarsiPolymorphComponent>(polymorphEntity.Value);
+        _action.AddAction(polymorphEntity.Value, "ActionRevertPolymorph");
         polymorphComponent.AltarEntityUid = uid;
         polymorphComponent.ReturnToAltar = args.ReturnToAltar;
     }
