@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "license": "RPS-eXtended",
+    "copyright": "ledniky",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "non-lethal-module"
+        },
+        {
+            "name": "weapon-module"
+        }
+    ]
+}

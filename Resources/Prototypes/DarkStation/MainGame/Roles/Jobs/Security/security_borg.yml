@@ -41,8 +41,8 @@
       borg_module:
       - BorgModuleTool
       - BorgModuleGPS
-      - BorgModuleStun
-      - BorgModuleSecurityWeapon
+      - BorgModuleDisabler # RPSX borg update
+      - BorgModuleLaser    # RPSX borg update
   - type: BorgChassis
     maxModules: 5
     moduleWhitelist:
