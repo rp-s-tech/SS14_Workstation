@@ -1,6 +1,6 @@
 -----------------------------------------------
-RPS-eXtended Project License Agreement  
-Last Updated: April 27, 2025
+**RPS-eXtended Project License Agreement**  
+**Last Updated: December 18, 2024**  
 -----------------------------------------------
 
 ### 1. General Provisions  
@@ -8,12 +8,12 @@ This License Agreement (hereinafter, the "Agreement") governs the use of the "RP
 
 By using the Project, you (hereinafter, the "User") agree to the terms of this Agreement. If you do not agree with any of these terms, you are not authorized to use, copy, or distribute the Project or its components.
 
-### 2. Open-Source Code (CLA)  
-2.1. All parts of the Project’s source code explicitly designated as open and hosted in the Project’s public repositories are distributed under the [Role Play Systems Conributor License Agreement (CLA)](https://github.com/rp-s-tech/SS14_Workstation/blob/develop/CLA.md).
+### 2. Open-Source Code (AGPLv3)  
+2.1. All parts of the Project’s source code explicitly designated as open and hosted in the Project’s public repositories are distributed under the [GNU Affero General Public License, Version 3 (AGPLv3)](https://www.gnu.org/licenses/agpl-3.0.html).
 
-2.2. Any User who accesses such open-source code must comply with the CLA terms, including, but not limited to, using source code only within the boundaries of this repository for contribution purposes. Any use of the code outside this repository for commercial purposes or for public hosting is strictly prohibited.
+2.2. Any User who accesses such open-source code must comply with the AGPLv3 terms, including, but not limited to, providing source code when making modified versions publicly accessible, and preserving all notices regarding authorship and licensing.
 
-2.3. If any provisions of this Agreement conflict with the CLA regarding open-source portions of the code, the CLA terms shall take precedence.
+2.3. If any provisions of this Agreement conflict with the AGPLv3 regarding open-source portions of the code, the AGPLv3 terms shall take precedence.
 
 ### 3. Closed Resources and Proprietary Code  
 3.1. Any portions of the source code, resources, assets, libraries, submodules, or code fragments not explicitly marked as open are considered proprietary ("Closed Resources") and may not be used outside of the Project.

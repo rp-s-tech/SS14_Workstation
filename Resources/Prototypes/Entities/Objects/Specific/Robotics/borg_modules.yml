@@ -391,7 +391,6 @@
     - Shovel
     - MineralScannerUnpowered
     - OreBag
-    - Crowbar
     - RadioHandheld
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: mining-module }
@@ -522,7 +521,21 @@
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-cleaning-module }
 
 # medical modules
-
+- type: entity
+  id: BorgModuleDiagnosis # todo: reuse when med refractor is finished
+  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
+  name: diagnosis cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: medical
+    - state: icon-diagnosis
+  - type: ItemBorgModule
+    items:
+    - HandheldHealthAnalyzerUnpowered
+    - ClothingNeckStethoscope
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: diagnosis-module }
 
 - type: entity
   id: BorgModuleTreatment
@@ -541,15 +554,11 @@
     - Gauze10Lingering
     - Bloodpack10Lingering
     - Syringe
-    - DrinkGlass
-    - DrinkGlass
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: treatment-module }
 
-# RPSX med borg update(delete diagnostic module)
-
 - type: entity
-  id: BorgModuleDefibrillator    
+  id: BorgModuleDefibrillator
   parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
   name: defibrillator cyborg module
   components:
@@ -560,8 +569,6 @@
   - type: ItemBorgModule
     items:
     - DefibrillatorOneHandedUnpowered
-    - HandheldHealthAnalyzerUnpowered         # RPSX med borg update
-    - ClothingNeckStethoscope                 # RPSX med borg update
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: defib-module }
 
@@ -598,6 +605,11 @@
   - type: ItemBorgModule
     items:
     - NodeScanner
+    - Multitool
+    - Wrench
+    - SprayBottle
+    - Beaker
+    - Syringe
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: node-scanner-module }
 
@@ -831,5 +843,3 @@
         - state: base-part-inhand-right
         - state: base-stripes-inhand-right
           color: "#7B0F12"
-          
-# security modules
