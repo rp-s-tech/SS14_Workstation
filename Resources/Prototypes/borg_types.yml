@@ -81,10 +81,9 @@
     - BorgModuleCargo
 
   defaultModules:
-  - BorgModuleMining
   - BorgModuleGrapplingGun
+  - BorgModuleMining
   - BorgModuleAppraisal
-  - BorgModuleTool
 
   radioChannels:
   - Supply
@@ -154,6 +153,7 @@
 
   defaultModules:
   - BorgModuleTreatment
+  - BorgModuleDefibrillator  # RPSX med borg update
 
   radioChannels:
   - Science
