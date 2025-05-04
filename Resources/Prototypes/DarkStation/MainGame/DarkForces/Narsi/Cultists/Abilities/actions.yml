@@ -140,6 +140,25 @@
       tags:
       - NarsiAction
 
+- type: entity
+  id: NarsiCultistGhostAxeRevert
+  name: "Отозвать призрачный топор"
+  description: "Отзывает призрачный топор из вашей руки"
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: InstantAction
+      icon:
+        sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi/
+        state: ghostaxe
+      itemIconStyle: NoItem
+      event: !type:NarsiCultistGhostWeaponRevertEvent
+        speech: "Net mi'hi ar'ma!"
+      sound: !type:SoundPathSpecifier
+        path: /Audio/Magic/forcewall.ogg
+    - type: Tag
+      tags:
+      - NarsiAction
+
 #EntityTargetActions
 - type: entity
   id: NarsiCultistSilenceAction

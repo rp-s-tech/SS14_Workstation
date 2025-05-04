@@ -22,14 +22,10 @@ public sealed partial class NarsiCultistAbilitiesSystem
         if (args.Handled)
             return;
 
-        if (!HasComp<StunnedComponent>(args.Target))
-            return;
-        Logger.Info("completed");
         var coords = Transform(args.Performer).Coordinates;
         var handcuffs = Spawn("HandcuffsCult", coords);
         _handsSystem.TryPickup(uid, handcuffs);
         var cuffing = _cuffableSystem.TryCuffing(args.Performer, args.Target, handcuffs);
-        Logger.Info(cuffing.ToString());
         OnCultistAbility(uid, args);
         args.Handled = true;
     }

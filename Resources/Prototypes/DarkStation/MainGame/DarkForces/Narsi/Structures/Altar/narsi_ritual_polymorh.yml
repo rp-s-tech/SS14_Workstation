@@ -17,7 +17,7 @@
   effect: !type:NarsiPolymorphRitualEffect
     configuration:
       entity: MobNarsiObserverEye
-      forced: true
+      forced: false
       inventory: None
       allowRepeatedMorphs: false
       transferDamage: false

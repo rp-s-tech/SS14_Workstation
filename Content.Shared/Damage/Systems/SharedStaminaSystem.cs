@@ -44,6 +44,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         base.Initialize();
 
         InitializeModifier();
+        InitializeResistance();
 
         // Exodus - Stamian Refactor | Remove ComponentStartup, AfterAutoHandleStateEvent
         SubscribeLocalEvent<StaminaComponent, ComponentShutdown>(OnShutdown);
@@ -93,7 +94,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
             StaminaRecover(uid, component);
     }
 
-    private void OnDisarmed(EntityUid uid, StaminaComponent component, DisarmedEvent args)
+    private void OnDisarmed(EntityUid uid, StaminaComponent component, ref DisarmedEvent args)
     {
         if (args.Handled)
             return;
@@ -209,7 +210,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
     }
 
     public void TakeStaminaDamage(EntityUid uid, float value, StaminaComponent? component = null,
-        EntityUid? source = null, EntityUid? with = null, bool visual = true, SoundSpecifier? sound = null)
+        EntityUid? source = null, EntityUid? with = null, bool visual = true, SoundSpecifier? sound = null, bool ignoreResist = false)
     {
         if (!Resolve(uid, ref component, false))
             return;
@@ -218,6 +219,12 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         RaiseLocalEvent(uid, ref ev);
         if (ev.Cancelled)
             return;
+
+        // Allow stamina resistance to be applied.
+        if (!ignoreResist)
+        {
+            value = ev.Value;
+        }
 
         // value = UniversalStaminaDamageModifier * value;
 
@@ -341,7 +348,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
 
         RemComp<ActiveStaminaComponent>(uid);
         Dirty(uid, component);
-        _adminLogger.Add(LogType.Stamina, LogImpact.Low, $"{ToPrettyString(uid):user} recovered stamina");
+        _adminLogger.Add(LogType.Stamina, LogImpact.Low, $"{ToPrettyString(uid):user} recovered from stamina crit");
     }
     // Exodus - End
 

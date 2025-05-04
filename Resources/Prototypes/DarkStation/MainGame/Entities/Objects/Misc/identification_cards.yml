@@ -27,20 +27,20 @@
   - type: PresetIdCard
     job: SecurityPilot
 
-- type: entity
-  parent: IDCardStandard
-  id: PrisonerIDCard
-  name: prisoner ID card
-  components:
-  - type: Sprite
-    sprite: DarkStation/MainGame/Objects/Misc/id_cards/prisoner.rsi
-    layers:
-    - state: prisoner
-  - type: Clothing
-    sprite: DarkStation/MainGame/Objects/Misc/id_cards/prisoner.rsi
-  - type: IdCard
-    jobTitle: Заключенный
-    jobIcon: JobIconPrisoner
+# - type: entity
+#   parent: IDCardStandard
+#   id: PrisonerIDCard
+#   name: prisoner ID card
+#   components:
+#   - type: Sprite
+#     sprite: DarkStation/MainGame/Objects/Misc/id_cards/prisoner.rsi
+#     layers:
+#     - state: prisoner
+#   - type: Clothing
+#     sprite: DarkStation/MainGame/Objects/Misc/id_cards/prisoner.rsi
+#   - type: IdCard
+#     jobTitle: Заключенный
+#     jobIcon: JobIconPrisoner
 
 - type: entity
   parent: IDCardStandard

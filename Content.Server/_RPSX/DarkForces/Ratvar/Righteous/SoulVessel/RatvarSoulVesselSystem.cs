@@ -11,6 +11,7 @@ using Content.Shared.RPSX.DarkForces.Ratvar.Righteous.Items;
 using Content.Shared.Silicons.Borgs.Components;
 using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
+using Robust.Shared.Player;
 using RatvarSoulVesselDoAfterEvent = Content.Shared.RPSX.DarkForces.Ratvar.DoAfterEvents.RatvarSoulVesselDoAfterEvent;
 
 namespace Content.Server.RPSX.DarkForces.Ratvar.Righteous.SoulVessel;
@@ -21,6 +22,7 @@ public sealed class RatvarSoulVesselSystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
+    [Dependency] private readonly ActorSystem _actor = default!;
 
     public override void Initialize()
     {
@@ -88,7 +90,7 @@ public sealed class RatvarSoulVesselSystem : EntitySystem
             !TryComp<MindComponent>(mindContainer.Mind, out var mind))
             return false;
 
-        return mind is {UserId: not null, Session: not null};
+        return mind is { UserId: not null } && _actor.GetSession(uid) is not null;
     }
 
     private void OnMindRemoved(EntityUid uid, RatvarSoulVesselComponent component, MindRemovedMessage args)

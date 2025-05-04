@@ -153,7 +153,7 @@ public sealed class SaintedSystem : EntitySystem
         var ev = eventProvider();
         RaiseLocalEvent(target.Value, ev);
 
-        if (ev is not ISaintEntityEvent {IsHandled: true} saintEv)
+        if (ev is not ISaintEntityEvent { IsHandled: true } saintEv)
             return;
 
         _useDelay.TryResetDelay((uid, delay));
@@ -177,7 +177,7 @@ public sealed class SaintedSystem : EntitySystem
         var ev = eventProvider();
         RaiseLocalEvent(target, ev);
 
-        if (ev is not ISaintEntityEvent {IsHandled: true} saintEv)
+        if (ev is not ISaintEntityEvent { IsHandled: true } saintEv)
             return;
 
         CauseHolyDamage(uid, target, saintEv.DamageOnCollide, saintEv.PushOnCollide);

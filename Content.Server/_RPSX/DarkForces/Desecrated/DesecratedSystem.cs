@@ -62,6 +62,8 @@ public sealed class DesecratedSystem : EntitySystem
         SubscribeLocalEvent<DesecratedMarkerComponent, OnSaintEntityCollide>(OnSaintItemsContact);
         SubscribeLocalEvent<DesecratedMarkerComponent, OnSaintWaterFlammableEvent>(OnSaintWaterFlammable);
         SubscribeLocalEvent<DesecratedMarkerComponent, OnTryPryingSaintedEvent>(OnSaintItemsContact);
+        SubscribeLocalEvent<DesecratedMarkerComponent, OnSaintEntityTryPickedUp>(OnSaintItemsContact);
+        SubscribeLocalEvent<DesecratedMarkerComponent, OnSaintEntityHandInteract>(OnSaintItemsContact);
         SubscribeLocalEvent<DesecratedMarkerComponent, PolymorphRevertedEvent>(OnPolymorphRevertedEvent);
     }
 

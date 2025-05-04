@@ -1,6 +1,5 @@
 ﻿using Content.Server.RPSX.DarkForces.Narsi.Buildings.Altar.Rituals.Polymorth;
 using Content.Server.Polymorph.Systems;
-using Robust.Shared.GameObjects;
 
 namespace Content.Server.RPSX.DarkForces.Narsi.Buildings.Altar;
 

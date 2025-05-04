@@ -107,7 +107,7 @@ public sealed class NarsiCreatureEggSystem : EntitySystem
     private void OnInsertedToContainer(EntityUid uid, NarsiCreatureEggComponent component,
         EntInsertedIntoContainerMessage args)
     {
-        if (!IsAllContainersFull(uid, out _))
+        if (!IsAllContainersFull(uid, out _) || component.CurrentStep != null)
             return;
 
         UpdateNextCreatureStep((uid, component));
