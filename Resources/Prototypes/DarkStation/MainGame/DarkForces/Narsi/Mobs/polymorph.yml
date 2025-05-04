@@ -32,7 +32,6 @@
   parent: BaseNarsiMob
   components:
   - type: Insulated
-  - type: CombatMode
   - type: InputMover
   - type: Clickable
   - type: InteractionOutline
@@ -73,6 +72,7 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 6
     baseSprintSpeed: 6
+  - type: BypassInteractionChecks
 
 - type: entity
   name: corrupted corgi

@@ -21,12 +21,12 @@ public sealed partial class RatvarAbilitiesSystem
         SubscribeLocalEvent<RatvarSwordComponent, GetMeleeAttackRateEvent>(OnGetMeleeAttackRate);
     }
 
-    private void OnGetMeleeAttackRate(EntityUid uid, RatvarSwordComponent component, GetMeleeAttackRateEvent args)
+    private void OnGetMeleeAttackRate(EntityUid uid, RatvarSwordComponent component, ref GetMeleeAttackRateEvent args)
     {
         if (!IsEnchantmentActive(args.Weapon, out var enchantment) || enchantment != SwordsmanEnchantment)
             return;
 
-        args.Multipliers += 4f;
+        args.Multipliers += 1.5f;
     }
 
     private void OnSwordMeleeHit(EntityUid uid, RatvarSwordComponent component, MeleeHitEvent args)

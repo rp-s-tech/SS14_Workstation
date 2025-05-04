@@ -22,8 +22,6 @@ public sealed partial class NarsiCultistAbilitiesSystem
         if (args.Handled)
             return;
 
-        if (!HasComp<StunnedComponent>(args.Target))
-            return;
         var coords = Transform(args.Performer).Coordinates;
         var handcuffs = Spawn("HandcuffsCult", coords);
         _handsSystem.TryPickup(uid, handcuffs);

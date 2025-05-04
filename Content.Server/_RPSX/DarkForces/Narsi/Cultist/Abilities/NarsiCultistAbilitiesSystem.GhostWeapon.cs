@@ -56,15 +56,12 @@ public sealed partial class NarsiCultistAbilitiesSystem
 
         foreach (var hand in handsComponent.Hands)
         {
-            if (hand.Value.HeldEntity is EntityUid entity && HasComp<NarsiCultGhostAxeComponent>(entity))
+            if (hand.Value.HeldEntity is EntityUid entity && MetaData(entity).EntityPrototype?.ID == "NarsiCultGhostAxe")
             {
                 QueueDel(entity);
                 Dirty(uid, handsComponent);
             }
         }
-
-        var action = _actionsSystem.GetActions(uid).ToList().Where(c => MetaData(c.Id).EntityPrototype?.ID == "NarsiCultistGhostAxeRevert").First().Id;
-        _actionsSystem.RemoveAction(action);
         args.Handled = true;
     }
 }
