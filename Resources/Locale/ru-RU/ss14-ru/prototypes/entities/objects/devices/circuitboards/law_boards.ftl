@@ -1,8 +1,8 @@
 
 
 ent-XenoborgCircuitBoard = law board (Xenoborg)
-    .desc = An electronics board containing the Xenoborg lawset.
-    .suffix = Admeme
+    .desc = Электронная плата, содержащая набор законов Ксеноборга.
+    .suffix = Адмемы
 ent-MothershipCircuitBoard = law board (Mothership Core)
-    .desc = An electronics board containing the Mothership Core lawset.
-    .suffix = Admeme
+    .desc = Электронная плата, содержащая набор основных законов материнского корабля.
+    .suffix = Адмемы

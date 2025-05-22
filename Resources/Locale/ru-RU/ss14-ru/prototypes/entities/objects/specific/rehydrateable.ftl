@@ -1,7 +1,7 @@
 ent-RehydratableItem = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
 ent-RehydratableAnimalCube = { ent-RehydratableItem }
-    .desc = Just add water!
+    .desc = Просто добавьте воды!
 ent-MonkeyCube = обезьяний кубик
     .desc = Просто добавь воды!
 ent-KoboldCube = кобольдовый кубик
@@ -27,5 +27,5 @@ ent-DehydratedSpaceCarp = обезвоженный космический кар
 ent-SyndicateSponge = обезьяний кубик
     .desc = Просто добавь воды!
     .suffix = Синдикат
-ent-MopBucketCube = mop bucket cube
-    .desc = Just add water! And then more water!
+ent-MopBucketCube = кубик ведра и швабры
+    .desc = Просто добавьте воды! А затем еще воды! кажется они могут уместить сюда целый шаттл...
