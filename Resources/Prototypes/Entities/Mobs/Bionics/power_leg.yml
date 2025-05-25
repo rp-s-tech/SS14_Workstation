@@ -1,0 +1,17 @@
+- type: entity
+  name: Левая силовая нога
+  id: LeftPowerLegFoot
+  parent: LeftLegPower
+  components:
+  - type: Body
+    prototype: LeftPowerLegFoot
+    species: universal
+
+- type: entity
+  name: Правая силовая нога
+  id: RightPowerLegFoot
+  parent: RightLegPower
+  components:
+  - type: Body
+    prototype: RightPowerLegFoot
+    species: universal

@@ -29,18 +29,11 @@ namespace Content.Shared.Movement.Components
         //   (well maybe we do but the code is designed such that MoverSystem applies movement speed)
         //   (and I'm not changing that)
 
-        /// <summary>
-        /// Should our velocity be applied to our parent?
-        /// </summary>
-        [DataField]
-        public bool ToParent = false;
-
         public GameTick LastInputTick;
         public ushort LastInputSubTick;
 
         public Vector2 CurTickWalkMovement;
         public Vector2 CurTickSprintMovement;
-        public Vector2 CurTickRushMovement; // Exodus - Stamina Rush
 
         public MoveButtons HeldMoveButtons = MoveButtons.None;
 
@@ -76,16 +69,7 @@ namespace Content.Shared.Movement.Components
 
         public const float LerpTime = 1.0f;
 
-        // Exodus - Rush - Start | Beauty states check | Add third state
-        public bool Moving => (HeldMoveButtons & MoveButtons.AnyDirection) != 0x0;
-        public bool Walking => HeldMoveButtons.HasFlag(MoveButtons.Walk) &&
-                               !HeldMoveButtons.HasFlag(MoveButtons.Rush);
-
-        public bool Sprinting => !HeldMoveButtons.HasFlag(MoveButtons.Walk) &&
-                                 !HeldMoveButtons.HasFlag(MoveButtons.Rush);
-        public bool Rushing => Moving &&
-                               HeldMoveButtons.HasFlag(MoveButtons.Rush);
-        // Exodus - End
+        public bool Sprinting => (HeldMoveButtons & MoveButtons.Walk) == 0x0;
 
         [ViewVariables(VVAccess.ReadWrite)]
         public bool CanMove = true;

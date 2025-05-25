@@ -24,18 +24,9 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("id");
 
-                    b.Property<DateTime?>("DateOfEnd")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("date_of_end");
-
                     b.Property<Guid>("PlayerUserId")
                         .HasColumnType("TEXT")
                         .HasColumnName("userID");
-
-                    b.Property<string>("SponsorTier")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("sponsorTier");
 
                     b.HasKey("ID")
                         .HasName("PK_rpsx_additional_sponsor_data");
@@ -624,38 +615,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.HasIndex("UserId");
 
                     b.ToTable("connection_log", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.DiscordUser", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("id");
-
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("date_created");
-
-                    b.Property<string>("DiscordId")
-                        .HasColumnType("text")
-                        .HasColumnName("discordID");
-
-                    b.Property<Guid>("PlayerUserId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("userID");
-
-                    b.Property<int>("Verify")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("verify");
-
-                    b.HasKey("ID")
-                        .HasName("PK_rpsx_discord_data");
-
-                    b.HasIndex("DiscordId")
-                        .IsUnique();
-
-                    b.ToTable("rpsx_discord_data", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.IPIntelCache", b =>
@@ -1421,6 +1380,35 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("server_unban", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.SponsorTierInfo", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("id");
+
+                    b.Property<DateTime?>("ExpirationTime")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("expiration_time");
+
+                    b.Property<int>("SponsorDataId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("sponsor_data_id");
+
+                    b.Property<string>("SponsorTierId")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("sponsor_tier_id");
+
+                    b.HasKey("ID")
+                        .HasName("PK_sponsor_tier_infos");
+
+                    b.HasIndex("SponsorDataId", "SponsorTierId")
+                        .IsUnique();
+
+                    b.ToTable("sponsor_tier_infos", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.Trait", b =>
                 {
                     b.Property<int>("Id")
@@ -2077,6 +2065,18 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Ban");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.SponsorTierInfo", b =>
+                {
+                    b.HasOne("Content.Server.Database.AdditionalSponsorData", "SponsorData")
+                        .WithMany("SponsorTiers")
+                        .HasForeignKey("SponsorDataId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_sponsor_tier_infos_rpsx_additional_sponsor_data_sponsor_data_id");
+
+                    b.Navigation("SponsorData");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Trait", b =>
                 {
                     b.HasOne("Content.Server.Database.Profile", "Profile")
@@ -2104,6 +2104,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_player_round_round_rounds_id");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.AdditionalSponsorData", b =>
+                {
+                    b.Navigation("SponsorTiers");
                 });
 
             modelBuilder.Entity("Content.Server.Database.Admin", b =>

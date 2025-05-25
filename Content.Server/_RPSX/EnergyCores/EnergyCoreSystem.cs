@@ -9,7 +9,7 @@ using Content.Server.Administration.Logs;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Content.Shared.Database;
-using Content.Server.NodeContainer;
+using Content.Shared.NodeContainer;
 using Content.Server.NodeContainer.Nodes;
 using Content.Server.Atmos.Piping.Components;
 using Content.Shared.Atmos;

@@ -130,6 +130,9 @@
     {
       "name": "underwing_secondary",
       "directions": 4
+    },
+    {
+        "name": "wings_icon"
     }
   ]
 }

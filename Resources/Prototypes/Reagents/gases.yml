@@ -26,6 +26,10 @@
         conditions:
         - !type:OrganType
           type: Plant
+      - !type:Oxygenate
+        conditions:
+        - !type:OrganType
+          type: Arachnid
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
@@ -72,6 +76,10 @@
         conditions:
         - !type:OrganType
           type: Plant
+      - !type:Oxygenate
+        conditions:
+        - !type:OrganType
+          type: Arachnid
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
@@ -370,7 +378,7 @@
           shouldHave: false
         key: ForcedSleep
         component: ForcedSleeping
-        time: 3
+        time: 150
         type: Add
       - !type:HealthChange
         conditions:

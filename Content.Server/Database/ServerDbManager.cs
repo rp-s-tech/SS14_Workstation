@@ -367,11 +367,11 @@ namespace Content.Server.Database
 
         #region RPSX
 
-        Task<string?> GetAdditionalSponsorTier(NetUserId userId);
-        Task ChangeAdditionalSponsorTier(NetUserId userId, SponsorTier? tier = null, int days = 0);
+        Task<SponsorTier?> GetAdditionalSponsorTier(NetUserId userId);
+        Task ChangeAdditionalSponsorTier(NetUserId userId, SponsorTier tier, int days = 0, bool remove = false);
         Task<BankAccountComponent?> GetProfileEconomics(NetUserId userId, int slot);
         Task SaveProfileEconomics(NetUserId userId, int slot, BankAccountComponent bank);
-        Task<bool> IsDiscordVerifiedAsync(NetUserId userId);
+        // Task<bool> IsDiscordVerifiedAsync(NetUserId userId);
 
         #endregion
     }
@@ -418,6 +418,7 @@ namespace Content.Server.Database
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly IResourceManager _res = default!;
         [Dependency] private readonly ILogManager _logMgr = default!;
+        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
         private ServerDbBase _db = default!;
         private LoggingProvider _msLogProvider = default!;
@@ -449,11 +450,11 @@ namespace Content.Server.Database
             {
                 case "sqlite":
                     SetupSqlite(out var contextFunc, out var inMemory);
-                    _db = new ServerDbSqlite(contextFunc, inMemory, _cfg, _synchronous, opsLog);
+                    _db = new ServerDbSqlite(contextFunc, inMemory, _cfg, _synchronous, opsLog, _prototypeManager);
                     break;
                 case "postgres":
                     var (pgOptions, conString) = CreatePostgresOptions();
-                    _db = new ServerDbPostgres(pgOptions, conString, _cfg, opsLog, notifyLog);
+                    _db = new ServerDbPostgres(pgOptions, conString, _cfg, opsLog, notifyLog, _prototypeManager);
                     break;
                 default:
                     throw new InvalidDataException($"Unknown database engine {engine}.");
@@ -1059,15 +1060,15 @@ namespace Content.Server.Database
 
         #region RPSX
 
-        public Task<string?> GetAdditionalSponsorTier(NetUserId userId)
+        public Task<SponsorTier?> GetAdditionalSponsorTier(NetUserId userId)
         {
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetAdditionalSponsorTier(userId));
         }
-        public Task ChangeAdditionalSponsorTier(NetUserId userId, SponsorTier? tier = null, int days = 0)
+        public Task ChangeAdditionalSponsorTier(NetUserId userId, SponsorTier tier, int days = 0, bool remove = false)
         {
             DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.ChangeAdditionalSponsorTier(userId, tier, days));
+            return RunDbCommand(() => _db.ChangeAdditionalSponsorTier(userId, tier, days, remove));
         }
         public Task<BankAccountComponent?> GetProfileEconomics(NetUserId userId, int slot)
         {
@@ -1080,11 +1081,11 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.SaveProfileEconomics(userId, slot, bank));
         }
 
-        public Task<bool> IsDiscordVerifiedAsync(NetUserId userId)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.IsDiscordVerifiedAsync(userId));
-        }
+        // public Task<bool> IsDiscordVerifiedAsync(NetUserId userId)
+        // {
+        //     DbReadOpsMetric.Inc();
+        //     return RunDbCommand(() => _db.IsDiscordVerifiedAsync(userId));
+        // }
 
         #endregion
 

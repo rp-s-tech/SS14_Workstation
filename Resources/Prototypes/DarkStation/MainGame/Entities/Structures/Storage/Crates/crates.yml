@@ -27,3 +27,57 @@
     sprite: DarkStation/MainGame/Structures/Storage/Crates/syndieorange.rsi
   - type: Sprite
     sprite: DarkStation/MainGame/Structures/Storage/Crates/syndieorange.rsi
+
+- type: entity
+  parent: CrateMedical
+  id: CrateSynthOrgan
+  name: Ящик синтетических органов
+
+- type: entity
+  parent: CrateMedical
+  id: CrateDionaOrgan
+  name: Ящик органов Дионы
+
+- type: entity
+  parent: CrateMedical
+  id: CrateSynthBody
+  name: Ящик синтетического тела
+
+- type: entity
+  id: CrateSyntheticBody
+  parent: CrateSynthBody
+  suffix: "Заполненный"
+  components:
+    - type: StorageFill
+      contents:
+        - id: MobSynth
+
+- type: entity
+  id: CrateSyntheticOrgans
+  parent: CrateSynthOrgan
+  suffix: "Заполненный"
+  components:
+    - type: StorageFill
+      contents:
+        - id: OrganSynthEyes
+          amount: 2
+        - id: OrganSynthLungs
+          amount: 2
+        - id: OrganSynthHeart
+          amount: 2
+        - id: OrganSynthStomach
+          amount: 2
+        - id: OrganSynthLiver
+          amount: 2
+        - id: OrganSynthKidneys
+          amount: 2
+
+- type: entity
+  id: CrateDionaOrgans #Diona have a multi-function stomach, so they get special treatment
+  parent: CrateDionaOrgan
+  suffix: "Заполненный"
+  components:
+    - type: StorageFill
+      contents:
+        - id: OrganDionaEyes
+        - id: OrganDionaStomach

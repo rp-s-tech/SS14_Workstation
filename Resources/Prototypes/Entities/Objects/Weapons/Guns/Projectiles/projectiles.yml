@@ -220,10 +220,9 @@
     soundHit:
       path: "/Audio/Weapons/Guns/Hits/taser_hit.ogg"
     forceSound: true
-  # Exodus - Stamina Refactor - start
-  - type: StaminaDamageOnCollide
-    damage: 100
-  # Exodus - end
+  - type: StunOnCollide
+    stunAmount: 5
+    knockdownAmount: 5
 
 - type: entity
   name : disabler bolt
@@ -459,6 +458,7 @@
     - state: chronobolt
       shader: unshaded
   - type: Projectile
+    damageBodyParts: true
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
@@ -466,7 +466,7 @@
         Structural: 30
   # Short lifespan
   - type: TimedDespawn
-    lifetime: 0.4
+    lifetime: 0.22 # roughly 5.5 tiles
   - type: GatheringProjectile
 
 - type: entity
@@ -481,6 +481,7 @@
     - state: chronobolt
       shader: unshaded
   - type: Projectile
+    damageBodyParts: true
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:

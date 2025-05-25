@@ -34,18 +34,9 @@ namespace Content.Server.Database.Migrations.Postgres
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
 
-                    b.Property<DateTime?>("DateOfEnd")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("date_of_end");
-
                     b.Property<Guid>("PlayerUserId")
                         .HasColumnType("uuid")
                         .HasColumnName("userID");
-
-                    b.Property<string>("SponsorTier")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("sponsorTier");
 
                     b.HasKey("ID")
                         .HasName("PK_rpsx_additional_sponsor_data");
@@ -662,40 +653,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         {
                             t.HasCheckConstraint("AddressNotIPv6MappedIPv4", "NOT inet '::ffff:0.0.0.0/96' >>= address");
                         });
-                });
-
-            modelBuilder.Entity("Content.Server.Database.DiscordUser", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("date_created");
-
-                    b.Property<string>("DiscordId")
-                        .HasColumnType("text")
-                        .HasColumnName("discordID");
-
-                    b.Property<Guid>("PlayerUserId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("userID");
-
-                    b.Property<int>("Verify")
-                        .HasColumnType("integer")
-                        .HasColumnName("verify");
-
-                    b.HasKey("ID")
-                        .HasName("PK_rpsx_discord_data");
-
-                    b.HasIndex("DiscordId")
-                        .IsUnique();
-
-                    b.ToTable("rpsx_discord_data", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.IPIntelCache", b =>
@@ -1503,6 +1460,37 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("server_unban", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.SponsorTierInfo", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<DateTime?>("ExpirationTime")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("expiration_time");
+
+                    b.Property<int>("SponsorDataId")
+                        .HasColumnType("integer")
+                        .HasColumnName("sponsor_data_id");
+
+                    b.Property<string>("SponsorTierId")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("sponsor_tier_id");
+
+                    b.HasKey("ID")
+                        .HasName("PK_sponsor_tier_infos");
+
+                    b.HasIndex("SponsorDataId", "SponsorTierId")
+                        .IsUnique();
+
+                    b.ToTable("sponsor_tier_infos", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.Trait", b =>
                 {
                     b.Property<int>("Id")
@@ -2163,6 +2151,18 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Ban");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.SponsorTierInfo", b =>
+                {
+                    b.HasOne("Content.Server.Database.AdditionalSponsorData", "SponsorData")
+                        .WithMany("SponsorTiers")
+                        .HasForeignKey("SponsorDataId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_sponsor_tier_infos_rpsx_additional_sponsor_data_sponsor_dat~");
+
+                    b.Navigation("SponsorData");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Trait", b =>
                 {
                     b.HasOne("Content.Server.Database.Profile", "Profile")
@@ -2190,6 +2190,11 @@ namespace Content.Server.Database.Migrations.Postgres
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_player_round_round_rounds_id");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.AdditionalSponsorData", b =>
+                {
+                    b.Navigation("SponsorTiers");
                 });
 
             modelBuilder.Entity("Content.Server.Database.Admin", b =>

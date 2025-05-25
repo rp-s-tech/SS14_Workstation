@@ -1,0 +1,17 @@
+- type: entity
+  name: Левая рука бур
+  id: LeftDrillArmHand
+  parent: LeftDrillArm
+  components:
+  - type: Body
+    prototype: LeftDrillArmHand
+    species: universal
+
+- type: entity
+  name: Правая рука бур
+  id: RightDrillArmHand
+  parent: RightDrillArm
+  components:
+  - type: Body
+    prototype: RightDrillArmHand
+    species: universal

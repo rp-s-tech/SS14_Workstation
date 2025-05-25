@@ -13,6 +13,7 @@ using Content.Shared.Database;
 using Microsoft.EntityFrameworkCore;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Database
@@ -36,8 +37,9 @@ namespace Content.Server.Database
             bool inMemory,
             IConfigurationManager cfg,
             bool synchronous,
-            ISawmill opsLog)
-            : base(opsLog)
+            ISawmill opsLog,
+            IPrototypeManager prototype)
+            : base(opsLog, prototype)
         {
             _options = options;
 

@@ -31,9 +31,10 @@ public sealed class SponsorsManager : ISponsorsManager
         );
         _netMgr.RegisterNetMessage<MsgAdditionalSponsorInfo>(msg =>
             {
-                if (msg.TierId == null || !_prototype.TryIndex(msg.TierId, out _dopTier))
+                _dopTier = null;
+                if (msg.TierId != null)
                 {
-                    _tier = null;
+                    _dopTier = msg.TierId;
                 }
             }
         );

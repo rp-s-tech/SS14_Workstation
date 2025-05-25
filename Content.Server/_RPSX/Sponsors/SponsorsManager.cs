@@ -30,7 +30,7 @@ public sealed class SponsorsManager : ISponsorsManager
     private string _apiUrl = string.Empty;
 
     private readonly Dictionary<NetUserId, string> _cachedSponsors = new();
-    private readonly Dictionary<NetUserId, string> _cachedAdditionalSponsors = new();
+    private readonly Dictionary<NetUserId, SponsorTier> _cachedAdditionalSponsors = new();
 
     public void Initialize()
     {
@@ -54,7 +54,7 @@ public sealed class SponsorsManager : ISponsorsManager
     public bool TryGetAdditionalSponsorTier(NetUserId userId, [NotNullWhen(true)] out SponsorTier? sponsorTier)
     {
         sponsorTier = null;
-        return _cachedAdditionalSponsors.TryGetValue(userId, out var tierId) && _prototype.TryIndex(tierId, out sponsorTier);
+        return _cachedAdditionalSponsors.TryGetValue(userId, out sponsorTier);
     }
 
     public bool IsJobAvailable(NetUserId userId, JobPrototype job)
@@ -142,12 +142,12 @@ public sealed class SponsorsManager : ISponsorsManager
     public async void AddSponsor(NetUserId userId, SponsorTier tier, int days)
     {
         await _serverDbManager.ChangeAdditionalSponsorTier(userId, tier, days);
-        _sawmill.Info("Sponsor Added {userId} {tier} for {days}", userId, tier.ID, days);
+        _sawmill.Info("Sponsor added: {userId} {tier} for {days}", userId, tier.ID, days);
     }
 
-    public async void RemoveSponsor(NetUserId userId)
+    public async void RemoveSponsor(NetUserId userId, SponsorTier tier)
     {
-        await _serverDbManager.ChangeAdditionalSponsorTier(userId);
-        _sawmill.Info("Sponsor Removed {userId}", userId);
+        await _serverDbManager.ChangeAdditionalSponsorTier(userId, tier, remove: true);
+        _sawmill.Info("SponsorTier {tier} removed from {userId}", tier.ID, userId);
     }
 }

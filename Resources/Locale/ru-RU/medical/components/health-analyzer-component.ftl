@@ -7,6 +7,7 @@ health-analyzer-window-entity-dead-text = Мёртв
 health-analyzer-window-entity-critical-text = Критическое состояние
 health-analyzer-window-entity-temperature-text = Температура:
 health-analyzer-window-entity-status-text = Статус:
+health-analyzer-window-entity-health-text = Состояние { $entityName }:
 health-analyzer-window-entity-blood-level-text = Уровень крови:
 health-analyzer-window-entity-damage-total-text = Общие повреждения:
 health-analyzer-window-damage-group-text = { $damageGroup }: { $amount }

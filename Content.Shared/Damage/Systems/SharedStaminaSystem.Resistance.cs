@@ -5,7 +5,7 @@ using Content.Shared.Inventory;
 
 namespace Content.Shared.Damage.Systems;
 
-public abstract partial class SharedStaminaSystem
+public partial class SharedStaminaSystem
 {
     private void InitializeResistance()
     {

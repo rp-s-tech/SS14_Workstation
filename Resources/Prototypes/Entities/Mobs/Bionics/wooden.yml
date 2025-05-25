@@ -1,0 +1,33 @@
+﻿- type: entity
+  id: LeftLegFootWooden
+  parent: LeftLegWooden
+  components:
+    - type: Body
+      prototype: LeftLegFootWooden
+      species: universal
+
+- type: entity
+  id: RightLegFootWooden
+  parent: RightLegWooden
+  components:
+    - type: Body
+      prototype: RightLegFootWooden
+      species: universal
+
+- type: entity
+  name: Левая деревянная рука
+  id: LeftWoodenArmHand
+  parent: LeftArmWooden
+  components:
+    - type: Body
+      prototype: LeftArmHandWooden
+      species: universal
+
+- type: entity
+  name: Правая деревянная рука
+  id: RightWoodenArmHand
+  parent: RightArmWooden
+  components:
+    - type: Body
+      prototype: RightArmHandWooden
+      species: universal

@@ -48,12 +48,10 @@ namespace Content.Server.Database
         public DbSet<IPIntelCache> IPIntelCache { get; set; } = null!;
 
         public DbSet<PatronProfilePet> PatronProfilePets { get; set; } = null!;
-
         public DbSet<PatronProfileItem> PatronProfileItem { get; set; } = null!;
-
         public DbSet<ProfileEconomics> ProfileEconomics { get; set; } = null!;
-        public DbSet<DiscordUser> DiscordUsers { get; set; } = null!;
         public DbSet<AdditionalSponsorData> AdditionalSponsorDatas { get; set; } = null!;
+        public DbSet<SponsorTierInfo> SponsorTierInfos { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -62,15 +60,15 @@ namespace Content.Server.Database
                 .IsUnique();
 
             modelBuilder.Entity<Profile>()
-                .HasIndex(p => new {p.Slot, PrefsId = p.PreferenceId})
+                .HasIndex(p => new { p.Slot, PrefsId = p.PreferenceId })
                 .IsUnique();
 
             modelBuilder.Entity<Antag>()
-                .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.AntagName})
+                .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.AntagName })
                 .IsUnique();
 
             modelBuilder.Entity<Trait>()
-                .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.TraitName})
+                .HasIndex(p => new { HumanoidProfileId = p.ProfileId, p.TraitName })
                 .IsUnique();
 
             modelBuilder.Entity<ProfileRoleLoadout>()
@@ -118,15 +116,15 @@ namespace Content.Server.Database
                 .OnDelete(DeleteBehavior.SetNull);
 
             modelBuilder.Entity<AdminFlag>()
-                .HasIndex(f => new {f.Flag, f.AdminId})
+                .HasIndex(f => new { f.Flag, f.AdminId })
                 .IsUnique();
 
             modelBuilder.Entity<AdminRankFlag>()
-                .HasIndex(f => new {f.Flag, f.AdminRankId})
+                .HasIndex(f => new { f.Flag, f.AdminRankId })
                 .IsUnique();
 
             modelBuilder.Entity<AdminLog>()
-                .HasKey(log => new {log.RoundId, log.Id});
+                .HasKey(log => new { log.RoundId, log.Id });
 
             modelBuilder.Entity<AdminLog>()
                 .Property(log => log.Id);
@@ -151,7 +149,7 @@ namespace Content.Server.Database
                 .HasIndex(round => round.StartDate);
 
             modelBuilder.Entity<AdminLogPlayer>()
-                .HasKey(logPlayer => new {logPlayer.RoundId, logPlayer.LogId, logPlayer.PlayerUserId});
+                .HasKey(logPlayer => new { logPlayer.RoundId, logPlayer.LogId, logPlayer.PlayerUserId });
 
             modelBuilder.Entity<ServerBan>()
                 .HasIndex(p => p.PlayerUserId);
@@ -344,12 +342,12 @@ namespace Content.Server.Database
                 .HasIndex(p => new { ProfileEconomicsProfileId = p.ProfileId })
                 .IsUnique();
 
-            modelBuilder.Entity<DiscordUser>()
-                .HasIndex(u => u.DiscordId)
-                .IsUnique();
-
             modelBuilder.Entity<AdditionalSponsorData>()
                 .HasIndex(u => u.PlayerUserId)
+                .IsUnique();
+
+            modelBuilder.Entity<SponsorTierInfo>()
+                .HasIndex(u => new { u.SponsorDataId, u.SponsorTierId })
                 .IsUnique();
 
             modelBuilder.Entity<RoleWhitelist>()
@@ -486,30 +484,6 @@ namespace Content.Server.Database
         public int ProfileId { get; set; }
     }
 
-    [Table("rpsx_discord_data")]
-    public class DiscordUser
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("id")]
-        public int ID { get; set; }
-
-        [Required]
-        [Column("date_created")]
-        public DateTime DateCreated { get; set; } = DateTime.UtcNow;
-
-        [Required]
-        [Column("userID")]
-        public Guid PlayerUserId { get; set; }
-
-        [Column("discordID", TypeName = "text")]
-        public string? DiscordId { get; set; }
-
-        [Required]
-        [Column("verify")]
-        public int Verify { get; set; } = 0;
-    }
-
     [Table("rpsx_additional_sponsor_data")]
     public class AdditionalSponsorData
     {
@@ -523,11 +497,17 @@ namespace Content.Server.Database
         public Guid PlayerUserId { get; set; }
 
         [Required]
-        [Column("sponsorTier")]
-        public string SponsorTier { get; set; } = string.Empty;
+        [Column("SponsorTierInfos")]
+        public List<SponsorTierInfo> SponsorTiers { get; set; } = new();
+    }
 
-        [Column("date_of_end")]
-        public DateTime? DateOfEnd { get; set; }
+    public class SponsorTierInfo
+    {
+        public int ID { get; set; }
+        public AdditionalSponsorData SponsorData { get; set; } = null!;
+        public int SponsorDataId { get; set; }
+        public string SponsorTierId { get; set; } = string.Empty;
+        public DateTime? ExpirationTime { get; set; }
     }
 
     #endregion
@@ -1095,7 +1075,7 @@ namespace Content.Server.Database
         IPChecks = 5,
         /// Results from rejected connections who are authenticated but have no modern hwid associated with them.
         NoHwid = 6,
-        Discord  = 7
+        Discord = 7
     }
 
     public class ServerBanHit

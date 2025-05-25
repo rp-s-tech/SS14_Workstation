@@ -13,7 +13,6 @@ namespace Content.Server.RPSX.GameRules.Vampire.Role.Abilities;
 
 public sealed partial class VampireAbilitiesSystem
 {
-    [Dependency] private readonly StaminaSystem _staminaSystem = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
 
     private static TimeSpan RegenPeriod = TimeSpan.FromSeconds(2);
@@ -51,7 +50,6 @@ public sealed partial class VampireAbilitiesSystem
 
     private void RemoveStaminaCrit(EntityUid uid)
     {
-        _staminaSystem.StaminaRecover(uid);
         _statusEffects.TryRemoveStatusEffect(uid, "SlowedDown");
         _statusEffects.TryRemoveStatusEffect(uid, "Stun");
         _statusEffects.TryRemoveStatusEffect(uid, "KnockedDown");

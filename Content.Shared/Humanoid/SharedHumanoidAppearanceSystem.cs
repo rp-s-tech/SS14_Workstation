@@ -41,6 +41,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] private readonly ISerializationManager _serManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly GrammarSystem _grammarSystem = default!;
+    [Dependency] private readonly SharedIdentitySystem _identity = default!;
     [Dependency] private readonly ISponsorsManager _sponsors = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!; // ADT-Changeling-Tweak
 
@@ -95,10 +96,10 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         // RPSX Sponsors
         var sponsorPrototypes = new List<string>();
         if (_sponsors.TryGetSponsorTier(session.UserId, out var tier))
-            sponsorPrototypes.AddRange(tier.AllowedLoadouts.Where(item => !sponsorPrototypes.Contains(item)));
+            sponsorPrototypes.AddRange(tier.AllowedMarkings.Where(item => !sponsorPrototypes.Contains(item)));
 
         if (_sponsors.TryGetAdditionalSponsorTier(session.UserId, out var additionalTier))
-            sponsorPrototypes.AddRange(additionalTier.AllowedLoadouts.Where(item => !sponsorPrototypes.Contains(item)));
+            sponsorPrototypes.AddRange(additionalTier.AllowedMarkings.Where(item => !sponsorPrototypes.Contains(item)));
         // RPSX Sponsors
         profile.EnsureValid(session, collection!, sponsorPrototypes.ToArray());
         return profile;
@@ -183,6 +184,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (TryComp<GrammarComponent>(target, out var grammar))
             _grammarSystem.SetGender((target, grammar), sourceHumanoid.Gender);
 
+        _identity.QueueIdentityUpdate(target);
         Dirty(target, targetHumanoid);
     }
 
@@ -354,7 +356,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (humanoid.CustomBaseLayers.TryGetValue(layer, out var info))
             humanoid.CustomBaseLayers[layer] = info with { Color = color };
         else
-            humanoid.CustomBaseLayers[layer] = new(null, color);
+            humanoid.CustomBaseLayers[layer] = new(null, false, color);
 
         if (sync)
             Dirty(uid, humanoid);

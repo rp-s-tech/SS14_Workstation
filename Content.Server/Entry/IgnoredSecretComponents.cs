@@ -26,5 +26,22 @@ public static class IgnoredSecretComponents
         "CcoConsole",
         "ZombieHunter",
         "CCOConsoleTarget",
+
+        // Surgery
+        "SurgeryTool",
+        "SurgeryBodyPart",
+        "SurgeryWoundablePart",
+        "SurgeryDamage",
+        "SurgeryCauterizer",
+        "SurgerySaw",
+        "SurgeryIncisor",
+        "SurgeryLargeClamp",
+        "SurgeryDrill",
+        "SurgeryManipulator",
+        "SurgeryRetractor",
+        "SurgerySmallClamp",
+        "SurgerySuture",
+        "SurgeryHardSuture",
+        "TargetDoll",
     };
 }

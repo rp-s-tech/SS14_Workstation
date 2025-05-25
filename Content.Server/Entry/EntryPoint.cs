@@ -37,6 +37,7 @@ using Content.Server.RPSX.Bridges;
 using Content.Server.RPSX.Entry;
 using Content.Shared.RPSX.Patron;
 using Content.Server.SS220.TTS;
+using Content.Server.RPSX.Discord;
 
 namespace Content.Server.Entry
 {
@@ -116,6 +117,7 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<GhostKickManager>().Initialize();
                 IoCManager.Resolve<ServerInfoManager>().Initialize();
                 IoCManager.Resolve<ISponsorsManager>().Initialize(); // RPSX
+                IoCManager.Resolve<IDiscordAuthManager>().Initialize(); // RPSX
                 IoCManager.Resolve<ServerApi>().Initialize();
 
                 _voteManager.Initialize();
@@ -236,6 +238,7 @@ namespace Content.Server.Entry
             Load(CCVars.ConfigPresetDebug, "debug");
 #endif
 
+#pragma warning disable CS8321
             void Load(CVarDef<bool> cVar, string name)
             {
                 var path = $"{ConfigPresetsDirBuild}{name}.toml";
@@ -245,6 +248,7 @@ namespace Content.Server.Entry
                     sawmill.Info("Loaded config preset: {Preset}", path);
                 }
             }
+#pragma warning restore CS8321
         }
     }
 }

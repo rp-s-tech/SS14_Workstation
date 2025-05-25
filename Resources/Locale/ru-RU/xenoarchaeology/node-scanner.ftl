@@ -1,2 +1,9 @@
 node-scan-popup = ID узла: { $id }
+node-scan-no-data = Не найдено активных данных узла
+node-scan-display-title = Сканер узлов
+node-scanner-artifact-scanned-time = Артефакт был отсканирован в последний раз  { $time }
+node-scanner-artifact-state-ready = Артефакт готов к взаимодействию
+node-scanner-artifact-state-unlocking = Артефакт резонирует с вашими действиями
+node-scanner-artifact-state-cooldown = Артефакт отдыхает
+node-scanner-artifact-scanned-time-none = Отсканируйте артефакт, чтобы увидеть текущее состояние
 node-scan-tooltip = Сканирование артефакта

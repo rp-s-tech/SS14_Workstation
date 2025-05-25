@@ -42,7 +42,7 @@ public sealed class GerasSystem : SharedGerasSystem
         if (HasComp<ZombieComponent>(uid))
             return; // i hate zomber.
 
-        if(_entityManager.HasComponent<CloningPodComponent>(Transform(uid).ParentUid)) // RPSX edit | GerasCloningBreakingfix
+        if (_entityManager.HasComponent<CloningPodComponent>(Transform(uid).ParentUid)) // RPSX edit | GerasCloningBreakingfix
             return;
 
         var ent = _polymorphSystem.PolymorphEntity(uid, component.GerasPolymorphId);

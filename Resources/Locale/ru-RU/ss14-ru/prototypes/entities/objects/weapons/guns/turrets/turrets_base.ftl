@@ -1,4 +1,3 @@
-
 ent-BaseWeaponBallisticTurret = баллистическая турель
     .desc = Автоматическая пулеметная турель.
 ent-BaseWeaponEnergyTurret = лазерная турель

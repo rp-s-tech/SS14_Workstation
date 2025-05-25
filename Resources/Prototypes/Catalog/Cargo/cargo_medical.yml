@@ -147,3 +147,13 @@
   cost: 750
   category: cargoproduct-category-name-medical
   group: market
+
+- type: cargoProduct
+  id: MedicalSurgerySupplies
+  icon:
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    state: scalpel
+  product: CrateMedicalSurgery
+  cost: 750
+  category: cargoproduct-category-name-medical
+  group: market

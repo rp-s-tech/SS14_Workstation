@@ -52,7 +52,7 @@ public sealed class MsgAdditionalSponsorInfo : NetMessage
 {
     public override MsgGroups MsgGroup => MsgGroups.Command;
 
-    public string? TierId;
+    public SponsorTier? TierId;
 
     public override void ReadFromBuffer(NetIncomingMessage buffer, IRobustSerializer serializer)
     {

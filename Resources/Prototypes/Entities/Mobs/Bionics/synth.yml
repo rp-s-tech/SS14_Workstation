@@ -1,0 +1,35 @@
+- type: entity
+  name: Левая синтетическая рука
+  id: LeftSynthArmHand
+  parent: LeftArmSynth
+  components:
+  - type: Body
+    prototype: LeftSynthArmHand
+    species: universal
+
+- type: entity
+  name: Правая синтетическая рука
+  id: RightSynthArmHand
+  parent: RightArmSynth
+  components:
+  - type: Body
+    prototype: RightSynthArmHand
+    species: universal
+
+- type: entity
+  name: Левая синтетическая нога
+  id: LeftSynthLegFoot
+  parent: LeftLegSynth
+  components:
+  - type: Body
+    prototype: LeftSynthLegFoot
+    species: universal
+
+- type: entity
+  name: Правая синтетическая нога
+  id: RightSynthLegFoot
+  parent: RightLegSynth
+  components:
+  - type: Body
+    prototype: RightSynthLegFoot
+    species: universal

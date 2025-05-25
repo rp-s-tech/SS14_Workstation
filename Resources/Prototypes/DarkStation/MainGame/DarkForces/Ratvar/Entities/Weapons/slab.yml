@@ -141,6 +141,10 @@
   components:
   - type: EntityTargetAction
     canTargetSelf: false
+    whitelist:
+      components:
+      - RatvarItem
+      - RatvarStructure
     checkCanInteract: true
     interactOnMiss: false
     useDelay: 10

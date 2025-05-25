@@ -29,13 +29,15 @@ namespace Content.Server.Database
     public abstract class ServerDbBase
     {
         private readonly ISawmill _opsLog;
+        private readonly IPrototypeManager _prototypeManager;
 
         public event Action<DatabaseNotification>? OnNotificationReceived;
 
         /// <param name="opsLog">Sawmill to trace log database operations to.</param>
-        public ServerDbBase(ISawmill opsLog)
+        public ServerDbBase(ISawmill opsLog, IPrototypeManager prototype)
         {
             _opsLog = opsLog;
+            _prototypeManager = prototype;
         }
 
         #region Preferences
@@ -296,7 +298,7 @@ namespace Content.Server.Database
         private static Profile ConvertProfiles(HumanoidCharacterProfile humanoid, int slot, Profile? profile = null)
         {
             profile ??= new Profile();
-            var appearance = (HumanoidCharacterAppearance) humanoid.CharacterAppearance;
+            var appearance = (HumanoidCharacterAppearance)humanoid.CharacterAppearance;
             List<string> markingStrings = new();
             foreach (var marking in appearance.Markings)
             {
@@ -1911,59 +1913,113 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
         #region RPSX
 
-        public async Task<string?> GetAdditionalSponsorTier(NetUserId userId)
+        public async Task<SponsorTier?> GetAdditionalSponsorTier(NetUserId userId)
         {
             await using var db = await GetDb();
 
-            var sponsor = db.DbContext.AdditionalSponsorDatas
-                .SingleOrDefault(p => p.PlayerUserId == userId.UserId) ?? null;
-            if (sponsor == null) return null;
-            if (sponsor.DateOfEnd == null) return sponsor.SponsorTier;
-            if (sponsor.DateOfEnd < DateTime.Now)
-            {
-                await ChangeAdditionalSponsorTier(userId);
+            var sponsor = await db.DbContext.AdditionalSponsorDatas
+                .SingleOrDefaultAsync(p => p.PlayerUserId == userId.UserId);
+
+            if (sponsor == null)
                 return null;
+
+            var resultTier = new SponsorTier();
+            var expiredTiers = new List<string>();
+
+            foreach (var tier in sponsor.SponsorTiers)
+            {
+                var tierId = tier.SponsorTierId;
+                var expiryDate = tier.ExpirationTime;
+                if (!_prototypeManager.TryIndex(tierId, out SponsorTier? tierProto))
+                    continue;
+
+                if (expiryDate is DateTime expiry && expiry < DateTime.UtcNow)
+                {
+                    expiredTiers.Add(tierId);
+                    continue;
+                }
+
+                resultTier.AvailableItems = Math.Min(2, resultTier.AvailableItems + tierProto.AvailableItems);
+                resultTier.RoleTimeByPass |= tierProto.RoleTimeByPass;
+                resultTier.HavePriorityJoin |= tierProto.HavePriorityJoin;
+
+                AddUniqueItems(resultTier.AllowedMarkings, tierProto.AllowedMarkings);
+                AddUniqueItems(resultTier.AllowedLoadouts, tierProto.AllowedLoadouts);
+                AddUniqueItems(resultTier.AllowedSpecies, tierProto.AllowedSpecies);
+                AddUniqueItems(resultTier.PetCategories, tierProto.PetCategories);
+                AddUniqueItems(resultTier.Ghosts, tierProto.Ghosts);
             }
-            return sponsor.SponsorTier;
+
+            foreach (var tierId in expiredTiers)
+            {
+                if (_prototypeManager.TryIndex(tierId, out SponsorTier? tierProto))
+                    await ChangeAdditionalSponsorTier(userId, tierProto, remove: true);
+            }
+
+            return resultTier;
         }
 
-        public async Task ChangeAdditionalSponsorTier(NetUserId userId, SponsorTier? tier = null, int days = 0)
+        private void AddUniqueItems<T>(List<T> target, List<T> source)
+        {
+            var set = new HashSet<T>(target);
+            foreach (var item in source)
+            {
+                if (set.Add(item))
+                    target.Add(item);
+            }
+        }
+
+        public async Task ChangeAdditionalSponsorTier(NetUserId userId, SponsorTier tier, int days = 0, bool remove = false)
         {
             await using var db = await GetDb();
 
-            var sponsor = db.DbContext.AdditionalSponsorDatas
-                .SingleOrDefault(p => p.PlayerUserId == userId.UserId) ?? null;
+            var sponsor = await db.DbContext.AdditionalSponsorDatas
+                .Include(p => p.SponsorTiers)
+                .SingleOrDefaultAsync(p => p.PlayerUserId == userId.UserId);
 
-            if (tier == null)
+            var tierId = tier.ID;
+
+            if (remove)
             {
-                if (sponsor == null)
+                if (sponsor?.SponsorTiers.FirstOrDefault(t => t.SponsorTierId == tierId) is not { } tierToRemove)
                 {
-                    _opsLog.Info($"Player {userId} doesn't have tier {tier}");
+                    _opsLog.Info($"Player {userId} doesn't have the tier {tierId} to remove.");
                     return;
                 }
-                db.DbContext.AdditionalSponsorDatas.Remove(sponsor);
+
+                sponsor.SponsorTiers.Remove(tierToRemove);
+                db.DbContext.Remove(tierToRemove);
                 await db.DbContext.SaveChangesAsync();
                 return;
+            }
+
+            if (sponsor == null)
+            {
+                sponsor = new AdditionalSponsorData
+                {
+                    PlayerUserId = userId.UserId
+                };
+                db.DbContext.AdditionalSponsorDatas.Add(sponsor);
+            }
+
+            DateTime? expiration = days > 0 ? DateTime.UtcNow.AddDays(days) : null;
+
+            var existingTier = sponsor.SponsorTiers.FirstOrDefault(t => t.SponsorTierId == tierId);
+            if (existingTier != null)
+            {
+                existingTier.ExpirationTime = expiration;
             }
             else
             {
-                if (sponsor == null)
+                sponsor.SponsorTiers.Add(new SponsorTierInfo
                 {
-                    sponsor = new AdditionalSponsorData
-                    {
-                        PlayerUserId = userId.UserId,
-                        DateOfEnd = days > 0 ? DateTime.Now.AddDays(days) : null,
-                        SponsorTier = tier.ID
-                    };
-                    db.DbContext.AdditionalSponsorDatas.Add(sponsor);
-                    await db.DbContext.SaveChangesAsync();
-                    return;
-                }
-                sponsor.SponsorTier = tier.ID;
-                sponsor.DateOfEnd = days > 0 ? DateTime.Now.AddDays(days) : null;
-                await db.DbContext.SaveChangesAsync();
-                return;
+                    SponsorTierId = tierId,
+                    ExpirationTime = expiration,
+                    SponsorData = sponsor
+                });
             }
+
+            await db.DbContext.SaveChangesAsync();
         }
 
         public async Task<BankAccountComponent?> GetProfileEconomics(NetUserId userId, int slot)
@@ -2014,12 +2070,6 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             economics.Balance = bank.Balance;
             await db.DbContext.SaveChangesAsync();
         }
-        public async Task<bool> IsDiscordVerifiedAsync(NetUserId userId)
-        {
-            await using var db = await GetDb();
-            return await db.DbContext.DiscordUsers.AnyAsync(u => u.PlayerUserId == userId.UserId && u.Verify == 1);
-        }
-
         #endregion
     }
 }

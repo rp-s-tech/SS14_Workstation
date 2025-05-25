@@ -68,6 +68,15 @@
     },
     {
       "name": "web-gland"
+    },
+    {
+      "name": "kidney-l"
+    },
+    {
+      "name": "kidney-r"
+    },
+    {
+      "name": "liver"
     }
   ]
 }

@@ -36,7 +36,7 @@ public interface ISponsorsManager
 
     public async void AddSponsor(NetUserId userId, SponsorTier tier, int days) { }
 
-    public async void RemoveSponsor(NetUserId userId) { }
+    public async void RemoveSponsor(NetUserId userId, SponsorTier tier) { }
 
     public bool IsUserHasRoleTimeByPass(NetUserId userId)
     {

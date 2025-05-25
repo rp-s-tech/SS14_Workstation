@@ -39,6 +39,9 @@
     materialComposition:
       Steel: 100
       Wood: 100
+  - type: SurgeryTool
+    sound: /Audio/Items/drill_hit.ogg
+  - type: SurgeryDrill
 
 - type: entity
   name: mining drill

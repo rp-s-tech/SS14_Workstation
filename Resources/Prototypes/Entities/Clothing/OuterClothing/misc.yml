@@ -267,6 +267,7 @@
     sprite: Clothing/OuterClothing/Misc/hospitalgown.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/hospitalgown.rsi
+  - type: SurgeryGown
 
 - type: entity
   parent: ClothingOuterBase

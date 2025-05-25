@@ -23,6 +23,8 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Mobs.Components;
 using Content.Server.RPSX.Bridges;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.RPSX.DarkForces.Desecrated;
 
 namespace Content.Server.Bible
 {
@@ -38,7 +40,7 @@ namespace Content.Server.Bible
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly UseDelaySystem _delay = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
-        [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
+        [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
         [Dependency] private readonly ISaintedBridge _saintedBridge = default!;
 
         [ValidatePrototypeId<ReagentPrototype>]
@@ -135,7 +137,7 @@ namespace Content.Server.Bible
 
             if (_saintedBridge.TryMakeSainted(args.User, args.Target.Value))
             {
-                _audio.PlayEntity(_audio.GetSound(component.HealSoundPath), Filter.Pvs(args.Target.Value), args.User, true);
+                _audio.PlayEntity(_audio.ResolveSound(component.HealSoundPath), Filter.Pvs(args.Target.Value), args.User, true);
                 return;
             }
 
@@ -163,6 +165,7 @@ namespace Content.Server.Bible
                 }
             }
 
+            if (HasComp<DesecratedMarkerComponent>(args.Target.Value)) return;
             var damage = _damageableSystem.TryChangeDamage(args.Target.Value, component.Damage, true, origin: uid);
 
             if (damage == null || damage.Empty)
@@ -215,7 +218,7 @@ namespace Content.Server.Bible
             }
 
             _popupSystem.PopupEntity("Простая вода в емкости стала святой!", target, PopupType.Large);
-            _audio.PlayEntity(_audio.GetSound(component.HealSoundPath), Filter.Pvs(target), user, true);
+            _audio.PlayEntity(_audio.ResolveSound(component.HealSoundPath), Filter.Pvs(target), user, true);
         }
 
         private void AddSummonVerb(EntityUid uid, SummonableComponent component, GetVerbsEvent<AlternativeVerb> args)

@@ -213,6 +213,8 @@ uplink-cluster-banana-peel-name = Кластерный банан
 uplink-cluster-banana-peel-desc = После приземления распадается на 6 взрывных банановых кожур, которые автоматически детонируют через 20 секунд, если на них никто не поскользнётся.
 uplink-cane-blade-name = Трость с клинком
 uplink-cane-blade-desc = Трость со спрятанным клинком, который можно в любой момент вынуть.
+uplink-saw-advanced-name = Advanced Circular Saw
+uplink-saw-advanced-desc = A bleeding-edge surgical implement designed to cut through flesh and bone alike.
 # Armor
 uplink-chameleon-name = Набор "Хамелеон"
 uplink-chameleon-desc = Рюкзак, полный вещей, оснащённых технологией хамелеона, позволяющих вам маскироваться под кого угодно на станции, и даже больше!
@@ -222,6 +224,8 @@ uplink-clothing-thieving-gloves-name = Воровские перчатки
 uplink-clothing-thieving-gloves-desc = Незаметно обчищайте карманы и улучшайте свой навык воровства с помощью этих новых модных перчаток. Они даже выглядят как обычные!
 uplink-clothing-outer-vest-web-name = Тактический жилет
 uplink-clothing-outer-vest-web-desc = Синтетический бронежилет. Имеет дополнительные ремни и баллистические пластины.
+uplink-clothing-outer-vest-web-elite-name = Elite Web Vest
+uplink-clothing-outer-vest-web-elite-desc = A synthetic armor vest. This one has added webbing and heat resistant fibers.
 uplink-hardsuit-syndie-name = Скафандр Синдиката
 uplink-hardsuit-syndie-desc = Широко известный бронированный кроваво-красный скафандр Синдиката, позволяющий выходить в открытый космос и устойчивый к пулям.
 uplink-clothing-shoes-boots-mag-syndie-name = Кроваво-красные магнитные сапоги

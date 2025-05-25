@@ -36,7 +36,7 @@ We are not currently accepting translations of the game on our main repository. 
 
 1. Clone this repo:
 ```shell
-git clone https://github.com/space-wizards/space-station-14.git
+git clone https://github.com/rp-s-tech/SS14_Workstation.git
 ```
 2. Go to the project folder and run `RUN_THIS.py` to initialize the submodules and load the engine:
 ```shell

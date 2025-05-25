@@ -31,6 +31,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using SharedToolSystem = Content.Shared.Tools.Systems.SharedToolSystem;
+using Content.Server.RPSX.Surgery.Components;
 
 namespace Content.Server.Medical;
 
@@ -50,6 +51,7 @@ public sealed partial class CryoPodSystem : SharedCryoPodSystem
     [Dependency] private readonly ReactiveSystem _reactiveSystem = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly NodeContainerSystem _nodeContainer = default!;
+    [Dependency] private readonly HealthAnalyzerSystem _healthAnalyzerSystem = default!;
 
     public override void Initialize()
     {
@@ -179,31 +181,39 @@ public sealed partial class CryoPodSystem : SharedCryoPodSystem
 
     private void OnActivateUI(Entity<CryoPodComponent> entity, ref AfterActivatableUIOpenEvent args)
     {
-        if (!entity.Comp.BodyContainer.ContainedEntity.HasValue)
+        if (entity.Comp.BodyContainer.ContainedEntity is not {} target)
             return;
 
-        TryComp<TemperatureComponent>(entity.Comp.BodyContainer.ContainedEntity, out var temp);
-        TryComp<BloodstreamComponent>(entity.Comp.BodyContainer.ContainedEntity, out var bloodstream);
+        var bodyTemperature = float.NaN;
 
-        if (TryComp<HealthAnalyzerComponent>(entity, out var healthAnalyzer))
-        {
-            healthAnalyzer.ScannedEntity = entity.Comp.BodyContainer.ContainedEntity;
-        }
+        if (TryComp<TemperatureComponent>(target, out var temp))
+            bodyTemperature = temp.CurrentTemperature;
+
+        var bloodAmount = float.NaN;
+
+        if (TryComp<BloodstreamComponent>(target, out var bloodstream) &&
+            _solutionContainerSystem.ResolveSolution(target, bloodstream.BloodSolutionName, ref bloodstream.BloodSolution, out var bloodSolution))
+            bloodAmount = bloodSolution.FillFraction;
+
+        TryComp<SurgeryComponent>(target, out var surgery);
+
+        var organFunctionConditions = _healthAnalyzerSystem.GetOrgans(target);
 
         // TODO: This should be a state my dude
         _uiSystem.ServerSendUiMessage(
             entity.Owner,
             HealthAnalyzerUiKey.Key,
-            new HealthAnalyzerScannedUserMessage(GetNetEntity(entity.Comp.BodyContainer.ContainedEntity),
-            temp?.CurrentTemperature ?? 0,
-            (bloodstream != null && _solutionContainerSystem.ResolveSolution(entity.Comp.BodyContainer.ContainedEntity.Value,
-                bloodstream.BloodSolutionName, ref bloodstream.BloodSolution, out var bloodSolution))
-                ? bloodSolution.FillFraction
-                : 0,
-            null,
-            null,
-            null
-        ));
+            new HealthAnalyzerScannedUserMessage(
+                GetNetEntity(target),
+                bodyTemperature,
+                bloodAmount,
+                null,
+                null,
+                null,
+                organFunctionConditions,
+                surgery?.Sedated ?? false
+            )
+        );
     }
 
     private void OnInteractUsing(Entity<CryoPodComponent> entity, ref InteractUsingEvent args)

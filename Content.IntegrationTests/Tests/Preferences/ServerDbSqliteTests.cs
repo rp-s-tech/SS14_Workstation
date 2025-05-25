@@ -13,6 +13,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Log;
 using Robust.Shared.Maths;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using Robust.UnitTesting;
 
 namespace Content.IntegrationTests.Tests.Preferences
@@ -60,11 +61,12 @@ namespace Content.IntegrationTests.Tests.Preferences
         {
             var cfg = server.ResolveDependency<IConfigurationManager>();
             var opsLog = server.ResolveDependency<ILogManager>().GetSawmill("db.ops");
+            var prototype = server.ResolveDependency<IPrototypeManager>();
             var builder = new DbContextOptionsBuilder<SqliteServerDbContext>();
             var conn = new SqliteConnection("Data Source=:memory:");
             conn.Open();
             builder.UseSqlite(conn);
-            return new ServerDbSqlite(() => builder.Options, true, cfg, true, opsLog);
+            return new ServerDbSqlite(() => builder.Options, true, cfg, true, opsLog, prototype);
         }
 
         [Test]

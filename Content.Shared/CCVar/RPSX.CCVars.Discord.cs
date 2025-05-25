@@ -16,7 +16,7 @@ public sealed partial class RPSXCCVars : CVars
     ///     Discord verify server.
     /// </summary>
     public static readonly CVarDef<string> DiscordAuthServer =
-        CVarDef.Create("discord.api_url", "" , CVar.SERVERONLY); //"127.0.0.1:5000"
+        CVarDef.Create("discord.api_url", "", CVar.SERVERONLY); //"127.0.0.1:5000"
 
     /// <summary>
     ///     Enable discord verify.

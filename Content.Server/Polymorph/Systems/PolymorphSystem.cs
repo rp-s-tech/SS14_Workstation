@@ -2,7 +2,6 @@ using Content.Server.Actions;
 using Content.Server.Humanoid;
 using Content.Server.Inventory;
 using Content.Server.Mind.Commands;
-using Content.Shared.Nutrition;
 using Content.Server.Polymorph.Components;
 using Content.Shared.Actions;
 using Content.Shared.Buckle;
@@ -379,9 +378,9 @@ public sealed partial class PolymorphSystem : EntitySystem
                 ("child", Identity.Entity(parent, EntityManager))),
                 parent);
 
-        // var ev = new PolymorphRevertedEvent(parent, uid);
-        // RaiseLocalEvent(uid, ev);
-        // RaiseLocalEvent(parent, ev);
+        var evRev = new PolymorphRevertedEvent(parent, uid);
+        RaiseLocalEvent(uid, evRev);
+        RaiseLocalEvent(parent, evRev);
 
         QueueDel(uid);
 

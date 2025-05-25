@@ -2,10 +2,21 @@
 # TODO BODY: Part damage
 - type: entity
   id: PartArachnid
-  parent: [BaseItem, BasePart]
+  parent: [ BaseItem, BasePart ]
   name: "arachnid body part"
   abstract: true
   components:
+  - type: SurgeryBodyPart
+    species: arachnid
+  - type: BodyPart
+  - type: ContainerContainer
+    containers:
+      bodypart: !type:Container
+        ents: [ ]
+      attachment: !type:Container
+        ents: [ ]
+      slotAttachment: !type:Container
+        ents: [ ]
   - type: Extractable
     juiceSolution:
       reagents:
@@ -17,11 +28,16 @@
 - type: entity
   id: TorsoArachnid
   name: "arachnid torso"
-  parent: [PartArachnid, BaseTorso]
+  parent: [ PartArachnid, BaseTorso ]
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: "torso_m"
+  - type: SurgeryBodyPart
+    state:
+      incisable: true
+      endoSkeleton: true
+    container: true
   - type: Extractable
     juiceSolution:
       reagents:
@@ -29,93 +45,148 @@
         Quantity: 10
       - ReagentId: CopperBlood
         Quantity: 20
+  - type: Tag
+    tags:
+    - Torso
 
 - type: entity
   id: HeadArachnid
   name: "arachnid head"
-  parent: [PartArachnid, BaseHead]
+  parent: [ PartArachnid, BaseHead ]
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Arachnid/parts.rsi
-    state: "head_m"
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Fat
-        Quantity: 5
-      - ReagentId: CopperBlood
-        Quantity: 10
+    - type: Sprite
+      sprite: Mobs/Species/Arachnid/parts.rsi
+      state: "head_m"
+    - type: SurgeryBodyPart
+      visuals:
+        speciesSprite: MobArachnidHead
+      state:
+        incisable: true
+        endoSkeleton: true
+      container: true
+    - type: Extractable
+      juiceSolution:
+        reagents:
+          - ReagentId: Fat
+            Quantity: 5
+          - ReagentId: CopperBlood
+            Quantity: 10
+    - type: Tag
+      tags:
+        - Head
 
 - type: entity
   id: LeftArmArachnid
   name: "left arachnid arm"
-  parent: [PartArachnid, BaseLeftArm]
+  parent: [ PartArachnid, BaseLeftArm ]
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: "l_arm"
+  - type: SurgeryBodyPart
+    visuals:
+      speciesSprite: MobArachnidLArm
 
 - type: entity
   id: RightArmArachnid
   name: "right arachnid arm"
-  parent: [PartArachnid, BaseRightArm]
+  parent: [ PartArachnid, BaseRightArm ]
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: "r_arm"
+  - type: SurgeryBodyPart
+    visuals:
+      speciesSprite: MobArachnidRArm
 
 - type: entity
   id: LeftHandArachnid
   name: "left arachnid hand"
-  parent: [PartArachnid, BaseLeftHand]
+  parent: [ PartArachnid, BaseLeftHand ]
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: "l_hand"
+  - type: SurgeryBodyPart
+    visuals:
+      speciesSprite: MobArachnidLHand
 
 - type: entity
   id: RightHandArachnid
   name: "right arachnid hand"
-  parent: [PartArachnid, BaseRightHand]
+  parent: [ PartArachnid, BaseRightHand ]
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: "r_hand"
+  - type: SurgeryBodyPart
+    visuals:
+      speciesSprite: MobArachnidRHand
 
 - type: entity
   id: LeftLegArachnid
   name: "left arachnid leg"
-  parent: [PartArachnid, BaseLeftLeg]
+  parent: [ PartArachnid, BaseLeftLeg ]
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: "l_leg"
   - type: MovementBodyPart
+  - type: SurgeryBodyPart
+    visuals:
+      speciesSprite: MobArachnidLLeg
 
 - type: entity
   id: RightLegArachnid
   name: "right arachnid leg"
-  parent: [PartArachnid, BaseRightLeg]
+  parent: [ PartArachnid, BaseRightLeg ]
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: "r_leg"
   - type: MovementBodyPart
+  - type: SurgeryBodyPart
+    visuals:
+      speciesSprite: MobArachnidRLeg
 
 - type: entity
   id: LeftFootArachnid
   name: "left arachnid foot"
-  parent: [PartArachnid, BaseLeftFoot]
+  parent: [ PartArachnid, BaseLeftFoot ]
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: "l_foot"
+  - type: SurgeryBodyPart
+    visuals:
+      speciesSprite: MobArachnidLFoot
 
 - type: entity
   id: RightFootArachnid
   name: "right arachnid foot"
-  parent: [PartArachnid, BaseRightFoot]
+  parent: [ PartArachnid, BaseRightFoot ]
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: "r_foot"
+  - type: SurgeryBodyPart
+    visuals:
+      speciesSprite: MobArachnidRFoot
+
+- type: entity
+  id: ArachnidPaws
+  name: arachnid's paws
+  parent: PartArachnid
+  components:
+  - type: Sprite
+    netsync: true
+    sprite: Mobs/Customization/Arachnid/appendages.rsi
+    state: paws_icon
+  - type: Icon
+    sprite: Mobs/Customization/Arachnid/appendages.rsi
+    state: paws_icon
+  - type: BodyPart
+    partType: Paws
+  - type: SurgeryBodyPart
+    visuals:
+      speciesSprite: MobHumanoidAnyMarking

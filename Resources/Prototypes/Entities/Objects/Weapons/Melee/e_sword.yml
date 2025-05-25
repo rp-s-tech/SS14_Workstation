@@ -71,6 +71,10 @@
   - type: Reflect
   - type: IgnitionSource
     temperature: 700
+  - type: SurgeryTool
+    sound: /Audio/Weapons/eblade1.ogg
+  - type: SurgerySaw
+  - type: SurgeryCauterizer
 
 - type: entity
   name: energy sword
@@ -222,6 +226,10 @@
   - type: Tag
     tags:
     - Write
+  - type: SurgeryTool
+    sound: /Audio/Weapons/eblade1.ogg
+  - type: SurgeryCauterizer
+  - type: SurgeryIncisor
 
 - type: entity
   parent: [BaseItem, BaseSyndicateContraband]
@@ -392,3 +400,12 @@
   components: # could add energy-draining like the L6C
   - type: Wieldable
     freeHandsRequired: 0 # because borg has no off-hand to wield with.  Without this, it will be unable to activate the esword
+
+- type: entity
+  parent: [ EnergyDaggerLoud, BaseXenoborgContraband ]
+  id: EnergyDaggerLoudBlue
+  suffix: blue
+  components:
+  - type: EnergySword
+    colorOptions:
+    - "#2288ff" # can only be blue

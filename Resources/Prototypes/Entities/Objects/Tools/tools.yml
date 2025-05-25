@@ -43,6 +43,10 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  - type: SurgeryTool
+    sound: /Audio/Effects/Fluids/blood1.ogg
+  - type: SurgeryRetractor
+  - type: SurgeryManipulator
 
 - type: entity
   name: screwdriver
@@ -87,6 +91,9 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  - type: SurgeryTool
+    sound: /Audio/Effects/Fluids/blood1.ogg
+  - type: SurgeryManipulator
 
 - type: entity
   name: wrench
@@ -129,6 +136,9 @@
   - type: GuideHelp
     guides:
     - Construction
+  - type: SurgeryTool
+    sound: /Audio/Items/drill_hit.ogg
+  - type: SurgeryDrill
 
 - type: entity
   name: multitool
@@ -356,7 +366,7 @@
   id: RCDRecharging
   parent: RCD
   name: experimental RCD
-  description: A bluespace-enhanced rapid construction device that passively generates its own compressed matter.
+  description: Cyborg-mounted Rapid Construction Device which creates compressed matter on the fly using an internal fabricator.
   suffix: AutoRecharge
   components:
   - type: LimitedCharges

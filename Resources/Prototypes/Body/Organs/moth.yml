@@ -1,6 +1,6 @@
 - type: entity
   id: OrganMothStomach
-  parent: [OrganAnimalStomach, OrganHumanStomach]
+  parent: [ OrganAnimalStomach, OrganHumanStomach ]
   categories: [ HideSpawnMenu ]
   components:
   - type: Stomach
@@ -9,6 +9,8 @@
       - ClothMade
       - Paper
       - Pill
+  - type: DStomach
+    organKey: stomach
   - type: SolutionContainerManager
     solutions:
       stomach:
@@ -23,8 +25,10 @@
     metabolizerTypes: [ Moth ]
     removeEmpty: true
     groups:
-      - id: Food
-      - id: Drink
+    - id: Food
+    - id: Drink
   - type: Tag
     tags:
     - Stomach
+  - type: StaticPrice
+    price: 500

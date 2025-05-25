@@ -11,7 +11,7 @@ By using the Project, you (hereinafter, the "User") agree to the terms of this A
 ### 2. Open-Source Code (CLA)  
 2.1. All parts of the Project’s source code explicitly designated as open and hosted in the Project’s public repositories are distributed under the [Role Play Systems Conributor License Agreement (CLA)](https://github.com/rp-s-tech/SS14_Workstation/blob/develop/CLA.md).
 
-2.2. Any User who accesses such open-source code must comply with the CLA terms, including, but not limited to, using source code only within the boundaries of this repository for contribution purposes. Any use of the code outside this repository, whether for commercial or non-commercial purposes, is strictly prohibited.
+2.2. Any User who accesses such open-source code must comply with the CLA terms, including, but not limited to, using source code only within the boundaries of this repository for contribution purposes. Any use of the code outside this repository for commercial purposes or for public hosting is strictly prohibited.
 
 2.3. If any provisions of this Agreement conflict with the CLA regarding open-source portions of the code, the CLA terms shall take precedence.
 

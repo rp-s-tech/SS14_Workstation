@@ -50,6 +50,9 @@
     stealGroup: FireAxe
   - type: IgniteOnMeleeHit
     fireStacks: -4
+  - type: SurgeryTool
+    sound: /Audio/Effects/gib1.ogg
+  - type: SurgerySaw
 
 - type: entity
   id: FireAxeFlaming
@@ -90,3 +93,7 @@
       - Prying
       - Axing
   # Exodus-SimplifyAtmos-End
+  - type: SurgeryTool
+    sound: /Audio/Effects/gib1.ogg
+  - type: SurgerySaw
+  - type: SurgeryCauterizer

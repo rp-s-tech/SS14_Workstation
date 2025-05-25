@@ -1,0 +1,47 @@
+﻿- type: humanoidBaseSprite
+  id: MobWoodenLArm
+  baseSprite:
+    sprite: DarkStation/MainGame/Mobs/Species/Bionic/Parts/wooden.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobWoodenRArm
+  baseSprite:
+    sprite: DarkStation/MainGame/Mobs/Species/Bionic/Parts/wooden.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobWoodenLHand
+  baseSprite:
+    sprite: DarkStation/MainGame/Mobs/Species/Bionic/Parts/wooden.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobWoodenRHand
+  baseSprite:
+    sprite: DarkStation/MainGame/Mobs/Species/Bionic/Parts/wooden.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobWoodenLLeg
+  baseSprite:
+    sprite: DarkStation/MainGame/Mobs/Species/Bionic/Parts/wooden.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobWoodenRLeg
+  baseSprite:
+    sprite: DarkStation/MainGame/Mobs/Species/Bionic/Parts/wooden.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobWoodenLFoot
+  baseSprite:
+    sprite: DarkStation/MainGame/Mobs/Species/Bionic/Parts/wooden.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobWoodenRFoot
+  baseSprite:
+    sprite: DarkStation/MainGame/Mobs/Species/Bionic/Parts/wooden.rsi
+    state: r_foot

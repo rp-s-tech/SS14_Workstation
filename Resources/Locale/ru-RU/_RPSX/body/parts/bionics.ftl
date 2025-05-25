@@ -1,0 +1,10 @@
+ent-PartBionic = бионическая часть
+    .desc = { ent-BasePart.desc }
+ent-LeftDrillArm = левая рука-бур
+    .desc = { ent-PartBionic.desc }
+ent-RightDrillArm = правая рука-бур
+    .desc = { ent-PartBionic.desc }
+ent-LeftLegPower = левая силовая нога
+    .desc = { ent-PartBionic.desc }
+ent-RightLegPower = правая силовая нога
+    .desc = { ent-PartBionic.desc }
