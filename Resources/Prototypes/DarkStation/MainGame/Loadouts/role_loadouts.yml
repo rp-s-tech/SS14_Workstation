@@ -13,20 +13,20 @@
   - Trinkets
   # - Inventory # Corvax-Loadouts
 
-- type: roleLoadout
-  id: JobBrigmedic
-  groups:
-  - SecurityBrigMedicJumpsuit
-  - SecurityBrigMedicBackpack
-  - SecurityBrigMedicOuterClothing
-  - SecurityBrigMedicShoes
-  - SecurityBrigMedicGloves
-  - SecurityBrigMedicEyes
-  - SecurityBrigMedicHead
-  - SecurityBrigMedicMask
-  - SecurityBrigMedicBelt
-  - SurvivalSecurity
-  - GroupSpeciesBreathToolSecurity
+# - type: roleLoadout
+#   id: JobBrigmedic
+#   groups:
+#   - SecurityBrigMedicJumpsuit
+#   - SecurityBrigMedicBackpack
+#   - SecurityBrigMedicOuterClothing
+#   - SecurityBrigMedicShoes
+#   - SecurityBrigMedicGloves
+#   - SecurityBrigMedicEyes
+#   - SecurityBrigMedicHead
+#   - SecurityBrigMedicMask
+#   - SecurityBrigMedicBelt
+#   - SurvivalSecurity
+#   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
   id: JobBlueShieldOfficer

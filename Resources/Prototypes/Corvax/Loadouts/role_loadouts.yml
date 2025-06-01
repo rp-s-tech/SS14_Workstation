@@ -8,3 +8,17 @@
   - Trinkets
   - GroupSpeciesBreathTool
   # # - Inventory # Corvax-Loadouts
+
+- type: roleLoadout
+  id: JobBrigmedic
+  groups:
+#  - Inventory # Corvax-Loadouts
+  - BrigmedicHead
+  - BrigmedicMask
+  - BrigmedicJumpsuit
+  - BrigmedicGloves
+  - BrigmedicBackpack
+  - BrigmedicOuterClothing
+  - BrigmedicShoes
+  - SurvivalMedical
+  - Trinkets
