@@ -6,7 +6,7 @@ construction-graph-tag-clown-mask = клоунская маска
 construction-graph-tag-clown-recorder = клоунский диктофон
 construction-graph-tag-clown-bike-horn = клаксон
 construction-graph-tag-clowne-horn = сломанный клаксон
-construction-graph-tag-happy-honk-meal = весёлый ХОНК-набор 
+construction-graph-tag-happy-honk-meal = весёлый ХОНК-набор
 construction-graph-tag-woeful-cluwne-meal = ужасный ХОНК-набор
 # mime
 construction-graph-tag-suspenders = подтяжки
@@ -96,7 +96,7 @@ construction-graph-tag-air-alarm-electronics = электроника возду
 construction-graph-tag-fire-alarm-electronics = электроника пожарной сигнализации
 construction-graph-tag-mailing-unit-electronics = электроника почтового блока
 construction-graph-tag-intercom-electronics = электроника интеркома
-construction-graph-tag-solar-assembly-parts = solar assembly parts
+construction-graph-tag-solar-assembly-parts = части каркаса солнечной панели
 construction-graph-tag-solar-tracker-electronics = компоненты солнечного трекера
 construction-graph-tag-station-map-electronics = электроника карты станции
 construction-graph-tag-signal-timer-electronics = электроника сигнального таймера

@@ -3,7 +3,7 @@
 cargo-console-menu-title = Консоль заказа грузов
 cargo-console-menu-account-name-label = Аккаунт:{ " " }
 cargo-console-menu-account-name-none-text = Нет
-cargo-console-menu-account-name-format = %ERASE_NEWLINE%[bold][color={ $color }]{ $name }[/color][/bold] [font="Monospace"]\[{ $code }\][/font]
+cargo-console-menu-account-name-format = [bold][color={ $color }]{ $name }[/color][/bold] [font="Monospace"]\[{ $code }\][/font]
 cargo-console-menu-shuttle-name-label = Название шаттла:{ " " }
 cargo-console-menu-shuttle-name-none-text = Нет
 cargo-console-menu-points-label = Баланс:{ " " }
@@ -24,10 +24,10 @@ cargo-console-menu-cargo-order-row-approve-button = Одобрить
 cargo-console-menu-cargo-order-row-cancel-button = Отменить
 cargo-console-menu-tab-title-orders = Заказы
 cargo-console-menu-tab-title-funds = Переводы
-cargo-console-menu-account-action-transfer-limit = %ERASE_NEWLINE%[bold]Лимит перевода:[/bold] ${ $limit }
-cargo-console-menu-account-action-transfer-limit-unlimited-notifier = %ERASE_NEWLINE%[color=gold](Безлимитно)[/color]
-cargo-console-menu-account-action-select = %ERASE_NEWLINE%[bold]Действие аккаунта:[/bold]
-cargo-console-menu-account-action-amount = %ERASE_NEWLINE%[bold]Сумма:[/bold] $
+cargo-console-menu-account-action-transfer-limit = [bold]Лимит перевода:[/bold] ${ $limit }
+cargo-console-menu-account-action-transfer-limit-unlimited-notifier = [color=gold](Безлимитно)[/color]
+cargo-console-menu-account-action-select = [bold]Действие аккаунта:[/bold]
+cargo-console-menu-account-action-amount = [bold]Сумма:[/bold] $
 cargo-console-menu-account-action-button = Перевести
 cargo-console-menu-toggle-account-lock-button = Переключить лимит перевода
 cargo-console-menu-account-action-option-withdraw = Обналичить
@@ -41,9 +41,9 @@ cargo-console-snip-snip = Заказ урезан до вместимости
 cargo-console-insufficient-funds = Недостаточно средств (требуется { $cost })
 cargo-console-unfulfilled = Нет места для выполнения заказа
 cargo-console-trade-station = Отправлено на { $destination }
-cargo-console-unlock-approved-order-broadcast = %ERASE_NEWLINE%[bold]Заказ на { $productName } x{ $orderAmount }[/bold], стоимостью [bold]{ $cost }[/bold], был одобрен [bold]{ $approver }[/bold]
-cargo-console-fund-withdraw-broadcast = %ERASE_NEWLINE%[bold]{ $name } снял { $amount } кредитов с { $name1 } \[{ $code1 }\]
-cargo-console-fund-transfer-broadcast = %ERASE_NEWLINE%[bold]{ $name } перевёл { $amount } кредитов { $name1 } \[{ $code1 }\] на { $name2 } \[{ $code2 }\][/bold]
+cargo-console-unlock-approved-order-broadcast = [bold]Заказ на { $productName } x{ $orderAmount }[/bold], стоимостью [bold]{ $cost }[/bold], был одобрен [bold]{ $approver }[/bold]
+cargo-console-fund-withdraw-broadcast = [bold]{ $name } снял { $amount } кредитов с { $name1 } \[{ $code1 }\]
+cargo-console-fund-transfer-broadcast = [bold]{ $name } перевёл { $amount } кредитов { $name1 } \[{ $code1 }\] на { $name2 } \[{ $code2 }\][/bold]
 cargo-console-fund-transfer-user-unknown = Неизвестно
 cargo-console-paper-reason-default = Отсутствует
 cargo-console-paper-approver-default = Самостоятельно
@@ -63,29 +63,27 @@ cargo-no-shuttle = Грузовой шаттл не найден!
 cargo-shuttle-console-organics = На шаттле обнаружены органические формы жизни
 # Funding allocation console
 cargo-funding-alloc-console-menu-title = Консоль распределения финансов
-cargo-funding-alloc-console-label-account = %ERASE_NEWLINE%[bold]Аккаунт[/bold]
-cargo-funding-alloc-console-label-code = %ERASE_NEWLINE%[bold] Код [/bold]
-cargo-funding-alloc-console-label-balance = %ERASE_NEWLINE%[bold] Баланс [/bold]
-cargo-funding-alloc-console-label-cut = %ERASE_NEWLINE%[bold] Разделение дохода (%) [/bold]
+cargo-funding-alloc-console-label-account = [bold]Аккаунт[/bold]
+cargo-funding-alloc-console-label-code = [bold] Код [/bold]
+cargo-funding-alloc-console-label-balance = [bold] Баланс [/bold]
+cargo-funding-alloc-console-label-cut = [bold] Разделение дохода (%) [/bold]
 cargo-funding-alloc-console-label-primary-cut = Доля дохода отдела снабжения от всего, кроме ящиков с замком (%):
 cargo-funding-alloc-console-label-lockbox-cut = Доля дохода отдела снабжения от продажи ящиков с замком (%):
 cargo-funding-alloc-console-label-help-non-adjustible = Отдел снабжения получает { $percent }% от всех доходов, кроме ящиков с замком. Остаток распределяется следующим образом:
 cargo-funding-alloc-console-label-help-adjustible = Остаток доходов от всего, кроме ящиков с замком, распределяется следующим образом:
 cargo-funding-alloc-console-button-save = Сохранить изменения
-cargo-funding-alloc-console-label-save-fail =
-    %ERASE_NEWLINE%[bold]Разделение выручки невалидно![/bold] [color=red]({ $pos ->
+cargo-funding-alloc-console-label-save-fail = [bold]Разделение выручки невалидно![/bold] [color=red]({ $pos ->
         [1] +
        *[-1] -
     }{ $val }%)[/color]
 # Slip template
-cargo-acquisition-slip-body =
-    %ERASE_NEWLINE%[head=3]Подробно об активах[/head]
+cargo-acquisition-slip-body = [head=3]Подробно об активах[/head]
     { "[bold]Product:[/bold]" } { $product }
     { "[bold]Description:[/bold]" } { $description }
     { "[bold]Unit cost:[/bold" }] ${ $unit }
     { "[bold]Amount:[/bold]" } { $amount }
     { "[bold]Cost:[/bold]" } ${ $cost }
-
+    
     { "[head=3]Purchase Detail[/head]" }
     { "[bold]Orderer:[/bold]" } { $orderer }
     { "[bold]Reason:[/bold]" } { $reason }

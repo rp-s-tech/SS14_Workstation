@@ -46,7 +46,7 @@
       thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 100  # Considering we need a lot of thrusters didn't want to make an individual one too tanky
+          damage: 300  # Changed 100->300 because impact damage is real
         behaviors:
           - !type:DoActsBehavior
             acts: ["Destruction"]
@@ -72,13 +72,13 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 300
+        damage: 600
       behaviors:
         - !type:DoActsBehavior
           acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 300
       behaviors:
         - !type:DoActsBehavior
           acts: ["Destruction"]
@@ -237,3 +237,462 @@
       map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
       shader: unshaded
       visible: false
+
+- type: entity
+  id: BigGyroscope
+  parent: [ BaseThruster ]
+  name: большой гироскоп
+  description: гироскоп больших размеров. обычно такие используют для шаттлом типа линкор и выше
+  components:
+  - type: Thruster
+    thrusterType: Angular
+    requireSpace: false
+    thrust: 20000
+    machinePartThrust: Manipulator
+  - type: Sprite
+    sprite: Structures/Shuttles/BIGgyroscope.rsi
+    snapCardinals: true
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn
+      map: [ "enum.ThrusterVisualLayers.Thrusting" ]
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+  - type: PointLight
+    radius: 2.6
+    energy: 1.6
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    offset: "0, 0.1" # shine from the top, not bottom of the computer
+    color: "#4246b3"
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 3000
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Electronic
+  - type: StaticPrice
+    price: 20000
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.5,-1.5,1.5,1.5"
+        density: 50
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
+
+- type: entity
+  id: BigThruster5
+  name: большой двигатель
+  description: специализированный двигатель с улучшенной системой охлаждения. прездназначенный для передвижения огромных тел на протяжение огромного срока без остановки
+  parent: [ BaseThruster, ConstructibleMachine ]
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Sprite
+    sprite: Structures/Shuttles/BIGthruster5.rsi
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 3
+  - type: ApcPowerReceiver
+    powerLoad: 1500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 50
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
+  - type: Thruster
+    requireSpace: false
+
+- type: entity
+  id: BigThruster1
+  name: большой двигатель
+  description: специализированный двигатель с улучшенной системой охлаждения. прездназначенный для передвижения огромных тел на протяжение огромного срока без остановки
+  parent: [ BaseThruster, ConstructibleMachine ]
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Sprite
+    sprite: Structures/Shuttles/BIGthruster1.rsi
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 3
+  - type: ApcPowerReceiver
+    powerLoad: 1500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 50
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
+  - type: Thruster
+    requireSpace: false
+
+- type: entity
+  id: BigThruster2
+  name: большой двигатель
+  description: специализированный двигатель с улучшенной системой охлаждения. прездназначенный для передвижения огромных тел на протяжение огромного срока без остановки
+  parent: [ BaseThruster, ConstructibleMachine ]
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Sprite
+    sprite: Structures/Shuttles/BIGthruster2.rsi
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 3
+  - type: ApcPowerReceiver
+    powerLoad: 1500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 50
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
+  - type: Thruster
+    requireSpace: false
+
+- type: entity
+  id: BigThruster3
+  name: большой двигатель
+  description: специализированный двигатель с улучшенной системой охлаждения. прездназначенный для передвижения огромных тел на протяжение огромного срока без остановки
+  parent: [ BaseThruster, ConstructibleMachine ]
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Sprite
+    sprite: Structures/Shuttles/BIGthruster3.rsi
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 3
+  - type: ApcPowerReceiver
+    powerLoad: 1500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 50
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
+  - type: Thruster
+    requireSpace: false
+
+- type: entity
+  id: BigThruster4
+  name: большой двигатель
+  description: специализированный двигатель с улучшенной системой охлаждения. прездназначенный для передвижения огромных тел на протяжение огромного срока без остановки
+  parent: [ BaseThruster, ConstructibleMachine ]
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Sprite
+    sprite: Structures/Shuttles/BIGthruster4.rsi
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 3
+  - type: ApcPowerReceiver
+    powerLoad: 1500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 50
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
+  - type: Thruster
+    requireSpace: false
+
+- type: entity
+  id: BigThruster6
+  name: большой двигатель
+  description: специализированный двигатель с улучшенной системой охлаждения. прездназначенный для передвижения огромных тел на протяжение огромного срока без остановки
+  parent: [ BaseThruster, ConstructibleMachine ]
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Sprite
+    sprite: Structures/Shuttles/BIGthruster6.rsi
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 3
+  - type: ApcPowerReceiver
+    powerLoad: 1500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 50
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
+  - type: Thruster
+    requireSpace: false
+
+- type: entity
+  id: BigThruster7
+  name: большой двигатель
+  description: специализированный двигатель с улучшенной системой охлаждения. прездназначенный для передвижения огромных тел на протяжение огромного срока без остановки
+  parent: [ BaseThruster, ConstructibleMachine ]
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Sprite
+    sprite: Structures/Shuttles/BIGthruster7.rsi
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 3
+  - type: ApcPowerReceiver
+    powerLoad: 1500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 50
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
+  - type: Thruster
+    requireSpace: false
+
+- type: entity
+  id: BigThruster8
+  name: большой двигатель
+  description: специализированный двигатель с улучшенной системой охлаждения. прездназначенный для передвижения огромных тел на протяжение огромного срока без остановки
+  parent: [ BaseThruster, ConstructibleMachine ]
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Sprite
+    sprite: Structures/Shuttles/BIGthruster8.rsi
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 3
+  - type: ApcPowerReceiver
+    powerLoad: 1500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 50
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
+  - type: Thruster
+    requireSpace: false
+
+- type: entity
+  id: BigThruster9
+  name: большой двигатель
+  description: специализированный двигатель с улучшенной системой охлаждения. прездназначенный для передвижения огромных тел на протяжение огромного срока без остановки
+  parent: [ BaseThruster, ConstructibleMachine ]
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Sprite
+    sprite: Structures/Shuttles/BIGthruster9.rsi
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 3
+  - type: ApcPowerReceiver
+    powerLoad: 1500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 50
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
+  - type: Thruster
+    requireSpace: false
+
+

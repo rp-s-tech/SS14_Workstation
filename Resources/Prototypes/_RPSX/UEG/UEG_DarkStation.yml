@@ -1,0 +1,153 @@
+# Постеры
+- type: entity
+  parent: PosterBase
+  id: PosterLegitBannerUEG
+  name: ОПЗ
+  description: Плакат с изображением основного символа ОПЗ.
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: DarkStation/MainGame/UEG/Posters.rsi
+    state: poster_UEG_3
+    snapCardinals: true
+
+- type: entity
+  parent: PosterLegitBannerUEG
+  id: PosterLegitServeUEG
+  name: Служи!
+  description: Плакат, призывающий к служению в рядах армии ОПЗ.
+  components:
+  - type: Sprite
+    state: poster_UEG_2
+
+- type: entity
+  parent: PosterLegitBannerUEG
+  id: PosterLegitRecruitmentUEG
+  name: Набор
+  description: Вступайте в ряды сил ОПЗ! Станьте частью армии, несущей истину!
+  components:
+  - type: Sprite
+    state: poster_UEG_1
+
+# Мантия
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckMantleUEGDark
+  name: мантия ОПЗ
+  description: Такую мантия предпочитают носить офицеры ОПЗ.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/UEG/Mantle.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/UEG/Mantle.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+# Шапки
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCapUEGDark
+  name: кепка ОПЗ
+  description: Удобный головной убор. Хорошо защищает от солнечных лучей.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/UEG/CapUEG.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/UEG/CapUEG.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretUEGDark
+  name: берет ОПЗ
+  description: Предмет гордости для каждого уважающего себя солдата ОПЗ.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/UEG/BeretUEG.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/UEG/BeretUEG.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+# Рюкзак
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackUEGDark
+  name: рюкзак ОПЗ
+  description: .
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/UEG/BackpackUEG.rsi
+
+# Частота и ключ ОПЗ
+- type: radioChannel
+  id: UEG
+  name: ОПЗ
+  keycode: 'u'
+  frequency: 1414
+  color: "#559ca1"
+  longRange: true
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyUEGDark
+  name: ключ шифрования ОПЗ
+  description: Ключ шифрования, используемый силами ОПЗ.
+  components:
+  - type: EncryptionKey
+    channels:
+    - UEG
+    defaultChannel: UEG
+  - type: Sprite
+    sprite: DarkStation/MainGame/UEG/EncryptionKeyUEG.rsi
+    layers:
+    - state: crypt_UEG
+    - state: UEG_label
+
+# Гарнитура
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltUEGDark
+  name: Гарнитура ОПЗ
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyUEGDark
+  - type: Sprite
+    sprite: DarkStation/MainGame/UEG/HeadsetUEG.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/UEG/HeadsetUEG.rsi
+
+# Униформа
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSoldierUEGDark
+  name: униформа солдата ОПЗ
+  description: Униформа с городским камуфляжем.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/UEG/SoldierUniformUEG.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/UEG/SoldierUniformUEG.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitRepresentativeUEGDark
+  name: униформа представителя ОПЗ
+  description: Статная униформа. Хорошо подходит для ведения переговоров.
+  components:
+  - type: Sprite
+    sprite: DarkStation/MainGame/UEG/RepresentativeUniformUEG.rsi
+  - type: Clothing
+    sprite: DarkStation/MainGame/UEG/RepresentativeUniformUEG.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon

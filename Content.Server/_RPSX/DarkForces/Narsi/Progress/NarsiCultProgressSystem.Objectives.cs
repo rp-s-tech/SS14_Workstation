@@ -1,15 +1,9 @@
-﻿using System;
-using Content.Server.RPSX.DarkForces.Narsi.Progress.Components;
+﻿using Content.Server.RPSX.DarkForces.Narsi.Progress.Components;
 using Content.Shared.Objectives.Components;
 using Content.Shared.RPSX.DarkForces.Narsi.Progress.Objectives;
 using Content.Shared.RPSX.DarkForces.Narsi.Roles;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.IoC;
 using Content.Server.RPSX.DarkForces.Narsi.Progress.Objectives.Summon;
-using Content.Server.Mind;
-using Robust.Shared.Log;
 
 namespace Content.Server.RPSX.DarkForces.Narsi.Progress;
 
@@ -35,7 +29,6 @@ public sealed partial class NarsiCultProgressSystem
 
     [ValidatePrototypeId<EntityPrototype>]
     private const string NarsiSummonObjective = "NarsiSummonObjective";
-    [Dependency] private readonly MindSystem _mind = default!;
     private void InitializeObjectives()
     {
         SubscribeLocalEvent<NarsiCultObjectiveCompleted>(OnObjectiveCompleted);

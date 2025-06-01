@@ -195,6 +195,7 @@
   - GreyJumpskirt
   - AncientJumpsuit
   - RainbowJumpsuit
+  - RainbowJumpskirt
 
 - type: loadoutGroup
   id: PassengerFace
@@ -544,6 +545,7 @@
   - EmergencyNitrogenMime
   - EmergencyOxygenMime
   - EmergencyOxygenMimeMechInjector # Exodus-ThickSyringes
+  - EmergencySpeciesMothMime
   - LoadoutSpeciesVoxNitrogen
 
 - type: loadoutGroup

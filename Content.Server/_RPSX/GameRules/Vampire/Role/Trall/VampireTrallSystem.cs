@@ -93,7 +93,7 @@ public sealed class VampireTrallSystem : EntitySystem
     {
         var antagPrototype = _prototypeManager.Index<AntagPrototype>("Vampire");
 
-        _roleSystem.MindTryRemoveRole<VampireTrallRoleComponent>(mindId);
+        _roleSystem.MindRemoveRole<VampireTrallRoleComponent>(mindId);
         _roleSystem.MindAddRole(mindId, "VampireTrall");
         EnsureComp<VampireTrallRoleComponent>(mindId);
 
@@ -106,7 +106,7 @@ public sealed class VampireTrallSystem : EntitySystem
 
     private void RemoveAntagonistRole(EntityUid uid, EntityUid mindId)
     {
-        _roleSystem.MindTryRemoveRole<VampireTrallRoleComponent>(mindId);
+        _roleSystem.MindRemoveRole<VampireTrallRoleComponent>(mindId);
 
         _factionSystem.RemoveFaction(uid, "Vampire");
         _factionSystem.AddFaction(uid, "NanoTrasen");

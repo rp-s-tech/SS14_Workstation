@@ -1,0 +1,23 @@
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltOrden
+  name: Scabbard of the red order
+  description: A special scabbard created exclusively for the sabers of the Red Order.
+  components:
+  - type: Sprite
+    sprite: Clothing/ExternalSources/Belt/orden_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: Clothing/ExternalSources/Belt/orden_sheath.rsi
+  - type: Storage
+    maxTotalWeight: 15
+    whitelist:
+      tags:
+        - SwordSquadRO
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - SwordSquadRO
+  - type: Appearance

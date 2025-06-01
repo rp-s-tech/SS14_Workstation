@@ -39,7 +39,7 @@ namespace Content.Server.RPSX.Bank.Systems.PDA
 
             var idCardUser = GetEntity(record.MobEntity.Value);
 
-            if (!_bankManager.TryGetBankAccount(idCardUser, out var bank, out _))
+            if (!_bankManager.TryGetBankAccount(idCardUser, out var bank))
                 return;
 
             var userName = MetaData(idCardUser).EntityName;

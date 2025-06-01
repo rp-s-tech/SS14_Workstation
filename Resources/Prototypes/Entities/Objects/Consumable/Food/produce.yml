@@ -280,7 +280,7 @@
   - type: Extractable
     grindableSolutionName: food
   - type: DamageOnInteract
-    damage: 
+    damage:
       types:
         Heat: 4
         Caustic: 4
@@ -307,10 +307,27 @@
             volume: -5
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: DamageOnHit 
+  - type: DamageOnHit
     damage:
       types:
         Blunt: 5 # The nettle will "wilt" after 5 hits.
+
+- type: entity
+  name: веник для бани
+  description: веник для того чтобы парится. главное чтобы он был не в льду
+  id: broom
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/nettle.rsi
+  - type: Item
+    size: Small
+    sprite: Objects/Specific/Hydroponics/nettle.rsi
+    heldPrefix: produce
+  - type: MeleeWeapon
+    damage:
+      types:
+        Heat: 0.5
 
 - type: entity
   name: banana
@@ -1312,6 +1329,7 @@
   - type: Tag
     tags:
     - Vegetable
+    - Mushroom
 
 # Slices
 
@@ -1623,6 +1641,9 @@
     entries:
       Taco: Lingzhi
       Burger: Lingzhi
+  - type: Tag
+    tags:
+    - Mushroom
 
 - type: entity
   name: ambrosia vulgaris
@@ -1844,6 +1865,9 @@
     entries:
       Taco: FlyAmanita
       Burger: FlyAmanita
+  - type: Tag
+    tags:
+    - Mushroom
 
 - type: entity
   name: gatfruit

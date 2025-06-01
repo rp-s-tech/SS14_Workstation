@@ -1,41 +1,44 @@
-﻿- type: entity
-  save: false
-  id: BaseSynthSurgery
+﻿# Anything human specific (e.g. UI, input) goes under MobSynth
+- type: entity
+  name: Synthetic
+  parent: [BaseMobSpeciesOrganic, BaseSynthSurgery]
+  id: BaseMobSynth
   abstract: true
   components:
-  - type: TargetDoll
-  - type: Surgery
-    compatibleSpecies:
-    - universal
-  - type: SurgeryDamage
-    damage:
-      Incisor:
-        types:
-          Asphyxiation: 10
-      SmallClamp:
-        types:
-          Asphyxiation: 0
-      LargeClamp:
-        types:
-          Asphyxiation: 0
-      Saw:
-        types:
-          Asphyxiation: 50
-      Drill:
-        types:
-          Asphyxiation: 10
-      Suture:
-        types:
-          Asphyxiation: 5
-      HardSuture:
-        types:
-          Asphyxiation: 10
-      Cauterizer:
-        types:
-          Asphyxiation: 10
-      Manipulator:
-        types:
-          Asphyxiation: 10
-      Retractor:
-        types:
-          Asphyxiation: 5
+    - type: HumanoidAppearance
+      species: Synth
+    - type: Icon
+      sprite: Mobs/Species/Bionic/parts.rsi
+      state: full
+    - type: Body
+      prototype: Synth
+      requiredLegs: 2
+    - type: Hunger
+    - type: Thirst
+
+- type: entity
+  name: Urist McHands
+  id: MobSynthDummy
+  parent: BaseSpeciesDummy
+  noSpawn: true
+
+- type: entity
+  name: Урист МакСинтетик
+  parent: [BaseMobSpeciesOrganic, BaseSynthSurgery]
+  id: BaseMobSynthBrain
+  abstract: true
+  components:
+    - type: UserInterface
+      interfaces:
+        enum.SurgeryUiKey.Key:
+          type: SurgeryBoundUserInterface
+    - type: HumanoidAppearance
+      species: Synth
+    - type: Icon
+      sprite: Mobs/Species/Bionic/parts.rsi
+      state: full
+    - type: Body
+      prototype: SynthBrain
+      requiredLegs: 2
+    - type: Hunger
+    - type: Thirst

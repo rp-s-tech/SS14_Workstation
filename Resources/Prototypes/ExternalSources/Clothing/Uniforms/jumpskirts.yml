@@ -1,0 +1,32 @@
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtCargoPostal
+  name: Postal's jumpskirt
+  description: A sturdy jumpskirt, issued to members of the Cargo department for postal work.
+  components:
+  - type: Sprite
+    sprite: Clothing/ExternalSources/Uniforms/Jumpskirt/cargopostal.rsi
+  - type: Clothing
+    sprite: Clothing/ExternalSources/Uniforms/Jumpskirt/cargopostal.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirttCentcomVeryOfficial
+  name: Официальная юбка сотрудника ЦК
+  description: Вот прелесть карпоративной жизни, стильные костюмы с юбкой в тему!
+  components:
+  - type: Sprite
+    sprite: Clothing/ExternalSources/Uniforms/Jumpskirt/centcom-official.rsi
+  - type: Clothing
+    sprite: Clothing/ExternalSources/Uniforms/Jumpskirt/centcom-official.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpsuitDeliverygirl
+  name: Костюм доставщицы
+  description: Пахнет пиццей
+  components:
+  - type: Sprite
+    sprite: Clothing/ExternalSources/Uniforms/Jumpskirt/space_club.rsi
+  - type: Clothing
+    sprite: Clothing/ExternalSources/Uniforms/Jumpskirt/space_club.rsi

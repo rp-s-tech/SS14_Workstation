@@ -469,6 +469,11 @@ public enum LogType
     /// </summary>
     ArtifactNode = 101,
 
+    /// <summary>
+    /// Damaging grid collision has occurred.
+    /// </summary>
+    ShuttleImpact = 102,
+
     ///<summary>
     /// RPSX Economics log. Using ATM
     ///</summary>

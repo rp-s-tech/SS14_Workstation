@@ -65,10 +65,16 @@
 - type: entity
   id: OrganVoxHeart
   parent: [ BaseVoxOrgan, OrganHumanHeart ]
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [Vox]
 
 - type: entity
   id: OrganVoxLiver
   parent: [ BaseVoxOrgan, OrganHumanLiver ]
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [Vox]
 
 - type: entity
   id: OrganVoxKidneys
@@ -83,3 +89,11 @@
   - type: Item
     size: Small
     heldPrefix: stomach
+  - type: Metabolizer #Skreeeee!
+    metabolizerTypes: [Vox]
+  - type: Stomach
+    #Bird vs tags
+    specialDigestible:
+      tags:
+      - Trash
+    isSpecialDigestibleExclusive: false

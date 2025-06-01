@@ -82,6 +82,7 @@ namespace Content.IntegrationTests.Tests
             "Elkridge",
             "Convex",
             "Relic",
+            "colonial",
             "dm01-entryway"
 
         };

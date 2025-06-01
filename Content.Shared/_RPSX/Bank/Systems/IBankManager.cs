@@ -14,11 +14,13 @@ public interface IBankManager
     public BankTransaction CreateWithdrawTransaction(EntityUid source, int amount);
     public BankTransaction CreateBuyTransaction(EntityUid source, int amount);
     public bool TryExecuteTransaction(EntityUid uid, NetUserId netUid, BankTransaction transaction);
-    public bool TryGetBankAccount(EntityUid mobUid, [NotNullWhen(true)] out BankAccountComponent? bank, out EntityUid mindId);
+    public bool TryGetBankAccount(EntityUid mobUid, [NotNullWhen(true)] out BankAccountComponent? bank);
 }
 public abstract class BankManagerBase : IBankManager
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly IEntitySystemManager _entSysManager = default!;
+
     public BankTransaction CreateDepositTransaction(EntityUid source, int amount)
     {
         return new BankTransaction(
@@ -65,7 +67,7 @@ public abstract class BankManagerBase : IBankManager
 
     public bool TryExecuteTransaction(EntityUid uid, NetUserId netUid, BankTransaction transaction)
     {
-        var mind = IoCManager.Resolve<SharedMindSystem>();
+        var mind = _entSysManager.GetEntitySystem<SharedMindSystem>();
         if (!mind.TryGetMind(uid, out var mindId, out _))
             return false;
 
@@ -75,10 +77,10 @@ public abstract class BankManagerBase : IBankManager
         return !ev.Cancelled;
     }
 
-    public bool TryGetBankAccount(EntityUid mobUid, [NotNullWhen(true)] out BankAccountComponent? bank, out EntityUid mindId)
+    public bool TryGetBankAccount(EntityUid mobUid, [NotNullWhen(true)] out BankAccountComponent? bank)
     {
-        var mind = IoCManager.Resolve<SharedMindSystem>();
-        bank = null;
-        return mind.TryGetMind(mobUid, out mindId, out _) && _entityManager.TryGetComponent(mindId, out bank);
+        bank = default;
+        var mind = _entSysManager.GetEntitySystem<SharedMindSystem>();
+        return mind.TryGetMind(mobUid, out var mindId, out _) && _entityManager.TryGetComponent(mindId, out bank);
     }
 }

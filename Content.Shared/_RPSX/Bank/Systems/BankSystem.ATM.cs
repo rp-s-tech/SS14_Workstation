@@ -50,7 +50,7 @@ public sealed partial class BankATMSystem : EntitySystem
             _uiSystem.SetUiState(uid, args.UiKey, new BankATMMenuInterfaceState(0, true, 0));
         }
 
-        if (!_bankManager.TryGetBankAccount(args.Actor, out var bank, out _))
+        if (!_bankManager.TryGetBankAccount(args.Actor, out var bank))
             return;
 
         GetInsertedCashAmount(uid, out var deposit);
@@ -88,7 +88,7 @@ public sealed partial class BankATMSystem : EntitySystem
             _uiSystem.SetUiState(uid, args.UiKey, new BankATMMenuInterfaceState(0, true, 0));
         }
 
-        if (!_bankManager.TryGetBankAccount(args.Actor, out var bank, out _))
+        if (!_bankManager.TryGetBankAccount(args.Actor, out var bank))
             return;
 
         GetInsertedCashAmount(uid, out var deposit);
@@ -119,7 +119,7 @@ public sealed partial class BankATMSystem : EntitySystem
 
         GetInsertedCashAmount(uid, out var deposit);
 
-        if (!_bankManager.TryGetBankAccount(actor.Value, out var bank, out _))
+        if (!_bankManager.TryGetBankAccount(actor.Value, out var bank))
             return;
 
         _uiSystem.SetUiState(uid, BankATMMenuUiKey.ATM, new BankATMMenuInterfaceState(bank.Balance, true, deposit));
@@ -133,7 +133,7 @@ public sealed partial class BankATMSystem : EntitySystem
             _uiSystem.SetUiState(uid, args.UiKey, new BankATMMenuInterfaceState(0, true, 0));
         }
 
-        if (!_bankManager.TryGetBankAccount(args.Actor, out var bank, out _))
+        if (!_bankManager.TryGetBankAccount(args.Actor, out var bank))
             return;
 
         GetInsertedCashAmount(uid, out var deposit);

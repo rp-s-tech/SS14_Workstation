@@ -30,7 +30,7 @@ By using the Project, you (hereinafter, the "User") agree to the terms of this A
 ### 5. Use of Third-Party Resources and Code  
 5.1. If the Project incorporates third-party code or resources distributed under open or free licenses (including, but not limited to, MIT, GPL, CC licenses), those components retain their original licenses and the respective rights of their authors.
 
-5.2. Changes made by the Project to such third-party components, where possible, are released under AGPLv3 (for open-source parts of the code) or remain under their original licenses if required by those licenses or their authors.
+5.2. Changes made by the Project to such third-party components, where possible, are released under Role Play Systems CLA (for open-source parts of the code) or remain under their original licenses if required by those licenses or their authors.
 
 5.3. The Project is obliged to credit the original authors and include the applicable licensing terms for all third-party components in its documentation, code comments, resource metadata, or accompanying files.
 
@@ -47,7 +47,7 @@ By using the Project, you (hereinafter, the "User") agree to the terms of this A
 7.3. With the rights holder’s consent, the Project will promptly update its documentation, source code, metadata, or other accompanying materials to correct attributions, and may replace or remove problematic code fragments or Assets to ensure compliance with licensing obligations.
 
 ### 8. Special Conditions and Additional Rights  
-8.1. Any additional permissions, exceptions, or special conditions that extend beyond the scope of this Agreement or beyond the AGPLv3 terms for the open-source components, as well as beyond the restrictions for Closed Resources, must be provided in writing by the current owner of the RPS-eXtended Project or the founder of Dark Station.
+8.1. Any additional permissions, exceptions, or special conditions that extend beyond the scope of this Agreement or beyond the Role Play Systems CLA terms for the open-source components, as well as beyond the restrictions for Closed Resources, must be provided in writing by the current owner of the RPS-eXtended Project or the founder of Dark Station.
 
 8.2. In the absence of such written permission, no additional rights or concessions are granted.
 

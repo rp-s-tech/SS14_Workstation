@@ -10,7 +10,6 @@
   - type: Tag
     tags:
       - FoodSnack
-      - VoxFood
   - type: Sprite
     sprite: Objects/Consumable/Food/snacks.rsi
   - type: SolutionContainerManager
@@ -44,7 +43,7 @@
     state: boritos
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketBoritosTrash
 
 - type: entity
@@ -60,7 +59,7 @@
     state: cnds
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketCnDsTrash
 
 - type: entity
@@ -77,7 +76,7 @@
     state: cheesiehonkers
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketCheesieTrash
 
 - type: entity
@@ -95,7 +94,7 @@
     state: chips
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketChipsTrash
 
 - type: entity
@@ -194,7 +193,7 @@
     state: pistachio
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketPistachioTrash
   - type: Tag
     tags:
@@ -217,7 +216,7 @@
   - type: Item
     heldPrefix: popcorn
   - type: Food
-    trash: 
+    trash:
     - FoodPacketPopcornTrash
 
 - type: entity
@@ -233,7 +232,7 @@
     state: raisins
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketRaisinsTrash
   - type: Tag
     tags:
@@ -252,7 +251,7 @@
     state: semki
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketSemkiTrash
 
 - type: entity
@@ -268,7 +267,7 @@
     state: susjerky
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketSusTrash
   - type: Tag
     tags:
@@ -287,7 +286,7 @@
     state: syndicakes
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketSyndiTrash
 
 - type: entity
@@ -312,7 +311,7 @@
   - type: Sprite
     state: ramen
   - type: Food
-    trash: 
+    trash:
     - FoodPacketCupRamenTrash
 
 - type: entity
@@ -355,7 +354,7 @@
         - ReagentId: Soysauce
           Quantity: 2
   - type: Food
-    trash: 
+    trash:
     - FoodPacketChowMeinTrash
 
 - type: entity
@@ -384,7 +383,7 @@
         - ReagentId: Soysauce
           Quantity: 2
   - type: Food
-    trash: 
+    trash:
     - FoodPacketDanDanTrash
 
 - type: entity
@@ -410,7 +409,7 @@
     heldPrefix: packet
     size: Tiny
   - type: Food
-    trash: 
+    trash:
     - FoodCookieFortune
 
 - type: entity
@@ -500,9 +499,6 @@
           Quantity: 10
         - ReagentId: Theobromine
           Quantity: 3
-  - type: Tag
-    tags:
-    - VoxFood
 
 # Trash
 
