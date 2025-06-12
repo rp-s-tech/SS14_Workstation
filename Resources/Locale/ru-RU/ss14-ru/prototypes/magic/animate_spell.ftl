@@ -1,2 +1,2 @@
-ent-ActionAnimateSpell = Одушевление
-    .desc = Оживите неодушевленный предмет!
+ent-ActionAnimateSpell = Оживление
+    .desc = Оживите неодушевлённый предмет!
