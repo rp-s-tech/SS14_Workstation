@@ -1,104 +1,111 @@
 ﻿- type: entity
+  parent: BaseAction
   id: ActionPontificDarkPrayer
   name: "Темный Молебнен"
   description: "Понтифик падает наземь, вознося молитвы во тьму, наделяющую его скверной"
-  categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
+      itemIconStyle: NoItem
+      useDelay: 120
       icon:
         sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
         state: prayer
-      useDelay: 120
-      itemIconStyle: NoItem
+      - type: InstantAction
       event: !type:PontificDarkPrayerEvent
         felCost: 0
 
 - type: entity
+  parent: BaseAction
   id: ActionPontificLungeOfFaith
   name: "Выпад веры"
   description: "Увеличивает скорость и урон Понтифика в 1.25 раз. Требует 20 скверны"
-  categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
+      itemIconStyle: NoItem
+      useDelay: 60
       icon:
         sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
         state: faith_attack
-      useDelay: 60
-      itemIconStyle: NoItem
+    - type: InstantAction
       event: !type:PontificLungeOfFaithEvent
         felCost: 20
 
 - type: entity
+  parent: BaseAction
   id: ActionPontificBloodyAltar
   name: "Кровавый алтарь"
   description: "Понтифик молебном вызывает из тьмы алтарь, увеличивающих количество очков при последующим молебне в 1.75 раз. Требует 180 скверны"
-  categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
+      itemIconStyle: NoItem
+      useDelay: 120
       icon:
         sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
         state: desecrated_statue
-      useDelay: 120
-      itemIconStyle: NoItem
+    - type: InstantAction
       event: !type:PontificBloodyAltarEvent
         felCost: 180
 
 - type: entity
+  parent: BaseAction
   id: ActionPontificSpawnMonk
   name: "Призыв служителя"
   description: "Призывает проклятого монаха церкви Гартулла. Требует 50 скверны"
-  categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
+      itemIconStyle: NoItem
+      useDelay: 240
       icon:
         sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
         state: call_monk
-      useDelay: 240
-      itemIconStyle: NoItem
+    - type: InstantAction
       event: !type:PontificSpawnMonkEvent
         felCost: 50
 
 - type: entity
+  parent: BaseAction
   id: ActionPontificSpawnGuardian
   name: "Слово храмовника"
   description: "Призывает рыцаря церкви Гартулла. Требует 75 скверны"
-  categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
+      itemIconStyle: NoItem
+      useDelay: 240
       icon:
         sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
         state: call_guardian
-      useDelay: 240
-      itemIconStyle: NoItem
+    - type: InstantAction
       event: !type:PontificSpawnGuardianEvent
         felCost: 75
 
 - type: entity
+  parent: BaseAction
   id: ActionPontificFelLightning
   name: "Великое осквернение"
   description: "Мощная молния наполенная скверной. Требует 55 скверны"
-  categories: [ HideSpawnMenu ]
   components:
-    - type: EntityTargetAction
+    - type: Action
+      itemIconStyle: NoItem
+      useDelay: 15
       icon:
         sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
         state: fel_lightning
-      useDelay: 15
-      itemIconStyle: NoItem
+    - type: TargetAction
+      interactOnMiss: false
+      range: 6
+    - type: EntityTargetAction
       event: !type:PontificFelLightningEvent
         felCost: 55
       whitelist:
         components:
           - Body
       canTargetSelf: false
-      interactOnMiss: false
-      range: 6
 
 - type: entity
+  parent: BaseAction
   id: ActionPontificFlameSwords
   name: "Скверное пламя"
   description: "Мечи Понтифика загораются скверным пламенем, увеличивая скорость и урон Понтифика в 1.75 раз. Требует 40 скверны"
-  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon:
@@ -110,10 +117,10 @@
         felCost: 40
 
 - type: entity
+  parent: BaseAction
   id: ActionPontificKudzu
   name: "Осквернённые лилии"
   description: "Создает осквернённые лилии, которые распространяются и медленно заполняют станцию. Наносит урон скверной при контакте"
-  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon:
