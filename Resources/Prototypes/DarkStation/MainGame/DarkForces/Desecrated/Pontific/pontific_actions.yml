@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: BaseAction
   id: ActionPontificDarkPrayer
-  name: "Темный Молебнен"
-  description: "Понтифик падает наземь, вознося молитвы во тьму, наделяющую его скверной"
+  name: Dark Supplication
+  description: The Pontiff falls to the ground, offering prayers into the darkness that infuses him with blight.
   components:
     - type: Action
       itemIconStyle: NoItem
@@ -10,15 +10,15 @@
       icon:
         sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
         state: prayer
-      - type: InstantAction
+    - type: InstantAction
       event: !type:PontificDarkPrayerEvent
         felCost: 0
 
 - type: entity
   parent: BaseAction
   id: ActionPontificLungeOfFaith
-  name: "Выпад веры"
-  description: "Увеличивает скорость и урон Понтифика в 1.25 раз. Требует 20 скверны"
+  name: Leap of Faith
+  description: Increases the Pontiff’s speed and damage by 1.25×. Requires 20 blight.
   components:
     - type: Action
       itemIconStyle: NoItem
@@ -33,8 +33,8 @@
 - type: entity
   parent: BaseAction
   id: ActionPontificBloodyAltar
-  name: "Кровавый алтарь"
-  description: "Понтифик молебном вызывает из тьмы алтарь, увеличивающих количество очков при последующим молебне в 1.75 раз. Требует 180 скверны"
+  name: Blood Altar
+  description: Through supplication, the Pontiff summons an altar from the darkness that increases the faith point gain from the next supplication by 1.75×. Requires 180 blight.
   components:
     - type: Action
       itemIconStyle: NoItem
@@ -49,8 +49,8 @@
 - type: entity
   parent: BaseAction
   id: ActionPontificSpawnMonk
-  name: "Призыв служителя"
-  description: "Призывает проклятого монаха церкви Гартулла. Требует 50 скверны"
+  name: Summon Acolyte
+  description: Summons a cursed monk of the Church of Gartulla. Requires 50 blight.
   components:
     - type: Action
       itemIconStyle: NoItem
@@ -65,8 +65,8 @@
 - type: entity
   parent: BaseAction
   id: ActionPontificSpawnGuardian
-  name: "Слово храмовника"
-  description: "Призывает рыцаря церкви Гартулла. Требует 75 скверны"
+  name: Word of the Templar
+  description: Summons a knight of the Church of Gartulla. Requires 75 blight.
   components:
     - type: Action
       itemIconStyle: NoItem
@@ -81,8 +81,8 @@
 - type: entity
   parent: BaseAction
   id: ActionPontificFelLightning
-  name: "Великое осквернение"
-  description: "Мощная молния наполенная скверной. Требует 55 скверны"
+  name: Grand Desecration
+  description: A powerful lightning bolt imbued with blight. Requires 55 blight.
   components:
     - type: Action
       itemIconStyle: NoItem
@@ -104,8 +104,8 @@
 - type: entity
   parent: BaseAction
   id: ActionPontificFlameSwords
-  name: "Скверное пламя"
-  description: "Мечи Понтифика загораются скверным пламенем, увеличивая скорость и урон Понтифика в 1.75 раз. Требует 40 скверны"
+  name: Blighted Flame
+  description: The Pontiff’s swords ignite with blighted flame, increasing his speed and damage by 1.75×. Requires 40 blight.
   components:
     - type: InstantAction
       icon:
@@ -119,8 +119,8 @@
 - type: entity
   parent: BaseAction
   id: ActionPontificKudzu
-  name: "Осквернённые лилии"
-  description: "Создает осквернённые лилии, которые распространяются и медленно заполняют станцию. Наносит урон скверной при контакте"
+  name: Blighted Lilies
+  description: Creates spreading blighted lilies that slowly fill the station. Deals blight damage on contact.
   components:
   - type: InstantAction
     icon:
@@ -133,7 +133,7 @@
 
 #for action
 - type: entity
-  name: "молния скверны"
+  name: Grand Desecration
   id: PontificLightning
   categories: [ HideSpawnMenu ]
   components:

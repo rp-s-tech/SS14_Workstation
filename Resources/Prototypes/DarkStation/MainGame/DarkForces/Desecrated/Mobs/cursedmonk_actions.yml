@@ -1,7 +1,7 @@
 ﻿- type: entity
   parent: BaseEntitySpellAction
   id: ActionAttackLighting
-  name: Lightning Strike
+  name: Blightstorm Bolt
   description: Summons a lightning bolt that deals powerful blight damage.
   components:
     - type: Action
@@ -17,7 +17,7 @@
       event: !type:AttackLightningEvent
 
 - type: entity
-  name: Lightning Strike
+  name: Blightstorm Bolt
   id: CursedMonkLightning
   categories: [ HideSpawnMenu ]
   components:

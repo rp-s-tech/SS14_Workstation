@@ -14,5 +14,4 @@ ent-ActionPontificFlameSwords = Скверное пламя
     .desc = Мечи Понтифика загораются скверным пламенем, увеличивая скорость и урон Понтифика в 1.75 раз. Требует 40 скверны
 ent-ActionPontificKudzu = Осквернённые лилии
     .desc = Создает осквернённые лилии, которые распространяются и медленно заполняют станцию. Наносит урон скверной при контакте
-ent-PontificLightning = молния скверны
-    .desc = { "" }
+ent-PontificLightning = { ent-ActionPontificFelLightning }
