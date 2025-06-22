@@ -1,0 +1,6 @@
+- type: stack
+  id: SyntheticCloth
+  name: stack-synthetic-сloth
+  icon: { sprite: /Textures/Objects/Materials/materials.rsi, state: cloth }
+  spawn: MaterialSyntheticCloth1
+  maxCount: 50

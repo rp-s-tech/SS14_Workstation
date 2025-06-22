@@ -82,6 +82,7 @@
   - ChemMasterMachineCircuitboard
   - CondenserMachineCircuitBoard
   - HotplateMachineCircuitboard
+  - MedicalPrinterCircuitboard #RPSX surgery (adding a medical printer)
 
 ## Dynamic
 

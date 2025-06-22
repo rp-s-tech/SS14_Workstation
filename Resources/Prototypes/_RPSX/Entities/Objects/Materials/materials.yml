@@ -1,0 +1,87 @@
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialSyntheticCloth
+  name: synthetic cloth
+  suffix: Full
+  components:
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      types:
+        Slash: -0.5
+        Piercing: -0.5
+    bloodlossModifier: -4
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+  - type: Stack
+    stackType: Cloth
+    baseLayer: base
+    layerStates:
+    - cloth
+    - cloth_2
+    - cloth_3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      SyntheticCloth: 100
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 3
+  - type: Sprite
+    state: cloth_3
+    layers:
+    - state: cloth_3
+      map: ["base"]
+  - type: Appearance
+  - type: Food
+    requiresSpecialDigestion: true
+  - type: FlavorProfile
+    flavors:
+    - fiber
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 5
+  - type: Tag
+    tags:
+      - ClothMade
+      - Gauze
+      - RawMaterial
+  - type: Item
+    heldPrefix: cloth
+
+
+- type: entity
+  parent: MaterialSyntheticCloth
+  id: MaterialSyntheticCloth10
+  suffix: 10
+  components:
+  - type: Sprite
+    state: cloth
+  - type: Stack
+    count: 10
+
+- type: entity
+  parent: MaterialSyntheticCloth
+  id: MaterialSyntheticCloth1
+  suffix: Single
+  components:
+  - type: Sprite
+    state: cloth
+  - type: Stack
+    count: 1

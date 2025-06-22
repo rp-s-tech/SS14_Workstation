@@ -1,0 +1,16 @@
+﻿
+- type: entity
+  id: MedicalPrinterCircuitboard
+  parent: MedicalTechFabCircuitboard
+  name: Medical Printer Circuitboard
+  components:
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: MedicalPrinter
+      tagRequirements:
+        GlassBeaker:
+          amount: 2
+          defaultPrototype: Beaker
+    - type: StealTarget
+      stealGroup: MedicalPrinterCircuitboard
