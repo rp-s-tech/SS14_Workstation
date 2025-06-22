@@ -43,12 +43,13 @@
   - type: RatvarItem
 
 - type: entity
+  parent: BaseAction
   id: RatvarHammmerKnockOff
-  categories: [ HideSpawnMenu ]
   name: "Отбрасывание"
   description: "После удара (необходимо держать молот в обеих руках) отбросит противника на очень большое расстояние."
   components:
-  - type: InstantAction
-    useDelay: 10
+  - type: Action
     itemIconStyle: BigItem
+    useDelay: 10
+  - type: InstantAction
     event: !type:RatvarHammerKnockOffEvent
