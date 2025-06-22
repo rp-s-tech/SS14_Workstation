@@ -1,39 +1,41 @@
 ﻿- type: entity
   id: RatvarMidasTouch
-  categories: [ HideSpawnMenu ]
-  name: "Рука Мидаса"
-  description: "Рука Мидаса — первое и основное заклинание, дарованное Светочем праведникам."
+  name: Midas' Hand  
+  description: Midas' Hand is the first and foremost spell granted by the Lightbearer to the righteous.
   components:
-  - type: EntityTargetAction
-    canTargetSelf: false
+  - type: Action
+    itemIconStyle: NoItem
     checkCanInteract: true
-    interactOnMiss: false
+    useDelay: 10
     icon:
       sprite: DarkStation/MainGame/DarkForces/Ratvar/actions.rsi
       state: clocked_hand
-    useDelay: 10
+  - type: TargetAction
+    interactOnMiss: false
     range: 6
-    itemIconStyle: NoItem
+  - type: EntityTargetAction
+    canTargetSelf: false
     event: !type:MidasTouchEvent
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/forcewall.ogg
 
 - type: entity
   id: RatvarClockMagic
-  categories: [ HideSpawnMenu ]
-  name: "Зачаровать предмет"
-  description: "Позволяет выбрать зачарование для предмета"
+  name: Enchant Item  
+  description: Allows you to choose an enchantment for an item.
   components:
-  - type: EntityTargetAction
-    canTargetSelf: false
+  - type: Action
+    itemIconStyle: NoItem
     checkCanInteract: true
-    interactOnMiss: false
+    useDelay: 10
     icon:
       sprite: DarkStation/MainGame/DarkForces/Ratvar/actions.rsi
       state: carve
-    useDelay: 10
+  - type: TargetAction
+    interactOnMiss: false
     range: 6
-    itemIconStyle: NoItem
+  - type: EntityTargetAction
+    canTargetSelf: false
     event: !type:RatvarMagicEvent
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/forcewall.ogg

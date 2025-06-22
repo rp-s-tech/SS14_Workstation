@@ -94,12 +94,12 @@
       interactOnMiss: false
       range: 6
     - type: EntityTargetAction
+      canTargetSelf: false
       event: !type:PontificFelLightningEvent
         felCost: 55
       whitelist:
         components:
           - Body
-      canTargetSelf: false
 
 - type: entity
   parent: BaseAction
@@ -107,12 +107,13 @@
   name: Blighted Flame
   description: The Pontiff’s swords ignite with blighted flame, increasing his speed and damage by 1.75×. Requires 40 blight.
   components:
-    - type: InstantAction
+    - type: Action
+      itemIconStyle: NoItem
+      useDelay: 60
       icon:
         sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
         state: flame_swords
-      useDelay: 60
-      itemIconStyle: NoItem
+    - type: InstantAction
       event: !type:PontificFlameSwordsEvent
         felCost: 40
 
@@ -122,12 +123,13 @@
   name: Blighted Lilies
   description: Creates spreading blighted lilies that slowly fill the station. Deals blight damage on contact.
   components:
-  - type: InstantAction
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 180
     icon:
       sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
       state: kudzu
-    useDelay: 180
-    itemIconStyle: NoItem
+  - type: InstantAction
     event: !type:PontificKudzuEvent
       felCost: 50
 
