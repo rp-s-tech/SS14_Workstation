@@ -17,6 +17,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Research.Prototypes;
+using Content.Shared.RPSX.GameRules.Pirates;
 
 namespace Content.Server.Cargo.Systems;
 
@@ -35,6 +36,7 @@ public sealed class PricingSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<MobPriceComponent, PriceCalculationEvent>(CalculateMobPrice);
+        SubscribeLocalEvent<TransformComponent, PiratePriceCalculationEvent>(CalculatePriceForPirates); // RPSX Pirates
 
         _consoleHost.RegisterCommand("appraisegrid",
             "Calculates the total value of the given grids.",
@@ -100,7 +102,7 @@ public sealed class PricingSystem : EntitySystem
         var totalPartsPresent = partList.Sum(_ => 1);
         var totalParts = partList.Count;
 
-        var partRatio = totalPartsPresent / (double) totalParts;
+        var partRatio = totalPartsPresent / (double)totalParts;
         var partPenalty = component.Price * (1 - partRatio) * component.MissingBodyPartPenalty;
 
         args.Price += (component.Price - partPenalty) * (_mobStateSystem.IsAlive(uid, state) ? 1.0 : component.DeathPenalty);
@@ -122,7 +124,7 @@ public sealed class PricingSystem : EntitySystem
                     continue;
 
                 // TODO check ReagentData for price information?
-                price += (float) quantity * reagentProto.PricePerUnit;
+                price += (float)quantity * reagentProto.PricePerUnit;
             }
         }
 
@@ -141,7 +143,7 @@ public sealed class PricingSystem : EntitySystem
                     continue;
 
                 // TODO check ReagentData for price information?
-                price += (float) quantity * reagentProto.PricePerUnit;
+                price += (float)quantity * reagentProto.PricePerUnit;
             }
         }
 
@@ -280,12 +282,12 @@ public sealed class PricingSystem : EntitySystem
         if (prototype.Components.ContainsKey(Factory.GetComponentName<MaterialComponent>()) &&
             prototype.Components.TryGetValue(Factory.GetComponentName<PhysicalCompositionComponent>(), out var composition))
         {
-            var compositionComp = (PhysicalCompositionComponent) composition.Component;
+            var compositionComp = (PhysicalCompositionComponent)composition.Component;
             var matPrice = GetMaterialPrice(compositionComp);
 
             if (prototype.Components.TryGetValue(Factory.GetComponentName<StackComponent>(), out var stackProto))
             {
-                matPrice *= ((StackComponent) stackProto.Component).Count;
+                matPrice *= ((StackComponent)stackProto.Component).Count;
             }
 
             price += matPrice;
@@ -312,7 +314,7 @@ public sealed class PricingSystem : EntitySystem
 
         if (prototype.Components.TryGetValue(Factory.GetComponentName<SolutionContainerManagerComponent>(), out var solManager))
         {
-            var solComp = (SolutionContainerManagerComponent) solManager.Component;
+            var solComp = (SolutionContainerManagerComponent)solManager.Component;
             price += GetSolutionPrice(solComp);
         }
 
@@ -341,8 +343,8 @@ public sealed class PricingSystem : EntitySystem
             prototype.Components.TryGetValue(Factory.GetComponentName<StackComponent>(), out var stackProto) &&
             !prototype.Components.ContainsKey(Factory.GetComponentName<MaterialComponent>()))
         {
-            var stackPrice = (StackPriceComponent) stackpriceProto.Component;
-            var stack = (StackComponent) stackProto.Component;
+            var stackPrice = (StackPriceComponent)stackpriceProto.Component;
+            var stack = (StackComponent)stackProto.Component;
             price += stack.Count * stackPrice.Price;
         }
 
@@ -367,7 +369,7 @@ public sealed class PricingSystem : EntitySystem
 
         if (prototype.Components.TryGetValue(Factory.GetComponentName<StaticPriceComponent>(), out var staticProto))
         {
-            var staticPrice = (StaticPriceComponent) staticProto.Component;
+            var staticPrice = (StaticPriceComponent)staticProto.Component;
             price += staticPrice.Price;
         }
 
@@ -397,6 +399,13 @@ public sealed class PricingSystem : EntitySystem
         }
 
         return price;
+    }
+
+    // RPSX start
+    private void CalculatePriceForPirates(Entity<TransformComponent> entity, ref PiratePriceCalculationEvent args)
+    {
+        if (args.Handled) return;
+        args.Price = GetPrice(entity);
     }
 }
 
