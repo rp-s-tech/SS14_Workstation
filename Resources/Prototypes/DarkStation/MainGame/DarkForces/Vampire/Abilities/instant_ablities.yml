@@ -222,11 +222,10 @@
     interactOnMiss: false
   - type: EntityTargetAction
     canTargetSelf: false
-    event: !type:VampireEnthrallEvent
     whitelist:
       components:
       - Body
-    event:
+    event: !type:VampireEnthrallEvent
       bloodCost: 100
       
 - type: entity
