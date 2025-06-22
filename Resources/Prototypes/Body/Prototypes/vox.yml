@@ -9,13 +9,8 @@
       connections:
       - torso
       organs:
-        brain:
-          organ: OrganVoxBrain
-          type: Brain
-        eyes:
-          organ: OrganVoxEyes
-          type: Eye
-          internal: false
+        brain: OrganHumanBrain
+        eyes: OrganHumanEyes
     torso:
       part: TorsoVox
       connections:
@@ -25,21 +20,11 @@
       - left leg
       - tail
       organs:
-        heart:
-          organ: OrganVoxHeart
-          type: Heart
-        lungs:
-          organ: OrganVoxLungs
-          type: Lung
-        stomach:
-          organ: OrganVoxStomach
-          type: Stomach
-        liver:
-          organ: OrganVoxLiver
-          type: Liver
-        kidneys:
-          organ: OrganVoxKidneys
-          type: Kidney
+        heart: OrganVoxHeart
+        lungs: OrganVoxLungs
+        stomach: OrganVoxStomach
+        liver: OrganVoxLiver
+        kidneys: OrganHumanKidneys
     right arm:
       part: RightArmVox
       connections:

@@ -70,6 +70,7 @@
       - state: eyeball-r
   - type: Organ
     organType: Eye
+    internal: false
   - type: EyeSight
   - type: StaticPrice
     price: 350

@@ -115,7 +115,7 @@ public sealed class BodyPrototypeSerializer : ITypeReader<BodyPrototype, Mapping
         var name = node.Get<ValueDataNode>("name").Value;
         var root = node.Get<ValueDataNode>("root").Value;
         var slotNodes = node.Get<MappingDataNode>("slots");
-        var allConnections = new Dictionary<string, (string? Part, HashSet<string>? Connections, Dictionary<string, OrganPrototypeSlot>? Organs, BodyPartType? SlotType)>();
+        var allConnections = new Dictionary<string, (string? Part, HashSet<string>? Connections, Dictionary<string, string>? Organs, BodyPartType? SlotType)>();
         var rootOverride = false;
 
         if (node.TryGet("rootOverride", out var rootOverrideSet))
@@ -142,31 +142,14 @@ public sealed class BodyPrototypeSerializer : ITypeReader<BodyPrototype, Mapping
                 }
             }
 
-            var organs = new Dictionary<string, OrganPrototypeSlot>();
-            if (slot.TryGet("organs", out MappingDataNode? slotOrgansNode) && part is not null) //must have part to have organs.
+            var organs = new Dictionary<string, string>();
+            if (slot.TryGet("organs", out MappingDataNode? slotOrgansNode))
             {
-                foreach (var (organKeyNode, organValueNode) in slotOrgansNode)
+                organs = new Dictionary<string, string>();
+
+                foreach (var (organKey, organValueNode) in slotOrgansNode)
                 {
-                    var organSlot = (MappingDataNode)organValueNode;
-
-                    string? organ = null;
-                    if (organSlot.TryGet<ValueDataNode>("organ", out var organValue))
-                    {
-                        organ = organValue.Value;
-                    }
-
-                    var organSlotType = OrganType.Other;
-                    if (organSlot.TryGet<ValueDataNode>("type", out var organTypeValue))
-                    {
-                        organSlotType = (OrganType)Enum.Parse(typeof(OrganType), organTypeValue.Value);
-                    }
-
-                    var internalOrgan = true;
-                    if (organSlot.TryGet<ValueDataNode>("internal", out var internalOrganValue))
-                    {
-                        internalOrgan = bool.Parse(internalOrganValue.Value);
-                    }
-                    organs.Add(organKeyNode, new OrganPrototypeSlot(organ, organSlotType, internalOrgan));
+                    organs.Add(organKey, ((ValueDataNode)organValueNode).Value);
                 }
             }
 
@@ -197,7 +180,7 @@ public sealed class BodyPrototypeSerializer : ITypeReader<BodyPrototype, Mapping
 
         foreach (var (slotId, (part, connections, organs, slotType)) in allConnections)
         {
-            var slot = new BodyPrototypeSlot(part, connections ?? new HashSet<string>(), organs ?? new Dictionary<string, OrganPrototypeSlot>(), slotType);
+            var slot = new BodyPrototypeSlot(part, connections ?? new HashSet<string>(), organs ?? new Dictionary<string, string>(), slotType);
             slots.Add(slotId, slot);
         }
 
