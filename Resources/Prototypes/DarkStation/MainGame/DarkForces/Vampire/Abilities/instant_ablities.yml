@@ -11,7 +11,7 @@
       sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
       state: vampire_statistic
   - type: InstantAction
-    event:
+    event: !type:VampireOpenHelpDialogEvent
       bloodCost: 0
       
 - type: entity
@@ -35,7 +35,7 @@
       - Body
     sound:
       path: /Audio/DarkStation/Narsi/enter_blood.ogg
-    event:
+    event: !type:VampireDrinkBloodAblityEvent
       bloodCost: 0
       
 - type: entity
@@ -54,7 +54,7 @@
   - type: InstantAction
     sound:
       path: /Audio/DarkStation/Narsi/summon_karp.ogg
-    event:
+    event: !type:VampireRejuvenateEvent
       bloodCost: 30
       
 - type: entity
@@ -70,7 +70,7 @@
       sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
       state: vampire_glare
   - type: InstantAction
-    event:
+    event: !type:VampireFlashEvent
       bloodCost: 30
       
 - type: entity
@@ -92,9 +92,9 @@
     whitelist:
       components:
       - Body
-    event:
+    event: !type:VampireHypnosisEvent
       bloodCost: 50
-      
+ 
 - type: entity
   parent: BaseAction
   id: VampireChargeAction
@@ -112,7 +112,7 @@
   - type: WorldTargetAction
     sound:
       path: /Audio/DarkStation/Narsi/wand_teleport.ogg
-    event:
+    event: !type:VampireChargeEvent
       bloodCost: 100
       
 - type: entity
@@ -130,7 +130,7 @@
   - type: InstantAction
     sound:
       path: /Audio/DarkStation/Narsi/wand_teleport.ogg
-    event:
+    event: !type:VampireShapeshiftEvent
       bloodCost: 100
       
 - type: entity
@@ -148,7 +148,7 @@
   - type: InstantAction
     sound:
       path: /Audio/DarkStation/Narsi/summonitems_generic.ogg
-    event:
+    event: !type:VampirePolymorphEvent
       bloodCost: 50
       
 - type: entity
@@ -167,7 +167,7 @@
   - type: InstantAction
     sound:
       path: /Audio/DarkStation/Narsi/summon_karp.ogg
-    event:
+    event: !type:VampireRejuvenatePlusEvent
       bloodCost: 50
       
 - type: entity
@@ -184,7 +184,7 @@
       sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
       state: vampire_bats
   - type: InstantAction
-    event:
+    event: !type:VampireSummonBatsEvent
       bloodCost: 200
       
 - type: entity
@@ -203,7 +203,7 @@
   - type: InstantAction
     sound:
       path: /Audio/DarkStation/creepyshriek.ogg
-    event:
+    event: !type:VampireChiropteanScreechEvent
       bloodCost: 200
       
 - type: entity
@@ -222,6 +222,7 @@
     interactOnMiss: false
   - type: EntityTargetAction
     canTargetSelf: false
+    event: !type:VampireEnthrallEvent
     whitelist:
       components:
       - Body
@@ -241,5 +242,5 @@
       sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
       state: vampire_jaunt
   - type: InstantAction
-    event:
+    event: !type:VampireFullPowerEvent
       bloodCost: 0
