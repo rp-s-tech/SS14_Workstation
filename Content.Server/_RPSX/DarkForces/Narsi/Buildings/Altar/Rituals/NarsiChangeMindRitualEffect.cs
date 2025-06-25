@@ -89,20 +89,20 @@ public sealed partial class NarsiChangeMindRitualEffect : NarsiRitualEffect
 
     private void TransferActions(EntityUid first, EntityUid second, IEntityManager ent, SharedActionsSystem actionsSys, TagSystem tagSys)
     {
-        var firstActions = actionsSys.GetActions(first).ToList().Where(c => tagSys.HasTag(c.Id, "NarsiAction"));
-        var secondActions = actionsSys.GetActions(second).ToList().Where(c => tagSys.HasTag(c.Id, "NarsiAction"));
+        var firstActions = actionsSys.GetActions(first).ToList().Where(c => tagSys.HasTag(c.Owner, "NarsiAction"));
+        var secondActions = actionsSys.GetActions(second).ToList().Where(c => tagSys.HasTag(c.Owner, "NarsiAction"));
 
         foreach (var fa in firstActions)
         {
-            actionsSys.RemoveAction(fa.Id);
-            if (ent.TryGetComponent<MetaDataComponent>(fa.Id, out var metaData) && metaData.EntityPrototype != null)
+            actionsSys.RemoveAction(fa.Owner);
+            if (ent.TryGetComponent<MetaDataComponent>(fa.Owner, out var metaData) && metaData.EntityPrototype != null)
                 actionsSys.AddAction(second, metaData.EntityPrototype.ID);
         }
 
         foreach (var sa in secondActions)
         {
-            actionsSys.RemoveAction(sa.Id);
-            if (ent.TryGetComponent<MetaDataComponent>(sa.Id, out var metaData) && metaData.EntityPrototype != null)
+            actionsSys.RemoveAction(sa.Owner);
+            if (ent.TryGetComponent<MetaDataComponent>(sa.Owner, out var metaData) && metaData.EntityPrototype != null)
                 actionsSys.AddAction(first, metaData.EntityPrototype.ID);
         }
     }

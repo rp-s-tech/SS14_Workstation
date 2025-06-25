@@ -10,6 +10,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Shared.Actions.Components;
 
 namespace Content.Server.RPSX.DarkForces.Narsi.Cultist.Abilities;
 
@@ -68,15 +69,21 @@ public sealed partial class NarsiCultistAbilitiesSystem : EntitySystem
             if (!component.Abilities.TryGetValue(id, out var ability))
                 continue;
 
-            if (!_actionsSystem.TryGetActionData(ability, out var action))
+            if (_actionsSystem.GetAction(ability) is not Entity<ActionComponent> action)
                 continue;
 
-            action.UseDelay = level switch
+            switch (level)
             {
-                1 => action.UseDelay,
-                2 => action.UseDelay * 0.9,
-                _ => action.UseDelay * 0.8
-            };
+                case 1:
+                    _actionsSystem.SetUseDelay(action.Owner, action.Comp.UseDelay);
+                    break;
+                case 2:
+                    _actionsSystem.SetUseDelay(action.Owner, action.Comp.UseDelay * 0.9);
+                    break;
+                default:
+                    _actionsSystem.SetUseDelay(action.Owner, action.Comp.UseDelay * 0.8);
+                    break;
+            }
         }
     }
 

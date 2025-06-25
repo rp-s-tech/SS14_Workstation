@@ -9,13 +9,8 @@
       connections:
       - torso
       organs:
-        brain:
-          organ: OrganNucleanBrain
-          type: Brain
-        eyes:
-          organ: OrganNucleanEyes
-          type: Eye
-          internal: false
+        brain: OrganNucleanBrain
+        eyes: OrganNucleanEyes
     torso:
       part: TorsoHuman
       connections:
@@ -24,21 +19,11 @@
       - right leg
       - left leg
       organs:
-        heart:
-          organ: OrganNucleanHeart
-          type: Heart
-        lungs:
-          organ: OrganNucleanLungs
-          type: Lung
-        stomach:
-          organ: OrganNucleanStomach
-          type: Stomach
-        liver:
-          organ: OrganNucleanLiver
-          type: Liver
-        kidneys:
-          organ: OrganNucleanKidneys
-          type: Kidney
+        heart: OrganNucleanHeart
+        lungs: OrganNucleanLungs
+        stomach: OrganNucleanStomach
+        liver: OrganNucleanLiver
+        kidneys: OrganNucleanKidneys
     right arm:
       part: RightArmNuclean
       connections:

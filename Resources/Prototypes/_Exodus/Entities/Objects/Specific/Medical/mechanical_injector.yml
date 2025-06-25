@@ -10,18 +10,16 @@
       effectsAfterInjection:
         - !type:Emote
           conditions:
-            - !type:HasTags
-              tags:
-                - ThickSkin
+            - !type:HasTag
+              tag: ThickSkin
               invert: true
             - !type:IsMob
           emote: Scream
           showInChat: true
         - !type:HealthChange
           conditions:
-            - !type:HasTags
-              tags:
-                - ThickSkin
+            - !type:HasTag
+              tag: ThickSkin
               invert: true
             - !type:IsMob
           damage:
@@ -29,17 +27,15 @@
               Piercing: 10
         - !type:ModifyBleedAmount
           conditions:
-            - !type:HasTags
-              tags:
-                - ThickSkin
+            - !type:HasTag
+              tag: ThickSkin
               invert: true
             - !type:IsMob
           amount: 5
         - !type:PopupMessage
           conditions:
-            - !type:HasTags
-              tags:
-                - ThickSkin
+            - !type:HasTag
+              tag: ThickSkin
               invert: true
             - !type:IsMob
           visualType: MediumCaution

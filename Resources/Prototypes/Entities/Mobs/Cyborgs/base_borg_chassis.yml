@@ -220,7 +220,8 @@
       minValue: 0.1
       maxValue: 2.0
       isLooped: true
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
+    spriteLayer: light
   - type: PointLight
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png
@@ -284,8 +285,8 @@
     intensitySlope: 20
     maxIntensity: 20
     canCreateVacuum: false # its for killing the borg not the station
-  - type: TTS # Corvax-TTS
-    voice: TrainingRobot
+  - type: TTS # SS220 TTS
+    voicePrototypeId: turret_floor
 
 - type: entity
   abstract: true

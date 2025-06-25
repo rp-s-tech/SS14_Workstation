@@ -29,3 +29,13 @@ hud-chatbox-channel-Server = Сервер
 hud-chatbox-channel-Visual = Визуальный
 hud-chatbox-channel-Damage = Повреждения
 hud-chatbox-channel-Unspecified = Неопределённый
+hud-chatbox-highlights = Подсветка:
+hud-chatbox-highlights-button = Подтвердить
+hud-chatbox-highlights-tooltip =
+    Слова должны быть отделены новой строкой
+    если слова между " они подсветяться только
+    если отделены пробелом или знаками препинания
+hud-chatbox-highlights-placeholder =
+    МакХэндс
+    "Судья"
+    Медблок

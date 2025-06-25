@@ -101,6 +101,7 @@
   - type: Organ
     organType: Eye
     species: universal
+    internal: false
   - type: EyeSight
   - type: StaticPrice
     price: 200

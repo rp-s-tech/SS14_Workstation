@@ -1,62 +1,75 @@
-# Role Play Systems License Agreement
+# Role Play Systems Contributor License Agreement (CLA)
 
-## Preamble
+_Last updated: June 22, 2025_
 
-Upon receipt of a copy of the license object by any means, any person may use it if they accept and agree to all the terms of this License. Violation of the License terms grants us (the Licensor) the right to apply methods of legal and technological protection using the DMCA and/or other legislation of the states under whose jurisdiction hosting providers and other information intermediaries are located, providing services to violators of the terms of this License.
+Thank you for your interest in contributing to the RPS-eXtended Project (“the Project”), maintained by the Role Play Systems teams.
 
-Acceptance of the terms of this License constitutes a definitive conclusion between you and Role Play Systems of a gratuitous, simple, non-exclusive license, hereinafter referred to as the "Agreement."
+This Contributor License Agreement (“Agreement”) clarifies the terms under which you (the "Contributor") may contribute code, assets, documentation, or other materials (“Contributions”) to the Project.
 
-> **Note:** The Agreement does not regulate issues related to the processing of personal data.
-
----
-
-## Definitions
-
-### Build
-
-An object of the Agreement, the result of the original authorship work by a team of authors ("Company"): a complex intellectual property object — a video game — including, but not limited to, source code, object code, tools, game assets, specifications, UI/UX design, narrative elements, and other creative components, based on the revision and translation into Russian of the open version of *Space Station 14* and the Company's artistic vision.
-
-The aggregation of individual elements constitutes the Build. Elements created beyond the original material are objects of copyright and/or related rights.
-
-### Contribution
-
-Any original authorship work provided by Contributors to the Build, including modifications or additions (source code, object code, corrections, tools, samples, graphics, assets, specifications, manuals, documentation).
-
-> For this purpose, "submission" means any form of communication — electronic, oral, or written — sent to the Licensor or its representatives, including messages on mailing lists, source control systems, or issue tracking systems operated by or on behalf of the Company.
-
-Communications explicitly marked **"Not a contribution"** are excluded.
-
-By providing a Contribution, the Contributor grants the Company a simple, free, irrevocable, non-exclusive license for the full term of their rights according to their jurisdiction’s law and/or international law.
-
-### Licensor
-
-Role Play Systems.  
-Authorized representative for permissions, legal, and technical issues: **Ivan Ternovskiy** (aristophan488@gmail.com).
+By submitting a Contribution to this repository (including via pull request, issue comment, or other form of communication), you agree to the following terms:
 
 ---
 
-## Scope of the Rights Granted
+## 1. Grant of Rights
 
-The License grants an unlimited number of persons the right to:
+You hereby grant Role Play Systems a worldwide, royalty-free, irrevocable, perpetual, non-exclusive license to:
 
-- **Copy and modify** the Build solely for improving the game, with any modifications being provided back to Role Play Systems under the terms of Contribution;
-- **Host and launch** the Build non-publicly on the Licensee's computer for non-commercial purposes, providing access to Players and enabling Game processes.
+- use, reproduce, modify, adapt, publish, translate, distribute, sublicense, and create derivative works of your Contribution as part of the Project;
+- relicense your Contribution under the Project's licensing terms (including open-source or proprietary licensing as applicable);
+- include your Contribution in private or public builds, server-side infrastructure, or derivative forks operated by the maintainers of the Project.
 
-⚠️ **Commercial use, public hosting, and non-licensed use are expressly prohibited.**
-
-Use of the Build or its elements in violation of this License grants the Licensor the right to contact hosting providers and information intermediaries to request blocking of the hosting.
-
-> **Note:** Public hosting of the Build is permitted **only** with direct written permission from the Licensor.
+You affirm that you have the legal right to grant this license.
 
 ---
 
-## Reservations About the Types of Licenses
+## 2. Open Repository Conditions
 
-Individual Build elements (graphics, sounds, source code) may be distributed under different licenses.
+If your Contribution is added to publicly accessible directories such as:
 
-- Most assets are licensed under **CC-BY-SA 3.0**, unless otherwise specified.
-- Each asset’s license and copyright status is indicated in its metadata.
+- `/Content.Server/_RPSX/`
+- `/Content.Client/_RPSX/`
+- `/Resources/Textures/_RPSX/`
+- or other folders labeled with `_RPSX`, `RPSX`, `DS`, `DarkStation`, or similar identifiers,
 
-If no license type is specified, the element is distributed under the terms of this License.
+then it may be made available under the terms of the `LICENSE-RPSX.md` file in this repository.
+
+However, **the presence of such content in an open repository does not imply full open-source reusability**. Reuse of these Contributions in other projects must comply with:
+
+- proper attribution (Role Play Systems);
+- public source availability;
+- non-commercial usage unless explicitly permitted.
 
 ---
+
+## 3. Warranties
+
+You warrant that:
+
+- The Contribution is an original work and that you have the right to submit it;
+- Your Contribution does not violate any existing intellectual property rights;
+- You agree that your Contribution is intentionally provided to the Project maintainers.
+
+---
+
+## 4. No Obligation to Use
+
+Submitting a Contribution does not guarantee inclusion. Project maintainers reserve the right to use, modify, reject, or remove Contributions at their discretion.
+
+---
+
+## 5. Community Conduct
+
+You agree to follow the Project's Code of Conduct and security guidelines when submitting Contributions. You will not knowingly submit malicious code, spam, or unauthorized third-party content.
+
+---
+
+## 6. Contact and Clarification
+
+If you have questions about how your Contribution may be used, especially regarding monetization, reuse, or license boundaries, please contact:
+
+📧 **owner@rp-s.tech**
+💬 [http://discord.rp-s.tech](http://discord.rp-s.tech)
+
+---
+
+Thank you for supporting the development of RPS-eXtended.

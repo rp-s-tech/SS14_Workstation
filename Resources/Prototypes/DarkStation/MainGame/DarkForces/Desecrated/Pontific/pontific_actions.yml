@@ -1,132 +1,141 @@
 ﻿- type: entity
+  parent: BaseAction
   id: ActionPontificDarkPrayer
-  name: "Темный Молебнен"
-  description: "Понтифик падает наземь, вознося молитвы во тьму, наделяющую его скверной"
-  categories: [ HideSpawnMenu ]
+  name: Dark Supplication
+  description: The Pontiff falls to the ground, offering prayers into the darkness that infuses him with blight.
   components:
-    - type: InstantAction
+    - type: Action
+      itemIconStyle: NoItem
+      useDelay: 120
       icon:
         sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
         state: prayer
-      useDelay: 120
-      itemIconStyle: NoItem
+    - type: InstantAction
       event: !type:PontificDarkPrayerEvent
         felCost: 0
 
 - type: entity
+  parent: BaseAction
   id: ActionPontificLungeOfFaith
-  name: "Выпад веры"
-  description: "Увеличивает скорость и урон Понтифика в 1.25 раз. Требует 20 скверны"
-  categories: [ HideSpawnMenu ]
+  name: Leap of Faith
+  description: Increases the Pontiff’s speed and damage by 1.25×. Requires 20 blight.
   components:
-    - type: InstantAction
+    - type: Action
+      itemIconStyle: NoItem
+      useDelay: 60
       icon:
         sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
         state: faith_attack
-      useDelay: 60
-      itemIconStyle: NoItem
+    - type: InstantAction
       event: !type:PontificLungeOfFaithEvent
         felCost: 20
 
 - type: entity
+  parent: BaseAction
   id: ActionPontificBloodyAltar
-  name: "Кровавый алтарь"
-  description: "Понтифик молебном вызывает из тьмы алтарь, увеличивающих количество очков при последующим молебне в 1.75 раз. Требует 180 скверны"
-  categories: [ HideSpawnMenu ]
+  name: Blood Altar
+  description: Through supplication, the Pontiff summons an altar from the darkness that increases the faith point gain from the next supplication by 1.75×. Requires 180 blight.
   components:
-    - type: InstantAction
+    - type: Action
+      itemIconStyle: NoItem
+      useDelay: 120
       icon:
         sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
         state: desecrated_statue
-      useDelay: 120
-      itemIconStyle: NoItem
+    - type: InstantAction
       event: !type:PontificBloodyAltarEvent
         felCost: 180
 
 - type: entity
+  parent: BaseAction
   id: ActionPontificSpawnMonk
-  name: "Призыв служителя"
-  description: "Призывает проклятого монаха церкви Гартулла. Требует 50 скверны"
-  categories: [ HideSpawnMenu ]
+  name: Summon Acolyte
+  description: Summons a cursed monk of the Church of Gartulla. Requires 50 blight.
   components:
-    - type: InstantAction
+    - type: Action
+      itemIconStyle: NoItem
+      useDelay: 240
       icon:
         sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
         state: call_monk
-      useDelay: 240
-      itemIconStyle: NoItem
+    - type: InstantAction
       event: !type:PontificSpawnMonkEvent
         felCost: 50
 
 - type: entity
+  parent: BaseAction
   id: ActionPontificSpawnGuardian
-  name: "Слово храмовника"
-  description: "Призывает рыцаря церкви Гартулла. Требует 75 скверны"
-  categories: [ HideSpawnMenu ]
+  name: Word of the Templar
+  description: Summons a knight of the Church of Gartulla. Requires 75 blight.
   components:
-    - type: InstantAction
+    - type: Action
+      itemIconStyle: NoItem
+      useDelay: 240
       icon:
         sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
         state: call_guardian
-      useDelay: 240
-      itemIconStyle: NoItem
+    - type: InstantAction
       event: !type:PontificSpawnGuardianEvent
         felCost: 75
 
 - type: entity
+  parent: BaseAction
   id: ActionPontificFelLightning
-  name: "Великое осквернение"
-  description: "Мощная молния наполенная скверной. Требует 55 скверны"
-  categories: [ HideSpawnMenu ]
+  name: Grand Desecration
+  description: A powerful lightning bolt imbued with blight. Requires 55 blight.
   components:
-    - type: EntityTargetAction
+    - type: Action
+      itemIconStyle: NoItem
+      useDelay: 15
       icon:
         sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
         state: fel_lightning
-      useDelay: 15
-      itemIconStyle: NoItem
+    - type: TargetAction
+      interactOnMiss: false
+      range: 6
+    - type: EntityTargetAction
+      canTargetSelf: false
       event: !type:PontificFelLightningEvent
         felCost: 55
       whitelist:
         components:
           - Body
-      canTargetSelf: false
-      interactOnMiss: false
-      range: 6
 
 - type: entity
+  parent: BaseAction
   id: ActionPontificFlameSwords
-  name: "Скверное пламя"
-  description: "Мечи Понтифика загораются скверным пламенем, увеличивая скорость и урон Понтифика в 1.75 раз. Требует 40 скверны"
-  categories: [ HideSpawnMenu ]
+  name: Blighted Flame
+  description: The Pontiff’s swords ignite with blighted flame, increasing his speed and damage by 1.75×. Requires 40 blight.
   components:
-    - type: InstantAction
+    - type: Action
+      itemIconStyle: NoItem
+      useDelay: 60
       icon:
         sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
         state: flame_swords
-      useDelay: 60
-      itemIconStyle: NoItem
+    - type: InstantAction
       event: !type:PontificFlameSwordsEvent
         felCost: 40
 
 - type: entity
+  parent: BaseAction
   id: ActionPontificKudzu
-  name: "Осквернённые лилии"
-  description: "Создает осквернённые лилии, которые распространяются и медленно заполняют станцию. Наносит урон скверной при контакте"
-  categories: [ HideSpawnMenu ]
+  name: Blighted Lilies
+  description: Creates spreading blighted lilies that slowly fill the station. Deals blight damage on contact.
   components:
-  - type: InstantAction
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 180
     icon:
       sprite: DarkStation/MainGame/DarkForces/Pontific/pontiff/actions.rsi
       state: kudzu
-    useDelay: 180
-    itemIconStyle: NoItem
+  - type: InstantAction
     event: !type:PontificKudzuEvent
       felCost: 50
 
 #for action
 - type: entity
-  name: "молния скверны"
+  name: Grand Desecration
   id: PontificLightning
   categories: [ HideSpawnMenu ]
   components:

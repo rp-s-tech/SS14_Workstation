@@ -86,9 +86,10 @@
     range: 5
     sound:
       path: /Audio/Ambience/Objects/engine_hum.ogg
-  - type: GravityGenerator
+  - type: PowerCharge
     idlePower: 50
     activePower: 2500
+  - type: GravityGenerator
     lightRadiusMin: 0.75
     lightRadiusMax: 2.5
     spriteMap:
@@ -132,6 +133,9 @@
     deviceNetId: Wired
     receiveFrequencyId: BasicDevice
   - type: DeviceList
+  - type: DeviceLinkSource
+    ports:
+      - EnergyCoreSender
   - type: DeviceLinkSink
     ports:
       - EnergyCoreReceiver

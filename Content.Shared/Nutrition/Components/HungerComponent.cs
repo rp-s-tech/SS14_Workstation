@@ -92,8 +92,7 @@ public sealed partial class HungerComponent : Component
     {
         { HungerThreshold.Peckish, "Peckish" },
         { HungerThreshold.Starving, "Starving" },
-        { HungerThreshold.Dead, "Starving" },
-        { HungerThreshold.Overfed, "Overfed" }
+        { HungerThreshold.Dead, "Starving" }
     };
 
     [DataField]

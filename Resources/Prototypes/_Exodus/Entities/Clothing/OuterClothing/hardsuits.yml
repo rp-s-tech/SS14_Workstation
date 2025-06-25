@@ -11,27 +11,25 @@
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
-  - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+  - type: ExplosionResistance
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.6
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.5
         Heat: 0.6
-        Radiation: 0.6
-  - type: ExplosionResistance
-    damageCoefficient: 0.6
-  - type: TemperatureProtection
-    heatingCoefficient: 0.001
-    coolingCoefficient: 0.001
+        Radiation: 0.45
+        Caustic: 0.65
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+  - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSalvageMaximal
   - type: Construction
-    graph: SalvageMaximalSuit
-    node: ClothingOuterHardsuitSalvageMaximal
+    graph: HardsuitSalvageMaximal
+    node: hardsuitSalvageMaximal
 
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]

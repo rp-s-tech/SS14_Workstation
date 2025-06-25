@@ -77,8 +77,6 @@ public sealed partial class VampireAbilitiesSystem : EntitySystem
         if (!_actionsSystem.AddAction(uid, ref actionUid, out var actionComp, args.ActionId))
             return;
 
-        actionComp.Keywords.Add(args.ActionId);
-
         component.OpenedAbilities[args.ActionId] = actionUid.Value;
         component.CurrentBloodAmount -= args.BloodRequired;
 
@@ -92,7 +90,7 @@ public sealed partial class VampireAbilitiesSystem : EntitySystem
             if (actionId != args.ReplaceId)
                 continue;
 
-            _actionsSystem.RemoveAction(uid, action.Id);
+            _actionsSystem.RemoveAction(uid, action.Owner);
             component.OpenedAbilities.Remove(actionId);
         }
     }

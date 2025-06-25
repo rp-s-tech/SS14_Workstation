@@ -1,10 +1,7 @@
 - type: construction
-  name: salvager maxim hardsuit
-  id: ClothingOuterHardsuitMaximal
-  graph: SalvageMaximalSuit
+  id: HardsuitSalvageMaximal
+  graph: HardsuitSalvageMaximal
   startNode: start
-  targetNode: ClothingOuterHardsuitSalvageMaximal
+  targetNode: hardsuitSalvageMaximal
   category: construction-category-clothing
-  description: Fire. Heat. These things forge great weapons, they also forge great salvagers.
-  icon: { sprite: Exodus/Clothing/OuterClothing/Hardsuits/salvage_maximal.rsi, state: icon }
   objectType: Item

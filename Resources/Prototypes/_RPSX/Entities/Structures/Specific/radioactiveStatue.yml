@@ -1,0 +1,20 @@
+- type: entity
+  parent: BaseStructure
+  id: ddRadioactiveStatue
+  name: монумент с ураном
+  description: 'Монумент с обогащенным ураном накрытый стеклянным куполом. На нем есть предупреждение: "Не есть!"'
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Specific/RadioactiveStatue.rsi
+    state: base
+  - type: RadiationSource
+    intensity: 1.5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

@@ -55,86 +55,96 @@
 
 #actions
 - type: entity
+  parent: BaseAction
   id: ActionPetOrderStay
   name: stop
   description: To order you to stop following you.
-  categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: Action
     useDelay: 1
+    priority: 5
     icon:
       sprite: DarkStation/MainGame/Mobs/Friendly/muhtar_actions.rsi
       state: stayOff
     iconOn:
       sprite: DarkStation/MainGame/Mobs/Friendly/muhtar_actions.rsi
       state: stay
+  - type: InstantAction
     event:
       !type:PetOrderActionEvent
       type: Stay
-    priority: 5
+    
 
 - type: entity
+  parent: BaseAction
   id: ActionPetOrderFollow
   name: Follow
   description: Order me to follow you.
-  categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: Action
     useDelay: 1
+    priority: 6
     icon:
       sprite: DarkStation/MainGame/Mobs/Friendly/muhtar_actions.rsi
       state: followOff
     iconOn:
       sprite: DarkStation/MainGame/Mobs/Friendly/muhtar_actions.rsi
       state: follow
+  - type: InstantAction
     event:
       !type:PetOrderActionEvent
       type: Follow
-    priority: 6
+    
 
 - type: entity
+  parent: BaseAction
   id: ActionPetOrderAttack
   name: Attack
   description: It puts you in combat mode. Attacks anyone you point at.
-  categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: Action
     useDelay: 1
+    priority: 7
     icon:
       sprite: DarkStation/MainGame/Mobs/Friendly/muhtar_actions.rsi
       state: attackOff
     iconOn:
       sprite: DarkStation/MainGame/Mobs/Friendly/muhtar_actions.rsi
       state: attack
+  - type: InstantAction
     event:
       !type:PetOrderActionEvent
       type: Attack
-    priority: 7
+    
 
 - type: entity
+  parent: BaseAction
   id: ActionPetMakeGhostRole
   name: make the ghost role
   description:  Makes the pet a ghost role, it can be occupied by any ghost.
-  categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: Action
     useDelay: 1
+    priority: 8
     icon:
       sprite: DarkStation/MainGame/Mobs/Friendly/muhtar_actions.rsi
       state: make-ghost-role
+  - type: InstantAction
     event: !type:PetMakeGhostRoleEvent
-    priority: 8
+    
 
 - type: entity
+  parent: BaseAction
   id: ActionPetRemoveGhostRole
   name: remove the ghost role
   description: Removes the ghost role and kicks the player out of it.
-  categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: Action
     useDelay: 1
+    priority: 9
     icon:
       sprite: DarkStation/MainGame/Mobs/Friendly/muhtar_actions.rsi
       state: remove-ghost-role
+  - type: InstantAction
     event: !type:PetRemoveGhostRoleEvent
-    priority: 9
+    

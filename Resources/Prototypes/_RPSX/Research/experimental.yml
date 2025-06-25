@@ -1,0 +1,30 @@
+# Tier 1
+
+- type: technology
+  id: BasicProsthetics
+  name: research-technology-basic-prosthetics
+  icon:
+    sprite: Mobs/Species/Bionic/parts.rsi
+    state: l_arm_icon
+  discipline: Experimental
+  tier: 1
+  cost: 10000
+  recipeUnlocks:
+  - MedicalPrinterCircuitboard
+
+# Tier 2
+
+- type: technology
+  id: AdvancedProsthetics
+  name: research-technology-advanced-prosthetics
+  icon:
+    sprite: DarkStation/MainGame/Mobs/Species/Bionic/Parts/drill_arm.rsi
+    state: l_arm_icon
+  discipline: Experimental
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+    - LeftDrillArmHand
+    - RightDrillArmHand
+    - LeftPowerLegFoot
+    - RightPowerLegFoot

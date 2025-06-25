@@ -8,24 +8,12 @@
       connections:
       - legs
       organs:
-        brain:
-          organ: OrganDionaBrain
-          type: Brain
-        lungs:
-          organ: OrganAnimalLungs
-          type: Lung
-        stomach:
-          organ: OrganAnimalStomach
-          type: Stomach
-        liver:
-          organ: OrganAnimalLiver
-          type: Liver
-        heart:
-          organ: OrganAnimalHeart
-          type: Heart
-        kidneys:
-          organ: OrganAnimalKidneys
-          type: Kidney
+        brain: OrganDionaBrain
+        lungs: OrganAnimalLungs
+        stomach: OrganAnimalStomach
+        liver: OrganAnimalLiver
+        heart: OrganAnimalHeart
+        kidneys: OrganAnimalKidneys
     legs:
       part: LegsAnimal
       connections:
@@ -43,21 +31,11 @@
       connections:
       - legs
       organs:
-        lungs:
-          organ: OrganDionaLungs
-          type: Lung
-        stomach:
-          organ: OrganAnimalStomach
-          type: Stomach
-        liver:
-          organ: OrganAnimalLiver
-          type: Liver
-        heart:
-          organ: OrganAnimalHeart
-          type: Heart
-        kidneys:
-          organ: OrganAnimalKidneys
-          type: Kidney
+        lungs: OrganDionaLungs
+        stomach: OrganAnimalStomach
+        liver: OrganAnimalLiver
+        heart: OrganAnimalHeart
+        kidneys: OrganAnimalKidneys
     legs:
       part: LegsAnimal
       connections:
@@ -75,21 +53,11 @@
       connections:
       - legs
       organs:
-        lungs:
-          organ: OrganAnimalLungs
-          type: Lung
-        stomach:
-          organ: OrganDionaStomach
-          type: Stomach
-        liver:
-          organ: OrganAnimalLiver
-          type: Liver
-        heart:
-          organ: OrganAnimalHeart
-          type: Heart
-        kidneys:
-          organ: OrganAnimalKidneys
-          type: Kidney
+        lungs: OrganAnimalLungs
+        stomach: OrganDionaStomach
+        liver: OrganAnimalLiver
+        heart: OrganAnimalHeart
+        kidneys: OrganAnimalKidneys
     legs:
       part: LegsAnimal
       connections:

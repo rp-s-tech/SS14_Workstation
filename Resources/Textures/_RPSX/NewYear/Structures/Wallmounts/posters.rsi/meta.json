@@ -1,7 +1,7 @@
 {
     "version": 1,
-    "copyright": "flamingo DS",
-    "license": "RPS-eXtended",
+    "copyright": "RPS-eXtended & flamingo DS",
+    "license": "CC-BY-NC-SA-4.0",
     "size": {
         "x": 32,
         "y": 32

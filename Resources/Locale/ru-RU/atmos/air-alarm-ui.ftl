@@ -10,7 +10,7 @@ air-alarm-ui-window-address-label = Адрес
 air-alarm-ui-window-device-count-label = Всего устройств
 air-alarm-ui-window-resync-devices-label = Ресинхр
 air-alarm-ui-window-mode-label = Режим
-air-alarm-ui-window-mode-select-locked-label = %ERASE_NEWLINE%[bold][color=red] Не удалось переключить режим [/color][/bold]
+air-alarm-ui-window-mode-select-locked-label = [bold][color=red] Не удалось переключить режим [/color][/bold]
 air-alarm-ui-window-auto-mode-label = Авто-режим
 -air-alarm-state-name =
     { $state ->
@@ -25,7 +25,7 @@ air-alarm-ui-window-pressure = { $pressure } кПа
 air-alarm-ui-window-pressure-indicator = Давление: [color={ $color }]{ $pressure } кПа[/color]
 air-alarm-ui-window-temperature = { $tempC } °C ({ $temperature } К)
 air-alarm-ui-window-temperature-indicator = Температура: [color={ $color }]{ $tempC } °C ({ $temperature } К)[/color]
-air-alarm-ui-window-alarm-state = %ERASE_NEWLINE%[color={ $color }]{ $state }[/color]
+air-alarm-ui-window-alarm-state = [color={ $color }]{ $state }[/color]
 air-alarm-ui-window-alarm-state-indicator = Статус: [color={ $color }]{ $state }[/color]
 air-alarm-ui-window-tab-vents = Вентиляции
 air-alarm-ui-window-tab-scrubbers = Скрубберы

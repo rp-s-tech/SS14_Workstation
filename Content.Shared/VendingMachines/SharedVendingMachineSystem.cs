@@ -37,7 +37,7 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
     [Dependency] protected readonly SharedUserInterfaceSystem UISystem = default!;
     [Dependency] protected readonly IRobustRandom Randomizer = default!;
     [Dependency] private readonly EmagSystem _emag = default!;
-    [Dependency] private readonly IBankManager _sharedBankSystem = default!;
+    [Dependency] private readonly SharedBankSystem _sharedBankSystem = default!;
 
     public override void Initialize()
     {

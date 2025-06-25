@@ -1,4 +1,4 @@
-﻿- type: constructionGraph
+- type: constructionGraph
   id: Girder
   start: start
   graph:
@@ -149,8 +149,8 @@
             - material: MeatSheets
               amount: 2
               doAfter: 2
-
-        - to: shuttleInteriorWall
+           
+        - to: shuttleInteriorWall #RPSX
           completed:
             - !type:SnapToGrid
               southRotation: true
@@ -165,6 +165,19 @@
             - material: Steel
               amount: 2
               doAfter: 1
+
+    - node: wall
+      entity: WallSolid
+      edges:
+        - to: girder
+          completed:
+            - !type:GivePrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Welding
+              doAfter: 10
+      
    # Exodus-Wall-Diagonal-Craft-Start
     - node: diagonalWall
       entity: WallSolidDiagonal
@@ -178,18 +191,6 @@
             - tool: Welding
               doAfter: 10
    # Exodus-Wall-Diagonal-Craft-End
-
-    - node: wall
-      entity: WallSolid
-      edges:
-        - to: girder
-          completed:
-            - !type:GivePrototype
-              prototype: SheetSteel1
-              amount: 2
-          steps:
-            - tool: Welding
-              doAfter: 10
 
     - node: uraniumWall
       entity: WallUranium
@@ -284,6 +285,23 @@
           steps:
             - tool: Prying
               doAfter: 5
+              
+    - node: shuttleInteriorWall #RPSX
+      entity: WallShuttleInterior
+      edges:
+        - to: girder
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+          steps:
+            - tool: Welding
+              doAfter: 10
+            - tool: Screwing
+              doAfter: 1
 
     - node: reinforcedGirder
       entity: ReinforcedGirder

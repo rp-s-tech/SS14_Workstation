@@ -18,8 +18,8 @@
   - type: Muted
   - type: TypingIndicator
     proto: robot
-  - type: TTS # Corvax-TTS
-    voice: Meepo
+  - type: TTS # SS220 TTS
+    voicePrototypeId: angry_neco_arc
   - type: Actions
   - type: MobState
     allowedStates:
@@ -42,5 +42,5 @@
     sprite: Objects/Fun/mrdips.rsi
     layers:
     - state: icon
-  - type: TTS # Corvax-TTS
-    voice: Zibb
+  - type: TTS # SS220 TTS
+    voicePrototypeId: brendan

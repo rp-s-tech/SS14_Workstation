@@ -88,8 +88,8 @@
   - type: Machine
     board: HydroponicsTrayMachineCircuitboard
   - type: WiresPanel
-  - type: TTS # Corvax-TTS
-    voice: SentryBot
+  - type: TTS # SS220 TTS
+    voicePrototypeId: sentrybot
   - type: AmbientSound
     volume: -9
     range: 5

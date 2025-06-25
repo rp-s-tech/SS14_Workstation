@@ -10,5 +10,3 @@
     sprite: DarkStation/MainGame/Clothing/Mask/Specific/hokkeymask.rsi
   - type: BreathMask
   - type: IdentityBlocker
-  - type: VoiceMask
-    default: ClothingMaskGas

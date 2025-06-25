@@ -66,7 +66,6 @@ namespace Content.Client.IoC
             collection.Register<TitleWindowManager>();
 
             collection.Register<ISponsorsManager, SponsorsManager>(); // RPSX
-            collection.Register<IBankManager, ClientBankManager>();
         }
     }
 }

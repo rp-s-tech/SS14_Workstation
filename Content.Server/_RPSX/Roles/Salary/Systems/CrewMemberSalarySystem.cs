@@ -26,7 +26,7 @@ public sealed partial class CrewMemberSalarySystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly CartridgeLoaderSystem _cartridgeLoader = default!;
     [Dependency] private readonly RingerSystem _ringerSystem = default!;
-    [Dependency] private readonly IBankManager _bankManager = default!;
+    [Dependency] private readonly SharedBankSystem _bankManager = default!;
 
     public override void Initialize()
     {

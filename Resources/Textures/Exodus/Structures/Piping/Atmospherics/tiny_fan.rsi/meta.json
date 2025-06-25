@@ -1,7 +1,7 @@
 {
     "version": 1,
-    "license": "CLA",
-    "copyright": "by Askolot, owned by Space Exodus (discord:788252896016990219), based on https://github.com/tgstation/tgstation/commit/40d89d11ea4a5cb81d61dc1018b46f4e7d32c62a",
+    "license":  "CC-BY-NC-SA-4.0",
+    "copyright": "RPS-eXtended & by Askolot, owned by Space Exodus (discord:788252896016990219), based on https://github.com/tgstation/tgstation/commit/40d89d11ea4a5cb81d61dc1018b46f4e7d32c62a",
     "size": {
       "x": 32,
       "y": 32

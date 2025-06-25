@@ -613,19 +613,11 @@
         doAfter: 2
 
 - type: construction
-  name: Большое энергоядро НаноТрейзен
   id: EnergyCoreBigConstructionNT
   graph: EnergyCoreBigNT
   startNode: start
   targetNode: EnergyCore
   category: construction-category-structures
-  description: СУПЕР ПУПЕР ЯДРО!
-  icon:
-    sprite: _RPSX/EnergyCores/mini_core-blue.rsi
-    state: icon
-  layers:
-  - sprite: _RPSX/EnergyCores/ec_const_big.rsi
-    state: corpus
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -633,19 +625,11 @@
     - !type:TileNotBlocked
 
 - type: construction
-  name: Большое энергоядро Синдиката
   id: EnergyCoreBigConstructionSyn
   graph: EnergyCoreBigSyn
   startNode: start
   targetNode: EnergyCore
   category: construction-category-structures
-  description: СУПЕР ПУПЕР ЯДРО!
-  icon:
-    sprite: _RPSX/EnergyCores/mini_core-redspace.rsi
-    state: icon
-  layers:
-  - sprite: _RPSX/EnergyCores/ec_const_big.rsi
-    state: corpus
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -653,19 +637,11 @@
   - !type:TileNotBlocked
 
 - type: construction
-  name: Большое энергоядро РнД
   id: EnergyCoreBigConstructionRnD
   graph: EnergyCoreBigRnD
   startNode: start
   targetNode: EnergyCore
   category: construction-category-structures
-  description: СУПЕР ПУПЕР ЯДРО!
-  icon:
-    sprite: _RPSX/EnergyCores/mini_core-RnD.rsi
-    state: icon
-  layers:
-  - sprite: _RPSX/EnergyCores/ec_const_big.rsi
-    state: corpus
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -673,19 +649,11 @@
   - !type:TileNotBlocked
 
 - type: construction
-  name: Большое самодельное энергоядро
   id: EnergyCoreBigConstructionHM
   graph: EnergyCoreBigHM
   startNode: start
   targetNode: EnergyCore
   category: construction-category-structures
-  description: СУПЕР ПУПЕР ЯДРО!
-  icon:
-    sprite: _RPSX/EnergyCores/mini_core-yellow.rsi
-    state: icon
-  layers:
-  - sprite: _RPSX/EnergyCores/ec_const_big.rsi
-    state: corpus
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false

@@ -1,11 +1,9 @@
-﻿using Content.Shared.Actions;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
+﻿using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Server.RPSX.DarkForces.Narsi.Cultist.Abilities.Prototype;
 
-[Prototype("narsiAbilityPrototype")]
+[Prototype("narsiAbilityPrototype"), Serializable]
 public sealed class NarsiAbilityPrototype : IPrototype
 {
     [IdDataField]

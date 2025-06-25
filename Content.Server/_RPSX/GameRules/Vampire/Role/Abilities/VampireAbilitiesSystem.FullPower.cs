@@ -8,6 +8,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager.Attributes;
+using Content.Shared.Actions.Components;
 
 namespace Content.Server.RPSX.GameRules.Vampire.Role.Abilities;
 
@@ -52,7 +53,7 @@ public sealed partial class VampireAbilitiesSystem
             if (keyWord == null)
                 continue;
 
-            if (!oldComponent.OpenedAbilities.ContainsValue(action.Id))
+            if (!oldComponent.OpenedAbilities.ContainsValue(action.Owner))
                 continue;
 
             EntityUid? newActionUid = null;
@@ -63,7 +64,7 @@ public sealed partial class VampireAbilitiesSystem
         }
     }
 
-    private string? FindVampireAction(BaseActionComponent component)
+    private string? FindVampireAction(ActionComponent component)
     {
         foreach (var keyword in component.Keywords)
         {

@@ -1,8 +1,6 @@
 using Content.Shared.RPSX.Bank.PDA.Components;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.RPSX.Bank.PDA;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Content.Server.CartridgeLoader;
 using Content.Shared.RPSX.Bank.Systems;
 
@@ -12,7 +10,6 @@ namespace Content.Server.RPSX.Bank.Systems.PDA
     {
         [Dependency] private readonly BankSystem _bankSystem = default!;
         [Dependency] private readonly CartridgeLoaderSystem _cartridgeLoaderSystem = default!;
-        [Dependency] private readonly IBankManager _bankManager = default!;
 
         public override void Initialize()
         {
@@ -39,7 +36,7 @@ namespace Content.Server.RPSX.Bank.Systems.PDA
 
             var idCardUser = GetEntity(record.MobEntity.Value);
 
-            if (!_bankManager.TryGetBankAccount(idCardUser, out var bank))
+            if (!_bankSystem.TryGetBankAccount(idCardUser, out var bank))
                 return;
 
             var userName = MetaData(idCardUser).EntityName;

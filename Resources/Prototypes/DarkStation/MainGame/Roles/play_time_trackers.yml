@@ -25,14 +25,14 @@
 - type: playTimeTracker
   id: JobArmoredChaplain
 
-# - type: playTimeTracker
-#   id: JobPathologist
+- type: playTimeTracker
+  id: JobPathologist
 
 - type: playTimeTracker
   id: JobSAI
 
-# - type: playTimeTracker
-#   id: JobSurger
+- type: playTimeTracker
+  id: JobSurger
 
 - type: playTimeTracker
   id: JobERTRecon

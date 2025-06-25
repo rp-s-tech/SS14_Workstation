@@ -1,31 +1,29 @@
 - type: entity
+  parent: BaseImplantAction
   id: ActionStimulantsImplant
   name: Inject stimulants into bloodstream
   description: Bring stimulants into your bloodstream now
-  categories: [HideSpawnMenu]
   components:
-    - type: InstantAction
-      checkCanInteract: false
+    - type: Action
       itemIconStyle: BigAction
+      checkCanInteract: false
       priority: -20
       useDelay: 5
       icon:
         sprite: Objects/Specific/Medical/medipen.rsi
         state: stimpen
-      event: !type:ActivateImplantEvent
-
+        
 - type: entity
+  parent: BaseImplantAction
   id: ActionCombatInjectorImplant
   name: Inject medicals into bloodstream
   description: Bring medicals into your bloodstream now
-  categories: [HideSpawnMenu]
   components:
-    - type: InstantAction
-      checkCanInteract: false
+    - type: Action
       itemIconStyle: BigAction
+      checkCanInteract: false
       priority: -20
       useDelay: 5
       icon:
         sprite: Objects/Specific/Medical/medipen.rsi
         state: morphen
-      event: !type:ActivateImplantEvent

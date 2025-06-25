@@ -10,8 +10,8 @@
     Poison:
       metabolismRate: 1
       effects:
-      - !type:RandomTeleportEffect
-        teleportRadius: 5
+      # - !type:RandomTeleportEffect
+      #   teleportRadius: 5
       - !type:HealthChange
         damage:
           types:

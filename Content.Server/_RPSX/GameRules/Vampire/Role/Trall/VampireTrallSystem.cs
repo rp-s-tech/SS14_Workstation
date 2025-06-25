@@ -1,6 +1,6 @@
 using System;
 using Content.Server.RPSX.DarkForces.Saint.Chaplain.Components;
-using Content.Server.RPSX.DarkForces.Saint.Reagent.Events;
+using Content.Shared.RPSX.DarkForces.Saint.Reagent.Events;
 using Content.Server.Mind;
 using Content.Server.Roles;
 using Content.Shared.Humanoid;

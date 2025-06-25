@@ -1,30 +1,42 @@
-# Reporting a Security Vulnerability
+# Responsible Security Disclosure Policy
 
-If you discover a security vulnerability, we appreciate your responsible disclosure. Please **do not publicly disclose the vulnerability** until we explicitly give you permission to do so.
-
-## Contact Methods
-
-### Discord (RPS-eXtended / Dark Station)  
-You can contact us via the Discord Server - "Role Play Systems":  
-[https://discord.gg/G4k7dqt9mk](https://discord.gg/G4k7dqt9mk)
-
-1. Join the server.
-2. **Privately** message anyone with the `@RPSX-Developer` or `@Role Play Systems` role to report a security concern or vulnerability.
-
-
-### Email (Original Upstream / Space Station 14)  
-You can report a security vulnerability via email to the upstream project maintainers:  
-[telecommunications@spacestation14.com](mailto:telecommunications@spacestation14.com)
-
-When contacting via email, please include as many details as possible, such as the steps to reproduce the vulnerability, which systems are affected, and the potential impact.
-
-### Discord (Original Upstream / Space Station 14)  
-If you prefer to contact the original upstream community, you may do so as follows:  
-[https://discord.gg/MwDDf6t](https://discord.gg/MwDDf6t)
-
-1. Join the server.
-2. **Privately** message anyone with the `@Wizard` or `@SS14 Maintainer` role, indicating that you have a security concern or vulnerability to report.
+If you discover a vulnerability in the RPS-eXtended project, please disclose it **privately** and responsibly.
 
 ---
 
-**Important:** By reporting a security vulnerability through any of the above channels, you acknowledge and agree to follow responsible disclosure practices. We will work with you to investigate, address, and publicly disclose the issue once a fix or mitigation is in place.
+## 🔐 How to Report
+
+**Preferred:**
+
+- Discord: [http://discord.rp-s.tech](http://discord.rp-s.tech)
+  - DM anyone with the role `@RPSX-Developer` or `@Role Play Systems`.
+
+**Alternative:**
+
+- Email: [owner@rp-s.tech](mailto:owner@rp-s.tech)
+
+Please include as much detail as possible:
+→ What’s affected, how to reproduce, possible impact, and mitigation suggestions.
+
+---
+
+## 🧭 Upstream / Space Station 14
+
+Some vulnerabilities may affect shared upstream code (e.g. SS14 engine).
+If so, and **only after contacting us**, you may also forward reports to:
+
+- Email: [telecommunications@spacestation14.com](mailto:telecommunications@spacestation14.com)
+- Discord: [https://discord.gg/MwDDf6t](https://discord.gg/MwDDf6t)
+
+> ❗ **Please do not escalate to Space Wizards or the SS14 Hub** before giving us a chance to investigate.
+> Bypassing us may be treated as a violation of our [LICENSE-RPSX.md](./LICENSE-RPSX.md), section 8.2.
+
+---
+
+## 🤝 What Happens Next
+
+- We will confirm receipt and begin investigating.
+- Fixes will be prioritized and published as necessary.
+- You may receive public credit (optional).
+
+Thank you for your cooperation and helping us maintain the security of RPS-eXtended.

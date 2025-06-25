@@ -1,15 +1,17 @@
 - type: entity
+  parent: BaseActionPolymorph
   id: ActionMorphGeras
   name: Morph into Geras
   description: Morphs you into a Geras - a miniature version of you which allows you to move fast, at the cost of your inventory.
   components:
   - type: ConfirmableAction
     popup: geras-transformation-popup
-  - type: InstantAction
+  - type: Action
     itemIconStyle: BigAction
-    useDelay: 10 # prevent spam
     priority: -20
+    useDelay: 10
     icon:
       sprite: Mobs/Aliens/slimes.rsi
       state: blue_adult_slime
+  - type: InstantAction
     event: !type:MorphIntoGeras

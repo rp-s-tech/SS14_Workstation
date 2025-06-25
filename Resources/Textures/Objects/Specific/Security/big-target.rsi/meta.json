@@ -1,7 +1,7 @@
 {
     "version": 1,
-    "license": "Собственная лицензия. Полный запрет на копирование и использование вне проекта Dark Station без одобрения текущего владельца проекта",
-    "copyright": "Unotka and Rosi",
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "RPS-eXtended & Unotka and Rosi",
     "size": {
         "x": 64,
         "y": 64

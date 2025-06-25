@@ -68,7 +68,7 @@ namespace Content.Server.Stunnable.Systems
                 TryComp<ItemComponent>(uid, out var item))
             {
                 _item.SetHeldPrefix(uid, "off", component: item);
-                _appearance.SetData(uid, ToggleVisuals.Toggled, false, appearance);
+                _appearance.SetData(uid, ToggleableVisuals.Enabled, false, appearance);
             }
 
             _audio.PlayPvs(comp.SparksSound, uid, AudioHelpers.WithVariation(0.25f));
@@ -86,7 +86,7 @@ namespace Content.Server.Stunnable.Systems
                 EntityManager.TryGetComponent<ItemComponent>(uid, out var item))
             {
                 _item.SetHeldPrefix(uid, "on", component: item);
-                _appearance.SetData(uid, ToggleVisuals.Toggled, true, appearance);
+                _appearance.SetData(uid, ToggleableVisuals.Enabled, true, appearance);
             }
 
             _audio.PlayPvs(comp.SparksSound, uid, AudioHelpers.WithVariation(0.25f));

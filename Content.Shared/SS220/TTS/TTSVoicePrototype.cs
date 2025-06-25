@@ -10,9 +10,6 @@ namespace Content.Shared.SS220.TTS;
 // ReSharper disable once InconsistentNaming
 public sealed class TTSVoicePrototype : IPrototype
 {
-    [IdDataField]
-    public string ID { get; } = default!;
-
     [DataField("name")]
     public string Name { get; } = string.Empty;
 
@@ -20,8 +17,15 @@ public sealed class TTSVoicePrototype : IPrototype
     public Sex Sex { get; } = default!;
 
     [ViewVariables(VVAccess.ReadWrite)]
+    [DataField(required: true)]
+    public string Description { get; } = string.Empty;
+
+    [ViewVariables(VVAccess.ReadWrite)]
     [DataField("speaker", required: true)]
     public string Speaker { get; } = string.Empty;
+
+    [IdDataField]
+    public string ID { get; } = default!;
 
     /// <summary>
     /// Whether the species is available "at round start" (In the character editor)

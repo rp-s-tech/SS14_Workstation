@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Content.Server.RPSX.DarkForces.Narsi.Cultist.Abilities.FireArms;
-using Content.Server.RPSX.DarkForces.Saint.Reagent.Events;
+using Content.Shared.RPSX.DarkForces.Saint.Reagent.Events;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;

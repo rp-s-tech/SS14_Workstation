@@ -6,7 +6,7 @@ using Content.Shared.RPSX.DarkForces.Narsi.Cultist.Muzzle;
 using Content.Shared.RPSX.DarkForces.Narsi.Roles;
 using Content.Shared.Speech.Muting;
 using Robust.Shared.GameObjects;
-using Content.Server.RPSX.DarkForces.Saint.Reagent.Events;
+using Content.Shared.RPSX.DarkForces.Saint.Reagent.Events;
 
 namespace Content.Server.RPSX.DarkForces.Narsi.Cultist.Abilities;
 

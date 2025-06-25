@@ -4,10 +4,10 @@
   graph:
   - node: start
     edges:
-    - to: cross
+    - to: сhaplainCross
       steps:
       - material: WoodPlank
         amount: 5
         doAfter: 4
-  - node: cross
-    entity: cross
+  - node: сhaplainCross
+    entity: ChaplainCross

@@ -27,7 +27,7 @@ public sealed partial class BankATMSystem : EntitySystem
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IBankManager _bankManager = default!;
+    [Dependency] private readonly SharedBankSystem _bankSystem = default!;
 
     public override void Initialize()
     {
@@ -50,7 +50,7 @@ public sealed partial class BankATMSystem : EntitySystem
             _uiSystem.SetUiState(uid, args.UiKey, new BankATMMenuInterfaceState(0, true, 0));
         }
 
-        if (!_bankManager.TryGetBankAccount(args.Actor, out var bank))
+        if (!_bankSystem.TryGetBankAccount(args.Actor, out var bank))
             return;
 
         GetInsertedCashAmount(uid, out var deposit);
@@ -62,8 +62,8 @@ public sealed partial class BankATMSystem : EntitySystem
         }
 
         // Попытка снять средства
-        var transaction = _bankManager.CreateWithdrawTransaction(uid, args.Amount);
-        if (!_bankManager.TryExecuteTransaction(args.Actor, actor.PlayerSession.UserId, transaction))
+        var transaction = _bankSystem.CreateWithdrawTransaction(uid, args.Amount);
+        if (!_bankSystem.TryExecuteTransaction(args.Actor, actor.PlayerSession.UserId, transaction))
         {
             PlayDenySound(uid, component, "bank-atm-menu-transaction-denied");
             return;
@@ -88,13 +88,13 @@ public sealed partial class BankATMSystem : EntitySystem
             _uiSystem.SetUiState(uid, args.UiKey, new BankATMMenuInterfaceState(0, true, 0));
         }
 
-        if (!_bankManager.TryGetBankAccount(args.Actor, out var bank))
+        if (!_bankSystem.TryGetBankAccount(args.Actor, out var bank))
             return;
 
         GetInsertedCashAmount(uid, out var deposit);
 
-        var transaction = _bankManager.CreateDepositTransaction(uid, deposit);
-        if (!_bankManager.TryExecuteTransaction(args.Actor, actor.PlayerSession.UserId, transaction))
+        var transaction = _bankSystem.CreateDepositTransaction(uid, deposit);
+        if (!_bankSystem.TryExecuteTransaction(args.Actor, actor.PlayerSession.UserId, transaction))
         {
             PlayDenySound(uid, component, "bank-atm-menu-transaction-denied");
             return;
@@ -119,7 +119,7 @@ public sealed partial class BankATMSystem : EntitySystem
 
         GetInsertedCashAmount(uid, out var deposit);
 
-        if (!_bankManager.TryGetBankAccount(actor.Value, out var bank))
+        if (!_bankSystem.TryGetBankAccount(actor.Value, out var bank))
             return;
 
         _uiSystem.SetUiState(uid, BankATMMenuUiKey.ATM, new BankATMMenuInterfaceState(bank.Balance, true, deposit));
@@ -133,7 +133,7 @@ public sealed partial class BankATMSystem : EntitySystem
             _uiSystem.SetUiState(uid, args.UiKey, new BankATMMenuInterfaceState(0, true, 0));
         }
 
-        if (!_bankManager.TryGetBankAccount(args.Actor, out var bank))
+        if (!_bankSystem.TryGetBankAccount(args.Actor, out var bank))
             return;
 
         GetInsertedCashAmount(uid, out var deposit);

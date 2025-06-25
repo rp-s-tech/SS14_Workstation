@@ -14,7 +14,7 @@ using Content.Shared.Coordinates;
 
 namespace Content.Server.RPSX.Bank.Systems
 {
-    public sealed partial class BankSystem : EntitySystem
+    public sealed partial class BankSystem : SharedBankSystem
     {
         [Dependency] private readonly StationRecordsSystem _stationRecordsSystem = default!;
         [Dependency] private readonly IServerPreferencesManager _prefsManager = default!;

@@ -9,27 +9,13 @@
       connections:
         - legs
       organs:
-        brain: #Ага, человеческий, альтернативы то нет.
-          organ: OrganHumanBrain
-          type: Brain
-        lungs:
-          organ: OrganAnimalLungs
-          type: Lung
-        stomach:
-          organ: OrganAnimalRuminantStomach
-          type: Stomach
-        stomach2:
-          organ: OrganAnimalRuminantStomach
-          type: Stomach
-        liver:
-          organ: OrganAnimalLiver
-          type: Liver
-        heart:
-          organ: OrganAnimalHeart
-          type: Heart
-        kidneys:
-          organ: OrganAnimalKidneys
-          type: Kidney
+        brain: OrganHumanBrain
+        lungs: OrganAnimalLungs
+        stomach: OrganAnimalRuminantStomach
+        stomach2: OrganAnimalRuminantStomach
+        liver: OrganAnimalLiver
+        heart: OrganAnimalHeart
+        kidneys: OrganAnimalKidneys
     legs:
       part: LegsAnimal
       connections:

@@ -30,19 +30,19 @@
     state: KnightofStardust
   jobName: job-name-security-knight
 
-# - type: jobIcon
-#   parent: JobIcon
-#   id: JobIconSurger
-#   icon:
-#     sprite: /Textures/Interface/Misc/job_icons.rsi
-#     state: Surger
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSurger
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Surger
 
-# - type: jobIcon
-#   parent: JobIcon
-#   id: JobIconPathologist
-#   icon:
-#     sprite: /Textures/Interface/Misc/job_icons.rsi
-#     state: JobIconPathologist
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconPathologist
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: JobIconPathologist
 
 - type: jobIcon
   parent: JobIcon

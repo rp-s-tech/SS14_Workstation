@@ -1,21 +1,23 @@
 ﻿- type: entity
+  parent: BaseEntitySpellAction
   id: ActionAttackLighting
-  name: Выстрел молнией
-  description: Создает молнию, которая наносит мощный урон скверной.
-  categories: [ HideSpawnMenu ]
+  name: Blightstorm Bolt
+  description: Summons a lightning bolt that deals powerful blight damage.
   components:
-    - type: EntityTargetAction
+    - type: Action
+      itemIconStyle: NoItem
+      useDelay: 20
       icon:
         sprite: Interface/Actions/carp_rift.rsi
         state: icon
-      useDelay: 20
-      itemIconStyle: NoItem
+    - type: TargetAction
       checkCanAccess: true
       range: 6.0
+    - type: EntityTargetAction
       event: !type:AttackLightningEvent
 
 - type: entity
-  name: молния скверны
+  name: Blightstorm Bolt
   id: CursedMonkLightning
   categories: [ HideSpawnMenu ]
   components:

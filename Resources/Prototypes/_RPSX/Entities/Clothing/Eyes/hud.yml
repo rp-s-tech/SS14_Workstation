@@ -33,11 +33,8 @@
     - type: ShowThirstIcons
 
 - type: entity
+  parent: BaseToggleAction
   id: ActionToggleAghostOmniHud
   name: Toggle AghostOmniHUD
   description: Toggles AghostHUD on and off.
-  components:
-  - type: InstantAction
-    itemIconStyle: BigItem
-    event: !type:ToggleActionEvent
 

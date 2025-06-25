@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Content.Server.RPSX.DarkForces.Saint.Reagent.Events;
+using Content.Shared.RPSX.DarkForces.Saint.Reagent.Events;
 using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;

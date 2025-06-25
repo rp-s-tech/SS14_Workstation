@@ -8,13 +8,8 @@
       connections:
       - torso
       organs:
-        brain:
-          organ: OrganHumanBrain
-          type: Brain
-        eyes:
-          organ: OrganHumanEyes
-          type: Eye
-          internal: false
+        brain: OrganHumanBrain
+        eyes: OrganHumanEyes
     torso:
       part: TorsoVulpkanin
       connections:
@@ -24,21 +19,11 @@
       - right leg
       - tail
       organs:
-        heart:
-          organ: OrganAnimalHeart
-          type: Heart
-        lungs:
-          organ: OrganHumanLungs
-          type: Lung
-        stomach:
-          organ: OrganVulpkaninStomach
-          type: Stomach
-        liver:
-          organ: OrganAnimalLiver
-          type: Liver
-        kidneys:
-          organ: OrganHumanKidneys
-          type: Kidney
+        heart: OrganAnimalHeart
+        lungs: OrganHumanLungs
+        stomach: OrganVulpkaninStomach
+        liver: OrganAnimalLiver
+        kidneys: OrganHumanKidneys
     right arm:
       part: RightArmVulpkanin
       connections:

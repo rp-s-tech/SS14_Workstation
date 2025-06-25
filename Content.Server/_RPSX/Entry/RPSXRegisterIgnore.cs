@@ -20,13 +20,10 @@ public sealed class RPSXRegisterIgnore
             componentFactory.RegisterIgnore(IgnoredSecretComponents.List);
 
             prototypeManager.RegisterIgnore("stationGoal");
-            prototypeManager.RegisterIgnore("narsiAbilityPrototype");
-            prototypeManager.RegisterIgnore("narsiRitualCategory");
-            prototypeManager.RegisterIgnore("narsiRitual");
-            prototypeManager.RegisterIgnore("diseaseBlacklistPrototype");
-            prototypeManager.RegisterIgnore("disease");
-            prototypeManager.RegisterIgnore("diseaseCure");
-            prototypeManager.RegisterIgnore("diseaseStage");
+            // prototypeManager.RegisterIgnore("diseaseBlacklistPrototype");
+            // prototypeManager.RegisterIgnore("disease");
+            // prototypeManager.RegisterIgnore("diseaseCure");
+            // prototypeManager.RegisterIgnore("diseaseStage");
 
         }
 

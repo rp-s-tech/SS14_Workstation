@@ -132,10 +132,9 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("alertLevels");
             _prototypeManager.RegisterIgnore("nukeopsRole");
             _prototypeManager.RegisterIgnore("ghostRoleRaffleDecider");
-            _prototypeManager.RegisterIgnore("stationGoal");
-            _prototypeManager.RegisterIgnore("CentralCommandFaxPrototype");
-            _prototypeManager.RegisterIgnore("ERTGroup");
-            _prototypeManager.RegisterIgnore("flavor");
+            _prototypeManager.RegisterIgnore("stationGoal"); //RPSX
+            _prototypeManager.RegisterIgnore("CentralCommandFaxPrototype"); //RPSX
+            _prototypeManager.RegisterIgnore("ERTGroup"); //RPSX
             _prototypeManager.RegisterIgnore("salaries"); //RPSX
             _prototypeManager.RegisterIgnore("narsiAbilityPrototype"); //RPSX
             _prototypeManager.RegisterIgnore("narsiRitualCategory"); //RPSX

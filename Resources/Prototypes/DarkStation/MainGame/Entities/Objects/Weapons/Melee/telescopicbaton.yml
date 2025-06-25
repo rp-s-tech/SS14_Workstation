@@ -8,7 +8,7 @@
     sprite: DarkStation/MainGame/Objects/Weapons/Melee/telescopicbaton.rsi
     layers:
     - state: telescopicbaton_off
-      map: [ "enum.ToggleVisuals.Layer" ]
+      map: [ "enum.ToggleableVisuals.Layer" ]
   - type: Telescopicbaton
   - type: MeleeWeapon
     wideAnimationRotation: -135
@@ -37,8 +37,8 @@
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-     enum.ToggleVisuals.Toggled:
-        enum.ToggleVisuals.Layer:
+     enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
           True: {state: telescopicbaton_on}
           False: {state: telescopicbaton_off}
   - type: StaticPrice

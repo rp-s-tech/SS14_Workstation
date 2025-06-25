@@ -57,12 +57,12 @@ public sealed partial class PontificSystem : EntitySystem
     private void OnPontificShutdown(EntityUid uid, PontificComponent component, ComponentShutdown args)
     {
         var actions = _sharedActions.GetActions(uid);
-        foreach (var (action, comp) in actions)
+        foreach (var action in actions)
         {
-            if (comp.BaseEvent is not IPontificAction)
+            if (_sharedActions.GetEvent(action) is not IPontificAction)
                 continue;
 
-            _sharedActions.RemoveAction(uid, action);
+            _sharedActions.RemoveAction(uid, action.Owner);
         }
     }
 }

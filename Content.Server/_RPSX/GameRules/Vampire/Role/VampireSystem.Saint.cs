@@ -1,6 +1,6 @@
 ﻿using Content.Server.RPSX.DarkForces.Saint.Saintable.Events;
 using Content.Server.RPSX.GameRules.Vampire.Role.Components;
-using Content.Server.RPSX.DarkForces.Saint.Reagent.Events;
+using Content.Shared.RPSX.DarkForces.Saint.Reagent.Events;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Popups;

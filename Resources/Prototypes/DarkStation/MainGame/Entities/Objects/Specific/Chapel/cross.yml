@@ -1,8 +1,8 @@
 ﻿- type: entity
-  name: Крест
+  name: Holy Cross
   parent: BaseItem
   id: ChaplainCross
-  description: Используется для защиты от нечести (бесполезен, если не освятить библией)
+  description: A symbol of faith, capable of repelling evil. Without a blessing, it's just a trinket.
   components:
   - type: Clothing
     quickEquip: true

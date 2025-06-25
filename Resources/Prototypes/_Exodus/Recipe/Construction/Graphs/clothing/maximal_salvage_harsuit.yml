@@ -1,22 +1,33 @@
 - type: constructionGraph
-  id: SalvageMaximalSuit
+  id: HardsuitSalvageMaximal
   start: start
   graph:
-    - node: start
-      edges:
-        - to: ClothingOuterHardsuitSalvageMaximal
-          steps:
-            - tag: HardsuitMining
-              name: mining hardsuit
-              icon:
-                sprite: Clothing/OuterClothing/Hardsuits/salvage.rsi
-                state: icon
-              doAfter: 5
-            - material: Durathread
-              amount: 5
-              doAfter: 5
-            - material: GoliathHide
-              amount: 3
-              doAfter: 5
-    - node: ClothingOuterHardsuitSalvageMaximal
-      entity: ClothingOuterHardsuitSalvageMaximal
+  - node: start
+    edges:
+    - to: hardsuitSalvageMaximal
+      steps:
+        - tag: HardsuitGoliath
+          name: construction-graph-tag-goliath-hardsuit
+          icon:
+            sprite: Clothing/OuterClothing/Hardsuits/goliath.rsi
+            state: icon
+        - material: Durathread
+          amount: 5
+        - tag: HivelordRemains
+          name: construction-graph-component-rorocore
+          icon:
+            sprite: Objects/Consumable/Food/rorocore.rsi
+            state: boiled
+        - tag: HivelordRemains
+          name: construction-graph-component-rorocore
+          icon:
+            sprite: Objects/Consumable/Food/rorocore.rsi
+            state: boiled
+        - tag: HivelordRemains
+          name: construction-graph-component-rorocore
+          icon:
+            sprite: Objects/Consumable/Food/rorocore.rsi
+            state: boiled
+          doAfter: 15
+  - node: hardsuitSalvageMaximal
+    entity: ClothingOuterHardsuitSalvageMaximal

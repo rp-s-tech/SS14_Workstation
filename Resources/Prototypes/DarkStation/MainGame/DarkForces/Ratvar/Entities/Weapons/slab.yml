@@ -68,86 +68,96 @@
     - RatvarAnchoring
 
 - type: entity
+  parent: BaseAction
   id: ActionRatvarSlabStun
-  categories: [ HideSpawnMenu ]
   name: "Оглушение"
   description: "Оглушает цель"
   components:
+  - type: Action
+    itemIconStyle: BigItem
+    useDelay: 10
+    checkCanInteract: true
+  - type: TargetAction
+    range: 6
+    interactOnMiss: false
   - type: EntityTargetAction
     canTargetSelf: false
-    checkCanInteract: true
-    interactOnMiss: false
     whitelist:
       components:
       - Body
-    useDelay: 10
-    range: 6
-    itemIconStyle: BigItem
     event: !type:RatvarSlabStun
 
 - type: entity
+  parent: BaseAction
   id: ActionRatvarSlabDoors
-  categories: [ HideSpawnMenu ]
   name: "Создание прохода"
   description: "Открывает двери и шкафы"
   components:
+  - type: Action
+    itemIconStyle: BigItem
+    useDelay: 10
+    checkCanInteract: true
+  - type: TargetAction
+    range: 6
+    interactOnMiss: false
   - type: EntityTargetAction
     canTargetSelf: false
-    checkCanInteract: true
-    interactOnMiss: false
     whitelist:
       components:
       - Door
-    useDelay: 10
-    range: 6
-    itemIconStyle: BigItem
     event: !type:RatvarSlabDoors
 
 - type: entity
+  parent: BaseAction
   id: ActionRatvarSlabWalls
-  categories: [ HideSpawnMenu ]
   name: "Терраформ"
   description: "При использовании на ОБЫЧНОЙ стене, делает из неё фальшивую стену"
   components:
+  - type: Action
+    itemIconStyle: BigItem
+    useDelay: 30
+    checkCanInteract: true
+  - type: TargetAction
+    range: 6
+    interactOnMiss: false
   - type: EntityTargetAction
     canTargetSelf: false
-    checkCanInteract: true
-    interactOnMiss: false
     whitelist:
       tags:
       - Wall
-    useDelay: 30
-    range: 6
-    itemIconStyle: BigItem
     event: !type:RatvarSlabWalls
 
 - type: entity
+  parent: BaseAction
   id: ActionRatvarSlabTeleport
-  categories: [ HideSpawnMenu ]
   name: "Телепортация"
   description: "Телепортация к алтарю или видимой области"
   components:
-  - type: WorldTargetAction
-    useDelay: 10
+  - type: Action
     itemIconStyle: BigItem
+    useDelay: 10
+  - type: TargetAction
     range: 16
+  - type: WorldTargetAction
     event: !type:RatvarSlabTeleport
 
 - type: entity
+  parent: BaseAction
   id: ActionRatvarSlabHidings
-  categories: [ HideSpawnMenu ]
   name: "Сокрытие шестерней"
   description: "Маскирует постройки праведников под кусты и шкафы"
   components:
+  - type: Action
+    itemIconStyle: BigItem
+    useDelay: 10
+    checkCanInteract: true
+  - type: TargetAction
+    range: 6
+    interactOnMiss: false
   - type: EntityTargetAction
     canTargetSelf: false
     whitelist:
       components:
       - RatvarItem
       - RatvarStructure
-    checkCanInteract: true
-    interactOnMiss: false
-    useDelay: 10
-    range: 6
-    itemIconStyle: BigItem
     event: !type:RatvarSlabHidings

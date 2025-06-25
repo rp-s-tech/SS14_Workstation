@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Content.Server.RPSX.DarkForces.Saint.Items.Cross.Events;
-using Content.Server.RPSX.DarkForces.Saint.Reagent.Events;
+using Content.Shared.RPSX.DarkForces.Saint.Reagent.Events;
 using Content.Server.RPSX.DarkForces.Saint.Saintable.Events;
 using Content.Server.Polymorph.Systems;
 using Content.Server.Popups;
