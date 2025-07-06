@@ -32,14 +32,14 @@
 
 # BrigMedic
 - type: loadoutGroup
-  id: SecurityBrigMedicJumpsuit
+  id: BrigmedicJumpsuit
   name: loadout-group-brigmedic-jumpsuit
   loadouts:
     - SecurityBrigMedicJumpsuit
     - SecurityBrigMedicJumpskirt
 
 - type: loadoutGroup
-  id: SecurityBrigMedicBackpack
+  id: BrigmedicBackpack
   name: loadout-group-brigmedic-backpack
   loadouts:
     - SecurityBrigMedicBackpack
@@ -47,48 +47,48 @@
     - SecurityBrigMedicBackpackSatchel
 
 - type: loadoutGroup
-  id: SecurityBrigMedicOuterClothing
+  id: BrigmedicOuterClothing
   name: loadout-group-brigmedic-outerclothing
   loadouts:
     - SecurityBrigMedicCoatAMG
     - SecurityBrigMedicCoat
     - SecurityBrigMedicHardsuitApotecary
 
-# - type: loadoutGroup
-#   id: SecurityBrigMedicShoes
-#   name: loadout-group-brigmedic-shoes
-#   loadouts:
-#     - SecurityBrigMedicShoesRed
+- type: loadoutGroup
+  id: BrigmedicShoes
+  name: loadout-group-brigmedic-shoes
+  loadouts:
+    - SecurityBrigMedicShoesRed
 
-# - type: loadoutGroup
-#   id: SecurityBrigMedicGloves
-#   name: loadout-group-brigmedic-gloves
-#   loadouts:
-#     - SecurityBrigMedicGloves
+- type: loadoutGroup
+  id: BrigmedicGloves
+  name: loadout-group-brigmedic-gloves
+  loadouts:
+    - SecurityBrigMedicGloves
 
-# - type: loadoutGroup
-#   id: SecurityBrigMedicEyes
-#   name: loadout-group-brigmedic-eyes
-#   loadouts:
-#     - SecurityBrigMedicEyesHudMedical
+- type: loadoutGroup
+  id: BrigMedicEyes
+  name: loadout-group-brigmedic-eyes
+  loadouts:
+    - SecurityBrigMedicEyesHudMedical
 
-# - type: loadoutGroup
-#   id: SecurityBrigMedicHead
-#   name: loadout-group-brigmedic-head
-#   loadouts:
-#     - SecurityBrigMedicHeadHatBeret
+- type: loadoutGroup
+  id: BrigmedicHead
+  name: loadout-group-brigmedic-head
+  loadouts:
+    - SecurityBrigMedicHeadHatBeret
 
-# - type: loadoutGroup
-#   id: SecurityBrigMedicMask
-#   name: loadout-group-brigmedic-mask
-#   loadouts:
-#     - SecurityBrigMedicMaskBreathMedicalSecurity
+- type: loadoutGroup
+  id: BrigmedicMask
+  name: loadout-group-brigmedic-mask
+  loadouts:
+    - SecurityBrigMedicMaskBreathMedicalSecurity
 
-# - type: loadoutGroup
-#   id: SecurityBrigMedicBelt
-#   name: loadout-group-brigmedic-belt
-#   loadouts:
-#     - SecurityBrigMedicBeltMedicalFilled
+- type: loadoutGroup
+  id: BrigMedicBelt
+  name: loadout-group-brigmedic-belt
+  loadouts:
+    - SecurityBrigMedicBeltMedicalFilled
 
 # BlueShield Officer
 - type: loadoutGroup

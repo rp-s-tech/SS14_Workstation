@@ -25,22 +25,23 @@
     belt: ClothingBeltMedicalFilled
 
 - type: entity
-  parent: BasePDA
+  parent: BaseMedicalPDA
   id: SurgeryMedicalPDA
   name: КПК хирурга
   description: В нем какие-то заметки о почках
   components:
   - type: Pda
     id: SurgeryMedicalIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-medical
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentVColor: "#447987"
   - type: Icon
     state: pda-medical
-  - type: HealthAnalyzer
-    scanDelay: 1
-    scanningEndSound:
-      path: "/Audio/Items/Medical/healthscanner.ogg"
 
 - type: entity
   parent: IDCardStandard

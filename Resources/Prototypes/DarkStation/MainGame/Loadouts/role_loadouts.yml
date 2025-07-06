@@ -16,17 +16,18 @@
 - type: roleLoadout
   id: JobBrigmedic
   groups:
-  - SecurityBrigMedicJumpsuit
-  - SecurityBrigMedicBackpack
-  - SecurityBrigMedicOuterClothing
-  - SecurityBrigMedicShoes
-  - SecurityBrigMedicGloves
-  - SecurityBrigMedicEyes
-  - SecurityBrigMedicHead
-  - SecurityBrigMedicMask
-  - SecurityBrigMedicBelt
+  - BrigmedicHead
+  - BrigMedicEyes
+  - BrigmedicMask
+  - BrigmedicJumpsuit
+  - BrigmedicGloves
+  - BrigmedicBackpack
+  - BrigMedicBelt
+  - BrigmedicOuterClothing
+  - BrigmedicShoes
   - SurvivalSecurity
   - GroupSpeciesBreathToolSecurity
+  - Trinkets
 
 - type: roleLoadout
   id: JobBlueShieldOfficer

@@ -6,6 +6,9 @@
   name: "vulpkanin body part"
   abstract: true
   components:
+    - type: Damageable
+      damageContainer: Biological
+    - type: BodyPart
     - type: Extractable
       juiceSolution:
         reagents:
@@ -15,6 +18,16 @@
             Quantity: 10
     - type: SurgeryBodyPart
       species: vulpkanin
+    - type: ContainerContainer
+      containers:
+        bodypart: !type:Container
+          ents: [ ]
+        attachment: !type:Container
+          ents: [ ]
+        slotAttachment: !type:Container
+          ents: [ ]
+    - type: StaticPrice
+      price: 100
 
 - type: entity
   id: TorsoVulpkanin

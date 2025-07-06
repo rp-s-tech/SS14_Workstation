@@ -29,7 +29,7 @@
     - ForensicScanner
 
 - type: entity
-  parent: BasePDA
+  parent: BaseMedicalPDA
   id: PathologistMedicalPDA
   name: КПК патологоанатома
   description: В нем какие-то заметки о трупах..
@@ -39,12 +39,13 @@
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentVColor: "#70534b"
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-medical
   - type: Icon
-    state: MedicalIDCard
-  - type: HealthAnalyzer
-    scanDelay: 1
-    scanningEndSound:
-      path: "/Audio/Items/Medical/healthscanner.ogg"
+    state: pda-medical
 
 - type: entity
   parent: IDCardStandard

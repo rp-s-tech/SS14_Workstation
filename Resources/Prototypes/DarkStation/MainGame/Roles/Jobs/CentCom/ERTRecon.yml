@@ -60,7 +60,7 @@
   speciesBlacklist:
     - Diona
     - Vox
-    - Nucleation
+    # - Nucleation
   parent: EventHumanoidMindShielded
   randomizeName: false
   components:

@@ -5,7 +5,7 @@ holopad-window-options = [color=darkgray][font size=10][italic]Пожалуйс�
 # Call status
 holopad-window-no-calls-in-progress = Нет вызовов в данный момент
 holopad-window-incoming-call = Входящий вызов от:
-holopad-window-relay-label = Originating at:
+holopad-window-relay-label = Происходит из:
 holopad-window-outgoing-call = Попытка установить соединение...
 holopad-window-call-in-progress = Идёт вызов
 holopad-window-call-ending = Отключение...

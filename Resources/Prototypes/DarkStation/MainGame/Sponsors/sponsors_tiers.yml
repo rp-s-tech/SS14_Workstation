@@ -34,8 +34,6 @@
   ghosts:
   - MobObserverSponsorAngel
   - MobObserverSponsorDemon
-  allowedSpecies:
-  - Nucleation
 
 - type: sponsorTier
   id: Specialist
@@ -75,8 +73,6 @@
   - MobObserverSponsorDark
   - MobObserverSponsorDemon
   - MobObserverSponsorGhostClown
-  allowedSpecies:
-  - Nucleation
 
 - type: sponsorTier
   id: Officer
@@ -119,8 +115,6 @@
   - MobObserverSponsorDemon
   - MobObserverSponsorGhostClown
   - MobObserverSponsorMime
-  allowedSpecies:
-  - Nucleation
 
 - type: sponsorTier
   id: Supervisor
@@ -165,8 +159,6 @@
   - MobObserverSponsorMime
   - MobObserverSponsorPlagueDoctor
   - MobObserverSponsorShadow
-  allowedSpecies:
-  - Nucleation
 
 - type: sponsorTier
   id: Corporate
@@ -215,8 +207,6 @@
   - MobObserverSponsorHawai
   - MobObserverSponsorSkeleton
   - MobObserverSponsorTerminator
-  allowedSpecies:
-  - Nucleation
 
 ## Роль для частых игроков при текущем онлайне
 
@@ -236,8 +226,6 @@
   - HumanHairShy
   - HumanHairSpicy
   - HumanHairWife
-  allowedSpecies:
-  - Nucleation
 
 - type: sponsorTier
   id: FullAccess
@@ -286,5 +274,3 @@
   - MobObserverSponsorHawai
   - MobObserverSponsorSkeleton
   - MobObserverSponsorTerminator
-  allowedSpecies:
-  - Nucleation

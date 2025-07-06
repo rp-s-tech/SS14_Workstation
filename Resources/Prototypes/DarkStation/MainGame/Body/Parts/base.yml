@@ -3,5 +3,3 @@
   components:
   - type: SurgeryWoundablePart
     maxDamage: 100
-    canBeDollTarget: true
-    canBeExplosionTarget: true
