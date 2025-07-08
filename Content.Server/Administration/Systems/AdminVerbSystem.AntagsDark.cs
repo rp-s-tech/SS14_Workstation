@@ -38,17 +38,6 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(narsiCultLeader);
 
-        Verb vampire = new()
-        {
-            Text = "Сделать вампиром",
-            Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/DarkStation/MainGame/DarkForces/Vampire/icons.rsi"), "vampire"),
-            Act = () => _antagBridge.ForceMakeVampire(player),
-            Impact = LogImpact.High,
-            Message = "Делает цель вампиром"
-        };
-        args.Verbs.Add(vampire);
-
         Verb ratvar = new()
         {
             Text = "Сделать праведником Ратвара",

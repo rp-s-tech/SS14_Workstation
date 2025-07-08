@@ -45,22 +45,3 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 72000 # 20h
-
-#Vampire
-- type: antag
-  id: Vampire
-  name: Вампир
-  antagonist: true
-  setPreference: true
-  objective: "Станьте высшим вампиром и уничтожьте станцию"
-  requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 72000 # 20h
-
-- type: antag
-  id: VampireTrall
-  name: Тралл Вампира
-  antagonist: true
-  setPreference: false
-  objective: "Служите вампирам, уничтожьте станцию."
-

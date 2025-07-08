@@ -17,7 +17,6 @@ public sealed partial class ChaplainSystem : EntitySystem
         SubscribeLocalEvent<ChaplainComponent, ComponentShutdown>(OnChaplainShutdown);
 
         InitializeNarsi();
-        InitializeVampire();
         InitializeAbilities();
         InitializeForceWall();
     }

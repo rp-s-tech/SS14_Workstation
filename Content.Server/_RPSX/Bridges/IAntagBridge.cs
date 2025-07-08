@@ -1,6 +1,5 @@
 ﻿using Content.Server.RPSX.GameTicking.Rules.Narsi;
 using Content.Server.RPSX.GameTicking.Rules.Ratvar;
-using Content.Server.RPSX.GameTicking.Rules.Vampire;
 using Content.Server.Antag;
 using Content.Server.RPSX.DarkForces.Narsi.Progress;
 using Content.Shared.RPSX.DarkForces.Narsi.Roles;
@@ -18,8 +17,6 @@ public interface IAntagBridge
     void ForceMakeRatvarRighteous(ICommonSession session);
 
     void ForceMakeRatvarRighteous(EntityUid uid);
-
-    void ForceMakeVampire(ICommonSession session);
 }
 
 public sealed class StubAntagBridge : IAntagBridge
@@ -32,8 +29,6 @@ public sealed class StubAntagBridge : IAntagBridge
     [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultRatvarRule = "Ratvar";
 
-    [ValidatePrototypeId<EntityPrototype>]
-    private const string DefaultVampireRule = "Vampire";
 
     public void ForceMakeCultist(ICommonSession session)
     {
@@ -70,9 +65,4 @@ public sealed class StubAntagBridge : IAntagBridge
         ForceMakeRatvarRighteous(actor.PlayerSession);
     }
 
-    public void ForceMakeVampire(ICommonSession session)
-    {
-        var antag = _entityManager.System<AntagSelectionSystem>();
-        antag.ForceMakeAntag<VampireRuleComponent>(session, DefaultVampireRule);
-    }
 }

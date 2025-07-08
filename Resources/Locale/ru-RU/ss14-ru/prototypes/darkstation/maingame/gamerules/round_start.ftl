@@ -10,5 +10,3 @@ ent-MindRoleRatvar = Ratvar Cultist Role
     .desc = { ent-BaseMindRoleAntag.desc }
 ent-Vampire = { ent-BaseGameRule }
     .desc = { ent-BaseGameRule.desc }
-ent-MindRoleVampire = Vampire Role
-    .desc = { ent-BaseMindRoleAntag.desc }

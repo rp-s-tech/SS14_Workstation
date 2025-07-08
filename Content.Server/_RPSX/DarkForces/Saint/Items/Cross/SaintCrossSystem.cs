@@ -23,7 +23,6 @@ public sealed partial class SaintCrossSystem : EntitySystem
         SubscribeLocalEvent<SaintCrossComponent, ComponentInit>(OnSaintCrossInit);
         SubscribeLocalEvent<SaintCrossComponent, OnItemSainted>(OnItemSainted);
 
-        InitializeVampire();
         InitializeDamage();
     }
 
