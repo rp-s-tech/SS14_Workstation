@@ -24,7 +24,7 @@
       - Trash
   - type: Ammo
   - type: Sprite
-    sprite: Objects/Fun/toys.rsi
+    sprite: _RPSX/Objects/Fun/toys.rsi  # RPSX update foam gans
     layers:
       - state: foamdart
   - type: EmbeddableProjectile

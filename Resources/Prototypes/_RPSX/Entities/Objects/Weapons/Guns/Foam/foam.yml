@@ -1,0 +1,151 @@
+# WeaponRifleFoam = BaseWeaponRifleFoam
+
+- type: entity
+  name: Titmouse
+  parent: WeaponRifleFoam
+  id: WeaponSubMachineGunFoamTitmouse
+  description: large and cool foam submachine gun with built-in large capacity magazine.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/titmouse.rsi
+  - type: Clothing
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/titmouse.rsi
+  - type: Item
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/titmouse.rsi
+    size: Huge
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunWieldBonus
+  - type: ItemSlots
+  - type: Gun
+    minAngle: 21
+    maxAngle: 32
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/Effects/thunk.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+    selectedMode: FullAuto
+    availableModes:
+    - Burst
+    - FullAuto
+    - SemiAuto
+    shotsPerBurst: 4
+    burstCooldown: 0.2
+    burstFireRate: 2
+  - type: Appearance
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - MiniBulletFoam
+    capacity: 25
+    proto: MiniBulletFoam
+
+- type: entity
+  name: Flash
+  parent: [WeaponSubMachineGunDrozd, BaseGunWieldable]
+  id: WeaponSubMachineGunFoamFlash
+  description: Foam submachine gun for covert special operations.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/flash.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 0
+    zeroVisible: true
+  - type: Clothing
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/flash.rsi
+  - type: Item
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/flash.rsi
+    size: Normal
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolHighFoam
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistolHighFoam
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: MiniBulletFoam
+        priority: 1
+        whitelist:
+          tags:
+            - MiniBulletFoam
+  - type: GunWieldBonus
+  - type: Gun
+    minAngle: 21
+    maxAngle: 32
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/Effects/thunk.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+    selectedMode: FullAuto
+    availableModes:
+    - Burst
+    - FullAuto
+    - SemiAuto
+    shotsPerBurst: 4
+    burstCooldown: 0.2
+    burstFireRate: 2
+  - type: Appearance
+  - type: PacifismAllowedGun
+
+- type: entity
+  name: hummingbird
+  parent: WeaponPistolMk58
+  id: WeaponPistolFoamHummingbird
+  description: Foam pistol will come in handy when you spend the rest of the bullets.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/hummingbird.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/hummingbird.rsi
+  - type: Item
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/hummingbird.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolLowFoam
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistolLowFoam
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: MiniBulletFoam
+        priority: 1
+        whitelist:
+          tags:
+            - MiniBulletFoam
+  - type: Gun
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/Effects/thunk.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+    shotsPerBurst: 4
+    burstCooldown: 0.2
+    burstFireRate: 2

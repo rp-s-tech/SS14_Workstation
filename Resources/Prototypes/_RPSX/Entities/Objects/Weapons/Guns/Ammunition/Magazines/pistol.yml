@@ -1,0 +1,42 @@
+- type: entity
+  id: MagazinePistolHighFoam
+  name: machine pistol magazine (.35 auto)
+  parent: BaseMagazinePistolHighCapacity
+  components:
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - MiniBulletFoam
+    mayTransfer: true
+    proto: MiniBulletFoam
+    capacity: 15
+  - type: Sprite
+    sprite: _RPSX/Objects/Weapons/Guns/Ammunitions/Magazine/Pistol/foam_green.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+  - type: Tag
+    tags:
+      - MagazinePistolHighFoam
+
+
+- type: entity
+  id: MagazinePistolLowFoam
+  name: machine pistol magazine (.35 auto)
+  parent: MagazinePistolHighFoam
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 6
+  - type: Sprite
+    sprite: _RPSX/Objects/Weapons/Guns/Ammunitions/Magazine/Pistol/foam_blue.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+  - type: Tag
+    tags:
+      - MagazinePistolLowFoam

@@ -1,0 +1,8 @@
+- type: Tag
+  id: MiniBulletFoam
+
+- type: Tag
+  id: MagazinePistolHighFoam
+
+- type: Tag
+  id: MagazinePistolLowFoam
