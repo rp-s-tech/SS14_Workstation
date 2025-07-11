@@ -1,4 +1,4 @@
-﻿using Content.Server.Administration;
+using Content.Server.Administration;
 using Content.Server.Body.Systems;
 using Content.Server.Cargo.Components;
 using Content.Shared.Chemistry.EntitySystems;
@@ -38,7 +38,6 @@ public sealed class PricingSystem : EntitySystem
     {
         SubscribeLocalEvent<MobPriceComponent, PriceCalculationEvent>(CalculateMobPrice);
         SubscribeLocalEvent<TransformComponent, PiratePriceCalculationEvent>(CalculatePriceForPirates); // RPSX Pirates
-
         _consoleHost.RegisterCommand("appraisegrid",
             "Calculates the total value of the given grids.",
             "appraisegrid <grid Ids>", AppraiseGridCommand);
@@ -404,5 +403,6 @@ public sealed class PricingSystem : EntitySystem
     {
         if (args.Handled) return;
         args.Price = GetPrice(entity);
+        args.Handled = true;
     }
 }
