@@ -1,7 +1,7 @@
 # WeaponRifleFoam = BaseWeaponRifleFoam
 
 - type: entity
-  name: Titmouse
+  name: titmouse
   parent: WeaponRifleFoam
   id: WeaponSubMachineGunFoamTitmouse
   description: large and cool foam submachine gun with built-in large capacity magazine.
@@ -42,7 +42,7 @@
     proto: MiniBulletFoam
 
 - type: entity
-  name: Flash
+  name: flash
   parent: [WeaponSubMachineGunDrozd, BaseGunWieldable]
   id: WeaponSubMachineGunFoamFlash
   description: Foam submachine gun for covert special operations.
