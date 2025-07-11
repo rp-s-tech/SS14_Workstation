@@ -56,7 +56,7 @@
         map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 0
+    steps: 1
     zeroVisible: true
   - type: Clothing
     sprite: _RPSX/Objects/Weapons/Guns/Rifles/flash.rsi
@@ -64,7 +64,7 @@
     sprite: _RPSX/Objects/Weapons/Guns/Rifles/flash.rsi
     size: Normal
   - type: Wieldable
-    unwieldOnUse: false
+    unwieldOnUse: true
   - type: ItemSlots
     slots:
       gun_magazine:

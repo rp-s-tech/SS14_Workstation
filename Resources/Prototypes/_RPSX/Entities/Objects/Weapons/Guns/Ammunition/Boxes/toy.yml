@@ -1,0 +1,16 @@
+- type: entity
+  parent: BoxDonkSoftBase
+  id: BoxDonkSoftBoxBullet
+  name: box of foam bullet
+  components:
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - MiniBulletFoam
+    capacity: 50
+    proto: MiniBulletFoam
+  - type: Sprite
+    sprite: _RPSX/Objects/Storage/boxes.rsi
+    layers:
+      - state: boxwidetoy
+      - state: foam-bullet

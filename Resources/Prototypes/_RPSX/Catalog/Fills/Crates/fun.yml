@@ -1,0 +1,47 @@
+- type: entity
+  id: CrateFunFoamTitmouse
+  parent: CrateFunFoamGuns
+  name: box with a foam gun "titmouse"
+  description: Contains 3 units of safe submachine guns made of plastic and foam.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunFoamTitmouse
+        amount: 3
+      - id: GrenadeFoamDart
+        amount: 6
+      - id: BoxDonkSoftBoxBullet
+
+- type: entity
+  id: CrateFunFoamFlash
+  parent: CrateFunFoamGuns
+  name: box with a foam gun "Flash"
+  description: Contains 3 units of safe submachine guns made of plastic and foam.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistolHighFoam
+        amount: 6
+      - id: WeaponSubMachineGunFoamFlash
+        amount: 3
+      - id: GrenadeFoamDart
+        amount: 6
+      - id: BoxDonkSoftBoxBullet
+
+- type: entity
+  id: CrateFunFoamHummingbird
+  parent: CrateFunFoamGuns
+  name: box with different foam guns
+  description: Contains 2 units of safety submachine guns and pistols made of plastic and foam.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistolLowFoam
+        amount: 6
+      - id: WeaponSubMachineGunFoamFlash
+      - id: WeaponSubMachineGunFoamTitmouse
+      - id: WeaponPistolFoamHummingbird
+        amount: 2
+      - id: GrenadeFoamDart
+        amount: 6
+      - id: BoxDonkSoftBoxBullet
