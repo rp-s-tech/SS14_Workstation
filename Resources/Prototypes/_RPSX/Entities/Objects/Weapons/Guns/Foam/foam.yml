@@ -64,7 +64,7 @@
     sprite: _RPSX/Objects/Weapons/Guns/Rifles/flash.rsi
     size: Normal
   - type: Wieldable
-    unwieldOnUse: true
+    unwieldOnUse: false
   - type: ItemSlots
     slots:
       gun_magazine:

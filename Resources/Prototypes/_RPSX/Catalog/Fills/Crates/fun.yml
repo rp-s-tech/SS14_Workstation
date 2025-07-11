@@ -37,7 +37,9 @@
   - type: StorageFill
     contents:
       - id: MagazinePistolLowFoam
-        amount: 6
+        amount: 4
+      - id: MagazinePistolHighFoam
+        amount: 2
       - id: WeaponSubMachineGunFoamFlash
       - id: WeaponSubMachineGunFoamTitmouse
       - id: WeaponPistolFoamHummingbird
