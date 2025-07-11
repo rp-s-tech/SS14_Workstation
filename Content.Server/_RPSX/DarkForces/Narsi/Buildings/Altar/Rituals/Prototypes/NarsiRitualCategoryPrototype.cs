@@ -1,10 +1,8 @@
-using System.Collections.Generic;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Server.RPSX.DarkForces.Narsi.Buildings.Altar.Rituals.Prototypes;
 
-[Prototype]
+[Prototype, Serializable]
 public sealed class NarsiRitualCategoryPrototype : IPrototype
 {
     [IdDataFieldAttribute]

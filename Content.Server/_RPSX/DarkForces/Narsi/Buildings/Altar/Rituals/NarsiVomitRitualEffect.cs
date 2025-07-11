@@ -2,7 +2,7 @@ using System.Linq;
 using Content.Server.RPSX.DarkForces.Narsi.Buildings.Altar.Rituals.Base;
 using Content.Server.RPSX.DarkForces.Narsi.Progress;
 using Content.Server.Medical;
-using Content.Server.Nutrition.Components;
+using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
 using Robust.Shared.GameObjects;
 

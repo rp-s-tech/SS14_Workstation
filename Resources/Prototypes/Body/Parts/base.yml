@@ -30,6 +30,7 @@
   - type: SurgeryBodyPart
     species: universal
   - type: SurgeryWoundablePart
+    canBeExplosionTarget: false
     canBeDollTarget: false
   - type: StaticPrice
     price: 500
@@ -50,6 +51,7 @@
   - type: SurgeryWoundablePart
     maxDamage: 120
     canBeExplosionTarget: false
+    canBeDollTarget: false
   - type: Tag
     tags:
       - Head

@@ -1,63 +1,63 @@
-# - type: job
-#   id: Pathologist
-#   name: Патологоанатом
-#   description: Проводите вскрытие трупов, пишите причины их смерти и поставляйте здоровые органы хирургам.
-#   playTimeTracker: JobPathologist
-#   requirements:
-#   - !type:RoleTimeRequirement
-#     role: JobMedicalDoctor
-#     time: 14400 #6 hrs
-#   startingGear: PathologistGear
-#   icon: "JobIconPathologist"
-#   supervisors: job-supervisors-cmo
-#   chatHighlight: MedicalChatHighlight
-#   access:
-#   - Medical
-#   - Maintenance
-#   extendedAccess:
-#   - Chemistry
+- type: job
+  id: Pathologist
+  name: Патологоанатом
+  description: Проводите вскрытие трупов, пишите причины их смерти и поставляйте здоровые органы хирургам.
+  playTimeTracker: JobPathologist
+  requirements:
+  - !type:RoleTimeRequirement
+    role: JobMedicalDoctor
+    time: 14400 #6 hrs
+  startingGear: PathologistGear
+  icon: "JobIconPathologist"
+  supervisors: job-supervisors-cmo
+  chatHighlight: MedicalChatHighlight
+  access:
+  - Medical
+  - Maintenance
+  extendedAccess:
+  - Chemistry
 
-# - type: startingGear
-#   id: PathologistGear
-#   equipment:
-#     id: PathologistMedicalPDA
-#     ears: ClothingHeadsetMedical
-#     belt: ClothingBeltMedicalFilled
-#   storage:
-#     back:
-#     - ForensicPad
-#     - ForensicScanner
+- type: startingGear
+  id: PathologistGear
+  equipment:
+    id: PathologistMedicalPDA
+    ears: ClothingHeadsetMedical
+    belt: ClothingBeltMedicalFilled
+  storage:
+    back:
+    - ForensicPad
+    - ForensicScanner
 
-# - type: entity
-#   parent: BasePDA
-#   id: PathologistMedicalPDA
-#   name: КПК патологоанатома
-#   description: В нем какие-то заметки о трупах..
-#   components:
-#   - type: Pda
-#     id: PathologistMedicalIDCard
-#     state: pda-pathologist
-#   - type: PdaBorderColor
-#     borderColor: "#d7d7d0"
-#     accentVColor: "#70534b"
-#   - type: Icon
-#     state: MedicalIDCard
-#   - type: HealthAnalyzer
-#     scanDelay: 1
-#     scanningEndSound:
-#       path: "/Audio/Items/Medical/healthscanner.ogg"
+- type: entity
+  parent: BaseMedicalPDA
+  id: PathologistMedicalPDA
+  name: КПК патологоанатома
+  description: В нем какие-то заметки о трупах..
+  components:
+  - type: Pda
+    id: PathologistMedicalIDCard
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentVColor: "#70534b"
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-medical
+  - type: Icon
+    state: pda-medical
 
-# - type: entity
-#   parent: IDCardStandard
-#   id: PathologistMedicalIDCard
-#   name: ID карта патологоанатома
-#   components:
-#   - type: Sprite
-#     layers:
-#     - state: default
-#     - state: idmedicalpathologist
-#   - type: PresetIdCard
-#     job: Pathologist
+- type: entity
+  parent: IDCardStandard
+  id: PathologistMedicalIDCard
+  name: ID карта патологоанатома
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idmedicalpathologist
+  - type: PresetIdCard
+    job: Pathologist
 
 # - type: entity
 #   id: SpawnPointPathologist

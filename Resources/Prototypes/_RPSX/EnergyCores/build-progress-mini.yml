@@ -613,19 +613,11 @@
         doAfter: 2
 
 - type: construction
-  name: Малое энергоядро НаноТрейзен
   id: EnergyCoreMiniConstructionNT
   graph: EnergyCoreMiniNT
   startNode: start
   targetNode: EnergyCore
   category: construction-category-structures
-  description: СУПЕР ПУПЕР ЯДРО!
-  icon:
-    sprite: _RPSX/EnergyCores/mini_core-blue.rsi
-    state: icon
-  layers:
-  - sprite: _RPSX/EnergyCores/ec_const_small.rsi
-    state: corpus
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -633,19 +625,11 @@
   - !type:TileNotBlocked
 
 - type: construction
-  name: Малое энергоядро Синдиката
   id: EnergyCoreMiniConstructionSyn
   graph: EnergyCoreMiniSyn
   startNode: start
   targetNode: EnergyCore
   category: construction-category-structures
-  description: СУПЕР ПУПЕР ЯДРО!
-  icon:
-    sprite: _RPSX/EnergyCores/mini_core-redspace.rsi
-    state: icon
-  layers:
-  - sprite: _RPSX/EnergyCores/ec_const_small.rsi
-    state: corpus
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -653,19 +637,11 @@
   - !type:TileNotBlocked
 
 - type: construction
-  name: Малое энергоядро РнД
   id: EnergyCoreMiniConstructionRnD
   graph: EnergyCoreMiniRnD
   startNode: start
   targetNode: EnergyCore
   category: construction-category-structures
-  description: СУПЕР ПУПЕР ЯДРО!
-  icon:
-    sprite: _RPSX/EnergyCores/mini_core-RnD.rsi
-    state: icon
-  layers:
-  - sprite: _RPSX/EnergyCores/ec_const_small.rsi
-    state: corpus
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -673,19 +649,11 @@
   - !type:TileNotBlocked
 
 - type: construction
-  name: Малое самодельное энергоядро
   id: EnergyCoreMiniConstructionHM
   graph: EnergyCoreMiniHM
   startNode: start
   targetNode: EnergyCore
   category: construction-category-structures
-  description: СУПЕР ПУПЕР ЯДРО!
-  icon:
-    sprite: _RPSX/EnergyCores/mini_core-yellow.rsi
-    state: icon
-  layers:
-  - sprite: _RPSX/EnergyCores/ec_const_small.rsi
-    state: corpus
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false

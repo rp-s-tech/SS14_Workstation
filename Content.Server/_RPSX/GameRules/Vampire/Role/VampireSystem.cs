@@ -96,7 +96,11 @@ public sealed partial class VampireSystem : EntitySystem
             return;
 
         var session = actor.PlayerSession;
-        var ui = new VampireAbilitiesEUI();
+
+        if (component.AbilitiesUiOpen)
+            return;
+
+        var ui = new VampireAbilitiesEUI(uid);
         var state = new VampireAbilitiesState(
             GetNetEntity(uid),
             GetOpenedAbilities(uid, component),
@@ -107,6 +111,7 @@ public sealed partial class VampireSystem : EntitySystem
         _euiManager.OpenEui(ui, session);
         ui.SendMessage(state);
 
+        component.AbilitiesUiOpen = true;
         args.Handled = true;
     }
 

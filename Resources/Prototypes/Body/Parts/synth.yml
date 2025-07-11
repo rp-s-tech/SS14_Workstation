@@ -1,13 +1,11 @@
 ﻿- type: entity
   id: PartSynth
-  parent: BaseItem
+  parent: [ BaseItem, BaseSurgeryWoundable ]
   name: "synth body part"
   abstract: true
   components:
     - type: SurgeryWoundablePart
       maxDamage: 150
-      canBeDollTarget: true
-      canBeExplosionTarget: true
     - type: Damageable
       damageContainer: Biological
     - type: BodyPart

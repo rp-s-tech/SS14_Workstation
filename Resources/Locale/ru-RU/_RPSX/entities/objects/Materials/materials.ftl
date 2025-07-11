@@ -1,0 +1,9 @@
+ent-SyntheticCloth = синтетическая ткань
+    .suffix = Полный
+    .desc = Универсальный материал, разработанный НТ для протезирования, гарантирует 99,9% успешной интеграции без осложнений для представителей любых рас.
+ent-SyntheticCloth10 = { ent-SyntheticCloth }
+    .suffix = 10
+    .desc = { ent-SyntheticCloth.desc }
+ent-SyntheticCloth1 = { ent-SyntheticCloth }
+    .suffix = Один
+    .desc = { ent-SyntheticCloth.desc }

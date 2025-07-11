@@ -2,6 +2,7 @@
 using Content.Server.EUI;
 using Content.Shared.Eui;
 using Content.Shared.RPSX.DarkForces.Vampire;
+using Content.Shared.RPSX.DarkForces.Vampire.Components;
 using JetBrains.Annotations;
 using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
@@ -11,6 +12,15 @@ namespace Content.Server.RPSX.GameRules.Vampire.EUI;
 [UsedImplicitly]
 public sealed class VampireAbilitiesEUI : BaseEui
 {
+    [Dependency] private readonly EntityManager _entityManager = default!;
+    private readonly EntityUid _owner;
+
+    public VampireAbilitiesEUI(EntityUid owner)
+    {
+        IoCManager.InjectDependencies(this);
+        _owner = owner;
+    }
+
     public override void HandleMessage(EuiMessageBase msg)
     {
         base.HandleMessage(msg);
@@ -18,11 +28,18 @@ public sealed class VampireAbilitiesEUI : BaseEui
         if (msg is not VampireAbilitySelected data)
             return;
 
-        var entityManager = IoCManager.Resolve<IEntityManager>();
-        var entityUid = entityManager.GetEntity(data.NetEntity);
+        var entityUid = _entityManager.GetEntity(data.NetEntity);
         var ev = new VampireAbilitySelectedEvent(data.Action, data.BloodRequired, data.ReplaceId);
 
-        entityManager.EventBus.RaiseLocalEvent(entityUid, ref ev);
+        _entityManager.EventBus.RaiseLocalEvent(entityUid, ref ev);
         Close();
+    }
+
+    public override void Closed()
+    {
+        base.Closed();
+
+        if (_entityManager.EntityExists(_owner) && _entityManager.TryGetComponent<VampireComponent>(_owner, out var comp))
+            comp.AbilitiesUiOpen = false;
     }
 }

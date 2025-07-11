@@ -9,31 +9,16 @@
       connections:
       - torso
       organs:
-        brain:
-          organ: OrganHumanBrain
-          type: Brain
-        eyes:
-          organ: OrganHumanEyes
-          type: Eye
-          internal: false
+        brain: OrganHumanBrain
+        eyes: OrganHumanEyes
     torso:
       part: TorsoReptilian
       organs:
-        heart:
-          organ: OrganAnimalHeart
-          type: Heart
-        lungs:
-          organ: OrganHumanLungs
-          type: Lung
-        stomach:
-          organ: OrganReptilianStomach
-          type: Stomach
-        liver:
-          organ: OrganAnimalLiver
-          type: Liver
-        kidneys:
-          organ: OrganHumanKidneys
-          type: Kidney
+        heart: OrganAnimalHeart
+        lungs: OrganHumanLungs
+        stomach: OrganReptilianStomach
+        liver: OrganAnimalLiver
+        kidneys: OrganHumanKidneys
       connections:
       - right arm
       - left arm

@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: SyntheticCloth
+  icon:
+    sprite: _RPSX/Objects/Materials/materials.rsi
+    state: syntheticCloth_3
+  product: CrateSyntheticCloth
+  cost: 3000
+  category: cargoproduct-category-name-medical
+  group: market

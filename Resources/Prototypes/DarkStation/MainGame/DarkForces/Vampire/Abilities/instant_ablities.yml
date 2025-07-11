@@ -1,226 +1,245 @@
 - type: entity
+  parent: BaseAction
   id: VampireStatisticAction
-  name: Статистика
-  description: Узнайте о своих способностях и уровень вашей крови
-  categories: [ HideSpawnMenu ]
+  name: Statistics
+  description: Learn about your abilities and your blood level
   components:
-  - type: InstantAction
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 0
     icon:
       sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
       state: vampire_statistic
-    useDelay: 0
-    itemIconStyle: NoItem
+  - type: InstantAction
     event: !type:VampireOpenHelpDialogEvent
       bloodCost: 0
-
+      
 - type: entity
+  parent: BaseAction
   id: VampireDrinkBloodAction
-  name: Выпить кровь
-  description: Выпейте кровь вашей жертвы
-  categories: [ HideSpawnMenu ]
+  name: Drink Blood
+  description: Drink the blood of your victim
   components:
-  - type: EntityTargetAction
-    whitelist:
-      components:
-      - Body
-    canTargetSelf: false
-    interactOnMiss: false
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 0
     icon:
       sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
       state: vampire_drink_blood
-    useDelay: 0
-    itemIconStyle: NoItem
-    sound: !type:SoundPathSpecifier
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - Body
+    sound:
       path: /Audio/DarkStation/Narsi/enter_blood.ogg
     event: !type:VampireDrinkBloodAblityEvent
       bloodCost: 0
-
+      
 - type: entity
+  parent: BaseAction
   id: VampireRejuvenateAction
-  name: Восстановление
-  description: Снимает оглушение и восстанавливает выносливость
-  categories: [ HideSpawnMenu ]
+  name: Rejuvenation
+  description: Removes stun and restores stamina
   components:
-  - type: InstantAction
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 0
+    checkCanInteract: false
     icon:
       sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
       state: vampire_rejuvinate
-    useDelay: 0
-    itemIconStyle: NoItem
-    checkCanInteract: false
-    sound: !type:SoundPathSpecifier
+  - type: InstantAction
+    sound:
       path: /Audio/DarkStation/Narsi/summon_karp.ogg
     event: !type:VampireRejuvenateEvent
       bloodCost: 30
-
+      
 - type: entity
+  parent: BaseAction
   id: VampireFlashAction
-  name: Вспышка
-  description: Оглушает всех стоящих непосредственно рядом с вами
-  categories: [ HideSpawnMenu ]
+  name: Flash
+  description: Stuns everyone standing right next to you
   components:
-  - type: InstantAction
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 30
     icon:
       sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
       state: vampire_glare
-    useDelay: 30
-    itemIconStyle: NoItem
+  - type: InstantAction
     event: !type:VampireFlashEvent
       bloodCost: 30
-
+      
 - type: entity
+  parent: BaseAction
   id: VampireHypnosisAction
-  name: Гипноз
-  description: Усыпляет жертву
-  categories: [ HideSpawnMenu ]
+  name: Hypnosis
+  description: Puts the victim to sleep
   components:
-  - type: EntityTargetAction
-    whitelist:
-      components:
-      - Body
-    canTargetSelf: false
-    interactOnMiss: false
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 180
     icon:
       sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
       state: vampire_hypnotise
-    useDelay: 180
-    itemIconStyle: NoItem
-    event: !type:VampireHypnosisEvent
-      bloodCost: 50
-
-- type: entity
-  id: VampireChargeAction
-  name: Рывок
-  description: После активации, вы кинетесь на тот тайл, куда нажали
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: WorldTargetAction
-    useDelay: 1
-    range: 16
-    itemIconStyle: NoItem
-    sound: !type:SoundPathSpecifier
-      path: /Audio/DarkStation/Narsi/wand_teleport.ogg
-    icon:
-      sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
-      state: vampire_charge
-    event: !type:VampireChargeEvent
-      bloodCost: 100
-
-- type: entity
-  id: VampireShapeshiftAction
-  name: Превращение
-  description: Случайно меняет чертвы вашего тела
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: InstantAction
-    icon:
-      sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
-      state: vampire_shapeshift
-    useDelay: 10
-    itemIconStyle: NoItem
-    sound: !type:SoundPathSpecifier
-      path: /Audio/DarkStation/Narsi/wand_teleport.ogg
-    event: !type:VampireShapeshiftEvent
-      bloodCost: 100
-
-- type: entity
-  id: VampirePolymorphAction
-  name: Крылья
-  description: Превращает вас в летучую мышь на 1 минуту
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: InstantAction
-    icon:
-      sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
-      state: vampire_poly
-    useDelay: 60
-    itemIconStyle: NoItem
-    sound: !type:SoundPathSpecifier
-      path: /Audio/DarkStation/Narsi/summonitems_generic.ogg
-    event: !type:VampirePolymorphEvent
-      bloodCost: 50
-
-- type: entity
-  id: VampireRejuvenatePlusAction
-  name: Восстановление+
-  description: В дополнение к снятию оглушения также теперь дает вам кратковременную регенерацию.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: InstantAction
-    icon:
-      sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
-      state: vampire_rejuvinate_plus
-    useDelay: 40
-    itemIconStyle: NoItem
-    checkCanInteract: false
-    sound: !type:SoundPathSpecifier
-      path: /Audio/DarkStation/Narsi/summon_karp.ogg
-    event: !type:VampireRejuvenatePlusEvent
-      bloodCost: 50
-
-- type: entity
-  id: VampireSummonBatsAction
-  name: Дети ночи
-  description: Призывает две стаи летучих мышей, которые атакуют всех, кто не является вампиром или траллом
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: InstantAction
-    icon:
-      sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
-      state: vampire_bats
-    useDelay: 180
-    itemIconStyle: NoItem
-    event: !type:VampireSummonBatsEvent
-      bloodCost: 200
-
-- type: entity
-  id: VampireChiropteanScreechAction
-  name: Ультразвуковой визг
-  description: Оглушает всех людей в радиусе слышимости, а также ломает стекла. Может оглушить траллов вампиров, но не других вампиров.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: InstantAction
-    icon:
-      sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
-      state: vampire_screech
-    useDelay: 180
-    itemIconStyle: NoItem
-    sound: !type:SoundPathSpecifier
-      path: /Audio/DarkStation/creepyshriek.ogg
-    event: !type:VampireChiropteanScreechEvent
-      bloodCost: 200
-
-- type: entity
-  id: VampireEnthrallAction
-  name: Порабощение
-  description: Превращает жертву в вашего верного раба.
-  categories: [ HideSpawnMenu ]
-  components:
+  - type: TargetAction
+    interactOnMiss: false
   - type: EntityTargetAction
+    canTargetSelf: false
     whitelist:
       components:
       - Body
-    canTargetSelf: false
-    interactOnMiss: false
+    event: !type:VampireHypnosisEvent
+      bloodCost: 50
+ 
+- type: entity
+  parent: BaseAction
+  id: VampireChargeAction
+  name: Dash  
+  description: After activation, you will lunge toward the tile you clicked on
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 1
+    icon:
+      sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
+      state: vampire_charge
+  - type: TargetAction
+    range: 16
+  - type: WorldTargetAction
+    sound:
+      path: /Audio/DarkStation/Narsi/wand_teleport.ogg
+    event: !type:VampireChargeEvent
+      bloodCost: 100
+      
+- type: entity
+  parent: BaseAction
+  id: VampireShapeshiftAction
+  name: Transformation
+  description: Randomly changes your body features
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 10
+    icon:
+      sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
+      state: vampire_shapeshift
+  - type: InstantAction
+    sound:
+      path: /Audio/DarkStation/Narsi/wand_teleport.ogg
+    event: !type:VampireShapeshiftEvent
+      bloodCost: 100
+      
+- type: entity
+  parent: BaseAction
+  id: VampirePolymorphAction
+  name: Wings
+  description: Turns you into a bat for 1 minute
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 60
+    icon:
+      sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
+      state: vampire_poly
+  - type: InstantAction
+    sound:
+      path: /Audio/DarkStation/Narsi/summonitems_generic.ogg
+    event: !type:VampirePolymorphEvent
+      bloodCost: 50
+      
+- type: entity
+  parent: BaseAction
+  id: VampireRejuvenatePlusAction
+  name: Rejuvenation+
+  description: In addition to removing stun, now also grants you short-term regeneration.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 40
+    checkCanInteract: false
+    icon:
+      sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
+      state: vampire_rejuvinate_plus
+  - type: InstantAction
+    sound:
+      path: /Audio/DarkStation/Narsi/summon_karp.ogg
+    event: !type:VampireRejuvenatePlusEvent
+      bloodCost: 50
+      
+- type: entity
+  parent: BaseAction
+  id: VampireSummonBatsAction
+  name: Children of the Night
+  description: Summons two swarms of bats that attack everyone who is not a vampire
+    or a thrall
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 180
+    icon:
+      sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
+      state: vampire_bats
+  - type: InstantAction
+    event: !type:VampireSummonBatsEvent
+      bloodCost: 200
+      
+- type: entity
+  parent: BaseAction
+  id: VampireChiropteanScreechAction
+  name: Ultrasonic Screech
+  description: Stuns all humans within hearing range and breaks glass. Can stun vampire
+    thralls but not other vampires.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 180
+    icon:
+      sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
+      state: vampire_screech
+  - type: InstantAction
+    sound:
+      path: /Audio/DarkStation/creepyshriek.ogg
+    event: !type:VampireChiropteanScreechEvent
+      bloodCost: 200
+      
+- type: entity
+  parent: BaseAction
+  id: VampireEnthrallAction
+  name: Порабощение
+  description: Превращает жертву в вашего верного раба.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 180
     icon:
       sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
       state: vampire_enthrall
-    useDelay: 180
-    itemIconStyle: NoItem
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - Body
     event: !type:VampireEnthrallEvent
       bloodCost: 100
-
+      
 - type: entity
+  parent: BaseAction
   id: VampireFullPowerAction
-  name: Полная сила
-  description: Теперь вы величайший вампир! Святая вода для ваc как минералка. Пули легонько щекочат. Но серебряное оружие наносит существенный урон
-  categories: [ HideSpawnMenu ]
+  name: Full Power
+  description: Now you are the greatest vampire! Holy water is like mineral water to you. Bullets barely tickle. But silver weapons deal significant damage.
   components:
-  - type: InstantAction
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 0
     icon:
       sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi
       state: vampire_jaunt
-    useDelay: 0
-    itemIconStyle: NoItem
+  - type: InstantAction
     event: !type:VampireFullPowerEvent
       bloodCost: 0

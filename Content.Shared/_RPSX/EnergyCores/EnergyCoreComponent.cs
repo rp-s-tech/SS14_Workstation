@@ -3,8 +3,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.DeviceLinking;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-using Robust.Shared.GameObjects;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.RPSX.EnergyCores;
 
@@ -15,8 +14,8 @@ public sealed partial class EnergyCoreComponent : Component
     [ViewVariables(VVAccess.ReadOnly)]
     public EntityUid? EnergyCoreConsoleEntity = null;
 
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SourcePortPrototype>))]
-    public string LinkingPort = "EnergyCoreReciever";
+    [DataField]
+    public ProtoId<SinkPortPrototype> LinkingPort = "EnergyCoreReceiver";
 
     [ViewVariables(VVAccess.ReadWrite)]
     public bool Working = true;

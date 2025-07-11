@@ -42,23 +42,25 @@
         type: RatvarEnchantmentBUI
 
 - type: entity
+  parent: BaseAction
   id: RatvarSpearElectricalTouch
-  categories: [ HideSpawnMenu ]
   name: "Электрошок"
   description: "При ударе (нужно держать в двух руках) испускает слабый ЭМИ гуманоидам и сильный ЭМИ боргам и мехам."
   components:
-  - type: InstantAction
-    useDelay: 10
+  - type: Action
     itemIconStyle: BigItem
+    useDelay: 10
+  - type: InstantAction
     event: !type:RatvarSpearElectricalTouchEvent
 
 - type: entity
+  parent: BaseAction
   id: RatvarSpearConfusion
-  categories: [ HideSpawnMenu ]
   name: "Смятение"
   description: "После удара (нужно держать в двух руках) ваша цель не сможет ходить по прямой 15 секунд"
   components:
-  - type: InstantAction
-    useDelay: 10
+  - type: Action
     itemIconStyle: BigItem
+    useDelay: 10
+  - type: InstantAction
     event: !type:RatvarSpearConfusionEvent

@@ -9,12 +9,8 @@
       connections:
         - legs
       organs:
-        core:
-          organ: SentientSlimesCore
-          type: Brain
-        lungs:
-          organ: OrganSlimesLungs
-          type: Lung
+        core: SentientSlimesCore
+        lungs: OrganSlimesLungs
     legs:
       part: LegsAnimal
       connections:

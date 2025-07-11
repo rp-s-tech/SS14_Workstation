@@ -61,13 +61,8 @@
       connections:
         - torso
       organs:
-        brain:
-          organ: OrganHumanBrain
-          type: Brain
-        eyes:
-          organ: OrganSynthEyes
-          type: Eye
-          internal: false
+        brain: OrganHumanBrain
+        eyes: OrganSynthEyes
     torso:
       part: TorsoSynth
       connections:
@@ -76,21 +71,11 @@
         - left leg
         - right leg
       organs:
-        heart:
-          organ: OrganSynthHeart
-          type: Heart
-        lungs:
-          organ: OrganSynthLungs
-          type: Lung
-        stomach:
-          organ: OrganSynthStomach
-          type: Stomach
-        liver:
-          organ: OrganSynthLiver
-          type: Liver
-        kidneys:
-          organ: OrganSynthKidneys
-          type: Kidney
+        heart: OrganSynthHeart
+        lungs: OrganSynthLungs
+        stomach: OrganSynthStomach
+        liver: OrganSynthLiver
+        kidneys: OrganSynthKidneys
     right arm:
       part: RightArmSynth
       connections:
@@ -127,13 +112,8 @@
       connections:
         - torso
       organs:
-        brain:
-          organ: OrganHumanBrain
-          type: Brain
-        eyes:
-          organ: OrganSynthEyes
-          type: Eye
-          internal: false
+        brain: OrganHumanBrain
+        eyes: OrganSynthEyes
     torso:
       part: TorsoSynth
       connections:
@@ -142,21 +122,11 @@
         - left leg
         - right leg
       organs:
-        heart:
-          organ: OrganSynthHeart
-          type: Heart
-        lungs:
-          organ: OrganSynthLungs
-          type: Lung
-        stomach:
-          organ: OrganSynthStomach
-          type: Stomach
-        liver:
-          organ: OrganSynthLiver
-          type: Liver
-        kidneys:
-          organ: OrganSynthKidneys
-          type: Kidney
+        heart: OrganSynthHeart
+        lungs: OrganSynthLungs
+        stomach: OrganSynthStomach
+        liver: OrganSynthLiver
+        kidneys: OrganSynthKidneys
     right arm:
       part: RightArmSynth
       connections:

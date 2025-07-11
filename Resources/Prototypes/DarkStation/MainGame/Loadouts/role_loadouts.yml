@@ -16,17 +16,18 @@
 - type: roleLoadout
   id: JobBrigmedic
   groups:
-  - SecurityBrigMedicJumpsuit
-  - SecurityBrigMedicBackpack
-  - SecurityBrigMedicOuterClothing
-  - SecurityBrigMedicShoes
-  - SecurityBrigMedicGloves
-  - SecurityBrigMedicEyes
-  - SecurityBrigMedicHead
-  - SecurityBrigMedicMask
-  - SecurityBrigMedicBelt
+  - BrigmedicHead
+  - BrigMedicEyes
+  - BrigmedicMask
+  - BrigmedicJumpsuit
+  - BrigmedicGloves
+  - BrigmedicBackpack
+  - BrigMedicBelt
+  - BrigmedicOuterClothing
+  - BrigmedicShoes
   - SurvivalSecurity
   - GroupSpeciesBreathToolSecurity
+  - Trinkets
 
 - type: roleLoadout
   id: JobBlueShieldOfficer
@@ -83,38 +84,37 @@
   #  # - Inventory # Corvax-Loadouts
 
 #Surgery
-# - type: roleLoadout
-#   id: JobSurger
-#   groups:
-#   - MedicalDoctorHead
-#   - MedicalMask
-#   - MedicalDoctorJumpsuit
-#   - MedicalGloves
-#   - MedicalBackpack
-#   - MedicalDoctorOuterClothing
-#   - MedicalShoes
-#   - MedicalDoctorPDA
-#   - Glasses
-#   - SurvivalMedical
-#   - GroupSpeciesBreathToolMedical
-#   - Trinkets
-#  # - Inventory # Corvax-Loadouts
+- type: roleLoadout
+  id: JobSurger
+  groups:
+  - MedicalDoctorHead
+  - MedicalMask
+  - MedicalDoctorJumpsuit
+  - MedicalGloves
+  - MedicalBackpack
+  - MedicalDoctorOuterClothing
+  - MedicalShoes
+  - MedicalDoctorPDA
+  - Glasses
+  - SurvivalMedical
+  - GroupSpeciesBreathToolMedical
+  - Trinkets
 
 #Pathologist
-# - type: roleLoadout
-#   id: JobPathologist
-#   groups:
-#   - MedicalDoctorHead
-#   - MedicalMask
-#   - MedicalDoctorJumpsuit
-#   - MedicalGloves
-#   - MedicalBackpack
-#   - MedicalDoctorOuterClothing
-#   - MedicalShoes
-#   - Glasses
-#   - SurvivalMedical
-#   - GroupSpeciesBreathToolMedical
-#   - Trinkets
+- type: roleLoadout
+  id: JobPathologist
+  groups:
+  - MedicalDoctorHead
+  - MedicalMask
+  - MedicalDoctorJumpsuit
+  - MedicalGloves
+  - MedicalBackpack
+  - MedicalDoctorOuterClothing
+  - MedicalShoes
+  - Glasses
+  - SurvivalMedical
+  - GroupSpeciesBreathToolMedical
+  - Trinkets
 
 
 - type: roleLoadout

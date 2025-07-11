@@ -46,8 +46,7 @@ public sealed class TemperatureSystem : EntitySystem
         SubscribeLocalEvent<TemperatureComponent, AtmosExposedUpdateEvent>(OnAtmosExposedUpdate);
         SubscribeLocalEvent<TemperatureComponent, RejuvenateEvent>(OnRejuvenate);
         SubscribeLocalEvent<AlertsComponent, OnTemperatureChangeEvent>(ServerAlert);
-        //Subs.SubscribeWithRelay<TemperatureProtectionComponent, ModifyChangedTemperatureEvent>(OnTemperatureChangeAttempt, held: false);
-        SubscribeLocalEvent<TemperatureProtectionComponent, ModifyChangedTemperatureEvent>(OnModifyChangedTemperatureEvent); // Exodus-NakedTemperatureProtection
+        Subs.SubscribeWithRelay<TemperatureProtectionComponent, ModifyChangedTemperatureEvent>(OnTemperatureChangeAttempt, held: false);
 
         SubscribeLocalEvent<InternalTemperatureComponent, MapInitEvent>(OnInit);
 
@@ -297,29 +296,8 @@ public sealed class TemperatureSystem : EntitySystem
         }
     }
 
-    // private void OnTemperatureChangeAttempt(EntityUid uid, TemperatureProtectionComponent component, ModifyChangedTemperatureEvent args)
-    // {
-    //     var coefficient = args.TemperatureDelta < 0
-    //         ? component.CoolingCoefficient
-    //         : component.HeatingCoefficient;
-
-    //     var ev = new GetTemperatureProtectionEvent(coefficient);
-    //     RaiseLocalEvent(uid, ref ev);
-
-    //     args.TemperatureDelta *= ev.Coefficient;
-    // }
-
-    private void ChangeTemperatureOnCollide(Entity<ChangeTemperatureOnCollideComponent> ent, ref ProjectileHitEvent args)
+    private void OnTemperatureChangeAttempt(EntityUid uid, TemperatureProtectionComponent component, ModifyChangedTemperatureEvent args)
     {
-        _temperature.ChangeHeat(args.Target, ent.Comp.Heat, ent.Comp.IgnoreHeatResistance);// adjust the temperature
-    }
-
-    // Exodus-NakedTemperatureProtection-Start
-    private void OnModifyChangedTemperatureEvent(EntityUid uid, TemperatureProtectionComponent component, ref ModifyChangedTemperatureEvent args)
-    {
-        if (!HasComp<TemperatureComponent>(uid) || !HasComp<MobThresholdsComponent>(uid))
-            return;
-
         var coefficient = args.TemperatureDelta < 0
             ? component.CoolingCoefficient
             : component.HeatingCoefficient;
@@ -329,7 +307,11 @@ public sealed class TemperatureSystem : EntitySystem
 
         args.TemperatureDelta *= ev.Coefficient;
     }
-    // Exodus-NakedTemperatureProtection-End
+
+    private void ChangeTemperatureOnCollide(Entity<ChangeTemperatureOnCollideComponent> ent, ref ProjectileHitEvent args)
+    {
+        _temperature.ChangeHeat(args.Target, ent.Comp.Heat, ent.Comp.IgnoreHeatResistance);// adjust the temperature
+    }
 
     private void OnParentChange(EntityUid uid, TemperatureComponent component,
         ref EntParentChangedMessage args)

@@ -44,7 +44,7 @@ public static class ServerPackaging
         // Python script had Npgsql. though we want Npgsql.dll as well soooo
         "Npgsql",
         "Microsoft",
-        "Discord",
+        "NetCord",
         "FFMpeg"
     };
 

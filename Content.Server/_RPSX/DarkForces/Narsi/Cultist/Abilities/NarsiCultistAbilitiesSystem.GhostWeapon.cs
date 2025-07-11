@@ -1,4 +1,4 @@
-﻿using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.RPSX.DarkForces.Narsi.Abilities.Events;
 using Content.Shared.RPSX.DarkForces.Narsi.Roles;
@@ -33,7 +33,7 @@ public sealed partial class NarsiCultistAbilitiesSystem
 
         var userCoords = Transform(uid).Coordinates;
         var ghostedAxe = Spawn("NarsiCultGhostAxe", userCoords);
-        if (! _handsSystem.TryPickupAnyHand(uid, ghostedAxe))
+        if (!_handsSystem.TryPickupAnyHand(uid, ghostedAxe))
         {
             _popupSystem.PopupClient("Ваши руки заняты...", uid, uid, PopupType.Medium);
             QueueDel(ghostedAxe);
@@ -54,11 +54,11 @@ public sealed partial class NarsiCultistAbilitiesSystem
 
         if (!TryComp<HandsComponent>(uid, out var handsComponent)) return;
 
-        foreach (var hand in handsComponent.Hands)
+        foreach (var item in _handsSystem.EnumerateHeld(uid))
         {
-            if (hand.Value.HeldEntity is EntityUid entity && MetaData(entity).EntityPrototype?.ID == "NarsiCultGhostAxe")
+            if (MetaData(item).EntityPrototype?.ID == "NarsiCultGhostAxe")
             {
-                QueueDel(entity);
+                QueueDel(item);
                 Dirty(uid, handsComponent);
             }
         }

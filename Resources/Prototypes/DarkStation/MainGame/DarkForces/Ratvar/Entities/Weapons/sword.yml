@@ -51,23 +51,25 @@
         type: RatvarEnchantmentBUI
 
 - type: entity
+  parent: BaseAction
   id: RatvarSwordsSwordsman
-  categories: [ HideSpawnMenu ]
   name: "Мечник"
   description: "Ускоряет ваши удары этим мечом на 9 секунд, но меняет урон на 7."
   components:
-  - type: InstantAction
-    useDelay: 10
+  - type: Action
     itemIconStyle: BigItem
+    useDelay: 10
+  - type: InstantAction
     event: !type:RatvarSwordSwordsmanEvent
 
 - type: entity
+  parent: BaseAction
   id: RatvarSwordBloodshed
-  categories: [ HideSpawnMenu ]
   name: "Кровопролитие"
   description: "Увеличивает кровопотерю на 100 единиц после удара мечом."
   components:
-  - type: InstantAction
-    useDelay: 10
+  - type: Action
     itemIconStyle: BigItem
+    useDelay: 10
+  - type: InstantAction
     event: !type:RatvarSwordBloodshedEvent

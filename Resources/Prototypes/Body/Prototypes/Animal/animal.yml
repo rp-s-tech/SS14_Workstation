@@ -1,7 +1,6 @@
 ﻿- type: body
   id: Animal
   name: "animal"
-  species: animal
   root: torso
   slots:
     torso:
@@ -9,28 +8,13 @@
       connections:
       - legs
       organs:
-        brain:
-          organ: OrganHumanBrain
-          type: Brain
-        eyes:
-          organ: OrganHumanEyes
-          type: Eye
-          internal: false
-        lungs:
-          organ: OrganAnimalLungs
-          type: Lung
-        stomach:
-          organ: OrganAnimalStomach
-          type: Stomach
-        liver:
-          organ: OrganAnimalLiver
-          type: Liver
-        heart:
-          organ: OrganAnimalHeart
-          type: Heart
-        kidneys:
-          organ: OrganAnimalKidneys
-          type: Kidney
+        brain: OrganHumanBrain
+        eyes: OrganHumanEyes
+        lungs: OrganAnimalLungs
+        stomach: OrganAnimalStomach
+        liver: OrganAnimalLiver
+        heart: OrganAnimalHeart
+        kidneys: OrganAnimalKidneys
     legs:
       part: LegsAnimal
       connections:
@@ -48,24 +32,12 @@
       connections:
       - legs
       organs:
-        brain:
-          organ: OrganHumanBrain
-          type: Brain
-        lungs:
-          organ: OrganAnimalLungs
-          type: Lung
-        stomach:
-          organ: OrganMouseStomach
-          type: Stomach
-        liver:
-          organ: OrganAnimalLiver
-          type: Liver
-        heart:
-          organ: OrganAnimalHeart
-          type: Heart
-        kidneys:
-          organ: OrganAnimalKidneys
-          type: Kidney
+        brain: OrganHumanBrain
+        lungs: OrganAnimalLungs
+        stomach: OrganMouseStomach
+        liver: OrganAnimalLiver
+        heart: OrganAnimalHeart
+        kidneys: OrganAnimalKidneys
     legs:
       part: LegsAnimal
       connections:

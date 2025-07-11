@@ -1,13 +1,12 @@
-# Med priner
+# Med priner board
 
 - type: latheRecipe          # added in MedicalBoardsStatic (pack)
   id: MedicalPrinterCircuitboard
   result: MedicalPrinterCircuitboard
   completetime: 2
   materials:
-    Steel: 200
-    Plastic: 50
-
+    Steel: 100
+    Plastic: 100
 
 # Base
 - type: latheRecipe
@@ -16,19 +15,8 @@
   id: BaseProstheticRecipe
   materials:
     Steel: 200
-    Plastic: 200
-    Cloth: 200
-
-- type: latheRecipe
-  abstract: true
-  parent: BaseToolRecipe
-  id: BaseAdvensedProstheticRecipe
-  completetime: 3
-  materials:
-    Steel: 200
     Plastic: 100
-    Cloth: 100
-    Plasteel: 500
+    SyntheticCloth: 200
 
 - type: latheRecipe
   abstract: true
@@ -37,7 +25,7 @@
   materials:
     Steel: 10
     Plastic: 500
-    Cloth: 500
+    SyntheticCloth: 500
 
 #prosthetics
 
@@ -68,22 +56,34 @@
 
 - type: latheRecipe
   id: LeftDrillArmHand
-  parent: BaseAdvensedProstheticRecipe
+  parent: BaseProstheticRecipe
   result: LeftDrillArmHand
+  completetime: 3
+  materials:
+    Steel: 200
+    Plastic: 100
+    SyntheticCloth: 50
+    Plasteel: 500
 
 - type: latheRecipe
   id: RightDrillArmHand
-  parent: BaseAdvensedProstheticRecipe
+  parent: LeftDrillArmHand
   result: RightDrillArmHand
 
 - type: latheRecipe
   id: LeftPowerLegFoot
-  parent: BaseAdvensedProstheticRecipe
+  parent: BaseProstheticRecipe
   result: LeftPowerLegFoot
+  completetime: 3
+  materials:
+    Steel: 200
+    Plastic: 100
+    SyntheticCloth: 100
+    Plasteel: 500
 
 - type: latheRecipe
   id: RightPowerLegFoot
-  parent: BaseAdvensedProstheticRecipe
+  parent: LeftPowerLegFoot
   result: RightPowerLegFoot
 
 # Synth organs
@@ -96,7 +96,7 @@
     Glass: 200
     Steel: 10
     Plastic: 100
-    Cloth: 100
+    SyntheticCloth: 100
 
 - type: latheRecipe
   id: OrganSynthLungs

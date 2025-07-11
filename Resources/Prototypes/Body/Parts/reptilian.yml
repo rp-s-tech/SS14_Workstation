@@ -2,7 +2,7 @@
 # TODO BODY: Part damage
 - type: entity
   id: PartReptilian
-  parent: BaseItem
+  parent: [ BaseItem, BasePart ]
   name: "reptilian body part"
   abstract: true
   components:
@@ -23,7 +23,7 @@
 - type: entity
   id: TorsoReptilian
   name: "reptilian torso"
-  parent: PartReptilian
+  parent: [ PartReptilian, BaseTorso ]
   components:
   - type: Sprite
     netsync: true
@@ -43,7 +43,7 @@
 - type: entity
   id: HeadReptilian
   name: "reptilian head"
-  parent: PartReptilian
+  parent: [ PartReptilian, BaseHead ]
   components:
   - type: Sprite
     netsync: true
@@ -154,7 +154,7 @@
     baseSprintSpeed: 4.5
   - type: SurgeryBodyPart
     visuals:
-      speciesSprite: MobReptilianLLeg
+      speciesSprite: MobReptilianLLegDigi
 
 - type: entity
   id: RightLegReptilian
@@ -173,7 +173,7 @@
     baseSprintSpeed: 4.5
   - type: SurgeryBodyPart
     visuals:
-      speciesSprite: MobReptilianRLeg
+      speciesSprite: MobReptilianRLegDigi
 
 - type: entity
   id: LeftFootReptilian
@@ -189,7 +189,7 @@
     state: "l_foot_icon"
   - type: SurgeryBodyPart
     visuals:
-      speciesSprite: MobReptilianLFoot
+      speciesSprite: MobReptilianLFootDigi
 
 - type: entity
   id: RightFootReptilian
@@ -205,7 +205,7 @@
     state: "r_foot_icon"
   - type: SurgeryBodyPart
     visuals:
-      speciesSprite: MobReptilianRFoot
+      speciesSprite: MobReptilianRFootDigi
 
 - type: entity
   id: TailReptilian

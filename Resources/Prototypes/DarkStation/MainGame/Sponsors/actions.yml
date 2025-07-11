@@ -1,13 +1,15 @@
 ﻿- type: entity
+  parent: BaseAction
   id: ActionSelectGhostSkin
   name: "Выбрать скин призрака"
   description: "Донатеры могут выбрать себе скин призрака"
-  categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: Action
+    itemIconStyle: BigAction
     icon:
       sprite: DarkStation/MainGame/Mobs/Ghosts/ghost_plague_doctor.rsi
       state: animated
     checkCanInteract: false
-    event: !type:SponsorOpenGhostSkinsEvent
     priority: -10
+  - type: InstantAction
+    event: !type:SponsorOpenGhostSkinsEvent

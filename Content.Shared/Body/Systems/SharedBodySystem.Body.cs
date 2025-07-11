@@ -13,6 +13,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Body.Systems;
@@ -192,12 +193,13 @@ public partial class SharedBodySystem
         }
     }
 
-    private void SetupOrgans(Entity<BodyPartComponent> ent, Dictionary<string, OrganPrototypeSlot> organs)
+    private void SetupOrgans(Entity<BodyPartComponent> ent, Dictionary<string, string> organs)
     {
-        foreach (var (organSlotId, organProto) in organs)
+        foreach (var (organSlotId, organProtoId) in organs)
         {
-            var slot = CreateOrganSlot((ent, ent), organSlotId, organProto.SlotType, organProto.Internal);
-            var organ = SpawnInContainerOrDrop(organProto.Organ, ent, GetOrganContainerId(organSlotId));
+            if (!Prototypes.TryIndex(organProtoId, out var prototype) || !prototype.TryGetComponent<OrganComponent>(out var component, Factory)) continue;
+            var slot = CreateOrganSlot((ent, ent), organSlotId, component.OrganType);
+            var organ = SpawnInContainerOrDrop(organProtoId, ent, GetOrganContainerId(organSlotId));
 
             if (slot is null)
             {
@@ -207,8 +209,6 @@ public partial class SharedBodySystem
             if (TryComp<OrganComponent>(organ, out var organComponent))
             {
                 organComponent.ParentSlot = slot;
-                organComponent.OrganType = organProto.SlotType;
-                organComponent.Internal = organProto.Internal;
             }
 
             if (slot != null)

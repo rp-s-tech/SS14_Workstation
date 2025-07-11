@@ -62,7 +62,7 @@
 - type: vampireAbility
   id: VampireRejuvenatePlus
   name: vampire-rejuvenate-plus
-  description: vampire-rejuvenate-description
+  description: vampire-rejuvenate-description-plus
   bloodCost: 250
   icon:
     sprite: DarkStation/MainGame/DarkForces/Vampire/actions.rsi

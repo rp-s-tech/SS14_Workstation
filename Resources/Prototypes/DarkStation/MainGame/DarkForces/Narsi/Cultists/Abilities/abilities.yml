@@ -8,7 +8,7 @@
   requiredBloodScore: 10
   actionId: NarsiCultistEmpAction
   icon:
-    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi/
+    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi
     state: emp
 
 - type: narsiAbilityPrototype
@@ -21,7 +21,7 @@
   requiredBloodScore: 15
   actionId: NarsiCultistFireArmsAction
   icon:
-    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi/
+    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi
     state: fire
 
 - type: narsiAbilityPrototype
@@ -34,7 +34,7 @@
   requiredBloodScore: 20
   actionId: NarsiCultistStealthAction
   icon:
-    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi/
+    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi
     state: stealth
 
 - type: narsiAbilityPrototype
@@ -47,7 +47,7 @@
   requiredBloodScore: 10
   actionId: NarsiCultistShadowAction
   icon:
-    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi/
+    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi
     state: shadow
 
 - type: narsiAbilityPrototype
@@ -60,7 +60,7 @@
   requiredBloodScore: 15
   actionId: NarsiCultistTeleportAction
   icon:
-    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi/
+    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi
     state: teleport
 
 - type: narsiAbilityPrototype
@@ -73,7 +73,7 @@
   requiredBloodScore: 5
   actionId: NarsiCultistSilenceAction
   icon:
-    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi/
+    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi
     state: silence
 
 - type: narsiAbilityPrototype
@@ -86,7 +86,7 @@
   requiredBloodScore: 5
   actionId: NarsiCultistBlindnessAction
   icon:
-    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi/
+    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi
     state: blindness
 
 - type: narsiAbilityPrototype
@@ -99,7 +99,7 @@
   requiredBloodScore: 10
   actionId: NarsiCultistStunAction
   icon:
-    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi/
+    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi
     state: stun
 
 - type: narsiAbilityPrototype
@@ -112,7 +112,7 @@
   requiredBloodScore: 10
   actionId: NarsiCultistCuffAction
   icon:
-    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi/
+    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi
     state: cuff
 
 - type: narsiAbilityPrototype
@@ -126,5 +126,5 @@
   actionId: NarsiCultistGhostAxeAction
   revertActionId: NarsiCultistGhostAxeRevert
   icon:
-    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi/
+    sprite: DarkStation/MainGame/DarkForces/Cult/Interface/actions.rsi
     state: ghostaxe

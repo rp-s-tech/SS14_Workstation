@@ -9,62 +9,12 @@
   group: market
 
 - type: cargoProduct
-  id: MedicalSynthOrgans
-  icon:
-    sprite: Mobs/Species/Bionic/organs.rsi
-    state: heart-off
-  product: CrateSyntheticOrgans
-  cost: 4000
-  category: cargoproduct-category-name-medical
-  group: market
-
-- type: cargoProduct
   id: MedicalDionaOrgans
   icon:
     sprite: Mobs/Species/Diona/organs.rsi
     state: stomach
   product: CrateDionaOrgans
   cost: 1500
-  category: cargoproduct-category-name-medical
-  group: market
-
-- type: cargoProduct
-  id: MedicalSynthLeftLeg
-  icon:
-    sprite: Mobs/Species/Bionic/parts.rsi
-    state: l_leg_icon
-  product: LeftSynthLegFoot
-  cost: 500
-  category: cargoproduct-category-name-medical
-  group: market
-
-- type: cargoProduct
-  id: MedicalSynthRightLeg
-  icon:
-    sprite: Mobs/Species/Bionic/parts.rsi
-    state: r_leg_icon
-  product: RightSynthLegFoot
-  cost: 500
-  category: cargoproduct-category-name-medical
-  group: market
-
-- type: cargoProduct
-  id: MedicalSynthLeftArm
-  icon:
-    sprite: Mobs/Species/Bionic/parts.rsi
-    state: l_arm_icon
-  product: LeftSynthArmHand
-  cost: 500
-  category: cargoproduct-category-name-medical
-  group: market
-
-- type: cargoProduct
-  id: MedicalSynthRightArn
-  icon:
-    sprite: Mobs/Species/Bionic/parts.rsi
-    state: r_arm_icon
-  product: RightSynthArmHand
-  cost: 500
   category: cargoproduct-category-name-medical
   group: market
 

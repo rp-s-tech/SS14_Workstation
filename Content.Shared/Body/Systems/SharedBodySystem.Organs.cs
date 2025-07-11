@@ -65,13 +65,13 @@ public partial class SharedBodySystem
     /// <summary>
     /// Creates the specified organ slot on the parent entity.
     /// </summary>
-    private OrganSlot? CreateOrganSlot(Entity<BodyPartComponent?> parentEnt, string slotId, OrganType type, bool isInternal)
+    private OrganSlot? CreateOrganSlot(Entity<BodyPartComponent?> parentEnt, string slotId, OrganType? organType)
     {
         if (!Resolve(parentEnt, ref parentEnt.Comp, logMissing: false))
             return null;
 
         Containers.EnsureContainer<ContainerSlot>(parentEnt, GetOrganContainerId(slotId));
-        var slot = new OrganSlot(slotId, GetNetEntity(parentEnt), type, isInternal);
+        var slot = new OrganSlot(slotId, GetNetEntity(parentEnt), organType);
         parentEnt.Comp.Organs.Add(slotId, slot);
         return slot;
     }
@@ -83,6 +83,7 @@ public partial class SharedBodySystem
         EntityUid? parent,
         string slotId,
         [NotNullWhen(true)] out OrganSlot? slot,
+        OrganType? organType,
         BodyPartComponent? part = null)
     {
         slot = null;
@@ -93,7 +94,7 @@ public partial class SharedBodySystem
         }
 
         Containers.EnsureContainer<ContainerSlot>(parent.Value, GetOrganContainerId(slotId));
-        slot = new OrganSlot(slotId, GetNetEntity(parent.Value), null, true);
+        slot = new OrganSlot(slotId, GetNetEntity(parent.Value), organType);
         return part.Organs.TryAdd(slotId, slot);
     }
 

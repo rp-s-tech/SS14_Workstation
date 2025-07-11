@@ -52,6 +52,7 @@
   - TowelColorLightBlue
   - TowelColorWhite
   - TowelColorYellow
+  - Cane
 
 - type: loadoutGroup
   id: Glasses

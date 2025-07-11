@@ -26,7 +26,6 @@ public sealed class RatvarAltarSystem : EntitySystem
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly RatvarProgressSystem _progressSystem = default!;
-    [Dependency] private readonly RatvarProgressSystem _ratvarRolesSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _sharedAppearance = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IAntagBridge _antagBridge = default!;

@@ -125,7 +125,6 @@
   - type: MachineBoard
     prototype: ElectroForge
     requirements:
-      MatterBin: 3
-      Manipulator: 1
+      Manipulator: 5
     materialRequirements:
       Glass: 1

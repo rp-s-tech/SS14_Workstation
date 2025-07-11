@@ -1,9 +1,10 @@
 using Content.Server.Body.Components;
-using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Administration.Logs;
+using Content.Shared.Body.Events;
 using Content.Shared.Body.Organ;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Database;
 using Content.Shared.EntityEffects;
@@ -14,7 +15,6 @@ using Robust.Shared.Collections;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Server.Body.Events;
 
 namespace Content.Server.Body.Systems
 {
@@ -193,10 +193,10 @@ namespace Content.Server.Body.Systems
                         if (!proto.WorksOnTheDead && _mobStateSystem.IsDead(solutionEntityUid.Value, state))
                             continue;
                     }
-
+                    // RPSX Surgery Start
                     var metabolizeEv = new OnEntityMetabolize(group, mostToRemove);
                     RaiseLocalEvent(solutionEntityUid.Value, ref metabolizeEv);
-
+                    // RPSX Surgery End
                     var scale = (float)effectAmount / (float)rate;
                     var actualEntity = ent.Comp2?.Body ?? solutionEntityUid.Value;
                     var args = new EntityEffectReagentArgs(actualEntity, EntityManager, ent, solution, effectAmount, proto, null, scale);
@@ -224,18 +224,20 @@ namespace Content.Server.Body.Systems
                         var eventArgs = new ReagentEffectApplyEvent(args);
                         RaiseLocalEvent(args.TargetEntity, ref eventArgs);
                     }
+                    // RPSX Surgery Start
                     var afterReagentEv = new OnEntityMetabolizeAfterReagent(group, scale);
                     RaiseLocalEvent(solutionEntityUid.Value, ref afterReagentEv);
+                    // RPSX Surgery End
                 }
 
                 // remove a certain amount of reagent
                 if (mostToRemove > FixedPoint2.Zero)
                 {
                     solution.RemoveReagent(reagent, mostToRemove);
-
+                    // RPSX Surgery Start
                     var afterMetabolize = new OnEntityAfterMetabolize(mostToRemove, soln.Value);
                     RaiseLocalEvent(solutionEntityUid.Value, ref afterMetabolize);
-
+                    // RPSX Surgery End
                     // We have processed a reagant, so count it towards the cap
                     reagents += 1;
                 }
@@ -244,29 +246,14 @@ namespace Content.Server.Body.Systems
             _solutionContainerSystem.UpdateChemicals(soln.Value);
         }
     }
-
-    // TODO REFACTOR THIS
-    // This will cause rates to slowly drift over time due to floating point errors.
-    // Instead, the system that raised this should trigger an update and subscribe to get-modifier events.
+    // RPSX Surgery Start
     [ByRefEvent]
-    public readonly record struct ApplyMetabolicMultiplierEvent(
-        EntityUid Uid,
-        float Multiplier,
-        bool Apply)
-    {
-        /// <summary>
-        /// The entity whose metabolism is being modified.
-        /// </summary>
-        public readonly EntityUid Uid = Uid;
+    public record struct OnEntityMetabolize(MetabolismGroupEntry Entry, FixedPoint2 MostToRemove);
 
-        /// <summary>
-        /// What the metabolism's update rate will be multiplied by.
-        /// </summary>
-        public readonly float Multiplier = Multiplier;
+    [ByRefEvent]
+    public record struct OnEntityMetabolizeAfterReagent(MetabolismGroupEntry Entry, float Scale);
 
-        /// <summary>
-        /// If true, apply the multiplier. If false, revert it.
-        /// </summary>
-        public readonly bool Apply = Apply;
-    }
+    [ByRefEvent]
+    public record struct OnEntityAfterMetabolize(FixedPoint2 MostToRemove, Entity<SolutionComponent> Solution);
+    // RPSX Surgery End
 }

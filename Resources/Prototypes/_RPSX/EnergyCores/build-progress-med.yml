@@ -613,19 +613,11 @@
         doAfter: 2
 
 - type: construction
-  name: Среднее энергоядро НаноТрейзен
   id: EnergyCoreMediumConstructionNT
   graph: EnergyCoreMediumNT
   startNode: start
   targetNode: EnergyCore
   category: construction-category-structures
-  description: СУПЕР ПУПЕР ЯДРО!
-  icon:
-    sprite: _RPSX/EnergyCores/mini_core-blue.rsi
-    state: icon
-  layers:
-  - sprite: _RPSX/EnergyCores/ec_const_medium.rsi
-    state: corpus
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -633,19 +625,11 @@
   - !type:TileNotBlocked
 
 - type: construction
-  name: Среднее энергоядро Синдиката
   id: EnergyCoreMediumConstructionSyn
   graph: EnergyCoreMediumSyn
   startNode: start
   targetNode: EnergyCore
   category: construction-category-structures
-  description: СУПЕР ПУПЕР ЯДРО!
-  icon:
-    sprite: _RPSX/EnergyCores/mini_core-redspace.rsi
-    state: icon
-  layers:
-  - sprite: _RPSX/EnergyCores/ec_const_medium.rsi
-    state: corpus
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -653,19 +637,11 @@
   - !type:TileNotBlocked
 
 - type: construction
-  name: Среднее энергоядро РнД
   id: EnergyCoreMediumConstructionRnD
   graph: EnergyCoreMediumRnD
   startNode: start
   targetNode: EnergyCore
   category: construction-category-structures
-  description: СУПЕР ПУПЕР ЯДРО!
-  icon:
-    sprite: _RPSX/EnergyCores/mini_core-RnD.rsi
-    state: icon
-  layers:
-  - sprite: _RPSX/EnergyCores/ec_const_medium.rsi
-    state: corpus
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -673,19 +649,11 @@
   - !type:TileNotBlocked
 
 - type: construction
-  name: Среднее самодельное энергоядро
   id: EnergyCoreMediumConstructionHM
   graph: EnergyCoreMediumHM
   startNode: start
   targetNode: EnergyCore
   category: construction-category-structures
-  description: СУПЕР ПУПЕР ЯДРО!
-  icon:
-    sprite: _RPSX/EnergyCores/mini_core-yellow.rsi
-    state: icon
-  layers:
-  - sprite: _RPSX/EnergyCores/ec_const_medium.rsi
-    state: corpus
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
