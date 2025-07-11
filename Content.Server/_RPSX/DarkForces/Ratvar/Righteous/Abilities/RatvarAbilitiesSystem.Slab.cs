@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using Content.Server.RPSX.DarkForces.Ratvar.Righteous.Abilities.Enchantment;
 using Content.Server.RPSX.DarkForces.Ratvar.Righteous.Abilities.Slab;
@@ -36,7 +36,6 @@ public sealed partial class RatvarAbilitiesSystem
     private const string SecretDoor = "SolidSecretDoor";
 
     [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly DoorSystem _doorBoltSystem = default!;
     [Dependency] private readonly DoorSystem _doorSystem = default!;
     [Dependency] private readonly EmpSystem _empSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -177,9 +176,9 @@ public sealed partial class RatvarAbilitiesSystem
             return;
         }
 
-        if (TryComp<DoorBoltComponent>(target, out var doorBolt) && _doorBoltSystem.IsBolted(target))
+        if (TryComp<DoorBoltComponent>(target, out var doorBolt) && _doorSystem.IsBolted(target))
         {
-            _doorBoltSystem.SetBoltsDown((target, doorBolt), false);
+            _doorSystem.SetBoltsDown((target, doorBolt), false);
             args.Handled = true;
             return;
         }

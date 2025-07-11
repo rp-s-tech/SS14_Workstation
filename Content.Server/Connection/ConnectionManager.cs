@@ -66,7 +66,6 @@ namespace Content.Server.Connection
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly IHttpClientHolder _http = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
-        [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] private readonly IDiscordAuthManager _discordAuthManager = default!;
 
         private GameTicker? _ticker;
@@ -301,7 +300,7 @@ namespace Content.Server.Connection
                 }
             }
 
-            _ticker ??= _entityManager.SystemOrNull<GameTicker>();
+            _ticker ??= _entMan.SystemOrNull<GameTicker>();
             var wasInGame = _ticker != null &&
                             _ticker.PlayerGameStatuses.TryGetValue(userId, out var status) &&
                             status == PlayerGameStatus.JoinedGame;

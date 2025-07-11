@@ -1,11 +1,17 @@
 #!/bin/bash
 
-dotnet build -c Release --property WarningLevel=0
-cd RPSX || exit
-dotnet build -c Release --property WarningLevel=0
+FOLDER="./RPSX"
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# Проверим, есть ли в папке хоть один файл или подкаталог
+if [ -z "$(ls -A "$FOLDER")" ]; then
+    echo "RPSX is empty. Building public part..."
+    dotnet build -c Release SpaceStation14.sln
+else
+    echo "RPSX is not empty. Building hole part..."
+    dotnet build -c Release RPSX.sln
+    cd RPSX || exit 1
+    ./sync.sh -y
+    cd ..
+fi
 
-bash "$SCRIPT_DIR/sync.sh" -y
-
-cd ..
+read -p "Press any key to continue..."

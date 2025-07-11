@@ -1,10 +1,7 @@
-﻿using Content.Server.RPSX.DarkForces.Ratvar.Righteous.Abilities.Enchantment.Weapons;
-using Content.Server.Body.Components;
+using Content.Server.RPSX.DarkForces.Ratvar.Righteous.Abilities.Enchantment.Weapons;
 using Content.Server.Body.Systems;
-using Content.Shared.RPSX.DarkForces.Ratvar.UI;
 using Content.Shared.Weapons.Melee.Events;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
+using Content.Shared.Body.Components;
 
 namespace Content.Server.RPSX.DarkForces.Ratvar.Righteous.Abilities;
 

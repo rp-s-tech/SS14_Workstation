@@ -1,0 +1,9 @@
+- type: entity
+  id: CrateSyntheticCloth
+  parent: CrateMedical
+  name: Synthetic Cloth
+  description: Cloth for creating synthetic prostheses.
+  components:
+  - type: StorageFill
+    contents:
+      - id: SyntheticCloth

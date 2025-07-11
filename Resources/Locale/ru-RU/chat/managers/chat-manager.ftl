@@ -19,7 +19,7 @@ chat-manager-whisper-headset-on-message = Вы не можете шептать 
 chat-manager-server-wrap-message = [bold]{ $message }[/bold]
 chat-manager-sender-announcement = Центральное командование
 chat-manager-sender-announcement-wrap-message = [font size=14][bold]Объявление { $sender }:[/font][font size=12]
-    { $message }[/bold][/font]
+                                                { $message }[/bold][/font]
 chat-manager-entity-say-wrap-message = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize } ]"[BubbleContent]{ $message }[/BubbleContent]"[/font]
 chat-manager-entity-say-bold-wrap-message = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize }]"[BubbleContent][bold]{ $message }[/bold][/BubbleContent]"[/font]
 chat-manager-entity-whisper-wrap-message = [font size=11][italic][BubbleHeader][Name]{ $entityName }[/Name][/BubbleHeader] шепчет,"[BubbleContent]{ $message }[/BubbleContent]"[/italic][/font]
@@ -125,6 +125,11 @@ chat-speech-verb-electricity-3 = скрипит
 
 ### Slugcat
 
+chat-speech-verb-name-wawa = Вава
+chat-speech-verb-wawa-1 = произносит
+chat-speech-verb-wawa-2 = заявляет
+chat-speech-verb-wawa-3 = утверждает
+chat-speech-verb-wawa-4 = размышляет
 chat-speech-verb-name-slugcat = Слизнекотовый
 chat-speech-verb-slugcat-1 = интонирует
 chat-speech-verb-slugcat-2 = утверждает

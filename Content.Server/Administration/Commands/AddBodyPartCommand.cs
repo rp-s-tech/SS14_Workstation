@@ -3,56 +3,49 @@ using Content.Shared.Administration;
 using Content.Shared.Body.Part;
 using Robust.Shared.Console;
 
-namespace Content.Server.Administration.Commands
+namespace Content.Server.Administration.Commands;
+
+[AdminCommand(AdminFlags.Admin)]
+public sealed class AddBodyPartCommand : LocalizedEntityCommands
 {
-    [AdminCommand(AdminFlags.Admin)]
-    public sealed class AddBodyPartCommand : IConsoleCommand
+    [Dependency] private readonly BodySystem _bodySystem = default!;
+
+    public override string Command => "addbodypart";
+
+    public override void Execute(IConsoleShell shell, string argStr, string[] args)
     {
-        [Dependency] private readonly IEntityManager _entManager = default!;
-
-        public string Command => "addbodypart";
-        public string Description => "Adds a given entity to a containing body.";
-        public string Help => "Usage: addbodypart <entity uid> <body uid> <part slot> <part type> <part symmetry (optional)>";
-
-        public void Execute(IConsoleShell shell, string argStr, string[] args)
+        if (args.Length != 4)
         {
-            if (args.Length != 3)
-            {
-                shell.WriteError(Loc.GetString("shell-wrong-arguments-number"));
-                return;
-            }
+            shell.WriteError(Loc.GetString("shell-wrong-arguments-number"));
+            return;
+        }
 
-            if (!NetEntity.TryParse(args[0], out var childNetId))
-            {
-                shell.WriteError(Loc.GetString("shell-entity-uid-must-be-number"));
-                return;
-            }
+        if (!NetEntity.TryParse(args[0], out var childNetId) || !EntityManager.TryGetEntity(childNetId, out var childId))
+        {
+            shell.WriteError(Loc.GetString("shell-invalid-entity-uid", ("uid", args[0])));
+            return;
+        }
 
-            if (!NetEntity.TryParse(args[1], out var parentNetId))
-            {
-                shell.WriteError(Loc.GetString("shell-entity-uid-must-be-number"));
-                return;
-            }
+        if (!NetEntity.TryParse(args[1], out var parentNetId) || !EntityManager.TryGetEntity(parentNetId, out var parentId))
+        {
+            shell.WriteError(Loc.GetString("shell-invalid-entity-uid", ("uid", args[1])));
+            return;
+        }
 
-            var childId = _entManager.GetEntity(childNetId);
-            var parentId = _entManager.GetEntity(parentNetId);
-            var bodySystem = _entManager.System<BodySystem>();
-            var partSymmetry = BodyPartSymmetry.None;
-            if (args.Length == 5)
-            {
-                Enum.TryParse(args[4], out partSymmetry);
-            }
+        var partSymmetry = BodyPartSymmetry.None;
+        if (args.Length == 5)
+        {
+            Enum.TryParse(args[4], out partSymmetry);
+        }
 
-
-            if (Enum.TryParse<BodyPartType>(args[3], out var partType) &&
-                bodySystem.TryCreatePartSlotAndAttach(parentId, args[2], childId, partType, partSymmetry))
-            {
-                shell.WriteLine($@"Added {childId} to {parentId}.");
-            }
-            else
-            {
-                shell.WriteError($@"Could not add {childId} to {parentId}.");
-            }
+        if (Enum.TryParse<BodyPartType>(args[3], out var partType) &&
+            _bodySystem.TryCreatePartSlotAndAttach(parentId.Value, args[2], childId.Value, partType, partSymmetry))
+        {
+            shell.WriteLine($@"Added {childId} to {parentId}.");
+        }
+        else
+        {
+            shell.WriteError($@"Could not add {childId} to {parentId}.");
         }
     }
 }

@@ -13,6 +13,7 @@ using Content.Shared.RPSX.Vampire;
 using Content.Shared.RPSX.Vampire.Attempt;
 using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
+using Content.Shared.Body.Components;
 
 namespace Content.Server.RPSX.GameRules.Vampire.Role.Abilities;
 

@@ -361,7 +361,7 @@ public sealed class FoodSystem : EntitySystem
 
         if (component.Trash.Count == 0)
         {
-            QueueDel(food);
+            PredictedQueueDel(food);
             return;
         }
 
@@ -372,10 +372,10 @@ public sealed class FoodSystem : EntitySystem
         var trashes = component.Trash;
         var tryPickup = _hands.IsHolding(user, food, out _);
 
-        Del(food);
+        PredictedDel(food);
         foreach (var trash in trashes)
         {
-            var spawnedTrash = Spawn(trash, position);
+            var spawnedTrash = EntityManager.PredictedSpawn(trash, position);
 
             // If the user is holding the item
             if (tryPickup)
@@ -478,7 +478,7 @@ public sealed class FoodSystem : EntitySystem
 
         var usedTypes = UtensilType.None;
 
-        foreach (var item in _hands.EnumerateHeld(user, hands))
+        foreach (var item in _hands.EnumerateHeld((user, hands)))
         {
             // Is utensil?
             if (!TryComp<UtensilComponent>(item, out var utensil))

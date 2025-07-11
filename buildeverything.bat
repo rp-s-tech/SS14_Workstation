@@ -1,11 +1,19 @@
 @echo off
-dotnet build -c Release --property WarningLevel=0
-cd RPSX
-dotnet build -c Release --property WarningLevel=0
 
-set "BASH_EXE=C:\Program Files\Git\bin\bash.exe"
-set "BASE_DIR=%~dp0"
-set "SCRIPT_PATH=%BASE_DIR%RPSX/sync.sh"
+set "FOLDER=.\RPSX"
 
-"%BASH_EXE%" -c "/bin/bash '%SCRIPT_PATH%' -y"
+rem Проверим, есть ли в папке хоть один файл или подкаталог
+dir /b "%FOLDER%" | findstr . >nul
+
+if errorlevel 1 (
+    echo RPSX is empty. Building public part...
+    dotnet build -c Release SpaceStation14.sln
+) else (
+    echo RPSX is not empty. Building hole part...
+    dotnet build -c Release RPSX.sln
+    cd RPSX
+    .\sync.sh -y
+)
+
 cd ..
+pause

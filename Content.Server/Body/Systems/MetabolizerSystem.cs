@@ -15,7 +15,6 @@ using Robust.Shared.Collections;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Server.Body.Events;
 
 namespace Content.Server.Body.Systems
 {
@@ -194,10 +193,10 @@ namespace Content.Server.Body.Systems
                         if (!proto.WorksOnTheDead && _mobStateSystem.IsDead(solutionEntityUid.Value, state))
                             continue;
                     }
-
+                    // RPSX Surgery Start
                     var metabolizeEv = new OnEntityMetabolize(group, mostToRemove);
                     RaiseLocalEvent(solutionEntityUid.Value, ref metabolizeEv);
-
+                    // RPSX Surgery End
                     var scale = (float)effectAmount / (float)rate;
                     var actualEntity = ent.Comp2?.Body ?? solutionEntityUid.Value;
                     var args = new EntityEffectReagentArgs(actualEntity, EntityManager, ent, solution, effectAmount, proto, null, scale);
@@ -225,18 +224,20 @@ namespace Content.Server.Body.Systems
                         var eventArgs = new ReagentEffectApplyEvent(args);
                         RaiseLocalEvent(args.TargetEntity, ref eventArgs);
                     }
+                    // RPSX Surgery Start
                     var afterReagentEv = new OnEntityMetabolizeAfterReagent(group, scale);
                     RaiseLocalEvent(solutionEntityUid.Value, ref afterReagentEv);
+                    // RPSX Surgery End
                 }
 
                 // remove a certain amount of reagent
                 if (mostToRemove > FixedPoint2.Zero)
                 {
                     solution.RemoveReagent(reagent, mostToRemove);
-
+                    // RPSX Surgery Start
                     var afterMetabolize = new OnEntityAfterMetabolize(mostToRemove, soln.Value);
                     RaiseLocalEvent(solutionEntityUid.Value, ref afterMetabolize);
-
+                    // RPSX Surgery End
                     // We have processed a reagant, so count it towards the cap
                     reagents += 1;
                 }
@@ -245,4 +246,14 @@ namespace Content.Server.Body.Systems
             _solutionContainerSystem.UpdateChemicals(soln.Value);
         }
     }
+    // RPSX Surgery Start
+    [ByRefEvent]
+    public record struct OnEntityMetabolize(MetabolismGroupEntry Entry, FixedPoint2 MostToRemove);
+
+    [ByRefEvent]
+    public record struct OnEntityMetabolizeAfterReagent(MetabolismGroupEntry Entry, float Scale);
+
+    [ByRefEvent]
+    public record struct OnEntityAfterMetabolize(FixedPoint2 MostToRemove, Entity<SolutionComponent> Solution);
+    // RPSX Surgery End
 }

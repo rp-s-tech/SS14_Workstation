@@ -43,7 +43,6 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] private readonly GrammarSystem _grammarSystem = default!;
     [Dependency] private readonly SharedIdentitySystem _identity = default!;
     [Dependency] private readonly ISponsorsManager _sponsors = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!; // ADT-Changeling-Tweak
 
     [ValidatePrototypeId<SpeciesPrototype>]
     public const string DefaultSpecies = "Human";
