@@ -47,7 +47,7 @@ jobs:
           dotnet-version: 9.0.x
 
       - name: Install dependencies
-        run: dotnet restore
+        run: dotnet restore RPSX
 
       - name: Build Project
         run: dotnet build Content.MapRenderer --configuration Release --no-restore /m
