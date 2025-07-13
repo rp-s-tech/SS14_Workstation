@@ -31,10 +31,10 @@ jobs:
         dotnet-version: 9.0.x
 
     - name: Install dependencies
-      run: dotnet restore RPSX
+      run: dotnet restore RPSX.sln
 
     - name: Build Project
-      run: dotnet build RPSX --no-restore
+      run: dotnet build RPSX.sln --no-restore
 
     - name: Build DocFX
       uses: nikeee/docfx-action@v1.0.0
