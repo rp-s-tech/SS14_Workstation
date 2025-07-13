@@ -35,8 +35,8 @@ jobs:
         with:
           dotnet-version: 9.0.x
       - name: Install dependencies
-        run: dotnet restore RPSX
+        run: dotnet restore RPSX.sln
       - name: Build
-        run: dotnet build RPSX --configuration Release --no-restore /p:WarningsAsErrors= /m
+        run: dotnet build RPSX.sln --configuration Release --no-restore /p:WarningsAsErrors= /m
       - name: Run Linter
         run: dotnet run --project Content.YAMLLinter/Content.YAMLLinter.csproj --no-build
