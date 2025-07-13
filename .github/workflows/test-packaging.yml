@@ -51,7 +51,7 @@ jobs:
       - name: Setup secrets
         env:
           ACCESS_TOKEN : ${{ secrets.ACCESS_TOKEN }}
-        if: ${{ secrets.ACCESS_TOKEN != '' }}
+        if: ${{ env.ACCESS_TOKEN != '' }}
         run: |
           git -c submodule.RPSX.update=checkout -c submodule.RPSX.url="https://${{ secrets.ACCESS_TOKEN }}@github.com/rp-s-tech/SS14_Workstation_Private.git"  submodule update --init
           ./RPSX/sync.sh -y
