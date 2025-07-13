@@ -47,10 +47,10 @@ jobs:
         dotnet-version: 9.0.x
 
     - name: Install dependencies
-      run: dotnet restore RPSX
+      run: dotnet restore RPSX.sln
 
     - name: Build Project
-      run: dotnet build RPSX --configuration DebugOpt --no-restore /m
+      run: dotnet build RPSX.sln --configuration DebugOpt --no-restore /m
 
     - name: Run Content.Tests
       run: dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0
