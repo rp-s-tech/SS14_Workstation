@@ -47,3 +47,15 @@
       - id: GrenadeFoamDart
         amount: 6
       - id: BoxDonkSoftBoxBullet
+
+- type: entity
+  id: CrateFunGunFoamBlender
+  parent: CrateFunFoamGuns
+  name: box with different foam guns
+  description: Contains 2 units of safety submachine guns and pistols made of plastic and foam.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponMinigunВlender
+      - id: BandMinigunFoam
+        amount: 2

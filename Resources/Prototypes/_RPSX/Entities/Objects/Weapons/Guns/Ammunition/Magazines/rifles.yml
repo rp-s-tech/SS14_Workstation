@@ -11,7 +11,7 @@
     proto: MiniBulletFoam
     capacity: 15
   - type: Sprite
-    sprite: _RPSX/Objects/Weapons/Guns/Ammunitions/Magazine/Pistol/foam_green.rsi
+    sprite: _RPSX/Objects/Weapons/Guns/Ammunitions/Magazine/Rifle/foam_green.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -33,10 +33,22 @@
   - type: BallisticAmmoProvider
     capacity: 6
   - type: Sprite
-    sprite: _RPSX/Objects/Weapons/Guns/Ammunitions/Magazine/Pistol/foam_blue.rsi
+    sprite: _RPSX/Objects/Weapons/Guns/Ammunitions/Magazine/Rifle/foam_blue.rsi
   - type: MagazineVisuals
     magState: mag
-    steps: 2
+    steps: 3
   - type: Tag
     tags:
       - MagazinePistolLowFoam
+
+- type: entity
+  id: BandMinigunFoam
+  name: band from foam minigun
+  parent: MagazinePistolHighFoam
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 70
+  - type: Sprite
+    sprite: _RPSX/Objects/Weapons/Guns/Ammunitions/Magazine/Rifle/band.rsi
+  - type: MagazineVisuals
+    steps: 7

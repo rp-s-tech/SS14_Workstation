@@ -6,3 +6,6 @@ ent-WeaponSubMachineGunFoamFlash = вспышка
 
 ent-WeaponPistolFoamHummingbird = колибри
     .desc = Пенный пистолет, который пригодится, когда закончатся другие боеприпасы.
+
+ent-WeaponMinigunВlender = колибри
+    .desc = Пенный пулемёт, делает брррррррррррррррррррррр как настоящий.

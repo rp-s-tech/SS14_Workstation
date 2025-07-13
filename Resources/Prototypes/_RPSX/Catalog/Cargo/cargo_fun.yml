@@ -23,8 +23,17 @@
   icon:
     sprite: _RPSX/Objects/Weapons/Guns/Rifles/hummingbird.rsi
     state: icon
-  product: CrateFunFoamHummingbird
+  product: CrateFunGunFoamHummingbird
   cost: 2000
   category: cargoproduct-category-name-fun
   group: market
 
+- type: cargoProduct
+  id: ProductSubMachineGunFoamВlender
+  icon:
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/blender.rsi
+    state: icon
+  product: CrateFunGunFoamBlender
+  cost: 4000
+  category: cargoproduct-category-name-fun
+  group: market

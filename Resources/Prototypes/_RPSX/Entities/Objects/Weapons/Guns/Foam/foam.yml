@@ -149,3 +149,43 @@
     shotsPerBurst: 4
     burstCooldown: 0.2
     burstFireRate: 2
+
+- type: entity
+  name: minigun
+  id: WeaponMinigunВlender
+  parent: WeaponLightMachineGunL6
+  description: Foam machine gun, makes brrrrrrrrrrrrrrrrrrrrrr like a real.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/blender.rsi
+    layers:
+    - state: icon
+  - type: Item
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/blender.rsi
+  - type: Gun
+    fireRate: 4
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/minigun.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: BandMinigunFoam
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistolLowFoam
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: MiniBulletFoam
+        priority: 1
+        whitelist:
+          tags:
+            - MiniBulletFoam
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
