@@ -157,13 +157,14 @@ jobs:
       - build-test-debug
       - build-test-maprenderer
       - test-packaging
-    if: always()
+    if: always() && github.event_name == 'pull_request_target'
     steps:
+      - name: Checkout Master
+        uses: actions/checkout@v4.2.2
       - name: Comment on PR with summary
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN_FOR_COMMENTS }}
         run: |
-          gh auth login --with-token <<< "$GH_TOKEN"
           PR_NUM=${{ github.event.pull_request.number }}
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
       

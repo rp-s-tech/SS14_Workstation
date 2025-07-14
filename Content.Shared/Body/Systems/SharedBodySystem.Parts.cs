@@ -620,7 +620,7 @@ public partial class SharedBodySystem
         {
             yield return slot;
 
-            var containerSlotId = GetOrganContainerId(slotId);
+            var containerSlotId = GetPartSlotContainerId(slotId);
 
             if (Containers.TryGetContainer(partId, containerSlotId, out var container))
             {

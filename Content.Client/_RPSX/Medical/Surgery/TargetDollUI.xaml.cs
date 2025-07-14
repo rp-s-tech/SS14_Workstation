@@ -9,12 +9,11 @@ namespace Content.Client.RPSX.Medical.Surgery;
 [GenerateTypedNameReferences]
 public sealed partial class TargetDollUI : UIWidget
 {
-    private readonly ITargetDollWidgetBridge _targetDollWidget;
+    [Dependency] private readonly ITargetDollWidgetBridge _targetDollWidget = default!;
 
     public TargetDollUI()
     {
         RobustXamlLoader.Load(this);
-        _targetDollWidget = IoCManager.Resolve<ITargetDollWidgetBridge>();
         _targetDollWidget.InitializeWidget();
     }
 
