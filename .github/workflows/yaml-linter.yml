@@ -25,10 +25,9 @@ jobs:
           git submodule update --init --recursive
       - name: Setup secrets
         env:
-          ACCESS_TOKEN : ${{ secrets.ACCESS_TOKEN }}
-        
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
-          git -c submodule.RPSX.update=checkout -c submodule.RPSX.url="https://${{ env.ACCESS_TOKEN }}@github.com/rp-s-tech/SS14_Workstation_Private.git"  submodule update --init
+          git -c submodule.RPSX.update=checkout -c submodule.RPSX.url="https://${{ env.ACCESS_TOKEN }}@github.com/rp-s-tech/SS14_Workstation_Private.git" submodule update --init
           ./RPSX/sync.sh -y
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v4.1.0
