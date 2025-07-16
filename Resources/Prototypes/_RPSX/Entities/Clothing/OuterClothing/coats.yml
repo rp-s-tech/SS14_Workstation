@@ -8,3 +8,14 @@
     sprite: _RPSX/Clothing/OuterClothing/Coats/adminitrator_coat.rsi
   - type: Clothing
     sprite: _RPSX/Clothing/OuterClothing/Coats/adminitrator_coat.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCoatGhostface
+  name: ghostface coat
+  description: This coat is terrifying...
+  components:
+  - type: Sprite
+    sprite: _RPSX/Clothing/OuterClothing/Coats/ghostface.rsi
+  - type: Clothing
+    sprite: _RPSX/Clothing/OuterClothing/Coats/ghostface.rsi
