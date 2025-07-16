@@ -4,7 +4,7 @@
   name: titmouse
   parent: WeaponRifleFoam
   id: WeaponSubMachineGunFoamTitmouse
-  description: large and cool foam submachine gun with built-in large capacity magazine.
+  description: large and cool nerf submachine gun with built-in large capacity magazine.
   components:
   - type: Sprite
     sprite: _RPSX/Objects/Weapons/Guns/Rifles/titmouse.rsi
@@ -45,7 +45,7 @@
   name: flash
   parent: [WeaponSubMachineGunDrozd, BaseGunWieldable]
   id: WeaponSubMachineGunFoamFlash
-  description: Foam submachine gun for covert special operations.
+  description: Nerf submachine gun for covert special operations.
   components:
   - type: Sprite
     sprite: _RPSX/Objects/Weapons/Guns/Rifles/flash.rsi
@@ -108,7 +108,7 @@
   name: hummingbird
   parent: WeaponPistolMk58
   id: WeaponPistolFoamHummingbird
-  description: Foam pistol will come in handy when you spend the rest of the bullets.
+  description: Nerf pistol will come in handy when you spend the rest of the bullets.
   components:
   - type: Sprite
     sprite: _RPSX/Objects/Weapons/Guns/Rifles/hummingbird.rsi
@@ -151,10 +151,10 @@
     burstFireRate: 2
 
 - type: entity
-  name: minigun
-  id: WeaponMinigunblender
+  name: blender
+  id: WeaponMinigunBlender
   parent: WeaponLightMachineGunL6
-  description: Foam machine gun, makes brrrrrrrrrrrrrrrrrrrrrr like a real.
+  description: Nerf machine gun, makes brrrrrrrrrrrrrrrrrrrrrr like a real.
   components:
   - type: Sprite
     sprite: _RPSX/Objects/Weapons/Guns/Rifles/blender.rsi

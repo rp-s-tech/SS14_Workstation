@@ -1,7 +1,7 @@
 - type: entity
   id: CrateFunFoamTitmouse
   parent: CrateFunFoamGuns
-  name: box with a foam gun "titmouse"
+  name: box with a nerf gun "titmouse"
   description: Contains 3 units of safe submachine guns made of plastic and foam.
   components:
   - type: StorageFill
@@ -15,7 +15,7 @@
 - type: entity
   id: CrateFunFoamFlash
   parent: CrateFunFoamGuns
-  name: box with a foam gun "Flash"
+  name: box with a nerf gun "Flash"
   description: Contains 3 units of safe submachine guns made of plastic and foam.
   components:
   - type: StorageFill
@@ -31,7 +31,7 @@
 - type: entity
   id: CrateFunFoamHummingbird
   parent: CrateFunFoamGuns
-  name: box with different foam guns
+  name: box with different nerf guns
   description: Contains 2 units of safety submachine guns and pistols made of plastic and foam.
   components:
   - type: StorageFill
@@ -51,7 +51,7 @@
 - type: entity
   id: CrateFunGunFoamBlender
   parent: CrateFunFoamGuns
-  name: box with different foam guns
+  name: box with Nerf minigun
   description: Contains 2 units of safety submachine guns and pistols made of plastic and foam.
   components:
   - type: StorageFill
