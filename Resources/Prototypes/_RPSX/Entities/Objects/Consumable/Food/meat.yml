@@ -1,0 +1,58 @@
+- type: entity
+  name: raw vulp meat
+  parent: FoodMeatRawBase
+  id: FoodMeatVulp
+  description: A slab of raw vulp meat.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/meat.rsi
+    state: meat-vulp
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 9
+        - ReagentId: Fat
+          Quantity: 9
+  - type: InternalTemperature
+    conductivity: 0.43
+  - type: Construction
+    graph: VulpMeatSteak
+    node: start
+    defaultTarget: vulp meat steak
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  name: vulp steak
+  parent: FoodMeatBase
+  id: FoodMeatVulpCooked
+  description: A cooked slab of vulp meat. Smells primal.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/meat.rsi
+    state: meat-vulp-cooked
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+    - Steak
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Protein
+          Quantity: 5
+  - type: Construction
+    graph: VulpMeatSteak
+    node: vulp meat steak
+  - type: FoodSequenceElement
+    entries:
+      Burger: MeatSteak
+      Taco: MeatSteak
+
+# _RPSX\Objects\Consumable\Food\meat.rsi
