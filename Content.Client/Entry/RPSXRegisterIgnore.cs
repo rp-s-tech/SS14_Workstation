@@ -14,6 +14,6 @@ public sealed class RPSXRegisterIgnore
         if (useSecrets)
             return;
 
-        IoCManager.RegisterInstance<ITargetDollWidgetBridge>(new StubTargetDollWidgetBridge());
+        IoCManager.Register<ITargetDollWidgetBridge, StubTargetDollWidgetBridge>();
     }
 }

@@ -4,7 +4,7 @@ on:
   push:
     branches: [ productive, develop ]
   merge_group:
-  pull_request:
+  pull_request_target:
     paths:
       - '**.rsi/**'
 

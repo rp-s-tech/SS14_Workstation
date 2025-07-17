@@ -2,6 +2,8 @@
   id: PontificRule
   parent: BaseGameRule
   components:
+  - type: GameRule
+    minPlayers: 15
   - type: PontificRule
   - type: AntagSelection
     selectionTime: PrePlayerSpawn
@@ -15,14 +17,16 @@
   id: NarsiCult
   parent: BaseGameRule
   components:
+  - type: GameRule
+    minPlayers: 15
   - type: NarsiRule
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ NarsiCultist ]
-      min: 3
+      min: 2
       max: 3
-      playerRatio: 10
+      playerRatio: 7
       blacklist:
         components:
         - AntagImmune
@@ -65,11 +69,14 @@
   id: Ratvar
   parent: BaseGameRule
   components:
+  - type: GameRule
+    minPlayers: 15
   - type: RatvarRule
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ RatvarRighteous ]
+      min: 2
       max: 3
       playerRatio: 10
       blacklist:
@@ -111,13 +118,15 @@
   id: Vampire
   parent: BaseGameRule
   components:
+  - type: GameRule
+    minPlayers: 10
   - type: VampireRule
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ Vampire ]
       max: 2
-      playerRation: 20
+      playerRatio: 7
       blacklist:
         components:
         - AntagImmune
