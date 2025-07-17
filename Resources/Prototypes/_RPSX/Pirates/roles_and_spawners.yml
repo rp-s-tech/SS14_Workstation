@@ -1,0 +1,112 @@
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointPirate
+  components:
+  - type: GhostRole
+    name: roles-antag-nuclear-operative-name
+    description: roles-antag-nuclear-operative-objective
+    rules: ghost-role-information-rules-default-team-antagonist
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: Structures/Wallmounts/signs.rsi
+        state: radiation
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: SpawnPointPirate
+  id: SpawnPointPirateCaptain
+  components:
+  - type: GhostRole
+    name: roles-antag-nuclear-operative-commander-name
+    description: roles-antag-nuclear-operative-commander-objective
+    rules: ghost-role-information-rules-default-team-antagonist
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: SpawnPointPirate
+  id: SpawnPointPirateBocman
+  components:
+  - type: GhostRole
+    name: roles-antag-nuclear-operative-agent-name
+    description: roles-antag-nuclear-operative-agent-objective
+    rules: ghost-role-information-rules-default-team-antagonist
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+
+# antagroles
+- type: antag
+  id: Pirate
+  name: roles-antag-pirate-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-pirate-objective
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 18000 # 5h
+  guides: [ Pirates ]
+
+- type: antag
+  id: PirateBocman
+  name: roles-antag-pirate-bocman-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-pirate-bocman-objective
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 18000 # 5h
+  - !type:RoleTimeRequirement
+    role: JobStationEngineer
+    time: 10800 # 3h
+  guides: [ Pirates ]
+
+- type: antag
+  id: PirateCaptain
+  name: roles-antag-pirate-captain-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-pirate-captain-objective
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 18000 # 5h
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 18000 # 5h
+  # should be changed to pirate playtime when thats tracked (wyci)
+  guides: [ Pirates ]
+
+#mindroles
+# Nukies
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRolePirate
+  name: Pirate Role
+  components:
+  - type: MindRole
+    roleType: TeamAntagonist
+    subtype: role-subtype-pirates
+    exclusiveAntag: true
+    antagPrototype: Pirate
+  - type: PirateRole
+
+- type: entity
+  parent: MindRolePirate
+  id: MindRolePirateBocman
+  name: Pirate Medic Role
+  components:
+  - type: MindRole
+    antagPrototype: PirateBocman
+
+- type: entity
+  parent: MindRolePirate
+  id: MindRolePirateCaptain
+  name: Pirate Commander Role
+  components:
+  - type: MindRole
+    antagPrototype: NukeopsCommander

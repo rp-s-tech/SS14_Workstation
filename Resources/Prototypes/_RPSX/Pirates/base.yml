@@ -1,0 +1,37 @@
+- type: entity
+  id: PiratesProgressHolder
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PiratesProgress
+
+- type: radioChannel
+  id: Pirates
+  name: chat-radio-pirates
+  keycode: 'з'
+  frequency: 19894
+  color: "#f6ce64"
+  longRange: true
+
+
+# Rule
+- type: entity
+  parent: BaseGameRule
+  id: Pirates
+  components:
+  - type: GameRule
+    minPlayers: 25
+  - type: BasePiratesRule
+
+- type: entity
+  parent: BaseGameRule
+  id: BasePiratesRule
+  abstract: true
+  components:
+  - type: RandomMetadata #this generates the random operation name cuz it's cool.
+    nameSegments:
+    - NamesOperationPrefix
+    - NamesOperationSuffix
+    nameFormat: name-format-nuclear-operation
+  - type: PiratesRule
+  - type: RuleGrids
+  - type: AntagSelection

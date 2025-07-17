@@ -1,0 +1,63 @@
+# Rule
+- type: entity
+  parent: BasePiratesRule
+  id: BasicPirates
+  components:
+  - type: LoadMapRule
+    mapPath: /Maps/RPSXSecrets/Pirates/piratesector.yml
+  - type: AntagSelection
+    selectionTime: PrePlayerSpawn
+    definitions:
+    - prefRoles: [ PirateCaptain ]
+      fallbackRoles: [ Pirate, PirateBocman ]
+      spawnerPrototype: SpawnPointPirateCaptain
+      startingGear: BasicPiratesGearCaptain
+      # roleLoadout:
+      # - RoleSurvivalNukie
+      components:
+      - type: Pirate
+      - type: RandomMetadata
+        nameSegments:
+        - NamesSyndicateElite
+        nameFormat: name-format-nukie-commander
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      mindRoles:
+      - MindRolePirateCaptain
+    - prefRoles: [ PirateBocman ]
+      fallbackRoles: [ Pirate, PirateCaptain ]
+      spawnerPrototype: SpawnPointPirateBocman
+      startingGear: BasicPiratesGearBocman
+      # roleLoadout:
+      # - RoleSurvivalNukie
+      components:
+      - type: Pirate
+      - type: RandomMetadata
+        nameSegments:
+        - NamesSyndicateNormal
+        nameFormat: name-format-nukie-agent
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      mindRoles:
+      - MindRolePirateBocman
+    - prefRoles: [ Pirate ]
+      fallbackRoles: [ PirateCaptain, PirateBocman ]
+      spawnerPrototype: SpawnPointPirate
+      max: 5
+      playerRatio: 10
+      startingGear: BasicPiratesGear
+      # roleLoadout:
+      # - RoleSurvivalNukie
+      components:
+      - type: Pirate
+      - type: RandomMetadata
+        nameSegments:
+        - NamesSyndicateNormal
+        nameFormat: name-format-nukie-operator
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      mindRoles:
+      - MindRolePirate

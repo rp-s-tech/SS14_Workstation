@@ -1,0 +1,62 @@
+- type: entity
+  id: BasePirateObjective
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Objective
+    difficulty: 0.0
+    issuer: "Пираты"
+    unique: false
+  - type: PirateObjective
+    reward: 10
+
+- type: entity
+  id: StealCmdObjective
+  parent: BasePirateObjective
+  name: Kidnap someone
+  description: We need to kidnap one person and transfer him/her to our outpost.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StealCmdObjective
+  - type: PirateObjective
+    reward: 25
+
+- type: entity
+  id: BalanceIncreasingObjective
+  parent: BasePirateObjective
+  name: Increase balance 
+  description: We need to EARN A LOT OF MONEY.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BalanceIncreasingObjective
+    goal: 300
+  - type: PirateObjective
+    reward: 20
+
+- type: entity
+  id: StealItemsObjective
+  parent: BasePirateObjective
+  name: Steal some items
+  description: We need to steal some things for our and Syndicate neeeds
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StealSpecialsObjective
+  - type: PirateObjective
+    reward: 10
+
+- type: entity
+  id: StealCriticalItemsObjective
+  parent: BasePirateObjective
+  name: Steal some hard-to-steal items
+  description: We need to steal some hard-to-steal items for our and Syndicate neeeds
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StealSpecialsObjective
+    stealTargetGrops:
+    - NukeDisk
+    - WeaponEnergyShotgun
+    - NuclearBomb
+    - WeaponAntiqueLaser
+    - JetpackCaptainFilled
+    - CaptainIDCard
+  - type: PirateObjective
+    reward: 30
