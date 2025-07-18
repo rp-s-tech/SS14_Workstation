@@ -176,7 +176,7 @@
         priority: 2
         whitelist:
           tags:
-            - MagazinePistolLowNerf
+            - MiniganeBandNerf
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber

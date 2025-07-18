@@ -52,3 +52,6 @@
     sprite: _RPSX/Objects/Weapons/Guns/Ammunitions/Magazine/Rifle/band.rsi
   - type: MagazineVisuals
     steps: 7
+  - type: Tag
+    tags:
+      - MiniganeBandNerf
