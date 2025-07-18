@@ -1,55 +1,58 @@
 - type: entity
-  id: CrateFunFoamTitmouse
+  id: CrateFunGunNerfTitmouse
   parent: CrateFunFoamGuns
   name: box with a nerf gun "titmouse"
   description: Contains 3 units of safe submachine guns made of plastic and foam.
   components:
   - type: StorageFill
     contents:
-      - id: WeaponSubMachineGunFoamTitmouse
+      - id: WeaponSubMachineGunNerfTitmouse
         amount: 3
       - id: GrenadeFoamDart
         amount: 6
       - id: BoxDonkSoftBoxBullet
+        amount: 3
 
 - type: entity
-  id: CrateFunFoamFlash
+  id: CrateFunGunNerfFlash
   parent: CrateFunFoamGuns
   name: box with a nerf gun "Flash"
   description: Contains 3 units of safe submachine guns made of plastic and foam.
   components:
   - type: StorageFill
     contents:
-      - id: MagazinePistolHighFoam
+      - id: MagazinePistolHighNerf
         amount: 6
-      - id: WeaponSubMachineGunFoamFlash
+      - id: WeaponSubMachineGunNerfFlash
         amount: 3
       - id: GrenadeFoamDart
         amount: 6
       - id: BoxDonkSoftBoxBullet
+        amount: 3
 
 - type: entity
-  id: CrateFunFoamHummingbird
+  id: CrateFunGunNerfHummingbird
   parent: CrateFunFoamGuns
   name: box with different nerf guns
   description: Contains 2 units of safety submachine guns and pistols made of plastic and foam.
   components:
   - type: StorageFill
     contents:
-      - id: MagazinePistolLowFoam
+      - id: MagazinePistolLowNerf
         amount: 4
-      - id: MagazinePistolHighFoam
+      - id: MagazinePistolHighNerf
         amount: 2
-      - id: WeaponSubMachineGunFoamFlash
-      - id: WeaponSubMachineGunFoamTitmouse
-      - id: WeaponPistolFoamHummingbird
+      - id: WeaponSubMachineGunNerfFlash
+      - id: WeaponSubMachineGunNerfTitmouse
+      - id: WeaponPistolNerfHummingbird
         amount: 2
       - id: GrenadeFoamDart
         amount: 6
       - id: BoxDonkSoftBoxBullet
+        amount: 3
 
 - type: entity
-  id: CrateFunGunFoamBlender
+  id: CrateFunGunNerfBlender
   parent: CrateFunFoamGuns
   name: box with Nerf minigun
   description: Contains 2 units of safety submachine guns and pistols made of plastic and foam.
@@ -57,5 +60,5 @@
   - type: StorageFill
     contents:
       - id: WeaponMinigunВlender
-      - id: BandMinigunFoam
+      - id: BandMinigunNerf
         amount: 2

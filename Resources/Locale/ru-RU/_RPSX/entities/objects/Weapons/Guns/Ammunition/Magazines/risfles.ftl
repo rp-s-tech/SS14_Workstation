@@ -1,5 +1,5 @@
-ent-MagazinePistolHighFoam = большой магазин для пенного пистолета
+ent-MagazinePistolHighNerf = большой магазин для пенного пистолета
 
-ent-MagazinePistolLowFoam = малый магазин для пенного пистолета
+ent-MagazinePistolLowNerf = малый магазин для пенного пистолета
 
-ent-BandMinigunFoam = лента для пенопластового минигана
+ent-BandMinigunNerf = лента для пенопластового минигана

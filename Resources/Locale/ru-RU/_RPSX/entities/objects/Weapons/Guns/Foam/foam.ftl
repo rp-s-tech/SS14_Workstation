@@ -1,10 +1,10 @@
-ent-WeaponSubMachineGunFoamTitmouse = синица
+ent-WeaponSubMachineGunNerfTitmouse = синица
     .desc = Крупный и крутой пистолет-пулемет от Nerf для стрельбы пенными пулями, со встроенным магазином большой емкости.
 
-ent-WeaponSubMachineGunFoamFlash = вспышка
+ent-WeaponSubMachineGunNerfFlash = вспышка
     .desc = Пенный пистолет-пулемет от Nerf для скрытных спецопераций.
 
-ent-WeaponPistolFoamHummingbird = колибри
+ent-WeaponPistolNerfHummingbird = колибри
     .desc = Пенный пистолет от Nerf, который пригодится, когда закончатся другие боеприпасы.
 
 ent-WeaponMinigunBlender = Блендер

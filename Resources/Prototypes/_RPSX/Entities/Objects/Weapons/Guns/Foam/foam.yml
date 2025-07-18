@@ -3,7 +3,7 @@
 - type: entity
   name: titmouse
   parent: WeaponRifleFoam
-  id: WeaponSubMachineGunFoamTitmouse
+  id: WeaponSubMachineGunNerfTitmouse
   description: large and cool nerf submachine gun with built-in large capacity magazine.
   components:
   - type: Sprite
@@ -44,7 +44,7 @@
 - type: entity
   name: flash
   parent: [WeaponSubMachineGunDrozd, BaseGunWieldable]
-  id: WeaponSubMachineGunFoamFlash
+  id: WeaponSubMachineGunNerfFlash
   description: Nerf submachine gun for covert special operations.
   components:
   - type: Sprite
@@ -69,13 +69,13 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazinePistolHighFoam
+        startingItem: MagazinePistolHighNerf
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazinePistolHighFoam
+            - MagazinePistolHighNerf
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
@@ -107,7 +107,7 @@
 - type: entity
   name: hummingbird
   parent: WeaponPistolMk58
-  id: WeaponPistolFoamHummingbird
+  id: WeaponPistolNerfHummingbird
   description: Nerf pistol will come in handy when you spend the rest of the bullets.
   components:
   - type: Sprite
@@ -125,13 +125,13 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazinePistolLowFoam
+        startingItem: MagazinePistolLowNerf
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazinePistolLowFoam
+            - MagazinePistolLowNerf
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
@@ -170,13 +170,13 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: BandMinigunFoam
+        startingItem: BandMinigunNerf
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazinePistolLowFoam
+            - MagazinePistolLowNerf
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber

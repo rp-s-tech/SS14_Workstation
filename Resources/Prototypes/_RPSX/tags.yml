@@ -2,7 +2,7 @@
   id: MiniBulletFoam
 
 - type: Tag
-  id: MagazinePistolHighFoam
+  id: MagazinePistolHighNerf
 
 - type: Tag
-  id: MagazinePistolLowFoam
+  id: MagazinePistolLowNerf

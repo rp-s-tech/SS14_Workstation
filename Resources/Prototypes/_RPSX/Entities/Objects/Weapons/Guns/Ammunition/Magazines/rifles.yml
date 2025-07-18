@@ -1,5 +1,5 @@
 - type: entity
-  id: MagazinePistolHighFoam
+  id: MagazinePistolHighNerf
   name: high magaxine pistol
   parent: BaseMagazinePistolHighCapacity
   components:
@@ -22,13 +22,13 @@
     steps: 4
   - type: Tag
     tags:
-      - MagazinePistolHighFoam
+      - MagazinePistolHighNerf
 
 
 - type: entity
-  id: MagazinePistolLowFoam
+  id: MagazinePistolLowNerf
   name: low magaxine pistol
-  parent: MagazinePistolHighFoam
+  parent: MagazinePistolHighNerf
   components:
   - type: BallisticAmmoProvider
     capacity: 6
@@ -39,12 +39,12 @@
     steps: 3
   - type: Tag
     tags:
-      - MagazinePistolLowFoam
+      - MagazinePistolLowNerf
 
 - type: entity
-  id: BandMinigunFoam
-  name: band from foam minigun
-  parent: MagazinePistolHighFoam
+  id: BandMinigunNerf
+  name: band from Nerf minigun
+  parent: MagazinePistolHighNerf
   components:
   - type: BallisticAmmoProvider
     capacity: 70
