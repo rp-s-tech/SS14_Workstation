@@ -9,9 +9,6 @@ public sealed partial class PiratesProgressComponent : Component
     public EntityUid PiratesProgress;
 
     [ViewVariables(VVAccess.ReadOnly)]
-    public string PiratesGamerule = "BasicPirates";
-
-    [ViewVariables(VVAccess.ReadOnly)]
     public PiratesGamePlay GamePlay = PiratesGamePlay.Silent;
 
     [ViewVariables(VVAccess.ReadOnly)]
@@ -26,11 +23,14 @@ public sealed partial class PiratesProgressComponent : Component
     [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public int Balance = 0;
 
+    [ViewVariables(VVAccess.ReadOnly)]
+    public Dictionary<string, int> ObjectivesToSpawn = new();
+
+    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+    public List<EntityUid> Objectives = new();
+
     [DataField, AutoPausedField]
     public TimeSpan ObjectivesSpawnTime = TimeSpan.Zero;
-
-    [DataField, AutoNetworkedField]
-    public List<EntityUid> Objectives = new();
 
     [DataField, AutoPausedField]
     public TimeSpan ObjectivesCheckTime = TimeSpan.Zero;
@@ -38,7 +38,7 @@ public sealed partial class PiratesProgressComponent : Component
     [DataField]
     public TimeSpan ObjectivesCheckThreshold = TimeSpan.FromSeconds(10);
 
-    [DataField, AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public bool AreObjectivesCompleted;
 }
 

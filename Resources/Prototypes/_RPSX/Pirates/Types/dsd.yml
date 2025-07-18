@@ -1,7 +1,7 @@
 # Rule
 - type: entity
   parent: BasePiratesRule
-  id: DSDPirates
+  id: DwarvesPirates
   components:
   - type: LoadMapRule
     mapPath: /Maps/RPSXSecrets/Pirates/piratesector.yml

@@ -9,6 +9,7 @@
     rules: ghost-role-information-rules-default-team-antagonist
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
+    - MindRolePirate
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -27,6 +28,7 @@
     rules: ghost-role-information-rules-default-team-antagonist
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
+    - MindRolePirateCaptain
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
@@ -39,6 +41,7 @@
     rules: ghost-role-information-rules-default-team-antagonist
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
+    - MindRolePirateBocman
 
 # antagroles
 - type: antag
@@ -82,7 +85,6 @@
   guides: [ Pirates ]
 
 #mindroles
-# Nukies
 - type: entity
   parent: BaseMindRoleAntag
   id: MindRolePirate

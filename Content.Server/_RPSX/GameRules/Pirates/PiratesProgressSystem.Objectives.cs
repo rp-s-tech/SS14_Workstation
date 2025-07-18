@@ -1,6 +1,5 @@
-﻿using Content.RPSX.Server.GameRules.Pirates.Objectives;
+using Content.RPSX.Server.GameRules.Pirates.Objectives;
 using Content.RPSX.Shared.GameRules.Pirates;
-using Content.RPSX.Shared.GameRules.Pirates.Economics;
 using Content.Server.Objectives;
 using Robust.Shared.Prototypes;
 
@@ -8,30 +7,16 @@ namespace Content.RPSX.Server.GameRules.Pirates;
 
 public sealed partial class PiratesProgressSystem
 {
-    public EntProtoId StealCommandStaffObjective = "StealCmdObjective";
-    public EntProtoId EarnMoneyObjective = "BalanceIncreasingObjective";
-    public EntProtoId StealItemsObjective = "StealItemsObjective";
-    public EntProtoId StealCriticalItemsObjective = "StealCriticalItemsObjective";
-
     [Dependency] private readonly ObjectivesSystem _objectivesSystem = default!;
-    [Dependency] private readonly PirateEconomicsSystem _economicsSystem = default!;
 
     private void SpawnObjectives(Entity<PiratesProgressComponent> progress)
     {
-        CreateObjective(progress, StealCommandStaffObjective);
-        CreateObjective(progress, StealCommandStaffObjective);
-        CreateObjective(progress, EarnMoneyObjective);
-        if (progress.Comp.GamePlay == PiratesGamePlay.Silent)
+        foreach (var (key, value) in progress.Comp.ObjectivesToSpawn)
         {
-            CreateObjective(progress, StealItemsObjective);
-            CreateObjective(progress, StealItemsObjective);
-            CreateObjective(progress, StealItemsObjective);
-            CreateObjective(progress, StealItemsObjective);
-        }
-        else
-        {
-            CreateObjective(progress, StealCriticalItemsObjective);
-            CreateObjective(progress, StealCriticalItemsObjective);
+            for (var i = 0; i < value; i++)
+            {
+                CreateObjective(progress, key);
+            }
         }
     }
 

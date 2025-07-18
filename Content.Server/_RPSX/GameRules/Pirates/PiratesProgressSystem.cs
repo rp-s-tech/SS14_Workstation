@@ -1,17 +1,23 @@
 using System.Linq;
 using Content.RPSX.Shared.GameRules.Pirates;
+using Content.RPSX.Shared.GameRules.Pirates.Economics;
 using Content.Server.Radio.EntitySystems;
 using Content.Shared.Radio;
+using Robust.Server.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.RPSX.Server.GameRules.Pirates;
 
-public sealed partial class PiratesProgressSystem : SharedPiratesProgressSystem
+public sealed partial class PiratesProgressSystem : EntitySystem
 {
     [Dependency] private readonly RadioSystem _radio = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly PirateEconomicsSystem _economicsSystem = default!;
+
+    private readonly EntProtoId _piratesProgressHolder = "PiratesProgressHolder";
 
     public override void Initialize()
     {
@@ -19,6 +25,53 @@ public sealed partial class PiratesProgressSystem : SharedPiratesProgressSystem
 
         SubscribeLocalEvent<PiratesProgressComponent, MapInitEvent>(OnMapInit);
     }
+
+    #region Rule
+    public Entity<PiratesProgressComponent> CreateProgress()
+    {
+        var progress = Spawn(_piratesProgressHolder);
+        var progressComp = EnsureComp<PiratesProgressComponent>(progress);
+        return (progress, progressComp);
+    }
+
+    public void SetGamePlay(Entity<PiratesProgressComponent?> progress)
+    {
+        if (!Resolve(progress.Owner, ref progress.Comp)) return;
+
+        if (_playerManager.PlayerCount > 40)
+            progress.Comp.GamePlay = GetRandomEnumValue<PiratesGamePlay>();
+    }
+
+    public void DistributeExtraDublons(Entity<PiratesProgressComponent?> progress)
+    {
+        if (!Resolve(progress.Owner, ref progress.Comp)) return;
+
+        if (progress.Comp.GamePlay == PiratesGamePlay.Silent) return;
+        _economicsSystem.ChangePiratesBalance((progress.Owner, progress.Comp), 100);
+    }
+
+    public string GetGameModeResultLine(Entity<PiratesProgressComponent?> progress)
+    {
+        if (!Resolve(progress.Owner, ref progress.Comp)) return "";
+
+        var message = progress.Comp.PiratesWinState switch
+        {
+            PiratesWinState.PiratesMajor => "",
+            PiratesWinState.PiratesMinor => "",
+            PiratesWinState.Neutral => "",
+            PiratesWinState.CrewMinor => "",
+            PiratesWinState.CrewMajor => "",
+            _ => ""
+        };
+        return Loc.GetString(message);
+    }
+
+    private static T GetRandomEnumValue<T>() where T : Enum
+    {
+        var values = Enum.GetValues(typeof(T));
+        return (T)values.GetValue(Random.Shared.Next(values.Length))!;
+    }
+    #endregion
 
     public override void Update(float frameTime)
     {
@@ -28,9 +81,15 @@ public sealed partial class PiratesProgressSystem : SharedPiratesProgressSystem
         while (query.MoveNext(out var uid, out var component))
         {
             var progress = (uid, component);
-            CheckObjectives(progress);
-            if (progress.component.Objectives.Any()) return;
-            if (progress.component.ObjectivesSpawnTime > _timing.CurTime) return;
+            if (progress.component.Objectives.Any())
+            {
+                CheckObjectives(progress);
+                continue;
+            }
+
+            if (progress.component.ObjectivesSpawnTime > _timing.CurTime)
+                continue;
+
             SpawnObjectives(progress);
         }
     }

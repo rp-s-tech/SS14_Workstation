@@ -1755,10 +1755,6 @@ entities:
     - type: Transform
       pos: -29.5,0.5
       parent: 104
-    - type: GridFill
-      addComponents:
-      - type: PiratesShuttle
-      path: /Maps/Shuttles/infiltrator.yml
   - uid: 2481
     components:
     - type: Transform

@@ -12,6 +12,12 @@
   color: "#f6ce64"
   longRange: true
 
+- type: weightedRandom
+  id: Pirates
+  weights:
+    BasicPirates: 0.33
+    ClassicPirates: 0.33
+    DwarvesPirates: 0.33
 
 # Rule
 - type: entity
@@ -20,7 +26,7 @@
   components:
   - type: GameRule
     minPlayers: 25
-  - type: BasePiratesRule
+  - type: PiratesRule
 
 - type: entity
   parent: BaseGameRule
