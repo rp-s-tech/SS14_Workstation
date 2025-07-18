@@ -160,6 +160,8 @@
     sprite: _RPSX/Objects/Weapons/Guns/Rifles/blender.rsi
     layers:
     - state: icon
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
   - type: Item
     sprite: _RPSX/Objects/Weapons/Guns/Rifles/blender.rsi
   - type: Gun
@@ -189,3 +191,7 @@
     containers:
       ballistic-ammo: !type:Container
         ents: []
+  - type: MagazineVisuals
+    magState: mag
+    steps: 9
+    zeroVisible: true
