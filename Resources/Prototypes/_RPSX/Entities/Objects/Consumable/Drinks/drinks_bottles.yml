@@ -1,0 +1,16 @@
+- type: entity
+  parent: DrinkGlassBase
+  id: DrinkTeapotred
+  name: teapotred  # short and stout
+  description: An elegant teapotred. It simply oozes class.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 100
+        reagents:
+        - ReagentId: RedTea
+          Quantity: 100
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Drinks/teapotred.rsi
+    state: teapotred

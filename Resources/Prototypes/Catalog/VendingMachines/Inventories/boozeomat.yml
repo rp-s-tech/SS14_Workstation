@@ -48,6 +48,7 @@
     DrinkSakeBottleFull: 3
     DrinkBeerCan: 5
     DrinkWineCan: 5
+    DrinkTeapotred: 5 # RPSX
   contrabandInventory:
     ChemistryBottleEthanol: 3
     DrinkBottleOfNothingFull: 1
