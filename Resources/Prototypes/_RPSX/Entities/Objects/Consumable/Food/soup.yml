@@ -1,0 +1,28 @@
+- type: entity
+  name: Vulp soup
+  parent: FoodBowlBase
+  id: FoodSoupMeatVulp
+  description: You've got balls kid, BALLS!
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/bowl.rsi
+    state: vulposoup
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - funny
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Vitamin
+          Quantity: 17
+        - ReagentId: Water
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
+    - Soup

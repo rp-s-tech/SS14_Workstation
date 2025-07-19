@@ -1,0 +1,31 @@
+- type: microwaveMealRecipe
+  id: RecipeVulpSoup
+  name: vulp soup recipe
+  result: FoodSoupMeatVulp
+  time: 10
+  group: Soup
+  solids:
+    FoodBowlBig: 1
+    HeadVulpkanin: 1
+  reagents:
+    Water: 10
+
+- type: microwaveMealRecipe
+  id: RecipeVulpBurger
+  name: vulp burger recipe
+  result: FoodBurgerVulp
+  time: 10
+  group: Savory
+  solids:
+    FoodBreadBun: 1
+    FoodMeatVulp: 1
+
+- type: microwaveMealRecipe
+  id: RecipeVulpBread
+  name: vulp bread recipe
+  result: FoodBreadVulp
+  time: 15
+  group: Breads
+  solids:
+    FoodDough: 1
+    FoodMeatVulp: 1

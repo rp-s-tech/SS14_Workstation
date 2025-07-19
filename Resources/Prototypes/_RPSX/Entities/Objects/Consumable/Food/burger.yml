@@ -1,0 +1,25 @@
+- type: entity
+  name: bacon burger
+  parent: FoodBurgerBase
+  id: FoodBurgerVulp
+  description: The perfect combination of all things American.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/burger.rsi
+    state: vulburger
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - funny
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 19
+        - ReagentId: Vitamin
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
