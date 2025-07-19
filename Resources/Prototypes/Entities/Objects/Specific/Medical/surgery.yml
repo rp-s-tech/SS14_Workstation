@@ -292,6 +292,27 @@
   - type: SurgeryTool
     sound: /Audio/Effects/Fluids/blood1.ogg
   - type: SurgerySuture
+  - type: Stack
+    stackType: SurgerySuture
+    count: 10
+
+- type: entity
+  id: Suture1
+  parent: Suture
+  suffix: Single
+  components:
+  - type: Stack
+    stackType: SurgerySuture
+    count: 1
+
+- type: entity
+  id: Suture10Lingering
+  parent: Suture
+  suffix: 10, Lingering
+  components:
+  - type: Stack
+    lingering: true
+    count: 10
 
 - type: entity
   name: металическая хирургическая нить
@@ -308,6 +329,27 @@
     sound: /Audio/Effects/Fluids/blood1.ogg
   - type: SurgerySuture
   - type: SurgeryHardSuture
+  - type: Stack
+    stackType: SurgeryHardSuture
+    count: 10
+
+- type: entity
+  id: MetalSuture1
+  parent: MetalSuture
+  suffix: Single
+  components:
+  - type: Stack
+    stackType: SurgeryHardSuture
+    count: 1
+
+- type: entity
+  id: MetalSuture10Lingering
+  parent: MetalSuture
+  suffix: 10, Lingering
+  components:
+  - type: Stack
+    lingering: true
+    count: 10
 
 - type: entity
   name: импровизированный жгут
