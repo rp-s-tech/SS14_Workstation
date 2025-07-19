@@ -76,8 +76,8 @@ public partial class SharedBodySystem
             return;
 
         var removedUid = args.Entity;
-        // DebugTools.Assert(!TryComp(removedUid, out BodyPartComponent? b) || b.Body == ent);
-        // DebugTools.Assert(!TryComp(removedUid, out OrganComponent? o) || o.Body == ent);
+        DebugTools.Assert(!TryComp(removedUid, out BodyPartComponent? b) || b.Body == ent);
+        DebugTools.Assert(!TryComp(removedUid, out OrganComponent? o) || o.Body == ent);
 
         if (TryComp(removedUid, out BodyPartComponent? part))
         {

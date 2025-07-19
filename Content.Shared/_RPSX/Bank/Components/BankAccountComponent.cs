@@ -6,9 +6,9 @@ namespace Content.Shared.RPSX.Bank.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class BankAccountComponent : Component
 {
-    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadOnly)]
     public int Balance;
 
-    [ViewVariables, AutoNetworkedField]
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadOnly)]
     public List<BankTransaction> BankTransactions = new();
 }
