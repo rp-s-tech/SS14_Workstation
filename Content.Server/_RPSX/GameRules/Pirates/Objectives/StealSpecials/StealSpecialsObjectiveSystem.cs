@@ -1,8 +1,8 @@
 using Content.Shared.Objectives.Components;
-using Content.RPSX.Shared.GameRules.Pirates;
+using Content.Shared.RPSX.GameRules.Pirates;
 using Robust.Shared.Random;
 
-namespace Content.RPSX.Server.GameRules.Pirates.Objectives.StealSpecials;
+namespace Content.Server.RPSX.GameRules.Pirates.Objectives.StealSpecials;
 
 public sealed partial class StealSpecialsObjectiveSystem : BasePirateObjective<StealSpecialsObjectiveComponent>
 {

@@ -1,6 +1,6 @@
-using Content.RPSX.Shared.GameRules.Pirates;
+using Content.Shared.RPSX.GameRules.Pirates;
 
-namespace Content.RPSX.Server.GameRules.Pirates.Objectives.BalanceIncreasing;
+namespace Content.Server.RPSX.GameRules.Pirates.Objectives.BalanceIncreasing;
 
 public sealed partial class BalanceIncreasingObjectiveSystem : BasePirateObjective<BalanceIncreasingObjectiveComponent>
 {

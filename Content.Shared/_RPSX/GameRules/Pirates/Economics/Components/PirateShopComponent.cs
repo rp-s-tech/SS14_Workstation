@@ -3,10 +3,10 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.RPSX.Shared.GameRules.Pirates.Economics;
+namespace Content.Shared.RPSX.GameRules.Pirates.Economics;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
-public sealed partial class PirateShopComponent : Component
+public sealed partial class PirateShopComponent : BasePirateComponent
 {
     [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public TimeSpan NextTick = TimeSpan.Zero;

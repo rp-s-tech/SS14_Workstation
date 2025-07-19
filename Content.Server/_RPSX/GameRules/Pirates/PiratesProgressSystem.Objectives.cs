@@ -1,9 +1,9 @@
-using Content.RPSX.Server.GameRules.Pirates.Objectives;
-using Content.RPSX.Shared.GameRules.Pirates;
+using Content.Server.RPSX.GameRules.Pirates.Objectives;
+using Content.Shared.RPSX.GameRules.Pirates;
 using Content.Server.Objectives;
 using Robust.Shared.Prototypes;
 
-namespace Content.RPSX.Server.GameRules.Pirates;
+namespace Content.Server.RPSX.GameRules.Pirates;
 
 public sealed partial class PiratesProgressSystem
 {

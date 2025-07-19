@@ -1,8 +1,8 @@
-using Content.RPSX.Shared.GameRules.Pirates.Economics;
+using Content.Shared.RPSX.GameRules.Pirates.Economics;
 using Content.Shared.Cargo.BUI;
 using Robust.Client.UserInterface;
 
-namespace Content.RPSX.Client.GameRules.Pirates.Economics.Pallets;
+namespace Content.Client.RPSX.GameRules.Pirates.Economics.Pallets;
 
 public sealed class PiratePalletConsoleBoundUserInterface : BoundUserInterface
 {

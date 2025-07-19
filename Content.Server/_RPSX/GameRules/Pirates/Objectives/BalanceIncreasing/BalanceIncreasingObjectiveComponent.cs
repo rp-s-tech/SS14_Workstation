@@ -1,4 +1,4 @@
-﻿namespace Content.RPSX.Server.GameRules.Pirates.Objectives.BalanceIncreasing;
+﻿namespace Content.Server.RPSX.GameRules.Pirates.Objectives.BalanceIncreasing;
 
 [RegisterComponent]
 public sealed partial class BalanceIncreasingObjectiveComponent : Component

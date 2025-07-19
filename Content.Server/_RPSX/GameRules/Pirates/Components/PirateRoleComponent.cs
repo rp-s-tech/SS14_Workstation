@@ -1,6 +1,6 @@
 using Content.Shared.Roles;
 
-namespace Content.RPSX.Server.GameRules.Pirates;
+namespace Content.Server.RPSX.GameRules.Pirates;
 
 [RegisterComponent]
 public sealed partial class PirateRoleComponent : BaseMindRoleComponent

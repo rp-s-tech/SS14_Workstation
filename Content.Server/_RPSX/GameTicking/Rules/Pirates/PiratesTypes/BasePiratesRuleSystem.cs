@@ -1,5 +1,5 @@
-using Content.RPSX.Server.GameRules.Pirates;
-using Content.RPSX.Shared.GameRules.Pirates;
+using Content.Server.RPSX.GameRules.Pirates;
+using Content.Shared.RPSX.GameRules.Pirates;
 using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;

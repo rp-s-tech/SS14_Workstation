@@ -8,7 +8,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using System.Linq;
 
-namespace Content.RPSX.Shared.GameRules.Pirates.Economics;
+namespace Content.Shared.RPSX.GameRules.Pirates.Economics;
 
 public sealed class PirateEconomicsSystem : EntitySystem
 {

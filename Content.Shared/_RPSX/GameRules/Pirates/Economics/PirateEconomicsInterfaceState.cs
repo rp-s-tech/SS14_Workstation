@@ -1,7 +1,7 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.RPSX.Shared.GameRules.Pirates.Economics;
+namespace Content.Shared.RPSX.GameRules.Pirates.Economics;
 
 [NetSerializable, Serializable]
 public sealed class PirateShopInterfaceState : BoundUserInterfaceState

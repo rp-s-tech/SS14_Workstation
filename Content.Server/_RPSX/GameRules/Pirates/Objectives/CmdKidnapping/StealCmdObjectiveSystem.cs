@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.RPSX.Shared.GameRules.Pirates;
+using Content.Shared.RPSX.GameRules.Pirates;
 using Content.Server.Revolutionary.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind;
@@ -7,7 +7,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Random;
 
-namespace Content.RPSX.Server.GameRules.Pirates.Objectives.CmdKidnapping;
+namespace Content.Server.RPSX.GameRules.Pirates.Objectives.CmdKidnapping;
 
 public sealed partial class StealCmdObjectiveSystem : BasePirateObjective<StealCmdObjectiveComponent>
 {

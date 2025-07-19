@@ -1,5 +1,7 @@
 <DefaultWindow xmlns="https://spacestation14.io"
-            Title="{Loc 'cargo-console-order-menu-title'}">
+            Title="{Loc 'cargo-console-order-menu-title'}"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            x:Class="Content.Client.RPSX.GameRules.Pirates.Economics.Shop.PirateShopOrderMenu">
     <BoxContainer Orientation="Vertical">
         <GridContainer Columns="2">
             <Label Text="{Loc 'cargo-console-order-menu-product-label'}" />

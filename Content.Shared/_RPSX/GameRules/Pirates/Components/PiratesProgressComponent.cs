@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.RPSX.Shared.GameRules.Pirates;
+namespace Content.Shared.RPSX.GameRules.Pirates;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class PiratesProgressComponent : Component

@@ -1,4 +1,4 @@
-﻿namespace Content.RPSX.Server.GameRules.Pirates.Objectives.CmdKidnapping;
+﻿namespace Content.Server.RPSX.GameRules.Pirates.Objectives.CmdKidnapping;
 
 [RegisterComponent]
 public sealed partial class StealCmdObjectiveComponent : Component

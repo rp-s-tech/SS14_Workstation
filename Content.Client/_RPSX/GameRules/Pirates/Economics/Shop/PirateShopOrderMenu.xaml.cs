@@ -5,7 +5,7 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.IoC;
 
-namespace Content.RPSX.Client.GameRules.Pirates.Economics.Shop
+namespace Content.Client.RPSX.GameRules.Pirates.Economics.Shop
 {
     [GenerateTypedNameReferences]
     sealed partial class PirateShopOrderMenu : DefaultWindow

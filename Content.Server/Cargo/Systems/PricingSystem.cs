@@ -18,7 +18,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Research.Prototypes;
-using Content.Shared.RPSX.GameRules.Pirates;
+using Content.Shared.RPSX.GameRules.Pirates.Economics;
 
 namespace Content.Server.Cargo.Systems;
 

@@ -3,9 +3,9 @@ using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Shared.Utility;
 using Robust.Shared.Prototypes;
-using Content.RPSX.Shared.GameRules.Pirates.Economics;
+using Content.Shared.RPSX.GameRules.Pirates.Economics;
 
-namespace Content.RPSX.Client.GameRules.Pirates.Economics.Shop
+namespace Content.Client.RPSX.GameRules.Pirates.Economics.Shop
 {
     public sealed class PirateShopBoundUserInterface : BoundUserInterface
     {

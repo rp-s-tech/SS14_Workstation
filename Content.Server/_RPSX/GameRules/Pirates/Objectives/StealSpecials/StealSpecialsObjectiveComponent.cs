@@ -1,7 +1,7 @@
 ﻿using Content.Shared.Objectives;
 using Robust.Shared.Prototypes;
 
-namespace Content.RPSX.Server.GameRules.Pirates.Objectives.StealSpecials;
+namespace Content.Server.RPSX.GameRules.Pirates.Objectives.StealSpecials;
 
 [RegisterComponent]
 public sealed partial class StealSpecialsObjectiveComponent : Component

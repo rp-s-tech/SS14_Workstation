@@ -2,7 +2,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
 
-namespace Content.RPSX.Shared.GameRules.Pirates.Economics;
+namespace Content.Shared.RPSX.GameRules.Pirates.Economics;
 
 [Prototype]
 public sealed class PirateStuffPrototype : IPrototype, IInheritingPrototype

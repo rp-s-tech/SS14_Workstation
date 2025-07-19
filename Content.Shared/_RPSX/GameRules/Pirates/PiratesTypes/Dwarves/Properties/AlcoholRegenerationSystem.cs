@@ -3,7 +3,7 @@ using Content.Shared.EntityEffects;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.RPSX.GameRules.Pirates.EntityEffects;
 
-namespace Content.RPSX.Shared.GameRules.Pirates.PiratesTypes.Dwarves.Properties;
+namespace Content.Shared.RPSX.GameRules.Pirates.PiratesTypes.Dwarves.Properties;
 
 public sealed class AlcoholRegenerationSystem : EntitySystem
 {

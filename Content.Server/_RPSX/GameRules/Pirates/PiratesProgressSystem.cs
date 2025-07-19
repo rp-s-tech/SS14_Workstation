@@ -1,13 +1,13 @@
 using System.Linq;
-using Content.RPSX.Shared.GameRules.Pirates;
-using Content.RPSX.Shared.GameRules.Pirates.Economics;
+using Content.Shared.RPSX.GameRules.Pirates;
+using Content.Shared.RPSX.GameRules.Pirates.Economics;
 using Content.Server.Radio.EntitySystems;
 using Content.Shared.Radio;
 using Robust.Server.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.RPSX.Server.GameRules.Pirates;
+namespace Content.Server.RPSX.GameRules.Pirates;
 
 public sealed partial class PiratesProgressSystem : EntitySystem
 {
@@ -40,6 +40,8 @@ public sealed partial class PiratesProgressSystem : EntitySystem
 
         if (_playerManager.PlayerCount > 40)
             progress.Comp.GamePlay = GetRandomEnumValue<PiratesGamePlay>();
+
+        Dirty(progress);
     }
 
     public void DistributeExtraDublons(Entity<PiratesProgressComponent?> progress)

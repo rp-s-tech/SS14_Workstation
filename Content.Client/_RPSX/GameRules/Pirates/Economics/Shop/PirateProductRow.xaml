@@ -1,5 +1,7 @@
 ﻿<PanelContainer xmlns="https://spacestation14.io"
-                HorizontalExpand="True">
+                HorizontalExpand="True"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                x:Class="Content.Client.RPSX.GameRules.Pirates.Economics.Shop.PirateProductRow">
     <Button Name="MainButton"
             ToolTip=""
             Access="Public"

@@ -1,4 +1,4 @@
-namespace Content.RPSX.Server.GameRules.Pirates.Objectives;
+namespace Content.Server.RPSX.GameRules.Pirates.Objectives;
 
 [RegisterComponent]
 public sealed partial class PirateObjectiveComponent : Component

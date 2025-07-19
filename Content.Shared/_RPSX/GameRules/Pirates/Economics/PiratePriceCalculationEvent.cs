@@ -1,4 +1,4 @@
-namespace Content.Shared.RPSX.GameRules.Pirates;
+namespace Content.Shared.RPSX.GameRules.Pirates.Economics;
 
 [ByRefEvent]
 public record struct PiratePriceCalculationEvent()

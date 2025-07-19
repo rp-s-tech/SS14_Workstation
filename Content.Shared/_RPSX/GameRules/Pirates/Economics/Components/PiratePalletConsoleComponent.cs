@@ -1,8 +1,8 @@
 ﻿using Robust.Shared.GameStates;
 
-namespace Content.RPSX.Shared.GameRules.Pirates.Economics;
+namespace Content.Shared.RPSX.GameRules.Pirates.Economics;
 
 [RegisterComponent, NetworkedComponent]
-public sealed partial class PiratePalletConsoleComponent : Component
+public sealed partial class PiratePalletConsoleComponent : BasePirateComponent
 {
 }
