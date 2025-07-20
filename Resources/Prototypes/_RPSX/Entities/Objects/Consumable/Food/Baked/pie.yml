@@ -1,0 +1,16 @@
+- type: entity
+  name: sticky tart
+  parent: FoodPieBase
+  id: FoodStickyTart
+  description: A delicious dessert reminiscent of clown glue and wine.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/Baked/pie.rsi
+    state: stickytart
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: Tag
+    tags:
+    - Fruit
+    - Pie

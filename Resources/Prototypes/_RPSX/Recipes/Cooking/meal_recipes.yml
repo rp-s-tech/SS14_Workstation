@@ -29,3 +29,37 @@
   solids:
     FoodDough: 1
     FoodMeatVulp: 1
+
+- type: microwaveMealRecipe
+  id: RecipeClamSoup
+  name: clam soup recipe
+  result: FoodClamSoup
+  time: 10
+  reagents:
+    Water: 5
+    Milk: 5
+  solids:
+    FoodBowlBig: 1
+    FoodMeatSpider: 2
+
+- type: microwaveMealRecipe
+  id: RecipeSlugRice
+  name: rice and slime recipe
+  result: FoodSlugRice
+  time: 15
+  solids:
+    FoodRiceBoiled: 1
+    FoodMeatSlime: 1
+
+- type: microwaveMealRecipe
+  id: RecipeStickyTart
+  name: Sticky tart recipe
+  result: FoodStickyTart
+  time: 15
+  reagents:
+    Sugar: 5
+    SpaceGlue: 5
+  solids:
+    FoodDoughPie: 1
+    FoodGrape: 3
+    FoodPlateTin: 1
