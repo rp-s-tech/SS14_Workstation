@@ -37,9 +37,9 @@
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-      - MiniBulletFoam
+      - MiniBulletNerf
     capacity: 25
-    proto: MiniBulletFoam
+    proto: MiniBulletNerf
 
 - type: entity
   name: flash
@@ -79,11 +79,11 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: MiniBulletFoam
+        startingItem: MiniBulletNerf
         priority: 1
         whitelist:
           tags:
-            - MiniBulletFoam
+            - MiniBulletNerf
   - type: GunWieldBonus
   - type: Gun
     minAngle: 21
@@ -135,11 +135,11 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: MiniBulletFoam
+        startingItem: MiniBulletNerf
         priority: 1
         whitelist:
           tags:
-            - MiniBulletFoam
+            - MiniBulletNerf
   - type: Gun
     fireRate: 2
     soundGunshot:
@@ -182,11 +182,11 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: MiniBulletFoam
+        startingItem: MiniBulletNerf
         priority: 1
         whitelist:
           tags:
-            - MiniBulletFoam
+            - MiniBulletNerf
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container

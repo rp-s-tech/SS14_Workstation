@@ -6,13 +6,12 @@
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-        - MiniBulletFoam
+        - MiniBulletNerf
     mayTransfer: true
-    proto: MiniBulletFoam
+    proto: MiniBulletNerf
     capacity: 15
   - type: Sprite
-    sprite: _RPSX/Objects/Weapons/Guns/Ammunitions/Magazine/Rifle/foam_green.rsi
-    layers:
+    sprite: _RPSX/Objects/Weapons/Guns/Ammunitions/Magazine/Rifle/nerf_green.rsi
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
@@ -33,7 +32,7 @@
   - type: BallisticAmmoProvider
     capacity: 6
   - type: Sprite
-    sprite: _RPSX/Objects/Weapons/Guns/Ammunitions/Magazine/Rifle/foam_blue.rsi
+    sprite: _RPSX/Objects/Weapons/Guns/Ammunitions/Magazine/Rifle/nerf_blue.rsi
   - type: MagazineVisuals
     magState: mag
     steps: 3

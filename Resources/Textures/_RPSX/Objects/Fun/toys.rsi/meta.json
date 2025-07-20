@@ -8,10 +8,7 @@
   },
   "states": [
     {
-      "name": "foam-bullet"
-    },
-    {
-      "name": "foamdart"
+      "name": "nerf-bullet"
     }
   ]
 }

@@ -1,14 +1,14 @@
 - type: entity
-  id: MiniBulletFoam
-  description: Like a styrofoam dart, only smaller.
-  name: foam bullet
-  parent: BulletFoam
+  id: MiniBulletNerf
+  description: Like a foam dart, only smaller.
+  name: nerf bullet
+  parent: BulletNerf
   components:
   - type: Sprite
     sprite: _RPSX/Objects/Fun/toys.rsi
     layers:
-      - state: foam-bullet
+      - state: nerf-bullet
   - type: Tag
     tags:
-      - MiniBulletFoam
+      - MiniBulletNerf
       - Trash

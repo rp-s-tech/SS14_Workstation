@@ -1,5 +1,5 @@
 - type: Tag
-  id: MiniBulletFoam
+  id: MiniBulletNerf
 
 - type: Tag
   id: MagazinePistolHighNerf
