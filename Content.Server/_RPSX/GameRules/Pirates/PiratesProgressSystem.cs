@@ -6,6 +6,7 @@ using Content.Shared.Radio;
 using Robust.Server.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Shared.Mobs.Components;
 
 namespace Content.Server.RPSX.GameRules.Pirates;
 
@@ -85,17 +86,19 @@ public sealed partial class PiratesProgressSystem : EntitySystem
         var query = EntityQueryEnumerator<PiratesProgressComponent>();
         while (query.MoveNext(out var uid, out var component))
         {
-            var progress = (uid, component);
-            if (progress.component.Objectives.Any())
+            if (component.AreObjectivesCompleted)
+                continue;
+
+            if (component.Objectives.Any())
             {
-                CheckObjectives(progress);
+                CheckObjectives((uid, component));
                 continue;
             }
 
-            if (progress.component.ObjectivesSpawnTime > _timing.CurTime)
+            if (component.ObjectivesSpawnTime > _timing.CurTime)
                 continue;
 
-            SpawnObjectives(progress);
+            SpawnObjectives((uid, component));
         }
     }
 
@@ -121,10 +124,26 @@ public sealed partial class PiratesProgressSystem : EntitySystem
             return;
         }
         entity.Comp.PiratesProgress = progress.CompOwner;
+        entity.Comp.CompOwner = entity.Owner;
     }
 
     private void SendMessageFromHead(Entity<PiratesProgressComponent> progress, string message)
     {
         _radio.SendRadioMessage(progress, message, _prototypeManager.Index<RadioChannelPrototype>("Pirates"), progress);
+    }
+
+    private void CalculateWinState(Entity<PiratesProgressComponent> entity)
+    {
+        var alivePiratesCount = EntityQuery<PirateComponent>()
+            .Where(p => TryComp<MobStateComponent>(p.CompOwner, out var mobState)
+                && mobState.CurrentState == Shared.Mobs.MobState.Alive
+                && p.PiratesProgress == entity.Owner)
+            .Count();
+
+        if (alivePiratesCount == 0)
+        {
+            entity.Comp.PiratesWinState = PiratesWinState.CrewMajor;
+            return;
+        }
     }
 }

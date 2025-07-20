@@ -2,6 +2,7 @@ using Content.Server.RPSX.GameRules.Pirates.Objectives;
 using Content.Shared.RPSX.GameRules.Pirates;
 using Content.Server.Objectives;
 using Robust.Shared.Prototypes;
+using System.Linq;
 
 namespace Content.Server.RPSX.GameRules.Pirates;
 
@@ -18,6 +19,7 @@ public sealed partial class PiratesProgressSystem
                 CreateObjective(progress, key);
             }
         }
+        progress.Comp.StartedPirates = EntityQuery<PirateComponent>().Where(p => p.PiratesProgress == progress.Owner).Count();
     }
 
     private void CheckObjectives(Entity<PiratesProgressComponent> progress)
@@ -26,13 +28,19 @@ public sealed partial class PiratesProgressSystem
 
         if (progressComp.ObjectivesCheckTime > _timing.CurTime) return;
         progressComp.ObjectivesCheckTime += progressComp.ObjectivesCheckThreshold;
+        var completed = 0;
         foreach (var objective in progressComp.Objectives)
         {
             var ev = new CheckObjectiveEvent();
             RaiseLocalEvent(objective, ref ev);
-            if (!TryComp<PirateObjectiveComponent>(objective, out var comp) || comp.RewardGiven) return;
-            _economicsSystem.ChangePiratesBalance(progress, comp.Reward);
-            comp.RewardGiven = true;
+            if (!ev.Completed) continue;
+            if (!TryComp<PirateObjectiveComponent>(objective, out var comp)) continue;
+            if (!comp.RewardGiven)
+            {
+                _economicsSystem.ChangePiratesBalance(progress, comp.Reward);
+                comp.RewardGiven = true;
+            }
+            completed++;
         }
         progressComp.AreObjectivesCompleted = true;
         // Здесь надо идти чекать короче по поводу того насколько выиграли/проиграли пираты
@@ -47,7 +55,7 @@ public sealed partial class PiratesProgressSystem
 
         objectiveComponent.PiratesProgress = objectiveProgress;
         var narsiObjectives = objectiveProgress.Comp.Objectives;
-        narsiObjectives.Add((objective.Value));
+        narsiObjectives.Add(objective.Value);
 
         Dirty(objectiveProgress);
     }

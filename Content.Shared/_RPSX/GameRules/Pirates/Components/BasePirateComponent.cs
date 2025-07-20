@@ -7,4 +7,7 @@ public abstract partial class BasePirateComponent : Component
 {
     [DataField, AutoNetworkedField]
     public EntityUid PiratesProgress;
+
+    [DataField, AutoNetworkedField]
+    public EntityUid CompOwner;
 }
