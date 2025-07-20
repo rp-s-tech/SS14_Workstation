@@ -13,4 +13,4 @@
     sprite: _RPSX/Objects/Storage/boxes.rsi
     layers:
       - state: boxwidetoy
-      - state: nerf-bullet.png
+      - state: nerf-bullet
