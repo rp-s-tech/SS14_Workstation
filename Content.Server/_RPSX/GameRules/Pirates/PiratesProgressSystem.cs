@@ -24,6 +24,7 @@ public sealed partial class PiratesProgressSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<PiratesProgressComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<BasePirateComponent, MapInitEvent>(OnBaseMapInit);
     }
 
     #region Rule
@@ -31,6 +32,8 @@ public sealed partial class PiratesProgressSystem : EntitySystem
     {
         var progress = Spawn(_piratesProgressHolder);
         var progressComp = EnsureComp<PiratesProgressComponent>(progress);
+        progressComp.CompOwner = progress;
+        Dirty(progress, progressComp);
         return (progress, progressComp);
     }
 
@@ -107,6 +110,17 @@ public sealed partial class PiratesProgressSystem : EntitySystem
         };
         var message = Loc.GetString(locMessage);
         SendMessageFromHead(entity, message);
+    }
+
+    private void OnBaseMapInit(Entity<BasePirateComponent> entity, ref MapInitEvent args)
+    {
+        var progress = EntityQuery<PiratesProgressComponent>().Where(p => p.PiratesOutpostMap == Transform(entity).MapUid).FirstOrDefault();
+        if (progress == null)
+        {
+            QueueDel(entity);
+            return;
+        }
+        entity.Comp.PiratesProgress = progress.CompOwner;
     }
 
     private void SendMessageFromHead(Entity<PiratesProgressComponent> progress, string message)

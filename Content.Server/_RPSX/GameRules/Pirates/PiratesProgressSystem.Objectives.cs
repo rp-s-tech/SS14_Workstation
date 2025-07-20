@@ -30,7 +30,6 @@ public sealed partial class PiratesProgressSystem
         {
             var ev = new CheckObjectiveEvent();
             RaiseLocalEvent(objective, ref ev);
-            if (!ev.Completed) return;
             if (!TryComp<PirateObjectiveComponent>(objective, out var comp) || comp.RewardGiven) return;
             _economicsSystem.ChangePiratesBalance(progress, comp.Reward);
             comp.RewardGiven = true;

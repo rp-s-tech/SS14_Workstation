@@ -1,11 +1,10 @@
+using Content.Shared.RPSX.GameRules.Pirates;
+
 namespace Content.Server.RPSX.GameRules.Pirates.Objectives;
 
 [RegisterComponent]
-public sealed partial class PirateObjectiveComponent : Component
+public sealed partial class PirateObjectiveComponent : BasePirateComponent
 {
-    [ViewVariables]
-    public EntityUid PiratesProgress;
-
     [DataField]
     public int Reward;
 

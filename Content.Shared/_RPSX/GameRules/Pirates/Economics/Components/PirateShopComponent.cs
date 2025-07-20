@@ -8,13 +8,13 @@ namespace Content.Shared.RPSX.GameRules.Pirates.Economics;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class PirateShopComponent : BasePirateComponent
 {
-    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+    [DataField, ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public TimeSpan NextTick = TimeSpan.Zero;
 
-    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+    [DataField, ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public TimeSpan NextTickDelay = TimeSpan.FromMilliseconds(1300);
 
-    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+    [DataField, ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public List<(EntProtoId, int)> ProductsQueue = new();
 
     [DataField]
@@ -25,7 +25,4 @@ public sealed partial class PirateShopComponent : BasePirateComponent
 
     [DataField]
     public TimeSpan DenySoundDelay = TimeSpan.FromSeconds(2);
-
-    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
-    public EntityUid ProgressEntity;
 }

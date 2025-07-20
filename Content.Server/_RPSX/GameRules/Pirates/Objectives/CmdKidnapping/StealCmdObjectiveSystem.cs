@@ -20,14 +20,19 @@ public sealed partial class StealCmdObjectiveSystem : BasePirateObjective<StealC
         args.Completed = false;
         if (!TryComp<PirateObjectiveComponent>(entity, out var objective)) return;
         if (!TryComp<PiratesProgressComponent>(objective.PiratesProgress, out var progressComponent)) return;
-        if (progressComponent.PiratesOutpost is not { } outpost) return;
-        if (Transform(entity.Comp.Target).MapID != Transform(outpost).MapID) return;
+        if (progressComponent.PiratesOutpostMap is not { } outpost) return;
+        if (Transform(entity.Comp.Target).MapUid != outpost) return;
         args.Completed = true;
     }
 
     protected override void OnMapInit(Entity<StealCmdObjectiveComponent> entity, ref MapInitEvent args)
     {
-        var allHumans = GetAliveHumans().Where(c => !HasComp<PirateComponent>(c)).ToHashSet();
+        if (!TryComp<PirateObjectiveComponent>(entity, out var objective)) return;
+        if (!TryComp<PiratesProgressComponent>(objective.PiratesProgress, out var progressComponent)) return;
+        var allHumans = GetAliveHumans()
+            .Where(c => !HasComp<PirateComponent>(c)
+                && Transform(c).MapID == Transform(progressComponent.TargetStation).MapID)
+            .ToHashSet();
         if (!allHumans.Any()) return;
 
         var allHeads = new HashSet<EntityUid>();
@@ -63,7 +68,7 @@ public sealed partial class StealCmdObjectiveSystem : BasePirateObjective<StealC
         {
             // the player needs to have a mind and not be the excluded one +
             // the player has to be alive
-            if (!_mind.TryGetMind(uid, out var mind, out var mindComp) || mind == exclude || !_mobState.IsAlive(uid, mobState))
+            if (!_mind.TryGetMind(uid, out var mind, out _) || mind == exclude || !_mobState.IsAlive(uid, mobState))
                 continue;
 
             allHumans.Add(uid);

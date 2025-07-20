@@ -4,15 +4,15 @@ using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Roles;
-using Content.Server.RPSX.GameTicking.Rules.Pirates.Starting;
 using Content.Shared.GameTicking.Components;
+using Robust.Server.GameObjects;
 
 namespace Content.Server.RPSX.GameTicking.Rules.Pirates.PiratesTypes
 {
     public abstract class BasePiratesRuleSystem<T> : GameRuleSystem<T> where T : BasePiratesRuleComponent
     {
         [Dependency] private readonly PiratesProgressSystem _progressSystem = default!;
-
+        [Dependency] private readonly MapSystem _mapSystem = default!;
         public override void Initialize()
         {
             base.Initialize();
@@ -34,6 +34,12 @@ namespace Content.Server.RPSX.GameTicking.Rules.Pirates.PiratesTypes
                 PiratesGamePlay.Loud => component.ObjectivesLoud,
                 _ => component.ObjectivesSilent
             };
+            progress.Comp.PiratesOutpostMap = GetOutpostMap(uid);
+
+            if (!TryGetRandomStation(out var station)) return;
+            progress.Comp.TargetStation = station.Value;
+
+            Dirty(progress);
         }
 
         private void OnAntagSelectionEnd(EntityUid uid, T component, ref AntagSelectionEnd args)
@@ -53,6 +59,16 @@ namespace Content.Server.RPSX.GameTicking.Rules.Pirates.PiratesTypes
         {
             // TODO Different character screen briefing for the 3 nukie types
             args.Append(Loc.GetString("pirates-briefing"));
+        }
+
+        private EntityUid? GetOutpostMap(Entity<RuleGridsComponent?> rule)
+        {
+            if (!Resolve(rule.Owner, ref rule.Comp)) return null;
+
+            var mapUid = _mapSystem.GetMapOrInvalid(rule.Comp.Map);
+            if (!mapUid.Valid) return null;
+
+            return mapUid;
         }
     }
 }
