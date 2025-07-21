@@ -37,3 +37,13 @@
   cost: 4000
   category: cargoproduct-category-name-fun
   group: market
+
+- type: cargoProduct
+  id: TeaPartySet
+  icon:
+    sprite: Corvax/Clothing/Uniforms/Jumpskirt/elegantmaid.rsi
+    state: icon
+  product: CrateTeaPartySet
+  cost: 2000
+  category: cargoproduct-category-name-fun
+  group: market

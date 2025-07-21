@@ -62,3 +62,26 @@
       - id: WeaponMinigunBlender
       - id: BandMinigunNerf
         amount: 2
+
+- type: entity
+  id: CrateTeaPartySet
+  parent: CrateFunFoamGuns
+  name: box with tea party set
+  description: Suitable for tea drinking in an intelligent circle
+  components:
+  - type: StorageFill
+    contents:
+      - id: DrinkTeapot
+      - id: DrinkTeacup
+        amount: 3
+      - id: ClothingUniformJumpskirtElegantMaid
+        amount: 3
+      - id: FloorCarpetItemCyan
+        amount: 30
+      - id: BoxCandle
+      - id: ClothingUniformJumpsuitCurator
+        amount: 2
+      - id: ClothingUniformJumpskirtDetectiveGrey
+      - id: ClothingUniformJumpsuitDetectiveGrey
+      - id: ClothingUniformJumpskirtLawyerBlue
+      - id: ClothingUniformJumpsuitLawyerBlue

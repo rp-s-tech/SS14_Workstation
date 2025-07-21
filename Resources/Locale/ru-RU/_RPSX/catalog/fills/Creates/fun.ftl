@@ -9,3 +9,6 @@ ent-CrateFunGunNerfHummingbird = ящик с разными пенными пу�
 
 ent-CrateFunGunNerfBlender = ящик с пулемётом Nerf
     .desc = Содержит Миниган от Nerf.
+
+ent-CrateTeaPartySet = Набор для чаепития
+    .desc = Подходит для чаепития в интеллигентном кругу.
