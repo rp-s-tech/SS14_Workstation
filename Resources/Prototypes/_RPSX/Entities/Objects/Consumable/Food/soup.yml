@@ -5,7 +5,7 @@
   description: You've got balls kid, BALLS!
   components:
   - type: Sprite
-    sprite: _RPSX/Objects/Consumable/Food/bowl/VulpSoup.rsi
+    sprite: _RPSX/Objects/Consumable/Food/Bowl/vulpsoup.rsi
     state: vulposoup
   - type: FlavorProfile
     flavors:
@@ -37,7 +37,7 @@
     flavors:
       - meaty
   - type: Sprite
-    sprite: _RPSX/Objects/Consumable/Food/bowl/ClamSoup.rsi
+    sprite: _RPSX/Objects/Consumable/Food/Bowl/clamsoup.rsi
     state: clamsoup
   - type: SolutionContainerManager
     solutions:
@@ -64,7 +64,7 @@
       - rice
       - slime
   - type: Sprite
-    sprite: _RPSX/Objects/Consumable/Food/bowl/SlugRice.rsi
+    sprite: _RPSX/Objects/Consumable/Food/Bowl/slugrice.rsi
     state: slugrice
   - type: SolutionContainerManager
     solutions:
@@ -83,3 +83,82 @@
     tags:
     - Meat
     - Soup
+
+- type: entity
+  name: Vulp soup
+  parent: FoodBowlBase
+  id: FoodKhinkaliBowl
+  description: You've got balls kid, BALLS!
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/Bowl/hinkali.rsi
+    state: icon
+  - type: FlavorProfile
+    flavors:
+      - meaty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 12
+        - ReagentId: Vitamin
+          Quantity: 13
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  name: Vulp soup
+  parent: FoodBowlBase
+  id: FoodOkroshkaBowl
+  description: You've got balls kid, BALLS!
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/Bowl/okroshka.rsi
+    state: okroshka
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - leafy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 35
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 12
+        - ReagentId: Vitamin
+          Quantity: 13
+        - ReagentId: Milk
+          Quantity: 10
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  name: Vulp soup
+  parent: FoodBowlBase
+  id: FoodOliveBowl
+  description: You've got balls kid, BALLS!
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/Bowl/olive.rsi
+    state: olive
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - leafy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 12
+        - ReagentId: Vitamin
+          Quantity: 13
+  - type: Tag
+    tags:
+    - Meat

@@ -10,6 +10,7 @@
   - type: FlavorProfile
     flavors:
       - sweet
+      - alcohol
   - type: Tag
     tags:
     - Fruit

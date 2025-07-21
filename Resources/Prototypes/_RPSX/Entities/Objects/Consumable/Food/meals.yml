@@ -1,0 +1,48 @@
+- type: entity
+  name: Vulp soup
+  parent: FoodBowlBase
+  id: FoodLylakebab
+  description: You've got balls kid, BALLS!
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/bowl/lylakebab.rsi
+    state: icon
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - onion
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Vitamin
+          Quantity: 17
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  name: cheesy nachos
+  parent: FoodMealBase
+  id: FoodMealKhachapuri
+  description: The delicious combination of nachos and melting cheese.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/Meals/khachapyri.rsi
+    state: icon
+  - type: FlavorProfile
+    flavors:
+      - bread
+      - cheesy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: TableSalt
+          Quantity: 2
