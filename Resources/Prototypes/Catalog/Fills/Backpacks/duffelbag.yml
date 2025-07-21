@@ -18,6 +18,8 @@
       amount: 2
     - id: Suture
     - id: MetalSuture
+    - id: SyntheticCloth1
+      amount: 5
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateMedicalBundle
