@@ -3,7 +3,6 @@ using Content.Shared.Preferences;
 using Content.Shared.RPSX.Bank.Components;
 using Content.Shared.RPSX.Bank.Events;
 using Content.Shared.RPSX.Bank.Transactions;
-using Robust.Shared.GameObjects;
 
 namespace Content.Server.RPSX.Bank.Systems;
 
@@ -17,15 +16,14 @@ public sealed partial class BankSystem
 
     private async void OnPlayerSpawn(PlayerSpawnCompleteEvent args)
     {
-        if (!_mindSystem.TryGetMind(args.Mob, out var mindId, out var mind))
+        if (!_mindSystem.TryGetMind(args.Mob, out var mindId, out _))
             return;
-        EnsureComp<BankAccountComponent>(mindId, out var bankAccount);
+        EnsureComp<BankAccountComponent>(mindId, out _);
         RefreshBankBalanceAsync(mindId);
     }
 
     private async void OnBankAccountChanged(EntityUid mindId, BankAccountComponent bank, BankExecuteTransactionEvent args)
     {
-        RefreshBankBalanceAsync(mindId);
         var transaction = args.Transaction;
         if (transaction.Amount <= 0)
         {

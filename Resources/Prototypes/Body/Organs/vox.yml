@@ -7,21 +7,6 @@
     sprite: Mobs/Species/Vox/organs.rsi
   - type: Organ
     species: vox
-  - type: Food
-  - type: Extractable
-    grindableSolutionName: organ
-  - type: SolutionContainerManager
-    solutions:
-      organ:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
   - type: StaticPrice
     price: 300
   - type: Tag
@@ -84,11 +69,6 @@
   id: OrganVoxStomach
   parent: [ BaseVoxOrgan, OrganHumanStomach ]
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Vox/organs.rsi
-  - type: Item
-    size: Small
-    heldPrefix: stomach
   - type: Metabolizer #Skreeeee!
     metabolizerTypes: [Vox]
   - type: Stomach

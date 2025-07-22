@@ -62,7 +62,7 @@
       - id: WeaponMinigunBlender
       - id: BandMinigunNerf
         amount: 2
-
+        
 - type: entity
   id: CrateTeaPartySet
   parent: CrateFunFoamGuns

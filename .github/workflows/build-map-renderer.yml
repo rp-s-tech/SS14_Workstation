@@ -4,7 +4,7 @@ on:
   push:
     branches: [ productive, develop ]
   merge_group:
-  pull_request:
+  pull_request_target:
     types: [ opened, reopened, synchronize, ready_for_review ]
     branches: [ productive, develop ]
 
@@ -32,14 +32,22 @@ jobs:
         run: |
           cd RobustToolbox/
           git submodule update --init --recursive
-
+      
+      - name: Setup secrets
+        env:
+          ACCESS_TOKEN : ${{ secrets.ACCESS_TOKEN }}
+        
+        run: |
+          git -c submodule.RPSX.update=checkout -c submodule.RPSX.url="https://${{ env.ACCESS_TOKEN }}@github.com/rp-s-tech/SS14_Workstation_Private.git"  submodule update --init
+          ./RPSX/sync.sh -y
+      
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v4.1.0
         with:
           dotnet-version: 9.0.x
 
       - name: Install dependencies
-        run: dotnet restore
+        run: dotnet restore RPSX.sln
 
       - name: Build Project
         run: dotnet build Content.MapRenderer --configuration Release --no-restore /m
