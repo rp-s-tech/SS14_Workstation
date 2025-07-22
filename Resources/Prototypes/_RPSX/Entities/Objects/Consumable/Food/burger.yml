@@ -1,8 +1,8 @@
 - type: entity
-  name: bacon burger
+  name: Vulp burger
   parent: FoodBurgerBase
   id: FoodBurgerVulp
-  description: The perfect combination of all things American.
+  description: Wool Flavored Burger
   components:
   - type: Sprite
     sprite: _RPSX/Objects/Consumable/Food/burger.rsi
