@@ -2,7 +2,7 @@
   name: Vulp soup
   parent: FoodBowlBase
   id: FoodSoupMeatVulp
-  description: You've got balls kid, BALLS!
+  description: With a slight hint of wool.
   components:
   - type: Sprite
     sprite: _RPSX/Objects/Consumable/Food/Bowl/vulpsoup.rsi
@@ -28,10 +28,10 @@
     - Soup
 
 - type: entity
-  name: mushroom soup
+  name: Clam soup
   parent: FoodBowlBase
   id: FoodClamSoup
-  description: A delicious and satisfying soup resembles a spider.
+  description: Is this definitely with meat?
   components:
   - type: FlavorProfile
     flavors:
@@ -54,7 +54,7 @@
             Quantity: 4
 
 - type: entity
-  name: SlugRice
+  name: Slug rice
   parent: FoodBowlBase
   id: FoodSlugRice
   description: Well, it looks like slime...
@@ -85,10 +85,10 @@
     - Soup
 
 - type: entity
-  name: Vulp soup
+  name: Khinkali
   parent: FoodBowlBase
   id: FoodKhinkaliBowl
-  description: You've got balls kid, BALLS!
+  description: How are they different from dumplings?
   components:
   - type: Sprite
     sprite: _RPSX/Objects/Consumable/Food/Bowl/hinkali.rsi
@@ -110,10 +110,10 @@
     - Meat
 
 - type: entity
-  name: Vulp soup
+  name: Okroshka
   parent: FoodBowlBase
   id: FoodOkroshkaBowl
-  description: You've got balls kid, BALLS!
+  description: There is a lot of everything here.
   components:
   - type: Sprite
     sprite: _RPSX/Objects/Consumable/Food/Bowl/okroshka.rsi
@@ -138,10 +138,10 @@
     - Meat
 
 - type: entity
-  name: Vulp soup
+  name: Olive
   parent: FoodBowlBase
   id: FoodOliveBowl
-  description: You've got balls kid, BALLS!
+  description: How is it different from okroshka?
   components:
   - type: Sprite
     sprite: _RPSX/Objects/Consumable/Food/Bowl/olive.rsi

@@ -1,5 +1,5 @@
 - type: entity
-  name: sticky tart
+  name: Sticky tart
   parent: FoodPieBase
   id: FoodStickyTart
   description: A delicious dessert reminiscent of clown glue and wine.

@@ -53,7 +53,7 @@
 
 - type: microwaveMealRecipe
   id: RecipeStickyTart
-  name: Sticky tart recipe
+  name: sticky tart recipe
   result: FoodStickyTart
   time: 15
   reagents:
@@ -66,7 +66,7 @@
 
 - type: microwaveMealRecipe
   id: RecipeLylakebab
-  name: Lely kebab recipe
+  name: lely kebab recipe
   result: FoodLylakebab
   time: 20
   solids:
@@ -77,7 +77,7 @@
 
 - type: microwaveMealRecipe
   id: RecipeKhinkaliBowl
-  name: Khinkali recipe
+  name: khinkali recipe
   result: FoodKhinkaliBowl
   time: 15
   solids:
@@ -87,7 +87,7 @@
 
 - type: microwaveMealRecipe
   id: RecipeKhachapuri
-  name: Khachapuri recipe
+  name: khachapuri recipe
   result: FoodMealKhachapuri
   time: 15
   solids:
@@ -96,7 +96,7 @@
 
 - type: microwaveMealRecipe
   id: RecipeOkroshkaBowl
-  name: Okroshka recipe
+  name: okroshka recipe
   result: FoodOkroshkaBowl
   time: 20
   reagents:
@@ -108,7 +108,7 @@
 
 - type: microwaveMealRecipe
   id: RecipeOliveBowl
-  name: Olive recipe
+  name: olive recipe
   result: FoodOliveBowl
   time: 15
   solids:
