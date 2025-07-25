@@ -1,7 +1,7 @@
 ent-FoodSoupMeatVulp = Вульпа суп
     .desc = С легким вкусом шерсти.
 
-ent-FoodClamSoup = Малюсковый суп
+ent-FoodClamSoup = Моллюсковый суп
     .desc = Это точно с мясом?.
 
 ent-FoodSlugRice = Слизне рис
