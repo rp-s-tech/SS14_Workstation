@@ -1,2 +1,2 @@
 ent-FoodBurgerVulp = Вульп бургер
-    .desc = Wool Flavored Burger.
+    .desc = Бургер со вкуссом шерсти.
