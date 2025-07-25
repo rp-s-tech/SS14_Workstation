@@ -1,5 +1,8 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared.Humanoid;
 using Content.Shared.Mind;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Objectives.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -13,6 +16,7 @@ public abstract class SharedObjectivesSystem : EntitySystem
 {
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     private EntityQuery<MetaDataComponent> _metaQuery;
 
@@ -91,6 +95,7 @@ public abstract class SharedObjectivesSystem : EntitySystem
         return uid;
     }
 
+    // RPSX Objectives Start
     public EntityUid? TryCreateGroupObjective(string proto)
     {
         var uid = Spawn(proto);
@@ -117,6 +122,25 @@ public abstract class SharedObjectivesSystem : EntitySystem
         Log.Debug($"Created objective {ToPrettyString(uid):objective}");
         return uid;
     }
+
+    public HashSet<EntityUid> GetAliveHumans(EntityUid? exclude = null)
+    {
+        var allHumans = new HashSet<EntityUid>();
+        // HumanoidAppearanceComponent is used to prevent mice, pAIs, etc from being chosen
+        var query = EntityQueryEnumerator<MobStateComponent, HumanoidAppearanceComponent>();
+        while (query.MoveNext(out var uid, out var mobState, out _))
+        {
+            // the player needs to have a mind and not be the excluded one +
+            // the player has to be alive
+            if (!_mind.TryGetMind(uid, out var mind, out _) || mind == exclude || !_mobState.IsAlive(uid, mobState))
+                continue;
+
+            allHumans.Add(uid);
+        }
+
+        return allHumans;
+    }
+    // RPSX Objectives End
 
     /// <summary>
     /// Spawns and assigns an objective for a mind.

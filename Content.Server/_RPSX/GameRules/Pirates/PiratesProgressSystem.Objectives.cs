@@ -42,7 +42,7 @@ public sealed partial class PiratesProgressSystem
             }
             completed++;
         }
-        progressComp.AreObjectivesCompleted = true;
+        if (completed != progressComp.Objectives.Count) return;
         // Здесь надо идти чекать короче по поводу того насколько выиграли/проиграли пираты
         Dirty(progress);
     }

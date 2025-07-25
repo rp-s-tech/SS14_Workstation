@@ -21,9 +21,6 @@ public sealed partial class PiratesProgressComponent : Component
     public EntityUid? PiratesOutpostMap;
 
     [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
-    public bool AreObjectivesCompleted;
-
-    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public int StartedPirates;
 
     [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]

@@ -86,9 +86,6 @@ public sealed partial class PiratesProgressSystem : EntitySystem
         var query = EntityQueryEnumerator<PiratesProgressComponent>();
         while (query.MoveNext(out var uid, out var component))
         {
-            if (component.AreObjectivesCompleted)
-                continue;
-
             if (component.Objectives.Any())
             {
                 CheckObjectives((uid, component));
