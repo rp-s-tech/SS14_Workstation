@@ -196,8 +196,6 @@ public partial class SharedBodySystem
 
     public void AddHand(Entity<BodyPartComponent> partEnt, Entity<BodyComponent?> bodyEnt)
     {
-        if (partEnt.Comp.PartType != BodyPartType.Arm && partEnt.Comp.PartType != BodyPartType.Hand)
-            return;
         var part = GetBodyPartChildren(partEnt).ToList().Where(p => p.Component.PartType == BodyPartType.Hand).FirstOrNull();
         if (!part.HasValue || part.Value.Component.BodyPartSlot is not BodyPartSlot bodyPart) return;
 
@@ -212,6 +210,9 @@ public partial class SharedBodySystem
 
     public void RemoveHand(Entity<BodyPartComponent> partEnt, Entity<BodyComponent?> bodyEnt)
     {
+        if (TerminatingOrDeleted(partEnt) || TerminatingOrDeleted(bodyEnt))
+            return;
+
         var part = GetBodyPartChildren(partEnt).ToList().Where(p => p.Component.PartType == BodyPartType.Hand).FirstOrNull();
         if (part != null && part.Value.Component.BodyPartSlot is BodyPartSlot bodyPart)
         {
