@@ -34,6 +34,8 @@
   - Drill
   - Saw
   - Hemostat
+  - Suture
+  - MetalSuture
 
 - type: latheRecipePack
   id: MedicalStatic
