@@ -19,7 +19,6 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Content.Server.RPSX.Bridges;
 using Content.Server.RPSX.Roles.Salary.Systems;
 
 namespace Content.Server.Access.Systems;
