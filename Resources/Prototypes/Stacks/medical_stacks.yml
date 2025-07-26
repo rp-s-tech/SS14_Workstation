@@ -47,3 +47,16 @@
   spawn: RegenerativeMesh
   maxCount: 10
 
+- type: stack
+  id: SurgerySuture
+  name: stack-hard-suture
+  icon: { sprite: "/Textures/Objects/Specific/Medical/Surgery/suture.rsi", state: suture }
+  spawn: Suture
+  maxCount: 10
+
+- type: stack
+  id: SurgeryHardSuture
+  name: stack-suture
+  icon: { sprite: "/Textures/Objects/Specific/Medical/Surgery/suture.rsi", state: metalsuture }
+  spawn: MetalSuture
+  maxCount: 10

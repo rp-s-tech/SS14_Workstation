@@ -108,6 +108,10 @@
   #   - Canilunzt
   - type: TemperatureProtection # Exodus-MRP: Wool is a very good thermal insulator
     coolingCoefficient: 0.1
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatVulp
+      amount: 5
 
 - type: entity
   save: false

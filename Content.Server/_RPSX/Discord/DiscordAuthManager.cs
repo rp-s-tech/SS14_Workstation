@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
+using System.Collections.Concurrent;
 
 namespace Content.Server.RPSX.Discord
 {
@@ -17,7 +18,8 @@ namespace Content.Server.RPSX.Discord
 
     public sealed class DiscordAuthManager : IDiscordAuthManager
     {
-        private readonly Dictionary<NetUserId, bool> _verificationCache = new();
+        private readonly Dictionary<NetUserId, (bool Value, DateTime? Expire)> _verificationCache = new();
+        private readonly ConcurrentDictionary<NetUserId, Task<bool>> _activeRequests = new();
 
         private readonly HttpClient _httpClient = new();
         private ISawmill _sawmill = default!;
@@ -33,12 +35,29 @@ namespace Content.Server.RPSX.Discord
 
         public async Task<bool> IsVerifiedAsync(NetUserId userId)
         {
-            if (_verificationCache[userId] == true)
-                return true;
+            if (_verificationCache.TryGetValue(userId, out var cached))
+            {
+                if (cached.Value && cached.Expire == null)
+                    return true;
+                if (!cached.Value && cached.Expire > DateTime.UtcNow)
+                    return false;
+            }
 
+            var task = _activeRequests.GetOrAdd(userId, _ => InternalVerifyAsync(userId));
+            try
+            {
+                return await task;
+            }
+            finally
+            {
+                _activeRequests.TryRemove(new KeyValuePair<NetUserId, Task<bool>>(userId, task));
+            }
+        }
+
+        private async Task<bool> InternalVerifyAsync(NetUserId userId)
+        {
             if (string.IsNullOrEmpty(_apiUrl))
             {
-                _verificationCache[userId] = false;
                 return false;
             }
 
@@ -48,12 +67,19 @@ namespace Content.Server.RPSX.Discord
             {
                 case HttpStatusCode.NotFound:
                     _sawmill.Info($"Received Discord verification: NOT FOUND");
-                    _verificationCache[userId] = false;
+                    lock (_verificationCache)
+                        _verificationCache[userId] = (false, DateTime.UtcNow.AddSeconds(1));
                     return false;
                 case HttpStatusCode.OK:
                     var isVerified = await response.Content.ReadFromJsonAsync<bool>();
                     _sawmill.Info($"Received Discord verification: {isVerified}");
-                    _verificationCache[userId] = isVerified;
+                    lock (_verificationCache)
+                    {
+                        if (isVerified)
+                            _verificationCache[userId] = (true, null);
+                        else
+                            _verificationCache[userId] = (false, DateTime.UtcNow.AddSeconds(1));
+                    }
                     return isVerified;
             }
 
@@ -62,14 +88,15 @@ namespace Content.Server.RPSX.Discord
                 "Failed to get player verification info from API: [{StatusCode}] {Response}",
                 response.StatusCode,
                 errorText);
-
-            _verificationCache[userId] = false;
+            lock (_verificationCache)
+                _verificationCache[userId] = (false, DateTime.UtcNow.AddSeconds(1));
             return false;
         }
 
         public void RefreshVerification(NetUserId userId)
         {
-            _verificationCache.Remove(userId);
+            lock (_verificationCache)
+                _verificationCache.Remove(userId);
         }
     }
 }

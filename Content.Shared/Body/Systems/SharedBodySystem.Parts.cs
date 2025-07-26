@@ -10,6 +10,7 @@ using Content.Shared.Movement.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.Utility;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Hands.Components;
 
 namespace Content.Shared.Body.Systems;
 
@@ -50,8 +51,8 @@ public partial class SharedBodySystem
         var removedUid = args.Entity;
         var slotId = args.Container.ID;
 
-        // DebugTools.Assert(!TryComp(removedUid, out BodyPartComponent? b) || b.Body == ent.Comp.Body);
-        // DebugTools.Assert(!TryComp(removedUid, out OrganComponent? o) || o.Body == ent.Comp.Body);
+        DebugTools.Assert(!TryComp(removedUid, out BodyPartComponent? b) || b.Body == ent.Comp.Body);
+        DebugTools.Assert(!TryComp(removedUid, out OrganComponent? o) || o.Body == ent.Comp.Body);
 
         if (TryComp(removedUid, out BodyPartComponent? part) && part.Body is not null)
         {
@@ -130,6 +131,7 @@ public partial class SharedBodySystem
         RaiseLocalEvent(bodyEnt, ref ev);
 
         AddLeg(partEnt, bodyEnt);
+        AddHand(partEnt, bodyEnt);
     }
 
     private string GetSlotWithoutContainer(string slotId)
@@ -157,10 +159,11 @@ public partial class SharedBodySystem
         RaiseLocalEvent(bodyEnt, ref ev);
 
         RemoveLeg(partEnt, bodyEnt);
+        RemoveHand(partEnt, bodyEnt);
         PartRemoveDamage(bodyEnt, partEnt);
     }
 
-    private void AddLeg(Entity<BodyPartComponent> legEnt, Entity<BodyComponent?> bodyEnt)
+    public void AddLeg(Entity<BodyPartComponent> legEnt, Entity<BodyComponent?> bodyEnt)
     {
         if (!Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
             return;
@@ -173,7 +176,7 @@ public partial class SharedBodySystem
         }
     }
 
-    private void RemoveLeg(Entity<BodyPartComponent> legEnt, Entity<BodyComponent?> bodyEnt)
+    public void RemoveLeg(Entity<BodyPartComponent> legEnt, Entity<BodyComponent?> bodyEnt)
     {
         if (!Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
             return;
@@ -188,6 +191,31 @@ public partial class SharedBodySystem
             {
                 Standing.Down(bodyEnt);
             }
+        }
+    }
+
+    public void AddHand(Entity<BodyPartComponent> partEnt, Entity<BodyComponent?> bodyEnt)
+    {
+        if (partEnt.Comp.PartType != BodyPartType.Arm && partEnt.Comp.PartType != BodyPartType.Hand)
+            return;
+        var part = GetBodyPartChildren(partEnt).ToList().Where(p => p.Component.PartType == BodyPartType.Hand).FirstOrNull();
+        if (!part.HasValue || part.Value.Component.BodyPartSlot is not BodyPartSlot bodyPart) return;
+
+        var handLocation = part.Value.Component.Symmetry switch
+        {
+            BodyPartSymmetry.Left => HandLocation.Left,
+            BodyPartSymmetry.Right => HandLocation.Right,
+            _ => HandLocation.Middle,
+        };
+        _handsSystem.AddHand(bodyEnt.Owner, GetPartSlotContainerId(bodyPart.Id), handLocation);
+    }
+
+    public void RemoveHand(Entity<BodyPartComponent> partEnt, Entity<BodyComponent?> bodyEnt)
+    {
+        var part = GetBodyPartChildren(partEnt).ToList().Where(p => p.Component.PartType == BodyPartType.Hand).FirstOrNull();
+        if (part != null && part.Value.Component.BodyPartSlot is BodyPartSlot bodyPart)
+        {
+            _handsSystem.RemoveHand(bodyEnt.Owner, GetPartSlotContainerId(bodyPart.Id));
         }
     }
 

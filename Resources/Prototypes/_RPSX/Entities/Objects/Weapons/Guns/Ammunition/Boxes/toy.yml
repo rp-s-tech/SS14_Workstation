@@ -1,0 +1,16 @@
+- type: entity
+  parent: BoxDonkSoftBase
+  id: BoxDonkSoftBoxBullet
+  name: box of Nerf bullet
+  components:
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - MiniBulletNerf
+    capacity: 50
+    proto: MiniBulletNerf
+  - type: Sprite
+    sprite: _RPSX/Objects/Storage/boxes.rsi
+    layers:
+      - state: boxwidetoy
+      - state: nerf-bullet
