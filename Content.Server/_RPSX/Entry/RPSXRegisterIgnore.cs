@@ -19,7 +19,6 @@ public sealed class RPSXRegisterIgnore
         {
             componentFactory.RegisterIgnore(IgnoredSecretComponents.List);
 
-            prototypeManager.RegisterIgnore("stationGoal");
             // prototypeManager.RegisterIgnore("diseaseBlacklistPrototype");
             // prototypeManager.RegisterIgnore("disease");
             // prototypeManager.RegisterIgnore("diseaseCure");
