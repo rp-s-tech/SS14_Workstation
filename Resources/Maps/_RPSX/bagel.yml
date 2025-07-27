@@ -123650,31 +123650,6 @@ entities:
     - type: Transform
       pos: -37.5,20.5
       parent: 2
-- proto: MobNarsiObserverEye
-  entities:
-  - uid: 17409
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 9.050904,27.473625
-      parent: 2
-    - type: Physics
-      sleepTime: 0.01666665
-  - uid: 17410
-    components:
-    - type: Transform
-      pos: 45.873405,-15.037814
-      parent: 2
-  - uid: 26004
-    components:
-    - type: Transform
-      pos: 67.874695,-11.621577
-      parent: 1
-  - uid: 26005
-    components:
-    - type: Transform
-      pos: 67.874695,-11.621577
-      parent: 1
 - proto: MonkeyCubeWrapped
   entities:
   - uid: 17411

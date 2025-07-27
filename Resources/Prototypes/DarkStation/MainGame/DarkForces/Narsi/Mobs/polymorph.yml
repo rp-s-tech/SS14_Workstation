@@ -26,6 +26,7 @@
 
 - type: entity
   name: Наблюдатель
+  categories: [ HideSpawnMenu ]
   id: MobNarsiObserverEye
   description: Культисты используют эту оболочку, для проведения разведки
   suffix: "Ghost"
@@ -81,6 +82,7 @@
   - MobCorgi
   id: MobCorgiNarsiRitual
   description: Ian! No!
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -140,6 +142,7 @@
   - MobFlammable
   name: Скелет
   description: Мечта собак
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -196,6 +199,7 @@
   - SimpleMobBase
   name: Гниющая плоть
   description: Как же она воняет!
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -263,6 +267,7 @@
   - SimpleMobBase
   name: Мясной громила
   description: Кажется мне нужно бежать...
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     drawdepth: Mobs
