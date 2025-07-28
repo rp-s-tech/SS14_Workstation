@@ -152,7 +152,8 @@
   parent: KudzuFlowerFriendly
   components:
     - type: Kudzu
-      spreadChance: 0.2
+      spreadChance: 0.01
+      growthTickChance: 0.1
     - type: RandomSpawner
       chance: 0.05
       rarePrototypes:
@@ -212,7 +213,7 @@
         - Flesh
     - type: Kudzu
       growthTickChance: 0.1
-      spreadChance: 0.4
+      spreadChance: 0.1
       # Heals each time it manages to do a growth tick:
       damageRecovery:
         types:
