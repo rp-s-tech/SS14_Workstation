@@ -289,6 +289,9 @@ public abstract class SharedWieldableSystem : EntitySystem
                 return false;
         }
 
+        if (_hands.EnumerateHands(user).Count() < 2)
+            return false;
+
         var attemptEv = new WieldAttemptEvent(user, used);
         RaiseLocalEvent(user, ref attemptEv);
 
