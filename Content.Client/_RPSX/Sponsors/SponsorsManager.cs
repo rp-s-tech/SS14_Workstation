@@ -5,51 +5,33 @@ using Content.Shared.RPSX.Patron;
 using Content.Shared.RPSX.Sponsors;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
-using Robust.Shared.Prototypes;
 
 namespace Content.Client.RPSX.Sponsors;
 
 public sealed class SponsorsManager : ISponsorsManager
 {
     [Dependency] private readonly IClientNetManager _netMgr = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
-    private SponsorTier? _tier;
-
-    private SponsorTier? _dopTier;
+    private AllSponsorInfo? _tier;
 
     public void Initialize()
     {
         _netMgr.RegisterNetMessage<MsgSponsorInfo>(msg =>
             {
-                if (msg.TierId == null || !_prototype.TryIndex(msg.TierId, out _tier))
-                {
-                    _tier = null;
-                }
-            }
-        );
-        _netMgr.RegisterNetMessage<MsgAdditionalSponsorInfo>(msg =>
-            {
-                _dopTier = null;
+                _tier = null;
                 if (msg.TierId != null)
                 {
-                    _dopTier = msg.TierId;
+                    _tier = msg.TierId;
                 }
             }
         );
     }
 
-    public bool TryGetSponsorTier([NotNullWhen(true)] out SponsorTier? sponsor)
+    public bool TryGetSponsorTier([NotNullWhen(true)] out AllSponsorInfo? sponsor)
     {
         sponsor = _tier;
         return _tier != null;
-    }
-
-    public bool TryGetAdditionalSponsorTier([NotNullWhen(true)] out SponsorTier? sponsor)
-    {
-        sponsor = _dopTier;
-        return _dopTier != null;
     }
 
     public bool IsJobAvailable(JobPrototype job)

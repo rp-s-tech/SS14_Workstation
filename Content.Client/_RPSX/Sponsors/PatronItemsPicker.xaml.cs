@@ -19,6 +19,7 @@ public sealed partial class PatronItemsPicker : Control
     [Dependency] private readonly IPrototypeManager _prototypeMan = default!;
     [Dependency] private readonly IResourceCache _resource = default!;
     [Dependency] private readonly IEntityManager _entMan = default!;
+    private readonly SpriteSystem _spriteSystem;
 
     public Action<List<string>>? ItemsChanged;
     public Action<string, string>? PetChanged;
@@ -33,13 +34,14 @@ public sealed partial class PatronItemsPicker : Control
     private EntityUid? _dummyPetPreview;
     private SponsorsItemsCategory? _activeCategory;
 
-    private SponsorTier? _tier;
-    private SponsorTier? _dopTier;
+    private AllSponsorInfo? _tier;
 
     public PatronItemsPicker()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
+
+        _spriteSystem = _entMan.System<SpriteSystem>();
 
         InitializeItems();
         InitializePets();
@@ -47,8 +49,8 @@ public sealed partial class PatronItemsPicker : Control
 
     public void SetPatronData(List<string> selectedItems, string petId, string petName)
     {
-        _sponsorsManager.TryGetSponsorTier(out _tier);
-        _sponsorsManager.TryGetAdditionalSponsorTier(out _dopTier);
+        _sponsorsManager.TryGetSponsorTier(out var sponsorInfo);
+        _tier = sponsorInfo;
 
         SetupPatronItems(selectedItems);
         SetupPatronPets(petId, petName);
@@ -56,9 +58,10 @@ public sealed partial class PatronItemsPicker : Control
 
     private void SetupPatronItems(List<string> selectedItems)
     {
-        if (_tier?.AvailableItems > 0 || _dopTier?.AvailableItems > 0)
+        var tierAvailableItems = _tier?.AvailableItems;
+        if (tierAvailableItems > 0)
         {
-            _selectedItems = selectedItems.Select(_prototypeMan.Index<EntityPrototype>).ToList();
+            _selectedItems = selectedItems.Select(item => _prototypeMan.Index<EntityPrototype>(item)).ToList();
 
             UpdateSelectedItems();
             PopulateCategoryItems(CSearch.Text);
@@ -76,7 +79,7 @@ public sealed partial class PatronItemsPicker : Control
 
         foreach (var itemProt in _selectedItems)
         {
-            var spriteTextures = SpriteComponent.GetPrototypeTextures(itemProt, _resource).First();
+            var spriteTextures = _spriteSystem.GetPrototypeTextures(itemProt).First();
             var sprite = spriteTextures.Default;
 
             var item = CPatronSelectedItems.AddItem(itemProt.Name, sprite);
@@ -88,15 +91,14 @@ public sealed partial class PatronItemsPicker : Control
 
     private void UpdateAvailableItemsCount()
     {
-        if (_tier?.AvailableItems + _dopTier?.AvailableItems is not int summ) return;
-        var availableItems = Math.Min(summ, 2) - _selectedItems.Count;
+        var availableItems = _tier?.AvailableItems - _selectedItems.Count;
         CPatronItemsAvailableCount.Text = $"{availableItems}";
         CPatronAddItem.Disabled = availableItems <= 0;
     }
 
     private void SetupPatronPets(string petId, string petName)
     {
-        if (_tier?.PetCategories.Count > 0 || _dopTier?.PetCategories.Count > 0)
+        if (_tier?.PetCategories.Count > 0)
         {
             if (!string.IsNullOrEmpty(petId))
             {
@@ -243,7 +245,7 @@ public sealed partial class PatronItemsPicker : Control
             if (_selectedItems.Contains(itemProt))
                 continue;
 
-            var spriteTextures = SpriteComponent.GetPrototypeTextures(itemProt, _resource).First();
+            var spriteTextures = _spriteSystem.GetPrototypeTextures(itemProt).First();
             var sprite = spriteTextures.Default;
 
             var listItem = CPatronAvailableItems.AddItem(itemProt.Name, sprite);
@@ -297,7 +299,7 @@ public sealed partial class PatronItemsPicker : Control
         var prototypes = _prototypeMan.EnumeratePrototypes<SponsorPetCategory>();
         foreach (var category in prototypes)
         {
-            if (_tier?.PetCategories.Contains(category) == false || _dopTier?.PetCategories.Contains(category) == false)
+            if (_tier?.PetCategories.Contains(category.ID) == false)
                 continue;
 
             foreach (var petId in category.Pets)
@@ -308,7 +310,7 @@ public sealed partial class PatronItemsPicker : Control
                 if (!petPrototype.Name.Contains(filter))
                     continue;
 
-                var spriteTextures = SpriteComponent.GetPrototypeTextures(petPrototype, _resource).First();
+                var spriteTextures = _spriteSystem.GetPrototypeTextures(petPrototype).First();
                 var sprite = spriteTextures.Default;
 
                 var item = CPetsList.AddItem(petPrototype.Name, sprite);

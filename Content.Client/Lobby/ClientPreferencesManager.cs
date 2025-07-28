@@ -65,12 +65,7 @@ namespace Content.Client.Lobby
         {
             var collection = IoCManager.Instance!;
             // RPSX Sponsor
-            var allowedMarkings = new List<string>();
-            if (_sponsorsManager.TryGetSponsorTier(out var tier))
-                allowedMarkings.AddRange(tier.AllowedMarkings.Where(item => !allowedMarkings.Contains(item)));
-
-            if (_sponsorsManager.TryGetAdditionalSponsorTier(out var additionalTier))
-                allowedMarkings.AddRange(additionalTier.AllowedMarkings.Where(item => !allowedMarkings.Contains(item)));
+            var allowedMarkings = _sponsorsManager.TryGetSponsorTier(out var sponsor) ? sponsor.AllowedMarkings : [];
             var session = _playerManager.LocalSession!;
             profile.EnsureValid(session, collection, allowedMarkings.ToArray());
             // RPSX Sponsor

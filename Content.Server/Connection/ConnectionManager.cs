@@ -69,7 +69,7 @@ namespace Content.Server.Connection
         [Dependency] private readonly IDiscordAuthManager _discordAuthManager = default!;
 
         private GameTicker? _ticker;
-        
+
         private ISawmill _sawmill = default!;
         private readonly Dictionary<NetUserId, TimeSpan> _temporaryBypasses = [];
         private IPIntel.IPIntel _ipintel = default!;
@@ -371,8 +371,7 @@ namespace Content.Server.Connection
 
         private async Task<bool> HavePriorityJoin(NetUserId userId)
         {
-            var hasPriorityJoin = _sponsorsManager.TryGetSponsorTier(userId, out var tier) && tier.HavePriorityJoin
-                || _sponsorsManager.TryGetAdditionalSponsorTier(userId, out var additionalTier) && additionalTier.HavePriorityJoin;
+            var hasPriorityJoin = _sponsorsManager.TryGetSponsorTier(userId, out var tier) && tier.HavePriorityJoin;
             if (hasPriorityJoin)
                 return true;
 

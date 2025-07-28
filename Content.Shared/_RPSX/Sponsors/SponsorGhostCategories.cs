@@ -12,6 +12,6 @@ public sealed partial class SponsorGhostCategories : IPrototype
     [DataField(required: true)]
     public string Name = default!;
 
-    [DataField(required:true)]
+    [DataField(required: true)]
     public SpriteSpecifier Icon = default!;
 }

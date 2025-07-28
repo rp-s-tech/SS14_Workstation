@@ -1932,7 +1932,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
         #region RPSX
 
-        public async Task<SponsorTier?> GetAdditionalSponsorTier(NetUserId userId)
+        public async Task<AllSponsorInfo?> GetAdditionalSponsorTier(NetUserId userId)
         {
             await using var db = await GetDb();
 
@@ -1942,9 +1942,8 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             if (sponsor == null)
                 return null;
 
-            var resultTier = new SponsorTier();
+            var resultTier = new AllSponsorInfo();
             var expiredTiers = new List<string>();
-
             foreach (var tier in sponsor.SponsorTiers)
             {
                 var tierId = tier.SponsorTierId;
@@ -1952,11 +1951,13 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 if (!_prototypeManager.TryIndex(tierId, out SponsorTier? tierProto))
                     continue;
 
+                _opsLog.Info("0");
                 if (expiryDate is DateTime expiry && expiry < DateTime.UtcNow)
                 {
                     expiredTiers.Add(tierId);
                     continue;
                 }
+                _opsLog.Info("1");
 
                 resultTier.AvailableItems = Math.Min(2, resultTier.AvailableItems + tierProto.AvailableItems);
                 resultTier.RoleTimeByPass |= tierProto.RoleTimeByPass;
