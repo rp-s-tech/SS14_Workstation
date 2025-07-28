@@ -100,14 +100,6 @@ public sealed class SponsorsManager : ISponsorsManager
             AddUniqueItems(newInfo.PetCategories, additionalInfo.PetCategories);
             AddUniqueItems(newInfo.Ghosts, additionalInfo.Ghosts);
         }
-        _sawmill.Info(newInfo.AvailableItems.ToString());
-        _sawmill.Info(newInfo.RoleTimeByPass.ToString());
-        _sawmill.Info(newInfo.HavePriorityJoin.ToString());
-        _sawmill.Info(newInfo.Ghosts.Count.ToString());
-        _sawmill.Info(newInfo.PetCategories.Count.ToString());
-        _sawmill.Info(newInfo.AllowedSpecies.Count.ToString());
-        _sawmill.Info(newInfo.AllowedLoadouts.Count.ToString());
-        _sawmill.Info(newInfo.AllowedMarkings.Count.ToString());
         _cachedSponsors[e.UserId] = newInfo;
     }
 

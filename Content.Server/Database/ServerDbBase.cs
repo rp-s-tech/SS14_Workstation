@@ -1937,6 +1937,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await using var db = await GetDb();
 
             var sponsor = await db.DbContext.AdditionalSponsorDatas
+                .Include(p => p.SponsorTiers)
                 .SingleOrDefaultAsync(p => p.PlayerUserId == userId.UserId);
 
             if (sponsor == null)
@@ -1951,13 +1952,11 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 if (!_prototypeManager.TryIndex(tierId, out SponsorTier? tierProto))
                     continue;
 
-                _opsLog.Info("0");
                 if (expiryDate is DateTime expiry && expiry < DateTime.UtcNow)
                 {
                     expiredTiers.Add(tierId);
                     continue;
                 }
-                _opsLog.Info("1");
 
                 resultTier.AvailableItems = Math.Min(2, resultTier.AvailableItems + tierProto.AvailableItems);
                 resultTier.RoleTimeByPass |= tierProto.RoleTimeByPass;
@@ -2038,7 +2037,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                     SponsorData = sponsor
                 });
             }
-
+            _opsLog.Info(sponsor.SponsorTiers.Count.ToString());
             await db.DbContext.SaveChangesAsync();
         }
 
