@@ -3,6 +3,4 @@
 [RegisterComponent]
 public sealed partial class StealCmdObjectiveComponent : Component
 {
-    [DataField]
-    public EntityUid Target;
 }

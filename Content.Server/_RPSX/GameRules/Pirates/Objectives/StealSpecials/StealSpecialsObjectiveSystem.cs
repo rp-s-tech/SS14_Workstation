@@ -24,15 +24,14 @@ public sealed partial class StealSpecialsObjectiveSystem : BasePirateObjective<S
     }
 
     protected override void CheckObjectiveCompleted(Entity<StealSpecialsObjectiveComponent> entity,
-        ref CheckObjectiveEvent args)
+        ref ObjectiveGetProgressEvent args)
     {
-        args.Completed = false;
         if (!entity.Comp.ObjectiveItem.HasValue) return;
         if (!TryComp<PirateObjectiveComponent>(entity, out var objective)) return;
         if (!TryComp<PiratesProgressComponent>(objective.PiratesProgress, out var progressComponent)) return;
         if (progressComponent.PiratesOutpostMap is not { } outpost) return;
         if (Transform(entity.Comp.ObjectiveItem.Value).MapUid != outpost) return;
-        args.Completed = true;
+        args.Progress = 1f;
     }
 
     private List<EntityUid> GetAssignedTargets()

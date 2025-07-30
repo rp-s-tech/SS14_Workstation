@@ -54,22 +54,25 @@ public sealed class PirateEconomicsSystem : EntitySystem
         }
     }
 
-    public void ChangePiratesBalance(Entity<PiratesProgressComponent> progress, int summ)
+    public void ChangePiratesBalance(Entity<PiratesProgressComponent?> progress, int summ)
     {
+        if (!Resolve(progress, ref progress.Comp))
+            return;
+
         progress.Comp.Balance += summ;
         Dirty(progress);
     }
 
-    private Entity<PiratesProgressComponent>? GetProgress(EntityUid entity)
+    private Entity<PiratesProgressComponent>? GetProgress(Entity<BasePirateComponent?> entity)
     {
-        var query = EntityQueryEnumerator<PiratesProgressComponent>();
-        while (query.MoveNext(out var uid, out var comp))
-        {
-            if (comp.PiratesOutpost is not { } outpost) continue;
-            if (Transform(outpost).GridUid == Transform(entity).GridUid)
-                return (uid, comp);
-        }
-        return null;
+        if (!Resolve(entity, ref entity.Comp))
+            return null;
+
+        var progress = entity.Comp.PiratesProgress;
+        if (!TryComp<PiratesProgressComponent>(progress, out var progressComponent))
+            return null;
+
+        return (progress, progressComponent);
     }
 
     #endregion
@@ -87,7 +90,7 @@ public sealed class PirateEconomicsSystem : EntitySystem
 
     private void OnBuyedProduct(Entity<PirateShopComponent> entity, ref PirateShopOrderMessage args)
     {
-        if (GetProgress(entity) is not { } progress) return;
+        if (GetProgress(entity.Owner) is not { } progress) return;
         if (args.Actor is not { Valid: true } player)
         {
             PlayDenySound(entity, null);
@@ -102,7 +105,7 @@ public sealed class PirateEconomicsSystem : EntitySystem
         }
 
         var summ = -1 * args.Cost;
-        ChangePiratesBalance(progress, summ);
+        ChangePiratesBalance(progress.Owner, summ);
         entity.Comp.ProductsQueue.Add((args.ProductId, args.Amount));
         UpdateState(entity);
         Dirty(entity);
@@ -111,7 +114,7 @@ public sealed class PirateEconomicsSystem : EntitySystem
     private void UpdateState(Entity<PirateShopComponent> entity)
     {
         if (!_ui.HasUi(entity, PirateShopUiKey.Key)) return;
-        if (GetProgress(entity) is not { } progress) return;
+        if (GetProgress(entity.Owner) is not { } progress) return;
         var products = new List<ProtoId<PirateStuffPrototype>>();
         var productsPrototypes = _prototypeManager.EnumeratePrototypes<PirateStuffPrototype>().ToHashSet();
         foreach (var product in productsPrototypes)
@@ -166,7 +169,7 @@ public sealed class PirateEconomicsSystem : EntitySystem
         var totalAmount = goods.Sum(t => t.Item2);
         _ui.SetUiState(uid,
             PiratePalletConsoleUiKey.Key,
-            new PiratePalletConsoleInterfaceState((int) totalAmount, toSell.Count, true));
+            new PiratePalletConsoleInterfaceState((int)totalAmount, toSell.Count, true));
     }
 
     private void OnPalletUIOpen(EntityUid uid, PiratePalletConsoleComponent component, BoundUIOpenedEvent args)
@@ -244,7 +247,7 @@ public sealed class PirateEconomicsSystem : EntitySystem
             return;
 
         var sum = (int)Math.Round(goods.Sum(tuple => tuple.Item2));
-        ChangePiratesBalance(progress, sum);
+        ChangePiratesBalance(progress.Owner, sum);
 
         _audio.PlayPredicted(ApproveSound, uid, null);
         UpdatePalletConsoleInterface(uid);

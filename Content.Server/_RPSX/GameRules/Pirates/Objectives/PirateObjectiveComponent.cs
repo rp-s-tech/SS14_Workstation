@@ -10,4 +10,7 @@ public sealed partial class PirateObjectiveComponent : BasePirateComponent
 
     [DataField]
     public bool RewardGiven;
+
+    [DataField]
+    public float Priority = 1;
 }

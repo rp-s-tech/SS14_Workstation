@@ -2,13 +2,15 @@ using Content.Server.RPSX.GameRules.Pirates.Objectives;
 using Content.Shared.RPSX.GameRules.Pirates;
 using Content.Server.Objectives;
 using Robust.Shared.Prototypes;
-using System.Linq;
+using Content.Shared.Objectives.Components;
+using Content.Server.Mind;
 
 namespace Content.Server.RPSX.GameRules.Pirates;
 
 public sealed partial class PiratesProgressSystem
 {
     [Dependency] private readonly ObjectivesSystem _objectivesSystem = default!;
+    [Dependency] private readonly MindSystem _mindSystem = default!;
 
     private void SpawnObjectives(Entity<PiratesProgressComponent> progress)
     {
@@ -19,7 +21,6 @@ public sealed partial class PiratesProgressSystem
                 CreateObjective(progress, key);
             }
         }
-        progress.Comp.StartedPirates = EntityQuery<PirateComponent>().Where(p => p.PiratesProgress == progress.Owner).Count();
     }
 
     private void CheckObjectives(Entity<PiratesProgressComponent> progress)
@@ -28,23 +29,46 @@ public sealed partial class PiratesProgressSystem
 
         if (progressComp.ObjectivesCheckTime > _timing.CurTime) return;
         progressComp.ObjectivesCheckTime += progressComp.ObjectivesCheckThreshold;
-        var completed = 0;
+
+        var summaryMain = 0f;
+        var summaryAdditional = 0f;
         foreach (var objective in progressComp.Objectives)
         {
-            var ev = new CheckObjectiveEvent();
-            RaiseLocalEvent(objective, ref ev);
-            if (!ev.Completed) continue;
-            if (!TryComp<PirateObjectiveComponent>(objective, out var comp)) continue;
-            if (!comp.RewardGiven)
+            if (!TryComp<PirateObjectiveComponent>(objective, out var objectiveComponent))
             {
-                _economicsSystem.ChangePiratesBalance(progress, comp.Reward);
-                comp.RewardGiven = true;
+                Log.Fatal("Smb is fucking idiot and added pirate objective without component");
+                return;
             }
-            completed++;
+
+            var prog = IsObjectiveCompleted((objective, objectiveComponent));
+            switch (objectiveComponent.Priority)
+            {
+                case 1:
+                    summaryAdditional += prog;
+                    break;
+                case 0:
+                    summaryMain += prog;
+                    break;
+            }
         }
-        if (completed != progressComp.Objectives.Count) return;
-        // Здесь надо идти чекать короче по поводу того насколько выиграли/проиграли пираты
+        
         Dirty(progress);
+    }
+
+    private float IsObjectiveCompleted(Entity<PirateObjectiveComponent> objective)
+    {
+        var ev = new ObjectiveGetProgressEvent();
+        RaiseLocalEvent(objective, ref ev);
+
+        if (!objective.Comp.RewardGiven)
+        {
+            _economicsSystem.ChangePiratesBalance(objective.Comp.PiratesProgress, objective.Comp.Reward);
+            objective.Comp.RewardGiven = true;
+        }
+        if (ev.Progress is not float objProgress)
+            return 0;
+
+        return objProgress;
     }
 
     private void CreateObjective(Entity<PiratesProgressComponent> objectiveProgress, EntProtoId objectiveId)
@@ -58,8 +82,13 @@ public sealed partial class PiratesProgressSystem
         narsiObjectives.Add(objective.Value);
 
         Dirty(objectiveProgress);
+
+        foreach (var pirate in objectiveProgress.Comp.StartedPirates)
+        {
+            if (!_mindSystem.TryGetMind(pirate, out var mindId, out var mind))
+                return;
+
+            _mindSystem.AddObjective(mindId, mind, objective.Value);
+        }
     }
 }
-
-[ByRefEvent]
-public record struct CheckObjectiveEvent(bool Completed = false);

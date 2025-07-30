@@ -86,11 +86,8 @@ public sealed partial class PiratesProgressSystem : EntitySystem
         var query = EntityQueryEnumerator<PiratesProgressComponent>();
         while (query.MoveNext(out var uid, out var component))
         {
-            if (component.Objectives.Any())
-            {
-                CheckObjectives((uid, component));
+            if (component.Objectives.Any() || component.PiratesWinState != PiratesWinState.None)
                 continue;
-            }
 
             if (component.ObjectivesSpawnTime > _timing.CurTime)
                 continue;
@@ -122,6 +119,12 @@ public sealed partial class PiratesProgressSystem : EntitySystem
         }
         entity.Comp.PiratesProgress = progress.CompOwner;
         entity.Comp.CompOwner = entity.Owner;
+
+        if (HasComp<PirateComponent>(entity.Owner))
+        {
+            progress.StartedPirates.Add(entity.Owner);
+        }
+        DirtyField(progress.CompOwner, progress, nameof(PiratesProgressComponent.StartedPirates));
     }
 
     private void SendMessageFromHead(Entity<PiratesProgressComponent> progress, string message)

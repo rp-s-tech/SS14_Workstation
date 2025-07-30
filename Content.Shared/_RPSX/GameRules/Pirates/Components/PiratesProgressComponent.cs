@@ -2,7 +2,7 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared.RPSX.GameRules.Pirates;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true), AutoGenerateComponentPause]
 public sealed partial class PiratesProgressComponent : Component
 {
     [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
@@ -21,7 +21,7 @@ public sealed partial class PiratesProgressComponent : Component
     public EntityUid? PiratesOutpostMap;
 
     [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
-    public int StartedPirates;
+    public HashSet<EntityUid> StartedPirates;
 
     [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public int Balance = 0;
