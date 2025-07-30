@@ -6,9 +6,9 @@
   components:
     - type: ExpendableLight
       refuelMaterialID: WoodPlank
-      glowDuration: 100
+      glowDuration: 800
       refuelMaximumDuration: 205
-      fadeOutDuration: 4
+      fadeOutDuration: 12
       iconStateSpent: torch_spent
       turnOnBehaviourID: turn_on
       fadeOutBehaviourID: fade_out

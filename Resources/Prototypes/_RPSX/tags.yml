@@ -1,2 +1,12 @@
 - type: Tag
+  id: MiniBulletNerf
+
+- type: Tag
+  id: MagazinePistolHighNerf
+
+- type: Tag
+  id: MagazinePistolLowNerf
+
+- type: Tag
+  id: MiniganeBandNerf- type: Tag
   id: PiratesSellable

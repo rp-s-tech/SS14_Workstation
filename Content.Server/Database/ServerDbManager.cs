@@ -370,7 +370,7 @@ namespace Content.Server.Database
 
         #region RPSX
 
-        Task<SponsorTier?> GetAdditionalSponsorTier(NetUserId userId);
+        Task<AllSponsorInfo?> GetAdditionalSponsorTier(NetUserId userId);
         Task ChangeAdditionalSponsorTier(NetUserId userId, SponsorTier tier, int days = 0, bool remove = false);
         Task<BankAccountComponent?> GetProfileEconomics(NetUserId userId, int slot);
         Task SaveProfileEconomics(NetUserId userId, int slot, BankAccountComponent bank);
@@ -1069,7 +1069,7 @@ namespace Content.Server.Database
 
         #region RPSX
 
-        public Task<SponsorTier?> GetAdditionalSponsorTier(NetUserId userId)
+        public Task<AllSponsorInfo?> GetAdditionalSponsorTier(NetUserId userId)
         {
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetAdditionalSponsorTier(userId));

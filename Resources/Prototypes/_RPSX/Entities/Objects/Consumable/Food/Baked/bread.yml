@@ -1,0 +1,58 @@
+- type: entity
+  name: vulp bread
+  parent: FoodBreadBase
+  id: FoodBreadVulp
+  description: Bread with pieces of wool.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/Baked/bread.rsi
+    state: vbread
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - bread
+  - type: Food
+  - type: SliceableFood
+    slice: FoodBreadVulpSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 45
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 30
+        - ReagentId: Vitamin
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
+    - Bread
+
+- type: entity
+  name: vulp bread slice
+  parent: FoodBreadSliceBase
+  id: FoodBreadVulpSlice
+  description: A slice of delicious vulpbread.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/Baked/bread.rsi
+    state: vbread-slice
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - bread
+  - type: Food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Vitamin
+          Quantity: 1.2
+  - type: Tag
+    tags:
+    - Meat
+    - Bread
+    - Slice

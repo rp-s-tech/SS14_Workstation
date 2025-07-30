@@ -1,0 +1,39 @@
+- type: cargoProduct
+  id: ProductSubMachineGunNerfTitmouse
+  icon:
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/titmouse.rsi
+    state: icon
+  product: CrateFunGunNerfTitmouse
+  cost: 3000
+  category: cargoproduct-category-name-fun
+  group: market
+
+- type: cargoProduct
+  id: ProductSubMachineGunNerfFlash
+  icon:
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/flash.rsi
+    state: icon
+  product: CrateFunGunNerfFlash
+  cost: 3000
+  category: cargoproduct-category-name-fun
+  group: market
+
+- type: cargoProduct
+  id: ProductSubMachineGunNerfOther
+  icon:
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/hummingbird.rsi
+    state: icon
+  product: CrateFunGunNerfHummingbird
+  cost: 2000
+  category: cargoproduct-category-name-fun
+  group: market
+
+- type: cargoProduct
+  id: ProductSubMachineGunNerfВlender
+  icon:
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/blender.rsi
+    state: icon
+  product: CrateFunGunNerfBlender
+  cost: 4000
+  category: cargoproduct-category-name-fun
+  group: market

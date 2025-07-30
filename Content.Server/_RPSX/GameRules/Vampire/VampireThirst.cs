@@ -1,11 +1,8 @@
-using Content.Server.RPSX.Bridges;
 using Content.Shared.EntityEffects;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
+using Content.Shared.RPSX.DarkForces.Vampire.Components;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Server.RPSX.GameRules.Vampire;
 
@@ -22,7 +19,7 @@ public sealed partial class VampireThirst : EntityEffect
             return;
 
         var target = reagentArgs.TargetEntity;
-        var isVampire = IoCManager.Resolve<IVampireBridge>().IsVampire(target);
+        var isVampire = args.EntityManager.HasComponent<VampireComponent>(target);
         if (!isVampire || !args.EntityManager.TryGetComponent(target, out ThirstComponent? thirst))
             return;
 

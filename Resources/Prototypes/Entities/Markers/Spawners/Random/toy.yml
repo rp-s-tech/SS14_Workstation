@@ -134,5 +134,10 @@
       - ToyFigurineMouse
       - ToyFigurineHamlet
       - ToyFigurineThief
+      # RPSX Start
+      - ToyFigurinelIlIl
+      - ToyFigurineMashaDark1
+      - ToyFigurineMaksDark1
+      # RPSX End
       chance: 0.90
       offset: 0.2

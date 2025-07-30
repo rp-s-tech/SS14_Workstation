@@ -22,15 +22,13 @@ public sealed class SponsorsManager : ISponsorsManager
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IServerDbManager _serverDbManager = default!;
-    [Dependency] private readonly IEntityManager _entMan = default!;
 
     private readonly HttpClient _httpClient = new();
 
     private ISawmill _sawmill = default!;
     private string _apiUrl = string.Empty;
 
-    private readonly Dictionary<NetUserId, string> _cachedSponsors = new();
-    private readonly Dictionary<NetUserId, SponsorTier> _cachedAdditionalSponsors = new();
+    private readonly Dictionary<NetUserId, AllSponsorInfo> _cachedSponsors = new();
 
     public void Initialize()
     {
@@ -38,23 +36,16 @@ public sealed class SponsorsManager : ISponsorsManager
         _cfg.OnValueChanged(RPSXCCVars.SponsorsApiUrl, s => _apiUrl = s, true);
 
         _netMgr.RegisterNetMessage<MsgSponsorInfo>();
-        _netMgr.RegisterNetMessage<MsgAdditionalSponsorInfo>();
 
         _netMgr.Connecting += OnConnecting;
         _netMgr.Connected += OnConnected;
         _netMgr.Disconnect += OnDisconnect;
     }
 
-    public bool TryGetSponsorTier(NetUserId userId, [NotNullWhen(true)] out SponsorTier? sponsorTier)
+    public bool TryGetSponsorTier(NetUserId userId, [NotNullWhen(true)] out AllSponsorInfo? sponsorInfo)
     {
-        sponsorTier = null;
-        return _cachedSponsors.TryGetValue(userId, out var tierId) && _prototype.TryIndex(tierId, out sponsorTier);
-    }
-
-    public bool TryGetAdditionalSponsorTier(NetUserId userId, [NotNullWhen(true)] out SponsorTier? sponsorTier)
-    {
-        sponsorTier = null;
-        return _cachedAdditionalSponsors.TryGetValue(userId, out sponsorTier);
+        sponsorInfo = null;
+        return _cachedSponsors.TryGetValue(userId, out sponsorInfo);
     }
 
     public bool IsJobAvailable(NetUserId userId, JobPrototype job)
@@ -75,24 +66,41 @@ public sealed class SponsorsManager : ISponsorsManager
     {
         var info = await LoadSponsorInfo(e.UserId);
         var additionalInfo = await _serverDbManager.GetAdditionalSponsorTier(e.UserId);
-        if (info?.TierId == null)
+        if (info?.TierId == null && additionalInfo == null)
         {
             _cachedSponsors.Remove(e.UserId); // Remove from cache if sponsor expired
+            return;
         }
-        else
+        DebugTools.Assert(!_cachedSponsors.ContainsKey(e.UserId), "Cached data was found on client connect");
+        SponsorTier? tier;
+        var newInfo = new AllSponsorInfo();
+        if (info?.TierId != null)
         {
-            DebugTools.Assert(!_cachedSponsors.ContainsKey(e.UserId), "Cached data was found on client connect");
-            _cachedSponsors[e.UserId] = info.TierId;
+            tier = _prototype.Index<SponsorTier>(info.TierId);
+            newInfo.AvailableItems = Math.Min(2, newInfo.AvailableItems + tier.AvailableItems);
+            newInfo.RoleTimeByPass |= tier.RoleTimeByPass;
+            newInfo.HavePriorityJoin |= tier.HavePriorityJoin;
+
+            newInfo.AllowedMarkings = tier.AllowedMarkings;
+            newInfo.AllowedLoadouts = tier.AllowedLoadouts;
+            newInfo.AllowedSpecies = tier.AllowedSpecies;
+            newInfo.PetCategories = tier.PetCategories;
+            newInfo.Ghosts = tier.Ghosts;
         }
-        if (additionalInfo == null)
+
+        if (additionalInfo != null)
         {
-            _cachedAdditionalSponsors.Remove(e.UserId);
+            newInfo.AvailableItems = Math.Min(2, newInfo.AvailableItems + additionalInfo.AvailableItems);
+            newInfo.RoleTimeByPass |= additionalInfo.RoleTimeByPass;
+            newInfo.HavePriorityJoin |= additionalInfo.HavePriorityJoin;
+
+            AddUniqueItems(newInfo.AllowedMarkings, additionalInfo.AllowedMarkings);
+            AddUniqueItems(newInfo.AllowedLoadouts, additionalInfo.AllowedLoadouts);
+            AddUniqueItems(newInfo.AllowedSpecies, additionalInfo.AllowedSpecies);
+            AddUniqueItems(newInfo.PetCategories, additionalInfo.PetCategories);
+            AddUniqueItems(newInfo.Ghosts, additionalInfo.Ghosts);
         }
-        else
-        {
-            DebugTools.Assert(!_cachedAdditionalSponsors.ContainsKey(e.UserId), "Cached data was found on client connect");
-            _cachedAdditionalSponsors[e.UserId] = additionalInfo;
-        }
+        _cachedSponsors[e.UserId] = newInfo;
     }
 
     private async void OnConnected(object? sender, NetChannelArgs e)
@@ -100,16 +108,11 @@ public sealed class SponsorsManager : ISponsorsManager
         var tierId = _cachedSponsors.TryGetValue(e.Channel.UserId, out var sponsor) ? sponsor : null;
         var msg = new MsgSponsorInfo { TierId = tierId };
         _netMgr.ServerSendMessage(msg, e.Channel);
-
-        var tier = _cachedAdditionalSponsors.TryGetValue(e.Channel.UserId, out var additionalSponsor) ? additionalSponsor : null;
-        var amsg = new MsgAdditionalSponsorInfo { TierId = tier };
-        _netMgr.ServerSendMessage(amsg, e.Channel);
     }
 
     private void OnDisconnect(object? sender, NetDisconnectedArgs e)
     {
         _cachedSponsors.Remove(e.Channel.UserId);
-        _cachedAdditionalSponsors.Remove(e.Channel.UserId);
     }
 
     private async Task<SponsorInfo?> LoadSponsorInfo(NetUserId userId)
@@ -139,15 +142,35 @@ public sealed class SponsorsManager : ISponsorsManager
         return null;
     }
 
-    public async void AddSponsor(NetUserId userId, SponsorTier tier, int days)
+    public void AddSponsor(NetUserId userId, SponsorTier tier, int days)
+    {
+        AddSponsorPrivate(userId, tier, days);
+    }
+
+    private async void AddSponsorPrivate(NetUserId userId, SponsorTier tier, int days)
     {
         await _serverDbManager.ChangeAdditionalSponsorTier(userId, tier, days);
         _sawmill.Info("Sponsor added: {userId} {tier} for {days}", userId, tier.ID, days);
     }
 
-    public async void RemoveSponsor(NetUserId userId, SponsorTier tier)
+    public void RemoveSponsor(NetUserId userId, SponsorTier tier)
+    {
+        RemoveSponsorPrivate(userId, tier);
+    }
+
+    private async void RemoveSponsorPrivate(NetUserId userId, SponsorTier tier)
     {
         await _serverDbManager.ChangeAdditionalSponsorTier(userId, tier, remove: true);
         _sawmill.Info("SponsorTier {tier} removed from {userId}", tier.ID, userId);
+    }
+
+    private void AddUniqueItems<T>(List<T> target, List<T> source)
+    {
+        var set = new HashSet<T>(target);
+        foreach (var item in source)
+        {
+            if (set.Add(item))
+                target.Add(item);
+        }
     }
 }

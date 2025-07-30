@@ -1,0 +1,14 @@
+- type: reagent
+  id: RedTea
+  name: reagent-name-red-tea
+  parent: BaseDrink
+  desc: reagent-desc-red-tea
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: tea
+  color: "#e06666"
+  metamorphicSprite:
+    sprite: _RPSX/Objects/Consumable/Drinks/redteaglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 2
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false

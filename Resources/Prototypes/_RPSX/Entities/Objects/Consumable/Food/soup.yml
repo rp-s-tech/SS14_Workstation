@@ -1,0 +1,164 @@
+- type: entity
+  name: Vulp soup
+  parent: FoodBowlBase
+  id: FoodSoupMeatVulp
+  description: With a slight hint of wool.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/Bowl/vulpsoup.rsi
+    state: vulposoup
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - funny
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Vitamin
+          Quantity: 17
+        - ReagentId: Water
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
+    - Soup
+
+- type: entity
+  name: Clam soup
+  parent: FoodBowlBase
+  id: FoodClamSoup
+  description: Is this definitely with meat?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/Bowl/clamsoup.rsi
+    state: clamsoup
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+          - ReagentId: Protein
+            Quantity: 9
+          - ReagentId: Vitamin
+            Quantity: 7
+          - ReagentId: Water
+            Quantity: 5
+          - ReagentId: Milk
+            Quantity: 4
+
+- type: entity
+  name: Slug rice
+  parent: FoodBowlBase
+  id: FoodSlugRice
+  description: Well, it looks like slime...
+  components:
+  - type: FlavorProfile
+    flavors:
+      - rice
+      - slime
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/Bowl/slugrice.rsi
+    state: slugrice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 18
+        - ReagentId: Vitamin
+          Quantity: 7
+        - ReagentId: Dexalin ##This is probably a reference to something but I don't get it
+          Quantity: 6.5
+        - ReagentId: Epinephrine
+          Quantity: 2
+  - type: Tag
+    tags:
+    - Meat
+    - Soup
+
+- type: entity
+  name: Khinkali
+  parent: FoodBowlBase
+  id: FoodKhinkaliBowl
+  description: How are they different from dumplings?
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/Bowl/hinkali.rsi
+    state: icon
+  - type: FlavorProfile
+    flavors:
+      - meaty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 12
+        - ReagentId: Vitamin
+          Quantity: 13
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  name: Okroshka
+  parent: FoodBowlBase
+  id: FoodOkroshkaBowl
+  description: There is a lot of everything here.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/Bowl/okroshka.rsi
+    state: okroshka
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - leafy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 35
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 12
+        - ReagentId: Vitamin
+          Quantity: 13
+        - ReagentId: Milk
+          Quantity: 10
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  name: Olive
+  parent: FoodBowlBase
+  id: FoodOliveBowl
+  description: How is it different from okroshka?
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Consumable/Food/Bowl/olive.rsi
+    state: olive
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - leafy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 12
+        - ReagentId: Vitamin
+          Quantity: 13
+  - type: Tag
+    tags:
+    - Meat

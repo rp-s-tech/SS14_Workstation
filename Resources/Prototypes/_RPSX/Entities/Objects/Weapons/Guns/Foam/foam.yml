@@ -1,0 +1,197 @@
+# WeaponRifleFoam = BaseWeaponRifleFoam
+
+- type: entity
+  name: titmouse
+  parent: WeaponRifleFoam
+  id: WeaponSubMachineGunNerfTitmouse
+  description: large and cool nerf submachine gun with built-in large capacity magazine.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/titmouse.rsi
+  - type: Clothing
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/titmouse.rsi
+  - type: Item
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/titmouse.rsi
+    size: Huge
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunWieldBonus
+  - type: ItemSlots
+  - type: Gun
+    minAngle: 21
+    maxAngle: 32
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/Effects/thunk.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+    selectedMode: FullAuto
+    availableModes:
+    - Burst
+    - FullAuto
+    - SemiAuto
+    shotsPerBurst: 4
+    burstCooldown: 0.2
+    burstFireRate: 2
+  - type: Appearance
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - MiniBulletNerf
+    capacity: 25
+    proto: MiniBulletNerf
+
+- type: entity
+  name: flash
+  parent: [WeaponSubMachineGunDrozd, BaseGunWieldable]
+  id: WeaponSubMachineGunNerfFlash
+  description: Nerf submachine gun for covert special operations.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/flash.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Clothing
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/flash.rsi
+  - type: Item
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/flash.rsi
+    size: Normal
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolHighNerf
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistolHighNerf
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: MiniBulletNerf
+        priority: 1
+        whitelist:
+          tags:
+            - MiniBulletNerf
+  - type: GunWieldBonus
+  - type: Gun
+    minAngle: 21
+    maxAngle: 32
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/Effects/thunk.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+    selectedMode: FullAuto
+    availableModes:
+    - Burst
+    - FullAuto
+    - SemiAuto
+    shotsPerBurst: 4
+    burstCooldown: 0.2
+    burstFireRate: 2
+  - type: Appearance
+  - type: PacifismAllowedGun
+
+- type: entity
+  name: hummingbird
+  parent: WeaponPistolMk58
+  id: WeaponPistolNerfHummingbird
+  description: Nerf pistol will come in handy when you spend the rest of the bullets.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/hummingbird.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/hummingbird.rsi
+  - type: Item
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/hummingbird.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolLowNerf
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistolLowNerf
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: MiniBulletNerf
+        priority: 1
+        whitelist:
+          tags:
+            - MiniBulletNerf
+  - type: Gun
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/Effects/thunk.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+    shotsPerBurst: 4
+    burstCooldown: 0.2
+    burstFireRate: 2
+
+- type: entity
+  name: blender
+  id: WeaponMinigunBlender
+  parent: WeaponLightMachineGunL6
+  description: Nerf machine gun, makes brrrrrrrrrrrrrrrrrrrrrr like a real.
+  components:
+  - type: Sprite
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/blender.rsi
+    layers:
+    - state: icon
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    sprite: _RPSX/Objects/Weapons/Guns/Rifles/blender.rsi
+  - type: Gun
+    fireRate: 4
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/minigun.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: BandMinigunNerf
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MiniganeBandNerf
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: MiniBulletNerf
+        priority: 1
+        whitelist:
+          tags:
+            - MiniBulletNerf
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: MagazineVisuals
+    magState: mag
+    steps: 9
+    zeroVisible: true

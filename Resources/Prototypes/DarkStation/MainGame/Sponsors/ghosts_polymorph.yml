@@ -1,0 +1,89 @@
+- type: polymorph
+  id: MobObserverSponsorAngel
+  configuration:
+    entity: MobObserverSponsorAngel
+    forced: true
+    transferName: true
+    allowRepeatedMorphs: true
+    inventory: Transfer
+
+- type: polymorph
+  id: MobObserverSponsorDark
+  configuration:
+    entity: MobObserverSponsorDark
+    forced: true
+    transferName: true
+    allowRepeatedMorphs: true
+    inventory: Transfer
+
+- type: polymorph
+  id: MobObserverSponsorDemon
+  configuration:
+    entity: MobObserverSponsorDemon
+    forced: true
+    transferName: true
+    allowRepeatedMorphs: true
+    inventory: Transfer
+
+- type: polymorph
+  id: MobObserverSponsorGhostClown
+  configuration:
+    entity: MobObserverSponsorGhostClown
+    forced: true
+    transferName: true
+    allowRepeatedMorphs: true
+    inventory: Transfer
+
+- type: polymorph
+  id: MobObserverSponsorMime
+  configuration:
+    entity: MobObserverSponsorMime
+    forced: true
+    transferName: true
+    allowRepeatedMorphs: true
+    inventory: Transfer
+
+- type: polymorph
+  id: MobObserverSponsorPlagueDoctor
+  configuration:
+    entity: MobObserverSponsorPlagueDoctor
+    forced: true
+    transferName: true
+    allowRepeatedMorphs: true
+    inventory: Transfer
+
+- type: polymorph
+  id: MobObserverSponsorShadow
+  configuration:
+    entity: MobObserverSponsorShadow
+    forced: true
+    transferName: true
+    allowRepeatedMorphs: true
+    inventory: Transfer
+
+- type: polymorph
+  id: MobObserverSponsorHawai
+  configuration:
+    entity: MobObserverSponsorHawai
+    forced: true
+    transferName: true
+    allowRepeatedMorphs: true
+    inventory: Transfer
+
+- type: polymorph
+  id: MobObserverSponsorSkeleton
+  configuration:
+    entity: MobObserverSponsorSkeleton
+    forced: true
+    transferName: true
+    allowRepeatedMorphs: true
+    inventory: Transfer
+
+- type: polymorph
+  id: MobObserverSponsorTerminator
+  configuration:
+    entity: MobObserverSponsorTerminator
+    forced: true
+    transferName: true
+    allowRepeatedMorphs: true
+    inventory: Transfer

@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using Content.Server.RPSX.DarkForces.Ratvar.Righteous.Progress;
 using Content.Server.Mind;
-using Content.Server.RPSX.Bridges;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Mindshield.Components;
@@ -10,12 +9,12 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.RPSX.DarkForces.Ratvar.Righteous.Abilities.Structures;
 using Content.Shared.RPSX.DarkForces.Ratvar.Righteous.Roles;
 using Robust.Shared.Configuration;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
 using Robust.Shared.Timing;
 using Content.Server.RPSX.CCvars;
+using Robust.Shared.Player;
+using Content.Server.Antag;
+using Content.Server.RPSX.GameTicking.Rules.Ratvar;
 
 namespace Content.Server.RPSX.DarkForces.Ratvar.Righteous.Structures.Altar;
 
@@ -28,7 +27,7 @@ public sealed class RatvarAltarSystem : EntitySystem
     [Dependency] private readonly RatvarProgressSystem _progressSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _sharedAppearance = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IAntagBridge _antagBridge = default!;
+    [Dependency] private readonly AntagSelectionSystem _antag = default!;
 
     [ValidatePrototypeId<EntityPrototype>]
     private const string AltarGlow = "RatvarAltarActivateEffect";
@@ -88,7 +87,8 @@ public sealed class RatvarAltarSystem : EntitySystem
             switch (component.Type)
             {
                 case AltarActiveType.Convert:
-                    _antagBridge.ForceMakeRatvarRighteous(target);
+                    if (!TryComp<ActorComponent>(uid, out var actor)) return;
+                    _antag.ForceMakeAntag<RatvarRuleComponent>(actor.PlayerSession, "Ratvar");
                     _progressSystem.TryRequestChangePower(PowerForConvert);
                     ToIdleState((uid, component));
                     break;

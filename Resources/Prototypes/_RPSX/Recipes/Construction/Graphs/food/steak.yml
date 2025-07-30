@@ -1,0 +1,16 @@
+- type: constructionGraph
+  id: VulpMeatSteak
+  start: start
+  graph:
+
+  - node: start
+    edges:
+    - to: vulp meat steak
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+
+  - node: vulp meat steak
+    entity: FoodMeatVulpCooked

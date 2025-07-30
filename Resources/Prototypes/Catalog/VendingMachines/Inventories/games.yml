@@ -18,6 +18,11 @@
     BooksBag: 3
     GameCardsColode: 3 # SS220-GameCard
     GameCardsInHand: 12 # SS220-InHandCards
+    # RPSX figurines start
+    ToyFigurineMashaDark1: 1
+    ToyFigurineMaksDark1: 1
+    ToyFigurinelIlIl: 1
+    # RPSX figurines end
   contrabandInventory:
     Basketball: 1
     FoodSnackBoritos: 3

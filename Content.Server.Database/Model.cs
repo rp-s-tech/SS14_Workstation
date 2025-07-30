@@ -488,18 +488,11 @@ namespace Content.Server.Database
     [Table("rpsx_additional_sponsor_data")]
     public class AdditionalSponsorData
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("id")]
         public int ID { get; set; }
 
-        [Required]
-        [Column("userID")]
         public Guid PlayerUserId { get; set; }
 
-        [Required]
-        [Column("SponsorTierInfos")]
-        public List<SponsorTierInfo> SponsorTiers { get; set; } = new();
+        public List<SponsorTierInfo> SponsorTiers { get; } = new();
     }
 
     public class SponsorTierInfo

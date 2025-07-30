@@ -1932,19 +1932,19 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
         #region RPSX
 
-        public async Task<SponsorTier?> GetAdditionalSponsorTier(NetUserId userId)
+        public async Task<AllSponsorInfo?> GetAdditionalSponsorTier(NetUserId userId)
         {
             await using var db = await GetDb();
 
             var sponsor = await db.DbContext.AdditionalSponsorDatas
+                .Include(p => p.SponsorTiers)
                 .SingleOrDefaultAsync(p => p.PlayerUserId == userId.UserId);
 
             if (sponsor == null)
                 return null;
 
-            var resultTier = new SponsorTier();
+            var resultTier = new AllSponsorInfo();
             var expiredTiers = new List<string>();
-
             foreach (var tier in sponsor.SponsorTiers)
             {
                 var tierId = tier.SponsorTierId;
@@ -2037,7 +2037,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                     SponsorData = sponsor
                 });
             }
-
+            _opsLog.Info(sponsor.SponsorTiers.Count.ToString());
             await db.DbContext.SaveChangesAsync();
         }
 

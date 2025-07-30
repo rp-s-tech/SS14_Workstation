@@ -1,0 +1,57 @@
+- type: entity
+  id: MagazinePistolHighNerf
+  name: high magaxine pistol
+  parent: BaseMagazinePistolHighCapacity
+  components:
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - MiniBulletNerf
+    mayTransfer: true
+    proto: MiniBulletNerf
+    capacity: 15
+  - type: Sprite
+    sprite: _RPSX/Objects/Weapons/Guns/Ammunitions/Magazine/Rifle/nerf_green.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-1
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+  - type: Tag
+    tags:
+      - MagazinePistolHighNerf
+
+
+- type: entity
+  id: MagazinePistolLowNerf
+  name: low magaxine pistol
+  parent: MagazinePistolHighNerf
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 6
+  - type: Sprite
+    sprite: _RPSX/Objects/Weapons/Guns/Ammunitions/Magazine/Rifle/nerf_blue.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+  - type: Tag
+    tags:
+      - MagazinePistolLowNerf
+
+- type: entity
+  id: BandMinigunNerf
+  name: band from Nerf minigun
+  parent: MagazinePistolHighNerf
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 70
+  - type: Sprite
+    sprite: _RPSX/Objects/Weapons/Guns/Ammunitions/Magazine/Rifle/band.rsi
+  - type: MagazineVisuals
+    steps: 7
+  - type: Tag
+    tags:
+      - MiniganeBandNerf

@@ -632,7 +632,6 @@ namespace Content.Client.Lobby.UI
             _species.AddRange(_prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart));
             var speciesIds = _species.Select(o => o.ID).ToList();
             _sponsorsManager.TryGetSponsorTier(out var tier);
-            _sponsorsManager.TryGetAdditionalSponsorTier(out var additionalTier);
             for (var i = 0; i < _species.Count; i++)
             {
                 var name = Loc.GetString(_species[i].Name);
@@ -643,10 +642,10 @@ namespace Content.Client.Lobby.UI
                     SpeciesButton.SelectId(i);
                 }
 
-                if (!_species[i].SponsorOnly)
+                if(!_species[i].SponsorOnly)
                     continue;
 
-                if (tier?.AllowedSpecies.Contains(_species[i].ID) == true || additionalTier?.AllowedSpecies.Contains(_species[i].ID) == true)
+                if (tier?.AllowedSpecies.Contains(_species[i].ID) == true)
                     continue;
 
                 SpeciesButton.SetItemDisabled(i, true);

@@ -133,3 +133,11 @@
       - id: ToyFigurineHamlet
         prob: 0.20
         orGroup: SpacemenFig
+      # RPSX Start
+      - id: ToyFigurineMaksDark1
+        orGroup: SpacemenFig
+      - id: ToyFigurineMashaDark1
+        orGroup: SpacemenFig
+      - id: ToyFigurinelIlIl
+        orGroup: SpacemenFig
+      # RPSX End

@@ -1,0 +1,15 @@
+- type: entity
+  parent: DrinkGlass
+  id: DrinkRedTeaGlass
+  suffix: red tea
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: RedTea
+          Quantity: 30
+  - type: Icon
+    sprite: _RPSX/Objects/Consumable/Drinks
+    state: icon
