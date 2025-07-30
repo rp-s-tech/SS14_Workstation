@@ -95,10 +95,8 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         // RPSX Sponsors
         var sponsorPrototypes = new List<string>();
         if (_sponsors.TryGetSponsorTier(session.UserId, out var tier))
-            sponsorPrototypes.AddRange(tier.AllowedMarkings.Where(item => !sponsorPrototypes.Contains(item)));
+            sponsorPrototypes = tier.AllowedMarkings;
 
-        if (_sponsors.TryGetAdditionalSponsorTier(session.UserId, out var additionalTier))
-            sponsorPrototypes.AddRange(additionalTier.AllowedMarkings.Where(item => !sponsorPrototypes.Contains(item)));
         // RPSX Sponsors
         profile.EnsureValid(session, collection!, sponsorPrototypes.ToArray());
         return profile;

@@ -27,10 +27,10 @@ public sealed class SponsorTier : IPrototype
     public bool HavePriorityJoin;
 
     [DataField]
-    public List<ProtoId<SponsorPetCategory>> PetCategories = [];
+    public List<string> PetCategories = [];
 
     [DataField]
-    public List<ProtoId<SponsorGhostCategories>> Ghosts = [];
+    public List<string> Ghosts = [];
 
     [DataField]
     public string? OOCColor { get; set; }

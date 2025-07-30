@@ -240,11 +240,10 @@ public sealed partial class MarkingPicker : Control
 
             item.Disabled = true;
 
-            var spMarkExist = _sponsorsManager.TryGetSponsorTier(out var sponsor)
-                && sponsor.AllowedMarkings?.Contains(marking.ID) == true;
-            var adSpMarkExist = _sponsorsManager.TryGetAdditionalSponsorTier(out var additionalSponsor)
-                && additionalSponsor.AllowedMarkings?.Contains(marking.ID) == true;
-            if (spMarkExist || adSpMarkExist) item.Disabled = false;
+            if (_sponsorsManager.TryGetSponsorTier(out var sponsorInfo))
+            {
+                item.Disabled = !sponsorInfo.AllowedMarkings.Contains(marking.ID);
+            }
             // RPSX Sponsor
         }
 

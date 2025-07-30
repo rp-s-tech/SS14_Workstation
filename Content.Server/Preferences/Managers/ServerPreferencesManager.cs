@@ -109,16 +109,9 @@ namespace Content.Server.Preferences.Managers
             var curPrefs = prefsData.Prefs!;
             var session = _playerManager.GetSessionById(userId);
 
-            // RPSX Sponsors
-            var allowedMarkings = new List<string>();
-            if (_sponsors.TryGetSponsorTier(userId, out var tier))
-                allowedMarkings.AddRange(tier.AllowedMarkings.Where(item => !allowedMarkings.Contains(item)));
-
-            if (_sponsors.TryGetAdditionalSponsorTier(userId, out var additionalTier))
-                allowedMarkings.AddRange(additionalTier.AllowedMarkings.Where(item => !allowedMarkings.Contains(item)));
+            var allowedMarkings = _sponsors.TryGetSponsorTier(userId, out var tier) ? tier.AllowedMarkings : []; // RPSX Sponsors
 
             profile.EnsureValid(session, _dependencies, allowedMarkings.ToArray());
-            // RPSX Sponsors
 
             var profiles = new Dictionary<int, ICharacterProfile>(curPrefs.Characters)
             {
@@ -357,14 +350,7 @@ namespace Content.Server.Preferences.Managers
             // Clean up preferences in case of changes to the game,
             // such as removed jobs still being selected.
 
-            // RPSX Sponsors
-            var sponsorPrototypes = new List<string>();
-            if (_sponsors.TryGetSponsorTier(session.UserId, out var tier))
-                sponsorPrototypes.AddRange(tier.AllowedMarkings.Where(item => !sponsorPrototypes.Contains(item)));
-
-            if (_sponsors.TryGetAdditionalSponsorTier(session.UserId, out var additionalTier))
-                sponsorPrototypes.AddRange(additionalTier.AllowedMarkings.Where(item => !sponsorPrototypes.Contains(item)));
-            // RPSX Sponsors
+            var sponsorPrototypes = _sponsors.TryGetSponsorTier(session.UserId, out var tier) ? tier.AllowedMarkings : []; // RPSX Sponsors
             return new PlayerPreferences(prefs.Characters.Select(p =>
             {
                 return new KeyValuePair<int, ICharacterProfile>(p.Key, p.Value.Validated(session, collection, sponsorPrototypes.ToArray()));

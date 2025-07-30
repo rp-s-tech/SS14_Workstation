@@ -14,17 +14,15 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Timing;
 using Content.Shared.Verbs;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
-using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Mobs.Components;
-using Content.Server.RPSX.Bridges;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.RPSX.DarkForces.Desecrated;
+using Content.Server.RPSX.DarkForces.Saint.Saintable;
 
 namespace Content.Server.Bible
 {
@@ -41,7 +39,7 @@ namespace Content.Server.Bible
         [Dependency] private readonly UseDelaySystem _delay = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
         [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
-        [Dependency] private readonly ISaintedBridge _saintedBridge = default!;
+        [Dependency] private readonly SaintedSystem _saintedSystem = default!;
 
         [ValidatePrototypeId<ReagentPrototype>]
         private const string Water = "Water";
@@ -135,7 +133,7 @@ namespace Content.Server.Bible
                 return;
             }
 
-            if (_saintedBridge.TryMakeSainted(args.User, args.Target.Value))
+            if (_saintedSystem.TryMakeSainted(args.User, args.Target.Value))
             {
                 _audio.PlayEntity(_audio.ResolveSound(component.HealSoundPath), Filter.Pvs(args.Target.Value), args.User, true);
                 return;

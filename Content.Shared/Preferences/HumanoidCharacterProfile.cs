@@ -541,40 +541,30 @@ namespace Content.Shared.Preferences
 
             // RPSX-Sponsors-Check-Start
             var userId = session.UserId;
-            SponsorTier? sponsorTier = null;
-            SponsorTier? additionalSponsorTier = null;
 
-            var isSponsor = sponsorManager.TryGetSponsorTier(userId, out sponsorTier) || sponsorManager.TryGetAdditionalSponsorTier(userId, out additionalSponsorTier);
-
+            var isSponsor = sponsorManager.TryGetSponsorTier(userId, out var sponsorTier);
             if (!isSponsor)
             {
-                isSponsor = sponsorManager.TryGetSponsorTier(out sponsorTier) || sponsorManager.TryGetAdditionalSponsorTier(out additionalSponsorTier);
+                isSponsor = sponsorManager.TryGetSponsorTier(out sponsorTier);
             }
-
 
             // Логирование данных с обновленными значениями
             Logger.Info($"[Session Data] UserId: {userId}, Session Type: {session.GetType().Name}");
             Logger.Info($"[Session Data] SponsorOnly: {speciesPrototype.SponsorOnly}, Species: {Species}");
-            Logger.Info($"[Session Data] sponsorTier: {sponsorTier?.ID}");
-            Logger.Info($"[Session Data] additionalSponsorTier: {additionalSponsorTier?.ID}");
             Logger.Info($"[Session Data] isSponsor: {isSponsor}");
 
             // Corvax-Sponsors-Start+RPSX-Rework
-            if (speciesPrototype.SponsorOnly && (!isSponsor || sponsorTier != null && additionalSponsorTier != null && !IsSpeciesAllowed(sponsorTier, additionalSponsorTier, Species)))
+            if (speciesPrototype.SponsorOnly && (!isSponsor || sponsorTier != null && !IsSpeciesAllowed(sponsorTier, Species)))
             {
                 Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
                 speciesPrototype = prototypeManager.Index(Species);
             }
-            // Corvax-Sponsors-End+RPSX-Rework
 
             // Вспомогательный метод для проверки, разрешен ли вид
-            bool IsSpeciesAllowed(SponsorTier sponsorTier, SponsorTier additionalSponsorTier, string species)
+            bool IsSpeciesAllowed(AllSponsorInfo sponsorTier, string species)
             {
                 // Предполагается, что sponsorTier имеет свойство allowedSpecies типа List<string> или массив
-                if (sponsorTier.AllowedSpecies?.Contains(species) is true || additionalSponsorTier.AllowedSpecies?.Contains(species) is true)
-                    return true;
-
-                return false;
+                return sponsorTier.AllowedSpecies?.Contains(species) ?? false;
             }
 
             // Corvax-Sponsors-End+RPSX-Rework

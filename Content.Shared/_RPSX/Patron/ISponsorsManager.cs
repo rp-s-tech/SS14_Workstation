@@ -10,33 +10,21 @@ public interface ISponsorsManager
 {
     void Initialize();
 
-    public bool TryGetSponsorTier(NetUserId userId, [NotNullWhen(true)] out SponsorTier? sponsor)
+    public bool TryGetSponsorTier(NetUserId userId, [NotNullWhen(true)] out AllSponsorInfo? sponsor)
     {
         sponsor = null;
         return false;
     }
 
-    public bool TryGetAdditionalSponsorTier(NetUserId userId, [NotNullWhen(true)] out SponsorTier? sponsor)
+    public bool TryGetSponsorTier([NotNullWhen(true)] out AllSponsorInfo? sponsor)
     {
         sponsor = null;
         return false;
     }
 
-    public bool TryGetSponsorTier([NotNullWhen(true)] out SponsorTier? sponsor)
-    {
-        sponsor = null;
-        return false;
-    }
+    public void AddSponsor(NetUserId userId, SponsorTier tier, int days) { }
 
-    public bool TryGetAdditionalSponsorTier([NotNullWhen(true)] out SponsorTier? sponsor)
-    {
-        sponsor = null;
-        return false;
-    }
-
-    public async void AddSponsor(NetUserId userId, SponsorTier tier, int days) { }
-
-    public async void RemoveSponsor(NetUserId userId, SponsorTier tier) { }
+    public void RemoveSponsor(NetUserId userId, SponsorTier tier) { }
 
     public bool IsUserHasRoleTimeByPass(NetUserId userId)
     {

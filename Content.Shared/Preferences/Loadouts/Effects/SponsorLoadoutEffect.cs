@@ -45,21 +45,16 @@ public sealed partial class SponsorLoadoutEffect : LoadoutEffect
         if (net.IsClient)
         {
             var clientList = new List<string>();
-            if (sponsorsManager.TryGetAdditionalSponsorTier(out var clientAdditionalSponsor))
-                clientList.AddRange(clientAdditionalSponsor.AllowedLoadouts.Where(item => !clientList.Contains(item)));
-
             if (sponsorsManager.TryGetSponsorTier(out var clientSponsor))
-                clientList.AddRange(clientSponsor.AllowedLoadouts.Where(item => !clientList.Contains(item)));
+                clientList = clientSponsor.AllowedLoadouts;
 
             return clientList;
         }
 
         var serverList = new List<string>();
-        if (sponsorsManager.TryGetAdditionalSponsorTier(session.UserId, out var serverAsdditionalSponsor))
-            serverList.AddRange(serverAsdditionalSponsor.AllowedLoadouts.Where(item => !serverList.Contains(item)));
 
         if (sponsorsManager.TryGetSponsorTier(session.UserId, out var serverSponsor))
-            serverList.AddRange(serverSponsor.AllowedLoadouts.Where(item => !serverList.Contains(item)));
+            serverList = serverSponsor.AllowedLoadouts;
 
         return serverList;
     }

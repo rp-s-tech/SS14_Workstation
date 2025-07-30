@@ -88,7 +88,7 @@ namespace Content.Client.Entry
             var res = IoCManager.Resolve<IResourceManager>();
             var factory = IoCManager.Resolve<IComponentFactory>();
             var prototypes = IoCManager.Resolve<IPrototypeManager>();
-            _rpsxRegisterIgnore.RegisterIgnore(prototypes, factory, res);
+            _rpsxRegisterIgnore.RegisterIgnore(res);
 
             foreach (var callback in TestingCallbacks)
             {

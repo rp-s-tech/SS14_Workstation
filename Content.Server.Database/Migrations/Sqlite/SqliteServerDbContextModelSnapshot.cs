@@ -26,7 +26,7 @@ namespace Content.Server.Database.Migrations.Sqlite
 
                     b.Property<Guid>("PlayerUserId")
                         .HasColumnType("TEXT")
-                        .HasColumnName("userID");
+                        .HasColumnName("player_user_id");
 
                     b.HasKey("ID")
                         .HasName("PK_rpsx_additional_sponsor_data");

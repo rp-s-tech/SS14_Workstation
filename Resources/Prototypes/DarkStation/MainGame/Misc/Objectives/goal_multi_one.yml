@@ -71,7 +71,3 @@
           sender: Центральное комадование
           messageLoc: station-goal-multione-second-add-cargo
           delay: 60
-
-        - !type:AddProductsToCargo
-          advancedCargoPrototypes:
-            - ShuttleMiniGravitation
