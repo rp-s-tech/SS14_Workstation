@@ -4,7 +4,7 @@
   name: christmas tree
   components:
   - type: Sprite
-    sprite: _RPSX/NewYear/Structures/Trees.rsi/32x48.rsi
+    sprite: _RPSX/NewYear/Structures/Trees/32x48.rsi
     layers:
       - state: tree1
   - type: Damageable
