@@ -37,6 +37,7 @@ using Robust.Shared.Utility;
 using Content.Shared.RPSX.Patron;
 using Content.Server.SS220.TTS;
 using Content.Server.RPSX.Discord;
+using Content.Server.RPSX.Entry;
 
 namespace Content.Server.Entry
 {
@@ -53,6 +54,7 @@ namespace Content.Server.Entry
         private IServerDbManager? _dbManager;
         private IWatchlistWebhookManager _watchlistWebhookManager = default!;
         private IConnectionManager? _connectionManager;
+        private RPSXRegisterIgnore _rpsxRegisterIgnore = new();
 
         /// <inheritdoc />
         public override void Init()
@@ -79,10 +81,11 @@ namespace Content.Server.Entry
             prototypes.RegisterIgnore("parallax");
 
             ServerContentIoC.Register();
+            _rpsxRegisterIgnore.RegisterIgnore(factory, res);
 
             foreach (var callback in TestingCallbacks)
             {
-                var cast = (ServerModuleTestingCallbacks) callback;
+                var cast = (ServerModuleTestingCallbacks)callback;
                 cast.ServerBeforeIoC?.Invoke();
             }
 

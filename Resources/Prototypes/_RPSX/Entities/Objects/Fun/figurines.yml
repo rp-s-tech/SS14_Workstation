@@ -1,0 +1,26 @@
+- type: entity
+  parent: BaseFigurine
+  id: ToyFigurineMaksDark1
+  name: Nimfadora Akantarktia
+  description: Ears on top of your head... wait... where are they?
+  components:
+  - type: Sprite
+    state: nymphadora_akantarktya
+
+- type: entity
+  parent: BaseFigurine
+  id: ToyFigurineMashaDark1
+  name: N!m%f@d#r$ ~k@nt+rk/t!ya
+  description: You feel like this figurine never existed...
+  components:
+  - type: Sprite
+    state: nymphadora_akantarktya_moth
+
+- type: entity
+  parent: BaseFigurine
+  id: ToyFigurinelIlIl
+  name: Jassuda Stingray
+  description: The main lover of drinking at the station bar.
+  components:
+  - type: Sprite
+    state: ja-stin

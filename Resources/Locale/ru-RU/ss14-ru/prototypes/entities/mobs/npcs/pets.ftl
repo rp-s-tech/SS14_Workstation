@@ -73,3 +73,6 @@ ent-MobMonkeyPunpun = Пун Пун
 ent-MobCrabAtmos = Тропико
     .desc = Благородный и непоколебимый защитник Атмосии. Viva!
     .suffix = ИИ
+ent-MobPollyParrot = попугай Полли
+    .desc = Эксперт в теории квантового крекера.
+    .suffix = ИИ

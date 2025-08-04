@@ -4,8 +4,8 @@
   name: Syndicate's smart fridge
   description: Refrigerated storage for the storage of drugs and chemicals.
   components:
-  - type: Advertise
-    pack: SmartFridgeAds
+  - type: DatasetVocalizer
+    dataset: SmartFridgeAds
   - type: Speech
   - type: Appearance
   - type: Sprite

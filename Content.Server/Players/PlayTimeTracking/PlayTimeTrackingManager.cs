@@ -366,7 +366,7 @@ public sealed class PlayTimeTrackingManager : ISharedPlaytimeManager, IPostInjec
         while (enumerator.MoveNext())
         {
             var tracker = enumerator.Current;
-            if (tracker.Key is PlayTimeTrackingShared.TrackerAdmin or PlayTimeTrackingShared.TrackerOverall)
+            if (tracker.Key == PlayTimeTrackingShared.TrackerAdmin || tracker.Key == PlayTimeTrackingShared.TrackerOverall)
                 continue;
 
             data.TrackerTimes[tracker.Key] = TimeSpan.Zero;
