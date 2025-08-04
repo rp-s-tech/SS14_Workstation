@@ -11,6 +11,25 @@
             "name": "icon"
         },
         {
+            "name": "clockwork_gauntlets_overlay_1"
+        },
+        {
+            "name": "clockwork_gauntlets_overlay_2"
+        },
+        {
+            "name": "clockwork_gauntlets_overlay_3",
+            "delays": [
+                [
+                    0.3,
+                    0.3,
+                    0.3
+                ]
+            ]
+        },
+        {
+            "name": "clockwork_gauntlets"
+        },
+        {
             "name": "equipped-HAND",
             "directions": 4
         },

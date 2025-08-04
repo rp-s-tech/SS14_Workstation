@@ -11,6 +11,9 @@
             "name": "icon"
         },
         {
+            "name": "judicial_visor_1"
+        },
+        {
             "name": "equipped-EYES",
             "directions": 4
         },
@@ -20,6 +23,10 @@
         },
         {
             "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "image2",
             "directions": 4
         }
     ]

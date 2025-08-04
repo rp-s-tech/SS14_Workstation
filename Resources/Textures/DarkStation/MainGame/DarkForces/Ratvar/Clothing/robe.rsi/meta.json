@@ -11,6 +11,12 @@
             "name": "icon"
         },
         {
+            "name": "clockwork_robe_overlay_1"
+        },
+        {
+            "name": "clockwork_robe_overlay_2"
+        },
+        {
             "name": "equipped-OUTERCLOTHING",
             "directions": 4
         },

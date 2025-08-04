@@ -42,6 +42,78 @@
         },
         {
             "name": "blood_barrage"
+        },
+        {
+            "name": "blood_dagger"
+        },
+        {
+            "name": "equip"
+        },
+        {
+            "name": "horror"
+        },
+        {
+            "name": "cult_comms"
+        },
+        {
+            "name": "hell_dagger"
+        },
+        {
+            "name": "horror"
+        },
+        {
+            "name": "transmute"
+        },
+        {
+            "name": "death_dagger"
+        },
+        {
+            "name": "carve"
+        },
+        {
+            "name": "cultfist"
+        },
+        {
+            "name": "shackles"
+        },
+        {
+            "name": "manip"
+        },
+        {
+            "name": "dominate"
+        },
+        {
+            "name": "cultforcewall"
+        },
+        {
+            "name": "bloodspear"
+        },
+        {
+            "name": "cult_mark"
+        },
+        {
+            "name": "lesserconstruct"
+        },
+        {
+            "name": "revealing"
+        },
+        {
+            "name": "veiling"
+        },
+        {
+            "name": "blood_rites"
+        },
+        {
+            "name": "abyssal_gaze"
+        },
+        {
+            "name": "areaconvert"
+        },
+        {
+            "name": "phaseshift"
+        },
+        {
+            "name": "artificer"
         }
     ]
 }

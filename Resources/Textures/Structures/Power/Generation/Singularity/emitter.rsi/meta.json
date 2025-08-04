@@ -24,6 +24,10 @@
       "directions": 4
     },
     {
+      "name": "unlock",
+      "directions": 4
+    },
+    {
       "name": "emitter",
       "directions": 4
     },

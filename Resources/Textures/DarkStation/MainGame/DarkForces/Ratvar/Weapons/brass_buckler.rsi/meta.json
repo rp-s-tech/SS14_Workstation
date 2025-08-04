@@ -11,11 +11,22 @@
             "name": "brass-buckler"
         },
         {
+            "name": "brass_buckler_overlay_1"
+        },
+        {
             "name": "brass-inhand-right",
             "directions": 4
         },
         {
             "name": "brass-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "Illustration10_10",
+            "directions": 4
+        },
+        {
+            "name": "Illustration13_9",
             "directions": 4
         }
     ]
