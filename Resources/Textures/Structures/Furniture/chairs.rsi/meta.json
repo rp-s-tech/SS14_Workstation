@@ -102,6 +102,10 @@
         {
             "name": "xeno-chair",
             "directions": 4
+        },
+        {
+            "name": "comfy_purple",
+            "directions": 4
         }
     ]
 }

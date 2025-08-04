@@ -1,6 +1,7 @@
 {
     "version": 1,
-    "copyright": "Discord <@410474801350574080>",
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "RPS-eXtended (discord: @410474801350574080)",
     "size": {
         "x": 32,
         "y": 32
