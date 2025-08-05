@@ -20,6 +20,9 @@ public sealed partial class PiratesProgressComponent : Component
     [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public EntityUid? PiratesShuttle;
 
+    [ViewVariables(VVAccess.ReadOnly)]
+    public EntityUid? PiratesStartMap;
+
     [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public HashSet<EntityUid> StartedPirates;
 
@@ -41,7 +44,7 @@ public sealed partial class PiratesProgressComponent : Component
     [DataField]
     public TimeSpan ObjectivesCheckThreshold = TimeSpan.FromSeconds(10);
 
-    [DataField]
+    [ViewVariables(VVAccess.ReadOnly)]
     public bool RoundCanBeEnded;
 }
 

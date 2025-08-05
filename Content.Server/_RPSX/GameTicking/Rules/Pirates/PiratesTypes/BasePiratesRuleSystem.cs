@@ -14,6 +14,7 @@ namespace Content.Server.RPSX.GameTicking.Rules.Pirates.PiratesTypes
     {
         [Dependency] private readonly PiratesProgressSystem _progressSystem = default!;
         [Dependency] private readonly MapSystem _mapSystem = default!;
+
         public override void Initialize()
         {
             base.Initialize();
@@ -36,6 +37,7 @@ namespace Content.Server.RPSX.GameTicking.Rules.Pirates.PiratesTypes
                 _ => component.ObjectivesSilent
             };
             progress.Comp.PiratesShuttle = GetShuttle(uid);
+            progress.Comp.PiratesStartMap = GetMap(uid);
 
             if (!TryGetRandomStation(out var station)) return;
             progress.Comp.TargetStation = station.Value;
@@ -94,6 +96,14 @@ namespace Content.Server.RPSX.GameTicking.Rules.Pirates.PiratesTypes
             if (!gridUid.HasValue) return null;
 
             return gridUid;
+        }
+
+        private EntityUid? GetMap(Entity<RuleGridsComponent?> rule)
+        {
+            if (!Resolve(rule.Owner, ref rule.Comp) || !rule.Comp.Map.HasValue) return null;
+
+            var mapUid = _mapSystem.GetMap(rule.Comp.Map.Value);
+            return mapUid;
         }
     }
 }

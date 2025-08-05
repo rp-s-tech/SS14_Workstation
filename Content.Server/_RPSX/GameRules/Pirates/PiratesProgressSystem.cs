@@ -13,6 +13,10 @@ using Robust.Shared.Utility;
 using Content.Server.RoundEnd;
 using Content.Shared.Mobs;
 using Content.Shared.Zombies;
+using Content.Server.Shuttles.Components;
+using Robust.Shared.Map;
+using Content.Server.Shuttles.Systems;
+using Robust.Shared.Random;
 
 namespace Content.Server.RPSX.GameRules.Pirates;
 
@@ -24,6 +28,8 @@ public sealed partial class PiratesProgressSystem : EntitySystem
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly PirateEconomicsSystem _economicsSystem = default!;
     [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
+    [Dependency] private readonly ShuttleSystem _shuttle = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     private readonly EntProtoId _piratesProgressHolder = "PiratesProgressHolder";
 
@@ -32,9 +38,9 @@ public sealed partial class PiratesProgressSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<PiratesProgressComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<PirateComponent, MobStateChangedEvent>(OnPirateMobStateChanged);
-        SubscribeLocalEvent<PirateComponent, EntityZombifiedEvent>(OnPirateZombified);
-        SubscribeLocalEvent<PirateComponent, ComponentRemove>(OnPirateComponentRemoved);
+
+        InitPirates();
+        InitShuttle();
     }
 
     #region Rule
@@ -206,26 +212,5 @@ public sealed partial class PiratesProgressSystem : EntitySystem
         };
         var message = Loc.GetString(locMessage);
         SendMessageFromHead(entity, message);
-    }
-
-    private void OnPirateMobStateChanged(Entity<PirateComponent> entity, ref MobStateChangedEvent args)
-    {
-        if (args.NewMobState == MobState.Dead && TryComp<PiratesProgressComponent>(entity.Comp.PiratesProgress, out var progressComponent))
-        {
-            CheckRoundShouldEnd((entity.Comp.PiratesProgress, progressComponent));
-        }
-    }
-
-    private void OnPirateZombified(Entity<PirateComponent> entity, ref EntityZombifiedEvent args)
-    {
-        RemCompDeferred(entity, entity.Comp);
-    }
-
-    private void OnPirateComponentRemoved(Entity<PirateComponent> entity, ref ComponentRemove args)
-    {
-        if (TryComp<PiratesProgressComponent>(entity.Comp.PiratesProgress, out var progressComponent))
-        {
-            CheckRoundShouldEnd((entity.Comp.PiratesProgress, progressComponent));
-        }
     }
 }
