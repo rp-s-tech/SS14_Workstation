@@ -6,6 +6,7 @@ using Content.Server.GameTicking.Rules;
 using Content.Server.Roles;
 using Content.Shared.GameTicking.Components;
 using Robust.Server.GameObjects;
+using Robust.Shared.Utility;
 
 namespace Content.Server.RPSX.GameTicking.Rules.Pirates.PiratesTypes
 {
@@ -34,7 +35,7 @@ namespace Content.Server.RPSX.GameTicking.Rules.Pirates.PiratesTypes
                 PiratesGamePlay.Loud => component.ObjectivesLoud,
                 _ => component.ObjectivesSilent
             };
-            progress.Comp.PiratesOutpostMap = GetOutpostMap(uid);
+            progress.Comp.PiratesShuttle = GetShuttle(uid);
 
             if (!TryGetRandomStation(out var station)) return;
             progress.Comp.TargetStation = station.Value;
@@ -55,20 +56,44 @@ namespace Content.Server.RPSX.GameTicking.Rules.Pirates.PiratesTypes
             args.AddLine(result);
         }
 
+        //     protected override void AppendRoundEndText(EntityUid uid,
+        //     NukeopsRuleComponent component,
+        //     GameRuleComponent gameRule,
+        //     ref RoundEndTextAppendEvent args)
+        // {
+        //     var winText = Loc.GetString($"nukeops-{component.WinType.ToString().ToLower()}");
+        //     args.AddLine(winText);
+
+        //     foreach (var cond in component.WinConditions)
+        //     {
+        //         var text = Loc.GetString($"nukeops-cond-{cond.ToString().ToLower()}");
+        //         args.AddLine(text);
+        //     }
+
+        //     args.AddLine(Loc.GetString("nukeops-list-start"));
+
+        //     var antags = _antag.GetAntagIdentifiers(uid);
+
+        //     foreach (var (_, sessionData, name) in antags)
+        //     {
+        //         args.AddLine(Loc.GetString("nukeops-list-name-user", ("name", name), ("user", sessionData.UserName)));
+        //     }
+        // }
+
         private void OnGetBriefing(Entity<PirateRoleComponent> role, ref GetBriefingEvent args)
         {
             // TODO Different character screen briefing for the 3 nukie types
             args.Append(Loc.GetString("pirates-briefing"));
         }
 
-        private EntityUid? GetOutpostMap(Entity<RuleGridsComponent?> rule)
+        private EntityUid? GetShuttle(Entity<RuleGridsComponent?> rule)
         {
             if (!Resolve(rule.Owner, ref rule.Comp)) return null;
 
-            var mapUid = _mapSystem.GetMapOrInvalid(rule.Comp.Map);
-            if (!mapUid.Valid) return null;
+            var gridUid = rule.Comp.MapGrids.FirstOrNull();
+            if (!gridUid.HasValue) return null;
 
-            return mapUid;
+            return gridUid;
         }
     }
 }

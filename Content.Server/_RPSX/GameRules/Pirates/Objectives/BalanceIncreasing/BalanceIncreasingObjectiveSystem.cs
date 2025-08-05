@@ -10,6 +10,7 @@ public sealed partial class BalanceIncreasingObjectiveSystem : BasePirateObjecti
     {
         if (!TryComp<PirateObjectiveComponent>(entity, out var objective)) return;
         if (!TryComp<PiratesProgressComponent>(objective.PiratesProgress, out var progressComponent)) return;
-        args.Progress = progressComponent.Balance / entity.Comp.Goal;
+        var progress = progressComponent.Balance / entity.Comp.Goal;
+        args.Progress = progress >= 1f ? 1f : progress;
     }
 }

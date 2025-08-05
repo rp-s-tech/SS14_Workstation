@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.RPSX.GameRules.Pirates.Objectives;
 using Content.Shared.RPSX.GameRules.Pirates;
 using Content.Server.Objectives;
@@ -30,8 +31,6 @@ public sealed partial class PiratesProgressSystem
         if (progressComp.ObjectivesCheckTime > _timing.CurTime) return;
         progressComp.ObjectivesCheckTime += progressComp.ObjectivesCheckThreshold;
 
-        var summaryMain = 0f;
-        var summaryAdditional = 0f;
         foreach (var objective in progressComp.Objectives)
         {
             if (!TryComp<PirateObjectiveComponent>(objective, out var objectiveComponent))
@@ -40,22 +39,12 @@ public sealed partial class PiratesProgressSystem
                 return;
             }
 
-            var prog = IsObjectiveCompleted((objective, objectiveComponent));
-            switch (objectiveComponent.Priority)
-            {
-                case 1:
-                    summaryAdditional += prog;
-                    break;
-                case 0:
-                    summaryMain += prog;
-                    break;
-            }
+            IsObjectiveCompleted((objective, objectiveComponent));
         }
-        
         Dirty(progress);
     }
 
-    private float IsObjectiveCompleted(Entity<PirateObjectiveComponent> objective)
+    private double IsObjectiveCompleted(Entity<PirateObjectiveComponent> objective)
     {
         var ev = new ObjectiveGetProgressEvent();
         RaiseLocalEvent(objective, ref ev);
@@ -64,6 +53,7 @@ public sealed partial class PiratesProgressSystem
         {
             _economicsSystem.ChangePiratesBalance(objective.Comp.PiratesProgress, objective.Comp.Reward);
             objective.Comp.RewardGiven = true;
+            SendMessageFromHead(objective.Comp.PiratesProgress, $"objective completed {MetaData(objective).EntityName}");
         }
         if (ev.Progress is not float objProgress)
             return 0;
@@ -78,8 +68,8 @@ public sealed partial class PiratesProgressSystem
             return;
 
         objectiveComponent.PiratesProgress = objectiveProgress;
-        var narsiObjectives = objectiveProgress.Comp.Objectives;
-        narsiObjectives.Add(objective.Value);
+        var objectives = objectiveProgress.Comp.Objectives;
+        objectives.Add(objective.Value);
 
         Dirty(objectiveProgress);
 
@@ -90,5 +80,33 @@ public sealed partial class PiratesProgressSystem
 
             _mindSystem.AddObjective(mindId, mind, objective.Value);
         }
+    }
+
+    private (double, double) GetObjectivesProgress(Entity<PiratesProgressComponent> progressEntity)
+    {
+        var progress = (0d, 0d);
+        foreach (var objective in progressEntity.Comp.Objectives)
+        {
+            if (!TryComp<PirateObjectiveComponent>(objective, out var objectiveComponent))
+            {
+                Log.Fatal("Smb is fucking idiot and added pirate objective without component");
+                return (0f, 0f);
+            }
+
+            var prog = IsObjectiveCompleted((objective, objectiveComponent));
+
+            switch (objectiveComponent.Priority)
+            {
+                case "additional":
+                    progress.Item2 += prog;
+                    break;
+                case "main":
+                    progress.Item1 += prog;
+                    break;
+            }
+        }
+
+        progress = (Math.Round(progress.Item1, 2), Math.Round(progress.Item2, 2));
+        return progress;
     }
 }

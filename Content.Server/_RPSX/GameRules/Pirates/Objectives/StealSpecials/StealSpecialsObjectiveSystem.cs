@@ -29,8 +29,8 @@ public sealed partial class StealSpecialsObjectiveSystem : BasePirateObjective<S
         if (!entity.Comp.ObjectiveItem.HasValue) return;
         if (!TryComp<PirateObjectiveComponent>(entity, out var objective)) return;
         if (!TryComp<PiratesProgressComponent>(objective.PiratesProgress, out var progressComponent)) return;
-        if (progressComponent.PiratesOutpostMap is not { } outpost) return;
-        if (Transform(entity.Comp.ObjectiveItem.Value).MapUid != outpost) return;
+        if (progressComponent.PiratesShuttle is not { } outpost) return;
+        if (Transform(entity.Comp.ObjectiveItem.Value).GridUid != outpost) return;
         args.Progress = 1f;
     }
 

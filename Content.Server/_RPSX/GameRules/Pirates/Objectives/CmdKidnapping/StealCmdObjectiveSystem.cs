@@ -15,13 +15,13 @@ public sealed partial class StealCmdObjectiveSystem : BasePirateObjective<StealC
     {
         if (!TryComp<PirateObjectiveComponent>(entity, out var objective)) return;
         if (!TryComp<PiratesProgressComponent>(objective.PiratesProgress, out var progressComponent)) return;
-        if (progressComponent.PiratesOutpostMap is not { } outpost) return;
+        if (progressComponent.PiratesShuttle is not { } outpost) return;
         var allHeads = _objectives.GetAliveHumans()
             .Where(c => HasComp<CommandStaffComponent>(c))
             .ToHashSet();
         var kidnappedHeads = _objectives.GetAliveHumans()
             .Where(c => HasComp<CommandStaffComponent>(c)
-                && Transform(c).MapID == Transform(outpost).MapID)
+                && Transform(c).GridUid == outpost)
             .ToHashSet();
         args.Progress = kidnappedHeads.Count / allHeads.Count;
     }
