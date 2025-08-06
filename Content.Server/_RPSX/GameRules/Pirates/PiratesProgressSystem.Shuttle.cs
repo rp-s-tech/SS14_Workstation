@@ -1,13 +1,18 @@
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
+using Content.Server.Shuttles.Systems;
 using Content.Shared.RPSX.GameRules.Pirates;
 using Content.Shared.Verbs;
 using Robust.Shared.Map;
+using Robust.Shared.Random;
 
 namespace Content.Server.RPSX.GameRules.Pirates;
 
 public sealed partial class PiratesProgressSystem
 {
+    [Dependency] private readonly ShuttleSystem _shuttle = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+
     private void InitShuttle()
     {
         SubscribeLocalEvent<PirateShuttleConsoleComponent, GetVerbsEvent<Verb>>(AddEscapeVerb);

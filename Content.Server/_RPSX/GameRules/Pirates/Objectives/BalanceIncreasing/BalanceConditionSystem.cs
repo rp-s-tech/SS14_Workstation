@@ -3,9 +3,9 @@ using Content.Shared.Objectives.Components;
 
 namespace Content.Server.RPSX.GameRules.Pirates.Objectives.BalanceIncreasing;
 
-public sealed partial class BalanceIncreasingObjectiveSystem : BasePirateObjective<BalanceIncreasingObjectiveComponent>
+public sealed partial class BalanceConditionSystem : BasePirateObjective<BalanceConditionComponent>
 {
-    protected override void CheckObjectiveCompleted(Entity<BalanceIncreasingObjectiveComponent> entity,
+    protected override void CheckObjectiveCompleted(Entity<BalanceConditionComponent> entity,
         ref ObjectiveGetProgressEvent args)
     {
         if (!TryComp<PirateObjectiveComponent>(entity, out var objective)) return;

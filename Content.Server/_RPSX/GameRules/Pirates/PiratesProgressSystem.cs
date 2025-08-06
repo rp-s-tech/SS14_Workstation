@@ -11,12 +11,6 @@ using Robust.Shared.Timing;
 using Content.Shared.Mobs.Components;
 using Robust.Shared.Utility;
 using Content.Server.RoundEnd;
-using Content.Shared.Mobs;
-using Content.Shared.Zombies;
-using Content.Server.Shuttles.Components;
-using Robust.Shared.Map;
-using Content.Server.Shuttles.Systems;
-using Robust.Shared.Random;
 
 namespace Content.Server.RPSX.GameRules.Pirates;
 
@@ -28,8 +22,6 @@ public sealed partial class PiratesProgressSystem : EntitySystem
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly PirateEconomicsSystem _economicsSystem = default!;
     [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
-    [Dependency] private readonly ShuttleSystem _shuttle = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
 
     private readonly EntProtoId _piratesProgressHolder = "PiratesProgressHolder";
 
@@ -137,7 +129,7 @@ public sealed partial class PiratesProgressSystem : EntitySystem
 
     private int GetBalanceGoal(Entity<PiratesProgressComponent> entity)
     {
-        var goal = EntityQuery<BalanceIncreasingObjectiveComponent, PirateObjectiveComponent>()
+        var goal = EntityQuery<BalanceConditionComponent, PirateObjectiveComponent>()
             .Where(p => p.Item2.PiratesProgress == entity.Owner).FirstOrNull();
 
         if (goal != null)

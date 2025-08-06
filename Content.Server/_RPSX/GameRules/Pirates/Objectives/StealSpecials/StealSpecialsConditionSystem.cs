@@ -1,14 +1,13 @@
 using Content.Shared.Objectives.Components;
-using Content.Shared.RPSX.GameRules.Pirates;
 using Robust.Shared.Random;
 
 namespace Content.Server.RPSX.GameRules.Pirates.Objectives.StealSpecials;
 
-public sealed partial class StealSpecialsObjectiveSystem : BasePirateObjective<StealSpecialsObjectiveComponent>
+public sealed partial class StealSpecialsConditionSystem : BasePirateObjective<StealSpecialsConditionComponent>
 {
     [Dependency] private readonly IRobustRandom _random = default!;
 
-    protected override void OnMapInit(Entity<StealSpecialsObjectiveComponent> entity, ref MapInitEvent args)
+    protected override void OnAssigned(Entity<StealSpecialsConditionComponent> entity, ref GroupObjectiveAssignedEvent args)
     {
         var targetList = new List<EntityUid>();
         var alreadyAssignedTargets = GetAssignedTargets();
@@ -23,20 +22,19 @@ public sealed partial class StealSpecialsObjectiveSystem : BasePirateObjective<S
         entity.Comp.ObjectiveItem = _random.Pick(targetList);
     }
 
-    protected override void CheckObjectiveCompleted(Entity<StealSpecialsObjectiveComponent> entity,
+    protected override void CheckObjectiveCompleted(Entity<StealSpecialsConditionComponent> entity,
         ref ObjectiveGetProgressEvent args)
     {
+        args.Progress = 0f;
         if (!entity.Comp.ObjectiveItem.HasValue) return;
-        if (!TryComp<PirateObjectiveComponent>(entity, out var objective)) return;
-        if (!TryComp<PiratesProgressComponent>(objective.PiratesProgress, out var progressComponent)) return;
-        if (progressComponent.PiratesShuttle is not { } outpost) return;
+        if (GetOutpost(entity) is not { Valid: true } outpost) return;
         if (Transform(entity.Comp.ObjectiveItem.Value).GridUid != outpost) return;
         args.Progress = 1f;
     }
 
     private List<EntityUid> GetAssignedTargets()
     {
-        var query = EntityQueryEnumerator<StealSpecialsObjectiveComponent>();
+        var query = EntityQueryEnumerator<StealSpecialsConditionComponent>();
         var list = new List<EntityUid>();
         while (query.MoveNext(out var component))
         {
