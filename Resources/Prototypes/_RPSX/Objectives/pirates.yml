@@ -38,7 +38,7 @@
   id: StealItemsObjective
   parent: BasePirateObjective
   name: Steal some items
-  description: We need to steal some things for our and Syndicate neeeds
+  description: We need to steal some things for our and Syndicate neeeds.
   components:
   - type: StealSpecialsCondition
   - type: PirateObjective
@@ -48,7 +48,7 @@
   id: StealCriticalItemsObjective
   parent: BasePirateObjective
   name: Steal some hard-to-steal items
-  description: We need to steal some hard-to-steal items for our and Syndicate neeeds
+  description: We need to steal some hard-to-steal items for our and Syndicate neeeds.
   components:
   - type: StealSpecialsCondition
     stealTargetGrops:
@@ -82,4 +82,15 @@
   - type: PickRandomPerson
   - type: KillPersonCondition
     requireMaroon: true
-  
+
+- type: entity
+  parent: BasePirateObjective
+  id: StealStationAi
+  name: Steal station AI
+  description: This AI knows a lot of secrets. We must steal it and transfer to Syndicate outpost.
+  components:
+  - type: StealSpecialsCondition
+    stealTargetGrops:
+    - PlayerStationAi
+  - type: PirateObjective
+    reward: 40

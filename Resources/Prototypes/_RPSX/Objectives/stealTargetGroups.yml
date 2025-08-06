@@ -5,3 +5,13 @@
   sprite:
     sprite: DarkStation/MainGame/Objects/Weapons/Guns/Rifles/xani.rsi
     state: icon
+
+- type: stealTargetGroup
+  id: PlayerStationAi
+  name: steal-target-groups-station-ai
+  sprite:
+    sprite: Mobs/Silicon/station_ai.rsi
+    layers:
+    - state: base
+    - state: ai
+      shader: unshaded
