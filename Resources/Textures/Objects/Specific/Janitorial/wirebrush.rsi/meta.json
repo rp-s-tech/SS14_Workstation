@@ -1,12 +1,7 @@
 {
     "version": 1,
-<<<<<<< HEAD:Resources/Textures/Exodus/Objects/Specific/Medical/mechanical_injector.rsi/meta.json
-    "license":  "CC-BY-NC-SA-4.0",
-    "copyright": "RPS-eXtended & owned by Space Exodus, made by Askolot (discord:788252896016990219)",
-=======
     "license": "CC-BY-SA-4.0",
     "copyright": "Sprites by TiniestShark (Github)",
->>>>>>> rpsx/develop:Resources/Textures/Objects/Specific/Janitorial/wirebrush.rsi/meta.json
     "size": {
         "x": 32,
         "y": 32

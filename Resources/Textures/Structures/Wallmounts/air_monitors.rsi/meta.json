@@ -191,20 +191,6 @@
       "directions": 4
     },
     {
-      "name": "fire_on",
-      "directions": 1,
-      "delays": [
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ]
-      ]
-    },
-    {
         "name": "fire_detected",
         "directions": 1,
         "delays": [
