@@ -439,7 +439,7 @@
 
 - type: entity
   parent: BaseComputerCircuitboard
-  id: ShuttleConsoleCircuitboard #########################################################
+  id: ShuttleConsoleCircuitboard 
   name: shuttle console board
   description: A computer printed circuit board for a shuttle console.
   components:
