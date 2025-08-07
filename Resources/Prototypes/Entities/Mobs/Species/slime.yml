@@ -13,7 +13,6 @@
     prototype: Slime
     requiredLegs: 2
   # they like eat it idk lol
-  - type: Geras # Exodus-Geras
   - type: Storage
     clickInsert: false
     grid:

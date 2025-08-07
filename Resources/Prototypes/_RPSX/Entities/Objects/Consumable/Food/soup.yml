@@ -5,7 +5,7 @@
   description: With a slight hint of wool.
   components:
   - type: Sprite
-    sprite: _RPSX/Objects/Consumable/Food/Bowl/vulpsoup.rsi
+    sprite: _RPSX/Objects/Consumable/Food/Bowl/VulpSoup.rsi
     state: vulposoup
   - type: FlavorProfile
     flavors:
@@ -37,7 +37,7 @@
     flavors:
       - meaty
   - type: Sprite
-    sprite: _RPSX/Objects/Consumable/Food/Bowl/clamsoup.rsi
+    sprite: _RPSX/Objects/Consumable/Food/Bowl/ClamSoup.rsi
     state: clamsoup
   - type: SolutionContainerManager
     solutions:
@@ -64,7 +64,7 @@
       - rice
       - slime
   - type: Sprite
-    sprite: _RPSX/Objects/Consumable/Food/Bowl/slugrice.rsi
+    sprite: _RPSX/Objects/Consumable/Food/Bowl/SlugRice.rsi
     state: slugrice
   - type: SolutionContainerManager
     solutions:

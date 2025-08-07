@@ -1,7 +1,0 @@
-- type: latheRecipe
-  id: MechanicalInjector
-  result: MechanicalInjector
-  completetime: 2
-  materials:
-    Plastic: 100
-    Steel: 50

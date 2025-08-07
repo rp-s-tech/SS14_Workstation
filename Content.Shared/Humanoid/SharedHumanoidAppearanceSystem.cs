@@ -44,8 +44,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] private readonly SharedIdentitySystem _identity = default!;
     [Dependency] private readonly ISponsorsManager _sponsors = default!;
 
-    [ValidatePrototypeId<SpeciesPrototype>]
-    public const string DefaultSpecies = "Human";
+    public static readonly ProtoId<SpeciesPrototype> DefaultSpecies = "Human";
     // Corvax-TTS-Start
     public const string DefaultVoice = "johnny";
     public static readonly Dictionary<Sex, string> DefaultSexVoice = new()
@@ -55,7 +54,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         {Sex.Unsexed, "serana"},
     };
     // Corvax-TTS-End
-    public const string DefaultBark = "Human1";
+    // public const string DefaultBark = "Human1";
 
     public override void Initialize()
     {

@@ -5,7 +5,7 @@
   description: Like kebab, but with lyla.
   components:
   - type: Sprite
-    sprite: _RPSX/Objects/Consumable/Food/bowl/lylakebab.rsi
+    sprite: _RPSX/Objects/Consumable/Food/Bowl/lylakebab.rsi
     state: icon
   - type: FlavorProfile
     flavors:

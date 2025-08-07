@@ -54,7 +54,7 @@
       types:
         Piercing: 15
   - type: Stamina
-    critThreshold: 100 # Exodus - Stamina Refactor
+    critThreshold: 100
   - type: Appearance
   - type: Butcherable
     spawned:

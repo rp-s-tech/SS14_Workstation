@@ -28,6 +28,7 @@ lathe-category-maints = Техи
 lathe-category-steel = Стальная
 lathe-category-white = Белая
 lathe-category-wood = Деревянная
+lathe-category-modules = Модули
 # Science
 lathe-category-mechs = Мехи
 # Security TechFab

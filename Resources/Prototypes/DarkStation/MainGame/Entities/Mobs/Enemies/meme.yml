@@ -62,7 +62,7 @@
         0: Alive
         250: Dead
     - type: Stamina
-      critThreshold: 200 # Exodus - Stamina Refactor
+      critThreshold: 200
     - type: Bloodstream
       bloodReagent: FluorosulfuricAcid
     - type: MeleeWeapon

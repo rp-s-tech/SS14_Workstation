@@ -46,7 +46,6 @@
   - DiseaseSwab
   - BodyBag
   - WhiteCane
-  - MechanicalInjector # Exodus-ThickSyringes
 
 - type: latheRecipePack
   id: RollerBedsStatic
