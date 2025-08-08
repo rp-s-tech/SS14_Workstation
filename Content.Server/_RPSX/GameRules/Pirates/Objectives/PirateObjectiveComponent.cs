@@ -3,7 +3,7 @@ using Content.Shared.RPSX.GameRules.Pirates;
 namespace Content.Server.RPSX.GameRules.Pirates.Objectives;
 
 [RegisterComponent]
-public sealed partial class PirateObjectiveComponent : BasePirateComponent
+public sealed partial class PirateObjectiveComponent : Component
 {
     [DataField]
     public int Reward;

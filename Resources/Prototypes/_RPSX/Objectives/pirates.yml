@@ -70,6 +70,8 @@
   - type: TargetObjective
   - type: PickRandomPerson
   - type: KidnapCondition
+  - type: PirateObjective
+    reward: 35
 
 - type: entity
   id: KillPersonObjective
@@ -82,6 +84,8 @@
   - type: PickRandomPerson
   - type: KillPersonCondition
     requireMaroon: true
+  - type: PirateObjective
+    reward: 35
 
 - type: entity
   parent: BasePirateObjective

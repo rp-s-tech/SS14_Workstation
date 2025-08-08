@@ -4,7 +4,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Server.RPSX.GameRules.Pirates.Objectives.StealSpecials;
 
 [RegisterComponent]
-public sealed partial class StealSpecialsConditionComponent : Component
+public sealed partial class StealSpecialsConditionComponent : BasePirateObjectiveComponent
 {
     [DataField]
     public EntityUid? ObjectiveItem;

@@ -1007,6 +1007,43 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
         Dirty(uid, component);
     }
 
+    // RPSX Start
+    public (double, double) CalculateLoad(EntityUid station)
+    {
+        var totalSources = 0d;
+        var totalLoads = 0d;
+
+        var powerConsumerQuery = AllEntityQuery<PowerConsumerComponent, TransformComponent>();
+        while (powerConsumerQuery.MoveNext(out var ent, out var powerConsumer, out var xform))
+        {
+            if (xform.Anchored == false || xform.GridUid != station)
+                continue;
+
+            if (TryComp<PowerMonitoringDeviceComponent>(ent, out var device))
+                continue;
+
+            totalLoads += powerConsumer.DrawRate;
+        }
+
+        var powerMonitoringDeviceQuery = AllEntityQuery<PowerMonitoringDeviceComponent, TransformComponent>();
+        while (powerMonitoringDeviceQuery.MoveNext(out var ent, out var device, out var xform))
+        {
+            if (device.IsCollectionMasterOrChild && !device.IsCollectionMaster)
+                continue;
+
+            if (xform.Anchored == false || xform.GridUid != station)
+                continue;
+
+            var powerStats = GetPowerStats(ent, device);
+
+            totalSources += powerStats.PowerSupplied;
+            totalLoads += powerStats.PowerUsage;
+        }
+
+        return (totalSources, totalLoads);
+    }
+    // RPSX End
+
     private struct PowerStats
     {
         public double PowerValue { get; set; }
