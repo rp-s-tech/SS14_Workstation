@@ -140,7 +140,7 @@ public abstract partial class SharedGunSystem : EntitySystem
             return;
 
         gun.ShootCoordinates = GetCoordinates(msg.Coordinates);
-        // gun.Target = GetEntity(msg.Target); // Exodus-NPCsAbilityToTargetEnemy
+        gun.Target = GetEntity(msg.Target);
         AttemptShoot(user.Value, ent, gun);
     }
 
@@ -207,10 +207,10 @@ public abstract partial class SharedGunSystem : EntitySystem
     /// <summary>
     /// Attempts to shoot at the target coordinates. Resets the shot counter after every shot.
     /// </summary>
-    public void AttemptShoot(EntityUid user, EntityUid gunUid, GunComponent gun, EntityCoordinates toCoordinates, /* Exodus-NPCsAbilityToTargetEnemy-Start */ EntityUid? target = null /* Exodus-NPCsAbilityToTargetEnemy-End */)
+    public void AttemptShoot(EntityUid user, EntityUid gunUid, GunComponent gun, EntityCoordinates toCoordinates)
     {
         gun.ShootCoordinates = toCoordinates;
-        AttemptShoot(user, gunUid, gun, /* Exodus-NPCsAbilityToTargetEnemy-Start */ target /* Exodus-NPCsAbilityToTargetEnemy-End */);
+        AttemptShoot(user, gunUid, gun);
         gun.ShotCounter = 0;
         DirtyField(gunUid, gun, nameof(GunComponent.ShotCounter));
     }
@@ -218,26 +218,21 @@ public abstract partial class SharedGunSystem : EntitySystem
     /// <summary>
     /// Shoots by assuming the gun is the user at default coordinates.
     /// </summary>
-    public void AttemptShoot(EntityUid gunUid, GunComponent gun, /* Exodus-NPCsAbilityToTargetEnemy-Start */ EntityUid? target = null /* Exodus-NPCsAbilityToTargetEnemy-End */)
+    public void AttemptShoot(EntityUid gunUid, GunComponent gun)
     {
         var coordinates = new EntityCoordinates(gunUid, gun.DefaultDirection);
         gun.ShootCoordinates = coordinates;
-        AttemptShoot(gunUid, gunUid, gun, /* Exodus-NPCsAbilityToTargetEnemy-Start */ target /* Exodus-NPCsAbilityToTargetEnemy-End */);
+        AttemptShoot(gunUid, gunUid, gun);
         gun.ShotCounter = 0;
     }
 
-    private void AttemptShoot(EntityUid user, EntityUid gunUid, GunComponent gun, /* Exodus-NPCsAbilityToTargetEnemy-Start */ EntityUid? target = null /* Exodus-NPCsAbilityToTargetEnemy-End */)
+    private void AttemptShoot(EntityUid user, EntityUid gunUid, GunComponent gun)
     {
         if (gun.FireRateModified <= 0f ||
             !_actionBlockerSystem.CanAttack(user))
         {
             return;
         }
-
-        // Exodus-NPCsAbilityToTargetEnemy-Start
-        if (target != null)
-            gun.Target = target.Value;
-        // Exodus-NPCsAbilityToTargetEnemy-End
 
         var toCoordinates = gun.ShootCoordinates;
 
@@ -572,7 +567,7 @@ public abstract partial class SharedGunSystem : EntitySystem
             DirtyField(gun, nameof(GunComponent.AngleDecayModified));
         }
 
-        if (!comp.MaxAngleModified.EqualsApprox(ev.MinAngle))
+        if (!comp.MaxAngleModified.EqualsApprox(ev.MaxAngle))
         {
             comp.MaxAngleModified = ev.MaxAngle;
             DirtyField(gun, nameof(GunComponent.MaxAngleModified));

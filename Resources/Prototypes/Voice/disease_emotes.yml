@@ -4,17 +4,6 @@
   category: Vocal
   icon: _RPSX/Interface/Actions/emotes.rsi/sneeze.png
   chatMessages: ["chat-emote-msg-sneeze"]
-  available: false
-  # Exodus-EmotesSounds-Start
-  chatTriggers:
-    - чихает
-    - чихнул
-    - чихнула
-    - пчихнул
-    - пчихнула
-    - апчи
-    - апчхи
-  # Exodus-EmotesSounds-End
 
 - type: emote
   id: Cough
@@ -37,9 +26,6 @@
     - кашляет
     - кашлянул
     # Corvax-Localization-End
-    # Exodus-Localization-Start
-    - кашлянула
-    # Exodus-Localization-End
 
 - type: emote
   id: CatMeow
@@ -52,13 +38,6 @@
   name: chat-emote-name-cathisses
   category: Vocal
   chatMessages: ["chat-emote-msg-cathisses"]
-  # Exodus-EmotesSounds-Start
-  available: false
-  chatTriggers:
-    - шипит
-    - шипение
-    - шикает
-  # Exodus-EmotesSounds-End
 
 - type: emote
   id: MonkeyScreeches
@@ -91,10 +70,6 @@
     - зевок
     - зевает
     # Corvax-Localization-End
-    # Exodus-Localization-Start
-    - зевк
-    - зёвк
-    # Exodus-Localization-End
 
 - type: emote
   id: Snore

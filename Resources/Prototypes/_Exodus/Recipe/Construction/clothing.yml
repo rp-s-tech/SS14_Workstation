@@ -1,7 +1,0 @@
-- type: construction
-  id: HardsuitSalvageMaximal
-  graph: HardsuitSalvageMaximal
-  startNode: start
-  targetNode: hardsuitSalvageMaximal
-  category: construction-category-clothing
-  objectType: Item

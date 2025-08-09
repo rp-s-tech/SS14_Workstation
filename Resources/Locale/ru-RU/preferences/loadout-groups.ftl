@@ -50,6 +50,7 @@ loadout-group-chef-jumpsuit = Шеф-повар, комбинезон
 loadout-group-chef-outerclothing = Шеф-повар, верхняя одежда
 Librarian-loadout = Снаряжение библиотекаря
 loadout-group-librarian-jumpsuit = Библиотекарь, комбинезон
+loadout-group-chaplain-bible = Священная книга
 loadout-group-lawyer-jumpsuit = Адвокат, комбинезон
 loadout-group-lawyer-neck = Адвокат, шея
 Chaplain-loadout = Снаряжение священника

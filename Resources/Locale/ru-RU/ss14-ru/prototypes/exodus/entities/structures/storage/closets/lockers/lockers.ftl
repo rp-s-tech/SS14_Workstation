@@ -1,9 +1,0 @@
-ent-LockerScientistResprite = шкаф учёного
-    .suffix = Респрайт
-    .desc = { ent-LockerScientist.desc }
-ent-LockerScienceSuitFilledResprite = шкаф учёного
-    .suffix = Заполненный, Скафандр, Респрайт
-    .desc = { ent-LockerScientist.desc }
-ent-LockerScienceSuitFilled = шкаф учёного
-    .suffix = Заполненный, Скафандр
-    .desc = { ent-LockerScientist.desc }

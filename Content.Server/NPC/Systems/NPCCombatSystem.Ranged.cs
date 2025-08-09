@@ -1,8 +1,7 @@
 using Content.Server.NPC.Components;
 using Content.Shared.CombatMode;
 using Content.Shared.Interaction;
-using Content.Shared.NPC.Systems; // Exodus-TurretsImprovement
-using Content.Shared.Physics; // Exodus-TurretsImprovement
+using Content.Shared.Physics;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Map;
@@ -14,7 +13,6 @@ public sealed partial class NPCCombatSystem
 {
     [Dependency] private readonly SharedCombatModeSystem _combat = default!;
     [Dependency] private readonly RotateToFaceSystem _rotate = default!;
-    [Dependency] private readonly NpcFactionSystem _faction = default!; // Exodus-TurretsImprovement
 
     private EntityQuery<CombatModeComponent> _combatQuery;
     private EntityQuery<NPCSteeringComponent> _steeringQuery;
@@ -138,7 +136,7 @@ public sealed partial class NPCCombatSystem
 
                 // For consistency with NPC steering.
                 var collisionGroup = comp.UseOpaqueForLOSChecks ? CollisionGroup.Opaque : (CollisionGroup.Impassable | CollisionGroup.InteractImpassable);
-                comp.TargetInLOS = IsEnemyInLOS(uid, comp.Target, distance + 0.1f, collisionGroup); // Exodus-TurretsImprovement
+                comp.TargetInLOS = _interaction.InRangeUnobstructed(uid, comp.Target, distance + 0.1f, collisionGroup);
             }
 
             if (!comp.TargetInLOS)
@@ -193,7 +191,7 @@ public sealed partial class NPCCombatSystem
 
             if (_mapManager.TryFindGridAt(xform.MapID, targetPos, out var gridUid, out var mapGrid))
             {
-                targetCordinates = new EntityCoordinates(gridUid, _map.WorldToLocal(gridUid, mapGrid, targetSpot));
+                targetCordinates = new EntityCoordinates(gridUid, mapGrid.WorldToLocal(targetSpot));
             }
             else
             {
@@ -207,17 +205,7 @@ public sealed partial class NPCCombatSystem
                 return;
             }
 
-            _gun.AttemptShoot(uid, gunUid, gun, targetCordinates, /* Exodus-NPCsAbilityToTargetEnemy-Start */ comp.Target /* Exodus-NPCsAbilityToTargetEnemy-End */);
+            _gun.AttemptShoot(uid, gunUid, gun, targetCordinates);
         }
     }
-
-    // Exodus-TurretsImprovement-Start
-    public bool IsEnemyInLOS(EntityUid uid, EntityUid target, float range, CollisionGroup collisionGroup)
-    {
-        return
-            _interaction.InRangeUnobstructed(uid, target, range) &&
-            _interaction.InRangeUnobstructed(uid, target, range, collisionGroup,
-            (ent) => !_faction.IsEntityFriendly(uid, ent));
-    }
-    // Exodus-TurretsImprovement-End
 }

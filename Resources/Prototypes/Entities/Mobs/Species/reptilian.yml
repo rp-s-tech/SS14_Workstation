@@ -13,7 +13,6 @@
     - HeadSide
     undergarmentBottom: UndergarmentBottomBoxersReptilian
   - type: Hunger
-    baseDecayRate: 0.0333333333 # Exodus-ReptilianLore
   - type: Puller
     needsHands: false
   - type: Thirst
@@ -32,7 +31,7 @@
   - type: Speech
     speechSounds: Lizard
     speechVerb: Reptilian
-    allowedEmotes: ['Thump', 'Growl', 'Rumble', 'Sneeze'] # Exodus-EmotesSounds | Add growl and rumble
+    allowedEmotes: ['Thump']
   - type: TypingIndicator
     proto: lizard
   - type: Vocal
@@ -55,72 +54,21 @@
         Slash: 5
   - type: Temperature
     heatDamageThreshold: 400
-    coldDamageThreshold: 273 # Exodus-ReptilianLore
+    coldDamageThreshold: 285
     currentTemperature: 310.15
     specificHeat: 42
     coldDamage:
       types:
-        Cold: 0.1 #per second, scales with temperature & other constants
+        Cold : 0.1 #per second, scales with temperature & other constants
     heatDamage:
       types:
-        Heat: 1.5 #per second, scales with temperature & other constants
+        Heat : 1.5 #per second, scales with temperature & other constants
   - type: TemperatureSpeed
     thresholds:
-      301: 0.8
-      295: 0.6
-      285: 0.4
+      301: 0.9
+      295: 0.8
+      285: 0.7
   - type: Wagging
-  # Exodus-ThickSyringes-Start
-  # Exodus-ReptilianLore-Start | Zessul Blood heals reptilians better
-  - type: Bloodstream
-    bloodReagent: ZessulBlood
-  - type: PassiveDamage
-    allowedStates:
-    - Alive
-    damageCap: 30
-    damage:
-      types:
-        Heat: -0.4
-      groups:
-        Brute: -0.4
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      120: Critical
-      200: Dead
-  # Exodus-ReptilianLore | Drawsiness
-  - type: PassiveEffects
-    effects:
-    - !type:Emote
-      conditions:
-        - !type:Temperature
-          max: 283
-      emote: Yawn
-      showInChat: true
-      probability: 0.2
-    - !type:GenericStatusEffect
-      conditions:
-        - !type:Temperature
-          max: 283
-      key: Drowsiness
-      component: Drowsiness
-      time: 4
-      type: Add
-      refresh: false
-  # Exodus-ReptilianLore-End
-  - type: InjectableSolution
-    solution: chemicals
-    whitelist:
-      tags:
-        - ThickSyringe
-  - type: Tag
-    tags:
-      - ThickSkin
-      - CanPilot
-      - FootstepSound
-      - DoorBumpOpener
-      - AnomalyHost
-  # Exodus-ThickSyringes-End
   - type: Inventory
     speciesId: reptilian
     femaleDisplacements:

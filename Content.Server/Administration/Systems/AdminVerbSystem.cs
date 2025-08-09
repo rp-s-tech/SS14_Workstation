@@ -37,8 +37,6 @@ using Robust.Shared.Toolshed;
 using Robust.Shared.Utility;
 using System.Linq;
 using static Content.Shared.Configurable.ConfigurationComponent;
-using Content.Server.Exodus.NPC; // Exodus-FactionsAdminEditor
-using Content.Shared.NPC.Components; // Exodus-FactionsAdminEditor
 
 namespace Content.Server.Administration.Systems
 {
@@ -392,22 +390,6 @@ namespace Content.Server.Administration.Systems
                         Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Actions/actions_borg.rsi"), "state-laws"),
                     });
                 }
-
-                // Exodus-FactionsAdminEditor-Start
-                if (HasComp<NpcFactionMemberComponent>(args.Target))
-                {
-                    args.Verbs.Add(new Verb()
-                    {
-                        Text = Loc.GetString("npc-faction-ui-verb"),
-                        Category = VerbCategory.Admin,
-                        Act = () =>
-                        {
-                            var ui = new NpcFactionEui(args.Target);
-                            _euiManager.OpenEui(ui, player);
-                        },
-                    });
-                }
-                // Exodus-FactionsAdminEditor-End
             }
         }
 

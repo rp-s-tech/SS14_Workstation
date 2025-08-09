@@ -80,7 +80,6 @@
   - EmergencyNitrogen
   - EmergencyOxygen
   - LoadoutSpeciesVoxNitrogen
-  - EmergencyOxygenMechInjector # Exodus-ThickSyringes
 
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
@@ -372,6 +371,17 @@
   - ChaplainNeck
 
 - type: loadoutGroup
+  id: ChaplainBible
+  name: loadout-group-chaplain-bible
+  minLimit: 1
+  loadouts:
+  - Bible
+  - BibleDruid
+  - BibleNanoTrasen
+  - BibleSatanic
+  - BibleTanakh
+
+- type: loadoutGroup
   id: JanitorHead
   name: loadout-group-janitor-head
   minLimit: 0
@@ -488,7 +498,6 @@
   loadouts:
   - EmergencyNitrogenClown
   - EmergencyOxygenClown
-  - EmergencyOxygenClownMechInjector # Exodus-ThickSyringes
   - LoadoutSpeciesVoxNitrogen
 
 - type: loadoutGroup
@@ -545,7 +554,6 @@
   loadouts:
   - EmergencyNitrogenMime
   - EmergencyOxygenMime
-  - EmergencyOxygenMimeMechInjector # Exodus-ThickSyringes
   - EmergencySpeciesMothMime
   - LoadoutSpeciesVoxNitrogen
 
@@ -836,7 +844,6 @@
   loadouts:
   - EmergencyNitrogenExtended
   - EmergencyOxygenExtended
-  - EmergencyOxygenExtendedMechInjector # Exodus-ThickSyringes
   - LoadoutSpeciesVoxNitrogen
 
 # Science
@@ -1123,7 +1130,6 @@
   loadouts:
   - EmergencyNitrogenSecurity
   - EmergencyOxygenSecurity
-  - EmergencyOxygenSecurityMechInjector # Exodus-ThickSyringes
   - LoadoutSpeciesVoxNitrogen
 
 - type: loadoutGroup
@@ -1329,7 +1335,6 @@
   loadouts:
   - EmergencyNitrogenMedical
   - EmergencyOxygenMedical
-  - EmergencyOxygenMedicalMechInjector # Exodus-ThickSyringes
   - LoadoutSpeciesVoxNitrogen
 
 # Wildcards
@@ -1373,7 +1378,6 @@
   - EmergencyNitrogenSyndicate
   - EmergencyOxygenSyndicate
   - LoadoutSpeciesVoxNitrogen
-#  - EmergencyOxygenSyndicateMechInjector # Exodus-ThickSyringes
 
 - type: loadoutGroup
   id: GroupSpeciesBreathTool

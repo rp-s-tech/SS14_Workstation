@@ -337,11 +337,10 @@
       types:
         Heat: 14
   # mining laser real
-  - type: GatheringProjectile
-  # Exodus - Stamina Refactor - start
-  - type: StaminaDamageOnCollide
-    damage: 190
-  # Exodus - end
+  - type: GatheringProjectile 
+  - type: StunOnCollide
+    stunAmount: 5
+    knockdownAmount: 5
   - type: Tag
     tags:
     - EmitterBolt

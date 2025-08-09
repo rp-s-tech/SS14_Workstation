@@ -29,7 +29,7 @@ namespace Content.Shared.Body.Systems
 
         private void OnMapInit(Entity<StomachComponent> ent, ref MapInitEvent args)
         {
-            ent.Comp.NextUpdate = _gameTiming.CurTime + ent.Comp.UpdateInterval;
+            ent.Comp.NextUpdate = _gameTiming.CurTime + ent.Comp.AdjustedUpdateInterval;
         }
 
         private void OnUnpaused(Entity<StomachComponent> ent, ref EntityUnpausedEvent args)
@@ -55,7 +55,7 @@ namespace Content.Shared.Body.Systems
                 if (_gameTiming.CurTime < stomach.NextUpdate)
                     continue;
 
-                stomach.NextUpdate += stomach.UpdateInterval;
+                stomach.NextUpdate += stomach.AdjustedUpdateInterval;
 
                 // Get our solutions
                 if (!_solutionContainerSystem.ResolveSolution((uid, sol), DefaultSolutionName, ref stomach.Solution, out var stomachSolution))
@@ -67,27 +67,27 @@ namespace Content.Shared.Body.Systems
                 var transferSolution = new Solution();
 
                 var queue = new RemQueue<StomachComponent.ReagentDelta>();
-                // RPSX Surgery Start
+
                 foreach (var delta in stomach.ReagentDeltas)
                 {
-                    delta.Increment(stomach.UpdateInterval);
-
-                    if (delta.Lifetime <= stomach.DigestionDelay)
-                        continue;
-
-                    if (stomachSolution.TryGetReagent(delta.ReagentQuantity.Reagent, out var reagent))
+                    delta.Increment(stomach.AdjustedUpdateInterval);
+                    if (delta.Lifetime > stomach.DigestionDelay)
                     {
-                        if (reagent.Quantity > delta.ReagentQuantity.Quantity)
-                            reagent = new ReagentQuantity(reagent.Reagent, delta.ReagentQuantity.Quantity);
+                        if (stomachSolution.TryGetReagent(delta.ReagentQuantity.Reagent, out var reagent))
+                        {
+                            if (reagent.Quantity > delta.ReagentQuantity.Quantity)
+                                reagent = new(reagent.Reagent, delta.ReagentQuantity.Quantity);
 
-                        stomachSolution.RemoveReagent(reagent);
-                        transferSolution.AddReagent(reagent);
-                        var ev = new OnEntityStomachUpdated(delta.ReagentQuantity);
-                        RaiseLocalEvent(uid, ref ev);
+                            stomachSolution.RemoveReagent(reagent);
+                            transferSolution.AddReagent(reagent);
+                            // RPSX Surgery Start
+                            var ev = new OnEntityStomachUpdated(delta.ReagentQuantity);
+                            RaiseLocalEvent(uid, ref ev);
+                            // RPSX Surgery End
+                        }
                     }
                     queue.Add(delta);
                 }
-                // RPSX Surgery End
 
                 foreach (var item in queue)
                 {
@@ -101,18 +101,9 @@ namespace Content.Shared.Body.Systems
             }
         }
 
-        private void OnApplyMetabolicMultiplier(
-            Entity<StomachComponent> ent,
-            ref ApplyMetabolicMultiplierEvent args)
+        private void OnApplyMetabolicMultiplier(Entity<StomachComponent> ent, ref ApplyMetabolicMultiplierEvent args)
         {
-            if (args.Apply)
-            {
-                ent.Comp.UpdateInterval *= args.Multiplier;
-                return;
-            }
-
-            // This way we don't have to worry about it breaking if the stasis bed component is destroyed
-            ent.Comp.UpdateInterval /= args.Multiplier;
+            ent.Comp.UpdateIntervalMultiplier = args.Multiplier;
         }
 
         public bool CanTransferSolution(

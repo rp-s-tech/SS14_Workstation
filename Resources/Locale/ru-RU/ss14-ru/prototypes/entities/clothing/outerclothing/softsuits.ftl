@@ -1,5 +1,7 @@
 ent-ClothingOuterHardsuitEVA = скафандр EVA
     .desc = Лёгкий космический скафандр, способный защитить владельца от космического вакуума во время аварийной ситуации.
+ent-ClothingOuterEVASuitSyndicate = скафандр EVA Синдиката
+    .desc = На спине имеется бирка с надписью: "Честное слово, это совсем не собственность враждебной корпорации!"
 # Corvax-HiddenDesc-Start
 ent-ClothingOuterHardsuitSyndicate = кроваво-красный скафандр EVA
     .suffix = Синдикат

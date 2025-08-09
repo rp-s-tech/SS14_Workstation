@@ -52,6 +52,7 @@ flavor-base-horrible = ужасно
 flavor-base-terrible = ужасающе
 flavor-base-mindful = разумно
 flavor-base-chewy = жевательно
+flavor-base-trashy = безвкусный
 
 # Complex flavors. Put a flavor here when you want something that's more
 # specific.
@@ -66,6 +67,7 @@ flavor-complex-mayonnaise = как майонез
 flavor-complex-mustard = как горчица
 
 # Food-specific flavors.
+
 
 ## Food chemicals. In case you get something that has this inside.
 
@@ -131,6 +133,7 @@ flavor-complex-cherry = как вишня
 
 # use it when there multiple types of veggies
 
+
 ## Complex foodstuffs (cooked foods, joke flavors, etc)
 
 flavor-complex-pink = как розовый
@@ -183,8 +186,10 @@ flavor-complex-true-nature = как истинная природа реальн
 flavor-complex-false-meat = как не совсем не мясо
 flavor-complex-paper = как кашеобразная масса
 flavor-complex-compressed-meat = как спрессованное мясо
+flavor-complex-dog-food = как собачий корм
 
 # Drink-specific flavors.
+
 
 ## Generic alcohol/soda taste. This should be replaced with an actual flavor profile.
 
@@ -339,6 +344,7 @@ flavor-complex-pilk = как сладкое молоко
 
 # Medicine/chemical-specific flavors.
 
+
 ## Generic flavors.
 
 flavor-complex-medicine = как лекарство
@@ -347,5 +353,6 @@ flavor-complex-bee = беспчеловечно
 flavor-complex-sax = как джаз
 flavor-complex-bottledlightning = как молния в бутылке
 flavor-complex-punishment = как наказание
+flavor-complex-artifact-glue = как дроблённые артефакты
 flavor-weh = как вех
 flavor-hew = как хев

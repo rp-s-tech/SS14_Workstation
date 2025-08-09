@@ -5,4 +5,4 @@ ent-MobScurret = слизнекот
 ent-MobBaseEmotionalSupportScurret = Слизнекот — эмоциональная поддержка
     .desc = { ent-MobBaseScurret.desc }
 ent-MobEmotionalSupportScurret = { ent-MobBaseEmotionalSupportScurret }
-    .desc ={ ent-MobBaseEmotionalSupportScurret.desc }
+    .desc = { ent-MobBaseEmotionalSupportScurret.desc }

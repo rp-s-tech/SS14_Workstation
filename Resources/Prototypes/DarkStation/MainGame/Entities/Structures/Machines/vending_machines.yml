@@ -12,8 +12,8 @@
     ejectState: eject-unshaded
     denyState: deny-unshaded
     ejectDelay: 0.6
-  - type: Advertise
-    pack: SurgeonMatAds
+  - type: DatasetVocalizer
+    dataset: SurgeonMatAds
   - type: Sprite
     sprite: DarkStation/MainGame/Structures/Machines/VendingMachines/surgeonmat.rsi
     layers:
@@ -45,8 +45,8 @@
     ejectState: eject-unshaded
     denyState: deny-unshaded
     ejectDelay: 0.6
-  - type: Advertise
-    pack: NanoMedAds
+  - type: DatasetVocalizer
+    dataset: NanoMedAds
   - type: Sprite
     sprite: DarkStation/MainGame/Structures/Machines/VendingMachines/nanomed.rsi
     layers:

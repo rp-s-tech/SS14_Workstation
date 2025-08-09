@@ -34,9 +34,4 @@ public sealed partial class ShockOnTriggerComponent : Component
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     [AutoPausedField]
     public TimeSpan NextTrigger = TimeSpan.Zero;
-
-    // Exodus-ShockCollar-Start
-    [DataField]
-    public bool IgnoreInsulation = false;
-    // Exodus-ShockCollar-End
 }

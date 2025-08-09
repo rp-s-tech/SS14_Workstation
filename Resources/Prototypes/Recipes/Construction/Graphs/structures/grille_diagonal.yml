@@ -6,19 +6,19 @@
       edges:
         - to: grilleDiagonal
           completed:
-           # Exodus-Construction-Rotate-Fix-Start
+           # RPSX-Construction-Rotate-Fix-Start
             - !type:SnapToGrid { }
           steps:
             - material: MetalRod
               amount: 2
               doAfter: 1
-           # Exodus-Construction-Rotate-Fix-End
+           # RPSX-Construction-Rotate-Fix-End
 
         - to: clockworkGrilleDiagonal
           completed:
-           # Exodus-Construction-Rotate-Fix-Start
+           # RPSX-Construction-Rotate-Fix-Start
             - !type:SnapToGrid { }
-           # Exodus-Construction-Rotate-Fix-End
+           # RPSX-Construction-Rotate-Fix-End
           steps:
             - material: MetalRod
               amount: 2

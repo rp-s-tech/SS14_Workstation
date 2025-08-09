@@ -1,4 +1,4 @@
-using Content.Server.NPC.Systems; // Exodus-TurretsImprovement-Start
+using Content.Server.Interaction;
 using Content.Shared.Physics;
 
 namespace Content.Server.NPC.HTN.Preconditions;
@@ -6,7 +6,7 @@ namespace Content.Server.NPC.HTN.Preconditions;
 public sealed partial class TargetInLOSPrecondition : HTNPrecondition
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-    private NPCCombatSystem _npcCombat = default!; // Exodus-TurretsImprovement-Start
+    private InteractionSystem _interaction = default!;
 
     [DataField("targetKey")]
     public string TargetKey = "Target";
@@ -20,7 +20,7 @@ public sealed partial class TargetInLOSPrecondition : HTNPrecondition
     public override void Initialize(IEntitySystemManager sysManager)
     {
         base.Initialize(sysManager);
-        _npcCombat = sysManager.GetEntitySystem<NPCCombatSystem>(); // Exodus-TurretsImprovement-Start
+        _interaction = sysManager.GetEntitySystem<InteractionSystem>();
     }
 
     public override bool IsMet(NPCBlackboard blackboard)
@@ -33,6 +33,6 @@ public sealed partial class TargetInLOSPrecondition : HTNPrecondition
         var range = blackboard.GetValueOrDefault<float>(RangeKey, _entManager);
         var collisionGroup = UseOpaqueForLOSChecksKey ? CollisionGroup.Opaque : (CollisionGroup.Impassable | CollisionGroup.InteractImpassable);
 
-        return _npcCombat.IsEnemyInLOS(owner, target, range, collisionGroup); // Exodus-TurretsImprovement-Start
+        return _interaction.InRangeUnobstructed(owner, target, range, collisionGroup);
     }
 }

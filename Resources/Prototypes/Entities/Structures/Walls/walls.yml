@@ -1035,11 +1035,6 @@
   - type: Icon
     sprite: Structures/Walls/solid_diagonal.rsi
     state: state0
- # Exodus-Wall-Diagonal-Craft-Start
-  - type: Construction
-    graph: Girder
-    node: diagonalWall
- # Exodus-Wall-Diagonal-Craft-End
   - type: Destructible
     thresholds:
     - trigger:

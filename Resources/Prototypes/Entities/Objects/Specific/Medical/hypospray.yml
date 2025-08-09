@@ -72,12 +72,6 @@
     maxFillLevels: 4
     fillBaseName: hypo_fill
     solutionName: hypospray
-  # Exodus-ThickSyringe-Start | Needed for balance
-  - type: Tag
-    tags:
-    - Syringe
-    - ThickSyringe
-  # Exodus-ThickSyringe-End
 
 - type: entity
   name: borghypo

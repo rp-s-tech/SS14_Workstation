@@ -6,9 +6,9 @@
       edges:
         - to: girder
           completed:
-            # Exodus-Construction-Rotate-Fix-Start
+            # RPSX-Construction-Rotate-Fix-Start
             - !type:SnapToGrid { }
-            # Exodus-Construction-Rotate-Fix-End
+            # RPSX-Construction-Rotate-Fix-End
           steps:
             - material: Steel
               amount: 2
@@ -29,7 +29,7 @@
           steps:
             - tool: Screwing
               doAfter: 2
-       # Exodus-Wall-Diagonal-Craft-Start
+       # RPSX-Wall-Diagonal-Craft-Start
         - to: diagonalWall
           completed:
             - !type:SnapToGrid { }
@@ -41,13 +41,13 @@
             - material: Steel
               amount: 1
               doAfter: 1
-       # Exodus-Wall-Diagonal-Craft-End
+       # RPSX-Wall-Diagonal-Craft-End
 
         - to: wall
           completed:
-            # Exodus-Construction-Rotate-Fix-Start
+            # RPSX-Construction-Rotate-Fix-Start
             - !type:SnapToGrid { }
-            # Exodus-Construction-Rotate-Fix-End
+            # RPSX-Construction-Rotate-Fix-End
           conditions:
             - !type:EntityAnchored {}
           steps:
@@ -57,9 +57,9 @@
 
         - to: reinforcedGirder
           completed:
-            # Exodus-Construction-Rotate-Fix-Start
+            # RPSX-Construction-Rotate-Fix-Start
             - !type:SnapToGrid { }
-            # Exodus-Construction-Rotate-Fix-End
+            # RPSX-Construction-Rotate-Fix-End
           conditions:
             - !type:EntityAnchored {}
           steps:
@@ -178,7 +178,7 @@
             - tool: Welding
               doAfter: 10
       
-   # Exodus-Wall-Diagonal-Craft-Start
+   # RPSX-Wall-Diagonal-Craft-Start
     - node: diagonalWall
       entity: WallSolidDiagonal
       edges:
@@ -190,7 +190,7 @@
           steps:
             - tool: Welding
               doAfter: 10
-   # Exodus-Wall-Diagonal-Craft-End
+   # RPSX-Wall-Diagonal-Craft-End
 
     - node: wallChitin
       entity: WallSolidChitin
@@ -347,9 +347,9 @@
 
         - to: diagonalshuttleWall
           completed:
-            # Exodus-Construction-Rotate-Fix-Start
+            # RPSX-Construction-Rotate-Fix-Start
             - !type:SnapToGrid { }
-            # Exodus-Construction-Rotate-Fix-End
+            # RPSX-Construction-Rotate-Fix-End
           conditions:
             - !type:EntityAnchored { }
           steps:
@@ -577,6 +577,10 @@
           steps:
             - tool: Welding
               doAfter: 5
+        - to: wall
+          steps:
+            - tool: Brushing
+              doAfter: 12
 
     - node: reinforcedWallRust
       entity: WallReinforcedRust
@@ -585,3 +589,7 @@
           steps:
             - tool: Welding
               doAfter: 5
+        - to: reinforcedWall
+          steps:
+            - tool: Brushing
+              doAfter: 12

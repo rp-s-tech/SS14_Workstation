@@ -1,9 +1,0 @@
-- type: entity
-  id: CrateEngineeringAASElectronic
-  parent: CrateEngineeringSecure
-  name: AAS electronics crate
-  description: Crate for AAS electronics parts.
-  components:
-  - type: StorageFill
-    contents:
-      - id: AASElectronics
