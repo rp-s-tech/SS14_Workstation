@@ -1,13 +1,8 @@
-using Robust.Shared.GameStates;
-
 namespace Content.Shared.RPSX.GameRules.Pirates;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent]
 public abstract partial class BasePirateComponent : Component
 {
-    [DataField, AutoNetworkedField]
+    [DataField]
     public EntityUid PiratesProgress;
-
-    [DataField, AutoNetworkedField]
-    public EntityUid CompOwner;
 }

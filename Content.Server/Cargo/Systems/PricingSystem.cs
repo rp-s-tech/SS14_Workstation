@@ -405,4 +405,5 @@ public sealed class PricingSystem : EntitySystem
         args.Price = GetPrice(entity);
         args.Handled = true;
     }
+    // RPSX End
 }

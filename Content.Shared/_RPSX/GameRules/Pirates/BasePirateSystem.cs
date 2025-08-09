@@ -22,7 +22,6 @@ public sealed partial class BasePirateSystem : EntitySystem
             return;
         }
         entity.Comp.PiratesProgress = progress.CompOwner;
-        entity.Comp.CompOwner = entity.Owner;
 
         if (HasComp<PirateComponent>(entity.Owner))
         {
