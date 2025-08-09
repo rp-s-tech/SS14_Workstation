@@ -2,16 +2,16 @@ using System.Linq;
 
 namespace Content.Shared.RPSX.GameRules.Pirates;
 
-public sealed class BasePirateSystem<T> : EntitySystem where T : BasePirateComponent
+public sealed partial class BasePirateSystem : EntitySystem
 {
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<T, MapInitEvent>(OnBaseMapInit);
+        SubscribeLocalEvent<BasePirateComponent, MapInitEvent>(OnBaseMapInit);
     }
 
-    private void OnBaseMapInit(Entity<T> entity, ref MapInitEvent args)
+    private void OnBaseMapInit(Entity<BasePirateComponent> entity, ref MapInitEvent args)
     {
         var progress = EntityQuery<PiratesProgressComponent>()
             .Where(p => p.PiratesShuttle == Transform(entity).GridUid)

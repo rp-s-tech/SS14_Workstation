@@ -59,6 +59,7 @@
   description: We need to kidnap this person. This person can know something useful.
   components:
   - type: TargetObjective
+    title: objective-condition-kill-person-title
   - type: PickRandomPerson
   - type: KidnapCondition
   - type: PirateObjective

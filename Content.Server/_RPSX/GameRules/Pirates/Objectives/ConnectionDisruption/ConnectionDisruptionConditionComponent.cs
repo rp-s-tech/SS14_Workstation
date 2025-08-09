@@ -3,6 +3,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.RPSX.GameRules.Pirates.Objectives.ConnectionDisruption
 {
+    [RegisterComponent]
     public sealed partial class ConnectionDisruptionConditionComponent : BasePirateObjectiveComponent
     {
         [DataField]

@@ -5,6 +5,7 @@ using Content.Server.Objectives;
 using Robust.Shared.Prototypes;
 using Content.Shared.Objectives.Components;
 using Content.Server.Mind;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Server.RPSX.GameRules.Pirates;
 
@@ -67,7 +68,6 @@ public sealed partial class PiratesProgressSystem
         if (objective == null || !TryComp(objective, out PirateObjectiveComponent? objectiveComponent))
             return;
 
-        objectiveComponent.PiratesProgress = objectiveProgress;
         var objectives = objectiveProgress.Comp.Objectives;
         objectives.Add(objective.Value);
 

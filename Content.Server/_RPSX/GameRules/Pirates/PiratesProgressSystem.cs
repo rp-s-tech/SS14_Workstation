@@ -11,6 +11,7 @@ using Robust.Shared.Timing;
 using Content.Shared.Mobs.Components;
 using Robust.Shared.Utility;
 using Content.Server.RoundEnd;
+using Content.Server.Roles;
 
 namespace Content.Server.RPSX.GameRules.Pirates;
 
@@ -30,6 +31,7 @@ public sealed partial class PiratesProgressSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<PiratesProgressComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<PirateRoleComponent, GetBriefingEvent>(OnGetBriefing);
 
         InitPirates();
         InitShuttle();
@@ -130,7 +132,7 @@ public sealed partial class PiratesProgressSystem : EntitySystem
     private int GetBalanceGoal(Entity<PiratesProgressComponent> entity)
     {
         var goal = EntityQuery<BalanceConditionComponent, PirateObjectiveComponent>()
-            .Where(p => p.Item2.PiratesProgress == entity.Owner).FirstOrNull();
+            .Where(p => p.Item1.PiratesProgress == entity.Owner).FirstOrNull();
 
         if (goal != null)
             return goal.Value.Item1.Goal;
@@ -204,5 +206,11 @@ public sealed partial class PiratesProgressSystem : EntitySystem
         };
         var message = Loc.GetString(locMessage);
         SendMessageFromHead(entity, message);
+    }
+
+    private void OnGetBriefing(Entity<PirateRoleComponent> role, ref GetBriefingEvent args)
+    {
+        // TODO Different character screen briefing for the 3 nukie types
+        args.Append(Loc.GetString("pirates-briefing"));
     }
 }

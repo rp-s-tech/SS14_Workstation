@@ -11,7 +11,4 @@
   name: steal-target-groups-station-ai
   sprite:
     sprite: Mobs/Silicon/station_ai.rsi
-    layers:
-    - state: base
-    - state: ai
-      shader: unshaded
+    state: base

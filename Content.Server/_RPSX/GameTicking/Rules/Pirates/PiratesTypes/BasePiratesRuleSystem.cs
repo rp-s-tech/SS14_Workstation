@@ -20,7 +20,6 @@ namespace Content.Server.RPSX.GameTicking.Rules.Pirates.PiratesTypes
             base.Initialize();
 
             SubscribeLocalEvent<T, AntagSelectionEnd>(OnAntagSelectionEnd);
-            SubscribeLocalEvent<PirateRoleComponent, GetBriefingEvent>(OnGetBriefing);
         }
 
         protected override void Started(EntityUid uid, T component, GameRuleComponent gameRule, GameRuleStartedEvent args)
@@ -81,12 +80,6 @@ namespace Content.Server.RPSX.GameTicking.Rules.Pirates.PiratesTypes
         //         args.AddLine(Loc.GetString("nukeops-list-name-user", ("name", name), ("user", sessionData.UserName)));
         //     }
         // }
-
-        private void OnGetBriefing(Entity<PirateRoleComponent> role, ref GetBriefingEvent args)
-        {
-            // TODO Different character screen briefing for the 3 nukie types
-            args.Append(Loc.GetString("pirates-briefing"));
-        }
 
         private EntityUid? GetShuttle(Entity<RuleGridsComponent?> rule)
         {

@@ -8,5 +8,7 @@
   id: MagazinePistolLowNerf
 
 - type: Tag
-  id: MiniganeBandNerf- type: Tag
+  id: MiniganeBandNerf
+
+- type: Tag
   id: PiratesSellable
