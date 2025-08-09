@@ -14,16 +14,6 @@
     - PirateRole
 
 - type: entity
-  id: CmdKidnapObjective
-  parent: BasePirateObjective
-  name: Kidnap someone
-  description: We need to kidnap one person and transfer him/her to our outpost.
-  components:
-  - type: CmdKidnapCondition
-  - type: PirateObjective
-    reward: 25
-
-- type: entity
   id: BalanceObjective
   parent: BasePirateObjective
   name: Increase balance 
@@ -32,6 +22,7 @@
   - type: BalanceCondition
     goal: 300
   - type: PirateObjective
+    priority: "main"
     reward: 20
 
 - type: entity
@@ -88,6 +79,17 @@
     reward: 35
 
 - type: entity
+  id: CmdKidnapObjective
+  parent: BasePirateObjective
+  name: Kidnap someone
+  description: We need to kidnap one person and transfer him/her to our outpost.
+  components:
+  - type: CmdKidnapCondition
+  - type: PirateObjective
+    priority: "main"
+    reward: 25
+
+- type: entity
   parent: BasePirateObjective
   id: TelecommunicationsDisruption
   name: Turn off their telecoms
@@ -97,7 +99,6 @@
   - type: PirateObjective
     reward: 30
 
-
 - type: entity
   parent: BasePirateObjective
   id: LightsDisruption
@@ -106,6 +107,7 @@
   components:
   - type: LightsDisruptionCondition
   - type: PirateObjective
+    priority: "main"
     reward: 30
 
 - type: entity

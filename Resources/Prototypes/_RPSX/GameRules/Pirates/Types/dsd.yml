@@ -3,8 +3,21 @@
   parent: BasePiratesRule
   id: DwarvesPirates
   components:
-  - type: LoadMapRule
-    mapPath: /Maps/RPSXSecrets/Pirates/piratesector.yml
+  - type: DwarvesPiratesRule
+    objectivesSilent: 
+      BalanceObjective: 1
+      StealStationAi: 1
+      KidnapPersonObjective: 3
+      StealItemsObjective: 3
+      StealCriticalItemsObjective: 1
+      TelecommunicationsDisruption: 1
+    objectivesLoud: 
+      BalanceObjective: 1
+      CmdKidnapObjective: 1
+      LightsDisruption: 1
+      StealStationAi: 1
+      KillPersonObjective: 4
+      StealCriticalItemsObjective: 2
   - type: AntagLoadProfileRule
     speciesOverride: Dwarf
     speciesOverrideBlacklist:

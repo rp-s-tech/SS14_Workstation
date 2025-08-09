@@ -41,3 +41,5 @@
   - type: PiratesRule
   - type: RuleGrids
   - type: AntagSelection
+  - type: LoadMapRule
+    gridPath: Maps/_RPSX/GameRules/Pirates/pirate.yml
