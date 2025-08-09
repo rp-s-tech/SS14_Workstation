@@ -89,6 +89,27 @@
 
 - type: entity
   parent: BasePirateObjective
+  id: TelecommunicationsDisruption
+  name: Turn off their telecoms
+  description: We need to disorientate the crew by turning of their telecoms.
+  components:
+  - type: ConnectionDisruptionCondition
+  - type: PirateObjective
+    reward: 30
+
+
+- type: entity
+  parent: BasePirateObjective
+  id: LightsDisruption
+  name: Turn off the lights!
+  description: Turning off the lights in most of the station might help us
+  components:
+  - type: LightsDisruptionCondition
+  - type: PirateObjective
+    reward: 30
+
+- type: entity
+  parent: BasePirateObjective
   id: StealStationAi
   name: Steal station AI
   description: This AI knows a lot of secrets. We must steal it and transfer to Syndicate outpost.
