@@ -113,7 +113,7 @@ public sealed class VampireTrallSystem : EntitySystem
 
         _popupSystem.PopupEntity(Loc.GetString("vampire-trall-free"), uid, uid);
 
-        _stun.TryParalyze(uid, ParalyzeOnDeTrall, true);
+        _stun.TryAddParalyzeDuration(uid, ParalyzeOnDeTrall);
     }
 
     private void OnVampireTrallShutdown(EntityUid uid, VampireTrallComponent component, ComponentShutdown args)

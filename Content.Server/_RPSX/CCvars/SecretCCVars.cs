@@ -27,4 +27,12 @@ public sealed class RPSXCCVars : CVars
     public static readonly CVarDef<bool> IsSeveredLimbEnabled =
         CVarDef.Create("surgery.severed_limb_enabled", true);
 
+    public static readonly CVarDef<float> SurgeryAngleFactor =
+        CVarDef.Create("surgery.angle_factor", 0.05f, CVar.SERVER);
+
+    public static readonly CVarDef<float> SurgeryDistanceFactor =
+        CVarDef.Create("surgery.distance_factor", 0.125f, CVar.SERVER);
+
+    public static readonly CVarDef<float> SurgeryPartRemoveProbabilty =
+        CVarDef.Create("surgery.part_remove_probability", 0.2f, CVar.SERVER);
 }

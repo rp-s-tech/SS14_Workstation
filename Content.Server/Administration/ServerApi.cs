@@ -24,6 +24,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using static Content.Shared.Administration.SharedBwoinkSystem;
 
 namespace Content.Server.Administration;
 
@@ -464,7 +465,7 @@ public sealed partial class ServerApi : IPostInjectInit
                 var recipientId = new NetUserId(request.RecipientUid);
 
                 // Отправляем сообщение через систему Bwoink
-                bwoinkSystem.SendBwoinkMessage(senderId, recipientId, request.Message);
+                _entityManager.EntityNetManager.SendSystemNetworkMessage(new BwoinkTextMessage(recipientId, senderId, request.Message, playSound: true, adminOnly: false));
 
                 _sawmill.Info($"[Bwoink] {senderId} -> {recipientId}: {request.Message}");
                 await RespondOk(context);

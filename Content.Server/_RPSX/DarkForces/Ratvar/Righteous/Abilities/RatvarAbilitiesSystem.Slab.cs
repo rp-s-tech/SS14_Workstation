@@ -200,7 +200,7 @@ public sealed partial class RatvarAbilitiesSystem
             return;
         }
 
-        _stunSystem.TryParalyze(target, TimeSpan.FromSeconds(8), true);
+        _stunSystem.TryAddParalyzeDuration(target, TimeSpan.FromSeconds(8));
         args.Handled = true;
     }
 

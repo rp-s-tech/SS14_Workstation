@@ -41,7 +41,7 @@ public sealed partial class VampireAbilitiesSystem
             if (attemptEvent.Cancelled)
                 continue;
 
-            _stunSystem.TryParalyze(targetUid, TimeSpan.FromSeconds(5), true);
+            _stunSystem.TryAddParalyzeDuration(targetUid, TimeSpan.FromSeconds(5));
         }
 
         OnActionUsed(uid, component, args);
