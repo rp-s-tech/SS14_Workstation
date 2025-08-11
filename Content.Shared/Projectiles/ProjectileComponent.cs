@@ -2,6 +2,7 @@ using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Projectiles;
@@ -100,5 +101,8 @@ public sealed partial class ProjectileComponent : Component
     public FixedPoint2 PenetrationAmount = FixedPoint2.Zero;
 
     [DataField]
-    public bool DamageBodyParts = true;
+    public MapCoordinates ShootCoords;
+
+    [DataField]
+    public float WeaponAngle;
 }

@@ -7,6 +7,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Throwing;
+using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
@@ -208,6 +209,12 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
     public void SetShooter(EntityUid id, ProjectileComponent component, EntityUid shooterId)
     {
+        component.ShootCoords = _transform.GetMapCoordinates(shooterId); // RPSX Surgery
+        if (TryComp<GunComponent>(component.Weapon, out var gunComp))
+        {
+            component.WeaponAngle = (float)gunComp.CurrentAngle;
+        }
+
         if (component.Shooter == shooterId)
             return;
 
