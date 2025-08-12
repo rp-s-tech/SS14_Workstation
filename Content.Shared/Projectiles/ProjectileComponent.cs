@@ -102,10 +102,10 @@ public sealed partial class ProjectileComponent : Component
     public FixedPoint2 PenetrationAmount = FixedPoint2.Zero;
 
     // RPSX Start
-    [DataField]
+    [ViewVariables]
     public MapCoordinates ShootCoords;
 
-    [DataField]
+    [ViewVariables]
     public float WeaponAngle;
     // RPSX End
 }

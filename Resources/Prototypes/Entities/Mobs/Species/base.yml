@@ -191,7 +191,6 @@
   - type: Puller
   - type: Speech
     speechSounds: Alto
-  - type: CanEnterCryostorage # RPSX edit
   - type: DamageForceSay
   - type: Vocal
     sounds:

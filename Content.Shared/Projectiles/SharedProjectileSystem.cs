@@ -209,11 +209,13 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
     public void SetShooter(EntityUid id, ProjectileComponent component, EntityUid shooterId)
     {
-        component.ShootCoords = _transform.GetMapCoordinates(shooterId); // RPSX Surgery
-        if (TryComp<GunComponent>(component.Weapon, out var gunComp))
+        // RPSX Surgery start
+        if (component.Weapon != null && TryComp<GunComponent>(component.Weapon, out var gunComp))
         {
+            component.ShootCoords = _transform.GetMapCoordinates(component.Weapon.Value);
             component.WeaponAngle = (float)gunComp.CurrentAngle;
         }
+        // RPSX Surgery end
 
         if (component.Shooter == shooterId)
             return;
