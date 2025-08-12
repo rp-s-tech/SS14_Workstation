@@ -74,3 +74,17 @@
         - Syndicate
       mindRoles:
       - MindRolePirate
+
+- type: gamePreset
+  id: BasicPirates
+  alias:
+  - basicPirates
+  name: basicPirates-title
+  showInVote: false 
+  description: basicPirates-description
+  rules:
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+  - BasicPirates

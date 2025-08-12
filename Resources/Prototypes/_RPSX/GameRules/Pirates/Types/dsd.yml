@@ -85,3 +85,17 @@
         - Syndicate
       mindRoles:
       - MindRolePirate
+
+- type: gamePreset
+  id: DwarvesPirates
+  alias:
+  - dwarvesPirates
+  name: dwarvesPirates-title
+  showInVote: false 
+  description: dwarvesPirates-description
+  rules:
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+  - DwarvesPirates

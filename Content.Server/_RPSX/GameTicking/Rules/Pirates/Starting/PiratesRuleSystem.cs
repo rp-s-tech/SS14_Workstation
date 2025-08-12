@@ -9,6 +9,8 @@ using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Content.Server.GameTicking.Rules;
 using Content.Server.GameTicking;
+using Content.Server.GameTicking.Presets;
+using Content.Shared.CCVar;
 
 namespace Content.Server.RPSX.GameTicking.Rules.Pirates.Starting;
 
@@ -19,7 +21,6 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
 
     private string _ruleCompName = default!;
-    private ProtoId<WeightedRandomPrototype> _randomProtos = "Pirates";
 
     public override void Initialize()
     {
@@ -30,25 +31,32 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
     protected override void Added(EntityUid uid, PiratesRuleComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
         base.Added(uid, component, gameRule, args);
+        var weights = "Pirates";
 
-        if (!TryPickPreset(_randomProtos, out var rule))
+        if (!TryPickPreset(weights, out var preset))
         {
             Log.Error($"{ToPrettyString(uid)} failed to pick any preset. Removing rule.");
             Del(uid);
             return;
         }
 
-        Log.Info($"Selected {rule} as the secret preset.");
-        _adminLogger.Add(LogType.EventStarted, $"Selected {rule} as the secret preset.");
+        Log.Info($"Selected {preset.ID} as the secret preset.");
+        _adminLogger.Add(LogType.EventStarted, $"Selected {preset.ID} as the secret preset.");
 
-        EntityUid ruleEnt;
+        foreach (var rule in preset.Rules)
+        {
+            EntityUid ruleEnt;
 
-        if (GameTicker.RunLevel <= GameRunLevel.InRound)
-            ruleEnt = GameTicker.AddGameRule(rule);
-        else
-            GameTicker.StartGameRule(rule, out ruleEnt);
+            // if we're pre-round (i.e. will only be added)
+            // then just add rules. if we're added in the middle of the round (or at any other point really)
+            // then we want to start them as well
+            if (GameTicker.RunLevel <= GameRunLevel.InRound)
+                ruleEnt = GameTicker.AddGameRule(rule);
+            else
+                GameTicker.StartGameRule(rule, out ruleEnt);
 
-        component.AdditionalGameRules.Add(ruleEnt);
+            component.AdditionalGameRules.Add(ruleEnt);
+        }
     }
 
     protected override void Ended(EntityUid uid, PiratesRuleComponent component, GameRuleComponent gameRule, GameRuleEndedEvent args)
@@ -61,12 +69,12 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
         }
     }
 
-    private bool TryPickPreset(ProtoId<WeightedRandomPrototype> weights, [NotNullWhen(true)] out EntProtoId? rule)
+    private bool TryPickPreset(ProtoId<WeightedRandomPrototype> weights, [NotNullWhen(true)] out GamePresetPrototype? preset)
     {
         var options = _prototypeManager.Index(weights).Weights.ShallowClone();
         var players = GameTicker.ReadyPlayerCount();
 
-        EntProtoId? selectedRule = null;
+        GamePresetPrototype? selectedPreset = null;
         var sum = options.Values.Sum();
         while (options.Count > 0)
         {
@@ -78,44 +86,82 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
                 if (accumulated < rand)
                     continue;
 
-                selectedRule = key;
+                if (!_prototypeManager.TryIndex(key, out selectedPreset))
+                    Log.Error($"Invalid preset {selectedPreset} in secret rule weights: {weights}");
 
                 options.Remove(key);
                 sum -= weight;
                 break;
             }
 
-            if (CanPick(selectedRule, players))
+            if (CanPick(selectedPreset, players))
             {
-                rule = selectedRule;
+                preset = selectedPreset;
                 return true;
             }
 
-            if (selectedRule != null)
-                Log.Info($"Excluding {selectedRule} from secret preset selection.");
+            if (selectedPreset != null)
+                Log.Info($"Excluding {selectedPreset.ID} from secret preset selection.");
         }
 
-        rule = null;
+        preset = null;
+        return false;
+    }
+
+    public bool CanPickAny()
+    {
+        return CanPickAny("Pirates");
+    }
+
+    /// <summary>
+    /// Can any of the given presets be picked, taking into account the currently available player count?
+    /// </summary>
+    public bool CanPickAny(ProtoId<WeightedRandomPrototype> weightedPresets)
+    {
+        var ids = _prototypeManager.Index(weightedPresets).Weights.Keys
+            .Select(x => new ProtoId<GamePresetPrototype>(x));
+
+        return CanPickAny(ids);
+    }
+
+    /// <summary>
+    /// Can any of the given presets be picked, taking into account the currently available player count?
+    /// </summary>
+    public bool CanPickAny(IEnumerable<ProtoId<GamePresetPrototype>> protos)
+    {
+        var players = GameTicker.ReadyPlayerCount();
+        foreach (var id in protos)
+        {
+            if (!_prototypeManager.TryIndex(id, out var selectedPreset))
+                Log.Error($"Invalid preset {selectedPreset} in secret rule weights: {id}");
+
+            if (CanPick(selectedPreset, players))
+                return true;
+        }
+
         return false;
     }
 
     /// <summary>
     /// Can the given preset be picked, taking into account the currently available player count?
     /// </summary>
-    private bool CanPick([NotNullWhen(true)] EntProtoId? selected, int players)
+    private bool CanPick([NotNullWhen(true)] GamePresetPrototype? selected, int players)
     {
         if (selected == null)
             return false;
 
-        if (!_prototypeManager.TryIndex(selected, out var rule)
-                || !rule.TryGetComponent(_ruleCompName, out GameRuleComponent? ruleComp))
+        foreach (var ruleId in selected.Rules)
         {
-            Log.Error($"Encountered invalid rule {selected}");
-            return false;
-        }
+            if (!_prototypeManager.TryIndex(ruleId, out EntityPrototype? rule)
+                || !rule.TryGetComponent(_ruleCompName, out GameRuleComponent? ruleComp))
+            {
+                Log.Error($"Encountered invalid rule {ruleId} in preset {selected.ID}");
+                return false;
+            }
 
-        if (ruleComp.MinPlayers > players && ruleComp.CancelPresetOnTooFewPlayers)
-            return false;
+            if (ruleComp.MinPlayers > players && ruleComp.CancelPresetOnTooFewPlayers)
+                return false;
+        }
 
         return true;
     }

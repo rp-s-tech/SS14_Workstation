@@ -24,8 +24,8 @@
   parent: BaseGameRule
   id: Pirates
   components:
-  - type: GameRule
-    minPlayers: 25
+  # - type: GameRule
+  #   minPlayers: 20
   - type: PiratesRule
 
 - type: entity
@@ -33,6 +33,8 @@
   id: BasePiratesRule
   abstract: true
   components:
+  # - type: GameRule
+  #   minPlayers: 20
   - type: RandomMetadata #this generates the random operation name cuz it's cool.
     nameSegments:
     - NamesOperationPrefix
