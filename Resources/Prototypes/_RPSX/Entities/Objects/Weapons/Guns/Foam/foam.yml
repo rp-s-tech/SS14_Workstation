@@ -40,6 +40,7 @@
       - MiniBulletNerf
     capacity: 25
     proto: MiniBulletNerf
+  - type: PacifismAllowedGun
 
 - type: entity
   name: flash
@@ -149,6 +150,7 @@
     shotsPerBurst: 4
     burstCooldown: 0.2
     burstFireRate: 2
+  - type: PacifismAllowedGun
 
 - type: entity
   name: blender
@@ -195,3 +197,5 @@
     magState: mag
     steps: 9
     zeroVisible: true
+  - type: PacifismAllowedGun
+  - type: BallisticAmmoProvider
