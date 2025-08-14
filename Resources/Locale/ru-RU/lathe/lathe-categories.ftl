@@ -27,6 +27,7 @@ lathe-category-dark = Тёмная
 lathe-category-maints = Техи
 lathe-category-steel = Стальная
 lathe-category-white = Белая
+lathe-category-marble = Мрамор
 lathe-category-wood = Деревянная
 lathe-category-modules = Модули
 # Science
