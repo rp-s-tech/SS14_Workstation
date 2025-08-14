@@ -20,6 +20,7 @@ public sealed class TargetObjectiveSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<TargetObjectiveComponent, ObjectiveAfterAssignEvent>(OnAfterAssign);
+        SubscribeLocalEvent<TargetObjectiveComponent, GroupObjectiveAfterAssignEvent>(OnAfterGroupAssign); // RPSX Objectives
     }
 
     private void OnAfterAssign(EntityUid uid, TargetObjectiveComponent comp, ref ObjectiveAfterAssignEvent args)
@@ -29,6 +30,16 @@ public sealed class TargetObjectiveSystem : EntitySystem
 
         _metaData.SetEntityName(uid, GetTitle(target.Value, comp.Title), args.Meta);
     }
+
+    // RPSX Objectives Start
+    private void OnAfterGroupAssign(EntityUid uid, TargetObjectiveComponent comp, ref GroupObjectiveAfterAssignEvent args)
+    {
+        if (!GetTarget(uid, out var target, comp))
+            return;
+
+        _metaData.SetEntityName(uid, GetTitle(target.Value, comp.Title), args.Meta);
+    }
+    // RPSX Objectives End
 
     /// <summary>
     /// Sets the Target field for the title and other components to use.

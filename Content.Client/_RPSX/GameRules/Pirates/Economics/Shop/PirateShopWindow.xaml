@@ -1,0 +1,38 @@
+<ui:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                      xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls;assembly=Content.Client"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      x:Class="Content.Client.RPSX.GameRules.Pirates.Economics.Shop.PirateShopWindow"
+                      SetSize="600 600"
+                      MinSize="600 600">
+    <BoxContainer Orientation="Vertical" Margin="15 5 15 10">
+        <BoxContainer Orientation="Horizontal">
+            <Label Text="{Loc 'pirate-shop-menu-points-label'}"
+                   StyleClasses="LabelKeyText" />
+            <RichTextLabel Name="PointsLabel"
+                   Text="$0" />
+        </BoxContainer>
+        <Control MinHeight="10"/>
+        <BoxContainer Orientation="Vertical" VerticalExpand="True">
+            <BoxContainer Orientation="Horizontal">
+                <OptionButton Name="Categories"
+                              Prefix="{Loc 'cargo-console-menu-categories-label'}"
+                              HorizontalExpand="True" />
+                <LineEdit Name="SearchBar"
+                          PlaceHolder="{Loc 'cargo-console-menu-search-bar-placeholder'}"
+                          HorizontalExpand="True" />
+            </BoxContainer>
+            <Control MinHeight="5"/>
+            <ScrollContainer HorizontalExpand="True"
+                             VerticalExpand="True"
+                             SizeFlagsStretchRatio="2">
+                <BoxContainer Name="Products"
+                              Orientation="Vertical"
+                              HorizontalExpand="True"
+                              VerticalExpand="True">
+                    <!-- Products get added here by code -->
+                </BoxContainer>
+            </ScrollContainer>
+        </BoxContainer>
+    </BoxContainer>
+</ui:FancyWindow>

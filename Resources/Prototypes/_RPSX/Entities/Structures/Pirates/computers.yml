@@ -1,0 +1,5 @@
+- type: entity
+  id: ComputerShuttlePirates
+  parent: ComputerShuttleSyndie
+  components:
+  - type: PirateShuttleConsole

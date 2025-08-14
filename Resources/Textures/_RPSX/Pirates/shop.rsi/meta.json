@@ -1,0 +1,61 @@
+{
+    "version": 1,
+    "license": "RPS-eXtended",
+    "copyright": "Take from RPSX - WorkStation https://github.com/rp-s-tech/SS14_Workstation, by Ynotka DS",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "broken"
+        },
+        {
+            "name": "deny-unshaded",
+            "delays": [
+                [
+                    0.1,
+                    0.2,
+                    0.4,
+                    0.2,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "eject-unshaded",
+            "delays": [
+                [
+                    0.1,
+                    0.2,
+                    0.4,
+                    0.2,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "normal-unshaded",
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "off"
+        },
+        {
+            "name": "panel"
+        }
+    ]
+}

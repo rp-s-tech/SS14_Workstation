@@ -1,0 +1,67 @@
+- type: startingGear
+  id: BasePirateGear
+  abstract: true
+  equipment:
+    id: PiratePDA
+    belt: ClothingBeltUtility
+    pocket1: AppraisalTool
+
+- type: startingGear
+  parent: BasePirateGear
+  id: BasicPiratesGear
+
+- type: startingGear
+  parent: BasicPiratesGear
+  id: BasicPiratesGearCaptain
+
+- type: startingGear
+  parent: BasicPiratesGear
+  id: BasicPiratesGearBocman
+
+- type: startingGear
+  parent: BasePirateGear
+  id: CyberCorpPiratesGear
+
+- type: startingGear
+  parent: CyberCorpPiratesGear
+  id: CyberCorpPiratesGearCaptain
+
+- type: startingGear
+  parent: CyberCorpPiratesGear
+  id: CyberCorpPiratesGearBocman
+
+- type: startingGear
+  parent: BasePirateGear
+  id: IndustrialPiratesGear
+
+- type: startingGear
+  parent: IndustrialPiratesGear
+  id: IndustrialPiratesGearCaptain
+
+- type: startingGear
+  parent: IndustrialPiratesGear
+  id: IndustrialPiratesGearBocman
+
+- type: startingGear
+  parent: BasePirateGear
+  id: DSDPiratesGear
+
+- type: startingGear
+  parent: DSDPiratesGear
+  id: DSDPiratesGearCaptain
+
+- type: startingGear
+  parent: DSDPiratesGear
+  id: DSDPiratesGearBocman
+
+- type: startingGear
+  parent: BasePirateGear
+  id: ClassicPiratesGear
+
+- type: startingGear
+  parent: ClassicPiratesGear
+  id: ClassicPiratesGearCaptain
+
+- type: startingGear
+  parent: ClassicPiratesGear
+  id: ClassicPiratesGearBocman

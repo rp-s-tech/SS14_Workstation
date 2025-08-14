@@ -1,0 +1,124 @@
+- type: entity
+  id: BasePirateObjective
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Objective
+    difficulty: 0.0
+    issuer: "Пираты"
+    unique: false
+  - type: PirateObjective
+    reward: 10
+  - type: RoleRequirement
+    roles:
+    - PirateRole
+
+- type: entity
+  id: BalanceObjective
+  parent: BasePirateObjective
+  name: Increase balance 
+  description: We need to EARN A LOT OF MONEY.
+  components:
+  - type: BalanceCondition
+    goal: 300
+  - type: PirateObjective
+    priority: "main"
+    reward: 20
+
+- type: entity
+  id: StealItemsObjective
+  parent: BasePirateObjective
+  name: Steal some items
+  description: We need to steal some things for our and Syndicate neeeds.
+  components:
+  - type: StealSpecialsCondition
+  - type: PirateObjective
+    reward: 10
+
+- type: entity
+  id: StealCriticalItemsObjective
+  parent: BasePirateObjective
+  name: Steal some hard-to-steal items
+  description: We need to steal some hard-to-steal items for our and Syndicate neeeds.
+  components:
+  - type: StealSpecialsCondition
+    stealTargetGrops:
+    - NukeDisk
+    - WeaponEnergyShotgun
+    - NuclearBomb
+    - WeaponAntiqueLaser
+    - JetpackCaptainFilled
+    - CaptainIDCard
+  - type: PirateObjective
+    reward: 30
+
+- type: entity
+  id: KidnapPersonObjective
+  parent: BasePirateObjective
+  name: Kidnap someone
+  description: We need to kidnap this person. This person can know something useful.
+  components:
+  - type: TargetObjective
+    title: objective-condition-kill-person-title
+  - type: PickRandomPerson
+  - type: KidnapCondition
+  - type: PirateObjective
+    reward: 35
+
+- type: entity
+  id: KillPersonObjective
+  parent: [ BasePirateObjective, BaseKillObjective]
+  name: Kill someone
+  description: We need to kill this person. This person can interfere our plans.
+  components:
+  - type: TargetObjective
+    title: objective-condition-maroon-person-title
+  - type: PickRandomPerson
+  - type: KillPersonCondition
+    requireMaroon: true
+  - type: PirateObjective
+    reward: 35
+
+- type: entity
+  id: CmdKidnapObjective
+  parent: BasePirateObjective
+  name: Kidnap someone
+  description: We need to kidnap one person and transfer him/her to our outpost.
+  components:
+  - type: CmdKidnapCondition
+  - type: PirateObjective
+    priority: "main"
+    reward: 25
+
+- type: entity
+  parent: BasePirateObjective
+  id: TelecommunicationsDisruption
+  name: Turn off their telecoms
+  description: We need to disorientate the crew by turning of their telecoms.
+  components:
+  - type: ConnectionDisruptionCondition
+  - type: PirateObjective
+    reward: 30
+
+- type: entity
+  parent: BasePirateObjective
+  id: LightsDisruption
+  name: Turn off the lights!
+  description: Turning off the lights in most of the station might help us
+  components:
+  - type: LightsDisruptionCondition
+  - type: PirateObjective
+    priority: "main"
+    reward: 30
+
+- type: entity
+  parent: BasePirateObjective
+  id: StealStationAi
+  name: Steal station AI
+  description: This AI knows a lot of secrets. We must steal it and transfer to Syndicate outpost.
+  components:
+  - type: StealSpecialsCondition
+    stealTargetGrops:
+    - PlayerStationAi
+  - type: PirateObjective
+    reward: 40

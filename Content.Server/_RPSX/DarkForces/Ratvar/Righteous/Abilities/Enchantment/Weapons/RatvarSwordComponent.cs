@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameObjects;
@@ -14,7 +14,7 @@ public sealed partial class RatvarSwordComponent : Component
     {
         DamageDict = new Dictionary<string, FixedPoint2>
         {
-            {"Piercing", -13}
+            {"Piercing", 13}
         }
     };
 }
