@@ -20,6 +20,9 @@
             "name": "eyes"
         },
         {
+            "name": "brain-closed"
+        },
+        {
             "name": "eyes-animated",
             "delays": [
                 [
@@ -110,6 +113,27 @@
         },
         {
             "name": "stomach"
+        },
+        {
+            "name": "brain-animated",
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.4,
+                    0.4,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
         }
     ]
 }

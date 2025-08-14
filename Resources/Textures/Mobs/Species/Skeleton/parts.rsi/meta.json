@@ -11,6 +11,18 @@
             "name": "full"
         },
         {
+            "name": "head_icon"
+        },
+        {
+            "name": "head_opened_icon"
+        },
+        {
+            "name": "torso_icon"
+        },
+        {
+            "name": "torso_opened_icon"
+        },
+        {
             "name": "head_f",
             "directions": 4
         },

@@ -2030,6 +2030,9 @@
         {
             "name": "wizard_key",
             "directions": 4
+        },
+        {
+        "name": "comm_icon"
         }
     ]
 }

@@ -26,7 +26,15 @@
       "directions": 4
     },
     {
+      "name": "equipped-HELMET-vox",
+      "directions": 4
+    },
+    {
       "name": "flipped-equipped-HELMET-hamster",
+      "directions": 4
+    },
+    {
+      "name": "flipped-equipped-HELMET-vox",
       "directions": 4
     },
     {

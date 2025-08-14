@@ -92,6 +92,10 @@
             "directions": 4
         },
         {
+            "name": "non-equipped",
+            "directions": 4
+        },
+        {
             "name": "pan"
         },
         {
@@ -131,6 +135,38 @@
         },
         {
             "name": "fluid-equipped-NECK",
+            "directions": 4
+        },
+        {
+            "name": "les-equipped",
+            "directions": 4
+        },
+        {
+            "name": "aro-equipped",
+            "directions": 4
+        },
+        {
+            "name": "lgbt-equipped",
+            "directions": 4
+        },
+        {
+            "name": "pan-equipped",
+            "directions": 4
+        },
+        {
+            "name": "trans-equipped",
+            "directions": 4
+        },
+        {
+            "name": "inter-equipped",
+            "directions": 4
+        },
+        {
+            "name": "bi-equipped",
+            "directions": 4
+        },
+        {
+            "name": "asex-equipped",
             "directions": 4
         }
     ]

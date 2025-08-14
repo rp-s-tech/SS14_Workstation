@@ -1,0 +1,33 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "RPS-eXtended & by Cog, (discord:834690530104967209)",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "lamp_heart"
+      },
+      {
+        "name": "lamp_heart-on"
+      },
+      {
+          "name": "off-inhand-left",
+          "directions": 4
+      },
+      {
+          "name": "off-inhand-right",
+          "directions": 4
+      },
+      {
+          "name": "on-inhand-left",
+          "directions": 4
+      },
+      {
+          "name": "on-inhand-right",
+          "directions": 4
+      }
+    ]
+  }

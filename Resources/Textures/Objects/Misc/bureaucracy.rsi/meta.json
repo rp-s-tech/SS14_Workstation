@@ -227,6 +227,12 @@
     },
     {
       "name": "paper_stamp-wizard"
+    },
+    {
+      "name": "paper_stamp-scp"
+    },
+    {
+      "name": "paper_stamp-pocc"
     }
   ]
 }
