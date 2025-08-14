@@ -18,6 +18,7 @@
   - type: GunWieldBonus
   - type: ItemSlots
   - type: Gun
+    clumsyProof: true
     minAngle: 21
     maxAngle: 32
     fireRate: 2
@@ -86,6 +87,7 @@
             - MiniBulletNerf
   - type: GunWieldBonus
   - type: Gun
+    clumsyProof: true
     minAngle: 21
     maxAngle: 32
     fireRate: 2
@@ -141,6 +143,7 @@
           tags:
             - MiniBulletNerf
   - type: Gun
+    clumsyProof: true
     fireRate: 2
     soundGunshot:
       path: /Audio/Effects/thunk.ogg
@@ -165,6 +168,7 @@
   - type: Item
     sprite: _RPSX/Objects/Weapons/Guns/Rifles/blender.rsi
   - type: Gun
+    clumsyProof: true
     fireRate: 4
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/minigun.ogg
