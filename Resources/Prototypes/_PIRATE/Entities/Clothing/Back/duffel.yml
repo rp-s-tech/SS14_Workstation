@@ -1,0 +1,18 @@
+#Pirate
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingPirateBackpackDuffelClassic
+  name: classic duffel bag
+  description: Large souvenir bag.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Back/Duffels/classic.rsi
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelPirate
+  name: pirate duffel bag
+  description: A large bag for stealing valuables.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Back/Duffels/pirate.rsi

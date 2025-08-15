@@ -1,0 +1,8 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingPirateNeckCloakPiratePremium
+  name: premium pirate cloak
+  description: A gold-covered cotton cloak, that highlights the status of your wealth and theft.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Neck/Cloaks/pirateprem.rsi

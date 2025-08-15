@@ -1,0 +1,15 @@
+- type: entity
+  parent: [ClothingHeadset, BasePirateContraband]
+  id: ClothingHeadsetPirate
+  name: pirate headset
+  description: A headset with a pirate channel.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      #- EncryptionKeyPirate
+      - EncryptionKeyCommon
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Ears/Headsets/pirate.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Ears/Headsets/pirate.rsi

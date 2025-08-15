@@ -1,0 +1,31 @@
+﻿# Captain Pirate closet
+- type: entity
+  id: ClosetCaptainPirate
+  name: captain pirater's closet
+  parent: ClosetBase
+  description: It is made of rare red metal and upholstered in gold.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _PIRATE/Structures/Storage/closet.rsi
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: capirate
+    stateDoorOpen: capirate_open
+    stateDoorClosed: capirate_door
+
+# Pirate closet
+- type: entity
+  id: ClosetPirate
+  name: pirate closet
+  parent: ClosetBase
+  description: It is made of "wooden" metal, lined with gilding.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _PIRATE/Structures/Storage/closet.rsi
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: pirate
+    stateDoorOpen: pirate_open
+    stateDoorClosed: pirate_door

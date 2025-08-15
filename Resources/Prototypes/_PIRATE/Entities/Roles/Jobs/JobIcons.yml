@@ -1,0 +1,15 @@
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconPirate
+  icon:
+    sprite: Textures/_PIRATE/Interface/Misc/job_icons.rsi
+    state: cap-pirate
+  jobName: JobCaptainPirate
+
+- type: jobIcon
+  parent: JobIconPirate
+  id: JobIconCaptainPirate
+  icon:
+    sprite: Textures/_PIRATE/Interface/Misc/job_icons.rsi
+    state: pirate
+  jobName: JobCaptainPirate

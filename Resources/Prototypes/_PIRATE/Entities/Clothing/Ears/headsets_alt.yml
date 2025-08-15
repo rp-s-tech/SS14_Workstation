@@ -1,0 +1,15 @@
+﻿- type: entity
+  parent: [ClothingHeadsetAlt, BasePirateContraband]
+  id: ClothingHeadsetAltPirate
+  name: pirate's over-ear headset
+  descriptio: Full-size pirate headset, can accept encryption keys.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      #- EncryptionKeyPirate
+      - EncryptionKeyCommon
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Ears/Headsets/pirate.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Ears/Headsets/pirate.rsi

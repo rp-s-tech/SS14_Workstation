@@ -1,0 +1,77 @@
+- type: entity
+  parent: [ClothingUniformBase, BasePirateContraband]
+  id: ClothingUniformJumpsuitPirateCaptain
+  name: captain pirate's  uniform
+  description: A beautiful male uniform made from the skin of red-skinned jaguars.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Uniforms/Jumpsuit/cap-pirate.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Uniforms/Jumpsuit/cap-pirate.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BasePirateContraband]
+  id: ClothingUniformJumpsuitPirateClassic
+  name: classic pirate's uniform
+  description: Old-fashioned male uniform from old movies.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Uniforms/Jumpsuit/classic-pirate.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Uniforms/Jumpsuit/classic-pirate.rsi
+
+
+- type: entity
+  parent: [ClothingUniformBase, BasePirateContraband]
+  id: ClothingUniformJumpsuitPirateCyberCorp
+  name:  cybercorp pirate's uniform
+  description: The free male uniform of cybercorp. Made to order.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Uniforms/Jumpsuit/cybercorp.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Uniforms/Jumpsuit/cybercorp.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BasePirateContraband]
+  id: ClothingUniformJumpsuitPirateMedic
+  name:  medic pirate's uniform
+  description: Loose male uniform. For the most desperate thefts.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Uniforms/Jumpsuit/doc-pirate.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Uniforms/Jumpsuit/doc-pirate.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BasePirateContraband]
+  id: ClothingUniformJumpsuitPirateMatros
+  name:  matros pirate's uniform
+  description: Striped male uniform. No, you're not a thief- you're worse.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Uniforms/Jumpsuit/matros.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Uniforms/Jumpsuit/matros.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BasePirateContraband]
+  id: ClothingUniformJumpsuitPirateNavigator
+  name:  navigator pirate's uniform
+  description: male costume, premium edition.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Uniforms/Jumpsuit/navigator.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Uniforms/Jumpsuit/navigator.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BasePirateContraband]
+  id: ClothingUniformJumpsuitPirate2
+  name:  pirate's uniform
+  description: A beautiful costume  for the most beautiful pirates.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Uniforms/Jumpsuit/pirate.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Uniforms/Jumpsuit/pirate.rsi

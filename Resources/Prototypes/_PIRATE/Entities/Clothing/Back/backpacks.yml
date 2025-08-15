@@ -1,0 +1,27 @@
+# Pirate
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingPirateBackpackCaptainPirate
+  name: cap pirate backpack
+  description:  Perfect for stealing small items.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Back/Backpacks/cap-pirate.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingPirateBackpackClassic
+  name: classic backpack
+  description: Suitable for classic thefts.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Back/Backpacks/classic.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingPirateBackpackPirate
+  name: pirate backpack
+  description: A dry bag for crappy stuffю
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Back/Backpacks/pirate.rsi

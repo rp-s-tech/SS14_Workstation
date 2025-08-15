@@ -1,0 +1,17 @@
+﻿# - type: entity
+#   parent: BaseBarSign
+#   id: BarSignCyberCorp
+#   name: CyberCorp monitor
+#   description: No one saw anything...
+#   components:
+#   - type: BarSign
+#     current: cybercorp
+
+# - type: entity
+#   parent: BaseBarSign
+#   id: BarSignDwarfBardBar
+#   name: Dwarw Bard
+#   description: Come in, a dwarf with a thick beard, fill your empty belly.
+#   components:
+#   - type: BarSign
+#     current: DwarfBard

@@ -1,0 +1,34 @@
+#Pirate
+- type: entity
+  parent: [ClothingHandsButcherable, BasePirateContraband]
+  id: ClothingPirateHandsGlovesCap
+  name: pirate captain's leather gloves
+  description: They look like ordinary gloves with gold shutters.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Hands/Gloves/cap-pirates.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Hands/Gloves/cap-pirates.rsi
+  - type: Fiber
+    fiberMaterial: fibers-leather
+    fiberColor: fibers-brown
+  - type: FingerprintMask
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10
+        Caustic: 5
+
+- type: entity
+  parent: [ClothingHandsBase]
+  id: ClothingOirateHandsGlovesCybercorp
+  name: cybercorp gloves
+  description: Neon gloves. One of them says is "Cybercorp Property"
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Hands/Gloves/cyberperch.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Hands/Gloves/cyberperch.rsi
+  - type: Fiber
+    fiberMaterial: fibers-nanomachines
+  - type: FingerprintMask

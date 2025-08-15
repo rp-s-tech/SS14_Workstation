@@ -1,0 +1,5 @@
+- type: antag
+  id: PirateRPSX
+  name: roles-antag-piraterpsx-name
+  antagonist: true
+  objective: roles-antag-piraterpsx-objective

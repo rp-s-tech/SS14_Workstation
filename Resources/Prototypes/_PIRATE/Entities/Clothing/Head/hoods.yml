@@ -1,0 +1,36 @@
+
+- type: entity
+  parent: [ClothingHeadHatHoodBioGeneral, BasePirateContraband]
+  id: ClothingHeadHatHoodBioPirate
+  name: bio pirate hood
+  suffix: Pirate
+  description: An advanced hood for pirate that protects the head and face from biological contaminants.
+  components:
+  - type: IdentityBlocker
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Head/Hoods/Bio/pirate.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Head/Hoods/Bio/pirate.rsi
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.8
+
+- type: entity
+  parent: [ClothingHeadBase, BasePirateContraband]
+  id: ClothingPirateHeadHatPirateHood
+  name: pirate hood
+  description: The hood, so that no one can see your face, is suitable for the most daring secret missions.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Head/Hoods/pirate.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Head/Hoods/pirate.rsi
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide

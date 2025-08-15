@@ -1,0 +1,103 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "RPS-eXtended & by unotka, (discord:659107974253641791)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+    {
+      "name": "kakadu-normal",
+      "directions": 4
+    },
+    {
+      "name": "kakadu-robot",
+      "directions": 4
+    },
+    {
+      "name": "kakadu-normal-WALK",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "kakadu-robot-WALK",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "kakadu-ATACK",
+      "delays": [
+        [
+          0.1,
+          0.2,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "kakadu-TRANSFORMATION",
+      "delays": [
+        [
+          0.1,
+          0.2,
+          0.3,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "dead-0"
+    }
+    ]
+}

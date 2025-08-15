@@ -1,0 +1,9 @@
+#Pirate
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingPirateBackpackSatchelPirate
+  name: pirate satchel
+  description: a small handbag for expensive trinkets
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Back/Satchels/pirate.rsi

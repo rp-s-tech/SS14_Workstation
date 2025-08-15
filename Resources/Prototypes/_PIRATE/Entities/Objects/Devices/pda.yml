@@ -1,0 +1,63 @@
+# - type: entity
+#   parent: BasePDA
+#   id: AntaganistPiratePDA
+#   name: pirate PDA
+#   description: No one will know anything.
+#   components:
+#   - type: Sprite
+#     sprite: _PIRATE/Objects/Devices/pda.rsi
+#     layers:
+#     - map: [ "enum.PdaVisualLayers.Base" ]
+#       state: "pirate"
+#     - state: "light_overlay_wide"
+#       map: [ "enum.PdaVisualLayers.Flashlight" ]
+#       shader: "unshaded"
+#       visible: false
+#     - state: "id_overlay_wide"
+#       map: [ "enum.PdaVisualLayers.IdLight" ]
+#       shader: "unshaded"
+#       visible: false
+#   - type: Pda
+#     id: PiratesIDCard
+#   - type: Appearance
+#     appearanceDataInit:
+#      enum.PdaVisuals.PdaType:
+#        !type:String
+#        pda-interntech
+#   - type: PdaBorderColorы
+#     borderColor: "#2e3a4b"
+#     accentVColor: "#478188"
+#   - type: Icon
+#     state: pda-interntech
+
+# - type: entity
+#   parent: BasePDA
+#   id: AntaganistCaptainPiratePDA
+#   name: captain pirate's PDA
+#   description: made to order, it looks like a gamepad from the 1990s.
+#   components:
+#   - type: Sprite
+#     sprite: _PIRATE/Objects/Devices/pda.rsi
+#     layers:
+#     - map: [ "enum.PdaVisualLayers.Base" ]
+#       state: "cap-pirate"
+#     - state: "light_overlay_wide"
+#       map: [ "enum.PdaVisualLayers.Flashlight" ]
+#       shader: "unshaded"
+#       visible: false
+#     - state: "id_overlay_wide"
+#       map: [ "enum.PdaVisualLayers.IdLight" ]
+#       shader: "unshaded"
+#       visible: false
+#   - type: Pda
+#     id: CaptainPirateIDCard
+#   - type: Appearance
+#     appearanceDataInit:
+#      enum.PdaVisuals.PdaType:
+#        !type:String
+#        pda-interntech
+#   - type: PdaBorderColor
+#     borderColor: "#751f21"
+#     accentVColor: "#3b1c23"
+#   - type: Icon
+#     state: pda-interntech
