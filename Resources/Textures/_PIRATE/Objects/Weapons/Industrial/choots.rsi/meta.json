@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+  "copyright": "RPS-eXtended & by unotka, (discord:659107974253641791)",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "icon-off"
+      },
+      {
+        "name": "icon-on"
+      },
+      {
+        "name": "equipped-FEET-off",
+        "directions": 4
+      },
+      {
+        "name": "equipped-FEET-on",
+        "directions": 4
+      },
+      {
+        "name": "inhand-off-left",
+        "directions": 4
+      },
+      {
+        "name": "inhand-off-right",
+        "directions": 4
+      },
+      {
+        "name": "inhand-on-left",
+        "directions": 4
+      },
+      {
+        "name": "inhand-on-right",
+        "directions": 4
+      }
+    ]
+  }

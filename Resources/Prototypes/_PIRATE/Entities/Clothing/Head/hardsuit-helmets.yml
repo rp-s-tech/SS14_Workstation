@@ -1,0 +1,73 @@
+#Classic Pirate Hardsuit
+- type: entity
+  parent: [ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase, BasePirateContraband]
+  id: ClothingPirateHeadHelmetHardsuitClassicPirate
+  name: classic pirate hardsuit helmet
+  description: The ideal shape of this helmet was invented in 1984.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Head/Hardsuits/classic.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Head/Hardsuits/classic.rsi
+  - type: PointLight
+    color: "#a1efb7"
+  - type: PressureProtection
+    highPressureMultiplier: 0.3
+    lowPressureMultiplier: 1000
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
+
+#Cybercorp Hardsuit
+- type: entity
+  parent: [ClothingHeadHardsuitBase, BasePirateContraband]
+  id: ClothingHeadHelmetHardsuitCybercorpPirate
+  name: cybercorp hardsuit helmet
+  suffix: Pirate
+  description: Helmet without a light emitter, but lightweight.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Head/Hardsuits/cybercorp.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Head/Hardsuits/cybercorp.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.3
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: NightVision # RPSX EDIT
+    isEquipment: true
+
+#PiratePrem Hardsuit
+- type: entity
+  parent: [ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase, BasePirateContraband]
+  id: ClothingHeadHelmetHardsuitPiratePremium
+  name: premium pirate hardsuit helmet
+  description: Premium pirate hardsuit helmet from Cybercorp company.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Head/Hardsuits/pirateprem.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Head/Hardsuits/pirateprem.rsi
+  - type: PointLight
+    color: "#e4e773"
+  - type: PressureProtection
+    highPressureMultiplier: 0.3
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon

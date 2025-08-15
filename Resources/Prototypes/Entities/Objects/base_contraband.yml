@@ -22,6 +22,14 @@
   - type: Contraband
     severity: Syndicate
 
+# pirate contraband (used for standard pirate items.)
+- type: entity
+  id: BasePirateContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: PirateRPSX
+
 # minor contraband not departmentally restricted -- improvised weapons etc
 - type: entity
   id: BaseMinorContraband

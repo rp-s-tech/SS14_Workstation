@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "license": "RPS-eXtended",
+  "copyright": "Created by unotka (discord:659107974253641791)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "base"
+    },   
+    {
+      "name": "base-equipped-BACKPACK",
+      "directions": 4
+    },
+    {
+      "name": "base-equipped-SUITSTORAGEt",
+      "directions": 4
+    },
+    {
+      "name": "base-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "base-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "base-wielded-inhand-left",
+      "directions": 4
+    },   
+    {
+      "name": "base-wielded-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "icon"
+    },   
+    {
+      "name": "equipped-BACKPACK",
+      "directions": 4
+    },
+    {
+      "name": "equipped-SUITSTORAGEt",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "wielded-inhand-left",
+      "directions": 4
+    },   
+    {
+      "name": "wielded-inhand-right",
+      "directions": 4
+    }
+  ]
+}

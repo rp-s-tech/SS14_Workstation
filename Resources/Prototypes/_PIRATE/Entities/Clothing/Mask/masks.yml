@@ -1,0 +1,12 @@
+- type: entity
+  parent: [ ClothingMaskGasAtmos, BaseCentcommContraband ]
+  id: ClothingMaskGasCybercorp
+  name: cybercorp gas mask
+  description: Suitable even against strong vox gas attacks...
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Mask/cybermask.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Mask/cybermask.rsi
+  - type: BreathMask
+  - type: IngestionBlocker

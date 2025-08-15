@@ -1,0 +1,15 @@
+- type: entity
+  parent: [ EncryptionKey, BasePirateContraband ]
+  id: EncryptionKeyPirateCummon
+  name: pirate encryption key
+  description: An encryption key used by pirates.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Pirates
+    defaultChannel: Pirates
+  - type: Sprite
+    sprite: _PIRATE/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_pirate
+    - state: pirates_label

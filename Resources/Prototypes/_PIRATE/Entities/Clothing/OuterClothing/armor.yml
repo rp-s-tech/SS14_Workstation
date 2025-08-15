@@ -1,0 +1,19 @@
+- type: entity
+  parent: [ClothingOuterArmorBase, BasePirateContraband]
+  id: ClothingOuterArmorPirate
+  name: pirate armor
+  description: Made of high-quality steel, but not all over the body.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/OuterClothing/Armor/warriors.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/OuterClothing/Armor/warriors.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.4
+        Heat: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.90

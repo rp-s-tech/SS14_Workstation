@@ -1,0 +1,45 @@
+- type: entity
+  parent: BaseItem
+  id: Bedsheet
+  name: pirate bedsheet
+  abstract: true
+  description: Feather blanket for pleasant lying after heavy theft.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Bed
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Objects/Misc/bedsheets.rsi
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Clothing
+    quickEquip: true
+    slots:
+    - neck
+  - type: StaticPrice
+    price: 50
+  - type: Tag
+    tags:
+    - Bedsheet
+
+- type: entity
+  id: BedsheetCaptainPirate
+  parent: Bedsheet
+  name: captain pirate bedsheet
+  components:
+  - type: Sprite
+    state: sheetpremiumpirate
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Neck/Bedsheets/cap-pirate.rsi
+
+- type: entity
+  id: BedsheetPirate
+  parent: Bedsheet
+  name: premium pirate bedsheet
+  components:
+  - type: Sprite
+    state: sheetpirate
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Neck/Bedsheets/pirate.rsi

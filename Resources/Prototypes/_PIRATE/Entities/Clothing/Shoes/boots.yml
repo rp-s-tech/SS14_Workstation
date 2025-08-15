@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesBootsCaptainPirate
+  name: pirate captain's boots
+  description: Made from the skin of red-skinned humanoids.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Shoes/Boots/cap-pirates.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Shoes/Boots/cap-pirates.rsi

@@ -1,0 +1,59 @@
+- type: entity
+  parent: Airlock
+  id: AirlockPirateGlass
+  suffix: Pirate, Standard
+  components:
+    # - type: AccessReader
+    # access: [["PirateRPSX"]] вместо PiraterRPSX напиши свой
+  - type: AccessReader
+    access: [["PirateRPSX"]]
+  - type: Sprite
+    sprite: _PIRATE/Structures/Doors/Airlocks/Glass/pirate.rsi
+  - type: Wires
+    layoutId: AirlockPirateGlass
+  - type: Paintable
+    group: null
+
+
+# - type: entity
+#   parent: HighSecDoor
+#   id: HighSecSpCentComLocked
+#   suffix: CentCom, Locked
+#   components:
+#   - type: AccessReader
+#     access: [["CentralCommand"]]
+
+
+# - type: entity
+#   parent: Airlock
+#   id: AirlockNarsiCultLocked
+#   suffix: Narsi, Locked
+#   components:
+#   - type: Sprite
+#     sprite: DarkStation/MainGame/DarkForces/Cult/Structures/door.rsi
+#   - type: AccessReader
+#     access: [ [ "NarsiCultAccess" ] ]
+#   - type: NarsiCultStructure
+#     building: Airlock
+#   - type: FakeNarsiDoor
+#     fakeSprite: Structures/Doors/Airlocks/Standard/maint.rsi
+#     realSprite: DarkStation/MainGame/DarkForces/Cult/Structures/door.rsi
+#   - type: Construction
+#     graph: NarsiCultAirlockGraph
+#     node: airlock
+
+# - type: accessLevel
+#   id: NarsiCult
+#   name: Культ Нар'Си
+
+
+# - type: entity
+#   parent: Airlock
+#   id: AirlockEngineering
+#   suffix: Engineering
+#   components:
+#   - type: Sprite
+#     sprite: Structures/Doors/Airlocks/Standard/engineering.rsi
+#   - type: Wires
+#     layoutId: AirlockEngineering
+

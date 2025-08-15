@@ -1,0 +1,19 @@
+- type: entity
+  parent: [ClothingOuterBioGeneral, BasePirateContraband]
+  id: ClothingOuterBioPirates
+  name: stolen bio suit
+  suffix: Pirate
+  description: A suit that protects against biological scurvy with additional armor.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/OuterClothing/Bio/pirate.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/OuterClothing/Bio/pirate.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.8
+        Slash: 0.6
+        Piercing: 0.8
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.4

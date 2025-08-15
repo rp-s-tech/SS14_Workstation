@@ -1,0 +1,8 @@
+﻿# - type: barSign
+#   id: DwarfBard
+#   name: barsign-prototype-name-BarSignDwarfBardBar
+#   components:
+#   - type: Sprite
+#     sprite: _PIRATE/Structures/Wallmounts/Barsign
+#     state: bardwarf
+#   description: barsign-prototype-description-BarSignDwarfBardBar

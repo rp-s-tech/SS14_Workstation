@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingMaskBandanaBase
+  id: ClothingMaskBandPirate
+  name: pirate bandana
+  description: standart pirate bandana
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Head/Bandanas/pirate.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Head/Bandanas/pirate.rsi

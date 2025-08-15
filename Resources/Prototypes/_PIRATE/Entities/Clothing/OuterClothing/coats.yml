@@ -1,0 +1,22 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatBomberPirate
+  name: pirate bomber
+  description: A suit with a bomber jacket. Suitable to get lost in the crowd.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/OuterClothing/Coats/bomber.rsi
+  - type: Clothing
+    sprite:  _PIRATE/Clothing/OuterClothing/Coats/bomber.rsi
+
+- type: entity
+  parent: [ClothingOuterArmorBase, ClothingOuterStorageBase, BasePirateContraband]
+  id: ClothingOuterCoatCaptainPirate
+  name: captain pirate trenchcoat
+  description: It is well suited for meetings on the ship. Red as blood.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/OuterClothing/Coats/cap-pirates.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/OuterClothing/Coats/cap-pirates.rsi
+

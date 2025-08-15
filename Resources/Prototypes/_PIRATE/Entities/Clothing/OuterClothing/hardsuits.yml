@@ -1,0 +1,106 @@
+#Classic pirate Hardsuit
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BasePirateContraband]
+  id: ClothingOuterHardsuitClassicPirate
+  name: classic pirate hardsuit
+  description: Made in the old Japanese style, it serves as a hardsuit for classic battles.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/OuterClothing/Hardsuits/classic.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/OuterClothing/Hardsuits/classic.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.3
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 0.65
+    sprintModifier: 0.65
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingPirateHeadHelmetHardsuitClassicPirate
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
+
+#Cybercorp pirate Hardsuit
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BasePirateContraband]
+  id: ClothingOuterHardsuitCybercorpPirate
+  name: cybercorp armored hardsuit
+  description: Green to stand out in the vast expanses of boundless space.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/OuterClothing/Hardsuits/cybercorp.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/OuterClothing/Hardsuits/cybercorp.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.6
+        Heat: 0.5
+        Radiation: 0.5
+        Caustic: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCybercorpPirate
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
+
+#Pirate Prem Hardsuit
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BasePirateContraband]
+  id: ClothingOuterHardsuitPiratePremium
+  name: premium pirate hardsuit
+  description: It is large, high-quality and, most importantly, space-resistant. It is also called Juggernaut 2.0
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/OuterClothing/Hardsuits/pirateprem.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/OuterClothing/Hardsuits/pirateprem.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  # - type: StaminaResistance # Should not have stamina resistance, this is purely so people know it was not forgotten.
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.2
+        Slash: 0.2
+        Piercing: 0.2
+        Heat: 0.2
+        Radiation: 0.2
+        Caustic: 0.2
+  - type: ClothingSpeedModifier
+    walkModifier: 0.65
+    sprintModifier: 0.65
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitPiratePremium
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon

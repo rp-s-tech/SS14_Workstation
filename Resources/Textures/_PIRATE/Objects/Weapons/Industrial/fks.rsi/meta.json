@@ -1,0 +1,110 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+  "copyright": "RPS-eXtended & by unotka, (discord:659107974253641791)",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "sharpener"
+      },
+      {
+        "name": "fork"
+      },
+      {
+        "name": "knife"
+      },
+      {
+        "name": "fork-inhand-left",
+        "directions": 4
+      },
+      {
+        "name": "fork-inhand-right",
+        "directions": 4
+      },
+            {
+        "name": "knife-inhand-left",
+        "directions": 4
+      },
+            {
+        "name": "knife-inhand-right",
+        "directions": 4
+      },
+      {
+        "name": "sharpener-inhand-left",
+        "directions": 4
+      },
+      {
+        "name": "sharpener-inhand-right",
+        "directions": 4
+      },
+      {
+            "name": "fork-ANIMATE-off",
+            "delays": [
+                [
+                    0.1,
+                    0.2,
+                    0.4,
+                    0.2
+                ]
+            ]
+      },
+      {
+            "name": "fork-ANIMATE-on",
+            "delays": [
+                [
+                    0.1,
+                    0.2,
+                    0.4,
+                    0.2
+                ]
+            ]
+      },
+      {
+            "name": "knife-ANIMATE-off",
+            "delays": [
+                [
+                    0.1,
+                    0.2,
+                    0.4,
+                    0.2
+                ]
+            ]
+      },
+      {
+            "name": "knife-ANIMATE-on",
+            "delays": [
+                [
+                    0.1,
+                    0.2,
+                    0.4,
+                    0.2
+                ]
+            ]
+      },
+      {
+            "name": "sharpener-ANIMATE-off",
+            "delays": [
+                [
+                    0.1,
+                    0.2,
+                    0.4,
+                    0.2
+                ]
+            ]
+      },
+      {
+            "name": "sharpener-ANIMATE-on",
+            "delays": [
+                [
+                    0.1,
+                    0.2,
+                    0.4,
+                    0.2
+                ]
+            ]
+      }
+    ]
+  }

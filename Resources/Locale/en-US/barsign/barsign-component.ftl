@@ -109,3 +109,7 @@ barsign-prototype-description-empbarsign = Something has gone very wrong.
 
 ## SignOff
 barsign-prototype-description-sign-off = This sign doesn't seem to be on.
+
+## DwarfBard
+barsign-prototype-name-BarSignDwarfBardBar = Dwarf Bard
+barsign-prototype-description-BarSignDwarfBardBar = Come in, a dwarf with a thick beard, fill your empty belly.

@@ -1,0 +1,77 @@
+- type: entity
+  parent: [ClothingUniformSkirtBase, BasePirateContraband]
+  id: ClothingUniformJumpskirtPirateCaptain
+  name: captain pirate's uniform
+  description: A beautiful female uniform made from the skin of red-skinned jaguars.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Uniforms/Jumpskirt/cap-pirate.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Uniforms/Jumpskirt/cap-pirate.rsi
+
+- type: entity
+  parent: [ClothingUniformSkirtBase, BasePirateContraband]
+  id: ClothingUniformJumpskirtPirateClassic
+  name: classic pirate's uniform
+  description: Old-fashioned female uniform from old movies.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Uniforms/Jumpskirt/classic-pirate.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Uniforms/Jumpskirt/classic-pirate.rsi
+
+
+- type: entity
+  parent: [ClothingUniformSkirtBase, BasePirateContraband]
+  id: ClothingUniformJumpskirtPirateCyberCorp
+  name:  cybercorp pirate's uniform
+  description: The free female uniform of cybercorp. Made to order.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Uniforms/Jumpskirt/cybercorp.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Uniforms/Jumpskirt/cybercorp.rsi
+
+- type: entity
+  parent: [ClothingUniformSkirtBase, BasePirateContraband]
+  id: ClothingUniformJumpskirtPirateMedic
+  name:  medic pirate's uniform
+  description: Loose female uniform. For the most desperate thefts.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Uniforms/Jumpskirt/doc-pirate.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Uniforms/Jumpskirt/doc-pirate.rsi
+
+- type: entity
+  parent: [ClothingUniformSkirtBase, BasePirateContraband]
+  id: ClothingUniformJumpskirtPirateMatros
+  name:  matros pirate's uniform
+  description: Striped female uniform. No, you're not a thief- you're worse.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Uniforms/Jumpskirt/matros.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Uniforms/Jumpskirt/matros.rsi
+
+- type: entity
+  parent: [ClothingUniformSkirtBase, BasePirateContraband]
+  id: ClothingUniformJumpskirtPirateNavigator
+  name:  navigator pirate's uniform
+  description: Female frock, premium edition.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Uniforms/Jumpskirt/navigator.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Uniforms/Jumpskirt/navigator.rsi
+
+- type: entity
+  parent: [ClothingUniformSkirtBase, BasePirateContraband]
+  id: ClothingUniformJumpskirtPirate
+  name:  pirate's uniform
+  description: A beautiful skirt for the most beautiful pirates.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Uniforms/Jumpskirt/pirate.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Uniforms/Jumpskirt/pirate.rsi

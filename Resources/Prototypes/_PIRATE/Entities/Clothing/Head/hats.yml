@@ -1,0 +1,12 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingPirateHeadHatCaptainHat
+  name: captain's pirate Hat
+  description: For the most ardent fans of pirate boarding.
+  components:
+  - type: Sprite
+    sprite: _PIRATE/Clothing/Head/Hats/cap-pirates.rsi
+  - type: Clothing
+    sprite: _PIRATE/Clothing/Head/Hats/cap-pirates.rsi
+  - type: VendingPrice
+    price: 500
